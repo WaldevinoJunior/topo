@@ -1,0 +1,22 @@
+.item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.item-icon i{
+    font-size: 60pt;
+}
+
+.inside-item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.aluno-infos{
+    display: flex;
+    justify-content: space-between;
+}

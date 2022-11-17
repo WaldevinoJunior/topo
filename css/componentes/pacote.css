@@ -1,0 +1,13 @@
+.pacote{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.pacote-title{
+    font-size: 2rem;
+    padding: 5px;
+    color: #7e7e7e;
+    font-weight: normal;
+}

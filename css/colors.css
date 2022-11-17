@@ -1,0 +1,33 @@
+.btn-primary{
+    background-color: #005ba0; 
+    border-color: #005ba0; 
+}
+
+.btn-primary:hover{
+    background-color: #00477d;
+    border-color: #00477d;
+}
+
+.bg-primary{
+    background-color: #005ba0;
+}
+
+.btn-warning{
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+    color: white;
+}
+
+.btn-warning:hover{
+    background-color: #c05e0b;
+    border-color: #c05e0b;
+    color: white;
+}
+
+.bg-blue{
+    background-color: #3a4651;
+}
+
+.bg-warning {
+    background-color: #fd7e14!important;
+}

@@ -1,0 +1,25 @@
+.dia{
+    margin-top: 20px;
+}
+
+.form-label{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.form-label:first-child{
+    margin-left: 0;
+}
+
+.presenca{
+    font-size: 1.8rem;
+    color: #7e7e7e;
+}
+
+.presente{
+    color: #005ba0;
+}
+
+input{
+    margin-left: 20px;
+}

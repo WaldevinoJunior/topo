@@ -1,0 +1,35 @@
+section{
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: red;
+}
+
+section .sec-title{
+    font-weight: normal;
+    text-align: center;
+    margin-top: 0px;
+}
+
+section .sec-header{
+    margin: 10px;
+}
+
+section .content{
+    display: flex; 
+    justify-content: center;
+}
+
+@media (min-width: 1200px) {
+    section{
+        margin: 0px 10px;
+        padding: 20px;
+    }
+    
+    section .sec-title{
+        margin-top: 0;
+    }  
+}

@@ -1,0 +1,44 @@
+.curso-atual{
+    height: 150px;
+}
+
+.contbg{
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cont-header-progress{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.progress{
+    background-color: rgb(229,229,229);
+}
+
+.cursos{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.progress-curso{
+    border-radius: 0;
+    height: 10px;
+}
+
+@media (min-width: 1200px) {  
+    .cont-header-progress{
+        width: 50%;
+        padding-top: 0;
+        background-color: rgb(229,229,229);
+    }
+    
+    .progress{
+        background-color: white;
+    }
+}

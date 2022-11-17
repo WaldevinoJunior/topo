@@ -1,0 +1,28 @@
+.opcao-botao{
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.teste-radio{
+    width: 23px;
+    height: 23px;
+    transition: 0.1s;
+    margin: auto;
+}
+
+.opcao-texto{
+    font-size: 1.1em;
+}
+
+.teste-radio:checked{
+    width: 30px;
+    height: 30px;
+    color: blue;
+}
+
+.teste-radio-checked{
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: 0.1s;
+}

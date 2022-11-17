@@ -1,0 +1,91 @@
+.carousel{
+    padding: 20px;
+}
+
+.carousel-row{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-item{
+    margin: 0;
+}
+
+.carousel-item-curso{
+    background-color: rgb(229,229,229);
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    color: white;
+    transition: 0.6s;
+}
+
+.carousel-item-completed{
+    background-color: #005ba0;
+}
+
+.carousel-item-completed:hover{
+    color: white;
+    text-decoration: none;
+    background-color: #004577;
+}
+
+.carousel-item-inprogress{
+    background-color: #fd7e14;
+}
+
+.carousel-item-inprogress:hover{
+    color: white;
+    text-decoration: none;
+    background-color: #C05E0B;
+}
+
+.carousel-item-notprogress{
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.carousel-item-notprogress:hover{
+    text-decoration: none;
+    color: currentColor;
+}
+
+.carousel-item-notexists{
+    color: currentColor;
+    cursor: not-allowed;
+    text-decoration: none;
+    background-color: rgb(126, 6, 173);
+}
+
+.carousel-item-notexists:hover{
+    text-decoration: none;
+    color: currentColor;
+    background-color: rgb(94, 2, 131);
+}
+
+.carousel-item-curso-header{
+    text-align: center;
+}
+
+.curso-icon{
+    font-size: 4rem;
+}
+
+.carousel-item-curso-title{
+    text-align: center;
+}
+
+.carousel-controls{
+    text-align: center;
+    margin: 10px;
+}
+
+.carousel-btn{
+    margin: 10px;
+}
+
+a{
+    color: black;
+}

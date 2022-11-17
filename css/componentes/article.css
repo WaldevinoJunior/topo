@@ -1,0 +1,18 @@
+article{
+    margin-top: 20px;
+}
+
+article a{
+    color: #005ba0!important;
+}
+
+
+@media (min-width: 1200px) {
+    article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    
+}

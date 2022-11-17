@@ -1,0 +1,14 @@
+.rounded-porcent{
+    width: 200px;
+    height: 200px;
+    border-width: 8px !important;
+}
+
+.text-porcent{
+    font-size: 3em !important;
+    font-weight: 500;
+}
+
+.questoesErradas-header{
+    background-color: rgb(229, 229, 229);
+}

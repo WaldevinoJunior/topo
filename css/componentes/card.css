@@ -1,0 +1,17 @@
+.card{
+    margin: 10px 10px;
+    padding: 0;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card .card-text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #7e7e7e;
+}
+
+.card:hover{
+    opacity: 0.7;
+}

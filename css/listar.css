@@ -1,0 +1,25 @@
+.perfil{
+    color: green;
+}
+
+.del{
+    color: red;
+}
+
+.func{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+@media (max-width: 998px){
+    .table{
+        overflow-x: auto;
+        display: block;
+    }
+    
+    .btn{
+        margin: 10px 0;
+    }
+}

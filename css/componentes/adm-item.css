@@ -1,0 +1,26 @@
+.adm-item{
+    box-sizing: border-box;
+    transition: 0.5s;
+    word-wrap: break-word;
+    margin: 5px;
+    text-align: center;
+}
+
+.adm-item:hover{
+    transform: translateY(-5px);
+}
+
+.adm-item a{
+    text-decoration: none;
+}
+
+.adm-item i{
+    font-size: 5rem;
+    
+}
+
+.adm-item h1{
+    font-size: 1.2rem;
+    font-weight: normal;
+
+}
