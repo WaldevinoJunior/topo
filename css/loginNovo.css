@@ -3,14 +3,13 @@
     margin:0;
 }
 section.loginSection{
-    justify-content: center;
+    
     display: flex;
     align-items: center;
-    height: 30vh;
+
     /*background-image: url(/topo/img/apertomao.jpg);*/
     width: 700px;
-    margin-left: 50vh; 
-    margin-top: 25vh;
+    margin-left: 45vh; 
 }
 div#loginLogo{
     background-image: url(/topo/img/apertomao.jpg);
@@ -24,7 +23,7 @@ div#loginLogo{
 }
 div#loginLogin{
     height: 300px;
-    width: 500px;
+    width: 400px;
     background-color: rgb(111, 155, 238);
 }
 form{
