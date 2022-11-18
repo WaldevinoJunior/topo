@@ -4,8 +4,9 @@
 ?>
 <html>
     <head><meta charset="utf8"> 
+    <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
     </head>
-    <body>
+    <body class="teste">
         pagina
         <br>
         <?php
