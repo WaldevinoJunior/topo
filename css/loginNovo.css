@@ -27,12 +27,15 @@ form input{
     height: 40px;
 }
 form input[type=submit]{
-    background-color: orangered;
+    background-color: blue;
     color: white;
 }
-fomr input[type=submit]:hover{
+form input[type=submit]:hover{
     background-color: orangered;
+    opacity: 0.5;
+    animation-duration: 3s;
+    
 }
 a{
-    background-color: white;   
+    background-color: gold;   
 }
