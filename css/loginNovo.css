@@ -9,18 +9,23 @@ section.loginSection{
     height: 30vh;
     /*background-image: url(/topo/img/apertomao.jpg);*/
     width: 700px;
-    margin-left: 35vh; 
-    margin-top: 15vh;
+    margin-left: 50vh; 
+    margin-top: 25vh;
 }
 div#loginLogo{
     background-image: url(/topo/img/apertomao.jpg);
     width: 300px;
     height: 300px;
 }
+#logoimg{
+    margin-top: 10px;
+    margin-left: 50px;
+    
+}
 div#loginLogin{
     height: 300px;
     width: 500px;
-    background-color: blue;
+    background-color: rgb(111, 155, 238);
 }
 form{
     font-family: Arial, Helvetica, sans-serif;
@@ -32,29 +37,40 @@ form div{
     margin-left: 40px;
 }
 label{
-    padding-left: 30px;
-    color: black;
-    font-size: 30px;
+    margin-left: 80px;
+    color: white;
+    font-size: 20px;
+
 }
 form input{
-    border:1px solid green;
+    border: 2px solid white;
     border-radius: 20px;
     width: 300px;
     height: 40px;
+    background: none;
+}
+form input[placeholder]{
+    color: white;
+    font-size: 15px;
 }
 form input[type=submit]{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: blue;
+    height: 100px;
 }
 form input[type=submit]:hover{
     background-color: orangered;
-    opacity: 0.5;
+    transition-duration: 0.8s;
     animation-duration: 3s;
-    
+    color: white;
 }
 a{
-    background-color: orangered;
-    padding-left: 20px;   
+    
+    margin-left: 10vh; 
+    border: 2px solid white;
+    border-radius: 20px;
+    color: blue;
+    background-color: white;
 }
 body.teste{
     background-color: aqua;
