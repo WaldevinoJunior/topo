@@ -65,6 +65,14 @@ form input[type=submit]:hover{
     animation-duration: 3s;
     color: white;
 }
+body div#loginLogin a{
+    background-color: white;
+    color: blue;
+    height: 100px;
+    margin-left: 10vh;
+    border: 2px solid white;
+    border-radius: 20px;
+}
 /* VALIDO PARA O ARQUIVO USUARIO.PHP */
 body.usuario a{
     border: 2px solid white;
@@ -76,25 +84,36 @@ body.usuario a{
     font-size: 12px;
 }
 div.usuarioDiv{
-    justify-content: center;
-    align-items: center;
+    display: flex;
 }
 body.usuario h1{
     font-family:'Times New Roman', Times, serif;
     margin-top: 5vh;
-    margin-left: 15vh;
-    font-size: 30px;
+    margin-left: 10vh;
+    font-size: 25px;
 }
 body.usuario div.usuarioDiv img{
     border-radius:110px;
-    width:20vw;
+    width:18vw;
     margin-left: 10vh;
-    height: 35vh;
+    height: 32vh;
+}
+body.usuario  div#usuarioBot{
+    margin-top: 20vh;
+    margin-left: 5vh;
 }
 body.usuario div.usuarioDiv form input[type=submit]{
     background-color: white;
     color: blue;
     height: 100px;
+}
+body.usuario div.cursos{
+    width: 500px;
+    height: 300px;
+    font-size: 30px;
+    margin-left: 10vh;
+    border: 2px solid blue;
+    display: flex;
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{

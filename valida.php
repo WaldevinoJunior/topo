@@ -38,10 +38,21 @@ $host = "localhost";
 $user = "root";
 $pass = "";
 $db = "podium";
-
 $mysqli = new mysqli($host, $user, $pass, $db);
+$consulta = "SELECT * FROM alunos";
+$consulta2 = "SELECT * FROM cursos";
+$con2 = $mysqli->query($consulta2) or die($mysqli->error);
+$con = $mysqli->query($consulta) or die($mysqli->error);
 if($mysqli->connect_errno){
     echo "falha na conexao: (".$mysqli->connect_errno.") " .$mysqli->connect_error;
 }
-
+if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
+	if($_POST['ID_Aluno'] == $con->fetch_array()[0] && $_POST['Senha'] == $con->fetch_array()[14]){
+		echo "oiiiiii";
+		echo $_POST['ID_Aluno'];
+	}
+	else{
+		echo "login errado";
+	}
+}
 ?>
