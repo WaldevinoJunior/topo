@@ -35,7 +35,7 @@
         </div>
     </div>
     <h1>Seus Cursos</h1><br>        
-    <div class="cursos">  
+    <section class="cursos">  
         <div>
             <img style="width:10vw; height: 20vh;" src="img/classes/Cuidador.jpg"><br>
             <?php
@@ -43,7 +43,7 @@
             ?><br>
             <a href="curso.php"> acessar curso</a>
         </div>
-        <div>
+        <div style="margin-left:10vh;">
             <img style="width:10vw; height: 20vh;" src="img/classes/porteiro.jpg"><br>
             <?php
                 echo $con2->fetch_array()[1];
@@ -51,7 +51,7 @@
             <a href="curso.php"> acessar curso</a>
         </div>
         
-    </div>
+    </section>
     
     
 </body>

@@ -107,13 +107,14 @@ body.usuario div.usuarioDiv form input[type=submit]{
     color: blue;
     height: 100px;
 }
-body.usuario div.cursos{
+body.usuario section.cursos{
     width: 500px;
-    height: 300px;
+    height: 200px;
     font-size: 30px;
     margin-left: 10vh;
     border: 2px solid blue;
     display: flex;
+
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
