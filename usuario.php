@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
     <script type="text/javascript">
             function cadastro(){
-                document.alert("oi");
+                window.open("oi");
             
         }
         </script>
@@ -36,6 +36,10 @@
         <a href="login.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
         </div>
+        </div>
+        <div class="modal">
+            <h2>Selecione um Avatar</h2>
+            
         </div>
     </div>
     <!--CURSOS DO ALUNO -->

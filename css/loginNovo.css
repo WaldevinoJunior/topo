@@ -79,7 +79,7 @@ body.usuario a{
     border-radius: 10px;
     color: white;
     background-color: blue;
-    padding: 5px;
+    padding: 10px;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 12px;
 }
@@ -107,22 +107,46 @@ body.usuario div.usuarioDiv div button{
     border-radius: 10px;
     color: white;
     background-color: blue;
-    padding: 5px;
+    padding: 10px;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 12px;
     cursor:pointer;
 }
 body.usuario section.cursos{
     width: 500px;
-    height: 200px;
+    height: 250px;
     font-size: 30px;
     margin-left: 15vh;
     display: flex;
 
 }
 body.usuario div.cursoTela{
-    border:2px solid green;
+    border:4px solid blue;
     margin-left: 10vh;
+    padding: 10px;
+}
+body.usuario div.modal{
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: blue;
+    border-radius: 10px;
+}
+.active{
+    display:flex;
+}
+.active .modal{
+    animation: modal 4s; 
+}
+@keyframes modal {
+    from{
+        opacity: 0;
+        transform: translate3d(0,60px,0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
