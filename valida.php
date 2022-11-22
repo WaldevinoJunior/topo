@@ -51,14 +51,19 @@ if($mysqli->connect_errno){
     echo "falha na conexao: (".$mysqli->connect_errno.") " .$mysqli->connect_error;
 }
 $c = mysqli_fetch_array($con);
-echo $c['ID_Aluno'];
-if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
-	if($_POST['ID_Aluno'] == $con->fetch_array()[0] && $_POST['Senha'] == $con->fetch_array()[14]){
-		echo "oiiiiii";
-		echo $_POST['ID_Aluno'];
+$contador = 0;
+while($c = mysqli_fetch_array($con)){
+	if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
+		if($_POST['ID_Aluno'] == $c['ID_Aluno'] && $_POST['Senha'] == $c['Senha']){
+			$contador++;
+			$a = $c['Nome'];
+		}	
 	}
-	else{
-		echo "login errado";
-	}
+}
+if($contador!=1){
+	echo "oi";
+	header('Location: /topo/login.html');
+}
+else{
 }
 ?>

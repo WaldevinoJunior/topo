@@ -22,8 +22,7 @@
         <div id="usuarioBot">
         <p style="font-size:30px">
         <?php
-            $dado = $con->fetch_array();
-            echo $dado[1];
+            echo $a;
         ?>
         </p>
         <div style="margin-top:10px; spacing: items 10px;">
