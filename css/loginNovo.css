@@ -99,7 +99,7 @@ body.usuario div.usuarioDiv img{
     height: 32vh;
 }
 body.usuario  div#usuarioBot{
-    margin-top: 20vh;
+    margin-top: 10vh;
     margin-left: 5vh;
 }
 body.usuario div.usuarioDiv form input[type=submit]{
@@ -111,12 +111,20 @@ body.usuario section.cursos{
     width: 500px;
     height: 200px;
     font-size: 30px;
-    margin-left: 10vh;
-    border: 2px solid blue;
+    margin-left: 15vh;
     display: flex;
 
 }
+body.usuario div.cursoTela{
+    border:2px solid green;
+    margin-left: 10vh;
+}
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
-    background-color: aqua;
+    background-image:url('/topo/img/back.png');
+    width:  10vw;
+    height: 10vh;
+}
+body.teste section.testesection{
+    margin-left:70vh;
 }

@@ -10,10 +10,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
 </head>
+<!-- CORPO DA PAGINA USUARIO -->
 <body class="usuario">
+    <!-- CABEÇALHO DA PAGINA -->
     <nav>
         <img style="width:100vw; height: 20vh;" src="img/logonav.png">
     </nav>
+    <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
     <div class="usuarioDiv">
         <img src="img/apertomao.jpg">
         <div id="usuarioBot">
@@ -23,28 +26,45 @@
             echo $dado[1];
         ?>
         </p>
+        <div style="margin-top:10px; spacing: items 10px;">
         <input type="submit" onclick="cadastro();" value="Alterar Avatar">
         <a href="login.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
         
         <script>
             function cadastro(){
-            alert('login.html');
+            
         }
         </script>
         </div>
+        </div>
     </div>
+    <!--CURSOS DO ALUNO -->
     <h1>Seus Cursos</h1><br>        
     <section class="cursos">  
-        <div>
+        <div class="cursoTela">
             <img style="width:10vw; height: 20vh;" src="img/classes/Cuidador.jpg"><br>
             <?php
                 echo $con2->fetch_array()[1];
             ?><br>
             <a href="curso.php"> acessar curso</a>
         </div>
-        <div style="margin-left:10vh;">
+        <div class="cursoTela" style="margin-left:10vh;">
             <img style="width:10vw; height: 20vh;" src="img/classes/porteiro.jpg"><br>
+            <?php
+                echo $con2->fetch_array()[1];
+            ?><br>
+            <a href="curso.php"> acessar curso</a>
+        </div>
+        <div class="cursoTela" style="margin-left:10vh;">
+            <img style="width:10vw; height: 20vh;" src="img/classes/NR20.jpg"><br>
+            <?php
+                echo $con2->fetch_array()[1];
+            ?><br>
+            <a href="curso.php"> acessar curso</a>
+        </div>
+        <div class="cursoTela" style="margin-left:10vh;">
+            <img style="width:10vw; height: 20vh;" src="img/classes/primeiros_socorros.jpeg"><br>
             <?php
                 echo $con2->fetch_array()[1];
             ?><br>
