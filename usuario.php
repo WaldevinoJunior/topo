@@ -9,6 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
+    <script type="text/javascript">
+            function cadastro(){
+                document.alert("oi");
+            
+        }
+        </script>
 </head>
 <!-- CORPO DA PAGINA USUARIO -->
 <body class="usuario">
@@ -18,7 +24,7 @@
     </nav>
     <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
     <div class="usuarioDiv">
-        <img src="img/apertomao.jpg">
+        <img id="fotoLogin" src="img/apertomao.jpg">
         <div id="usuarioBot">
         <p style="font-size:30px">
         <?php
@@ -26,15 +32,9 @@
         ?>
         </p>
         <div style="margin-top:10px; spacing: items 10px;">
-        <input type="submit" onclick="cadastro();" value="Alterar Avatar">
+        <button type="button" onclick="cadastro()">Alterar Avatar</button>
         <a href="login.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
-        
-        <script>
-            function cadastro(){
-            
-        }
-        </script>
         </div>
         </div>
     </div>

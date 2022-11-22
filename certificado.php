@@ -1,12 +1,10 @@
 <?php
         require __DIR__.'/vendor/autoload.php';
-
         use Dompdf\Dompdf;
         use Dompdf\Options;
-
         //Instanciação do objeto options
         $options = new Options();
-
+        $contador++;
         //Configuração da root para o diretório atual
         $options->setChroot(__DIR__);
 

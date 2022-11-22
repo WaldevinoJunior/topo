@@ -50,7 +50,7 @@ $con = $mysqli->query($consulta) or die($mysqli->error);
 if($mysqli->connect_errno){
     echo "falha na conexao: (".$mysqli->connect_errno.") " .$mysqli->connect_error;
 }
-$c = mysqli_fetch_array($con);
+
 $contador = 0;
 while($c = mysqli_fetch_array($con)){
 	if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
@@ -60,10 +60,9 @@ while($c = mysqli_fetch_array($con)){
 		}	
 	}
 }
-if($contador!=1){
-	echo "oi";
+/*if($contador!=1){
 	header('Location: /topo/login.html');
 }
 else{
-}
+}*/
 ?>
