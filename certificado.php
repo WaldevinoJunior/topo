@@ -4,20 +4,19 @@
         use Dompdf\Options;
         //Instanciação do objeto options
         $options = new Options();
-        $contador++;
         //Configuração da root para o diretório atual
         $options->setChroot(__DIR__);
-
+        $options->setIsRemoteEnabled(true);
         //Instanciação do objeto dompdf
         $dompdf = new Dompdf($options);
 
         //Armazenamento das saídas do arquivo em buffer
-        ob_start();
-        require 'teste.php';
+
 
         //Envio do valor do buffer para a a classe
-        $dompdf->loadHtml(ob_get_clean());
-
+        //$dompdf->loadHtmlFile(__DIR__.'/teste.php');
+        $dompdf->loadHtml('<h1>ola mundo</h1>');
+        $dompdf->loadHtmlFile(__DIR__.'/teste.php');
         //Renderização do arquivo PDF
         $dompdf->render();
 

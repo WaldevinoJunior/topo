@@ -1,0 +1,74 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment https://github.com/PhenX/php-font-lib
+EncodingScheme FontSpecific
+Copyright 
+FontName Flaticon
+FontSubfamily Regular
+UniqueID FontForge 2.0 : Flaticon : 19-2-2019
+FullName Flaticon
+Version Version 001.000 
+PostScriptName Flaticon
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 49
+UnderlinePosition -125
+FontHeightOffset 90
+Ascender 881
+Descender -141
+FontBBox -16 -141 1006 881
+StartCharMetrics 54
+U 32 ; WX 391 ; N space ; G 3
+U 61696 ; WX 1000 ; N 001-mattress ; G 4
+U 61697 ; WX 1000 ; N 002-dumbell ; G 5
+U 61698 ; WX 1000 ; N 003-weight ; G 6
+U 61699 ; WX 1000 ; N 004-measuring-tape ; G 7
+U 61700 ; WX 1000 ; N 005-clipboard ; G 8
+U 61701 ; WX 1000 ; N 006-weight-1 ; G 9
+U 61702 ; WX 1000 ; N 007-rings ; G 10
+U 61703 ; WX 1000 ; N 008-calendar ; G 11
+U 61704 ; WX 1000 ; N 009-smartwatch ; G 12
+U 61705 ; WX 1000 ; N 010-lockers ; G 13
+U 61706 ; WX 1000 ; N 011-punching-ball ; G 14
+U 61707 ; WX 1000 ; N 012-bag ; G 15
+U 61708 ; WX 1000 ; N 013-balance ; G 16
+U 61709 ; WX 1000 ; N 014-heart-beat ; G 17
+U 61710 ; WX 1000 ; N 015-proteins ; G 18
+U 61711 ; WX 1000 ; N 016-fitness ; G 19
+U 61712 ; WX 1000 ; N 017-pull-up-bar ; G 20
+U 61713 ; WX 1000 ; N 018-scale ; G 21
+U 61714 ; WX 1000 ; N 019-bands ; G 22
+U 61715 ; WX 1000 ; N 020-smartphone ; G 23
+U 61716 ; WX 1000 ; N 021-tshirt ; G 24
+U 61717 ; WX 1000 ; N 022-short ; G 25
+U 61718 ; WX 1000 ; N 023-dumbbells ; G 26
+U 61719 ; WX 1000 ; N 024-jumping-rope ; G 27
+U 61720 ; WX 1000 ; N 025-fitness-1 ; G 28
+U 61721 ; WX 1000 ; N 026-gym ; G 29
+U 61722 ; WX 1000 ; N 027-fitness-2 ; G 30
+U 61723 ; WX 1000 ; N 028-weightlifting ; G 31
+U 61724 ; WX 1000 ; N 029-wheel ; G 32
+U 61725 ; WX 1000 ; N 030-dumbbells-1 ; G 33
+U 61726 ; WX 1000 ; N 031-workout ; G 34
+U 61727 ; WX 1000 ; N 032-bottle ; G 35
+U 61728 ; WX 1000 ; N 033-juice ; G 36
+U 61729 ; WX 1000 ; N 034-stationary-bike ; G 37
+U 61730 ; WX 1000 ; N 035-punching-ball-1 ; G 38
+U 61731 ; WX 1000 ; N 036-timer ; G 39
+U 61732 ; WX 1000 ; N 037-medal ; G 40
+U 61733 ; WX 1000 ; N 038-treadmill ; G 41
+U 61734 ; WX 1000 ; N 039-syringe ; G 42
+U 61735 ; WX 1000 ; N 040-whistle ; G 43
+U 61736 ; WX 1000 ; N 041-chest ; G 44
+U 61737 ; WX 1000 ; N 042-pills ; G 45
+U 61738 ; WX 1000 ; N 043-mp3 ; G 46
+U 61739 ; WX 1000 ; N 044-no-smoking ; G 47
+U 61740 ; WX 1000 ; N 045-boxing-gloves ; G 48
+U 61741 ; WX 1000 ; N 046-gloves ; G 49
+U 61742 ; WX 1000 ; N 047-buck ; G 50
+U 61743 ; WX 1000 ; N 048-headgear ; G 51
+U 61744 ; WX 1000 ; N 049-hand-grip ; G 52
+U 61745 ; WX 1000 ; N 050-no-fast-food ; G 53
+EndCharMetrics
+EndFontMetrics
