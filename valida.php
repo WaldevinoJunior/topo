@@ -50,10 +50,13 @@ $con = $mysqli->query($consulta) or die($mysqli->error);
 if($mysqli->connect_errno){
     echo "falha na conexao: (".$mysqli->connect_errno.") " .$mysqli->connect_error;
 }
+
 while($c = mysqli_fetch_array($con)){
 	if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
 		if($_POST['ID_Aluno'] == $c['ID_Aluno'] && $_POST['Senha'] == $c['Senha']){
-			$a = $c['Nome'];
+			session_start();
+			$_SESSION['nome'] = $c['Nome'];
+
 		}	
 	}
 }

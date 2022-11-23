@@ -28,7 +28,11 @@
         <div id="usuarioBot">
         <p style="font-size:30px">
         <?php
-            echo $a;
+            if(!isset($_SESSION)){
+                session_start();
+            }
+            
+            echo $_SESSION['nome'];
         ?>
         </p>
         <div style="margin-top:10px; spacing: items 10px;">
