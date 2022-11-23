@@ -1,26 +1,19 @@
-<?php
-        require __DIR__.'/vendor/autoload.php';
-        use Dompdf\Dompdf;
-        use Dompdf\Options;
-        //Instanciação do objeto options
-        $options = new Options();
-        //Configuração da root para o diretório atual
-        $options->setChroot(__DIR__);
-        $options->setIsRemoteEnabled(true);
-        //Instanciação do objeto dompdf
-        $dompdf = new Dompdf($options);
 
-        //Armazenamento das saídas do arquivo em buffer
+        <?php
 
+        require_once 'vendor/autoload.php'; // carregando o autoload
+        
+        use mikehaertl\wkhtmlto\Pdf; //instanciando a classe de Pdf
+        
+        $binary = 'c:/xampp2/htdocs/topo/wkhtmltopdf/bin/wkhtmltopdf.exe'; //definindo o caminho do binário
+        
+        $pdf = new Pdf(); //definindo qual a URL a ser transformada em PDF
+        $pdf->addPage('https://www.google.com');
+        $pdf->binary = $binary; //setando o binário
+        
+        if (!$pdf->saveAs('google.pdf')) { //salvando como google.pdf e verificando erros
+            $error = $pdf->getError();
+            print($error);
+        }
 
-        //Envio do valor do buffer para a a classe
-        //$dompdf->loadHtmlFile(__DIR__.'/teste.php');
-        $dompdf->loadHtml('<h1>ola mundo</h1>');
-        $dompdf->loadHtmlFile(__DIR__.'/teste.php');
-        //Renderização do arquivo PDF
-        $dompdf->render();
-
-        //Imprime o conteudo do pdf na tela
-        header('Content-type: application/pdf');
-        echo $dompdf->output();
     ?>
