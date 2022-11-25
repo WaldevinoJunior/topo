@@ -181,7 +181,7 @@ body.usuario div.usuarioDiv button{
     font-size: 15px;
     margin-right: 10px;
 }
-section.cursos{
+body.usuario div.cursos{
     margin-left: 50px;
     display: flex;
 }

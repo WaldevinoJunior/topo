@@ -9,12 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
-    <script type="text/javascript">
-            function cadastro(){
-                window.open("oi");
-            
-        }
-        </script>
+    <script src="js/constroi.js"> </script>
 </head>
 <!-- CORPO DA PAGINA USUARIO -->
 <body class="usuario">
@@ -34,7 +29,7 @@
         <a href="login.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
         </div>
-        <div class="modal" style="display:none">
+        <div id="modal" style="display:none">
             <h2>Selecione um Avatar</h2>
             
         </div>
@@ -42,7 +37,7 @@
     <hr>
     <!--CURSOS DO ALUNO -->
     <h1>Seus Cursos</h1><br>        
-    <section class="cursos">  
+    <div class="cursos">  
         <div class="cursoTela" style="margin-left:10vh;">
             <img s src="img/classes/porteiro.jpg"><br>
             <p></p>
@@ -66,8 +61,10 @@
             <a href="curso.php"> acessar curso</a>
         </div>
         
-    </section>
-    
+</div>
+    <script>
+            adcElemento();
+        </script>
     
 </body>
 </html>
