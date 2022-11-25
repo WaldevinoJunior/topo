@@ -10,6 +10,7 @@ body.loginBody{
     background: linear-gradient(151deg, rgba(0,208,255,1) 0%, rgba(0,90,159,1) 100%);
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100vw;
 }
 
 footer{
@@ -89,6 +90,7 @@ footer span{
     color: aliceblue;
 }
 a{
+    text-decoration: none;
     color:orangered;
 }
 a:link {
@@ -102,10 +104,10 @@ a:hover {
    }
    
 
-@media (min-width: 1200px)
+@media (min-width: 1300px)
 {
     body{
-        background: linear-gradient(151deg, rgba(0,208,255,1) 0%, rgba(0,90,159,1) 100%);;
+        background: white;;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -139,18 +141,24 @@ a:hover {
     }
 }
 /* VALIDO PARA O ARQUIVO USUARIO.PHP */
-body.usuario {
-    border: 1px solid white;
+ div.usuarioDiv a{
     border-radius: 10px;
     color: white;
     background-color: rgb(3, 118, 248);
     padding: 5px;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 15px;
+    margin-right: 10px;
 }
 div.usuarioDiv{
-    justify-content: center;
-    align-items: center;
+    margin-left: 10vh;
+    margin-top: -15vh;
+    display: flex;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+div.usuarioDiv div#usuarioId{
+    margin-top:20vh; 
+    padding: 20px;
 }
 body.usuario h1{
     font-family:'Times New Roman', Times, serif;
@@ -159,17 +167,41 @@ body.usuario h1{
     font-size: 30px;
 }
 body.usuario div.usuarioDiv img{
-    border-radius:110px;
-    width:20vw;
+    border-radius:100%;
+    width:18vw;
     margin-left: 10vh;
-    height: 35vh;
+    height: 38vh;
 }
-body.usuario div.usuarioDiv form input[type=submit]{
-    background-color: white;
-    color: blue;
-    height: 100px;
+body.usuario div.usuarioDiv button{
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(3, 118, 248);
+    padding: 5px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-right: 10px;
 }
-
+section.cursos{
+    margin-left: 50px;
+    display: flex;
+}
+.cursoTela{
+    border: 1px solid;
+    height: 221px;
+    width: 220px;
+    box-shadow: 2px 2px 1px #00000050;
+}
+.cursoTela a{
+    margin-left: 50px;
+    font-size: 30px
+}
+.cursoTela img{
+    padding: 15px;
+    margin-left:1px;
+    width:190px; 
+    height: 120px;
+    justify-content: center;
+}
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
     background-color: aqua;

@@ -23,11 +23,10 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Document</title>
-            <link 
         </head>
         <body>
-            <h1 id="oi" style="background-color:blue;">Ola mundo</h1>
-            <img style="margin-top:100px" src="topo.jpg">
+            <h1 id="oi" style="background-color:blue;font-size:50px;margin:50px">Olmundo</h1>
+            <img style="height:100vh"src="topo.jpg">
             <h1>oi</h1>
             <h2>oiiiiii</h2>
             ' .$html2 .'

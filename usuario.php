@@ -20,50 +20,46 @@
 <body class="usuario">
     <!-- CABEÇALHO DA PAGINA -->
     <nav>
-        <img style="width:100vw; height: 20vh;" src="img/logonav.png">
+        <img style="width:100%; height: 30vh;" src="img/logonav.png">
     </nav>
     <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
     <div class="usuarioDiv">
         <img id="fotoLogin" src="img/apertomao.jpg">
-        <p style="font-size:30px"><?php if(!isset($_SESSION)){session_start();}
+        <div id="usuarioId">
+        <p style="font-size:30px;margin-top:-5vh;margin-bottom:2vh"><?php if(!isset($_SESSION)){session_start();}
             echo $_SESSION['nome'];?>
         </p>
-        <div style="margin-top:10px; spacing: items 10px;">
+        
         <button type="button" onclick="cadastro()">Alterar Avatar</button>
         <a href="login.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
         </div>
-        <div class="modal">
+        <div class="modal" style="display:none">
             <h2>Selecione um Avatar</h2>
             
         </div>
     </div>
+    <hr>
     <!--CURSOS DO ALUNO -->
     <h1>Seus Cursos</h1><br>        
     <section class="cursos">  
-        <div class="cursoTela">
-            <img style="width:10vw; height: 20vh;" src="img/classes/Cuidador.jpg"><br>
+        <div class="cursoTela" style="margin-left:10vh;">
+            <img s src="img/classes/porteiro.jpg"><br>
+            <p></p>
             <?php
                 echo $con2->fetch_array()[1];
             ?><br>
             <a href="curso.php"> acessar curso</a>
         </div>
         <div class="cursoTela" style="margin-left:10vh;">
-            <img style="width:10vw; height: 20vh;" src="img/classes/porteiro.jpg"><br>
+            <img  src="img/classes/NR20.jpg"><br>
             <?php
                 echo $con2->fetch_array()[1];
             ?><br>
             <a href="curso.php"> acessar curso</a>
         </div>
         <div class="cursoTela" style="margin-left:10vh;">
-            <img style="width:10vw; height: 20vh;" src="img/classes/NR20.jpg"><br>
-            <?php
-                echo $con2->fetch_array()[1];
-            ?><br>
-            <a href="curso.php"> acessar curso</a>
-        </div>
-        <div class="cursoTela" style="margin-left:10vh;">
-            <img style="width:10vw; height: 20vh;" src="img/classes/primeiros_socorros.jpeg"><br>
+            <img  src="img/classes/primeiros_socorros.jpeg"><br>
             <?php
                 echo $con2->fetch_array()[1];
             ?><br>
