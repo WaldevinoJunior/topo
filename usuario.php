@@ -25,21 +25,13 @@
     <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
     <div class="usuarioDiv">
         <img id="fotoLogin" src="img/apertomao.jpg">
-        <div id="usuarioBot">
-        <p style="font-size:30px">
-        <?php
-            if(!isset($_SESSION)){
-                session_start();
-            }
-            
-            echo $_SESSION['nome'];
-        ?>
+        <p style="font-size:30px"><?php if(!isset($_SESSION)){session_start();}
+            echo $_SESSION['nome'];?>
         </p>
         <div style="margin-top:10px; spacing: items 10px;">
         <button type="button" onclick="cadastro()">Alterar Avatar</button>
         <a href="login.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
-        </div>
         </div>
         <div class="modal">
             <h2>Selecione um Avatar</h2>

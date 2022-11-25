@@ -5,7 +5,7 @@
 }
 /* VALIDO PARA O ARQUIVO LOGIN.HTML */
 
-body{
+body.loginBody{
     color: white;
     background: linear-gradient(151deg, rgba(0,208,255,1) 0%, rgba(0,90,159,1) 100%);
     background-repeat: no-repeat;
@@ -88,20 +88,24 @@ footer span{
     font-size:large;
     color: aliceblue;
 }
+a{
+    color:orangered;
+}
 a:link {
-    color: white;
+    color: #e67e22;
+    font-size: 20px;
    }
    
 a:hover {
 
-    color:#e67e22;
+    color:white;
    }
    
 
 @media (min-width: 1200px)
 {
     body{
-        background: black;
+        background: linear-gradient(151deg, rgba(0,208,255,1) 0%, rgba(0,90,159,1) 100%);;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -135,11 +139,11 @@ a:hover {
     }
 }
 /* VALIDO PARA O ARQUIVO USUARIO.PHP */
-body.usuario a{
-    border: 2px solid white;
+body.usuario {
+    border: 1px solid white;
     border-radius: 10px;
     color: white;
-    background-color: blue;
+    background-color: rgb(3, 118, 248);
     padding: 5px;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 12px;

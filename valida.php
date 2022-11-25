@@ -60,6 +60,7 @@ while($c = mysqli_fetch_array($con)){
 		}	
 	}
 }
+
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }
