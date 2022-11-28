@@ -26,6 +26,7 @@
         </p>
         
         <button type="button" onclick="cadastro()">Alterar Avatar</button>
+        <button type="button" onclick="d()">Alterar Avatar</button>
         <a href="login.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
         </div>

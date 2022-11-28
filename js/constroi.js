@@ -1,4 +1,4 @@
-/*function adcElemento(){
+function adcElemento(){
     b = document.body;
     console.log(b);
     let a = document.createElement("div");
@@ -9,8 +9,11 @@
     c.setAttribute("class", "cursoTela");
     console.log(b);
     a.appendChild(c);
- }*/
+ }
  function cadastro(){
-    console.log(document.getElementById("modal"));
-    document.getElementById("modal").style.display = "flex";
+   document.getElementById("modal").style.display = "flex";
+ }
+ function d(){
+    
+    document.getElementById("modal").style.display = "none";
  }
