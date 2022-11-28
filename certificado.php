@@ -10,9 +10,9 @@
         //Instanciação do objeto dompdf
         $dompdf = new Dompdf($options);
         include("valida.php");
-        $html2 = $con2->fetch_array()[1];
+        $certi = $con2->fetch_array()[1];
         //Armazenamento das saídas do arquivo em buffer
-
+        $data = date('m-d-Y');
         //Envio do valor do buffer para a a classe
         //$dompdf->loadHtmlFile(__DIR__.'/teste.php');
         $dompdf->loadHtml('
@@ -20,18 +20,47 @@
         <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
             <title>Document</title>
+            <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            body{
+                background:url(img/back.jpg);
+                background-size: 820px 1100px;
+                background-repeat: no-repeat;
+            }
+            div{
+                height:1100px;
+                background:url(img/back2.jpg);
+                background-size: 820px 1100px;
+                background-repeat: no-repeat;
+
+            }
+            </style>
         </head>
         <body>
-            <h1 id="oi" style="background-color:blue;font-size:50px;margin:50px">Olmundo</h1>
-            <img style="height:100vh"src="topo.jpg">
-            <h1>oi</h1>
-            <h2>oiiiiii</h2>
-            ' .$html2 .'
-    
-        </body>
+            <img style="margin-left:350px;margin-top:100px;height:200px;width:100px"src="img/topotreinamentos.jpg">
+            <h1 style="color:darkorange;margin-left:130px;font-size:80px">CERTIFICADO</h1>
+            <p style="font-size:30px;margin-left:220px;margin-top:20px;margin-bottom:40px;">Certificamos que o aluno(a)</p>
+            <h1 style="margin-left:250px;margin-bottom:40px;"> <u>'.$certi.'</u></h1>
+            <p style="font-size:30px;margin-left:50px;margin-bottom:20px;">concluiu o treinamento de '.$certi.', ministrado por Topo Treinamentos no perído de '.$data.', com carga horaria de </p>
+            <p style="font-size:30px;margin-left:290px";>______________</p>
+            <p style="font-size:30px;margin-left:340px;margin-bottom:40px;">  Aluno(a)</p>
+            <section style="display:flex">
+            <img style="width:150px;margin-left:200px" src="img/assinatura.jpg">
+            
+            <img style="width:150px;margin-left:90px" src="img/assinatura2.jpg">
+            
+            <p style="margin-left:220px;word-spacing:140px;font-size:30px">Instrutor   Direção</p>
+            </section>
+            <p style="font-size:20px;margin-left:600px;margin-top:90px;color:red;">Cataguases, '.$data.'</p>
+            </body>
+        <div>
+            <img style="width:600px;margin-left:120px;margin-top:30px" src="img/cabeçalho.jpg">
+            </div>
         </html>
      '
             

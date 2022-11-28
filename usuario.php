@@ -39,7 +39,7 @@
     <!--CURSOS DO ALUNO -->
     <h1>Seus Cursos</h1><br>        
     <div class="cursos">  
-        <div class="cursoTela" style="margin-left:10vh;">
+        <div class="cursoTela">
             <img s src="img/classes/porteiro.jpg"><br>
             <p></p>
             <?php
@@ -47,14 +47,14 @@
             ?><br>
             <a href="curso.php"> acessar curso</a>
         </div>
-        <div class="cursoTela" style="margin-left:10vh;">
+        <div class="cursoTela">
             <img  src="img/classes/NR20.jpg"><br>
             <?php
                 echo $con2->fetch_array()[1];
             ?><br>
             <a href="curso.php"> acessar curso</a>
         </div>
-        <div class="cursoTela" style="margin-left:10vh;">
+        <div class="cursoTela">
             <img  src="img/classes/primeiros_socorros.jpeg"><br>
             <?php
                 echo $con2->fetch_array()[1];
