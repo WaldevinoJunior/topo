@@ -29,11 +29,17 @@
     <script>
         function muda(){
         document.getElementById("muda").style.display = "block";
-        console.log(muda);
       }
       function muda2(){
         document.getElementById("muda").style.display = "none";
-        console.log(muda);
+      }
+      function muda3(){
+        document.getElementById("muda").style.display = "none";
+        document.getElementById("muda2").style.display = "block";
+      }
+      function muda4(){
+        document.getElementById("muda2").style.display = "none";
+        document.getElementById("muda").style.display = "block";
       }
     </script>
 </head>
@@ -130,7 +136,7 @@
                             <input class="col-12" type="password" name="Senha"placeholder="Senha" required>
                             <input class="col-12" type="submit" name="submit" id="submit" value="Entrar">
                         </form>
-                            <a href="./esqueci.php">Esqueci minha senha</a>
+                            <a href="javascript:muda3()">Esqueci minha senha</a>
                     </div>
                     
                     <div class="col-12 col-md-8 p-0 mt-2">
@@ -139,6 +145,30 @@
             </div> 
         </div>
         </section>
+    <div id="muda2" style="display:none">
+        <section class="login" style="margin-top: -180px;">
+            <div class="container">
+                <div class="row">
+                    <div class="login-imagem col-12 col-md-4">
+                        <img class="img-fluid" src="./img/Logo.png" alt="Grupo Podium Logomarca">
+                    </div>
+                    <div class="login-div col-12 col-md-4">
+                        <p class="titulo">Digite seu Email</p>
+                        <form method="POST" action="esqueci.php">
+                            <input type="hidden" name="_token" value="PG9KJSXDEDSJsYlSYuH7Q5ZHBKxbyxqcIOrntZba">
+                            <input class="col-12" type="text" name="email" id="email" placeholder="Email" required>
+            
+                            <input class="col-12" type="submit" name="Enviar" id="submit" value="Enviar">
+                        </form>
+                            <a href="javascript:muda4();">Voltar</a>
+                    </div>
+                    
+                    <div class="col-12 col-md-8 p-0 mt-2">
+                    </div>
+                </div>
+            </div> 
+        </section>
+    </div>
     </header>
     <!-- Header End -->
     
