@@ -34,11 +34,15 @@ $total = mysql_num_rows($dados);
 // tira o resultado da busca da memória
 mysql_free_result($dados);
 ?> */
+
+
+//FAZ A CONEXAO COM O BANCO DE DADOS PODIUM
 $host = "localhost";
 $user = "root";
 $pass = "";
 $db = "podium";
 $mysqli = new mysqli($host, $user, $pass, $db);
+//SELECIONA AS TABELAS ALUNOS E CURSOS
 $consulta = "SELECT * FROM alunos";
 $consulta2 = "SELECT * FROM cursos";
 $con2 = $mysqli->query($consulta2) or die($mysqli->error);
@@ -46,13 +50,19 @@ $con = $mysqli->query($consulta) or die($mysqli->error);
 if($mysqli->connect_errno){
     echo "falha na conexao: (".$mysqli->connect_errno.") " .$mysqli->connect_error;
 }
-if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
-	if($_POST['ID_Aluno'] == $con->fetch_array()[0] && $_POST['Senha'] == $con->fetch_array()[14]){
-		echo "oiiiiii";
-		echo $_POST['ID_Aluno'];
-	}
-	else{
-		echo "login errado";
+while($c = mysqli_fetch_array($con)){
+	if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
+		if($_POST['ID_Aluno'] == $c['ID_Aluno'] && $_POST['Senha'] == $c['Senha']){
+			session_start();
+			$_SESSION['nome'] = $c['Nome'];
+			$_SESSION['ID_Aluno'] = $_POST['ID_Aluno'];
+		}	
 	}
 }
+
+/*if($contador!=1){
+	header('Location: /topo/login.html');
+}
+else{
+}*/
 ?>

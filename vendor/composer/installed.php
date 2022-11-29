@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'certificado/pdf',
+        'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd7cd4e5c1c1da63ed5a28de1f79ef0eddf287df1',
+        'reference' => 'de9a25a0374109169f803fdefa26cb422f82eb55',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'certificado/pdf' => array(
+        '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd7cd4e5c1c1da63ed5a28de1f79ef0eddf287df1',
+            'reference' => 'de9a25a0374109169f803fdefa26cb422f82eb55',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

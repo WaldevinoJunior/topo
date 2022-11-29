@@ -4,117 +4,205 @@
     margin:0;
 }
 /* VALIDO PARA O ARQUIVO LOGIN.HTML */
-section.loginSection{
-    
+
+body.loginBody{
+    color: white;
+    background: linear-gradient(151deg, rgba(0,208,255,1) 0%, rgba(0,90,159,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    font-weight: normal;
+    font-size: 10pt;
+}
+
+footer span{
+    opacity: .5;
+}
+
+.login{
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.login-imagem{
     display: flex;
     align-items: center;
-    /*background-image: url(/topo/img/apertomao.jpg);*/
-    width: 700px;
-    margin-left: 45vh;
-    
+    justify-content: center;
 }
-div#loginLogo{
-    background-image: url(/topo/img/apertomao.jpg);
-    width: 300px;
-    height: 300px;
-}
-#logoimg{
-    margin-top: 10px;
-    margin-left: 50px;
-    
-}
-div#loginLogin{
-    height: 300px;
-    width: 400px;
-    background-color: rgb(111, 155, 238);
-}
-form{
-    font-family: Arial, Helvetica, sans-serif;
-}
-form div{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-left: 40px;
-}
-label{
-    margin-left: 80px;
-    color: white;
-    font-size: 20px;
 
+.row{
+    display: flex;
+    justify-content: center;
 }
-form input{
+
+.login-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-div p{
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.login-div form input{
+    margin: 10px 0px;
+    border-radius: 100px;
     border: 2px solid white;
-    border-radius: 20px;
-    width: 300px;
     height: 40px;
-    background: none;
-}
-form input[placeholder]{
     color: white;
-    font-size: 15px;
+    background-color: transparent;
+    outline: none;
 }
-form input[type=submit]{
-    background-color: white;
-    color: blue;
-    height: 100px;
-}
-form input[type=submit]:hover{
-    background-color: orangered;
-    transition-duration: 0.8s;
-    animation-duration: 3s;
+
+.login-div form input::placeholder{
     color: white;
 }
-body div#loginLogin a{
+
+.login-div form input[type='submit']{
+    margin-top: 20px;
     background-color: white;
-    color: blue;
-    height: 100px;
-    margin-left: 10vh;
-    border: 2px solid white;
-    border-radius: 20px;
+    color: #005ca1;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.login div form input[type='submit']:hover{
+    background-color: #e67e22;
+    border-color: #e67e22;
+    color: white;
+}
+.titulo{
+    font-size:large;
+    color: aliceblue;
+}
+a{
+    text-decoration: none;
+    color:orangered;
+}
+a:link {
+    color: #e67e22;
+    font-size: 20px;
+   }
+   
+a:hover {
+
+    color:white;
+   }
+   
+
+@media (min-width: 1300px)
+{
+    body{
+        background: white;;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .login-imagem{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../img/apertomao.jpg);
+        background-position: center;
+        min-height: 350px;
+        box-shadow: 2px 2px 5px #00000050;
+    }
+
+    .login{
+        background-color: transparent;
+    }
+
+    .login-div{
+        background: linear-gradient(151deg, #009fd7, rgba(0,90,159,1) 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 0px 50px;
+        box-shadow: 2px 2px 5px #00000050;
+    }
+
+    footer{
+        color: white;
+        background-color: rgba(30,30,30,.5);
+        padding: 10px;
+    }
 }
 /* VALIDO PARA O ARQUIVO USUARIO.PHP */
-body.usuario a{
-    border: 2px solid white;
+ div.usuarioDiv a{
     border-radius: 10px;
     color: white;
-    background-color: blue;
+    background-color: rgb(3, 118, 248);
     padding: 5px;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 15px;
+    margin-right: 10px;
 }
 div.usuarioDiv{
+    margin-left: 10vh;
+    margin-top: -15vh;
     display: flex;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+div.usuarioDiv div#usuarioId{
+    margin-top:20vh; 
+    padding: 20px;
 }
 body.usuario h1{
     font-family:'Times New Roman', Times, serif;
     margin-top: 5vh;
-    margin-left: 10vh;
-    font-size: 25px;
+    margin-left: 15vh;
+    font-size: 30px;
 }
 body.usuario div.usuarioDiv img{
-    border-radius:110px;
+    border-radius:100%;
     width:18vw;
     margin-left: 10vh;
-    height: 32vh;
+    height: 38vh;
 }
-body.usuario  div#usuarioBot{
-    margin-top: 20vh;
-    margin-left: 5vh;
+body.usuario div.usuarioDiv button{
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(3, 118, 248);
+    padding: 5px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-right: 10px;
 }
-body.usuario div.usuarioDiv form input[type=submit]{
-    background-color: white;
-    color: blue;
-    height: 100px;
-}
-body.usuario section.cursos{
-    width: 500px;
-    height: 200px;
-    font-size: 30px;
-    margin-left: 10vh;
-    border: 2px solid blue;
+body.usuario div.cursos{
+    margin-left: 50px;
     display: flex;
+}
+.cursoTela{
+    border: 1px solid;
+    height: 221px;
+    width: 220px;
+    box-shadow: 2px 2px 1px #00000050;
+    margin-left:10vh;
 
+}
+.cursoTela a{
+    margin-left: 50px;
+    font-size: 30px
+}
+.cursoTela img{
+    padding: 15px;
+    margin-left:1px;
+    width:190px; 
+    height: 120px;
+    justify-content: center;
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{

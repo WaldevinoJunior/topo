@@ -1,3 +1,21 @@
+<?php
+    include("valida.php");
+    if(isset($_POST['Enviar'])){
+        $email = $mysqli->escape_string($_POST['email']);
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $error[] = "Email errado";
+            echo $error;
+        }
+        if(count($error) == 0){
+        $novasenha = substr(md5(time()) ,0,6);
+        $novasenhacrip = md5(md5($novasenha));
+        if( mail($email, "Sua Nova Senha", "Sua Nova senha é:" .$novasenha)){
+            $sql_code = "UPDATE alunos SET Senha = '$novasenhacrip' WHERE Email = '$email' ";
+            $sql_query = $mysqli->query($sqli_code) or die($mysqli->error);
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -30,7 +48,7 @@
     
 </head>
 
-<body class="loginBody">
+<body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -111,15 +129,14 @@
                     <img class="img-fluid" src="./img/Logo.png" alt="Grupo Podium Logomarca">
                 </div>
                 <div class="login-div col-12 col-md-4">
-                    <p class="titulo">Entre com seu cadastro</p>
-                    <form method="post" action="usuario.php">
-                         
-                        <input class="col-12" type="text" name="ID_Aluno"  placeholder="Usuário" required>
-                        <input class="col-12" type="password" name="Senha"placeholder="Senha" required>
-                        <input class="col-12" type="submit" name="submit" id="submit" value="Entrar">
+                    <p class="titulo">Digite seu Email</p>
+                    <form method="POST" action="esqueci.php">
+                        <input type="hidden" name="_token" value="PG9KJSXDEDSJsYlSYuH7Q5ZHBKxbyxqcIOrntZba">
+                        <input class="col-12" type="text" name="email" id="email" placeholder="Email" required>
+        
+                        <input class="col-12" type="submit" name="Enviar" id="submit" value="Enviar">
                     </form>
-                        <a href="./esqueci.php">Esqueci minha senha</a>
-                        <a href="./index.html">Voltar</a>
+                        <a href="./login.html">Voltar</a>
                 </div>
                 
                 <div class="col-12 col-md-8 p-0 mt-2">

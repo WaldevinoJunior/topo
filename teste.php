@@ -9,7 +9,8 @@
     </head>
     <body class="teste">
         <section class="testesection">
-        <h1>CERTIFICADO</h1>
+        <img style="height:200px;width:120px;margin:15vh;" src="/topo/img/Logomarca Topo Treinamentos.png">
+        <h1 style="margin-top:10vh">CERTIdgsdgdsgdFICADO</h1>
         <br>
         <h2 id="oi">Aluno</h2>
         </section>
