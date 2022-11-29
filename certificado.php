@@ -43,7 +43,7 @@
             </style>
         </head>
         <body>
-            <img style="margin-left:350px;margin-top:100px;height:200px;width:100px"src="img/topotreinamentos.jpg">
+            <img style="margin-left:350px;margin-top:90px;height:200px;width:100px"src="img/logo_topo.png">
             <h1 style="color:darkorange;margin-left:130px;font-size:80px">CERTIFICADO</h1>
             <p style="font-size:30px;margin-left:220px;margin-top:20px;margin-bottom:40px;">Certificamos que o aluno(a)</p>
             <p style="text-align:center;font-size:30px;"> <u>'.$certi.'</u></p>
