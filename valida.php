@@ -59,7 +59,25 @@ while($c = mysqli_fetch_array($con)){
 		}	
 	}
 }
+<<<<<<< HEAD
 
+=======
+if(isset($_POST['Enviar'])){
+	$email = $mysqli->escape_string($_POST['email']);
+	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+		$error[] = "Email errado";
+		echo $error;
+	}
+	if(count($error) == 0){
+	$novasenha = substr(md5(time()) ,0,6);
+	$novasenhacrip = md5(md5($novasenha));
+	if( mail($email, "Sua Nova Senha", "Sua Nova senha é:" .$novasenha)){
+		$sql_code = "UPDATE alunos SET Senha = '$novasenhacrip' WHERE Email = '$email' ";
+		$sql_query = $mysqli->query($sqli_code) or die($mysqli->error);
+		}
+	}
+}
+>>>>>>> e93416fe6ad831a4e5687ca34d41ca1d06522be3
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }
