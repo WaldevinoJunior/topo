@@ -59,6 +59,9 @@ while($c = mysqli_fetch_array($con)){
 		}	
 	}
 }
+
+
+
 if(isset($_POST['Enviar'])){
 	$email = $mysqli->escape_string($_POST['email']);
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -74,6 +77,7 @@ if(isset($_POST['Enviar'])){
 		}
 	}
 }
+
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }

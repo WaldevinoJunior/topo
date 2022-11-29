@@ -41,20 +41,10 @@
       function muda4(){
         document.getElementById("muda2").style.display = "none";
         document.getElementById("muda").style.display = "block";
+
       }
     </script>
 
-    <script type="text/javascript">
-        function validaCampo(){
-
-            if(document.contato.nome.value==""||document.contato.email.value==""||document.contato.whats.value==""||document.contato.assunto.value==""){
-                alert("É obrigatório o preenchimento de todos os campos!");
-                return false;
-            }
-
-        }
-
-    </script>
 </head>
 
 <body>
@@ -110,7 +100,7 @@
                             <li><a href="./about-us.html">A Empresa</a></li>
                             <li><a href="./services.html">Cursos</a></li>
                           <!--  <li><a href="https://podiumcursos.ouromoderno.com.br/">Loja Virtual</a></li> -->
-                            <li><a href="javascript:muda();">Login</li>
+                            <li><a href="javascript:muda();">Login</a></li>
                             <li class="active"><a href="./contact.html">Contato</a></li>
                         </ul>
                     </nav>
@@ -149,7 +139,7 @@
                             <input class="col-12" type="password" name="Senha"placeholder="Senha" required>
                             <input class="col-12" type="submit" name="submit" id="submit" value="Entrar">
                             </form>
-                                <a href="javascript:muda3();">Esqueci minha senha</a>
+                            <a href="javascript:muda3();">Esqueci minha senha</a>
                         </div>
                         
                         <div class="col-12 col-md-8 p-0 mt-2">

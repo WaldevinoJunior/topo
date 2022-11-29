@@ -36,18 +36,30 @@
             div{
                 height:1100px;
                 background:url(img/back2.jpg);
+<<<<<<< HEAD
+                background-size: 820px 1000px;
+=======
                 background-size: 820px 1100px;
+>>>>>>> e93416fe6ad831a4e5687ca34d41ca1d06522be3
                 background-repeat: no-repeat;
 
             }
             </style>
         </head>
         <body>
+<<<<<<< HEAD
+            <img style="margin-left:350px;margin-top:100px;height:200px;width:100px"src="img/logo_topo.png">
+            <h1 style="color:darkorange;margin-left:130px;font-size:80px">CERTIFICADO</h1>
+            <p style="font-size:30px;margin-left:220px;margin-top:20px;margin-bottom:40px;">Certificamos que o aluno(a)</p>
+            <p style="text-align:center;font-size:30px;"> <u>'.$certi.'</u></p><br>
+            <p style="font-size:30px;margin-left:50px;margin-bottom:40px;">concluiu o treinamento de '.$certi.', ministrado por Topo Treinamentos no perído de '.$data.' a , com carga horaria<br> de    horas.</p>
+=======
             <img style="margin-left:350px;margin-top:100px;height:200px;width:100px"src="img/topotreinamentos.jpg">
             <h1 style="color:darkorange;margin-left:130px;font-size:80px">CERTIFICADO</h1>
             <p style="font-size:30px;margin-left:220px;margin-top:20px;margin-bottom:40px;">Certificamos que o aluno(a)</p>
             <h1 style="margin-left:300px;margin-bottom:40px;"> <u>'.$certi.'</u></h1>
             <p style="font-size:30px;margin-left:50px;margin-bottom:40px;">concluiu o treinamento de '.$certi.', ministrado por Topo Treinamentos no perído de '.$data.', com carga horaria de </p>
+>>>>>>> e93416fe6ad831a4e5687ca34d41ca1d06522be3
             <p style="font-size:30px;margin-left:290px";>______________</p>
             <p style="font-size:30px;margin-left:340px;margin-bottom:40px;">  Aluno(a)</p>
             <section style="display:flex">
@@ -55,6 +67,7 @@
             
             <img style="width:150px;margin-left:90px" src="img/assinatura2.jpg">
             
+            <p style="margin-left:220px;word-spacing:140px;font-size:30px">Instrutor      Direção</p>
             <p style="margin-left:220px;word-spacing:140px;font-size:30px">Instrutor   Direção</p>
             </section>
             <p style="font-size:20px;margin-left:600px;margin-top:90px;color:red;">Cataguases, '.$data.'</p>
