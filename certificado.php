@@ -67,11 +67,8 @@
             
             <img style="width:150px;margin-left:90px" src="img/assinatura2.jpg">
             
-<<<<<<< HEAD
             <p style="margin-left:220px;word-spacing:140px;font-size:30px">Instrutor      Direção</p>
-=======
             <p style="margin-left:220px;word-spacing:140px;font-size:30px">Instrutor   Direção</p>
->>>>>>> e93416fe6ad831a4e5687ca34d41ca1d06522be3
             </section>
             <p style="font-size:20px;margin-left:600px;margin-top:90px;color:red;">Cataguases, '.$data.'</p>
             </body>
