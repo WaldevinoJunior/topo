@@ -10,7 +10,8 @@
         //Instanciação do objeto dompdf
         $dompdf = new Dompdf($options);
         include("valida.php");
-        $certi = $con2->fetch_array()[1];
+        session_start();
+        $certi = $_SESSION['nome'];
         //Armazenamento das saídas do arquivo em buffer
         $data = date('m-d-Y');
         //Envio do valor do buffer para a a classe
@@ -45,8 +46,8 @@
             <img style="margin-left:350px;margin-top:100px;height:200px;width:100px"src="img/topotreinamentos.jpg">
             <h1 style="color:darkorange;margin-left:130px;font-size:80px">CERTIFICADO</h1>
             <p style="font-size:30px;margin-left:220px;margin-top:20px;margin-bottom:40px;">Certificamos que o aluno(a)</p>
-            <h1 style="margin-left:250px;margin-bottom:40px;"> <u>'.$certi.'</u></h1>
-            <p style="font-size:30px;margin-left:50px;margin-bottom:20px;">concluiu o treinamento de '.$certi.', ministrado por Topo Treinamentos no perído de '.$data.', com carga horaria de </p>
+            <h1 style="margin-left:300px;margin-bottom:40px;"> <u>'.$certi.'</u></h1>
+            <p style="font-size:30px;margin-left:50px;margin-bottom:40px;">concluiu o treinamento de '.$certi.', ministrado por Topo Treinamentos no perído de '.$data.', com carga horaria de </p>
             <p style="font-size:30px;margin-left:290px";>______________</p>
             <p style="font-size:30px;margin-left:340px;margin-bottom:40px;">  Aluno(a)</p>
             <section style="display:flex">
@@ -60,6 +61,7 @@
             </body>
         <div>
             <img style="width:600px;margin-left:120px;margin-top:30px" src="img/cabeçalho.jpg">
+            <img style="width:100px;height:100px;margin-left:30px"src="img/assinatura3.jpg">
             </div>
         </html>
      '

@@ -22,12 +22,13 @@
         <img id="fotoLogin" src="img/apertomao.jpg">
         <div id="usuarioId">
         <p style="font-size:30px;margin-top:-5vh;margin-bottom:2vh"><?php if(!isset($_SESSION)){session_start();}
-            echo $_SESSION['nome'];?>
+            echo $_SESSION['nome'];
+            ?>
         </p>
         
         <button type="button" onclick="cadastro()">Alterar Avatar</button>
         <button type="button" onclick="d()">Alterar Avatar</button>
-        <a href="login.html">SAIR</a>
+        <a href="index.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
         </div>
         <div id="modal" style="display:none">
@@ -37,7 +38,18 @@
     </div>
     <hr>
     <!--CURSOS DO ALUNO -->
-    <h1>Seus Cursos</h1><br>        
+    <h1>Seus Cursos</h1><br> 
+    <?php
+        $consulta = "SELECT * FROM cursos";
+        $consulta2 = "SELECT * FROM alunos_pacotes";
+        $con = $mysqli->query($consulta) or die($mysqli->error);
+        $con2 = $mysqli->query($consulta2) or die($mysqli->error);
+         while($c2 = mysqli_fetch_array($con2)){
+            if($c2['ID_Aluno'] ==  $_SESSION['ID_Aluno']){
+                echo $c2['ID_Pacote'];
+            }
+         }
+    ?>       
     <div class="cursos">  
         <div class="cursoTela">
             <img s src="img/classes/porteiro.jpg"><br>
