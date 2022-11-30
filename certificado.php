@@ -13,7 +13,8 @@
         session_start();
         $certi = $_SESSION['nome'];
         //Armazenamento das saídas do arquivo em buffer
-        $data = date('m-d-Y');
+        date_default_timezone_set('America/Sao_Paulo');
+        $data = date('Y-m-d');
         //Envio do valor do buffer para a a classe
         //$dompdf->loadHtmlFile(__DIR__.'/teste.php');
         $dompdf->loadHtml('
@@ -62,6 +63,7 @@
         <div>
             <img style="width:600px;margin-left:120px;margin-top:30px" src="img/cabeçalho.jpg">
             <img style="width:100px;height:100px;margin-left:30px"src="img/assinatura3.jpg">
+            <a href="www.topotreinamentos.com.br">www.topotreinamentos.com.br</a>
             </div>
         </html>
      '
