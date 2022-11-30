@@ -1,15 +1,15 @@
 function adcElemento(){
     b = document.body;
     console.log(b);
-    let a = document.createElement("div");
-    a.setAttribute("class", "cursos");
+    let a = document.getElementById("cursos");
     console.log(a);
-    b.appendChild(a);
     let c = document.createElement("div");
     c.setAttribute("class", "cursoTela");
-    console.log(b);
     a.appendChild(c);
- }
+    document.getElementById("oi").style.display = "block";
+    c.appendChild(document.getElementById("oi"));
+}
+    
  function cadastro(){
    document.getElementById("modal").style.display = "flex";
  }
