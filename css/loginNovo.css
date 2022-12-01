@@ -194,14 +194,22 @@ body.usuario div#cursos{
     border: 1px solid;
     height: 221px;
     width: 220px;
-    box-shadow: 2px 2px 1px #00000050;
+    box-shadow: 2px 2px 1px orangered;
     margin-left:10vh;
     margin-bottom: 10vh;
     border-radius: 10px;
 }
 .cursoTela a{
-    margin-left: 50px;
-    font-size: 30px
+    font-size: 30px;
+    justify-content: center;
+    padding:10px;
+    background-color: green;
+    border-radius: 10px;
+    color:white;
+}
+.cursoTela a:hover{
+    opacity: 0.8;
+    cursor:pointer;
 }
 .cursoTela img{
     padding: 15px;
