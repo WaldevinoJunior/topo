@@ -44,26 +44,24 @@
             </style>
         </head>
         <body>
-            <img style="margin-left:350px;margin-top:100px;height:200px;width:100px"src="img/logo_topo.png">
-            <h1 style="color:darkorange;margin-left:130px;font-size:80px">CERTIFICADO</h1>
-            <p style="font-size:30px;margin-left:220px;margin-top:20px;margin-bottom:40px;">Certificamos que o aluno(a)</p>
+        
+            <p style="font-size:30px;margin-left:220px;margin-top:400px;margin-bottom:40px;">Certificamos que o aluno(a)</p>
             <p style="text-align:center;font-size:30px"> <u>'.$certi.'</u></p><br>
-            <p style="font-size:30px;margin-left:50px;margin-bottom:40px;">concluiu o treinamento de '.$certi.', ministrado por Topo Treinamentos no perído de '.$data.', com carga horaria de </p>
-            <p style="font-size:30px;margin-left:290px";>______________</p>
-            <p style="font-size:30px;margin-left:340px;margin-bottom:40px;">  Aluno(a)</p>
+            <p style="font-size:30px;margin-left:50px;margin-bottom:40px;">concluiu o treinamento de '.$certi.', ministrado por Topo Treinamentos no perído de '.$data.' a '.$data.', com carga horaria de '.$data.' horas.</p>
             <section style="display:flex">
-            <img style="width:150px;margin-left:200px" src="img/assinatura.jpg">
-            
-            <img style="width:150px;margin-left:90px" src="img/assinatura2.jpg">
-            
-            <p style="margin-left:220px;word-spacing:140px;font-size:30px">Instrutor   Direção</p>
+                    
             </section>
-            <p style="font-size:20px;margin-left:600px;margin-top:90px;color:red;">Cataguases, '.$data.'</p>
+            <p style="font-size:20px;margin-left:600px;margin-top:280px;">Cataguases, '.$data.'</p>
             </body>
         <div>
+            
+            <p  style="text-align:justify;font-size:20px;margin-left:50px;margin-right:50px;margin-bottom:40px;margin-top:150px;">Normas e regulamentos aplicáveis ao trabalho em altura; - Análise e risco e condições impeditivas; - Riscos potenciais inerentes ao trabalho em altura e medidas de prevenção e controle; - Sistemas, equipamentos e procedimentos de proteção coletiva; - Equipamentos de proteção individual para trabalho em altura: seleção, inspeção, conservação e limitação de uso; - Acidentes típicos em trabalhos em altura; - Condutas em situações de emergência, noções de técnicas de resgate e de primeiros socorros - Apresentação de EPI´s; Kit Resgate; - Utilização de fita EUREKA e Agulhão; - Fator de Queda e Técnicas de Resgate de Acidentados; IT 010-2018 Instalar e retirar linha de vida R1; IT 011-2018 Posicionar e amarrar escadas; IT 018-2018 Instalar conjunto de içamento; IT 113-2019 Realizar resgate de acidentado em estrutura R1; IT 338-2019 Ancorar escada de serviço e UCs com fachadas tipo marquise R1; IT 271-2018 Instalar degraus de fibra em estruturas V2.<br><br>Código de rastreio: '.$data.'</p>
+            
+
             <img style="width:600px;margin-left:120px;margin-top:30px" src="img/cabeçalho.jpg">
             <img style="width:100px;height:100px;margin-left:30px"src="img/assinatura3.jpg">
             <a href="www.topotreinamentos.com.br">www.topotreinamentos.com.br</a>
+
             </div>
         </html>
      '
