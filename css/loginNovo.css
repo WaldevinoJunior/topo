@@ -181,9 +181,9 @@ body.usuario div.usuarioDiv button{
     font-size: 15px;
     margin-right: 10px;
 }
-body.usuario div.cursos{
-    margin-left: 50px;
-    display: flex;
+body.usuario div#cursos{
+   display:inline-flex;
+    
 }
 .cursoTela{
     border: 1px solid;

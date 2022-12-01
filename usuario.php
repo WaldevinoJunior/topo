@@ -39,45 +39,30 @@
     <hr>
     <!--CURSOS DO ALUNO -->
     <h1>Seus Cursos</h1><br> 
+    
+   <div id="cursos">
     <?php
         $consulta = "SELECT * FROM cursos";
-        $consulta2 = "SELECT * FROM alunos_pacotes";
+        $consulta2 = "SELECT * FROM aluno_curso_progressos";
         $con = $mysqli->query($consulta) or die($mysqli->error);
         $con2 = $mysqli->query($consulta2) or die($mysqli->error);
-         while($c2 = mysqli_fetch_array($con2)){
+        $i = 0;
+        while($c2 = mysqli_fetch_array($con2)){
             if($c2['ID_Aluno'] ==  $_SESSION['ID_Aluno']){
-                echo $c2['ID_Pacote'];
-            }
+                while($c = mysqli_fetch_array($con)){ 
+                    if($c['ID_Curso'] == $c2['ID_Curso']){
+                        echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."</div>";
+                        $i++;
+                        break;
+                    }
+                } 
+            } 
          }
-    ?>       
-    <div class="cursos">  
-        <div class="cursoTela">
-            <img s src="img/classes/porteiro.jpg"><br>
-            <p></p>
-            <?php
-                echo $con2->fetch_array()[1];
-            ?><br>
-            <a href="curso.php"> acessar curso</a>
-        </div>
-        <div class="cursoTela">
-            <img  src="img/classes/NR20.jpg"><br>
-            <?php
-                echo $con2->fetch_array()[1];
-            ?><br>
-            <a href="curso.php"> acessar curso</a>
-        </div>
-        <div class="cursoTela">
-            <img  src="img/classes/primeiros_socorros.jpeg"><br>
-            <?php
-                echo $con2->fetch_array()[1];
-            ?><br>
-            <a href="curso.php"> acessar curso</a>
-        </div>
-        
-</div>
-    <script>
-            adcElemento();
-        </script>
-    
+         while($i>0){
+            echo "<script>adcElemento()</script>";
+            $i--;
+         }
+    ?>      
+    </div>
 </body>
 </html>
