@@ -51,7 +51,7 @@
             if($c2['ID_Aluno'] ==  $_SESSION['ID_Aluno']){
                 while($c = mysqli_fetch_array($con)){ 
                     if($c['ID_Curso'] == $c2['ID_Curso']){
-                        echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."</div>";
+                        echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='img/apertomao.jpg'>"."</div>";
                         $i++;
                         break;
                     }
