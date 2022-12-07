@@ -45,8 +45,10 @@ $mysqli = new mysqli($host, $user, $pass, $db);
 //SELECIONA AS TABELAS ALUNOS E CURSOS
 $consulta = "SELECT * FROM alunos";
 $consulta2 = "SELECT * FROM cursos";
-$con2 = $mysqli->query($consulta2) or die($mysqli->error);
+$consulta3 = "SELECT * FROM colaboradores";
 $con = $mysqli->query($consulta) or die($mysqli->error);
+$con2 = $mysqli->query($consulta2) or die($mysqli->error);
+$con3 = $mysqli->query($consulta3) or die($mysqli->error);
 if($mysqli->connect_errno){
     echo "falha na conexao: (".$mysqli->connect_errno.") " .$mysqli->connect_error;
 }
@@ -56,6 +58,16 @@ while($c = mysqli_fetch_array($con)){
 			session_start();
 			$_SESSION['nome'] = $c['Nome'];
 			$_SESSION['ID_Aluno'] = $_POST['ID_Aluno'];
+		}	
+	}
+}
+while($c3 = mysqli_fetch_array($con3)){
+	if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
+		if($_POST['ID_Aluno'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
+			session_start();
+			$_SESSION['nome'] = $c3['Nome'];
+			$_SESSION['ID_Colaborador'] = $_POST['ID_Aluno'];
+			header('Location: /topo/admin.php');
 		}	
 	}
 }

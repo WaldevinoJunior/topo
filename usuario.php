@@ -41,7 +41,8 @@
     <h1>Seus Cursos</h1><br> 
     
    <div id="cursos">
-    <?php
+    <?php 
+        /*
         $consulta = "SELECT * FROM cursos";
         $consulta2 = "SELECT * FROM aluno_curso_progressos";
         $con = $mysqli->query($consulta) or die($mysqli->error);
@@ -63,7 +64,21 @@
             echo "<script>adcElemento()</script>";
             $i--;
          }
-
+         
+        */
+        $oi = $_SESSION['ID_Aluno']; $i =0;
+        $consulta = "SELECT cursos.Nome_curso, cursos.ID_Curso from alunos join aluno_curso_progressos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno join cursos ON cursos.ID_Curso = aluno_curso_progressos.ID_Curso WHERE alunos.ID_Aluno = $oi";
+        $con = $mysqli->query($consulta) or die($mysqli->error);
+        while($c = mysqli_fetch_array($con)){
+            echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='img/apertomao.jpg'>"
+                        ."<a href=".$c['ID_Curso'].".html".">Acessar Curso</a>"."</div>";
+            $i++;
+        }
+        while($i>0){
+            echo "<script>adcElemento()</script>";
+            $i--;
+         }
+         
     ?>      
     </div>
 </body>

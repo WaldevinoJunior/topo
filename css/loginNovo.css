@@ -233,9 +233,15 @@ body.teste{
 .menuAdmin img{
     height: 9vh;
     width: 6vw;
-    margin-left: -5vw;
-    margin-right: 25vw;
+    margin-left: 5vw;
+    margin-right: 15vw;
     margin-top: 9px;
+}
+.menuAdmin a{
+    color: black;
+}
+.menuAdmin a:hover{
+    opacity: 0.8;
 }
 .menuAdmin ul{
     margin-top: 20px;
@@ -243,32 +249,40 @@ body.teste{
     color:rgb(150, 139, 139);
 }
 .menuAdmin li{
-    margin-left: 3vw;
+    margin-left: 1vw;
     font-size: 18px;
     list-style-type: none;
 }
+#barras{
+    display:none;
+    flex-direction: column;
+    position:fixed;
+    background-color: white;
+    border: 1px solid black;
+}
 .admin{
-    
     justify-content: center;
     align-items: center;
-    display: flex;
     height:80vh;
     margin: auto;
     margin-top: 3vh;
     width: 80vw;
     border: 1px solid black;
 }
-.admin h2{
-    margin-top: -20vh;
-    margin-left:30vw;
-}
-#painel{
-    margin-top: -10vh;
+#painel h2{
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   margin-top:20px;
+   border-bottom: 1px solid black;
 }
 #func{
-    margin-top: 15vh;;
+    margin-top: 10vh;;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
 }
-#func a{
-    
-    margin:100px;
+.funcA{
+    padding: 50px;
 }
