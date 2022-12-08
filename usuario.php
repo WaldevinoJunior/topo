@@ -20,27 +20,38 @@
     <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
     <div class="usuarioDiv">
         <img id="fotoLogin" src="img/apertomao.jpg">
+        <div id="modal" style="display:none">
+            <div id="">
+                <h3>Selecione um avatar</h3>
+                <button type="button" onclick="fecha()">Fechar</button>
+                    <form action="valida.php" method="POST" enctype="multipart/form-data">
+		                <label for="imagem">Imagem:</label>
+		                <input type="file" name="imagem"/>
+		                <input type="submit" value="Enviar"/>
+	                </form>
+            </div>
+            
+        </div>
         <div id="usuarioId">
         <p style="font-size:30px;margin-top:-5vh;margin-bottom:2vh"><?php if(!isset($_SESSION)){session_start();}
             echo $_SESSION['nome'];
             ?>
         </p>
         
-        <button type="button" onclick="cadastro()">Alterar Avatar</button>
-        <button type="button" onclick="d()">Alterar Avatar</button>
+        <button type="button" onclick="altera()">Alterar Avatar</button>
         <a href="index.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
         </div>
-        <div id="modal" style="display:none">
-            <h2>Selecione um Avatar</h2>
-            
-        </div>
     </div>
+    
     <hr>
     <!--CURSOS DO ALUNO -->
     <h1>Seus Cursos</h1><br> 
     
    <div id="cursos">
+   <div id="cursoCont">
+        <a href="javascript:volta();">Voltar</a>
+    </div>
     <?php 
         /*
         $consulta = "SELECT * FROM cursos";
@@ -70,8 +81,9 @@
         $consulta = "SELECT cursos.Nome_curso, cursos.ID_Curso from alunos join aluno_curso_progressos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno join cursos ON cursos.ID_Curso = aluno_curso_progressos.ID_Curso WHERE alunos.ID_Aluno = $oi";
         $con = $mysqli->query($consulta) or die($mysqli->error);
         while($c = mysqli_fetch_array($con)){
-            echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='img/apertomao.jpg'>"
-                        ."<a href=javascript:oi".$c['ID_Curso']."();".">Acessar Curso</a>"."</div>";
+            echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
+                        ."<a href=javascript:apaga();".">Acessar Curso</a>"."</div>";
+                        
             $i++;
         }
         while($i>0){

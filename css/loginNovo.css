@@ -201,6 +201,12 @@ body.usuario div.usuarioDiv button{
     font-size: 15px;
     margin-right: 10px;
 }
+body.usuario div#modal{
+    margin-top: 10vh;
+    border: 1px solid black;
+    padding: 100px;
+    display: fixed;
+}
 body.usuario div#cursos{
    width: 100%;
    align-items: center;
@@ -212,7 +218,7 @@ body.usuario div#cursos{
 }
 .cursoTela{
     border: 1px solid;
-    height: 221px;
+    height: 250px;
     width: 220px;
     box-shadow: 2px 2px 1px orangered;
     margin-left:10vh;
@@ -238,6 +244,44 @@ body.usuario div#cursos{
     height: 120px;
     justify-content: center;
 }
+body.usuario div#cursoCont{
+    width: 100%;
+    align-items: center;
+     display: flex;
+     flex-direction:row;
+     flex-wrap: wrap;
+     justify-content: center;
+     
+ }
+ .cursoConteudo{
+     border: 1px solid;
+     height: 230px;
+     width: 220px;
+     box-shadow: 2px 2px 1px orangered;
+     margin-left:10vh;
+     margin-bottom: 10vh;
+     border-radius: 10px;
+ }
+ .cursoConteudo a{
+     font-size: 30px;
+     justify-content: center;
+     padding:10px;
+     background-color: green;
+     border-radius: 10px;
+     color:white;
+ }
+ .cursoConteudo a:hover{
+     opacity: 0.8;
+     cursor:pointer;
+ }
+ .cursoConteudo img{
+     padding: 15px;
+     margin-left:1px;
+     width:190px; 
+     height: 120px;
+     justify-content: center;
+ }
+ 
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
     background-color: aqua;
