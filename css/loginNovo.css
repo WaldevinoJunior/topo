@@ -325,11 +325,12 @@ body.teste{
 .menuAdmin ul li:hover > div#barras{  
    opacity: 1;
    color:white;
+   visibility:visible;
+   display: flex;
 }
 #barras{
-    display: flex;
+    visibility: hidden;
     opacity: 0;
-    overflow: hidden;
     flex-direction: column;
     position: fixed;
     background-color: rgb(16, 16, 161);
