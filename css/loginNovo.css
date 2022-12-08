@@ -324,6 +324,7 @@ body.teste{
 }
 .menuAdmin ul li:hover > div#barras{  
    opacity: 1;
+   color:white;
 }
 #barras{
     display: flex;
@@ -334,7 +335,6 @@ body.teste{
     background-color: rgb(16, 16, 161);
     border: 1px solid black;
     transition: opacity 1s ease;
-    
 }
 .admin{
     justify-content: center;
