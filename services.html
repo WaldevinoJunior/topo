@@ -103,7 +103,7 @@
                 <i class="fa fa-bars"></i>
             </div>
         </div>
-        <div id="muda" style="display:none"> 
+        <div id="muda" style="display:none;height: 95vh; margin-left: -3vh; margin-right: -2vh;"> 
             <section class="login" style="margin-top: -180px;">
                 <div class="container">
                     <div class="row">
@@ -111,7 +111,10 @@
                             <img class="img-fluid" src="./img/Logo.png" alt="Grupo Podium Logomarca">
                         </div>
                         <div class="login-div col-12 col-md-4">
-                            <a href="javascript:muda2();">[X]</a>
+                            <!-- <a href="javascript:muda2();">[X]</a> -->
+                            <button class="close" onclick="muda2();">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                             <p class="titulo">Entre com seu cadastro</p>
                             <form method="post" action="usuario.php">
                                 
