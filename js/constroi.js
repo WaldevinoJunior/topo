@@ -54,3 +54,10 @@ function muda4(){
       element.style.display = "block";
     });
  }
+ $(".col-xs-3.col-md-3 .entre").on("mouseenter", function(){
+  $("#barras").show();
+});
+
+$("div.conteudo_dropdow").on("mouseleave", function(){
+  $("#barras").hide();
+});

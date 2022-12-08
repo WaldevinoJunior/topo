@@ -288,7 +288,7 @@ body.teste{
 }
 /* VALRIDO PARA O ARQUIVO ADMIN.PHP*/
 .menuAdmin{
-    background-color: rgb(38, 38, 177);
+    background-color: rgb(22, 22, 145);
     display: flex;
     height: 12vh;
     justify-content: center;
@@ -296,38 +296,47 @@ body.teste{
 }
 .menuAdmin img{
     height: 9vh;
-    width: 6vw;
+    width: 3vw;
     margin-left: 5vw;
     margin-right: 15vw;
     margin-top: 9px;
 }
 .menuAdmin a{
-    color: black;
+    color: white;
 }
 .menuAdmin a:hover{
     opacity: 0.8;
 }
 .menuAdmin ul{
-    margin-top: 20px;
     display: flex;
-    color:rgb(150, 139, 139);
+    align-items: center;
+    
 }
 .menuAdmin li{
-    margin-left: 1vw;
+    margin-left: 2vw;
     font-size: 18px;
     list-style-type: none;
+
+}
+.menuAdmin li i{
+    margin: 2px;
+
+}
+.menuAdmin ul li:hover > div#barras{
+    display: flex;
 }
 #barras{
     display:none;
     flex-direction: column;
     position:fixed;
-    background-color: white;
+    background-color: blue;
     border: 1px solid black;
+    
 }
 .admin{
     justify-content: center;
     align-items: center;
-    height:80vh;
+    height:auto;
     margin: auto;
     margin-top: 3vh;
     width: 80vw;
@@ -341,11 +350,21 @@ body.teste{
    border-bottom: 1px solid black;
 }
 #func{
-    margin-top: 10vh;;
+    
     justify-content: center;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+}
+#func a{
+    font-size:50px;
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#func i{
+    font-size: 80px;
 }
 .funcA{
     padding: 50px;

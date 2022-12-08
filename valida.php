@@ -41,7 +41,7 @@ $host = "localhost";
 $user = "root";
 $pass = "";
 $db = "podium";
-//$imagem = $_FILES["imagem"];
+$imagem = $_FILES["imagem"];
 $mysqli = new mysqli($host, $user, $pass, $db);
 //SELECIONA AS TABELAS ALUNOS E CURSOS
 $consulta = "SELECT * FROM alunos";
