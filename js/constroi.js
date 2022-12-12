@@ -1,9 +1,6 @@
-function adcElemento(){
-    
+function adcElemento(){ 
     b = document.body;
-    console.log(b);
     let a = document.getElementById("cursos");
-    console.log(a);
     let c = document.createElement("div");
     c.setAttribute("class", "cursoTela");
     a.appendChild(c);
@@ -32,32 +29,34 @@ function muda4(){
  function fecha(){
     document.getElementById("modal").style.display = "none";
  }
+ 
  function apaga(){
-    b = document.body;
-    let a = document.getElementById("cursoCont");
-    let c = document.createElement("div");
+    const a = document.getElementById("cursoCont");
+    const c = document.createElement("div");
     c.setAttribute("class", "cursoConteudo");
     a.appendChild(c);
-    document.getElementById("oi").style.display = "block";
-    c.appendChild(document.getElementById("oi"));
-    console.log(document.querySelectorAll(".cursoTela"));
-    document.querySelectorAll(".cursoTela").forEach(element => {
-      element.style.display = "none";
-    });
+    document.getElementById("oi2").style.display = "block";
+    c.appendChild(document.getElementById("oi2"));
+    let d = document.getElementsByClassName("cursoTela");
+    for (let i = 0; i < d.length; i++) {
+      d[i].style.display = "none";
+    }
     document.getElementById("cursoCont").style.display = "block";
  }
  function volta(){
     document.querySelectorAll(".cursoConteudo").forEach(element => {
       element.remove();
     });
-    document.querySelectorAll(".cursoTela").forEach(element => {
-      element.style.display = "block";
-    });
+    let d = document.getElementsByClassName("cursoTela");
+    for (let i = 0; i < d.length; i++) {
+      d[i].style.display = "block";
+    }
+    document.getElementById("cursoCont").style.display = "none";
  }
- $(".col-xs-3.col-md-3 .entre").on("mouseenter", function(){
+ /*$(".col-xs-3.col-md-3 .entre").on("mouseenter", function(){
   $("#barras").show();
 });
 
 $("div.conteudo_dropdow").on("mouseleave", function(){
   $("#barras").hide();
-});
+});*/

@@ -82,8 +82,9 @@
         $con = $mysqli->query($consulta) or die($mysqli->error);
         while($c = mysqli_fetch_array($con)){
             echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
-                        ."<a href=javascript:apaga();".">Acessar Curso</a>"."</div>";
-                        
+                        ."<a onclick='apaga();'".">Acessar Curso</a>"."</div>";
+                        echo "<div style='text-align:center;display:none' id = 'oi2'>".$c['Nome_curso']."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
+                        ."<a onclick='apaga();'".">Acessar Curso</a>"."</div>";
             $i++;
         }
         while($i>0){
