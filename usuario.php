@@ -17,21 +17,21 @@
     <nav>
         <img style="width:100%; height: 30vh;" src="img/logonav.png">
     </nav>
-    <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
-    <div class="usuarioDiv">
-        <img id="fotoLogin" src="img/apertomao.jpg">
-        <div id="modal" style="display:none">
-            <div id="">
+    <div sytle="display:flex;">
+    <div id="modal">   
+        <button type="button" onclick="fecha()">X</button>
                 <h3>Selecione um avatar</h3>
-                <button type="button" onclick="fecha()">Fechar</button>
+                
                     <form action="valida.php" method="POST" enctype="multipart/form-data">
 		                <label for="imagem">Imagem:</label>
 		                <input type="file" name="imagem"/>
 		                <input type="submit" value="Enviar"/>
 	                </form>
-            </div>
-            
         </div>
+    </div>
+    <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
+    <div class="usuarioDiv">
+        <img id="fotoLogin" src="img/apertomao.jpg">
         <div id="usuarioId">
         <p style="font-size:30px;margin-top:-5vh;margin-bottom:2vh"><?php if(!isset($_SESSION)){session_start();}
             echo $_SESSION['nome'];
