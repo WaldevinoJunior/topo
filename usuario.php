@@ -77,21 +77,32 @@
          }
          
         */
-        $oi = $_SESSION['ID_Aluno']; $i =0;
+        $oi = $_SESSION['ID_Aluno']; $i = 0;
         $consulta = "SELECT cursos.Nome_curso, cursos.ID_Curso from alunos join aluno_curso_progressos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno join cursos ON cursos.ID_Curso = aluno_curso_progressos.ID_Curso WHERE alunos.ID_Aluno = $oi";
         $con = $mysqli->query($consulta) or die($mysqli->error);
+        $i3 = 0;
         while($c = mysqli_fetch_array($con)){
-            echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
-                        ."<a onclick='apaga();'".">Acessar Curso</a>"."</div>";
-                        echo "<div style='text-align:center;display:none' id = 'oi2'>".$c['Nome_curso']."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
-                        ."<a onclick='apaga();'".">Acessar Curso</a>"."</div>";
+            $oi2 = $c['ID_Curso'];
+            $consulta2 = "SELECT cursos.aulas_totais from cursos join aluno_curso_progressos ON aluno_curso_progressos.ID_Curso = cursos.ID_Curso join alunos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno WHERE alunos.ID_Aluno = $oi and cursos.ID_Curso = $oi2";
+            $con2 = $mysqli->query($consulta2) or die($mysqli->error);
+            $aulas = mysqli_fetch_array($con2)[0];
+            echo "<div name='".$c['ID_Curso']."'style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
+                        ."<a onclick='mostraCurso();'>Acessar Curso</a></div>";
+            for($i2 = 0; $aulas > $i2;$i2++){
+                echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
+                ."<a>".$aulas."</a></div>";
+                $i3++;
+            }     
             $i++;
         }
         while($i>0){
             echo "<script>adcElemento()</script>";
             $i--;
-         }
-         
+        }
+        while($i3>0){
+            echo "<script>adcCurso()</script>";
+            $i3--;
+        }
     ?>      
     </div>
 </body>

@@ -1,5 +1,4 @@
 function adcElemento(){ 
-    b = document.body;
     let a = document.getElementById("cursos");
     let c = document.createElement("div");
     c.setAttribute("class", "cursoTela");
@@ -30,28 +29,43 @@ function muda4(){
     document.getElementById("modal").style.display = "none";
  }
  
- function apaga(){
-    const a = document.getElementById("cursoCont");
-    const c = document.createElement("div");
-    c.setAttribute("class", "cursoConteudo");
-    a.appendChild(c);
+ function adcCurso(){
+    let a2 = document.getElementById("cursos")
+    let c2 = document.createElement("div");
+    c2.setAttribute("class", "cursoConteudo");
+    a2.appendChild(c2);
     document.getElementById("oi2").style.display = "block";
-    c.appendChild(document.getElementById("oi2"));
-    let d = document.getElementsByClassName("cursoTela");
-    for (let i = 0; i < d.length; i++) {
-      d[i].style.display = "none";
+    c2.appendChild(document.getElementById("oi2"));
+    document.getElementById("cursoCont").style.display = "none";
+    let e = document.getElementsByClassName("cursoConteudo");
+    for (let i = 0; i < e.length; i++) {
+      e[i].style.display = "none";
     }
-    document.getElementById("cursoCont").style.display = "block";
  }
  function volta(){
-    document.querySelectorAll(".cursoConteudo").forEach(element => {
-      element.remove();
-    });
+    let e = document.getElementsByClassName("cursoConteudo");
+    for (let i = 0; i < e.length; i++) {
+    e[i].style.display = "none";
+    }
     let d = document.getElementsByClassName("cursoTela");
     for (let i = 0; i < d.length; i++) {
       d[i].style.display = "block";
     }
     document.getElementById("cursoCont").style.display = "none";
+ }
+ function mostraCurso(){
+    let d = document.getElementsByClassName("cursoConteudo");
+    for (let i = 0; i < d.length; i++) {
+      /*if(document.getElementById("oi").name == 60){
+         d[i].style.display = "block";
+      }*/
+      d[i].style.display = "block";
+    }
+    let e = document.getElementsByClassName("cursoTela");
+    for (let i = 0; i < e.length; i++) {
+      e[i].style.display = "none";
+    }
+    document.getElementById("cursoCont").style.display = "block";
  }
  /*$(".col-xs-3.col-md-3 .entre").on("mouseenter", function(){
   $("#barras").show();
