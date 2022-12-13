@@ -1,5 +1,10 @@
 <?php
  include("valida.php");
+ if(isset($_FILES['imagem'])){
+	    $arquivopng = addslashes(file_get_contents($_FILES['imagem']['tmp_name']));
+        if(!isset($_SESSION)){session_start();}
+	    $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +26,7 @@
     <div id="modal">   
         <button type="button" onclick="fecha()">X</button>
                 <h3>Selecione um avatar</h3>
-                
-                    <form action="valida.php" method="POST" enctype="multipart/form-data">
+                    <form action="" method="POST" enctype="multipart/form-data">
 		                <label for="imagem">Imagem:</label>
 		                <input type="file" name="imagem"/>
 		                <input type="submit" value="Enviar"/>

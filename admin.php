@@ -23,7 +23,7 @@
     <nav class="menuAdmin">
         <img src="img/iconetopo.jpg">
         <ul>
-            <li><a href="./index.html"><i class="bi bi-house"></i>Início</a></li>
+            <li><a href=""><i class="bi bi-house"></i>Início</a></li>
             <li><a href=""><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i></a>
                     <div id="barras">
                         <a>Cadastrar Alunos</a>
@@ -57,7 +57,7 @@
                         <a>Configurações</a>
                     </div>
             </li>
-            <li><a href=""><i class="bi bi-escape"></i>Sair</a></li>
+            <li><a href="./index.html"><i class="bi bi-escape"></i>Sair</a></li>
         </ul>
     </nav>
         <div class="admin">
