@@ -91,24 +91,24 @@
                             function mostraCurso".$c['ID_Curso']."(){
                             let d = document.getElementsByClassName('cursoConteudo');
                             let u = document.getElementsByName('".$c['ID_Curso']."');
-                            let i2 = 0;
-                            for (let i3 = 0; i3 < d.length; i3++){
-                              let g = u[i2].getAttribute('name');
-                              if(i2<".$aulas." && (g == ".$c['ID_Curso'].")){
-                                  console.log(i2);
-                                  d[i3].style.display = 'block';
-                                  i2++;
-                                }
-                            }
                             let e = document.getElementsByClassName('cursoTela');
                             for (let i = 0; i < e.length; i++) {
                               e[i].style.display = 'none';
                             }
                             document.getElementById('cursoCont').style.display = 'block';
+                            let i2 = 0;
+                            let g = u[i2].getAttribute('name');
+                            for(let i3 = 0; i3 < d.length; i3++){
+                               if(i2<u.length){
+                                    console.log(i2);
+                                     d[i3].style.display = 'block';
+                                     i2++;
+                                }
+                            }
                          }
                         </script>";
-            for($i2 = 0; $aulas > $i2;$i2++){
-                echo "<div style='text-align:center;display:none' id = 'oi2' value='".$c['ID_Curso']."' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
+            for($i2 = 1; $aulas >= $i2;$i2++){
+                echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
                 ."<a>".$aulas."</a></div>";
                 $i3++;
             }     

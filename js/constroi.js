@@ -74,3 +74,9 @@ function muda4(){
 $("div.conteudo_dropdow").on("mouseleave", function(){
   $("#barras").hide();
 });*/
+function mostraAlunos(){
+  let e = document.getElementsByClassName("funcA");;
+    for (let i = 0; i < e.length; i++) {
+      e[i].style.display = "none";
+    }
+}

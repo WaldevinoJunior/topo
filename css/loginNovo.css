@@ -316,12 +316,15 @@ body.teste{
     background-color: aqua;
 }
 /* VALRIDO PARA O ARQUIVO ADMIN.PHP*/
+#adminBody{
+    background-color: #56cfc9ef;
+}
 .menuAdmin{
-    background-color: rgb(22, 22, 145);
+    background-color: rgb(45, 45, 158);
     display: flex;
     height: 12vh;
     justify-content: center;
-    width:100%;
+    width:100vw;
 }
 .menuAdmin img{
     height: 9vh;
@@ -331,7 +334,8 @@ body.teste{
     margin-top: 9px;
 }
 .menuAdmin a{
-    color: white;
+    color: rgb(216, 211, 211);
+    font-size: 1.2vw;
 }
 .menuAdmin a:hover{
     opacity: 0.8;
@@ -353,7 +357,6 @@ body.teste{
 }
 .menuAdmin ul li:hover > div#barras{  
    opacity: 1;
-   color:white;
    visibility:visible;
    display: flex;
 }
@@ -362,9 +365,16 @@ body.teste{
     opacity: 0;
     flex-direction: column;
     position: fixed;
-    background-color: rgb(16, 16, 161);
+    background-color: white;
     border: 1px solid black;
-    transition: opacity 1s ease;
+    transition: opacity 0.5s ease;
+    justify-content: center;
+    padding: 10px;
+}
+#barras a{
+    color:black;
+    display: flex;
+    cursor: pointer;
 }
 .admin{
     justify-content: center;
@@ -374,20 +384,24 @@ body.teste{
     margin-top: 3vh;
     width: 80vw;
     border: 1px solid black;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 #painel h2{
    justify-content: center;
    align-items: center;
    display: flex;
-   margin-top:20px;
    border-bottom: 1px solid black;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   padding:25px;
 }
-#func{
-    margin:auto;  
+#func{   
+    margin: auto;
     justify-content: center;
-    align-items: center;
+    align-items:center;
     display: flex;
     flex-wrap: wrap;
+    border-bottom: 1px solid black;
 }
 #func a{
     font-size:50px;
@@ -395,10 +409,50 @@ body.teste{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
+    animation: modal3 0.5s;
+}
+#func a:hover{
+    animation: modal2 0.5s;
+    transform: translate3d(0,-5px,0);
+}
+@keyframes modal2{
+    from{
+        transform: translate3d(0, 0,0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,-5px,0);
+    }
+}
+@keyframes modal3{
+    from{
+        transform: translate3d(0, -5px,0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
 }
 #func i{
     font-size: 80px;
 }
 .funcA{
     padding: 50px;
+}
+#func2{
+    padding:50px;
+    justify-content: center;
+    align-items:center;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid black;
+}
+.func2A{
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    
 }
