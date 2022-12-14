@@ -71,6 +71,7 @@ while($c3 = mysqli_fetch_array($con3)){
 		}	
 	}
 }
+ 
 
 if(isset($_POST['Enviar'])){
 	$email = $mysqli->escape_string($_POST['email']);

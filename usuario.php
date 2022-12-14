@@ -1,10 +1,12 @@
 <?php
  include("valida.php");
  if(isset($_FILES['imagem'])){
-	    $arquivopng = addslashes(file_get_contents($_FILES['imagem']['tmp_name']));
-        if(!isset($_SESSION)){session_start();}
-	    $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
-    }
+    $arquivopng = addslashes(file_get_contents($_FILES['imagem']['tmp_name']));
+    if(!isset($_SESSION)){session_start();}
+    $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
+    $resultado = $mysqli->query($query_arquivo) or die($mysqli->error);
+    //echo "<img src='data:image/png;base64,".base64_enconde($query_arquivo)."'>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +23,12 @@
     <!-- CABEÇALHO DA PAGINA -->
     <nav>
         <img style="width:100%; height: 30vh;" src="img/logonav.png">
+        
     </nav>
     <div sytle="display:flex;">
+        <?php
+            
+        ?>
     <div id="modal">   
         <button type="button" onclick="fecha()">X</button>
                 <h3>Selecione um avatar</h3>
