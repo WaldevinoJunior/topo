@@ -5,8 +5,7 @@
     if(!isset($_SESSION)){session_start();}
     $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
     $resultado = $mysqli->query($query_arquivo) or die($mysqli->error);
-    //echo "<img src='data:image/png;base64,".base64_enconde($query_arquivo)."'>";
-}
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,13 +25,10 @@
         
     </nav>
     <div sytle="display:flex;">
-        <?php
-            
-        ?>
     <div id="modal">   
         <button type="button" onclick="fecha()">X</button>
                 <h3>Selecione um avatar</h3>
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form  method="POST" enctype="multipart/form-data">
 		                <label for="imagem">Imagem:</label>
 		                <input type="file" name="imagem"/>
 		                <input type="submit" value="Enviar"/>
@@ -41,7 +37,13 @@
     </div>
     <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
     <div class="usuarioDiv">
-        <img id="fotoLogin" src="img/apertomao.jpg">
+        <?php 
+        if(!isset($_SESSION)){session_start();}
+        $arquiv = "SELECT imagem FROM alunos WHERE ID_ALUNO = '{$_SESSION['ID_Aluno']}'";
+        $result = $mysqli->query($arquiv) or die($mysqli->error);
+        $row = mysqli_fetch_array($result);
+        echo '<img id="fotoLogin" src="data:image/jpeg;base64,' . base64_encode( $row['imagem'] ) . '" />';
+        ?>>
         <div id="usuarioId">
         <p style="font-size:30px;margin-top:-5vh;margin-bottom:2vh"><?php if(!isset($_SESSION)){session_start();}
             echo $_SESSION['nome'];

@@ -33,7 +33,16 @@ $total = mysql_num_rows($dados);
 <?php
 // tira o resultado da busca da memória
 mysql_free_result($dados);
-?> */
+
+?> 
+
+
+
+
+
+
+	
+*/
 
 
 //FAZ A CONEXAO COM O BANCO DE DADOS PODIUM
@@ -60,19 +69,10 @@ while($c = mysqli_fetch_array($con)){
 			$_SESSION['ID_Aluno'] = $_POST['ID_Aluno'];
 			$resultado = 1;
 			break;
-
 		}
-		else{
-			$resultado = 0;	
-		}	
 	}
 }
-if($resultado==0){
-	
-	header('location: ./index.html');
-	exit;
-    
-}
+
 // else{
 // 	echo $resultado;
 // 	header('location: ./services.html');
@@ -106,9 +106,17 @@ if(isset($_POST['Enviar'])){
 	}
 }
 
+
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }
 else{
 }*/
+/*<?php
+            if(!isset($_SESSION)){session_start();}
+            $exibir = "SELECT imagem FROM alunos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
+            $resultado2 = $mysqli->query($exibir) or die($mysqli->error);
+            $row = mysqli_fetch_array($resultado2);
+            echo "<img src='data:image;base64, ".base64_encode($row['imagem'])."'>";
+        ?>>*/
 ?>
