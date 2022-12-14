@@ -28,11 +28,13 @@ function muda4(){
  function fecha(){
     document.getElementById("modal").style.display = "none";
  }
- 
+ var numero = 0; 
  function adcCurso(){
     let a2 = document.getElementById("cursos")
     let c2 = document.createElement("div");
     c2.setAttribute("class", "cursoConteudo");
+    c2.setAttribute("name", numero);
+    numero++;
     a2.appendChild(c2);
     document.getElementById("oi2").style.display = "block";
     c2.appendChild(document.getElementById("oi2"));

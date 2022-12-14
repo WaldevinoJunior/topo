@@ -98,21 +98,21 @@
             $consulta2 = "SELECT cursos.aulas_totais from cursos join aluno_curso_progressos ON aluno_curso_progressos.ID_Curso = cursos.ID_Curso join alunos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno WHERE alunos.ID_Aluno = $oi and cursos.ID_Curso = $oi2";
             $con2 = $mysqli->query($consulta2) or die($mysqli->error);
             $aulas = mysqli_fetch_array($con2)[0];
-            echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
+            echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
                         ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div><script>
                             function mostraCurso".$c['ID_Curso']."(){
                             let d = document.getElementsByClassName('cursoConteudo');
-                            let u = document.getElementsByName('".$c['ID_Curso']."');
+                            let u = document.querySelectorAll('#oi2');;
+                            console.log(u);
                             let e = document.getElementsByClassName('cursoTela');
                             for (let i = 0; i < e.length; i++) {
                               e[i].style.display = 'none';
                             }
                             document.getElementById('cursoCont').style.display = 'block';
-                            let i2 = 0;
-                            let g = u[i2].getAttribute('name');
+                            let i2 = 0;            
                             for(let i3 = 0; i3 < d.length; i3++){
-                               if(i2<u.length){
-                                    console.log(i2);
+                               if(i2<u.length && u[i3].getAttribute('name') ==".$c['ID_Curso']."){
+                                     console.log(i2);
                                      d[i3].style.display = 'block';
                                      i2++;
                                 }
@@ -120,8 +120,8 @@
                          }
                         </script>";
             for($i2 = 1; $aulas >= $i2;$i2++){
-                echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='img/cursos/".$c['ID_Curso'].".png'>"
-                ."<a>".$aulas."</a></div>";
+                echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
+                ."<a href=>Fase ".$i2."</a></div>";
                 $i3++;
             }     
             $i++;
@@ -131,7 +131,7 @@
             $i--;
         }
         while($i3>0){
-            echo "<script>adcCurso()</script>";
+            echo "<script>adcCurso();</script>";
             $i3--;
         }
     ?>      
