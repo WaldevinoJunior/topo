@@ -1,0 +1,31 @@
+0;;
+Que região a extensão lateral de quadril fortalece?;;
+A panturrilha.;;
+Fortalece a lateral do abdômen.;;
+A perna inteira.;;
+Região posterior da coxa e da região glútea;;
+4;;
+<->
+1;;
+Que região a elevação lateral do membro inferior fortalece?;;
+Fortalece a região da panturrilha e coxa.;;
+Fortalece o tronco.;;
+Fortalece a região lateral da coxa e do quadril.;;
+Fortalece a parte inferior do abdômen.;;
+3;;
+<->
+2;;
+Para levantar sem fazer o uso das mãos, quais músculos devem ser trabalhados?;;
+Abdômen e costas.;;
+Tronco.;;
+Coxa e panturrilha.;;
+Abdômen, costas, quadril e coxa.;;
+4;;
+<->
+3;;
+Caso um idoso, ao praticar o exercício de levantar sem as mãos, não consiga fazer muitas repetições, o que podemos fazer, para o exercício se tornar mais eficiente.;;
+Forçar menos o abdômen.;;
+Ele deve somente iniciar o movimento de subida, perdendo assim o contato com a cadeira.;;
+Continuar se esforçando ao máximo, mesmo que isso o prejudique um pouco.;;
+Não praticar o exercício e passar para o próximo.;;
+2;;

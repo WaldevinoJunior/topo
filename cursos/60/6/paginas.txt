@@ -1,0 +1,148 @@
+﻿0;;
+Medicamentos e Envelhecimento;; 
+Com o envelhecimento, aumenta a probabilidade de ocorrência de doenças crônicas; por isso, as pessoas idosas em geral tomam mais medicamento que os adultos jovens. 
+<->
+1;;
+Medicamentos e Envelhecimento;; 
+Em média, uma pessoa idosa toma quatro ou cinco medicamentos de receita obrigatória e dois de venda livre. Os idosos são duas vezes mais suscetíveis a reações medicamentosas adversas que os adultos jovens. Também a probabilidade de reações adversas serem mais severas é maior para os idosos.
+
+<->
+2;;
+Medicamentos e Envelhecimento;; 
+À medida que as pessoas vão envelhecendo, a quantidade de água no organismo diminui. Como muitas drogas se dissolvem na água e há menos água disponível para sua dissolução, essas drogas atingem níveis mais elevados de concentração nas pessoas idosas.
+<->
+3;;
+Medicamentos e Envelhecimento;; 
+•	Além disso, os rins tornam-se menos capazes de excretar as drogas na urina, e o fígado, menos capaz de metabolizar muitas delas. Por essas razões, muitos medicamentos tendem a permanecer no corpo das pessoas idosas durante um tempo muito maior do que ocorreria no organismo de uma pessoa mais jovem.
+<->
+4;;
+Medicamentos e Envelhecimento;; 
+•	Em decorrência disso, os médicos devem prescrever doses menores de muitos medicamentos para pacientes idosos ou um menor número de doses diárias. O organismo do idoso também é mais sensível aos efeitos de muitos medicamentos. 
+<->
+5;;
+Medicamentos e Envelhecimento;;
+•	Por exemplo, as pessoas idosas tendem a ficar mais sonolentas e apresentam maior possibilidade de ficar confusas ao tomar drogas ansiolíticas ou indutores do sono.
+<->
+6;;
+Medicamentos e Envelhecimento;;
+•	Medicamentos que baixam a pressão arterial por meio do relaxamento das artérias e de redução da tensão sobre o coração tendem a baixar a pressão de forma muito mais acentuada nos idosos que nas pessoas jovens. Cérebro, olhos, coração, vasos sanguíneos, bexiga e intestinos tornam-se consideravelmente mais sensíveis aos efeitos colaterais anticolinérgicos de alguns medicamentos de uso frequente.
+<->
+7;;
+Medicamentos e Envelhecimento;;
+•	As drogas com efeitos anticolinérgicos bloqueiam a ação normal da parte do sistema nervoso, denominada sistema nervoso colinérgico.
+Certos medicamentos tendem a causar reações adversas com mais frequência e intensidade nos idosos, devendo por isso ser evitados. 
+<->
+8;;
+Medicamentos e Envelhecimento;;
+•	 Em quase todos os casos, existem substitutos mais seguros à disposição. Pode ser arriscado não seguir as orientações do médico em relação ao uso de medicamentos. No entanto, a não adesão às orientações clínicas não é mais comum entre idosos do que entre pessoas mais jovens.
+<->
+9;;
+Medicamentos e Envelhecimento;;
+•	Não tomar um remédio, ou tomá-lo em doses erradas, pode causar problemas; por exemplo, provocando o surgimento de outra doença ou levando o médico a mudar o tratamento por acreditar que o remédio não funcionou. Uma pessoa idosa que não deseja seguir as orientações clínicas deve discutir a situação com seu médico em vez de agir sozinha.
+
+<->
+10;;
+Analgésicos;;
+O propoxifeno não oferece maior alívio da dor que o acetaminofeno e provoca efeitos colaterais narcóticos. Pode causar constipação, tontura, confusão e (raramente) respiração lenta. Como os outros narcóticos (opioides), essa substância pode causar dependência. 
+<->
+11;;
+Analgésicos;;
+•	Entre todas as drogas anti-inflamatórias não esteroides, a indometacina é a que mais afeta o cérebro. Às vezes, essa substância provoca confusão mental ou tontura. Quando injetada, a meperidina é um analgésico potente, mas, quando administrada por via oral, não é muito eficaz contra a dor e frequentemente produz confusão mental.
+<->
+12;;
+Analgésicos;;
+•	A pentazocina é um analgésico narcótico que apresenta maior possibilidade de provocar confusão mental e alucinações, em comparação com outros narcóticos.
+
+<->
+13;;
+Substâncias Anticoagulantes;;
+•	No idoso, o dipiridamol pode provocar tontura quando o indivíduo se levanta (hipotensão ortostática). Para a maioria das pessoas, essa substância oferece pouca vantagem, em comparação com a aspirina, na prevenção da formação de coágulos sanguíneos.
+<->
+14;;
+Substâncias Anticoagulantes;;
+•	Para a maioria das pessoas, a ticlopidina não é mais eficaz que a aspirina na prevenção de coágulos sanguíneos, sendo consideravelmente mais tóxica. A ticlopidina pode ter utilidade como alternativa para pessoas que não podem tomar aspirina.
+<->
+15;;
+Drogas Antiulcerosas;;
+•	Doses usuais de alguns bloqueadores da histamina (em especial de cimetidina e, até certo ponto, de ranitidina, nizatidina e famotidina) podem causar efeitos adversos, principalmente confusão mental.
+<->
+16;;
+Antidepressivos;;
+•	Em razão de suas fortes propriedades anticolinérgicas e sedativas, a amitriptilina geralmente não é o melhor antidepressivo para pessoas idosas. A doxepina também é um potente anticolinérgico.
+<->
+17;;
+Incontinência por esforço;;
+•	Nos homens, a incontinência por esforço pode ocorrer após uma cirurgia de remoção da próstata (prostatectomia, ressecção transuretral da próstata) durante a qual ocorreu uma lesão da parte superior da bexiga ou do colo da bexiga.
+<->
+18;;
+Medicamentos contra Náusea (antieméticos);;
+•	A trimetobenzamida é uma das drogas menos eficazes contra a náusea e pode provocar efeitos adversos, como movimentos anormais dos braços, das pernas e do corpo.
+<->
+19;;
+Anti-histamínicos;;
+•	Todos os anti-histamínicos de venda livre e muitos de receita obrigatória produzem efeitos anticolinérgicos potentes. As drogas incluem: clorfeniramina, difenidramina, hidroxizina, ciproeptadina, prometazina, tripelenamina, dexclorfeniramina e medicamentos combinados contra resfriado.
+<->
+20;;
+Anti-histamínicos;;
+•	Mesmo que possam ser úteis no tratamento de reações alérgicas e alergias sazonais, em geral os anti-histamínicos não são apropriados para combater a coriza e outros sintomas de infecção viral. Nos casos em que há necessidade de anti-histamínicos, dá-se preferência aos que não produzem efeitos anticolinérgicos (loratadina e astemizol).
+<->
+21;;
+Anti-histamínicos;;
+•	Normalmente os medicamentos contra tosse e resfriado que não incluem anti-histamínicos em suas fórmulas são mais seguros para pessoas idosas.
+<->
+22;;
+Anti-hipertensivos;;
+•	A metildopa, isoladamente ou em combinação com outros medicamentos, pode reduzir os batimentos cardíacos e agravar a depressão. O uso de reserpina é arriscado, pois pode induzir à depressão, impotência, sedação e tontura quando a pessoa se levanta.
+<->
+23;;
+Antipsicóticos;;
+•	Embora antipsicóticos como clorpromazina, haloperidol, tioridazina e tiotixeno sejam eficazes no tratamento dos distúrbios psicóticos, não foi estabelecida sua eficácia no tratamento de distúrbios comportamentais associados à demência (como agitação, devaneios, repetição de perguntas, arremesso de objetos e agressão). 
+<->
+24;;
+Antipsicóticos;;
+Frequentemente essas drogas são tóxicas, provocando sedação, distúrbios do movimento e efeitos colaterais anticolinérgicos. No caso de o uso ser imprescindível, as pessoas idosas devem usar antipsicóticos em doses pequenas. A necessidade do tratamento deve ser frequentemente reavaliada, e os medicamentos devem ser interrompidos o mais rápido possível.
+
+<->
+25;;
+Antiespasmódicos Gastrintestinais ;;
+•	Antiespasmódicos gastrintestinais, como diciclomina, hiosciamina, propantelina, alcaloides da beladona e clidínio-clordiazepóxido são administrados no tratamento das cólicas e dores estomacais. Essas substâncias são altamente anticolinérgicas, e sua utilidade – em especial nas baixas doses toleradas pelas pessoas idosas – é questionável.
+<->
+26;;
+Drogas Antidiabéticas (hipoglicemiantes);;
+•	A clorpropamida tem efeitos prolongados, que são exagerados nas pessoas idosas e podem causar longos períodos de baixos níveis de açúcar no sangue (hipoglicemia). Por promover a retenção de água pelo organismo, a clorpropamida também diminui o nível de sódio no sangue.
+
+<->
+27;;
+Suplementos de Ferro;;
+• 	Doses de sulfato ferroso que excedam 325 miligramas diários não melhoram muito sua absorção e podem causar constipação.
+
+
+<->
+28;;
+Relaxantes Musculares e Antiespasmódicos;;
+•	Quase todos os relaxantes musculares e antiespasmódicos, como metocarbamol, carisoprodol, oxibutinina, clorzoxazona metaxalona e ciclobenzaprina provocam efeitos colaterais anticolinérgicos, sedação e debilidade. É questionável a utilidade de todos os relaxantes musculares e antiespasmódicos nas baixas doses toleradas pelos idosos.
+<->
+29;;
+Sedativos, Ansiolíticos e Indutores do Sono;;
+•	O meprobamato, além de não oferecer vantagens em relação aos benzodiazepínicos, apresenta muitas desvantagens. Clordiazepóxido, diazepam e flurazepam – benzodiazepínicos utilizados no tratamento da ansiedade e insônia – têm efeitos extremamente prolongados nos idosos (em geral, por mais de 96 horas). 
+<->
+30;;
+Sedativos, Ansiolíticos e Indutores do Sono;;
+•	Essas drogas, isoladamente ou em combinação com outras, podem causar sonolência prolongada e aumentam o risco de quedas e fraturas.
+A difenidramina, um anti-histamínico, é o ingrediente ativo em muitos sedativos de venda livre. Mas a difenidramina produz efeitos anticolinérgicos potentes.
+<->
+31;;
+Sedativos, Ansiolíticos e Indutores do Sono;;
+•	Barbitúricos, como o secobarbital e o fenobarbital, produzem mais efeitos adversos que outras drogas utilizadas no tratamento da ansiedade e da insônia. Também interagem com muitas outras substâncias. Em geral, os idosos devem evitar os barbitúricos, exceto para o tratamento de distúrbios convulsivos.
+<->
+32;;
+Anticolinérgico: O Que Isso Significa?;;
+•	A acetilcolina é um dos muitos neurotransmissores do organismo. Neurotransmissor é uma substância química utilizada pelas células nervosas para a intercomunicação e para a comunicação com os músculos e com muitas glândulas. Diz-se que as drogas que bloqueiam a ação do neurotransmissor acetilcolina têm efeitos anticolinérgicos. 
+<->
+33;;
+Anticolinérgico: O Que Isso Significa?;;
+•	A maioria dessas substâncias, no entanto, não foi projetada para bloquear a acetilcolina; seus efeitos anticolinérgicos são efeitos colaterais. Pessoas idosas são particularmente sensíveis às drogas com efeitos anticolinérgicos porque, com a idade, diminui tanto a quantidade de acetilcolina no organismo quanto a capacidade orgânica de utilização da acetilcolina existente no corpo. 
+<->
+34;;
+Anticolinérgico: O Que Isso Significa?;;
+•	Drogas com efeitos anticolinérgicos podem provocar confusão mental, turvamento da vista, constipação, boca seca, tontura e dificuldade de micção ou perda do controle da bexiga.

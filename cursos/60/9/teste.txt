@@ -1,0 +1,31 @@
+﻿0;;
+Qual região o exercício extensão de cotovelo fortalece?;;
+O cotovelo.;;
+O bíceps.;;
+O tríceps.;;
+O ombro.;;
+3;;
+<->
+1;;
+Qual região o exercício flexão de cotovelo fortalece?;;
+O cotovelo.;;
+O bíceps.;;
+O tríceps.;;
+O ombro.;;
+2;;
+<->
+2;;
+O movimento do cotovelo quando flexionado, ao realizar a flexão de cotovelo, deve ser mantida por quantos segundos?;;
+1 segundo.;;
+3 segundos.;;
+5 segundos.;;
+10 segundos.;;
+2;;
+<->
+3;;
+Qual região o exercício de flexão do ombro fortalece?;;
+O cotovelo.;;
+O bíceps.;;
+O tríceps.;;
+O ombro.;;
+4;;

@@ -1,0 +1,31 @@
+0;;
+À medida que as pessoas vão envelhecendo, a quantidade de água no organismo diminui. Qual é a porcentagem de água no corpo de um Idoso?;;
+Chega a 50%;;
+Chega a 40%;;
+Chega a 60%;;
+Chega a 30%;;
+1;;
+<->
+1;;
+Em média, uma pessoa idosa toma quantos medicamentos de receita Obrigatória e quantos remédios de Venda livre?;;
+Cinco ou seis medicamentos de receita obrigatória e dois de venda livre.;;
+Seis ou Sete medicamentos de receita obrigatória e dois de venda livre.;;
+Quatro ou cinco medicamentos de receita obrigatória e dois de venda livre.;;
+Todas Estão Erradas;;
+3;;
+<->
+2;;
+Não tomar um remédio, ou tomá-lo em doses erradas, pode causar que tipo de problema.;;
+Pode levar o médico a mudar o tratamento por acreditar que o remédio não funcionou;;
+Pode provocar o surgimento de outra doença.;;
+Pode levar o médico a subir a dosagem do medicamento.;;
+Todas estão corretas;;
+2;;
+<->
+3;;
+Complete a Frase: Normalmente os medicamentos contra tosse e resfriado que não incluem _____________ em sua fórmula são mais seguros para pessoas idosas.;;
+Clorfeniramina,;;
+Anticolinérgicos;;
+Anti-histamínicos;;
+Todas Estão Erradas;;
+3;;

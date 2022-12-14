@@ -1,0 +1,31 @@
+0;;
+Cada repetição deve ser executada da seguinte maneira?;;
+5 segundos para realizar o movimento, 2 segundos mantendo a posição alcançada, e mais 2 segundos para retornar à posição inicial.;;
+4 segundos para realizar o movimento, 1 segundo mantendo a posição alcançada, e mais 4 segundos para retornar à posição inicial.;;
+3 segundos para realizar o movimento, 1 segundo mantendo a posição alcançada, e mais 3 segundos para retornar à posição inicial.;;
+Todas Estão Erradas;;
+3;;
+<->
+1;;
+As cargas utilizadas devem ser?;;
+Iguais para ambos os lados do corpo.;;
+Diferentes para ambos os lados do corpo.;;
+Iguais para apenas um lado do corpo.;;
+Todas Estão Erradas;;
+1;;
+<->
+2;;
+Se houver qualquer dor nas articulações durante a execução dos exercícios. Deve-se?;;
+Deve-se colocar mais peso, isso irá ajudar a diminuir a dor.;;
+Todas Estão Corretas.;;
+Deve-se levar o idoso ao médico e solicitar o aumento da dosagem dos medicamentos, pois os mesmos não estão surtindo mais efeito.;;
+Deve-se parar o treino.;;
+4;;
+<->
+3;;
+Antes do treinamento, deve-se realizar um alongamento de quantos minutos?;;
+5 Minutos.;;
+8 Minutos.;;
+10 Minutos.;;
+20 Minutos.;;
+3;;

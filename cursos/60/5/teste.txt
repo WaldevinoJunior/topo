@@ -1,0 +1,31 @@
+0;;
+O que é incontinência urinária?;;
+É a perda incontrolável de urina.;;
+Todas estão Erradas.;;
+É a perda incontrolável de ureia.;;
+É a perda incontrolável de Fluidos do Corpo.;;
+1;;
+<->
+1;;
+O que é a incontinência psicogênica?;;
+É a incontinência causada por problemas emocionais.;;
+É a incontinência causada por perda total do controle da bexiga.;;
+É a incontinência causada por contração de alguma doença.;;
+Esta incontinência não existe.;;
+1;;
+<->
+2;;
+Qual bebida deve ser evitada, para quem tem incontinência urinária?;;
+Bebidas que Contenham Leite.;;
+Bebidas que Contenham Cafeína.;;
+Bebidas que Contenham Chocolate.;;
+Bebidas que Contenham ferro.;;
+2;;
+<->
+3;;
+Qual o processo realizado pela medicina quando um esfíncter não está fechando adequadamente?;;
+É utilizado músicas calmas para tranquilizar o músculo.;;
+É indicado o uso de um remédio, como o colágeno.;;
+É realizado uma cirurgia para substituir o esfíncter urinário por um artificial.;;
+É realizado uma cirurgia para fechar o esfíncter.;;
+3;;

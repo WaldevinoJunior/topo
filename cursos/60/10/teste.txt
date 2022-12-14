@@ -1,0 +1,31 @@
+﻿0;;
+A seguir, quais são os exercícios de treino de resistência aeróbica?;;
+Flexão, natação, vôlei e dança.;;
+Judô, pedalada, natação e golfe.;;
+Karatê, tênis, remada e esgrima.;;
+Pedalada, tênis, vôlei e dança.;;
+4;;
+<->
+1;;
+Como deve ser feito a respiração durante o exercício?;;
+Rápida e com pressa.;;
+com pressa e profundo, buscando o máximo de oxigênio em menos tempo.;;
+Profunda e lenta.;;
+Rápida e profunda.;;
+3;;
+<->
+2;;
+Caso o executante sinta tontura durante a prática de exercício, o que deve ser feito?;;
+Respirar normalmente.;;
+Deve ir imediatamente ao hospital.;;
+Ignorar a tontura e continuar normalmente.;;
+Parar e beber muita água.;;
+1;;
+<->
+3;;
+Quantas seções devem ser feitas em cada exercício de alongamento?;;
+4 a 5 vezes.;;
+1 a 2 vezes.;;
+3 a 5 vezes.;;
+1 a 3 vezes.;;
+3;;

@@ -1,0 +1,157 @@
+0;;
+Fundamentos de Treinamento (Resistência);; 
+A capacidade aeróbia consiste, basicamente, na capacidade de absorver, transportar e utilizar o oxigênio do ar para realizar as reações bioquímicas necessárias para gerar a energia que será utilizada durante a atividade física. Essa capacidade corresponde a uma via metabólica específica, e esses mecanismos se tornam mais eficientes quando se pratica atividades de baixa intensidade e longa duração. 
+<->
+1;;
+Fundamentos de Treinamento (Resistência);; 
+Uma maneira de quantificar essa capacidade é medindo o VO2max, que corresponde ao consumo máximo de oxigênio durante atividades físicas, ou seja, o quanto do oxigênio a pessoa é capaz de retirar do ar e aproveitar para gerar energia. 
+<->
+2;;
+Fundamentos de Treinamento (Resistência);; 
+Assim como qualquer atividade física, o treinamento de resistência aeróbia deve seguir algumas regras, tanto para que o treinamento alcance os objetivos buscados, quanto para preservar a integridade física de quem o está praticando.
+
+<->
+3;;
+Fundamentos de Treinamento (Resistência);; 
+A resistência aeróbia é uma capacidade que deve ser desenvolvida gradualmente. Para se iniciar um treinamento, um tempo mínimo diário por sessão de treinamento é de 5 minutos. Apesar de este tempo não ser suficiente para trazer os ganhos de um treinamento de resistência aeróbia, começar o treinamento com um baixo nível de esforço e ir aumentando-o gradualmente é especialmente importante para aqueles que estão inativos há muito tempo.
+<->
+4;;
+Fundamentos de Treinamento (Resistência);; 
+A ideia é que com o devido tempo, essa leve atividade se torne uma atividade de dificuldade de moderada a vigorosa, apesar de ainda continuar com um curto tempo de duração (5 minutos).
+
+<->
+5;;
+Fundamentos de Treinamento (Resistência);; 
+Quando for possível realizar atividades com intensidade de moderada a vigorosa por 5 minutos, é hora de aumentar esse tempo por sessão de treinamento para pelo menos 10 minutos, já que realizar atividades por tempos menores que esses não trará os benefícios cardiovasculares e respiratórios desse tipo de treinamento. 
+<->
+6;;
+Fundamentos de Treinamento (Resistência);; 
+O objetivo nesta progressão é que o executante chegue a pelo menos 30 minutos de atividade em cada sessão de treinamento. Uma progressão possível seria aumentar em 5 minutos o tempo de atividade a cada mês, até atingir 30 minutos (ou mais). 
+<->
+7;;
+Fundamentos de Treinamento (Resistência);; 
+Dividir esses 30 minutos em três fases de 10 minutos de duração também traz benefícios cardiovasculares e respiratório, sendo uma estratégia interessante para indivíduos com pouca tolerância a atividades com longa duração. Quanto mais leve a atividade, maior deve ser sua duração, e quanto maior sua intensidade, menor pode ser sua duração. Uma faixa de tempo válida para que os benefícios desse tipo de treinamento sejam alcançados é de 20 a 60 minutos por sessão.
+<->
+8;;
+Fundamentos de Treinamento (Resistência);; 
+Inicialmente, o treinamento aeróbio deve ser feito pelo menos 3 vezes por semana, em dias não consecutivos (se possível). Ao longo dos meses de treinamento, conforme o indivíduo vai ganhando condicionamento, o número de dias de atividade aeróbia por semana deve aumentar progressivamente, até 5 dias por semana. Mas é importante manter em mente que o mínimo necessário para trazer os benefícios desse tipo de treinamento é realizar 3 sessões por semana.
+<->
+9;;
+Fundamentos de Treinamento (Resistência);; 
+A intensidade dos exercícios, para que o maior benefício seja alcançado, deve estar em, uma faixa de 50% a 70% do VO2max. Uma outra maneira de ajustar facilmente essa intensidade é através do controle a frequência cardíaca. Inicialmente, o indivíduo deve medir sua frequência cardíaca de repouso (FC rep), que corresponde ao número de vezes que o coração bate por minuto após 10 minutos de inatividade (de preferência, a pessoa deve ficar deitada relaxando durante esse período de tempo). 
+<->
+10;;
+Fundamentos de Treinamento (Resistência);; 
+É necessário conhecer também a frequência cardíaca máxima (FC max), que pode ser quantificada em testes ergométricos, ou ainda estimada subtraindo a idade do indivíduo de 220. É importante medir esse valor através do teste ergométrico, pois através dele é possível detectar problemas cardíacos, além de identificar em qual frequência cardíaca eles começam a aparecer.
+<->
+11;;
+Fundamentos de Treinamento (Resistência);; 
+Isso torna possível considerar como frequência cardíaca máxima a frequência na qual aparecem sintomas de problemas cardíacos, permitindo uma maior segurança no treinamento (que estará sempre abaixo dessa frequência). A faixa de treinamento deve então ser calculada da seguinte maneira:
+Frequência mínima de treinamento: (FC max – FC rep) x 0.5 + FC rep
+Frequência máxima de treinamento: (FC max – FC rep) x 0.7 + FC rep
+<->
+12;;
+Fundamentos de Treinamento (Resistência);; 
+Dessa maneira, fica assegurando que o indivíduo estará treinando em uma faixa entre 50% e 70% da sua frequência cardíaca de reserva (FC Max – FC rep), sendo essa faixa a zona ideal para o treinamento da capacidade aeróbia.
+Seguem agora algumas regras de segurança básicas para o treinamento de resistência aeróbia:
+<->
+13;;
+Fundamentos de Treinamento (Resistência);; 
+As atividades aeróbias não devem fazer o executante respirar tão rapidamente de maneira que seja muito difícil falar durante sua execução. Sua intensidade também não pode causar vertigem e dor no peito (para respirar);
+O executante deve realizar uma atividade leve antes de iniciar a sessão de treinamento para aquecer e outra para voltar à calma no final da atividade. Um bom exemplo é andar vagarosamente;
+Exercícios de alongamento devem ser feitos após as atividades, enquanto os músculos ainda estão quentes;
+<->
+14;;
+Fundamentos de Treinamento (Resistência);; 
+Com o aumento da idade, o mecanismo que gera a sede passa a funcionar mais lentamente. Isso pode fazer com que, apesar de um indivíduo precisar de água, ele não sinta sede. O executante deve ter uma preocupação em beber líquidos durante atividades que causem transpiração. Se o indivíduo chegar a sentir sede, significa que seu corpo já está levemente desidratado. 
+<->
+15;;
+Fundamentos de Treinamento (Resistência);; 
+Mas é importante atentar que algumas pessoas possuem limitações de ingestão de líquidos (como em patologias envolvendo o coração e o fígado), e esse controle de ingestão durante a atividade física deve ser feito juntamente com seu médico.
+
+<->
+16;;
+Fundamentos de Treinamento (Resistência);; 
+Idosos são mais afetados pelo frio e pelo calor que adultos (devido a um sistema termorregulador menos eficiente), o que pode trazer riscos à saúde. É interessante que uns idosos, ao se exercitar, vistas as roupas em “camadas”, de maneira que fique protegido contra o frio, mas se vir a sentir calor seja possível remover algumas peças para regular a temperatura.
+<->
+17;;
+Fundamentos de Treinamento (Resistência);; 
+Antes de aumentar a dificuldade da atividade executada é mais aconselhável aumentar a duração da atividade.
+<->
+18;;
+Exercícios para Treinar a Resistência Aeróbia;;
+Seguem alguns exemplos de atividades e exercícios de treinamento da resistência aeróbia:
+Dificuldade moderada:
+Nadar; pedalar; andar rapidamente em superfície plana; fazer faxina; jogar golfe a pé; jogar tênis em duplas; jogar voleibol; Remar; Dançar.
+<->
+19;;
+Exercícios para Treinar a Resistência Aeróbia;;
+Dificuldade vigorosa:
+Subir escadas; andar rapidamente em superfícies íngremes (subidas); subir superfícies íngremes de bicicleta; jogar tênis; nadar rapidamente; Marcha atlética; correr lentamente.
+
+<->
+20;;
+Fundamentos de Treinamento (Flexibilidade);;
+Exercícios de alongamento muscular têm por objetivo aumentar a flexibilidade, trazendo assim uma maior liberdade de movimentos para executar as tarefas do cotidiano e outras tarefas mais específicas. Assim como qualquer tipo de atividade física, ao treinar a flexibilidade o executante deve atentar para algumas regras, assegurando assim uma maior eficiência do treinamento e uma maior segurança na execução dos exercícios.
+<->
+21;;
+Fundamentos de Treinamento (Flexibilidade);;
+Os exercícios de alongamento devem ser executados após o término das sessões de treinamento aeróbio ou de treinamento de força para resultarem em ganhos na flexibilidade. No caso de não ser possível realizar esses dois tipos de treinamento, o treinamento de flexibilidade deve ser executado pelo menos duas vezes por semana, podendo chegar a até sete vezes por semana, e as sessões devem durar ao menos 20 minutos cada. 
+<->
+22;;
+Fundamentos de Treinamento (Flexibilidade);;
+Para um iniciante é interessante treinar poucas vezes por semana para ganhar alguma intimidade com os exercícios e para perceber seus limites. Um treinamento visando um grande aumento de flexibilidade deve consistir em sessões diárias de treinamento, ou ainda um número grande de sessões por semana (de 5 a 7). 
+<->
+23;;
+Fundamentos de Treinamento (Flexibilidade);;
+Treinar de duas a três vezes por semana é uma boa maneira de manter a flexibilidade alcançada. É importante ressaltar que exercícios de alongamento não servem para implementar a força ou a resistência aeróbia.
+<->
+24;;
+Fundamentos de Treinamento (Flexibilidade);;
+Cada exercício de alongamento deve ser feito de 3 a 5 vezes em cada sessão de treinamento. O executante deve chegar à posição desejada lentamente, alcançando a maior amplitude possível sem que haja dor. A posição deve então ser mantida de 10 a 30 segundos, e então o executante deve relaxar e voltar lentamente para uma posição mais confortável (posição inicial), terminando assim uma repetição.
+<->
+25;;
+Segurança;;
+Se o executante já sofreu alguma lesão, fratura ou cirurgia nos ossos do quadril (principalmente na articulação coxo-femoral, que corresponde à junção do quadril com o fêmur), é importante consultar um médico antes de executar os exercícios para treinar a flexibilidade dos membros inferiores;
+<->
+26;;
+Segurança;;
+Se o executante sofreu fratura da cabeça do fêmur, ele não deve cruzar as pernas em ângulos superiores a 90 graus;
+<->
+27;;
+Segurança;;
+Se a sessão de treinamento for realizada separada de outros tipos de treinamento, é importante realizar um leve aquecimento antes de iniciá-la. Isso pode ser feito com alguns minutos de caminhada e movimentação dos membros superiores. Alongar os músculos sem aquecimento prévio pode resultar em alguma lesão;
+<->
+28;;
+Segurança;;
+Alongar os músculos não deve resultar em dor, principalmente nas articulações. Se isso ocorrer, provavelmente a amplitude do alongamento está muito grande, e deve ser reduzida;
+Uma leve sensação de desconforto é normal durante o alongamento (mas não de dor);
+<->
+29;;
+Segurança;;
+O alongamento nunca deve ser feito rapidamente ou com "trancos" (alongamento balístico), pois esticar o músculo rapidamente faz com que um mecanismo reflexo seja disparado, e o músculo então se contrai involuntariamente. Além de isso prejudicar a amplitude que poderia ser alcançada com o músculo relaxado, ainda há algum risco de lesão se o alongamento for executado desta maneira;
+
+<->
+30;;
+Segurança;;
+Durante o alongamento, o membro alongado deve estar esticado, mas manter uma pequena folga na articulação é aconselhável para diminuir um pouco a carga sobre os tendões e ligamentos (as articulações não devem ser hiper estendidas).
+<->
+31;;
+Segurança;;
+O executante deve respirar de forma profunda e lentamente durante a execução dos exercícios. Se o executante sentir alguma tontura, mesmo que leve, ele deve voltar a respirar naturalmente.
+<->
+32;;
+Segurança;;
+Realizar os exercícios seguindo as recomendações acima descritas resultará em um aumento da flexibilidade, e a maneira de progredir no treinamento é sempre tentar alcançar a maior amplitude articular sem que ocorra dor; 
+<->
+33;;
+Segurança;;
+Os exercícios de flexibilidade também podem ser utilizados no aquecimento, antes das sessões de treinamento, com a função de preparar o corpo para o exercício. Nesse caso os exercícios devem ser feitos após o corpo já estar aquecido, pois alongar músculos "frios" pode resultar em lesões musculares a articulares.
+<->
+34;;
+Segurança;;
+Os exercícios devem ser realizados com apenas uma repetição, e devem durar poucos segundos. Além disso, devem ser escolhidos de acordo com a atividade a ser realizada, pois como o intuito é apenas de preparar o músculo para o exercício, somente devem ser alongados os membros a serem utilizados durante a atividade.
+<->
+35;;
+Segurança;;
+Uma outra alternativa é incorporar exercícios dinâmicos multiarticulares durante o aquecimento, pois apesar de não buscar uma amplitude grande de movimento, aquece e alonga levemente um grande número de músculos.
