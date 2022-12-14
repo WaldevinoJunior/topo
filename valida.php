@@ -58,9 +58,26 @@ while($c = mysqli_fetch_array($con)){
 			session_start();
 			$_SESSION['nome'] = $c['Nome'];
 			$_SESSION['ID_Aluno'] = $_POST['ID_Aluno'];
+			$resultado = 1;
+			break;
+
+		}
+		else{
+			$resultado = 0;	
 		}	
 	}
 }
+if($resultado==0){
+	
+	header('location: ./index.html');
+	exit;
+    
+}
+// else{
+// 	echo $resultado;
+// 	header('location: ./services.html');
+//     exit;
+// }
 while($c3 = mysqli_fetch_array($con3)){
 	if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
 		if($_POST['ID_Aluno'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){

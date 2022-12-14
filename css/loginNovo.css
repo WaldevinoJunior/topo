@@ -142,9 +142,15 @@ a:hover {
 
 
     #muda{
+        display:none;
         animation: go-back 0.3s;
         background: rgba(0, 0, 0, 0.8)
         
+    }
+    #muda2{
+        display:none;
+        animation: go-back 0.3s;
+        background: rgba(0, 0, 0, 0.8)
     }
     
     @keyframes go-back {
@@ -231,6 +237,12 @@ body.usuario div.usuarioDiv button{
     }
 }
 #muda{
+    display:none;
+    margin-left: -3vh; 
+    margin-right: -2vh;
+    animation: modal 1s;
+}
+#muda2{
     display:none;
     margin-left: -3vh; 
     margin-right: -2vh;
