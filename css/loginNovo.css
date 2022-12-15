@@ -323,7 +323,23 @@ body.usuario div.usuarioDiv button{
      height: 120px;
      justify-content: center;
  }
- 
+ #modal2{
+    border: 1px solid black;
+    display: none;
+    width: 30vw;
+    height: 30vh;
+    position:absolute;
+    margin-bottom: 60vh;
+    background-color: white;
+    animation: modal 1s;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+#modal2Cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
     background-color: aqua;
