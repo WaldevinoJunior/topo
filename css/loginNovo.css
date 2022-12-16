@@ -340,6 +340,15 @@ body.usuario div.usuarioDiv button{
     justify-content: center;
     flex-direction: column;
 }
+#modal2Op{
+    display:flex;
+    justify-content:center;
+}
+#modal2Op a{
+    margin:auto;
+    margin-top:50px;
+}
+
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
     background-color: aqua;

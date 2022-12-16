@@ -121,10 +121,10 @@
                 echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
                 ."<a onclick='mostraFase".$c['ID_Curso']."aula".$i2."()'>Fase ".$i2."</a></div>";
                 echo "<div id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
-                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()'>xx</a>
+                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' style='background-color:red;cursor:pointer'>xx</a>
                 <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
                 </div>
-                <div><a href='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>AULA</a><a href=''>APOSTILA</a><a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'>FIXAÇÃO</a><a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'>TESTE</a></div>
+                <div id='modal2Op'><a href='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>AULA</a><a href=''>APOSTILA</a><a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'>FIXAÇÃO</a><a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'>TESTE</a></div>
                 </div>
                 <script>
                     function mostraFase".$c['ID_Curso']."aula".$i2."(){
