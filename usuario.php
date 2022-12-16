@@ -21,7 +21,7 @@
 <!-- CORPO DA PAGINA USUARIO -->
 <body class="usuario">
     <!-- CABEÇALHO DA PAGINA -->
-    <nav>
+    <nav id="nav">
         <img style="width:100%; height: 30vh;" src="img/logonav.png">
         
     </nav>
@@ -37,7 +37,7 @@
         </div>
     </div>
     <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
-    <div class="usuarioDiv">
+    <div class="usuarioDiv" name="usuarioDiv">
         <?php 
         if(!isset($_SESSION)){session_start();}
         $arquiv = "SELECT imagem FROM alunos WHERE ID_ALUNO = '{$_SESSION['ID_Aluno']}'";
@@ -55,13 +55,10 @@
         <a href="index.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
         </div>
-    </div>
-    
-    <hr>
+    </div> 
+    <h1 id="h1curso">Seus Cursos</h1><br>
     <!--CURSOS DO ALUNO -->
-    <h1>Seus Cursos</h1><br> 
-    
-   <div id="cursos">
+   <div id="cursos"> 
    <div id="cursoCont">
         <a href="javascript:volta();">Voltar</a>
     </div>
@@ -99,6 +96,7 @@
             $consulta2 = "SELECT cursos.aulas_totais from cursos join aluno_curso_progressos ON aluno_curso_progressos.ID_Curso = cursos.ID_Curso join alunos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno WHERE alunos.ID_Aluno = $oi and cursos.ID_Curso = $oi2";
             $con2 = $mysqli->query($consulta2) or die($mysqli->error);
             $aulas = mysqli_fetch_array($con2)[0];
+            $i5 = [$aulas];
             echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
                         ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div><script>
                             function mostraCurso".$c['ID_Curso']."(){
@@ -126,9 +124,9 @@
                 <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
                 </div>
                 <div id='modal2Op'>
-                <a href='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'><i class='bi bi-cast'></i> -------</a>
-                <a href=''><i class='bi bi-postcard'></i> -------</a>
-                <a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'><i class='bi bi-pencil-square'></i>  -------</a>
+                <a onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'><i class='bi bi-cast'></i> -------</a>
+                <a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'><i class='bi bi-postcard'></i> -------</a>
+                <a href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'><i class='bi bi-pencil-square'></i>  -------</a>
                 <a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'><i class='bi bi-journal-check'></i></a></div>
                 </div>
                 <script>
@@ -142,9 +140,51 @@
                     }
                 </script>";
                 $i3++;
-            }     
+                $i4=0;
+                if($c['ID_Curso']==60){
+                    $pasta = new FilesystemIterator ("cursos/60/".$i2."/audio");
+                    foreach($pasta as $file){
+                    //echo $file->getFileName()."audio:".$i4."<br>";
+                     $i4++;
+                    //echo $pasta."<br>";
+                    }
+                }
+                $i5[$i2] = $i4;
+                echo 
+            "<script>
+                function mostraAula".$c['ID_Curso']."aula".$i2."(){
+                document.getElementById('nav').style.display = 'none';
+                document.getElementById('h1curso').style.display = 'none';
+                document.getElementsByClassName('usuarioDiv')[0].style.display = 'none';
+                document.getElementById('cursos').style.display = 'none';
+                let b = document.body;
+                let aula = document.createElement('div');
+                let imagem = document.createElement('img');
+                b.appendChild(aula);
+                aula.appendChild(imagem);
+                imagem.setAttribute('src', 'cursos/60/2/img/2.jpg');
+                imagem.setAttribute('class', 'aulaEstilo');
+                document.getElementById('prox').style.display = 'block';
+                document.getElementById('vol').style.display = 'block';
+                aula.appendChild(document.getElementById('prox'));
+                aula.appendChild(document.getElementById('vol'));
+
+            }
+                function proxima(){
+                    let i6 = 0;
+                    if(i6<".$i5[$i2]."){
+                        
+                    }
+                }
+            </script>";
+            echo "<a id='prox' style='display:none' href='proxima()'>PROXIMA</a>";
+            echo "<a id='vol' style='display:none' href='vol()'>VOLTAR</a>";
+            }
+
             $i++;
+           
         }
+        
         while($i>0){
             echo "<script>adcElemento()</script>";
             $i--;
