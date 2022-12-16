@@ -273,15 +273,18 @@ body.usuario div.usuarioDiv button{
     font-size: 30px;
     justify-content: center;
     padding:10px;
-    background-color: green;
+    background-color: white;
     border-radius: 10px;
-    color:white;
+    color:green;
+    border: 1px solid green;
 }
 .cursoTela a:hover{
     transition-duration: 1s;
     cursor:pointer;
     opacity: 0.8;
+    color: white;
     background-color: blue;
+    border: 1px solid white;
 }
 .cursoTela img{
     padding: 15px;
@@ -312,15 +315,18 @@ body.usuario div.usuarioDiv button{
      font-size: 30px;
      justify-content: center;
      padding:10px;
-     background-color: green;
+     background-color: white;
      border-radius: 10px;
-     color:white;
+     color:green;
+     border: 1px solid green;
  }
  .cursoConteudo a:hover{
     transition-duration: 1s;
     cursor:pointer;
     opacity: 0.8;
+    color: white;
     background-color: blue;
+    border: 1px solid white;
  }
  .cursoConteudo img{
      padding: 15px;
@@ -353,6 +359,7 @@ body.usuario div.usuarioDiv button{
 #modal2Op a{
     margin:auto;
     margin-top:50px;
+    font-size: 30px;
 }
 
 /* VALIDO PARA O ARQUIVO TESTE.PHP */

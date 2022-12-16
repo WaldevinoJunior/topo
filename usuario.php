@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <script src="js/constroi.js"> </script>
 </head>
 <!-- CORPO DA PAGINA USUARIO -->
@@ -118,13 +119,17 @@
                          }
                         </script>";
             for($i2 = 1; $aulas >= $i2;$i2++){
-                echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
+                echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>"
                 ."<a onclick='mostraFase".$c['ID_Curso']."aula".$i2."()'>Fase ".$i2."</a></div>";
                 echo "<div id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
                 <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' style='background-color:red;cursor:pointer'>xx</a>
                 <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
                 </div>
-                <div id='modal2Op'><a href='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>AULA</a><a href=''>APOSTILA</a><a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'>FIXAÇÃO</a><a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'>TESTE</a></div>
+                <div id='modal2Op'>
+                <a href='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'><i class='bi bi-cast'></i> -------</a>
+                <a href=''><i class='bi bi-postcard'></i> -------</a>
+                <a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'><i class='bi bi-pencil-square'></i>  -------</a>
+                <a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'><i class='bi bi-journal-check'></i></a></div>
                 </div>
                 <script>
                     function mostraFase".$c['ID_Curso']."aula".$i2."(){
