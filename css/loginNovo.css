@@ -362,11 +362,9 @@ body.teste{
     margin-left: 2vw;
     font-size: 18px;
     list-style-type: none;
-
 }
 .menuAdmin li i{
     margin: 2px;
-
 }
 .menuAdmin ul li:hover > div#barras{  
    opacity: 1;
