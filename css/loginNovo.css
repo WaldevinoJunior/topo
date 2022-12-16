@@ -91,7 +91,7 @@ footer span{
 }
 a{
     text-decoration: none;
-    color:orangered;
+    color:rgb(73, 194, 73);
 }
 a:link {
     color: #e67e22;
@@ -99,8 +99,7 @@ a:link {
    }
    
 a:hover {
-
-    color:white;
+        background-color: white;
    }
    
 
@@ -266,6 +265,9 @@ body.usuario div.usuarioDiv button{
     margin-left:10vh;
     margin-bottom: 10vh;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .cursoTela a{
     font-size: 30px;
@@ -276,8 +278,10 @@ body.usuario div.usuarioDiv button{
     color:white;
 }
 .cursoTela a:hover{
-    opacity: 0.8;
+    transition-duration: 1s;
     cursor:pointer;
+    opacity: 0.8;
+    background-color: blue;
 }
 .cursoTela img{
     padding: 15px;
@@ -313,8 +317,10 @@ body.usuario div.usuarioDiv button{
      color:white;
  }
  .cursoConteudo a:hover{
-     opacity: 0.8;
-     cursor:pointer;
+    transition-duration: 1s;
+    cursor:pointer;
+    opacity: 0.8;
+    background-color: blue;
  }
  .cursoConteudo img{
      padding: 15px;
