@@ -362,11 +362,23 @@ body.usuario div.usuarioDiv button{
     margin-top:50px;
     font-size: 30px;
 }
+#textoAula{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 10vh;
+}
+#audio{
+    position: absolute;
+    display: flex;
+}
 #imagemEstilo{
-    width: 100vm;
+    width: 100vw;
     height:100vh;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{

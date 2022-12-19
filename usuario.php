@@ -56,7 +56,7 @@
         <a href="certificado.php">BAIXAR</a>
         </div>
     </div> 
-    <h1 id="h1curso">Seus Cursos</h1><br>
+    <h1 id="h1curso">Seus Cursos</h1>
     <!--CURSOS DO ALUNO -->
    <div id="cursos"> 
    <div id="cursoCont">
@@ -166,7 +166,9 @@
                 let audio = document.createElement('audio');
                 let prox = document.createElement('button');
                 let vol = document.createElement('button');
-                let sair = document.createElement('a');
+                let sair = document.createElement('button');
+                let textoAula = document.createElement('div');
+                textoAula.setAttribute('id','textoAula');
                 sair.setAttribute('id', 'sair');
                 sair.setAttribute('onclick', 'sair()');
                 sair.innerHTML = 'sair';
@@ -178,15 +180,17 @@
                 vol.setAttribute('onclick', 'vol".$c['ID_Curso']."aula".$i2."()');
                 aula.setAttribute('id' , 'aulaEstilo');
                 b.appendChild(aula);
+                aula.appendChild(textoAula);
                 aula.appendChild(imagem);
-                aula.appendChild(audio);
+                imagem.appendChild(audio);
+                
                 audio.setAttribute('id','audio');
                 audio.setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
                 imagem.setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                 imagem.setAttribute('id', 'imagemEstilo');
-                aula.appendChild(prox);
-                aula.appendChild(vol);
-                aula.appendChild(sair);
+                textoAula.appendChild(prox);
+                textoAula.appendChild(vol);
+                textoAula.appendChild(sair);
                 audio.setAttribute('controls', 'autoplay');
                 prox.disabled = true;
                 audio.play();
@@ -195,7 +199,6 @@
                     prox.disabled = false;
                     });
                 document.getElementById('sair').style.display = 'block';
-                aula.appendChild(document.getElementById('sair'));
                 document.getElementById('aulaEstilo').style.display = 'block';
             }
             </script>";
