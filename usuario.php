@@ -126,9 +126,12 @@
                 </div>
                 <div id='modal2Op'>
                 <a onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'><i class='bi bi-cast'></i> -------</a>
-                <a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'><i class='bi bi-postcard'></i> -------</a>
-                <a href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'><i class='bi bi-pencil-square'></i>  -------</a>
-                <a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'><i class='bi bi-journal-check'></i></a></div>
+                <a href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'><i class='bi bi-postcard'></i> -------</a>
+                <a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'><i class='bi bi-pencil-square'></i>  -------</a>
+                <a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'><i class='bi bi-journal-check'></i></a>
+                ";if($i2 == $aulas){
+                    echo "<a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'><i class='bi bi-filetype-pdf'></i></a>";
+                }echo "</div>
                 </div>
                 <script>
                     function mostraFase".$c['ID_Curso']."aula".$i2."(){
@@ -153,7 +156,6 @@
                 echo 
             "<script>
                 function mostraAula".$c['ID_Curso']."aula".$i2."(){
-                console.log(".$i5[$i2].");
                 let b = document.body;
                 document.getElementById('nav').style.display = 'none';
                 document.getElementById('h1curso').style.display = 'none';
@@ -199,7 +201,7 @@
             </script>";
             
             echo "<script>function prox".$c['ID_Curso']."aula".$i2."(){i6++;document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;}</script>";
-            echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){i6--;document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');audio.play();}</script>";
+            echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){i6--;document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;}</script>";
            
         }   
             $i++;

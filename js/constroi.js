@@ -81,4 +81,5 @@ function mostraAlunos(){
     for (let i = 0; i < e.length; i++) {
       e[i].style.display = "none";
     }
+    document.getElementById("listaAlunos").style.display = 'block';
 }

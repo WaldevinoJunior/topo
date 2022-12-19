@@ -1,4 +1,8 @@
-<? include("valida.php") ?>
+<?php 
+    include("valida.php");
+    $consultaAlunos = "SELECT * from alunos";
+    $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +69,25 @@
                 <h2><strong>Administração</strong></h2>
             <div id="func">
                 <div id="listaAlunos" style="display:none">
-                    <p>Nome do aluno:<?  ?></p>
+                    
+                   <?php
+                    while($cAlunos = mysqli_fetch_array($conAlunos)){
+                        echo "ID dos Alunos: ".$cAlunos['ID_Aluno'];
+                        echo "Nome dos Alunos: ".$cAlunos['Nome'];
+                        echo "Responsavel dos Alunos: ".$cAlunos['Responsavel'];
+                        echo "Nascimento dos Alunos: ".$cAlunos['Nascimento'];
+                        echo "Email dos Alunos: ".$cAlunos['Email'];
+                        echo "Telefone dos Alunos: ".$cAlunos['Telefone'];
+                        echo "CPF dos Alunos: ".$cAlunos['CPF'];
+                        echo "RG dos Alunos: ".$cAlunos['RG'];
+                        echo "CEP dos Alunos: ".$cAlunos['CEP'];
+                        echo "Estado dos Alunos: ".$cAlunos['Estado'];
+                        echo "Cidade dos Alunos: ".$cAlunos['Cidade'];
+                        echo "Rua dos Alunos: ".$cAlunos['Rua'];
+                        echo "Numero dos Alunos: ".$cAlunos['Numero'];
+                        echo "Senha dos Alunos: ".$cAlunos['Senha']."<br>";
+                    } 
+                   ?>
                 </div>
                 <div class="funcA">
                     <a onclick="mostraAlunos()"><i class="bi bi-person-fill" ></i><h3>Listar Alunos</h3></a>
