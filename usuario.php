@@ -51,7 +51,7 @@
             ?>
         </p>
         
-        <button type="button" onclick="altera()">Alterar Avatar</button>
+        <button type="button" onclick="altera();">Alterar Avatar</button>
         <a href="index.html">SAIR</a>
         <a href="certificado.php">BAIXAR</a>
         </div>
@@ -91,6 +91,7 @@
         $consulta = "SELECT cursos.Nome_curso, cursos.ID_Curso from alunos join aluno_curso_progressos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno join cursos ON cursos.ID_Curso = aluno_curso_progressos.ID_Curso WHERE alunos.ID_Aluno = $oi";
         $con = $mysqli->query($consulta) or die($mysqli->error);
         $i3 = 0;
+        echo "<script>let i6 = 0;</script>";
         while($c = mysqli_fetch_array($con)){
             $oi2 = $c['ID_Curso'];
             $consulta2 = "SELECT cursos.aulas_totais from cursos join aluno_curso_progressos ON aluno_curso_progressos.ID_Curso = cursos.ID_Curso join alunos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno WHERE alunos.ID_Aluno = $oi and cursos.ID_Curso = $oi2";
@@ -140,12 +141,11 @@
                     }
                 </script>";
                 $i3++;
-                $i4=0;
+                $i4 = 0;
                 if($c['ID_Curso']==60){
-                    $pasta = new FilesystemIterator ("cursos/60/".$i2."/audio");
+                    $pasta = new FilesystemIterator ("cursos/60/".$i2."/img");
                     foreach($pasta as $file){
-                    //echo $file->getFileName()."audio:".$i4."<br>";
-                     $i4++;
+                      $i4++;
                     //echo $pasta."<br>";
                     }
                 }
@@ -153,38 +153,64 @@
                 echo 
             "<script>
                 function mostraAula".$c['ID_Curso']."aula".$i2."(){
+                console.log(".$i5[$i2].");
+                let b = document.body;
                 document.getElementById('nav').style.display = 'none';
                 document.getElementById('h1curso').style.display = 'none';
                 document.getElementsByClassName('usuarioDiv')[0].style.display = 'none';
                 document.getElementById('cursos').style.display = 'none';
-                let b = document.body;
                 let aula = document.createElement('div');
                 let imagem = document.createElement('img');
+                let audio = document.createElement('audio');
+                let prox = document.createElement('button');
+                let vol = document.createElement('button');
+                let sair = document.createElement('a');
+                sair.setAttribute('id', 'sair');
+                sair.setAttribute('onclick', 'sair()');
+                sair.innerHTML = 'sair';
+                prox.setAttribute('id', 'prox".$c['ID_Curso']."aula".$i2."');
+                vol.setAttribute('id', 'vol".$c['ID_Curso']."aula".$i2."');
+                prox.innerHTML = 'proxima';
+                vol.innerHTML = 'voltar';
+                prox.setAttribute('onclick', 'prox".$c['ID_Curso']."aula".$i2."()');
+                vol.setAttribute('onclick', 'vol".$c['ID_Curso']."aula".$i2."()');
+                aula.setAttribute('id' , 'aulaEstilo');
                 b.appendChild(aula);
                 aula.appendChild(imagem);
-                imagem.setAttribute('src', 'cursos/60/2/img/2.jpg');
-                imagem.setAttribute('class', 'aulaEstilo');
-                document.getElementById('prox').style.display = 'block';
-                document.getElementById('vol').style.display = 'block';
-                aula.appendChild(document.getElementById('prox'));
-                aula.appendChild(document.getElementById('vol'));
-
+                aula.appendChild(audio);
+                audio.setAttribute('id','audio');
+                audio.setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
+                imagem.setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
+                imagem.setAttribute('id', 'imagemEstilo');
+                aula.appendChild(prox);
+                aula.appendChild(vol);
+                aula.appendChild(sair);
+                audio.setAttribute('controls', 'autoplay');
+                prox.disabled = true;
+                audio.play();
+                audio.addEventListener('ended', function(){
+                    audio.currentTime = 0;
+                    prox.disabled = false;
+                    });
+                document.getElementById('sair').style.display = 'block';
+                aula.appendChild(document.getElementById('sair'));
+                document.getElementById('aulaEstilo').style.display = 'block';
             }
-                function proxima(){
-                    let i6 = 0;
-                    if(i6<".$i5[$i2]."){
-                        
-                    }
-                }
             </script>";
-            echo "<a id='prox' style='display:none' href='proxima()'>PROXIMA</a>";
-            echo "<a id='vol' style='display:none' href='vol()'>VOLTAR</a>";
-            }
-
-            $i++;
+            
+            echo "<script>function prox".$c['ID_Curso']."aula".$i2."(){i6++;document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;}</script>";
+            echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){i6--;document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');audio.play();}</script>";
            
+        }   
+            $i++;
         }
         
+        echo "<script>
+            function sair(){
+            document.getElementById('nav').style.display = 'flex';
+            document.getElementById('h1curso').style.display = 'flex';
+            document.getElementsByClassName('usuarioDiv')[0].style.display = 'flex';
+            document.getElementById('cursos').style.display = 'flex';document.getElementById('aulaEstilo').remove();i6=0;}</script>";
         while($i>0){
             echo "<script>adcElemento()</script>";
             $i--;
