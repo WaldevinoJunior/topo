@@ -211,6 +211,7 @@
                 document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                 document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
                 audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;
+                
                 }
             else{
                 console.log('oi');
@@ -221,15 +222,24 @@
         }   
             $i++;
         }
-        $arq = file('cursos/60/1/paginas.txt');
-        foreach($arq as $imprimi){
-            if($imprimi === '<->'){
-                echo "oi";
+        $i10 = 0;
+        $arq= "cursos/60/1/paginas.txt";
+        $pont = fopen($arq,"r");
+        $linha = fgets($pont);
+        $i6 = 1;
+        while($linha){
+            if(substr_count($linha, '<->')){
+                $i10++;
+                $linha = fgets($pont);
+            } 
+            elseif($i10 == $i6){
+                echo $linha."<br>";
+                $linha = fgets($pont);
             }
-            var_dump($imprimi);
-            echo "<br>";
+            else{
+                $linha = fgets($pont);
+            }
         }
-        fclose($arq);
         echo "<script>
             function sair(){
             document.getElementById('nav').style.display = 'flex';
