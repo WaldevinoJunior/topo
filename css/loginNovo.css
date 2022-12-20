@@ -367,10 +367,10 @@ body.usuario div.usuarioDiv button{
     display: flex;
     flex-direction: column;
     width: 20vw;
-    height: 10vh;
+    height: 35vh;
 }
 #audio{
-    position: absolute;
+    position: relative;
     display: flex;
 }
 #imagemEstilo{

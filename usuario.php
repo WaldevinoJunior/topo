@@ -182,7 +182,7 @@
                 b.appendChild(aula);
                 aula.appendChild(textoAula);
                 aula.appendChild(imagem);
-                imagem.appendChild(audio);
+                textoAula.appendChild(audio);
                 
                 audio.setAttribute('id','audio');
                 audio.setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
@@ -203,13 +203,33 @@
             }
             </script>";
             
-            echo "<script>function prox".$c['ID_Curso']."aula".$i2."(){i6++;document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;}</script>";
-            echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){i6--;document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;}</script>";
+            echo "<script>
+            function prox".$c['ID_Curso']."aula".$i2."(){
+                i6++;
+                if(i6<".$i5[$i2].")
+                {
+                document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
+                document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
+                audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;
+                }
+            else{
+                console.log('oi');
+            }
+        }</script>";
+            echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){i6--;if(i6>0){document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;}}</script>";
            
         }   
             $i++;
         }
-        
+        $arq = file('cursos/60/1/paginas.txt');
+        foreach($arq as $imprimi){
+            if($imprimi === '<->'){
+                echo "oi";
+            }
+            var_dump($imprimi);
+            echo "<br>";
+        }
+        fclose($arq);
         echo "<script>
             function sair(){
             document.getElementById('nav').style.display = 'flex';
