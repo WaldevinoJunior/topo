@@ -366,8 +366,8 @@ body.usuario div.usuarioDiv button{
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 20vw;
-    height: 35vh;
+    width: 40vw;
+    height: 50vh;
 }
 #audio{
     position: relative;

@@ -148,7 +148,16 @@
                 if($c['ID_Curso']==60){
                     $pasta = new FilesystemIterator ("cursos/60/".$i2."/img");
                     foreach($pasta as $file){
-                      $i4++;
+                        if($i2 == 1){
+                            $arq= "cursos/60/1/paginas/".$i4.".txt";
+                            $pont = fopen($arq,"r");
+                            $linha = fgets($pont);
+                            while($linha){
+                                echo "<p id='601".$i4."' style='display:none'>".$linha."</p>";
+                                $linha = fgets($pont);
+                            }
+                        }
+                        $i4++;
                     //echo $pasta."<br>";
                     }
                 }
@@ -183,7 +192,6 @@
                 aula.appendChild(textoAula);
                 aula.appendChild(imagem);
                 textoAula.appendChild(audio);
-                
                 audio.setAttribute('id','audio');
                 audio.setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
                 imagem.setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
@@ -200,52 +208,52 @@
                     });
                 document.getElementById('sair').style.display = 'block';
                 document.getElementById('aulaEstilo').style.display = 'block';
-            }
-            </script>";
-            
+                document.getElementById('601'+i6+'').style.display = 'block';
+                let paragrafo = document.createElement('p');
+                paragrafo.setAttribute('id', 'paragrafo');
+                paragrafo.innerHTML = document.getElementById('601'+i6+'').innerHTML;
+                textoAula.appendChild(paragrafo);
+                }
+                </script>";
+              
             echo "<script>
             function prox".$c['ID_Curso']."aula".$i2."(){
+                if(i6<".$i5[$i2]."){
+                console.log(i6);
+                document.getElementById('601'+i6+'').style.display = 'none';
                 i6++;
-                if(i6<".$i5[$i2].")
-                {
+                document.getElementById('paragrafo').innerHTML = document.getElementById('601'+i6+'').innerHTML;
+                document.getElementById('601'+i6+'').style.display = 'block';
                 document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                 document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
                 audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;
-                
                 }
-            else{
-                console.log('oi');
-            }
-        }</script>";
-            echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){i6--;if(i6>0){document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;}}</script>";
-           
-        }   
+            }</script>";
+            echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){
+                if(i6>0){
+                    console.log(i6);
+                    document.getElementById('601'+i6+'').style.display = 'none';
+                    i6--;
+                    document.getElementById('601'+i6+'').style.display = 'block';
+                    document.getElementById('paragrafo').innerHTML = document.getElementById('601'+i6+'').innerHTML;
+                    document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
+                    document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
+                    audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;
+                }
+            
+            }</script>";
+            
+            }   
             $i++;
-        }
-        $i10 = 0;
-        $arq= "cursos/60/1/paginas.txt";
-        $pont = fopen($arq,"r");
-        $linha = fgets($pont);
-        $i6 = 1;
-        while($linha){
-            if(substr_count($linha, '<->')){
-                $i10++;
-                $linha = fgets($pont);
-            } 
-            elseif($i10 == $i6){
-                echo $linha."<br>";
-                $linha = fgets($pont);
-            }
-            else{
-                $linha = fgets($pont);
-            }
         }
         echo "<script>
             function sair(){
+            document.getElementById('601'+i6+'').style.display = 'none';
             document.getElementById('nav').style.display = 'flex';
             document.getElementById('h1curso').style.display = 'flex';
             document.getElementsByClassName('usuarioDiv')[0].style.display = 'flex';
-            document.getElementById('cursos').style.display = 'flex';document.getElementById('aulaEstilo').remove();i6=0;}</script>";
+            document.getElementById('cursos').style.display = 'flex';document.getElementById('aulaEstilo').remove();i6=0;}
+            </script>";
         while($i>0){
             echo "<script>adcElemento()</script>";
             $i--;
