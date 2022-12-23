@@ -1,0 +1,1 @@
+A posição alcançada deve ser mantida por 1 segundo, e a volta à posição inicial deve levar 3 segundos, terminando então uma repetição do exercício. A carga pode ser aumentada colocando pesos extras nos tornozelos.

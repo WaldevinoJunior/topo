@@ -1,0 +1,1 @@
+Rotineiramente o paciente deve (sob orientação médica), realizar exames laboratoriais para que seja analisado seu estado nutricional. A freqüência destes exames irá variar de acordo com o quadro clínico apresentado.

@@ -148,15 +148,14 @@
                 if($c['ID_Curso']==60){
                     $pasta = new FilesystemIterator ("cursos/60/".$i2."/img");
                     foreach($pasta as $file){
-                        if($i2 == 1 || $i2 ==2){
-                            $arq= "cursos/60/".$i2."/paginas/".$i4.".txt";
-                            $pont = fopen($arq,"r");
+                        $arq= "cursos/60/".$i2."/paginas/".$i4.".txt";
+                        $pont = fopen($arq,"r");
+                        $linha = fgets($pont);
+                        while($linha){
+                            echo "<p id='60".$i2."".$i4."' style='display:none'>".$linha."</p>";
                             $linha = fgets($pont);
-                            while($linha){
-                                echo "<p id='60".$i2."".$i4."' style='display:none'>".$linha."</p>";
-                                $linha = fgets($pont);
-                            }
                         }
+                        
                         $i4++;
                     //echo $pasta."<br>";
                     }
@@ -179,7 +178,7 @@
                 let textoAula = document.createElement('div');
                 textoAula.setAttribute('id','textoAula');
                 sair.setAttribute('id', 'sair');
-                sair.setAttribute('onclick', 'sair()');
+                sair.setAttribute('onclick', 'sair".$c['ID_Curso']."aula".$i2."()');
                 sair.innerHTML = 'sair';
                 prox.setAttribute('id', 'prox".$c['ID_Curso']."aula".$i2."');
                 vol.setAttribute('id', 'vol".$c['ID_Curso']."aula".$i2."');
@@ -220,12 +219,13 @@
             function prox".$c['ID_Curso']."aula".$i2."(){
                 if(i6<".$i5[$i2]."){
                 console.log(i6);
+                console.log(document.getElementById('60".$i2."'+i6+''));
                 document.getElementById('60".$i2."'+i6+'').style.display = 'none';
                 i6++;
                 if(i6 == ".$i5[$i2]."){
                     alert('Aula Concluída');
                     i6--;
-                    sair();
+                    sair".$c['ID_Curso']."aula".$i2."();
                 }
                 document.getElementById('paragrafo').innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
                 document.getElementById('60".$i2."'+i6+'').style.display = 'block';
@@ -235,6 +235,7 @@
                 }
             }</script>";
             echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){
+                document.getElementById('60".$i2."'+i6+'').style.display = 'none';
                 if(i6>0){
                     console.log(i6);
                     document.getElementById('60".$i2."'+i6+'').style.display = 'none';
@@ -247,18 +248,18 @@
                 }
             
             }</script>";
-            
-            }   
-            $i++;
-        }
-        echo "<script>
-            function sair(){
-            document.getElementById('601'+i6+'').style.display = 'none';
+            echo "<script>
+            function sair".$c['ID_Curso']."aula".$i2."(){
+            console.log(document.getElementById('60".$i2."'+i6+''));
+            document.getElementById('60".$i2."'+i6+'').style.display = 'none';
             document.getElementById('nav').style.display = 'flex';
             document.getElementById('h1curso').style.display = 'flex';
             document.getElementsByClassName('usuarioDiv')[0].style.display = 'flex';
             document.getElementById('cursos').style.display = 'flex';document.getElementById('aulaEstilo').remove();i6=0;}
             </script>";
+            }   
+            $i++;
+        }
         while($i>0){
             echo "<script>adcElemento()</script>";
             $i--;
