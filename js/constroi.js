@@ -59,9 +59,6 @@ function muda4(){
  function mostraCurso(){
     let d = document.getElementsByClassName("cursoConteudo");
     for (let i = 0; i < d.length; i++) {
-      /*if(document.getElementById("oi").name == 60){
-         d[i].style.display = "block";
-      }*/
       d[i].style.display = "block";
     }
     let e = document.getElementsByClassName("cursoTela");

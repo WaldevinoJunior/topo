@@ -1,0 +1,31 @@
+﻿0;;
+Estão entre as atribuições do porteiro as seguintes tarefas:;;
+Permitir a entrada de vendedores, compradores e pedintes.;;
+Levar cães e outros animais de estimação dos condôminos para passear.;;
+Fiscalizar a entrada e saída de pessoas do saguão do prédio, elevadores, pátios e garagens.;;
+Brincar com os filhos dos condôminos, no playground.;;
+3;;
+<->
+1;;
+Ao assumir seu posto o porteiro deve:;;
+Deixar abertos portões e cancelas para facilitar o transito de moradores do condomínio.;;
+Verificar se a portaria esta em ordem e limpa.;;
+Trancar arquivos, livros, canetas e demais objetos pertencentes a portaria, em uma gaveta com chave.;;
+estar sempre de pé na calçada.;;
+2;;
+<->
+2;;
+Faz parte das regras de segurança de um condomínio:;;
+Nunca ficar conversando ou tomando sol na calçada, mantenha sempre a atenção.;;
+Permitir a entrada de prestadores de serviço, mesmo que não estejam sendo aguardados pelo morador.;;
+Nunca ficar dentro da guarita.;;
+Permitir a entrada de pessoas estranhas ao condomínio sem autorização de um morador.;;
+1;;
+<->
+3;;
+Como devem ser identificados e recebidos os visitantes?;;
+Entrar em contato com o morador, informar sobre a presença do visitante e da conveniência de sua entrada ou não.;;
+Pedir que volte outro dia.;;
+Liberar imediatamente a entrada do visitante;;
+Indicar sempre o elevador de serviço.;;
+1;;

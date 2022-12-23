@@ -1,0 +1,31 @@
+0;;
+Quais são os quatro pontos básicos da triagem?;;
+Recado, conhecido, esquecido, motorizado;;
+Aviso, recado, condômino motorizado, conhecido;;
+Reconhecido, aviso, desconhecido, condômino motorizado;;
+Avisado, conhecido, Reconhecido, condômino motorizado;;
+4;;
+<->
+1;;
+Por quem deve ser feita a triagem? ;;
+Pelo sindico.;;
+Pelo condômino.;;
+Pelo porteiro/vigia.;;
+Pela polícia militar.;;
+3;;
+<->
+2;;
+Quem deve comunicar ao porteiro/vigia, sobre a troca de algum funcionário do condômino? ;;
+O próprio condômino, por escrito.;;
+O síndico, por e-mail.;;
+O próprio funcionário, verbalmente.;;
+Nenhuma das alternativas.;;
+1;;
+<->
+3;;
+Como devem ser passadas as alterações ocorridas no seu horário de trabalho ao colega que irá substitui-lo? ;;
+Verbalmente apenas.;;
+Não se deve passar adiante as alterações acorridas no seu horário de trabalho.;;
+Por e-mail.;;
+Verbalmente e por escrito em livro próprio para isso.;;
+4;;

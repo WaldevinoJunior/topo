@@ -1,0 +1,31 @@
+﻿0;;
+Ao anunciar uma visita motorizada que informações o condômino deve enviar a portaria?;;
+Nome, endereço e telefone;;
+Nome, idade e endereço;;
+Nome, tipo e placa do veículo;;
+Nome, idade e placa do veículo;;
+3;;
+<->
+1;;
+Caso o visitante avisado ao condômino, autorizado e conhecido da equipe de segurança, sua entrada será:;;
+Permitida;;
+Negada;;
+Acompanhada;;
+Desacoselhada;;
+1;;
+<->
+2;;
+Quando o morador trouxer um visitante em seu veículo, este deve ser orientado a se dirigir a (ao):;;
+Elevador;;
+Portão dos fundos;;
+Entrada de pedestres;;
+Calçada;;
+3;;
+<->
+3;;
+Como deve ser feita a entrada do morador acompanhado de pessoas desconhecidas? ;;
+O morador passa sozinho pelo primeiro portão da eclusa;;
+O visitante e o morador entram juntos no condomínio;;
+O visitante entre primeiro na eclusa;;
+O morador e o visitante entram pelo acesso da garagem;;
+1;;

@@ -1,0 +1,31 @@
+﻿0;;
+Quem deve acompanhar os prestadores de serviço no interior do condomínio?;;
+O síndico;;
+O condômino;;
+O proteiro;;
+O zelador;;
+4;;
+<->
+1;;
+No caso de mudança no quadro de entregadores rotineiros, quem deve comunicar ao condomínio tal mudança?;;
+O porteiro;;
+A empresa responsável pelas entregas;;
+O zelador;;
+O condômino;;
+2;;
+<->
+2;;
+Quem pode autorizar a entrada de veículos de entrega no condomínio?;;
+O porteiro;;
+O sindico;;
+O zelador;;
+Nenhuma das alternativas;;
+3;;
+<->
+3;;
+Quando é que pacotes e encomendas podem permanecer na guarita? ;;
+Em hipótese alguma;;
+No caso do condômino estar viajando;;
+Só aos fins de semana;;
+Quando pertencerem ao zelador;;
+1;;

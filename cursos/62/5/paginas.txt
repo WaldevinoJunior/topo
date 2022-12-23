@@ -1,0 +1,67 @@
+﻿0;;
+Taxis ou visitantes motorizados;; 
+1.	Táxis não acessarão o condomínio.
+2.	 O condômino deverá ingressar ao condomínio pela eclusa de pedestres.
+entrada de visitantes - a pé ou em seus veículos em caso de previamente anunciado pelo morador (nome completo, tipo e placa do veículo), o visitante será:
+1.	Anunciado ao condômino a ser visitado - “avisado”.
+2.	o condômino, ou aquele por ele delegado, autoriza a liberação do acesso –“autorizado”.
+<->
+1;;
+Taxis ou visitantes motorizados;;
+1.	Caso for avisado, autorizado e o visitante for conhecido da equipe de segurança, sua entrada será permitida - “conhecido”.
+2.	Caso for avisado, autorizado, mas o visitante não for conhecido (e, repetimos, já tenha sido avisado e autorizado) da equipe de segurança, será, então, reconhecido através de documento de identidade - “reconhecido”. Esse procedimento só poderá ser dispensado se o próprio condômino, quando avisado, se dirigir à portaria e acompanhar a entrada do visitante.
+<->
+2;;
+Entrada de morador motorizado acompanhado por visitante:;;
+1.	O condômino deverá pedir para o acompanhante descer do veículo antes de entrar a primeira porta da eclusa, que só será aberta após a descida do acompanhante;
+2.	O acompanhante será orientado a se dirigir à entrada de pedestres;
+<->
+3;;
+Entrada de morador motorizado acompanhado por visitante:;;
+3.	O condômino adentra com o veículo, seguro e protegido, dará a autorização de entrada do acompanhante pela entrada de pedestres e indicará que o aguarde no hall social;
+4.	Caso informado previamente, excluindo-se mensagem telefônica, da chegada do morador acompanhado de visitante, o acompanhante poderá acessar ao condomínio com o próprio condômino, que fará a identificação pessoal.
+<->
+4;;
+Entrada de morador acompanhado por pessoas desconhecidas:;;
+1.	O morador passa pelo primeiro portão da eclusa;
+2.	Autoriza o acesso do visitante, que o aguarda, até então, do lado de fora da eclusa;
+3.	Uma vez o morador, estrategicamente isolado e seguro, o visitante passa pela eclusa.
+<->
+5;;
+Festas e eventos;;
+1.	O condômino, organizador do evento, envia, com antecedência, a relação de convidados, com respectiva senha numérica;
+2.	O nome do convidado/senha numérica é checado e conferido com a lista, quando de sua chegada, sem necessidade de conferência de documentos.
+<->
+6;;
+Corretores de imóveis;;
+Só poderá acessar o condomínio corretores avisados previamente pelo proprietário/ condômino, com as informações de nome e RG., apresentando, demais, documento de identidade, crachá de identificação da empresa que representam, com respectiva foto.
+<->
+7;;
+Corretores de imóveis;;
+O seu cliente, que deve estar desacompanhado, deve apresentar o documento de identificação para registro e anotação no formulário de entrada e saída de visitantes pela equipe de efetivos.
+O cliente acessará o condomínio somente após o corretor estar seguro e protegido, após seu trânsito pela eclusa.
+<->
+8;;
+Corretores de imóveis;;
+O profissional ocupante do terceiro posto de serviços poderá, desde que não realizando cobertura dos outros dois postos (guarita e triagem), acompanhar o corretor e cliente, mantendo frequente comunicação com os demais colaboradores da equipe. Para diminuir a resistência da aplicação deste procedimento, a segurança aplicada no condomínio e vivenciada pelo futuro condômino poderá ser um forte argumento da negociação do valor do imóvel. 
+<->
+9;;
+Autoridades;;
+1.	Só poderão acessar o condomínio aquelas autoridades que apresentarem documento com foto e também, crachá funcional.
+2.	Confirmar se realmente existe uma “ação” ao local ou a um morador, caso confirme, liberar o acesso. Se estiver acompanhado de mais pessoas, todas deverão ser identificadas. 
+<->
+10;;
+Importante;;
+No condomínio deve existir um gerador de energia, que deve ser utilizado em caso de emergência. Este gerador deve abastecer, no mínimo, a guarita, os equipamentos de segurança, os elevadores e as áreas comuns. 
+<->
+11;;
+Importante;;
+Foram detalhados neste curso os procedimentos de segurança recomendados para condomínios e edifícios, sendo que a aprovação deles depende inteiramente dos condôminos, que precisam compreender que não deve haver tratamento diferenciado ou pessoas privilegiadas na aplicação do processo.
+<->
+12;;
+Importante;;
+Outrossim, o amplo espectro que norteia a relação prevenção/segurança, em alguns momentos, pode desencadear uma ação de resistência por parte de alguns assegurados, pois, uma vez que o cerne do processo é o controle, o fluxo do movimento de pessoas e veículos tende a ficar mais lento. 
+<->
+13;;
+Importante;;
+Recomendamos, ainda e por fim, utilizar a palestra sobre segurança, durante assembleia de condomínio, para a definição de procedimentos mais rígidos. A palestra, ministrada pelo Grupo Podium, pode tomar lugar a seu critério de data e hora, inclusive para os empregados domésticos de seu condomínio. 

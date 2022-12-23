@@ -1,5 +1,5 @@
 <?php include("valida.php"); 
-    $consulta = "SELECT * FROM alunos";
+    $consulta = "SELECT * FROM alunos ";
     $con = $mysqli->query($consulta) or die($mysqli->error);
 ?>
 <html>
@@ -14,14 +14,6 @@
         <br>
         <h2 id="oi">Aluno</h2>
         </section>
-        <script>
-            var oi = document.querySelector("#oi");
-
-            console.log(oi);
-            oi.textContent = "<?php
-            $dado = $con->fetch_array();
-            echo $dado[1];
-        ?>";
-        </script>
+       
     </body>
 </html>

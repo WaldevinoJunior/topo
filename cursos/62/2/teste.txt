@@ -1,0 +1,31 @@
+0;;
+Quanto a identificação de entregadores de mercadorias, marque a alternativa correta;;
+Abrir a portaria e buscar a encomenda na calçada;;
+Abrir a portaria e permitir que o próprio entregador leve a mercadoria até a moradia do condômino;;
+Avisar o condômino, solicitando sua presença ou de algum funcionário seu na portaria para pegar a encomenda;;
+Na ausência do morador, não receber a mercadoria;;
+3;;
+<->
+1;;
+Quanto a identificação de veículos, marque a alternativa correta. ;;
+Fotografar o veículo na entrada e na saída.;;
+Fazer inspeção visual na pessoa e no veículo.;;
+Assim que ouvir a buzina do veículo abrir o portão da garagem.;;
+Pedir que o motorista desligue os faróis do veículo.;;
+2;;
+<->
+2;;
+Faz parte da postura comportamental do porteiro: ;;
+Estar atento a tudo (dentro e fora da portaria). ;;
+Não dar atenção a crianças ;;
+Guardar os veículos para os moradores;;
+Carregar as compras dos moradores;;
+1;;
+<->
+3;;
+O que você não pode fazer como porteiro? ;;
+Ser atencioso com os condôminos ;;
+Identificar o condutor do veículo que pretende entrar no condomínio ;;
+Não permitir que entregadores entrem no condomínio ;;
+Guardar a chave da moradia ou do carro do condômino. ;;
+4;;

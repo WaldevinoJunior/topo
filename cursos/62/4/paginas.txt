@@ -1,0 +1,60 @@
+0;;
+Entregadores de pequenas encomendas;; 
+Entregadores de pequenas encomendadas, nunca devem passar da eclusa para dentro do edifício.
+É premissa que a veracidade da operação seja checada, interfonando-se ao condômino solicitado.
+<->
+1;;
+Entregadores de pequenas encomendas;;
+entregadores de pequenas encomendas, tais como pizza ou flores, não acessam o condomínio.
+O condômino solicitado, ou quem por ele delegado, deverá dirigir-se ao térreo para coletar a encomenda, uma vez que pacotes não devem ser deixados nem permanecer na guarita.
+<->
+2;;
+Entregadores de pequenas encomendas;;
+Caso haja a alocação de um terceiro profissional num mesmo turno de trabalho, é possível que a entrega da encomenda seja realizada por esse colaborador, desde que não esteja, naquele momento, tornando os demais dois postos de serviços (guarita e triagem) desguarnecidos.
+<->
+3;;
+Entregadores de pequenas encomendas;;
+O cadastramento de fornecedores rotineiros, a exemplo de entregadores de galões de água e entregadores da lavanderia, entre outros, é essencial para a checagem da veracidade da operação. Neste caso, a empresa responsável pela entrega deverá comunicar previamente e por escrito qualquer alteração no seu quadro de entregadores. 
+<->
+4;;
+Entregadores de pequenas encomendas;;
+Esses visitantes deverão ser acompanhados em seu trânsito no interior do condomínio, desde a liberação de entrada até a respectiva saída do condomínio. Cabe ao zelador acompanhá-los até o local de destino e traze-los até o portão de saída. Na impossibilidade do acompanhamento do zelador, o condômino deverá comunicar a portaria sobre o fim da atividade na unidade e consequentemente a saída do prestador de serviços.
+<->
+5;;
+Concessionárias públicas;;
+Só poderão acessar o condomínio aqueles profissionais de concessionárias públicas, como Comgás, Eletropaulo, Copasa e outras, mediante autorização do zelador do condomínio, apresentando para tal identificação funcional.
+<->
+6;;
+Concessionárias públicas;;
+É factível que o colaborador atuante na guarita confirme a veracidade da operação, comunicando-se com os respectivos órgãos.
+<->
+7;;
+Entregadores de cargas especiais e prestadores de serviços;;
+Definição: são pessoas que, para a realização de uma entrega especializada, a exemplo de uma geladeira, ou de uma execução de serviço, tal como a instalação de TV a cabo, devem, obrigatoriamente, acessar o condomínio.
+<->
+8;;
+Entregadores de cargas especiais e prestadores de serviços;;
+Antecipadamente, o responsável pela solicitação da entrega ou serviço solicita o nome completo e o número do documento de identidade do prestador/entregador à empresa responsável. 
+Estes dados são enviados à guarita
+<->
+9;;
+Entregadores de cargas especiais e prestadores de serviços;;
+No momento da chegada do entregador/prestador, ele é anunciado ao condômino solicitado - “avisado”.
+O condômino ou outro por ele delegado, autoriza a liberação do acesso - “autorizado”.
+<->
+10;;
+Entregadores de cargas especiais e prestadores de serviços;;
+Nome e número de documento de identidade são conferidos com a informação previamente registrada e, caso coincidam, o acesso é, então, liberado - “reconhecido”.
+Caso o condômino não forneça previamente os dados necessários, o profissional da guarita será responsável por ligar na correspondente empresa (o que retarda o acesso do prestador de serviço). 
+<->
+11;;
+Entregadores de cargas especiais e prestadores de serviços;;
+Recomendamos que o entregador/prestador não seja autorizado a adentrar o condomínio com seu veículo. Exceções, a exemplo da entrega de uma geladeira serão autorizadas pelo zelador.
+<->
+12;;
+Entregadores de cargas especiais e prestadores de serviços;;
+Nestes casos, ainda, é possível, determinar que uma revista no baú da van/caminhonete seja realizada, no acesso ao condomínio e/ou em sua saída.
+<->
+13;;
+Entregadores de cargas especiais e prestadores de serviços;;
+Caso acompanhados, um a um dos profissionais deverá ser avisado, autorizado, conhecido ou reconhecido. Caberá ao condômino, ou quem por ele delegado, acompanhar a operação.
