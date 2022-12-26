@@ -9,7 +9,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Administração - Topo Treinamentos</title>
+    <link rel="sortcut icon" href="img/iconetopo.jpg" type="image/jpg" />
+
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/flaticon.css" type="text/css">
@@ -69,25 +71,53 @@
                 <h2><strong>Administração</strong></h2>
             <div id="func">
                 <div id="listaAlunos" style="display:none">
-                    
-                   <?php
-                    while($cAlunos = mysqli_fetch_array($conAlunos)){
-                        echo "ID dos Alunos: ".$cAlunos['ID_Aluno'];
-                        echo "Nome dos Alunos: ".$cAlunos['Nome'];
-                        echo "Responsavel dos Alunos: ".$cAlunos['Responsavel'];
-                        echo "Nascimento dos Alunos: ".$cAlunos['Nascimento'];
-                        echo "Email dos Alunos: ".$cAlunos['Email'];
-                        echo "Telefone dos Alunos: ".$cAlunos['Telefone'];
-                        echo "CPF dos Alunos: ".$cAlunos['CPF'];
-                        echo "RG dos Alunos: ".$cAlunos['RG'];
-                        echo "CEP dos Alunos: ".$cAlunos['CEP'];
-                        echo "Estado dos Alunos: ".$cAlunos['Estado'];
-                        echo "Cidade dos Alunos: ".$cAlunos['Cidade'];
-                        echo "Rua dos Alunos: ".$cAlunos['Rua'];
-                        echo "Numero dos Alunos: ".$cAlunos['Numero'];
-                        echo "Senha dos Alunos: ".$cAlunos['Senha']."<br>";
-                    } 
+                <div class="content"> 
+                    <?php
+                       $table = '<table class="rTable">';
+                            $table .='<thead>';
+                                $table .= '<tr>';
+                                   $table .= '<th>ID</th>';
+                                   $table .= '<th>Nome</th>';
+                                   $table .= '<th>Responsável</th>';
+                                   $table .= '<th>Nascimento</th>';
+                                   $table .= '<th>Email</th>';
+                                   $table .= '<th>Telefone</th>';
+                                   $table .= '<th>CPF</th>';
+                                   $table .= '<th>RG</th>';
+                                   $table .= '<th>CEP</th>';
+                                   $table .= '<th>Estado</th>';
+                                   $table .= '<th>Cidade</th>';
+                                   $table .= '<th>Rua</th>';
+                                   $table .= '<th>Número</th>';
+                                   $table .= '<th>Senha</th>';
+                                $table .= '</tr>';
+                            $table .= '</thead>';
+                            $table .= '<tbody>';
+           
+                                while($cAlunos = mysqli_fetch_array($conAlunos)){
+                                    $table .= '<tr>';
+                                        $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
+                                        $table .= "<td>{$cAlunos['Nome']}</td>";
+                                        $table .= "<td>{$cAlunos['Responsavel']}</td>";
+                                        $table .= "<td>{$cAlunos['Nascimento']}</td>";
+                                        $table .= "<td>{$cAlunos['Email']}</td>";
+                                        $table .= "<td>{$cAlunos['Telefone']}</td>";
+                                        $table .= "<td>{$cAlunos['CPF']}</td>";
+                                        $table .= "<td>{$cAlunos['RG']}</td>";
+                                        $table .= "<td>{$cAlunos['CEP']}</td>";
+                                        $table .= "<td>{$cAlunos['Estado']}</td>";
+                                        $table .= "<td>{$cAlunos['Cidade']}</td>";
+                                        $table .= "<td>{$cAlunos['Rua']}</td>";
+                                        $table .= "<td>{$cAlunos['Numero']}</td>";
+                                        $table .= "<td>{$cAlunos['Senha']}</td>";
+                                    $table .= '</tr>';
+
+                                } 
+                            $table .= '</tbody>';
+                        $table .= '</table>';
+                        echo $table;
                    ?>
+                </div>
                 </div>
                 <div class="funcA">
                     <a onclick="mostraAlunos()"><i class="bi bi-person-fill" ></i><h3>Listar Alunos</h3></a>

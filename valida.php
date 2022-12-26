@@ -84,7 +84,7 @@ while($c3 = mysqli_fetch_array($con3)){
 			session_start();
 			$_SESSION['nome'] = $c3['Nome'];
 			$_SESSION['ID_Colaborador'] = $_POST['ID_Aluno'];
-			header('Location: /topo/admin.php');
+			header('Location: ./admin.php');
 		}	
 	}
 }
