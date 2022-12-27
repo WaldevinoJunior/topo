@@ -96,12 +96,7 @@ a{
 a:link {
     color: #e67e22;
     font-size: 20px;
-   }
-   
-a:hover {
-        
-   }
-   
+}   
 
 @media (min-width: 1100px)
 {
@@ -521,4 +516,42 @@ body.teste{
     display: flex;
     align-items: center;
     
+}
+
+.content{
+    display:flex; 
+    margin: auto;
+}
+
+.rTable{
+    width: 100%; 
+    text-align: center; 
+    font-size: 13px;
+}
+.rTable thead{
+    background: black; 
+    font-weight: bold; color:#fff;
+}
+.rTable tbody tr:nth-child(2n){
+    background: #ccc;
+}
+.rTable th , .rTable td{
+    padding: 7px 0;
+    border: 1px solid black;
+}
+
+@media screen and (max-width: 480px){
+    .content{width: 94%;}
+
+    .rTable thead{display:none;}
+    .rTable tbody td{display: flex; flex-direction: column;}
+}
+
+@media only screen and (min-width: 1200px){
+    .content{width:100%;}
+    .rTable tbody tr td:nth-child(1){width:10%;}
+    .rTable tbody tr td:nth-child(2){width:30%;}
+    .rTable tbody tr td:nth-child(3){width:20%;}
+    .rTable tbody tr td:nth-child(4){width:10%;}
+    .rTable tbody tr td:nth-child(5){width:30%;}
 }
