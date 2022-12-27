@@ -160,7 +160,7 @@
                                         $table .= "<td>{$cColab['Numero']}</td>";
                                         $table .= "<td>{$cColab['Complemento']}</td>";
                                         $table .= "<td>{$cColab['Login']}</td>";
-                                        $table .= "<td>{$cAlunos['Senha']}</td>";
+                                        $table .= "<td>{$cColab['Senha']}</td>";
                                         $table .= "<td>{$cColab['Perfil']}</td>";
                                         $table .= "<td>{$cColab['Licenca']}</td>";
                                     $table .= '</tr>';
