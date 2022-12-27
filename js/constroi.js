@@ -89,3 +89,10 @@ function mostraAlunos(){
     }
     document.getElementById("listaAlunos").style.display = 'block';
 }
+function mostraColaboradores(){
+  let e = document.getElementsByClassName("funcA");;
+    for (let i = 0; i < e.length; i++) {
+      e[i].style.display = "none";
+    }
+    document.getElementById("listaColaboradores").style.display = 'block';
+}

@@ -1,7 +1,9 @@
 <?php 
     include("valida.php");
     $consultaAlunos = "SELECT * from alunos";
+    $consultaColab = "SELECT * from colaboradores";
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
+    $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +40,7 @@
                         <a>Listar Colaboradores</a><hr>
                         <a>Cadastrar Horários</a>
                         <a>Salas</a>
-                        <a>Maquínas</a>
+                        <a>Máquinas</a>
                     </div>
             </li>
             <li><a href=""><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i></a>
@@ -48,7 +50,7 @@
                         <a>Propragandas</a>
                     </div>
             </li>
-            <li><a href=""><i class="bi bi-file-bar-graph"></i>Relatorios<i class="bi bi-caret-down"></i></a>
+            <li><a href=""><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i></a>
                         <div id="barras">
                         <a>Lista de Presença</a>
                         <a>Contratos</a>
@@ -119,6 +121,57 @@
                    ?>
                 </div>
                 </div>
+                <div id="listaColaboradores" style="display:none">
+                <div class="content"> 
+                    <?php
+                       $table = '<table class="rTable">';
+                            $table .='<thead>';
+                                $table .= '<tr>';
+                                   $table .= '<th>ID</th>';
+                                   $table .= '<th>Nome</th>';
+                                   $table .= '<th>Nascimento</th>';
+                                   $table .= '<th>Email</th>';
+                                   $table .= '<th>Telefone</th>';
+                                   $table .= '<th>CEP</th>';
+                                   $table .= '<th>Estado</th>';
+                                   $table .= '<th>Cidade</th>';
+                                   $table .= '<th>Rua</th>';
+                                   $table .= '<th>Número</th>';
+                                   $table .= '<th>Complemento</th>';
+                                   $table .= '<th>Login</th>';
+                                   $table .= '<th>Senha</th>';
+                                   $table .= '<th>Perfil</th>';
+                                   $table .= '<th>Licença</th>';
+                                $table .= '</tr>';
+                            $table .= '</thead>';
+                            $table .= '<tbody>';
+           
+                                while($cColab = mysqli_fetch_array($conColab)){
+                                    $table .= '<tr>';
+                                        $table .= "<td>{$cColab['ID_Colaborador']}</td>";
+                                        $table .= "<td>{$cColab['Nome']}</td>";
+                                        $table .= "<td>{$cColab['Nascimento']}</td>";
+                                        $table .= "<td>{$cColab['Email']}</td>";
+                                        $table .= "<td>{$cColab['Telefone']}</td>";
+                                        $table .= "<td>{$cColab['CEP']}</td>";
+                                        $table .= "<td>{$cColab['Estado']}</td>";
+                                        $table .= "<td>{$cColab['Cidade']}</td>";
+                                        $table .= "<td>{$cColab['Rua']}</td>";
+                                        $table .= "<td>{$cColab['Numero']}</td>";
+                                        $table .= "<td>{$cColab['Complemento']}</td>";
+                                        $table .= "<td>{$cColab['Login']}</td>";
+                                        $table .= "<td>{$cAlunos['Senha']}</td>";
+                                        $table .= "<td>{$cColab['Perfil']}</td>";
+                                        $table .= "<td>{$cColab['Licenca']}</td>";
+                                    $table .= '</tr>';
+
+                                } 
+                            $table .= '</tbody>';
+                        $table .= '</table>';
+                        echo $table;
+                   ?>
+                </div>
+                </div>
                 <div class="funcA">
                     <a onclick="mostraAlunos()"><i class="bi bi-person-fill" ></i><h3>Listar Alunos</h3></a>
                 </div>
@@ -135,7 +188,7 @@
                     <a><i class="bi bi-arrow-counterclockwise"></i><h3>Fazer Backup</h3></a>
                 </div>
                 <div class="funcA">
-                    <a><i class="bi bi-people fill"></i><h3>Colaboradores</h3></a>
+                    <a onclick="mostraColaboradores()"><i class="bi bi-people fill"></i><h3>Colaboradores</h3></a>
                 </div>
                 <hr>
             </div>
