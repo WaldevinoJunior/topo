@@ -10,8 +10,8 @@
     <body>
         <section>
         <h2 id="oi">Aluno</h2>
-        <form onsubmit = "validar()">
-            <fieldset>
+        <form id="form"  method="post" action="usuario.php">
+            <fieldset id="field">
         <?php
             $arq= "cursos/".$_GET['idcurso']."/".$_GET['i2']."/teste.txt";
             $pont = fopen($arq,"r");
@@ -48,11 +48,15 @@
             }
             echo "<a style='display:none' id='quant' value='".$i6."'></a>";
         ?>
-        <input type="submit" value="Enviar">
+        <a onclick="validar()">mostrar resultado</a>
         </fieldset>
+        <div id="nota" style="display:none;">
+            <h1>Sua nota foi:</h1><h1 id="resul"> oiii</h1>
+        </div>
+        <input type="submit" value="Enviar" id="enviar" style="display:none">
         </form>
         
-        <script type="text/javascript">  
+        <script type="text/javascript"> 
             function validar(){
                 let a = document.getElementById("quant").getAttribute("value");
                 let r = 100/a;
@@ -79,12 +83,13 @@
                         alert("Você marcou mais de uma vez na pergunta numero "+i);  
                         return false;  
                     }
-                    alert("sua nota foi:"+total+""); 
                 }
-                alert("sua nota foi:"+total+"");  
+                document.getElementById("field").style.display = "none"; 
+                document.getElementById("nota").style.display = "flex"; 
+                document.getElementById("resul").innerHTML = total;
+                document.getElementById("enviar").style.display = "block";
             }
         </script>
         </section>
-       
     </body>
 </html>
