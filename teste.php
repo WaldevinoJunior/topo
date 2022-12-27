@@ -1,4 +1,4 @@
-<?php include("valida.php"); 
+<?php include("valida.php");
     $consulta = "SELECT * FROM alunos ";
     $con = $mysqli->query($consulta) or die($mysqli->error);
 ?>
@@ -13,14 +13,13 @@
         <form onsubmit = "validar()">
             <fieldset>
         <?php
-            $arq= "cursos/60/1/teste.txt";
+            $arq= "cursos/".$_GET['idcurso']."/".$_GET['i2']."/teste.txt";
             $pont = fopen($arq,"r");
             $linha = fgets($pont);
             $i4 = 0;
             $i5 = 0;
             $i6 = 0;
             while($linha){
-                //echo "<p style='display:block'>".$linha."</p>";
                 if(substr_count($linha, ';;')){
                     if($i4 == 0){
                         echo "<div>";

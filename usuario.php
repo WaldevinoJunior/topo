@@ -128,7 +128,7 @@
                 <a onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'><i class='bi bi-cast'></i> -------</a>
                 <a href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'><i class='bi bi-postcard'></i> -------</a>
                 <a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'><i class='bi bi-pencil-square'></i>  -------</a>
-                <a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'><i class='bi bi-journal-check'></i></a>
+                <a target='_blank' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'><i class='bi bi-journal-check'></i></a>
                 ";if($i2 == $aulas){
                     echo "<a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'><i class='bi bi-filetype-pdf'></i></a>";
                 }echo "</div>
