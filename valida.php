@@ -9,9 +9,11 @@ $mysqli = new mysqli($host, $user, $pass, $db);
 $consulta = "SELECT * FROM alunos";
 $consulta2 = "SELECT * FROM cursos";
 $consulta3 = "SELECT * FROM colaboradores";
+$consulta4 = "SELECT * FROM aluno_testes";
 $con = $mysqli->query($consulta) or die($mysqli->error);
 $con2 = $mysqli->query($consulta2) or die($mysqli->error);
 $con3 = $mysqli->query($consulta3) or die($mysqli->error);
+$con4 = $mysqli->query($consulta4) or die($mysqli->error);
 if($mysqli->connect_errno){
     echo "falha na conexao: (".$mysqli->connect_errno.") " .$mysqli->connect_error;
 }
@@ -60,9 +62,24 @@ if(isset($_POST['Enviar'])){
 	}
 }
 if(isset($_POST['enviarteste'])){
-	echo $_POST['aula'];
-	echo $_POST['idcurso'];
-	echo $_COOKIE['total'];
+	$inse = 0;
+	if(!isset($_SESSION)){session_start();}
+	while($c4 = mysqli_fetch_array($con4)){
+		if($_POST['aula'] == $c4['Numero_aula'] && $_POST['idcurso'] == $c4['ID_Curso'] && $_SESSION['ID_Aluno'] == $c4['ID_Aluno'] && $c4['Nota'] < $_COOKIE['total']){
+			$sqlteste = "UPDATE aluno_testes SET Nota = '{$_COOKIE['total']}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND Numero_Aula = '{$_POST['aula']}' AND ID_Curso = '{$_POST['idcurso']}'";
+			//$arquiv = "SELECT imagem FROM alunos WHERE ID_ALUNO = '{$_SESSION['ID_Aluno']}'";
+			$sqltestebd = $mysqli->query($sqlteste) or die($mysqli->error);
+			$inse++;
+		}
+	}
+	if($inse == 0){
+		$sqlteste2 = "INSERT INTO aluno_testes (ID_Aluno, ID_Curso, Numero_Aula, Nota) VALUES  ('{$_SESSION['ID_Aluno']}', '{$_POST['idcurso']}', '{$_POST['aula']}', '{$_COOKIE['total']}')";
+		$sqltestebd = $mysqli->query($sqlteste2) or die($mysqli->error);
+		header('Location: /topo/usuario.php');
+	}
+	else{
+		header('Location: /topo/usuario.php');
+	}
 	
 }
 /*if($contador!=1){
