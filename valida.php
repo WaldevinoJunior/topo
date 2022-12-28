@@ -1,50 +1,4 @@
 <?php
-/* $host = "localhost";
-$db   = "podium";
-$user = "root";
-$pass = "";
-$con = mysql_pconnect($host, $user, $pass);
-mysql_select_db($db, $con);
-$query = sprintf("SELECT nome FROM alunos");
-$dados = mysql_query($query, $con) or die(mysql_error());
-$linha = mysql_fetch_assoc($dados);
-$total = mysql_num_rows($dados);
-?>
-<html>
-	<head>
-	<title>Exemplo</title>
-</head>
-<body>
-<?php
-	// se o número de resultados for maior que zero, mostra os dados
-	if($total > 0) {
-		// inicia o loop que vai mostrar todos os dados
-		do {
-?>
-			<p><?=$linha['nome']?></p>
-<?php
-		// finaliza o loop que vai mostrar os dados
-		}while($linha = mysql_fetch_assoc($dados));
-	// fim do if
-	}
-?>
-</body>
-</html>
-<?php
-// tira o resultado da busca da memória
-mysql_free_result($dados);
-
-?> 
-
-
-
-
-
-
-	
-*/
-
-
 //FAZ A CONEXAO COM O BANCO DE DADOS PODIUM
 $host = "localhost";
 $user = "root";
@@ -105,8 +59,12 @@ if(isset($_POST['Enviar'])){
 		}
 	}
 }
-
-
+if(isset($_POST['enviarteste'])){
+	echo $_POST['aula'];
+	echo $_POST['idcurso'];
+	echo $_COOKIE['total'];
+	
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }

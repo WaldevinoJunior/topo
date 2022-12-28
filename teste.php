@@ -1,4 +1,5 @@
-<?php include("valida.php");
+<?php 
+    include("valida.php");
     $consulta = "SELECT * FROM alunos ";
     $con = $mysqli->query($consulta) or die($mysqli->error);
 ?>
@@ -10,7 +11,7 @@
     <body>
         <section>
         <h2 id="oi">Aluno</h2>
-        <form id="form"  method="post" action="usuario.php">
+        <form id="form"  method="POST" action="valida.php">
             <fieldset id="field">
         <?php
             $arq= "cursos/".$_GET['idcurso']."/".$_GET['i2']."/teste.txt";
@@ -47,13 +48,19 @@
                 $linha = fgets($pont);
             }
             echo "<a style='display:none' id='quant' value='".$i6."'></a>";
+            echo "<input type='number' style='display:none' name='idcurso' value='".$_GET['idcurso']."'>
+            <input type='number' style='display:none' name='aula' value='".$_GET['i2']."'>";
+            if(isset($_COOKIE['total'])){
+                unset($_COOKIE['total']);
+            }
         ?>
         <a onclick="validar()">mostrar resultado</a>
         </fieldset>
         <div id="nota" style="display:none;">
-            <h1>Sua nota foi:</h1><h1 id="resul"> oiii</h1>
+            <h1>nota:</h1><h1 id="resul"> oiii</h1>
+            <p id="result2"></p>
         </div>
-        <input type="submit" value="Enviar" id="enviar" style="display:none">
+        <input type="submit" value="Enviar" name="enviarteste"  id="enviar" style="display:none">
         </form>
         
         <script type="text/javascript"> 
@@ -88,6 +95,13 @@
                 document.getElementById("nota").style.display = "flex"; 
                 document.getElementById("resul").innerHTML = total;
                 document.getElementById("enviar").style.display = "block";
+                if(total>70){
+                    document.getElementById("result2").innerHTML = "APROVADO";
+                }
+                if(total<70){
+                    document.getElementById("result2").innerHTML = "REPROVADO";
+                }
+                document.cookie = "total="+total+"";
             }
         </script>
         </section>
