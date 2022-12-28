@@ -35,9 +35,9 @@
             <li><a href=""><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i></a>
                     <div id="barras">
                         <a>Cadastrar Alunos</a>
-                        <a>Listar alunos</a><hr>
+                        <a onclick="mostraAlunos()">Listar alunos</a><hr>
                         <a>Cadastrar Colaboradores</a>
-                        <a>Listar Colaboradores</a><hr>
+                        <a onclick="mostraColaboradores()">Listar Colaboradores</a><hr>
                         <a>Cadastrar Horários</a>
                         <a>Salas</a>
                         <a>Máquinas</a>
@@ -75,23 +75,24 @@
                 <div id="listaAlunos" style="display:none">
                 <div class="content"> 
                     <?php
-                       $table = '<table class="rTable">';
+                       $table = '<table class="table table-striped">';
                             $table .='<thead>';
                                 $table .= '<tr>';
                                    $table .= '<th>ID</th>';
                                    $table .= '<th>Nome</th>';
-                                   $table .= '<th>Responsável</th>';
+                                //    $table .= '<th>Responsável</th>';
                                    $table .= '<th>Nascimento</th>';
                                    $table .= '<th>Email</th>';
-                                   $table .= '<th>Telefone</th>';
-                                   $table .= '<th>CPF</th>';
-                                   $table .= '<th>RG</th>';
-                                   $table .= '<th>CEP</th>';
-                                   $table .= '<th>Estado</th>';
-                                   $table .= '<th>Cidade</th>';
-                                   $table .= '<th>Rua</th>';
-                                   $table .= '<th>Número</th>';
-                                   $table .= '<th>Senha</th>';
+                                //    $table .= '<th>Telefone</th>';
+                                //    $table .= '<th>CPF</th>';
+                                //    $table .= '<th>RG</th>';
+                                //    $table .= '<th>CEP</th>';
+                                //    $table .= '<th>Estado</th>';
+                                //    $table .= '<th>Cidade</th>';
+                                //    $table .= '<th>Rua</th>';
+                                //    $table .= '<th>Número</th>';
+                                //    $table .= '<th>Senha</th>';
+                                $table .= '<th>Funções</th>';
                                 $table .= '</tr>';
                             $table .= '</thead>';
                             $table .= '<tbody>';
@@ -100,18 +101,20 @@
                                     $table .= '<tr>';
                                         $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
                                         $table .= "<td>{$cAlunos['Nome']}</td>";
-                                        $table .= "<td>{$cAlunos['Responsavel']}</td>";
+                                        // $table .= "<td>{$cAlunos['Responsavel']}</td>";
                                         $table .= "<td>{$cAlunos['Nascimento']}</td>";
                                         $table .= "<td>{$cAlunos['Email']}</td>";
-                                        $table .= "<td>{$cAlunos['Telefone']}</td>";
-                                        $table .= "<td>{$cAlunos['CPF']}</td>";
-                                        $table .= "<td>{$cAlunos['RG']}</td>";
-                                        $table .= "<td>{$cAlunos['CEP']}</td>";
-                                        $table .= "<td>{$cAlunos['Estado']}</td>";
-                                        $table .= "<td>{$cAlunos['Cidade']}</td>";
-                                        $table .= "<td>{$cAlunos['Rua']}</td>";
-                                        $table .= "<td>{$cAlunos['Numero']}</td>";
-                                        $table .= "<td>{$cAlunos['Senha']}</td>";
+                                        
+                                        // $table .= "<td>{$cAlunos['Telefone']}</td>";
+                                        // $table .= "<td>{$cAlunos['CPF']}</td>";
+                                        // $table .= "<td>{$cAlunos['RG']}</td>";
+                                        // $table .= "<td>{$cAlunos['CEP']}</td>";
+                                        // $table .= "<td>{$cAlunos['Estado']}</td>";
+                                        // $table .= "<td>{$cAlunos['Cidade']}</td>";
+                                        // $table .= "<td>{$cAlunos['Rua']}</td>";
+                                        // $table .= "<td>{$cAlunos['Numero']}</td>";
+                                        // $table .= "<td>{$cAlunos['Senha']}</td>";
+                                        $table .= "<td><button style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm'>Deletar</button></td>";
                                     $table .= '</tr>';
 
                                 } 
