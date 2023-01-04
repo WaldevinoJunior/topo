@@ -68,9 +68,9 @@ if(isset($_POST['enviarteste'])){
 		if($_POST['aula'] == $c4['Numero_aula'] && $_POST['idcurso'] == $c4['ID_Curso'] && $_SESSION['ID_Aluno'] == $c4['ID_Aluno'] && $c4['Nota'] < $_COOKIE['total']){
 			$sqlteste = "UPDATE aluno_testes SET Nota = '{$_COOKIE['total']}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND Numero_Aula = '{$_POST['aula']}' AND ID_Curso = '{$_POST['idcurso']}'";
 			$sqltestebd = $mysqli->query($sqlteste) or die($mysqli->error);
-			//$arquiv = "SELECT imagem FROM alunos WHERE ID_ALUNO = '{$_SESSION['ID_Aluno']}'";
-			$sqlprogresso = "UPDATE aluno_curso_progressos SET Estagio = '4' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
+			$sqlprogresso = "UPDATE aluno_curso_progressos SET Estagio = '2' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
 			$sqlpro= $mysqli->query($sqlprogresso) or die($mysqli->error);
+			//$arquiv = "SELECT imagem FROM alunos WHERE ID_ALUNO = '{$_SESSION['ID_Aluno']}'";
 			if($_COOKIE['total'] > 70){
 				$atual = $_POST['aula'] + 1;
 				$sqlprogresso2 = "UPDATE aluno_curso_progressos SET Estagio = '1', Aula_atual = '{$atual}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
@@ -86,17 +86,28 @@ if(isset($_POST['enviarteste'])){
 		}
 	}
 	if($inse == 0){
-		$sqlprogresso = "UPDATE aluno_curso_progressos SET Estagio = '4' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
+		$sqlprogresso = "UPDATE aluno_curso_progressos SET Estagio = '2' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
 		$sqlpro= $mysqli->query($sqlprogresso) or die($mysqli->error);
 		$sqlteste2 = "INSERT INTO aluno_testes (ID_Aluno, ID_Curso, Numero_Aula, Nota) VALUES  ('{$_SESSION['ID_Aluno']}', '{$_POST['idcurso']}', '{$_POST['aula']}', '{$_COOKIE['total']}')";
-		if($_COOKIE['total'] > 70){
-			$atual = "SELECT Aula_atual WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
-			$sqlatual = $mysqli->query($atual) or die($mysqli->error);
-			$aula = $_POST['aula'] + 1;
-			$sqlprogresso2 = "UPDATE aluno_curso_progressos SET Estagio = '1', Aula_atual = '{$aula}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
-			$sqlpro2= $mysqli->query($sqlprogresso2) or die($mysqli->error);
-		}
 		$sqltestebd = $mysqli->query($sqlteste2) or die($mysqli->error);
+		if($_COOKIE['total'] > 70){
+			$sqlprogresso = "UPDATE aluno_curso_progressos SET Estagio = '1' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
+			$sqlpro= $mysqli->query($sqlprogresso) or die($mysqli->error);
+			$atual = "SELECT Aula_atual FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
+			$sqlatual = $mysqli->query($atual) or die($mysqli->error);
+			$atual2 = mysqli_fetch_array($sqlatual)[0];
+			$consul = "SELECT cursos.aulas_totais from cursos join aluno_curso_progressos ON aluno_curso_progressos.ID_Curso = cursos.ID_Curso join alunos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno WHERE alunos.ID_Aluno = '{$_SESSION['ID_Aluno']}' and cursos.ID_Curso = '{$_POST['idcurso']}'";
+            $cons= $mysqli->query($consul) or die($mysqli->error);
+            $aulas2 = mysqli_fetch_array($cons)[0];
+			if($_POST['aula'] <= $atual2){
+				if($atual2 < $aulas2){
+					$aula = $_POST['aula'] + 1;
+					$sqlprogresso2 = "UPDATE aluno_curso_progressos SET Estagio = '1', Aula_atual = '{$aula}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
+					$sqlpro2= $mysqli->query($sqlprogresso2) or die($mysqli->error);
+				}
+			}
+		}
+		
 		header('Location: /topo/usuario.php');
 	}
 	else{

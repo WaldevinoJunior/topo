@@ -100,6 +100,12 @@
             $con2 = $mysqli->query($consulta2) or die($mysqli->error);
             $aulas = mysqli_fetch_array($con2)[0];
             $i5 = [$aulas];
+            $atual = "SELECT Aula_atual , Estagio FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$c['ID_Curso']}'";
+            $sqlatual = $mysqli->query($atual) or die($mysqli->error);
+			$atual2 = mysqli_fetch_array($sqlatual)[0];
+            $estagio = "SELECT Estagio FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$c['ID_Curso']}'";
+            $sqlestagio = $mysqli->query($estagio) or die($mysqli->error);
+			$esta = mysqli_fetch_array($sqlestagio)[0];
             echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
                         ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div><script>
                             function mostraCurso".$c['ID_Curso']."(){
@@ -130,16 +136,44 @@
                 <a id='aula".$i2."".$c['ID_Curso']."'onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'  style='pointer-events: none;color:gray;'><i class='bi bi-cast'></i> -------</a>
                 <a  id='passo".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-postcard'></i> -------</a>
                 <a  id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i>  -------</a>
-                <a  id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: ;color:gray;'><i class='bi bi-journal-check'></i></a>
+                <a  id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a>
                 ";if($i2 == $aulas){
                     echo "<a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt' style='pointer-events: none;color:gray;'>-----<i class='bi bi-filetype-pdf'></i></a>";
                 }echo "</div>
                 </div>
                 <script>";
-                    if($i2 == 1){
+                    if($i2 < $atual2){
                          echo   "document.getElementById('aula".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
                                  document.getElementById('aula".$i2."".$c['ID_Curso']."').style.color = 'green';
-                                 document.getElementById('aula".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';";
+                                 document.getElementById('aula".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
+                                 document.getElementById('passo".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                 document.getElementById('passo".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                 document.getElementById('passo".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
+                                 document.getElementById('fixacao".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                 document.getElementById('fixacao".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                 document.getElementById('fixacao".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
+                                 document.getElementById('teste".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                 document.getElementById('teste".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                 document.getElementById('teste".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';";
+                    }
+                    if($i2 == $atual2){
+                        echo   "document.getElementById('aula".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                document.getElementById('aula".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                document.getElementById('aula".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';";
+                    }
+                    if($i2 == $atual2 && $esta == 2){
+                        echo   "document.getElementById('aula".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                document.getElementById('aula".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                document.getElementById('aula".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
+                                document.getElementById('passo".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                 document.getElementById('passo".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                 document.getElementById('passo".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
+                                 document.getElementById('fixacao".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                 document.getElementById('fixacao".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                 document.getElementById('fixacao".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
+                                 document.getElementById('teste".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                 document.getElementById('teste".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                 document.getElementById('teste".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';";
                     }
                     echo"
                     function mostraFase".$c['ID_Curso']."aula".$i2."(){
