@@ -6,6 +6,7 @@
     $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
     $resultado = $mysqli->query($query_arquivo) or die($mysqli->error);
  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -126,15 +127,21 @@
                 <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
                 </div>
                 <div id='modal2Op'>
-                <a onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'><i class='bi bi-cast'></i> -------</a>
-                <a href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'><i class='bi bi-postcard'></i> -------</a>
-                <a href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'><i class='bi bi-pencil-square'></i>  -------</a>
-                <a href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'><i class='bi bi-journal-check'></i></a>
+                <a id='aula".$i2."".$c['ID_Curso']."'onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'  style='pointer-events: none;color:gray;'><i class='bi bi-cast'></i> -------</a>
+                <a  id='passo".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-postcard'></i> -------</a>
+                <a  id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i>  -------</a>
+                <a  id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: ;color:gray;'><i class='bi bi-journal-check'></i></a>
                 ";if($i2 == $aulas){
-                    echo "<a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt'><i class='bi bi-filetype-pdf'></i></a>";
+                    echo "<a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt' style='pointer-events: none;color:gray;'>-----<i class='bi bi-filetype-pdf'></i></a>";
                 }echo "</div>
                 </div>
-                <script>
+                <script>";
+                    if($i2 == 1){
+                         echo   "document.getElementById('aula".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                 document.getElementById('aula".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                 document.getElementById('aula".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';";
+                    }
+                    echo"
                     function mostraFase".$c['ID_Curso']."aula".$i2."(){
                         let contFase = document.getElementsByName('Curso".$c['ID_Curso']."Aula".$i2."');
                         contFase[0].style.display = 'block';
@@ -226,6 +233,15 @@
                 if(i6 == ".$i5[$i2]."){
                     alert('Aula Concluída');
                     i6--;
+                    document.getElementById('passo".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                    document.getElementById('passo".$i2."".$c['ID_Curso']."').style.color = 'green';
+                    document.getElementById('passo".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
+                    document.getElementById('fixacao".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                    document.getElementById('fixacao".$i2."".$c['ID_Curso']."').style.color = 'green';
+                    document.getElementById('fixacao".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
+                    document.getElementById('teste".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                    document.getElementById('teste".$i2."".$c['ID_Curso']."').style.color = 'green';
+                    document.getElementById('teste".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
                     sair".$c['ID_Curso']."aula".$i2."();
                 }
                 document.getElementById('paragrafo').innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
@@ -246,6 +262,7 @@
                     document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                     document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
                     audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;
+
                 }
             
             }</script>";
