@@ -75,6 +75,17 @@ if(isset($_POST['enviarteste'])){
 				$atual = $_POST['aula'] + 1;
 				$sqlprogresso2 = "UPDATE aluno_curso_progressos SET Estagio = '1', Aula_atual = '{$atual}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
 				$sqlpro2= $mysqli->query($sqlprogresso2) or die($mysqli->error);
+				$atual = "SELECT Aula_atual FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
+				$sqlatual = $mysqli->query($atual) or die($mysqli->error);
+				$atual2 = mysqli_fetch_array($sqlatual)[0];
+				$consul = "SELECT cursos.aulas_totais from cursos join aluno_curso_progressos ON aluno_curso_progressos.ID_Curso = cursos.ID_Curso join alunos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno WHERE alunos.ID_Aluno = '{$_SESSION['ID_Aluno']}' and cursos.ID_Curso = '{$_POST['idcurso']}'";
+            	$cons= $mysqli->query($consul) or die($mysqli->error);
+            	$aulas2 = mysqli_fetch_array($cons)[0];
+				if($atual2 == $aulas2){
+					$aula = $_POST['aula'];
+					$sqlprogresso2 = "UPDATE aluno_curso_progressos SET Estagio = '3', Aula_atual = '{$aula}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
+					$sqlpro2= $mysqli->query($sqlprogresso2) or die($mysqli->error);
+				}
 			}
 			$inse++;
 		}
@@ -103,6 +114,11 @@ if(isset($_POST['enviarteste'])){
 				if($atual2 < $aulas2){
 					$aula = $_POST['aula'] + 1;
 					$sqlprogresso2 = "UPDATE aluno_curso_progressos SET Estagio = '1', Aula_atual = '{$aula}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
+					$sqlpro2= $mysqli->query($sqlprogresso2) or die($mysqli->error);
+				}
+				if($atual2 == $aulas2){
+					$aula = $_POST['aula'];
+					$sqlprogresso2 = "UPDATE aluno_curso_progressos SET Estagio = '3', Aula_atual = '{$aula}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
 					$sqlpro2= $mysqli->query($sqlprogresso2) or die($mysqli->error);
 				}
 			}

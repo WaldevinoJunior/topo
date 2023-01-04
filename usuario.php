@@ -138,7 +138,7 @@
                 <a  id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i>  -------</a>
                 <a  id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a>
                 ";if($i2 == $aulas){
-                    echo "<a href='cursos/".$c['ID_Curso']."/".$i2."/teste.txt' style='pointer-events: none;color:gray;'>-----<i class='bi bi-filetype-pdf'></i></a>";
+                    echo "<a id='certi".$i2."".$c['ID_Curso']."'  target='_blank' href='certificado.php' style='pointer-events: none;color:gray;'>-----<i class='bi bi-filetype-pdf'></i></a>";
                 }echo "</div>
                 </div>
                 <script>";
@@ -161,7 +161,7 @@
                                 document.getElementById('aula".$i2."".$c['ID_Curso']."').style.color = 'green';
                                 document.getElementById('aula".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';";
                     }
-                    if($i2 == $atual2 && $esta == 2){
+                    if($i2 == $atual2 && ($esta == 2 || $esta == 3)){
                         echo   "document.getElementById('aula".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
                                 document.getElementById('aula".$i2."".$c['ID_Curso']."').style.color = 'green';
                                 document.getElementById('aula".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
@@ -174,6 +174,11 @@
                                  document.getElementById('teste".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
                                  document.getElementById('teste".$i2."".$c['ID_Curso']."').style.color = 'green';
                                  document.getElementById('teste".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';";
+                    }
+                    if($i2 == $aulas &&  $atual2 == $aulas && $esta == 3){
+                        echo   "document.getElementById('certi".$i2."".$c['ID_Curso']."').style.pointerEvents = 'auto';
+                                document.getElementById('certi".$i2."".$c['ID_Curso']."').style.color = 'green';
+                                document.getElementById('certi".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';";
                     }
                     echo"
                     function mostraFase".$c['ID_Curso']."aula".$i2."(){
