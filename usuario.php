@@ -55,10 +55,9 @@
         
         <button type="button" onclick="altera();">Alterar Avatar</button>
         <a href="index.html">SAIR</a>
-        <a href="certificado.php">BAIXAR</a>
         </div>
     </div> 
-    <h1 id="h1curso">Seus Cursos</h1>
+    <h1 id="h1curso">Seus Cursos</h1><br>
     <!--CURSOS DO ALUNO -->
    <div id="cursos"> 
    <div id="cursoCont">
