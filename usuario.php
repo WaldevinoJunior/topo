@@ -57,7 +57,7 @@
         <a href="index.html">SAIR</a>
         </div>
     </div> 
-    <h1 id="h1curso">Seus Cursos</h1><br>
+    <h1 id="h1curso" style="margin-bottom:2vh">Seus Cursos</h1>
     <!--CURSOS DO ALUNO -->
    <div id="cursos"> 
    <div id="cursoCont">
