@@ -72,8 +72,13 @@
             <div id="painel">
                 <h2><strong>Administração</strong></h2>
             <div id="func">
-                <div id="listaAlunos" style="display:none">
-                <div class="content"> 
+                <div id="listaAlunos" style="display:none" class="listAlunos">
+                <div class="cont-header" id="cbcLista">
+                    <h1>Lista de alunos</h1>
+                    <a href="#" class="btn btn-success btn-sm">Cadastrar aluno</a>
+                    <a href="#" class="btn btn-success btn-sm">Atualizar lista</a>
+                </div>
+                <div class="content">   
                     <?php
                        $table = '<table class="table table-striped">';
                             $table .='<thead>';
@@ -83,7 +88,7 @@
                                 //    $table .= '<th>Responsável</th>';
                                    $table .= '<th>Nascimento</th>';
                                    $table .= '<th>Email</th>';
-                                //    $table .= '<th>Telefone</th>';
+                                   $table .= '<th>Telefone</th>';
                                 //    $table .= '<th>CPF</th>';
                                 //    $table .= '<th>RG</th>';
                                 //    $table .= '<th>CEP</th>';
@@ -105,7 +110,7 @@
                                         $table .= "<td>{$cAlunos['Nascimento']}</td>";
                                         $table .= "<td>{$cAlunos['Email']}</td>";
                                         
-                                        // $table .= "<td>{$cAlunos['Telefone']}</td>";
+                                         $table .= "<td>{$cAlunos['Telefone']}</td>";
                                         // $table .= "<td>{$cAlunos['CPF']}</td>";
                                         // $table .= "<td>{$cAlunos['RG']}</td>";
                                         // $table .= "<td>{$cAlunos['CEP']}</td>";
@@ -114,7 +119,7 @@
                                         // $table .= "<td>{$cAlunos['Rua']}</td>";
                                         // $table .= "<td>{$cAlunos['Numero']}</td>";
                                         // $table .= "<td>{$cAlunos['Senha']}</td>";
-                                        $table .= "<td><button style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm'>Deletar</button></td>";
+                                        $table .= "<td><button onclick='editarAlunos();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm'>Deletar</button></td>";
                                     $table .= '</tr>';
 
                                 } 
@@ -124,10 +129,84 @@
                    ?>
                 </div>
                 </div>
-                <div id="listaColaboradores" style="display:none">
+                <div id="EditarAlunos" style="display:none">
+                    <div class="cont-header">
+                        <h2>Editar Aluno 1</h2> 
+                        <!-- <button class="btn btn-primary btn-sm">Editar Dados</button> 
+                        <button class="btn btn-primary btn-sm">Voltar</button>   
+                          -->
+                        
+                    </div>
+                    <div class="content">
+                        <div id="dadosDoAluno" class="" style="padding:10px;">
+                            <h3>Dados do aluno</h3>
+                            <p>Preencha somente os dados que você quiser alterar</p>
+                            <form method="post" action="/listar-alunos/editar/254/dados">
+                                <input type="hidden" name="_token" value="WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY">
+                                <div class="row">
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Antony Leme">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="nasc">Data de Nasc.</label>
+                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="2000-08-08">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="antonycefet@gmail.com">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="tel">Telefone</label>
+                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="(32) 9 8872-6589">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cpf">CPF</label>
+                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="148.272.296-86">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="rg">RG</label>
+                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="00.000.000">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="pais">País</label>
+                                        <input type="text" class="form-control" id="pais" name="pais" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="estado">Estado</label>
+                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="MG">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cidade">Cidade</label>
+                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cataguases">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="endereco">Endereço</label>
+                                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="senha">Senha</label>
+                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="08082000">
+                                    </div>
+                                </div>
+
+                <!--BOTOES AO FIM DA SESSÃO-->
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-success mr-2">Salvar</button>
+                                </div>
+                            </form>
+                        </div>     
+                    </div>
+                </div>
+                <div id="listaColaboradores" class="listColab" style="display:none">
+                <div class="cont-header" id="cbcLista">
+                    <h1>Lista de colaboradores</h1>
+                    <a href="#" class="btn btn-success btn-sm">Cadastrar colaboradores</a>
+                    <a href="#" class="btn btn-success btn-sm">Atualizar lista</a>
+                </div>
                 <div class="content"> 
                     <?php
-                       $table = '<table class="rTable">';
+                       $table = '<table class="table table-striped">';
                             $table .='<thead>';
                                 $table .= '<tr>';
                                    $table .= '<th>ID</th>';
@@ -135,16 +214,17 @@
                                    $table .= '<th>Nascimento</th>';
                                    $table .= '<th>Email</th>';
                                    $table .= '<th>Telefone</th>';
-                                   $table .= '<th>CEP</th>';
-                                   $table .= '<th>Estado</th>';
-                                   $table .= '<th>Cidade</th>';
-                                   $table .= '<th>Rua</th>';
-                                   $table .= '<th>Número</th>';
-                                   $table .= '<th>Complemento</th>';
-                                   $table .= '<th>Login</th>';
-                                   $table .= '<th>Senha</th>';
+                                //    $table .= '<th>CEP</th>';
+                                //    $table .= '<th>Estado</th>';
+                                //    $table .= '<th>Cidade</th>';
+                                //    $table .= '<th>Rua</th>';
+                                //    $table .= '<th>Número</th>';
+                                //    $table .= '<th>Complemento</th>';
+                                //    $table .= '<th>Login</th>';
+                                //    $table .= '<th>Senha</th>';
                                    $table .= '<th>Perfil</th>';
-                                   $table .= '<th>Licença</th>';
+                                   //$table .= '<th>Licença</th>';
+                                   $table .= '<th>Funções</th>';
                                 $table .= '</tr>';
                             $table .= '</thead>';
                             $table .= '<tbody>';
@@ -156,16 +236,17 @@
                                         $table .= "<td>{$cColab['Nascimento']}</td>";
                                         $table .= "<td>{$cColab['Email']}</td>";
                                         $table .= "<td>{$cColab['Telefone']}</td>";
-                                        $table .= "<td>{$cColab['CEP']}</td>";
-                                        $table .= "<td>{$cColab['Estado']}</td>";
-                                        $table .= "<td>{$cColab['Cidade']}</td>";
-                                        $table .= "<td>{$cColab['Rua']}</td>";
-                                        $table .= "<td>{$cColab['Numero']}</td>";
-                                        $table .= "<td>{$cColab['Complemento']}</td>";
-                                        $table .= "<td>{$cColab['Login']}</td>";
-                                        $table .= "<td>{$cColab['Senha']}</td>";
+                                        // $table .= "<td>{$cColab['CEP']}</td>";
+                                        // $table .= "<td>{$cColab['Estado']}</td>";
+                                        // $table .= "<td>{$cColab['Cidade']}</td>";
+                                        // $table .= "<td>{$cColab['Rua']}</td>";
+                                        // $table .= "<td>{$cColab['Numero']}</td>";
+                                        // $table .= "<td>{$cColab['Complemento']}</td>";
+                                        // $table .= "<td>{$cColab['Login']}</td>";
+                                        // $table .= "<td>{$cColab['Senha']}</td>";
                                         $table .= "<td>{$cColab['Perfil']}</td>";
-                                        $table .= "<td>{$cColab['Licenca']}</td>";
+                                        //$table .= "<td>{$cColab['Licenca']}</td>";
+                                        $table .= "<td><button onclick='editarColab();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm'>Deletar</button></td>";
                                     $table .= '</tr>';
 
                                 } 
@@ -174,6 +255,75 @@
                         echo $table;
                    ?>
                 </div>
+                </div>
+                <div id="EditarColab" style="display:none">
+                    <div class="cont-header">
+                        <h2>Editar Colaborador 1</h2> 
+                        <!-- <button class="btn btn-primary btn-sm">Editar Dados</button> 
+                        <button class="btn btn-primary btn-sm">Voltar</button>   
+                          -->
+                        
+                    </div>
+                    <div class="content">
+                        <div id="dadosDoAluno" class="" style="padding:10px;">
+                            <h3>Dados do colaborador</h3>
+                            <p>Preencha somente os dados que você quiser alterar</p>
+                            <form method="post" action="/listar-alunos/editar/254/dados">
+                                <input type="hidden" name="_token" value="WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY">
+                                <div class="row">
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Antony Leme">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="nasc">Data de Nasc.</label>
+                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="2000-08-08">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="antonycefet@gmail.com">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="tel">Telefone</label>
+                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="(32) 9 8872-6589">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cpf">CPF</label>
+                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="148.272.296-86">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="rg">RG</label>
+                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="00.000.000">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="pais">País</label>
+                                        <input type="text" class="form-control" id="pais" name="pais" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="estado">Estado</label>
+                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="MG">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cidade">Cidade</label>
+                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cataguases">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="endereco">Endereço</label>
+                                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="senha">Senha</label>
+                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="08082000">
+                                    </div>
+                                </div>
+
+                <!--BOTOES AO FIM DA SESSÃO-->
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-success mr-2">Salvar</button>
+                                </div>
+                            </form>
+                        </div>     
+                    </div>
                 </div>
                 <div class="funcA">
                     <a onclick="mostraAlunos()"><i class="bi bi-person-fill" ></i><h3>Listar Alunos</h3></a>
@@ -213,6 +363,6 @@
                     <p>Máquinas</p>
                 </div>
             </div>
-        </div>
+        </div> 
 </body>
 </html>

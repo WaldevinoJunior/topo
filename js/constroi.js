@@ -96,3 +96,17 @@ function mostraColaboradores(){
     }
     document.getElementById("listaColaboradores").style.display = 'block';
 }
+function editarAlunos(){
+  let e = document.getElementsByClassName("listAlunos");;
+    for (let i = 0; i < e.length; i++) {
+      e[i].style.display = "none";
+    }
+    document.getElementById("EditarAlunos").style.display = 'block';
+}
+function editarColab(){
+  let e = document.getElementsByClassName("listColab");;
+    for (let i = 0; i < e.length; i++) {
+      e[i].style.display = "none";
+    }
+    document.getElementById("EditarColab").style.display = 'block';
+}

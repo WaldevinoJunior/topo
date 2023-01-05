@@ -517,4 +517,11 @@ body.teste{
     align-items: center;
     
 }
-
+#cbcLista a{
+    font-size: 16px;
+    display: inline-flex;
+    color:white;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    
+}
