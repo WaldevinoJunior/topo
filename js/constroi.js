@@ -102,6 +102,9 @@ function editarAlunos(){
       e[i].style.display = "none";
     }
     document.getElementById("EditarAlunos").style.display = 'block';
+    
+    
+
 }
 function editarColab(){
   let e = document.getElementsByClassName("listColab");;
@@ -109,4 +112,8 @@ function editarColab(){
       e[i].style.display = "none";
     }
     document.getElementById("EditarColab").style.display = 'block';
+    
+}
+function deletarAlunos(){
+  alert("Confirme para deletar");
 }

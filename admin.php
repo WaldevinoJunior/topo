@@ -71,6 +71,7 @@
         <div class="admin">
             <div id="painel">
                 <h2><strong>Administração</strong></h2>
+                <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func">
                 <div id="listaAlunos" style="display:none" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
@@ -119,8 +120,22 @@
                                         // $table .= "<td>{$cAlunos['Rua']}</td>";
                                         // $table .= "<td>{$cAlunos['Numero']}</td>";
                                         // $table .= "<td>{$cAlunos['Senha']}</td>";
-                                        $table .= "<td><button onclick='editarAlunos();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm'>Deletar</button></td>";
+                                        $table .= "<td><button onclick='editarAlunos".$cAlunos['ID_Aluno']."(this.value);'style = 'margin:10px;'class='btn btn-primary btn-sm'value='".$cAlunos['ID_Aluno']."'>Editar</button><button class='btn btn-danger btn-sm' onclick='deletarAlunos();'>Deletar</button></td>";
                                     $table .= '</tr>';
+                                    echo "<script>
+                                            function editarAlunos".$cAlunos['ID_Aluno']."(value){
+    
+                                                document.getElementById('EditarAlunos').style.display = 'block';
+                                                let e = document.getElementsByClassName('listAlunos');;
+                                                for (let i = 0; i < e.length; i++) {
+                                                e[i].style.display = 'none';
+                                                }
+                                                // alert(value);
+                                             
+                                            }
+                                        </script>";
+
+                                
 
                                 } 
                             $table .= '</tbody>';
@@ -129,75 +144,76 @@
                    ?>
                 </div>
                 </div>
-                <div id="EditarAlunos" style="display:none">
-                    <div class="cont-header">
-                        <h2>Editar Aluno 1</h2> 
-                        <!-- <button class="btn btn-primary btn-sm">Editar Dados</button> 
-                        <button class="btn btn-primary btn-sm">Voltar</button>   
-                          -->
-                        
-                    </div>
-                    <div class="content">
+                 
+                    <div id="EditarAlunos" style="display:none;">
                         <div id="dadosDoAluno" class="" style="padding:10px;">
                             <h3>Dados do aluno</h3>
                             <p>Preencha somente os dados que você quiser alterar</p>
-                            <form method="post" action="/listar-alunos/editar/254/dados">
+                            <form method="post">
                                 <input type="hidden" name="_token" value="WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY">
                                 <div class="row">
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Antony Leme">
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="nasc">Data de Nasc.</label>
-                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="2000-08-08">
+                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="antonycefet@gmail.com">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="tel">Telefone</label>
-                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="(32) 9 8872-6589">
+                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="cpf">CPF</label>
-                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="148.272.296-86">
+                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="rg">RG</label>
-                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="00.000.000">
+                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="pais">País</label>
-                                        <input type="text" class="form-control" id="pais" name="pais" placeholder="">
+                                        <label for="cep">CEP</label>
+                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="estado">Estado</label>
-                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="MG">
+                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="cidade">Cidade</label>
-                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cataguases">
+                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="endereco">Endereço</label>
-                                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="">
+                                        <label for="rua">Rua</label>
+                                        <input type="text" class="form-control" id="rua" name="rua" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="numero">Número</label>
+                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="complemento">Complemento</label>
+                                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="senha">Senha</label>
-                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="08082000">
+                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="">
                                     </div>
                                 </div>
 
-                <!--BOTOES AO FIM DA SESSÃO-->
+               
                                 <div class="d-flex justify-content-center">
                                     <button class="btn btn-success mr-2">Salvar</button>
                                 </div>
                             </form>
                         </div>     
                     </div>
-                </div>
+                
                 <div id="listaColaboradores" class="listColab" style="display:none">
                 <div class="cont-header" id="cbcLista">
                     <h1>Lista de colaboradores</h1>
@@ -246,7 +262,7 @@
                                         // $table .= "<td>{$cColab['Senha']}</td>";
                                         $table .= "<td>{$cColab['Perfil']}</td>";
                                         //$table .= "<td>{$cColab['Licenca']}</td>";
-                                        $table .= "<td><button onclick='editarColab();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm'>Deletar</button></td>";
+                                        $table .= "<td><button onclick='editarColab();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm' onclick='deletarColab();'>Deletar</button></td>";
                                     $table .= '</tr>';
 
                                 } 
@@ -273,47 +289,60 @@
                                 <div class="row">
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Antony Leme">
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="nasc">Data de Nasc.</label>
-                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="2000-08-08">
+                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="antonycefet@gmail.com">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="tel">Telefone</label>
-                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="(32) 9 8872-6589">
+                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="cpf">CPF</label>
-                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="148.272.296-86">
+                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="rg">RG</label>
-                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="00.000.000">
+                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="pais">País</label>
-                                        <input type="text" class="form-control" id="pais" name="pais" placeholder="">
+                                        <label for="cep">CEP</label>
+                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="estado">Estado</label>
-                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="MG">
+                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="cidade">Cidade</label>
-                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cataguases">
+                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="endereco">Endereço</label>
-                                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="">
+                                        <label for="rua">Rua</label>
+                                        <input type="text" class="form-control" id="rua" name="rua" placeholder="">
                                     </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="numero">Número</label>
+                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="complemento">Complemento</label>
+                                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="login">Login</label>
+                                        <input type="text" class="form-control" id="login" name="login" placeholder="">
+                                    </div>
+
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="senha">Senha</label>
-                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="08082000">
+                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="">
                                     </div>
                                 </div>
 
