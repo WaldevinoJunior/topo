@@ -95,9 +95,14 @@
         echo "<script>let i6 = 0;</script>";
         while($c = mysqli_fetch_array($con)){
             $oi2 = $c['ID_Curso'];
-            $consulta2 = "SELECT cursos.aulas_totais from cursos join aluno_curso_progressos ON aluno_curso_progressos.ID_Curso = cursos.ID_Curso join alunos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno WHERE alunos.ID_Aluno = $oi and cursos.ID_Curso = $oi2";
+            $consulta2 = "SELECT cursos.aulas_totais, cursos.Nome_curso, cursos.Descricao, cursos.Horas from cursos join aluno_curso_progressos ON aluno_curso_progressos.ID_Curso = cursos.ID_Curso join alunos ON aluno_curso_progressos.ID_Aluno = alunos.ID_Aluno WHERE alunos.ID_Aluno = $oi and cursos.ID_Curso = $oi2";
             $con2 = $mysqli->query($consulta2) or die($mysqli->error);
-            $aulas = mysqli_fetch_array($con2)[0];
+            while($cCurso = mysqli_fetch_array($con2)){
+                $aulas = $cCurso['aulas_totais'];
+                $nomeCurso = $cCurso['Nome_curso'];
+                $descricao = $cCurso['Descricao'];
+                $horas = $cCurso['Horas'];
+            }
             $i5 = [$aulas];
             $atual = "SELECT Aula_atual , Estagio FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$c['ID_Curso']}'";
             $sqlatual = $mysqli->query($atual) or die($mysqli->error);
@@ -137,7 +142,7 @@
                 <a  id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i>  -------</a>
                 <a  id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a>
                 ";if($i2 == $aulas){
-                    echo "<a id='certi".$i2."".$c['ID_Curso']."'  target='_blank' href='certificado.php' style='pointer-events: none;color:gray;'>-----<i class='bi bi-filetype-pdf'></i></a>";
+                    echo "<a id='certi".$i2."".$c['ID_Curso']."'  target='_blank' href='certificado.php?nomeCurso=".$nomeCurso."&&horas=".$horas."&&descricao=".$descricao."' style='pointer-events: ;color:gray;'>-----<i class='bi bi-filetype-pdf'></i></a>";
                 }echo "</div>
                 </div>
                 <script>";
