@@ -61,7 +61,9 @@
     <!--CURSOS DO ALUNO -->
    <div id="cursos"> 
    <div id="cursoCont">
-        <a href="javascript:volta();">Voltar</a>
+        <div id="btnVoltar">
+            <a class="btnVoltarCurso" onclick="javascript:volta();">Voltar</a>
+        </div>
     </div>
     <?php 
         /*
@@ -133,7 +135,7 @@
                 echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>"
                 ."<a onclick='mostraFase".$c['ID_Curso']."aula".$i2."()'>Fase ".$i2."</a></div>";
                 echo "<div id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
-                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' style='background-color:red;cursor:pointer'>xx</a>
+                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' class='close' style='cursor:pointer; font-size: 20px; color:black; margin-left:5px; margin-top:5px;'><span aria-hidden='true'>&times;</span></a>
                 <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
                 </div>
                 <div id='modal2Op'>

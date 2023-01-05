@@ -124,10 +124,10 @@ if(isset($_POST['enviarteste'])){
 			}
 		}
 		
-		header('Location: /topo/usuario.php');
+		header('Location: ./usuario.php');
 	}
 	else{
-		header('Location: /topo/usuario.php');
+		header('Location: ./usuario.php');
 	}
 	
 }

@@ -181,6 +181,23 @@ div.usuarioDiv div#usuarioId{
     margin-top:20vh; 
     padding: 20px;
 }
+#btnVoltar{
+    position:fixed; 
+    top:93%;
+    left:97.5%;
+    transform: translate(-50%, -50%);
+    
+}
+.btnVoltarCurso{
+    background-color: rgb(196, 145, 78);
+    color: rgb(95, 64, 23);
+    font-family: sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+}
 body.usuario h1{
     font-family:'Times New Roman', Times, serif;
     margin-top: 5vh;
@@ -221,6 +238,7 @@ body.usuario div.usuarioDiv button{
     width: 30px;
     padding: 10px;
     justify-self: center;
+    
 }
 @keyframes modal{
     from{
@@ -250,7 +268,7 @@ body.usuario div.usuarioDiv button{
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; 
     
 }
 .cursoTela{
