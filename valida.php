@@ -131,6 +131,11 @@ if(isset($_POST['enviarteste'])){
 	}
 	
 }
+if(isset($_POST['enviareditarAluno'])){
+	echo $_POST['nome'];
+	echo $_POST['email'];
+	echo $_POST['id'];
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }

@@ -243,7 +243,7 @@
                 b.appendChild(aula);
                 aula.appendChild(textoAula);
                 aula.appendChild(imagem);
-                textoAula.appendChild(audio);
+                imagem.appendChild(audio);
                 audio.setAttribute('id','audio');
                 audio.setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
                 imagem.setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');

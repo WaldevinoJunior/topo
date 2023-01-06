@@ -138,7 +138,7 @@
                                         <div id= 'dadosDoAluno' style='padding:10px;'>
                                         <h3>Dados do aluno</h3>
                                         <p>Preencha somente os dados que você quiser alterar</p>
-                                        <form method='post'>
+                                        <form method='post' action='valida.php'>
                                             <input type='hidden' name='_token' value='WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY'>
                                             <div class='row'>
                                                 <div class='form-group col-12 col-lg-6'>
@@ -193,11 +193,12 @@
                                                     <label for='senha'>Senha</label>
                                                     <input type='password' class='form-control' id='senha".$cAlunos['ID_Aluno']."' name='senha' placeholder=''>
                                                 </div>
+                                                <input type='text' name='id' style='display:none;' value='".$cAlunos['ID_Aluno']."'>
                                             </div>
             
                            
                                             <div class='d-flex justify-content-center'>
-                                                <button class='btn btn-success mr-2'>Salvar</button>
+                                                <input class='btn btn-success mr-2'type='submit' value='Enviar' name='enviareditarAluno'>
                                             </div>
                                         </form>
                                     </div>     
