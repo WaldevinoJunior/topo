@@ -120,7 +120,7 @@
                                         // $table .= "<td>{$cAlunos['Rua']}</td>";
                                         // $table .= "<td>{$cAlunos['Numero']}</td>";
                                         // $table .= "<td>{$cAlunos['Senha']}</td>";
-                                        $table .= "<td><button onclick='editarAlunos".$cAlunos['ID_Aluno']."();'style = 'margin:10px;'class='btn btn-primary btn-sm'value='".$cAlunos['ID_Aluno']."'>Editar</button><button class='btn btn-danger btn-sm' onclick='deletarAlunos();'>Deletar</button></td>";
+                                        $table .= "<td><button onclick='editarAlunos".$cAlunos['ID_Aluno']."();'style = 'margin:10px;'class='btn btn-primary btn-sm'value='".$cAlunos['ID_Aluno']."'>Editar</button></td>";
                                     $table .= '</tr>';
                                     
                                     echo "<script>
@@ -353,7 +353,7 @@
                     </div>
                 </div>
                 <div class="funcA">
-                    <a onclick="mostraAlunos()"><i class="bi bi-person-fill" ></i><h3>Listar Alunos</h3></a>
+                    <a onclick="mostraAlunos()"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
                 </div>
                 <div class="funcA">
                     <a><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
