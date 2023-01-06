@@ -190,6 +190,10 @@
                     function mostraFase".$c['ID_Curso']."aula".$i2."(){
                         let contFase = document.getElementsByName('Curso".$c['ID_Curso']."Aula".$i2."');
                         contFase[0].style.display = 'block';
+                        contFase[0].style.position = 'absolute';
+                        window.scrollY;
+                        contFase[0].style.top = (window.scrollY + 300) + 'px' ;
+                        
                     }
                     function fechaFase".$c['ID_Curso']."aula".$i2."(){
                         let contFase = document.getElementsByName('Curso".$c['ID_Curso']."Aula".$i2."');
