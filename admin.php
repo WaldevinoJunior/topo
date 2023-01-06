@@ -81,7 +81,7 @@
                 </div>
                 <div class="content">   
                     <?php
-                       $table = '<table class="table table-striped">';
+                       $table = '<table class="table table-striped" id="oi">';
                             $table .='<thead>';
                                 $table .= '<tr>';
                                    $table .= '<th>ID</th>';
@@ -120,99 +120,97 @@
                                         // $table .= "<td>{$cAlunos['Rua']}</td>";
                                         // $table .= "<td>{$cAlunos['Numero']}</td>";
                                         // $table .= "<td>{$cAlunos['Senha']}</td>";
-                                        $table .= "<td><button onclick='editarAlunos".$cAlunos['ID_Aluno']."(this.value);'style = 'margin:10px;'class='btn btn-primary btn-sm'value='".$cAlunos['ID_Aluno']."'>Editar</button><button class='btn btn-danger btn-sm' onclick='deletarAlunos();'>Deletar</button></td>";
+                                        $table .= "<td><button onclick='editarAlunos".$cAlunos['ID_Aluno']."();'style = 'margin:10px;'class='btn btn-primary btn-sm'value='".$cAlunos['ID_Aluno']."'>Editar</button><button class='btn btn-danger btn-sm' onclick='deletarAlunos();'>Deletar</button></td>";
                                     $table .= '</tr>';
+                                    
                                     echo "<script>
-                                            function editarAlunos".$cAlunos['ID_Aluno']."(value){
+                                            function editarAlunos".$cAlunos['ID_Aluno']."(){
     
-                                                document.getElementById('EditarAlunos').style.display = 'block';
-                                                let e = document.getElementsByClassName('listAlunos');;
-                                                for (let i = 0; i < e.length; i++) {
-                                                e[i].style.display = 'none';
-                                                }
+                                                document.getElementById('EditarAlunos".$cAlunos['ID_Aluno']."').style.display = 'block';
+                                                document.getElementById('oi').style.display = 'none';;
+                                                document.getElementById('cbcLista').style.display = 'none';;
                                                 // alert(value);
                                              
                                             }
                                         </script>";
+                                       
+                                        echo "<div id='EditarAlunos".$cAlunos['ID_Aluno']."' style='display:none;'>
+                                        <div id= 'dadosDoAluno' style='padding:10px;'>
+                                        <h3>Dados do aluno</h3>
+                                        <p>Preencha somente os dados que você quiser alterar</p>
+                                        <form method='post'>
+                                            <input type='hidden' name='_token' value='WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY'>
+                                            <div class='row'>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='nome'>Nome</label>
+                                                    <input type='text' class='form-control' id='nome".$cAlunos['ID_Aluno']."' name='nome'  value ='".$cAlunos['Nome']."''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='nasc'>Data de Nasc.</label>
+                                                    <input type='date' class='form-control' id='nascimento".$cAlunos['ID_Aluno']."' name='nascimento' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='email'>Email</label>
+                                                    <input type='email' class='form-control' id='email".$cAlunos['ID_Aluno']."' name='email' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='tel'>Telefone</label>
+                                                    <input type='text' class='form-control' id='tel".$cAlunos['ID_Aluno']."' name='telefone' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='cpf'>CPF</label>
+                                                    <input type='text' class='form-control' id='cpf".$cAlunos['ID_Aluno']."' name='cpf' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='rg'>RG</label>
+                                                    <input type='text' class='form-control' id='rg".$cAlunos['ID_Aluno']."' name='rg' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='cep'>CEP</label>
+                                                    <input type='text' class='form-control' id='cep".$cAlunos['ID_Aluno']."' name='cep' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='estado'>Estado</label>
+                                                    <input type='text' class='form-control' id='estado".$cAlunos['ID_Aluno']."' name='estado' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='cidade'>Cidade</label>
+                                                    <input type='text' class='form-control' id='cidade".$cAlunos['ID_Aluno']."' name='cidade' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='rua'>Rua</label>
+                                                    <input type='text' class='form-control' id='rua".$cAlunos['ID_Aluno']."' name='rua' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='numero'>Número</label>
+                                                    <input type='text' class='form-control' id='numero".$cAlunos['ID_Aluno']."' name='numero' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='complemento'>Complemento</label>
+                                                    <input type='text' class='form-control' id='complemento".$cAlunos['ID_Aluno']."' name='complemento' placeholder=''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='senha'>Senha</label>
+                                                    <input type='password' class='form-control' id='senha".$cAlunos['ID_Aluno']."' name='senha' placeholder=''>
+                                                </div>
+                                            </div>
+            
+                           
+                                            <div class='d-flex justify-content-center'>
+                                                <button class='btn btn-success mr-2'>Salvar</button>
+                                            </div>
+                                        </form>
+                                    </div>     
+                                </div>";
 
-                                
-
-                                } 
-                            $table .= '</tbody>';
+                            } 
+                        $table .= '</tbody>';
                         $table .= '</table>';
                         echo $table;
                    ?>
                 </div>
                 </div>
                  
-                    <div id="EditarAlunos" style="display:none;">
-                        <div id="dadosDoAluno" class="" style="padding:10px;">
-                            <h3>Dados do aluno</h3>
-                            <p>Preencha somente os dados que você quiser alterar</p>
-                            <form method="post">
-                                <input type="hidden" name="_token" value="WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY">
-                                <div class="row">
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="nasc">Data de Nasc.</label>
-                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="tel">Telefone</label>
-                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="cpf">CPF</label>
-                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="rg">RG</label>
-                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="cep">CEP</label>
-                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="estado">Estado</label>
-                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="cidade">Cidade</label>
-                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="rua">Rua</label>
-                                        <input type="text" class="form-control" id="rua" name="rua" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="numero">Número</label>
-                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="complemento">Complemento</label>
-                                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="senha">Senha</label>
-                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="">
-                                    </div>
-                                </div>
-
-               
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn btn-success mr-2">Salvar</button>
-                                </div>
-                            </form>
-                        </div>     
-                    </div>
                 
                 <div id="listaColaboradores" class="listColab" style="display:none">
                 <div class="cont-header" id="cbcLista">
