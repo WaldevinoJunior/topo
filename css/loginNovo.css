@@ -198,8 +198,8 @@ div.usuarioDiv div#usuarioId{
     border: 1px solid black;
     cursor: pointer;
     position: absolute;
-    left: -400px;
-    top: -100px;
+    left: -80px;
+    top: -30px;
 }
 body.usuario h1{
     font-family:'Times New Roman', Times, serif;
