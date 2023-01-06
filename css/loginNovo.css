@@ -203,14 +203,20 @@ div.usuarioDiv div#usuarioId{
 
 }
 .btnVoltarCurso{
-    background-color: rgb(20, 127, 220);
-    color: white;
+
+
+    background-color:rgb(9, 107, 235);
+    color:  rgb(255, 255, 255);
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: 30px;
+
     border-radius: 5px;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid black;
     cursor: pointer;
+    position: absolute;
+    left: -400px;
+    top: -100px;
 }
 body.usuario h1{
     font-family:'Times New Roman', Times, serif;
