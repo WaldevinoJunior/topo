@@ -18,6 +18,7 @@
     <link rel="sortcut icon" href="img/iconetopo.jpg" type="image/jpg" />
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <script src="js/constroi.js"> </script>
 </head>
 <!-- CORPO DA PAGINA USUARIO -->
@@ -112,7 +113,7 @@
             $estagio = "SELECT Estagio FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$c['ID_Curso']}'";
             $sqlestagio = $mysqli->query($estagio) or die($mysqli->error);
 			$esta = mysqli_fetch_array($sqlestagio)[0];
-            echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
+            echo "<div style='text-align:center; margin-top:2px;' id = 'oi'><strong>".$c['Nome_curso']."</strong><img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
                         ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div><script>
                             function mostraCurso".$c['ID_Curso']."(){
                             let d = document.getElementsByClassName('cursoConteudo');
@@ -132,10 +133,10 @@
                          }
                         </script>";
             for($i2 = 1; $aulas >= $i2;$i2++){
-                echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>"
+                echo "<div style='text-align:center; margin-top:7px;display:none' id = 'oi2' name='".$c['ID_Curso']."'><strong>Aula ".$i2."</strong><img  src='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>"
                 ."<a onclick='mostraFase".$c['ID_Curso']."aula".$i2."()'>Fase ".$i2."</a></div>";
                 echo "<div id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
-                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' class='close' style='cursor:pointer; font-size: 20px; color:black; margin-left:5px; margin-top:5px;'><span aria-hidden='true'>&times;</span></a>
+                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' class='close' style='float:left; margin-left:6px;margin-top:4px; cursor:pointer;' ><span aria-hidden='true'>&times;</span></a>
                 <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
                 </div>
                 <div id='modal2Op'>
