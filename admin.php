@@ -275,19 +275,13 @@
                    ?>
                 </div>
                 </div>
-                <div id="EditarColab" style="display:none">
+                <div id="cadastraAluno" style="display:none">
                     <div class="cont-header">
-                        <h2>Editar Colaborador 1</h2> 
-                        <!-- <button class="btn btn-primary btn-sm">Editar Dados</button> 
-                        <button class="btn btn-primary btn-sm">Voltar</button>   
-                          -->
-                        
                     </div>
                     <div class="content">
                         <div id="dadosDoAluno" class="" style="padding:10px;">
-                            <h3>Dados do colaborador</h3>
-                            <p>Preencha somente os dados que você quiser alterar</p>
-                            <form method="post" action="/listar-alunos/editar/254/dados">
+                            <h3>Preencha os dados do Aluno</h3>
+                            <form method="post" action="valida.php">
                                 <input type="hidden" name="_token" value="WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY">
                                 <div class="row">
                                     <div class="form-group col-12 col-lg-6">
@@ -339,11 +333,6 @@
                                         <input type="text" class="form-control" id="complemento" name="complemento" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="login">Login</label>
-                                        <input type="text" class="form-control" id="login" name="login" placeholder="">
-                                    </div>
-
-                                    <div class="form-group col-12 col-lg-6">
                                         <label for="senha">Senha</label>
                                         <input type="password" class="form-control" id="senha" name="senha" placeholder="">
                                     </div>
@@ -351,7 +340,7 @@
 
                 <!--BOTOES AO FIM DA SESSÃO-->
                                 <div class="d-flex justify-content-center">
-                                    <button class="btn btn-success mr-2">Salvar</button>
+                                <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraAluno">
                                 </div>
                             </form>
                         </div>     
@@ -361,7 +350,7 @@
                     <a onclick="mostraAlunos()"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
                 </div>
                 <div class="funcA">
-                    <a><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
+                    <a onclick="cadastraAluno()"><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
                 </div>
                 <div class="funcA">
                     <a><i class="bi bi-postcard"></i><h3>Satisfação</h3></a>
