@@ -140,6 +140,14 @@ if(isset($_POST['enviareditarAluno'])){
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
+if(isset($_POST['cadastraAluno'])){
+	$consulta = "INSERT INTO alunos (Nome, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
+	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
+	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
+	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}')";
+	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	header('Location: ./admin.php');
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }
