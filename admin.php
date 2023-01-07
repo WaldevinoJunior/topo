@@ -146,52 +146,56 @@
                                                     <input type='text' class='form-control' id='nome".$cAlunos['ID_Aluno']."' name='nome'  value ='".$cAlunos['Nome']."''>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
+                                                    <label for='nome'>Responsavel</label>
+                                                    <input type='text' class='form-control' id='responsavel".$cAlunos['ID_Aluno']."' name='responsavel'  value ='".$cAlunos['Responsavel']."''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
                                                     <label for='nasc'>Data de Nasc.</label>
-                                                    <input type='date' class='form-control' id='nascimento".$cAlunos['ID_Aluno']."' name='nascimento' placeholder=''>
+                                                    <input type='date' class='form-control' id='nascimento".$cAlunos['ID_Aluno']."' name='nascimento' value ='".$cAlunos['Nascimento']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='email'>Email</label>
-                                                    <input type='email' class='form-control' id='email".$cAlunos['ID_Aluno']."' name='email' placeholder=''>
+                                                    <input type='email' class='form-control' id='email".$cAlunos['ID_Aluno']."' name='email' value ='".$cAlunos['Email']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='tel'>Telefone</label>
-                                                    <input type='text' class='form-control' id='tel".$cAlunos['ID_Aluno']."' name='telefone' placeholder=''>
+                                                    <input type='text' class='form-control' id='tel".$cAlunos['ID_Aluno']."' name='telefone' value ='".$cAlunos['Telefone']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='cpf'>CPF</label>
-                                                    <input type='text' class='form-control' id='cpf".$cAlunos['ID_Aluno']."' name='cpf' placeholder=''>
+                                                    <input type='text' class='form-control' id='cpf".$cAlunos['ID_Aluno']."' name='cpf' value ='".$cAlunos['CPF']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='rg'>RG</label>
-                                                    <input type='text' class='form-control' id='rg".$cAlunos['ID_Aluno']."' name='rg' placeholder=''>
+                                                    <input type='text' class='form-control' id='rg".$cAlunos['ID_Aluno']."' name='rg' value ='".$cAlunos['RG']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='cep'>CEP</label>
-                                                    <input type='text' class='form-control' id='cep".$cAlunos['ID_Aluno']."' name='cep' placeholder=''>
+                                                    <input type='text' class='form-control' id='cep".$cAlunos['ID_Aluno']."' name='cep' value ='".$cAlunos['CEP']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='estado'>Estado</label>
-                                                    <input type='text' class='form-control' id='estado".$cAlunos['ID_Aluno']."' name='estado' placeholder=''>
+                                                    <input type='text' class='form-control' id='estado".$cAlunos['ID_Aluno']."' name='estado' value ='".$cAlunos['Estado']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='cidade'>Cidade</label>
-                                                    <input type='text' class='form-control' id='cidade".$cAlunos['ID_Aluno']."' name='cidade' placeholder=''>
+                                                    <input type='text' class='form-control' id='cidade".$cAlunos['ID_Aluno']."' name='cidade' value ='".$cAlunos['Cidade']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='rua'>Rua</label>
-                                                    <input type='text' class='form-control' id='rua".$cAlunos['ID_Aluno']."' name='rua' placeholder=''>
+                                                    <input type='text' class='form-control' id='rua".$cAlunos['ID_Aluno']."' name='rua'value ='".$cAlunos['Rua']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='numero'>Número</label>
-                                                    <input type='text' class='form-control' id='numero".$cAlunos['ID_Aluno']."' name='numero' placeholder=''>
+                                                    <input type='text' class='form-control' id='numero".$cAlunos['ID_Aluno']."' name='numero' value ='".$cAlunos['Numero']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='complemento'>Complemento</label>
-                                                    <input type='text' class='form-control' id='complemento".$cAlunos['ID_Aluno']."' name='complemento' placeholder=''>
+                                                    <input type='text' class='form-control' id='complemento".$cAlunos['ID_Aluno']."' name='complemento' value ='".$cAlunos['Complemento']."'>
                                                 </div>
                                                 <div class='form-group col-12 col-lg-6'>
                                                     <label for='senha'>Senha</label>
-                                                    <input type='password' class='form-control' id='senha".$cAlunos['ID_Aluno']."' name='senha' placeholder=''>
+                                                    <input type='text' class='form-control' id='senha".$cAlunos['ID_Aluno']."' name='senha' value ='".$cAlunos['Senha']."'>
                                                 </div>
                                                 <input type='text' name='id' style='display:none;' value='".$cAlunos['ID_Aluno']."'>
                                             </div>
@@ -369,7 +373,10 @@
                     <a><i class="bi bi-arrow-counterclockwise"></i><h3>Fazer Backup</h3></a>
                 </div>
                 <div class="funcA">
-                    <a onclick="mostraColaboradores()"><i class="bi bi-people fill"></i><h3>Colaboradores</h3></a>
+                    <a onclick="mostraColaboradores()"><i class="bi bi-people fill"></i><h3>Listar Colaboradores</h3></a>
+                </div>
+                <div class="funcA">
+                    <a onclick="mostraColaboradores()"><i class="bi bi-person-fill-add"></i><h3>Cadastrar Colaboradores</h3></a>
                 </div>
                 <hr>
             </div>

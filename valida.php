@@ -132,9 +132,13 @@ if(isset($_POST['enviarteste'])){
 	
 }
 if(isset($_POST['enviareditarAluno'])){
-	echo $_POST['nome'];
-	echo $_POST['email'];
-	echo $_POST['id'];
+	$consulta = "UPDATE alunos SET Nome = '{$_POST['nome']}', Nascimento = '{$_POST['nome']}', 
+	Email = '{$_POST['email']}',Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
+	RG = '{$_POST['rg']}', CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
+	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
+	, Senha = '{$_POST['senha']}'  WHERE ID_Aluno = '{$_POST['id']}'";
+	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	header('Location: ./admin.php');
 }
 /*if($contador!=1){
 	header('Location: /topo/login.html');
