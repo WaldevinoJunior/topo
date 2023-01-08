@@ -379,11 +379,20 @@ body.usuario div.usuarioDiv button{
     font-size: 30px;
 }
 #textoAula{
-    position: absolute;
     display: flex;
-    flex-direction: column;
-    width: 40vw;
-    height: 50vh;
+    flex-direction:row;
+    width: 10vw;
+    height: 5vh;
+    position: absolute;
+    top:70vh;
+}
+#AulaTexto{
+    display: flex;
+    width: 50vw;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    top: 75vh;
 }
 #audio{
     position: relative;
@@ -395,6 +404,18 @@ body.usuario div.usuarioDiv button{
     margin: 0;
     padding: 0;
     display: flex;
+}
+.volta{
+    background-color: yellow;
+    width: 3vw;
+}
+.proxima{
+    background-color: gray;
+    width: 3vw;
+}
+.sair{
+    background-color: red;
+    width: 3vw;
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
@@ -447,17 +468,17 @@ body.teste{
     visibility: hidden;
     opacity: 0;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     background-color: white;
     border: 1px solid black;
     transition: opacity 0.5s ease;
     justify-content: center;
-    padding: 10px;
 }
 #barras a{
     color:black;
-    display: flex;
+    display:flex;
     cursor: pointer;
+    margin: 0;
 }
 .admin{
     justify-content: center;
@@ -497,6 +518,7 @@ body.teste{
 #func a:hover{
     animation: modal2 0.5s;
     transform: translate3d(0,-5px,0);
+    color:black;
 }
 @keyframes modal2{
     from{
@@ -538,7 +560,7 @@ body.teste{
     align-items: center;
     
 }
-#cbcLista a{
+#cbcLista a,#cbcLista2 a{
     font-size: 16px;
     display: inline-flex;
     color:white;

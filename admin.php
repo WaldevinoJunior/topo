@@ -31,10 +31,10 @@
     <nav class="menuAdmin">
         <img src="img/iconetopo.jpg">
         <ul>
-            <li><a href=""><i class="bi bi-house"></i>Início</a></li>
+            <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
             <li><a href=""><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i></a>
                     <div id="barras">
-                        <a>Cadastrar Alunos</a>
+                        <a href="./cadastraAluno.php">Cadastrar Alunos</a>
                         <a onclick="mostraAlunos()">Listar alunos</a><hr>
                         <a>Cadastrar Colaboradores</a>
                         <a onclick="mostraColaboradores()">Listar Colaboradores</a><hr>
@@ -76,12 +76,12 @@
                 <div id="listaAlunos" style="display:none" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
                     <h1>Lista de alunos</h1>
-                    <a href="#" class="btn btn-success btn-sm">Cadastrar aluno</a>
-                    <a href="#" class="btn btn-success btn-sm">Atualizar lista</a>
+                    <a onclick="cadastraAluno2()" class="btn btn-success btn-sm">Cadastrar aluno</a>
+                    <a onclick="voltaAdmin()" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
                 </div>
                 <div class="content">   
                     <?php
-                       $table = '<table class="table table-striped" id="oi">';
+                       $table = '<table class="table table-striped" id="tableAluno">';
                             $table .='<thead>';
                                 $table .= '<tr>';
                                    $table .= '<th>ID</th>';
@@ -127,7 +127,7 @@
                                             function editarAlunos".$cAlunos['ID_Aluno']."(){
     
                                                 document.getElementById('EditarAlunos".$cAlunos['ID_Aluno']."').style.display = 'block';
-                                                document.getElementById('oi').style.display = 'none';;
+                                                document.getElementById('tableAluno').style.display = 'none';;
                                                 document.getElementById('cbcLista').style.display = 'none';;
                                                 // alert(value);
                                              
@@ -202,6 +202,17 @@
             
                            
                                             <div class='d-flex justify-content-center'>
+                                            <a onclick='volta".$cAlunos['ID_Aluno']."()' class='btn btn-success mr-2' style='background-color:blue;width:5vw;height:6vh;font-size:3vh;color:white;'>Voltar</a>
+                                            <script>
+                                            function volta".$cAlunos['ID_Aluno']."(){
+                                                window.scrollTo(0, 0);
+                                                document.getElementById('EditarAlunos".$cAlunos['ID_Aluno']."').style.display = 'none';
+                                                document.getElementById('tableAluno').style.display = 'block';
+                                                document.getElementById('cbcLista').style.display = 'block';
+                                                
+                                            }
+                                            </script>
+
                                                 <input class='btn btn-success mr-2'type='submit' value='Enviar' name='enviareditarAluno'>
                                             </div>
                                         </form>
@@ -218,14 +229,14 @@
                  
                 
                 <div id="listaColaboradores" class="listColab" style="display:none">
-                <div class="cont-header" id="cbcLista">
+                <div class="cont-header" id="cbcLista2">
                     <h1>Lista de colaboradores</h1>
-                    <a href="#" class="btn btn-success btn-sm">Cadastrar colaboradores</a>
-                    <a href="#" class="btn btn-success btn-sm">Atualizar lista</a>
+                    <a onclick="cadastraColab2();" class="btn btn-success btn-sm">Cadastrar colaboradores</a>
+                    <a onclick="voltaAdmin4()" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
                 </div>
                 <div class="content"> 
                     <?php
-                       $table = '<table class="table table-striped">';
+                       $table = '<table class="table table-striped" id="tableColab">';
                             $table .='<thead>';
                                 $table .= '<tr>';
                                    $table .= '<th>ID</th>';
@@ -265,8 +276,94 @@
                                         // $table .= "<td>{$cColab['Senha']}</td>";
                                         $table .= "<td>{$cColab['Perfil']}</td>";
                                         //$table .= "<td>{$cColab['Licenca']}</td>";
-                                        $table .= "<td><button onclick='editarColab();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm' onclick='deletarColab();'>Deletar</button></td>";
+                                        $table .= "<td><button onclick='EditarColab".$cColab['ID_Colaborador']."();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm' onclick='deletarColab();'>Deletar</button></td>";
                                     $table .= '</tr>';
+                                    echo "<script>
+                                            function EditarColab".$cColab['ID_Colaborador']."(){
+    
+                                                document.getElementById('EditarColab".$cColab['ID_Colaborador']."').style.display = 'block';
+                                                document.getElementById('tableColab').style.display = 'none';
+                                                document.getElementById('cbcLista2').style.display = 'none';
+                                             
+                                            }
+                                        </script>";
+                                       
+                                        echo "<div id='EditarColab".$cColab['ID_Colaborador']."' style='display:none;'>
+                                        <div id= 'dadosDoAluno' style='padding:10px;'>
+                                        <h3>Dados do Colaborador</h3>
+                                        <p>Preencha somente os dados que você quiser alterar</p>
+                                        <form method='post' action='valida.php'>
+                                            <input type='hidden' name='_token' value='WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY'>
+                                            <div class='row'>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='nome'>Nome</label>
+                                                    <input type='text' class='form-control' id='nome".$cColab['ID_Colaborador']."' name='nome'  value ='".$cColab['Nome']."''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='nasc'>Data de Nasc.</label>
+                                                    <input type='date' class='form-control' id='nascimento".$cColab['ID_Colaborador']."' name='nascimento' value ='".$cColab['Nascimento']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='email'>Email</label>
+                                                    <input type='email' class='form-control' id='email".$cColab['ID_Colaborador']."' name='email' value ='".$cColab['Email']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='tel'>Telefone</label>
+                                                    <input type='text' class='form-control' id='tel".$cColab['ID_Colaborador']."' name='telefone' value ='".$cColab['Telefone']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='cep'>CEP</label>
+                                                    <input type='text' class='form-control' id='cep".$cColab['ID_Colaborador']."' name='cep' value ='".$cColab['CEP']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='estado'>Estado</label>
+                                                    <input type='text' class='form-control' id='estado".$cColab['ID_Colaborador']."' name='estado' value ='".$cColab['Estado']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='cidade'>Cidade</label>
+                                                    <input type='text' class='form-control' id='cidade".$cColab['ID_Colaborador']."' name='cidade' value ='".$cColab['Cidade']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='rua'>Rua</label>
+                                                    <input type='text' class='form-control' id='rua".$cColab['ID_Colaborador']."' name='rua'value ='".$cColab['Rua']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='numero'>Número</label>
+                                                    <input type='text' class='form-control' id='numero".$cColab['ID_Colaborador']."' name='numero' value ='".$cColab['Numero']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='complemento'>Complemento</label>
+                                                    <input type='text' class='form-control' id='complemento".$cColab['ID_Colaborador']."' name='complemento' value ='".$cColab['Complemento']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='login'>Login</label>
+                                                    <input type='text' class='form-control' id='login".$cColab['ID_Colaborador']."' name='login' value ='".$cColab['Login']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='senha'>Senha</label>
+                                                    <input type='text' class='form-control' id='senha".$cColab['ID_Colaborador']."' name='senha' value ='".$cColab['Senha']."'>
+                                                </div>
+                                                <input type='text' name='id' style='display:none;' value='".$cColab['ID_Colaborador']."'>
+                                            </div>
+            
+                           
+                                            <div class='d-flex justify-content-center'>
+                                            <a onclick='volta".$cColab['ID_Colaborador']."()' class='btn btn-success mr-2' style='background-color:blue;width:5vw;height:6vh;font-size:3vh;color:white;'>Voltar</a>
+                                            <script>
+                                            function volta".$cColab['ID_Colaborador']."(){
+                                                window.scrollTo(0, 0);
+                                                document.getElementById('EditarColab".$cColab['ID_Colaborador']."').style.display = 'none';
+                                                document.getElementById('tableColab').style.display = 'block';
+                                                document.getElementById('cbcLista2').style.display = 'block';
+                                                
+                                            }
+                                            </script>
+
+                                                <input class='btn btn-success mr-2'type='submit' value='Enviar' name='enviareditarColab'>
+                                            </div>
+                                        </form>
+                                    </div>     
+                                </div>";
 
                                 } 
                             $table .= '</tbody>';
@@ -274,6 +371,82 @@
                         echo $table;
                    ?>
                 </div>
+                </div>
+                <div id="cadastraColab" style="display:none">
+                    <div class="cont-header">
+                    </div>
+                    <div class="content">
+                        <div id="dadosDoAluno" class="" style="padding:10px;">
+                            <h3>Preencha os dados do Colaborador</h3>
+                            <form method="post" action="valida.php">
+                                <input type="hidden" name="_token" value="WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY">
+                                <div class="row">
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="nasc">Data de Nasc.</label>
+                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="tel">Telefone</label>
+                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cpf">CPF</label>
+                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="rg">RG</label>
+                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cep">CEP</label>
+                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="estado">Estado</label>
+                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cidade">Cidade</label>
+                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="rua">Rua</label>
+                                        <input type="text" class="form-control" id="rua" name="rua" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="numero">Número</label>
+                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="complemento">Complemento</label>
+                                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="senha">Login</label>
+                                        <input type="password" class="form-control" id="login" name="login" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="senha">Senha</label>
+                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="">
+                                    </div>
+                                </div>
+
+                <!--BOTOES AO FIM DA SESSÃO-->
+                                <div class="d-flex justify-content-center">
+                                <a onclick="voltaAdmin3()" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;;font-size:15px;color:white;">Voltar</a>
+                                <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraColab">
+                                </div>
+                            </form>
+                        </div>     
+                    </div>
                 </div>
                 <div id="cadastraAluno" style="display:none">
                     <div class="cont-header">
@@ -340,17 +513,20 @@
 
                 <!--BOTOES AO FIM DA SESSÃO-->
                                 <div class="d-flex justify-content-center">
+                                <a onclick="voltaAdmin2()" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;font-size:15px;color:white;">Voltar</a>
                                 <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraAluno">
                                 </div>
                             </form>
                         </div>     
                     </div>
+                
                 </div>
+                
                 <div class="funcA">
                     <a onclick="mostraAlunos()"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
                 </div>
                 <div class="funcA">
-                    <a onclick="cadastraAluno()"><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
+                    <a  href="./cadastraAluno.php"><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
                 </div>
                 <div class="funcA">
                     <a><i class="bi bi-postcard"></i><h3>Satisfação</h3></a>
@@ -365,7 +541,7 @@
                     <a onclick="mostraColaboradores()"><i class="bi bi-people fill"></i><h3>Listar Colaboradores</h3></a>
                 </div>
                 <div class="funcA">
-                    <a onclick="mostraColaboradores()"><i class="bi bi-person-fill-add"></i><h3>Cadastrar Colaboradores</h3></a>
+                    <a onclick="cadastraColab()"><i class="bi bi-person-fill-add"></i><h3>Cadastrar Colaboradores</h3></a>
                 </div>
                 <hr>
             </div>

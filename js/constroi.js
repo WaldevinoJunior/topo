@@ -95,6 +95,27 @@ function cadastraAluno(){
       e[i].style.display = "none";
     }
     document.getElementById("cadastraAluno").style.display = 'block';
+    window.scrollTo(0,0);
+}
+function voltaAdmin(){
+  let e = document.getElementsByClassName("funcA");;
+    for (let i = 0; i < e.length; i++) {
+      e[i].style.display = "block";
+    }
+    document.getElementById("listaAlunos").style.display = 'none';
+    window.scrollTo(0,0);
+}
+function voltaAdmin2(){
+    document.getElementById("cadastraAluno").style.display = 'none';
+    document.getElementById("listaAlunos").style.display = 'block';
+    document.getElementById("cbcLista").style.display = 'block';
+    document.getElementById("tableAluno").style.display = 'block';
+    window.scrollTo(0,0);
+}
+function cadastraAluno2(){
+  document.getElementById("tableAluno").style.display = 'none';
+  document.getElementById("cbcLista").style.display = 'none';
+  document.getElementById("cadastraAluno").style.display = 'block';
 }
 function mostraColaboradores(){
   let e = document.getElementsByClassName("funcA");;
@@ -103,23 +124,34 @@ function mostraColaboradores(){
     }
     document.getElementById("listaColaboradores").style.display = 'block';
 }
-function editarAlunos(){
-  let e = document.getElementsByClassName("listAlunos");;
+function cadastraColab(){
+  window.scrollTo(0,0);
+  let e = document.getElementsByClassName("funcA");;
     for (let i = 0; i < e.length; i++) {
       e[i].style.display = "none";
     }
-    document.getElementById("EditarAlunos").style.display = 'block';
-    
-    
-
+    document.getElementById("cadastraColab").style.display = 'block';
 }
-function editarColab(){
-  let e = document.getElementsByClassName("listColab");;
+function cadastraColab2(){
+  window.scrollTo(0,0);
+  document.getElementById("listaColaboradores").style.display = 'none';
+  document.getElementById("cadastraColab").style.display = 'block';
+}
+function voltaAdmin4(){
+   let e = document.getElementsByClassName("funcA");;
     for (let i = 0; i < e.length; i++) {
-      e[i].style.display = "none";
+      e[i].style.display = "block";
     }
-    document.getElementById("EditarColab").style.display = 'block';
-    
+    document.getElementById("listaColaboradores").style.display = 'none';
+    window.scrollTo(0,0);
+}
+function voltaAdmin3(){
+  let e = document.getElementsByClassName("funcA");;
+    for (let i = 0; i < e.length; i++) {
+      e[i].style.display = "block";
+    }
+    document.getElementById("cadastraColab").style.display = 'none';
+    window.scrollTo(0,0);
 }
 function deletarAlunos(){
   alert("Confirme para deletar");
