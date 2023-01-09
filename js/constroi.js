@@ -60,7 +60,7 @@ function mostraSenha() {
     }
     let d = document.getElementsByClassName("cursoTela");
     for (let i = 0; i < d.length; i++) {
-      d[i].style.display = "block";
+      d[i].style.display = "flex";
     }
     document.getElementById("cursoCont").style.display = "none";
     window.scrollTo(0,0);

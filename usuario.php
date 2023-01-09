@@ -17,6 +17,9 @@
     <title>Topo Treinamentos</title>
     <link rel="sortcut icon" href="img/iconetopo.jpg" type="image/jpg" />
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../resources/views/css/aluno/layout-aluno.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <script src="js/constroi.js"> </script>
 </head>
@@ -135,15 +138,15 @@
             for($i2 = 1; $aulas >= $i2;$i2++){
                 echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>"
                 ."<a onclick='mostraFase".$c['ID_Curso']."aula".$i2."()'>Fase ".$i2."</a></div>";
-                echo "<div id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
-                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' class='close' style='cursor:pointer; font-size: 20px; color:black; margin-left:5px; margin-top:5px;'><span aria-hidden='true'>&times;</span></a>
+                echo "<div  class='modal-content' id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
+                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' class='close' style='float:right; margin-right:6px;margin-top:4px; cursor:pointer;' ><span aria-hidden='true'>&times;</span></a>
                 <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
                 </div>
                 <div id='modal2Op'>
-                <a id='aula".$i2."".$c['ID_Curso']."'onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'  style='pointer-events: none;color:gray;'><i class='bi bi-cast'></i> -------</a>
-                <a  id='passo".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-postcard'></i> -------</a>
-                <a  id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i>  -------</a>
-                <a  id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a>
+                <div style='padding-right: 9px;text-align: center;'><a id='aula".$i2."".$c['ID_Curso']."'onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'  style='pointer-events: none;color:gray;'><i class='bi bi-cast'></i></a><p>Aula</p></div><img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'>
+                <div style='padding-right: 2px;text-align: center;'><a id='passo".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-postcard'></i></a><p>Apostila</p></div><img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'>
+                <div style='padding-right: 2px;text-align: center;'><a id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i></a><p>Fixação</p></div><img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'>
+                <div style='padding-left: 8px;text-align: center;'><a id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a><p>Teste</p></div>
                 ";if($i2 == $aulas){
                     echo "<a id='certi".$i2."".$c['ID_Curso']."'  target='_blank' href='certificado.php?nomeCurso=".$nomeCurso."&&horas=".$horas."&&descricao=".$descricao."' style='pointer-events: ;color:gray;'>-----<i class='bi bi-filetype-pdf'></i></a>";
                 }echo "</div>
