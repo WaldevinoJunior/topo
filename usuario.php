@@ -116,7 +116,8 @@
             $sqlestagio = $mysqli->query($estagio) or die($mysqli->error);
 			$esta = mysqli_fetch_array($sqlestagio)[0];
             echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
-                        ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div><script>
+                        ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div>
+                        <script>
                             function mostraCurso".$c['ID_Curso']."(){
                             let d = document.getElementsByClassName('cursoConteudo');
                             let u = document.querySelectorAll('#oi2');;
