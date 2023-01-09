@@ -63,6 +63,7 @@ function mostraSenha() {
       d[i].style.display = "block";
     }
     document.getElementById("cursoCont").style.display = "none";
+    window.scrollTo(0,0);
  }
  function mostraCurso(){
     let d = document.getElementsByClassName("cursoConteudo");

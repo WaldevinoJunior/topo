@@ -129,6 +129,7 @@
                                      i2++;
                                 }
                             }
+                            window.scrollTo(0,0);
                          }
                         </script>";
             for($i2 = 1; $aulas >= $i2;$i2++){
