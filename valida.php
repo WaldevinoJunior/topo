@@ -132,7 +132,7 @@ if(isset($_POST['enviarteste'])){
 	
 }
 if(isset($_POST['enviareditarAluno'])){
-	$consulta = "UPDATE alunos SET Nome = '{$_POST['nome']}', Nascimento = '{$_POST['nome']}', 
+	$consulta = "UPDATE alunos SET Nome = '{$_POST['nome']}', Nascimento = '{$_POST['nascimento']}', 
 	Email = '{$_POST['email']}',Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
 	RG = '{$_POST['rg']}', CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
 	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
@@ -145,6 +145,23 @@ if(isset($_POST['cadastraAluno'])){
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
 	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}')";
+	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	header('Location: ./admin.php');
+}
+if(isset($_POST['enviareditarColab'])){
+	$consulta = "UPDATE colaboradores SET Nome = '{$_POST['nome']}', Nascimento = '{$_POST['nascimento']}',Email = '{$_POST['email']}',
+	Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
+	CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
+	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
+	, Login = '{$_POST['login']}',Senha = '{$_POST['senha']}'  WHERE ID_Colaborador = '{$_POST['id']}'";
+	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	header('Location: ./admin.php');
+}
+if(isset($_POST['cadastraColab'])){
+	$consulta = "INSERT INTO colaboradores (Nome, Nascimento, Email, Telefone, CPF, CEP, Estado, Cidade, Rua, Numero, Complemento,Login, Senha) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
+	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', 
+	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
+	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['login']}','{$_POST['senha']}')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }

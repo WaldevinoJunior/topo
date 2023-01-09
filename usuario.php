@@ -130,6 +130,7 @@
                                      i2++;
                                 }
                             }
+                            window.scrollTo(0,0);
                          }
                         </script>";
             for($i2 = 1; $aulas >= $i2;$i2++){
@@ -234,27 +235,33 @@
                 let vol = document.createElement('button');
                 let sair = document.createElement('button');
                 let textoAula = document.createElement('div');
+                let AulaTexto = document.createElement('div');
+                AulaTexto.setAttribute('id','AulaTexto');
                 textoAula.setAttribute('id','textoAula');
                 sair.setAttribute('id', 'sair');
                 sair.setAttribute('onclick', 'sair".$c['ID_Curso']."aula".$i2."()');
                 sair.innerHTML = 'sair';
                 prox.setAttribute('id', 'prox".$c['ID_Curso']."aula".$i2."');
                 vol.setAttribute('id', 'vol".$c['ID_Curso']."aula".$i2."');
-                prox.innerHTML = 'proxima';
-                vol.innerHTML = 'voltar';
+                prox.setAttribute('class', 'proxima');
+                vol.setAttribute('class', 'volta');
+                sair.setAttribute('class', 'sair');
+                prox.innerHTML = '>>';
+                vol.innerHTML = '<<';
                 prox.setAttribute('onclick', 'prox".$c['ID_Curso']."aula".$i2."()');
                 vol.setAttribute('onclick', 'vol".$c['ID_Curso']."aula".$i2."()');
                 aula.setAttribute('id' , 'aulaEstilo');
                 b.appendChild(aula);
                 aula.appendChild(textoAula);
+                aula.appendChild(AulaTexto);
                 aula.appendChild(imagem);
                 imagem.appendChild(audio);
                 audio.setAttribute('id','audio');
                 audio.setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
                 imagem.setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                 imagem.setAttribute('id', 'imagemEstilo');
-                textoAula.appendChild(prox);
                 textoAula.appendChild(vol);
+                textoAula.appendChild(prox);
                 textoAula.appendChild(sair);
                 audio.setAttribute('controls', 'autoplay');
                 prox.disabled = true;
@@ -262,6 +269,7 @@
                 audio.addEventListener('ended', function(){
                     audio.currentTime = 0;
                     prox.disabled = false;
+                    prox.style.background = 'yellow';
                     });
                 document.getElementById('sair').style.display = 'block';
                 document.getElementById('aulaEstilo').style.display = 'block';
@@ -269,7 +277,7 @@
                 let paragrafo = document.createElement('p');
                 paragrafo.setAttribute('id', 'paragrafo');
                 paragrafo.innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
-                textoAula.appendChild(paragrafo);
+                AulaTexto.appendChild(paragrafo);
                 }
                 </script>";
               
@@ -298,7 +306,7 @@
                 document.getElementById('60".$i2."'+i6+'').style.display = 'block';
                 document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                 document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
-                audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;
+                audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;document.getElementById('prox".$c['ID_Curso']."aula".$i2."').style.background = 'gray';
                 }
             }</script>";
             echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){
@@ -311,7 +319,7 @@
                     document.getElementById('paragrafo').innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
                     document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                     document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
-                    audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;
+                    audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;document.getElementById('prox".$c['ID_Curso']."aula".$i2."').style.background = 'yellow';
 
                 }
             

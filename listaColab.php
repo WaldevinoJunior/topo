@@ -228,11 +228,11 @@
                 </div>
                  
                 
-                <div id="listaColaboradores" class="listColab" style="display:none">
+                <div id="listaColaboradores" class="listColab">
                 <div class="cont-header" id="cbcLista2">
                     <h1>Lista de colaboradores</h1>
                     <a onclick="cadastraColab2();" class="btn btn-success btn-sm">Cadastrar colaboradores</a>
-                    <a onclick="voltaAdmin4()" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
+                    <a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
                 </div>
                 <div class="content"> 
                     <?php
@@ -441,108 +441,21 @@
 
                 <!--BOTOES AO FIM DA SESSÃO-->
                                 <div class="d-flex justify-content-center">
-                                <a onclick="voltaAdmin3()" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;;font-size:15px;color:white;">Voltar</a>
+                                <a onclick="voltaColab()" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;;font-size:15px;color:white;">Voltar</a>
                                 <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraColab">
                                 </div>
                             </form>
                         </div>     
                     </div>
                 </div>
-                <div id="cadastraAluno" style="display:none">
-                    <div class="cont-header">
-                    </div>
-                    <div class="content">
-                        <div id="dadosDoAluno" class="" style="padding:10px;">
-                            <h3>Preencha os dados do Aluno</h3>
-                            <form method="post" action="valida.php">
-                                <input type="hidden" name="_token" value="WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY">
-                                <div class="row">
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="nasc">Data de Nasc.</label>
-                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="tel">Telefone</label>
-                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="cpf">CPF</label>
-                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="rg">RG</label>
-                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="cep">CEP</label>
-                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="estado">Estado</label>
-                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="cidade">Cidade</label>
-                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="rua">Rua</label>
-                                        <input type="text" class="form-control" id="rua" name="rua" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="numero">Número</label>
-                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="complemento">Complemento</label>
-                                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="senha">Senha</label>
-                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="">
-                                    </div>
-                                </div>
-
-                <!--BOTOES AO FIM DA SESSÃO-->
-                                <div class="d-flex justify-content-center">
-                                <a onclick="voltaAdmin2()" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;font-size:15px;color:white;">Voltar</a>
-                                <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraAluno">
-                                </div>
-                            </form>
-                        </div>     
-                    </div>
-                
-                </div>
-                
-                <div class="funcA">
-                    <a onclick="mostraAlunos()"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
-                </div>
-                <div class="funcA">
-                    <a  href="./cadastraAluno.php"><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
-                </div>
-                <div class="funcA">
-                    <a><i class="bi bi-postcard"></i><h3>Lista de Presença</h3></a>
-                </div>
-                <div class="funcA">
-                    <a><i class="bi bi-arrow-counterclockwise"></i><h3>Fazer Backup</h3></a>
-                </div>
-                <div class="funcA">
-                    <a onclick="mostraColaboradores()"><i class="bi bi-people fill"></i><h3>Listar Colaboradores</h3></a>
-                </div>
-                <div class="funcA">
-                    <a onclick="cadastraColab()"><i class="bi bi-person-fill-add"></i><h3>Cadastrar Colaboradores</h3></a>
-                </div>
-                <hr>
             </div>
-            </div>
+            <script>
+                function voltaColab(){
+                    document.getElementById("cadastraColab").style.display = 'none';
+                    document.getElementById("listaColaboradores").style.display = 'block';
+                    window.scrollTo(0,0);
+                }
+                </script>
             <div id="func2">
                 <div class="func2A">
                     <p>Licença</p>
