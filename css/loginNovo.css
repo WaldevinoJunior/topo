@@ -381,18 +381,25 @@ body.usuario div.usuarioDiv button{
 #textoAula{
     display: flex;
     flex-direction:row;
-    width: 10vw;
+    width: 40vw;
     height: 5vh;
     position: absolute;
     top:70vh;
+    background-color: white;
+    left:55vw;
+    border:2px solid black;
+    border-bottom: 0px;
 }
 #AulaTexto{
     display: flex;
-    width: 50vw;
+    width: 40vw;
     height: auto;
     background-color: white;
     position: absolute;
     top: 75vh;
+    left:55vw;
+    border:2px solid black;
+    border-top: 0px;
 }
 #audio{
     position: relative;
@@ -416,6 +423,7 @@ body.usuario div.usuarioDiv button{
 .sair{
     background-color: red;
     width: 3vw;
+    margin-right: 10px;
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{

@@ -259,9 +259,9 @@
                 audio.setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
                 imagem.setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                 imagem.setAttribute('id', 'imagemEstilo');
+                textoAula.appendChild(sair);
                 textoAula.appendChild(vol);
                 textoAula.appendChild(prox);
-                textoAula.appendChild(sair);
                 audio.setAttribute('controls', 'autoplay');
                 prox.disabled = true;
                 audio.play();
