@@ -392,6 +392,7 @@ body.usuario div.usuarioDiv button{
 #modal2Op{
     display:flex;
     justify-content:center;
+    padding-top: 30px;
 }
 #modal2Op a{
     margin:auto;
