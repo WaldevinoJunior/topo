@@ -183,33 +183,16 @@ div.usuarioDiv div#usuarioId{
 }
 #btnVoltar{
     position:fixed; 
-    top:95%;
-    left:96%;
+    top:93%;
+    left:97.5%;
     transform: translate(-50%, -50%);
     
 }
-.btnFechaFase{
-    width: 4px;
-    height: 4px;
-    cursor:pointer; 
-    font-size: 20px; 
-    background: black; 
-    color:white; 
-    margin-left:2px; 
-    margin-top:5px;
-    /* padding: 2px;
-    padding-left: 3px; */
-
-
-}
 .btnVoltarCurso{
-
-
     background-color:rgb(9, 107, 235);
     color:  rgb(255, 255, 255);
     font-family: sans-serif;
     font-size: 30px;
-
     border-radius: 5px;
     padding: 10px;
     border: 1px solid black;
@@ -296,8 +279,7 @@ body.usuario div.usuarioDiv button{
     height: 250px;
     width: 220px;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-    margin-left:5vh;
-    margin-right: 5vh;
+    margin-left:10vh;
     margin-bottom: 10vh;
     border-radius: 10px;
     display: flex;
@@ -305,27 +287,27 @@ body.usuario div.usuarioDiv button{
     align-items: center;
 }
 .cursoTela a{
-    font-size: 28px;
+    font-size: 30px;
     justify-content: center;
     padding:10px;
     background-color: white;
     border-radius: 10px;
-    color:black;
+    color:green;
     border: 1px solid green;
 }
 .cursoTela a:hover{
-    transition-duration: 0.5s;
+    transition-duration: 1s;
     cursor:pointer;
-    opacity: 0.9;
-    color: black;
-    background-color: rgb(69, 155, 76);
+    opacity: 0.8;
+    color: white;
+    background-color: blue;
     border: 1px solid white;
 }
 .cursoTela img{
     padding: 15px;
     margin-left:1px;
-    width:200px; 
-    height:130px;
+    width:190px; 
+    height: 120px;
     justify-content: center;
 }
 #cursoCont{
@@ -341,34 +323,33 @@ body.usuario div.usuarioDiv button{
      border: 1px solid;
      height: 230px;
      width: 220px;
-     margin-left:5vh;
-     margin-right:5vh;
+     margin-left:10vh;
      margin-bottom: 10vh;
      border-radius: 10px;
      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
  }
  .cursoConteudo a{
-     font-size: 27px;
+     font-size: 30px;
      justify-content: center;
      padding:10px;
      background-color: white;
      border-radius: 10px;
-     color:black;
+     color:green;
      border: 1px solid green;
  }
  .cursoConteudo a:hover{
-    transition-duration: 0.5s;
+    transition-duration: 1s;
     cursor:pointer;
-    opacity: 0.9;
-    color: black;
-    background-color: rgb(69, 155, 76);
+    opacity: 0.8;
+    color: white;
+    background-color: blue;
     border: 1px solid white;
  }
  .cursoConteudo img{
      padding: 15px;
      margin-left:1px;
-     width:200px; 
-     height:130px;
+     width:190px; 
+     height: 120px;
      justify-content: center;
  }
  #modal2{
@@ -383,7 +364,6 @@ body.usuario div.usuarioDiv button{
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 #modal2Cont{
-    margin-top: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -392,7 +372,6 @@ body.usuario div.usuarioDiv button{
 #modal2Op{
     display:flex;
     justify-content:center;
-    padding-top: 30px;
 }
 #modal2Op a{
     margin:auto;
@@ -400,11 +379,27 @@ body.usuario div.usuarioDiv button{
     font-size: 30px;
 }
 #textoAula{
-    position: absolute;
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     width: 40vw;
-    height: 50vh;
+    height: 5vh;
+    position: absolute;
+    top:70vh;
+    background-color: white;
+    left:55vw;
+    border:2px solid black;
+    border-bottom: 0px;
+}
+#AulaTexto{
+    display: flex;
+    width: 40vw;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    top: 75vh;
+    left:55vw;
+    border:2px solid black;
+    border-top: 0px;
 }
 #audio{
     position: relative;
@@ -416,6 +411,19 @@ body.usuario div.usuarioDiv button{
     margin: 0;
     padding: 0;
     display: flex;
+}
+.volta{
+    background-color: yellow;
+    width: 3vw;
+}
+.proxima{
+    background-color: gray;
+    width: 3vw;
+}
+.sair{
+    background-color: red;
+    width: 3vw;
+    margin-right: 10px;
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
@@ -468,17 +476,17 @@ body.teste{
     visibility: hidden;
     opacity: 0;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     background-color: white;
     border: 1px solid black;
     transition: opacity 0.5s ease;
     justify-content: center;
-    padding: 10px;
 }
 #barras a{
     color:black;
-    display: flex;
+    display:flex;
     cursor: pointer;
+    margin: 0;
 }
 .admin{
     justify-content: center;
@@ -518,6 +526,7 @@ body.teste{
 #func a:hover{
     animation: modal2 0.5s;
     transform: translate3d(0,-5px,0);
+    color:black;
 }
 @keyframes modal2{
     from{
@@ -559,7 +568,7 @@ body.teste{
     align-items: center;
     
 }
-#cbcLista a{
+#cbcLista a,#cbcLista2 a{
     font-size: 16px;
     display: inline-flex;
     color:white;

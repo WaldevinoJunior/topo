@@ -16,11 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topo Treinamentos</title>
     <link rel="sortcut icon" href="img/iconetopo.jpg" type="image/jpg" />
-    <link rel="stylesheet" href="../../resources/views/css/aluno/layout-aluno.css">
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="js/constroi.js"> </script>
 </head>
 <!-- CORPO DA PAGINA USUARIO -->
@@ -115,7 +112,7 @@
             $estagio = "SELECT Estagio FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$c['ID_Curso']}'";
             $sqlestagio = $mysqli->query($estagio) or die($mysqli->error);
 			$esta = mysqli_fetch_array($sqlestagio)[0];
-            echo "<div style='text-align:center; margin-top:2px;' id = 'oi'><strong>".$c['Nome_curso']."</strong><img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
+            echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
                         ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div><script>
                             function mostraCurso".$c['ID_Curso']."(){
                             let d = document.getElementsByClassName('cursoConteudo');
@@ -132,20 +129,21 @@
                                      i2++;
                                 }
                             }
+                            window.scrollTo(0,0);
                          }
                         </script>";
             for($i2 = 1; $aulas >= $i2;$i2++){
-                echo "<div style='text-align:center; margin-top:7px;display:none' id = 'oi2' name='".$c['ID_Curso']."'><strong>Aula ".$i2."</strong><img  src='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>"
+                echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>"
                 ."<a onclick='mostraFase".$c['ID_Curso']."aula".$i2."()'>Fase ".$i2."</a></div>";
-                echo "<div class='modal-content'id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
-                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' class='close' style='margin-right:6px;margin-top:4px; cursor:pointer;' ><span aria-hidden='true'>&times;</span></a>
+                echo "<div id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
+                <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' class='close' style='cursor:pointer; font-size: 20px; color:black; margin-left:5px; margin-top:5px;'><span aria-hidden='true'>&times;</span></a>
                 <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
                 </div>
                 <div id='modal2Op'>
-                <div style='padding-right: 3px;text-align: center;'><a id='aula".$i2."".$c['ID_Curso']."'onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'  style='pointer-events: none;color:gray;'><i class='bi bi-cast'></i></a><p>Aula</p></div>
-                <div style='padding-right: 3px;text-align: center;'><a id='passo".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-postcard'></i></a><p>Apostila</p></div>
-                <div style='padding-right: 3px;text-align: center;'><a id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i></a><p>Fixação</p></div>
-                <div style='padding-right: 3px;text-align: center;'><a id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a><p>Teste</p></div>
+                <a id='aula".$i2."".$c['ID_Curso']."'onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'  style='pointer-events: none;color:gray;'><i class='bi bi-cast'></i> -------</a>
+                <a  id='passo".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-postcard'></i> -------</a>
+                <a  id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i>  -------</a>
+                <a  id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a>
                 ";if($i2 == $aulas){
                     echo "<a id='certi".$i2."".$c['ID_Curso']."'  target='_blank' href='certificado.php?nomeCurso=".$nomeCurso."&&horas=".$horas."&&descricao=".$descricao."' style='pointer-events: ;color:gray;'>-----<i class='bi bi-filetype-pdf'></i></a>";
                 }echo "</div>
@@ -236,34 +234,41 @@
                 let vol = document.createElement('button');
                 let sair = document.createElement('button');
                 let textoAula = document.createElement('div');
+                let AulaTexto = document.createElement('div');
+                AulaTexto.setAttribute('id','AulaTexto');
                 textoAula.setAttribute('id','textoAula');
                 sair.setAttribute('id', 'sair');
                 sair.setAttribute('onclick', 'sair".$c['ID_Curso']."aula".$i2."()');
                 sair.innerHTML = 'sair';
                 prox.setAttribute('id', 'prox".$c['ID_Curso']."aula".$i2."');
                 vol.setAttribute('id', 'vol".$c['ID_Curso']."aula".$i2."');
-                prox.innerHTML = 'proxima';
-                vol.innerHTML = 'voltar';
+                prox.setAttribute('class', 'proxima');
+                vol.setAttribute('class', 'volta');
+                sair.setAttribute('class', 'sair');
+                prox.innerHTML = '>>';
+                vol.innerHTML = '<<';
                 prox.setAttribute('onclick', 'prox".$c['ID_Curso']."aula".$i2."()');
                 vol.setAttribute('onclick', 'vol".$c['ID_Curso']."aula".$i2."()');
                 aula.setAttribute('id' , 'aulaEstilo');
                 b.appendChild(aula);
                 aula.appendChild(textoAula);
+                aula.appendChild(AulaTexto);
                 aula.appendChild(imagem);
                 imagem.appendChild(audio);
                 audio.setAttribute('id','audio');
                 audio.setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
                 imagem.setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                 imagem.setAttribute('id', 'imagemEstilo');
-                textoAula.appendChild(prox);
-                textoAula.appendChild(vol);
                 textoAula.appendChild(sair);
+                textoAula.appendChild(vol);
+                textoAula.appendChild(prox);
                 audio.setAttribute('controls', 'autoplay');
                 prox.disabled = true;
                 audio.play();
                 audio.addEventListener('ended', function(){
                     audio.currentTime = 0;
                     prox.disabled = false;
+                    prox.style.background = 'yellow';
                     });
                 document.getElementById('sair').style.display = 'block';
                 document.getElementById('aulaEstilo').style.display = 'block';
@@ -271,7 +276,7 @@
                 let paragrafo = document.createElement('p');
                 paragrafo.setAttribute('id', 'paragrafo');
                 paragrafo.innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
-                textoAula.appendChild(paragrafo);
+                AulaTexto.appendChild(paragrafo);
                 }
                 </script>";
               
@@ -300,7 +305,7 @@
                 document.getElementById('60".$i2."'+i6+'').style.display = 'block';
                 document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                 document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
-                audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;
+                audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;document.getElementById('prox".$c['ID_Curso']."aula".$i2."').style.background = 'gray';
                 }
             }</script>";
             echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){
@@ -313,7 +318,7 @@
                     document.getElementById('paragrafo').innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
                     document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                     document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
-                    audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;
+                    audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;document.getElementById('prox".$c['ID_Curso']."aula".$i2."').style.background = 'yellow';
 
                 }
             
