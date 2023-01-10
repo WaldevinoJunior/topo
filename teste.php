@@ -61,7 +61,7 @@
         <section  id="formTeste">
         
         
-        <form  id="formTeste" method="POST" action="valida.php">
+        <form  id="formTeste" method="POST" action="valida.php" style="margin-top:-30px">
             <fieldset id="field">
         <?php
             $arq= "cursos/".$_GET['idcurso']."/".$_GET['i2']."/teste.txt";
@@ -110,11 +110,13 @@
             <br>
         </div>
         </fieldset>
-        <div id="nota" style="display:none;">
-            <h2>nota:</h2><h1 id="resul">nota</h1>
+        <div id="nota" style="display:none;flex-direction:column;">
+            <h1 id="resul">nota</h1>
+            <div>
             <h1 id="result2">nota</h1>
+            </div>
         </div>
-        <input type="submit" value="Enviar" name="enviarteste"  class="btn btn-success btn-sm" id="enviar" style="display:none">
+        <input type="submit" value="Enviar" name="enviarteste"  class="btn btn-success btn-sm" id="enviar" style="display:none;font-size:25px;margin-top:20px">
         </form>
         
         <script type="text/javascript"> 
@@ -147,7 +149,7 @@
                 }
                 document.getElementById("field").style.display = "none"; 
                 document.getElementById("nota").style.display = "flex"; 
-                document.getElementById("resul").innerHTML = total;
+                document.getElementById("resul").innerHTML = "Nota:"+total;
                 document.getElementById("enviar").style.display = "block";
                 if(total>70){
                     let re = document.getElementById("result2");
@@ -161,7 +163,7 @@
                 if(total<70){
                     let re = document.getElementById("result2");
                     let imagem = document.createElement("img");
-                    imagem.setAttribute("src", "/topo/img/reprovado.png");
+                    imagem.setAttribute("src", "/topo/img/reprov.png");
                     imagem.setAttribute("id", "imgResul");
                     re.innerHTML = "REPROVADO";
                     re.setAttribute("id", "reprov");

@@ -476,7 +476,7 @@ body.teste{
     display: flex;
     align-self: center;
     align-items: center;
-    margin-top: 10px;
+    
 }
 #mostraResultado{
     
@@ -512,7 +512,8 @@ body.teste{
 #imgResul{
     height: 100px;
     width: 80px;
-    margin-top: 100px;
+    display: flex;
+    align-self: center;
 }
 
 /* VALRIDO PARA O ARQUIVO ADMIN.PHP*/
