@@ -2,6 +2,7 @@
     include("valida.php");
     $consulta = "SELECT * FROM alunos ";
     $con = $mysqli->query($consulta) or die($mysqli->error);
+    
 ?>
 <html>
     <head><meta charset="utf8"> 
@@ -10,8 +11,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste</title>
-    <link rel="sortcut icon" href="img/iconetopo.jpg" type="image/jpg" />
+        <!-- Bootstrap CSS -->
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/css/all.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/style.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/componentes/container.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/colors.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/aluno/cursos.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/aluno/continua-curso.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/aluno/aulas/testes.css">
+    <link rel="sortcut icon" href="img/iconetopo.jpg" type="image/jpg" />
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/flaticon.css" type="text/css">
@@ -21,16 +31,36 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
+    <link rel="stylesheet" href="css/aluno/aulas/testes.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="js/constroi.js"> </script>
     </head>
     <body>
     <nav class="menuTeste">
         <a href="./usuario.php" ><img src="img/iconetopo.jpg"></a>
     </nav>
+    <div class="container contbg rounded">
+    <div class="cont-header-gray">
+        <div class="cont-header-aluno">
+            <div class="cont-header-texts ml-auto mr-auto">
+            <h1 id="oi">
+            <?php 
+                $idc=$_GET['idcurso']; // nome do curso, não id
+                if(!isset($_SESSION)){session_start();} echo "<h1>".$idc."</h1>";
+                //echo $_SESSION['nome']; 
+                echo"<p style='color:black'>Teste da Aula ".$_GET['i2'].": É hora de testar o que você aprendeu!</p>";
+            ?>
+        </h1>
+            </div>
+        </div>
+    </div>
+    <div class="cont-content row">
+    <div class="input-group m-5">
         <section  id="formTeste">
-        <h2 id="oi"><?php if(!isset($_SESSION)){session_start();} echo $_SESSION['nome']; ?></h2>
+        
+        
         <form  id="formTeste" method="POST" action="valida.php">
             <fieldset id="field">
         <?php
@@ -48,12 +78,12 @@
                     $i4++;
                     if($i4 == 2){
                         $linha = str_replace(";;", "", $linha);
-                        echo "<p>".$linha."</p>";
+                        echo "<p class='h5 mb-3 text-justify'>".$linha."</p>";
                     }
                     if($i4 > 2 && $i4<7){
                         $i5++;
                         $linha = str_replace(";;", "", $linha);
-                        echo "<input type='checkbox' class='checkmark 'name='pergunta".$i6."'value='".$i5."'>".$linha."</br>";
+                        echo "<div class='d-flex align-items-end'><div class='opcao-botao d-inline-flex mr-2'><input type='radio' class='teste-radio' name='pergunta".$i6."'value='".$i5."'></div><div class='opcao-texto d-inline-flex'>".$linha."</div></div></br>";
                     }
                     if($i4 == 7){
                         $i4 = 0;
@@ -74,7 +104,11 @@
                 unset($_COOKIE['total']);
             }
         ?>
-        <a onclick="validar()" class="btn btn-success btn-sm" id="mostraResultado">Mostrar resultado</a>
+        <div class="text-center w-100">
+            <a onclick="validar()" class="btn btn-success carousel-btn" id="mostraResultado">Mostrar resultado</a>
+            <a onclick="" class="btn btn-warning carousel-btn" id="VoltarTeste">Voltar</a>
+            <br>
+        </div>
         </fieldset>
         <div id="nota" style="display:none;">
             <h2>nota:</h2><h1 id="resul">nota</h1>
@@ -137,5 +171,8 @@
             }
         </script>
         </section>
+        </div>
+        </div>
+        </div>
     </body>
 </html>
