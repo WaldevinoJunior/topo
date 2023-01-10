@@ -2,6 +2,7 @@
     include("valida.php");
     $consulta = "SELECT * FROM alunos ";
     $con = $mysqli->query($consulta) or die($mysqli->error);
+    
 ?>
 <html>
     <head><meta charset="utf8"> 
@@ -21,16 +22,20 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
+    <link rel="stylesheet" href="css/aluno/aulas/testes.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="js/constroi.js"> </script>
     </head>
     <body>
     <nav class="menuTeste">
         <a href="./usuario.php" ><img src="img/iconetopo.jpg"></a>
     </nav>
+    <div class="container contbg rounded">
         <section  id="formTeste">
-        <h2 id="oi"><?php if(!isset($_SESSION)){session_start();} echo $_SESSION['nome']; ?></h2>
+        <h1 id="oi"><?php if(!isset($_SESSION)){session_start();} echo $_SESSION['nome']; ?></h1>
+        <p style="color:black">Teste da Aula X: É hora de testar o que você aprendeu!</p>
         <form  id="formTeste" method="POST" action="valida.php">
             <fieldset id="field">
         <?php
@@ -48,12 +53,12 @@
                     $i4++;
                     if($i4 == 2){
                         $linha = str_replace(";;", "", $linha);
-                        echo "<p>".$linha."</p>";
+                        echo "<p class='h5 mb-3 text-justify'>".$linha."</p>";
                     }
                     if($i4 > 2 && $i4<7){
                         $i5++;
                         $linha = str_replace(";;", "", $linha);
-                        echo "<input type='checkbox' class='checkmark 'name='pergunta".$i6."'value='".$i5."'>".$linha."</br>";
+                        echo "<div class='d-flex align-items-end'><div class='opcao-botao d-inline-flex mr-2'><input type='radio' class='teste-radio' name='pergunta".$i6."'value='".$i5."'></div><div class='opcao-texto d-inline-flex'>".$linha."</div></div></br>";
                     }
                     if($i4 == 7){
                         $i4 = 0;
@@ -74,7 +79,11 @@
                 unset($_COOKIE['total']);
             }
         ?>
-        <a onclick="validar()" class="btn btn-success btn-sm" id="mostraResultado">Mostrar resultado</a>
+        <div class="text-center w-100">
+            <a onclick="validar()" class="btn btn-success carousel-btn" id="mostraResultado">Mostrar resultado</a>
+            <a onclick="" class="btn btn-warning carousel-btn" id="VoltarTeste">Voltar</a>
+            <br>
+        </div>
         </fieldset>
         <div id="nota" style="display:none;">
             <h2>nota:</h2><h1 id="resul">nota</h1>
@@ -137,5 +146,6 @@
             }
         </script>
         </section>
+        </div>
     </body>
 </html>
