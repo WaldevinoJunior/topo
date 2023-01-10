@@ -32,12 +32,13 @@
     </nav>
     <div sytle="display:flex;">
     <div id="modal">   
-        <button type="button" onclick="fecha()">X</button>
+                
+    <a onclick="fecha()" class="close" style="display:flex;float:right; margin-right:6px;margin-top:4px; cursor:pointer;" ><span aria-hidden='true'>&times;</span></a>
                 <h3>Selecione um avatar</h3>
                     <form  method="POST" enctype="multipart/form-data">
-		                <label for="imagem">Imagem:</label>
-		                <input type="file" name="imagem"/>
-		                <input type="submit" value="Enviar"/>
+		               
+                    <input type="file"  name="imagem"/><label for="imagem" id="imgSubmit" style="display: inline-block;">Selecionar Imagem</label> <br>
+		            <input type="submit" id="imgSubmit" style="left:10px" value="Enviar"/>
 	                </form>
         </div>
     </div>
