@@ -1,6 +1,10 @@
 <?php
  include("valida.php");
  if(isset($_FILES['imagem'])){
+    if(!$_FILES['imagem']['size'] > 0){
+        echo "<script>alert('Nenhuma imagem selecianada');</script>";
+        header('Location: ./usuario.php');
+    }
     $arquivopng = addslashes(file_get_contents($_FILES['imagem']['tmp_name']));
     if(!isset($_SESSION)){session_start();}
     $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
@@ -31,13 +35,13 @@
         
     </nav>
     <div sytle="display:flex;">
-    <div id="modal">   
+    <div id="modal" >   
                 
     <a onclick="fecha()" class="close" style="display:flex;float:right; margin-right:6px;margin-top:4px; cursor:pointer;" ><span aria-hidden='true'>&times;</span></a>
-                <h3>Selecione um avatar</h3>
-                    <form  method="POST" enctype="multipart/form-data">
+                <h3>Selecione uma imagem para o perfil</h3>
+                    <form  method="POST" enctype="multipart/form-data" >
 		               
-                    <input type="file"  name="imagem"/><label for="imagem" id="imgSubmit" style="display: inline-block;">Selecionar Imagem</label> <br>
+                    <input type="file"  name="imagem"/><label for="imagem" id="imgSubmit" style="display: inline-block;">Imagem</label>
 		            <input type="submit" id="imgSubmit" style="left:10px" value="Enviar"/>
 	                </form>
         </div>
@@ -116,7 +120,7 @@
             $estagio = "SELECT Estagio FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$c['ID_Curso']}'";
             $sqlestagio = $mysqli->query($estagio) or die($mysqli->error);
 			$esta = mysqli_fetch_array($sqlestagio)[0];
-            echo "<div style='text-align:center;display:flex;' id='oi'>".$c['Nome_curso']."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
+            echo "<div style='text-align:center;display:flex;' id='oi'><b style='font-size:20px'>".$c['Nome_curso']."</b><img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
                         ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div>
                         <script>
                             function mostraCurso".$c['ID_Curso']."(){
@@ -138,8 +142,8 @@
                          }
                         </script>";
             for($i2 = 1; $aulas >= $i2;$i2++){
-                echo "<div style='text-align:center;display:none' id = 'oi2' name='".$c['ID_Curso']."'>Aula:".$i2."<img  src='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>"
-                ."<a onclick='mostraFase".$c['ID_Curso']."aula".$i2."()'>Fase ".$i2."</a></div>";
+                echo "<div style='text-align:center;display:none;margin:20px' id = 'oi2' name='".$c['ID_Curso']."'><img style='margin-bottom:4px' src='cursos/".$c['ID_Curso']."/".$i2."/img/0.jpg'>"
+                ."<a onclick='mostraFase".$c['ID_Curso']."aula".$i2."()'>Aula ".$i2."</a></div>";
                 echo "<div  class='modal-content' id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
                 <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' class='close' style='float:right; margin-right:6px;margin-top:4px; cursor:pointer;' ><span aria-hidden='true'>&times;</span></a>
                 <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
