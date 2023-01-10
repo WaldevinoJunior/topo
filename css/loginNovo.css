@@ -536,7 +536,7 @@ body.teste{
 }
 .menuAdmin a{
     color: rgb(216, 211, 211);
-    font-size:25px;
+    font-size:1.2rem;
 }
 .menuAdmin a:hover{
     opacity: 0.8;

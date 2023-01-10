@@ -53,7 +53,13 @@
         $arquiv = "SELECT imagem FROM alunos WHERE ID_ALUNO = '{$_SESSION['ID_Aluno']}'";
         $result = $mysqli->query($arquiv) or die($mysqli->error);
         $row = mysqli_fetch_array($result);
-        echo '<img id="fotoLogin" src="data:image/jpeg;base64,' . base64_encode( $row['imagem'] ) . '" />';
+        if($row['imagem']  == "oi"){
+            echo '<img id="fotoLogin" src="/topo/img/Logo.png"/>';
+        }
+        else{
+            echo '<img id="fotoLogin" src="data:image/jpeg;base64,' . base64_encode( $row['imagem'] ) . '" />';
+        }
+        
         ?>>
         <div id="usuarioId">
         <p style="font-size:30px;margin-top:-5vh;margin-bottom:2vh"><?php if(!isset($_SESSION)){session_start();}

@@ -141,11 +141,17 @@ if(isset($_POST['enviareditarAluno'])){
 	header('Location: ./admin.php');
 }
 if(isset($_POST['cadastraAluno'])){
-	$consulta = "INSERT INTO alunos (Nome, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
+	$consulta = "INSERT INTO alunos (Nome, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, imagem) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
-	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}')";
+	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}' , 'oi')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	$consultaCpf = "SELECT ID_Aluno from alunos WHERE CPF = '{$_POST['cpf']}'";
+	$sqlcpf = $mysqli->query($consultaCpf) or die($mysqli->error);
+	$idAluno = mysqli_fetch_array($sqlcpf)[0];
+	$dataatual = date('y/m/d');
+	$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$_POST['curso']}','{$idAluno}', '1' , '1', '{$dataatual}')";
+	$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
 if(isset($_POST['enviareditarColab'])){
