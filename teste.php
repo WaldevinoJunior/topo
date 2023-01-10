@@ -11,8 +11,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste</title>
-    <link rel="sortcut icon" href="img/iconetopo.jpg" type="image/jpg" />
+        <!-- Bootstrap CSS -->
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/css/all.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/style.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/componentes/container.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/colors.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/aluno/cursos.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/aluno/continua-curso.css">
+    <link rel="stylesheet" href="https://topotreinamentos.com.br/ead/Sistema/public/../resources/views/css/aluno/aulas/testes.css">
+    <link rel="sortcut icon" href="img/iconetopo.jpg" type="image/jpg" />
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/flaticon.css" type="text/css">
@@ -33,9 +42,25 @@
         <a href="./usuario.php" ><img src="img/iconetopo.jpg"></a>
     </nav>
     <div class="container contbg rounded">
+    <div class="cont-header-gray">
+        <div class="cont-header-aluno">
+            <div class="cont-header-texts ml-auto mr-auto">
+            <h1 id="oi">
+            <?php 
+                $idc=$_GET['idcurso']; // nome do curso, não id
+                if(!isset($_SESSION)){session_start();} echo "<h1>".$idc."</h1>";
+                //echo $_SESSION['nome']; 
+                echo"<p style='color:black'>Teste da Aula ".$_GET['i2'].": É hora de testar o que você aprendeu!</p>";
+            ?>
+        </h1>
+            </div>
+        </div>
+    </div>
+    <div class="cont-content row">
+    <div class="input-group m-5">
         <section  id="formTeste">
-        <h1 id="oi"><?php if(!isset($_SESSION)){session_start();} echo $_SESSION['nome']; ?></h1>
-        <p style="color:black">Teste da Aula X: É hora de testar o que você aprendeu!</p>
+        
+        
         <form  id="formTeste" method="POST" action="valida.php">
             <fieldset id="field">
         <?php
@@ -146,6 +171,8 @@
             }
         </script>
         </section>
+        </div>
+        </div>
         </div>
     </body>
 </html>
