@@ -225,8 +225,8 @@ body.usuario h1{
 }
 body.usuario div.usuarioDiv img{
     border-radius:100%;
-    width: 22%;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
 body.usuario div.usuarioDiv button{
     border-radius: 10px;
