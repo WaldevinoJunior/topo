@@ -65,7 +65,7 @@
    <div id="cursos"> 
    <div id="cursoCont">
         <div id="btnVoltar">
-            <a class="btnVoltarCurso" onclick="javascript:volta();">Voltar</a>
+            <a class="btnVoltarCurso" style="color:white;"onclick="javascript:volta();">Voltar</a>
         </div>
     </div>
     <?php 
@@ -115,7 +115,7 @@
             $estagio = "SELECT Estagio FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$c['ID_Curso']}'";
             $sqlestagio = $mysqli->query($estagio) or die($mysqli->error);
 			$esta = mysqli_fetch_array($sqlestagio)[0];
-            echo "<div style='text-align:center' id = 'oi'>".$c['Nome_curso']."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
+            echo "<div style='text-align:center;display:flex;' id='oi'>".$c['Nome_curso']."<img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
                         ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div>
                         <script>
                             function mostraCurso".$c['ID_Curso']."(){
@@ -147,9 +147,9 @@
                 <div style='padding-right: 9px;text-align: center;'><a id='aula".$i2."".$c['ID_Curso']."'onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'  style='pointer-events: none;color:gray;'><i class='bi bi-cast'></i></a><p>Aula</p></div><img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'>
                 <div style='padding-right: 2px;text-align: center;'><a id='passo".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/passo-a-passo.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-postcard'></i></a><p>Apostila</p></div><img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'>
                 <div style='padding-right: 2px;text-align: center;'><a id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i></a><p>Fixação</p></div><img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'>
-                <div style='padding-left: 8px;text-align: center;'><a id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a><p>Teste</p></div>
+                <div style='padding-left: 8px;text-align: center;'><a id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a><p>Teste</p></div><img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'>
                 ";if($i2 == $aulas){
-                    echo "<a id='certi".$i2."".$c['ID_Curso']."'  target='_blank' href='certificado.php?nomeCurso=".$nomeCurso."&&horas=".$horas."&&descricao=".$descricao."' style='pointer-events: ;color:gray;'>-----<i class='bi bi-filetype-pdf'></i></a>";
+                    echo "<div style='padding-left: 8px;text-align: center;'><a id='certi".$i2."".$c['ID_Curso']."'  target='_blank' href='certificado.php?nomeCurso=".$nomeCurso."&&horas=".$horas."&&descricao=".$descricao."' style='pointer-events: none;color:gray;'><i class='bi bi-filetype-pdf'></i></a><p>Certificado</p></div>";
                 }echo "</div>
                 </div>
                 <script>";

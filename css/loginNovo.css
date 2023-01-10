@@ -209,8 +209,7 @@ body.usuario h1{
 }
 body.usuario div.usuarioDiv img{
     border-radius:100%;
-    width:18vw;
-    margin-left: 10vh;
+    width:200px;
     height: 38vh;
 }
 body.usuario div.usuarioDiv button{
@@ -356,21 +355,26 @@ body.usuario div.usuarioDiv button{
  #modal2{
     border: 1px solid black;
     display: none;
-    width: 30vw;
-    height: 30vh;
+    width: auto;
+    height: auto;
+    padding: 2px;
     position:absolute;
     margin-bottom: 60vh;
     background-color: white;
     animation: modal 1s;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
-
+#telas{
+    text-align:center;
+    display:block;
+}
 #modal2Cont{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin-top: 5px;
+    width: 400px;
 }
 #modal2Op{
     display:flex;
