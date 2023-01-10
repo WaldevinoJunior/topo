@@ -209,8 +209,8 @@ body.usuario h1{
 }
 body.usuario div.usuarioDiv img{
     border-radius:100%;
-    width:200px;
-    height: 38vh;
+    width: 22%;
+    height: 400px;
 }
 body.usuario div.usuarioDiv button{
     border-radius: 10px;
@@ -519,7 +519,7 @@ body.teste{
 }
 .menuAdmin a{
     color: rgb(216, 211, 211);
-    font-size: 1.2vw;
+    font-size:25px;
 }
 .menuAdmin a:hover{
     opacity: 0.8;

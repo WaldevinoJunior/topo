@@ -47,7 +47,7 @@
             <div class="cont-header-texts ml-auto mr-auto">
             <h1 id="oi">
             <?php 
-                $idc=$_GET['idcurso']; // nome do curso, não id
+                $idc=$_GET['nomecurso']; // nome do curso, não id
                 if(!isset($_SESSION)){session_start();} echo "<h1>".$idc."</h1>";
                 //echo $_SESSION['nome']; 
                 echo"<p style='color:black'>Teste da Aula ".$_GET['i2'].": É hora de testar o que você aprendeu!</p>";
@@ -106,7 +106,7 @@
         ?>
         <div class="text-center w-100">
             <a onclick="validar()" class="btn btn-success carousel-btn" id="mostraResultado">Mostrar resultado</a>
-            <a onclick="" class="btn btn-warning carousel-btn" id="VoltarTeste">Voltar</a>
+            <a href="./usuario.php" class="btn btn-warning carousel-btn" id="VoltarTeste">Voltar</a>
             <br>
         </div>
         </fieldset>
