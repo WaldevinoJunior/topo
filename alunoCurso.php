@@ -122,7 +122,7 @@
                                         // $table .= "<td>{$cAlunos['Rua']}</td>";
                                         // $table .= "<td>{$cAlunos['Numero']}</td>";
                                         // $table .= "<td>{$cAlunos['Senha']}</td>";
-                                        $table .= "<td><a href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a></td>";
+                                        $table .= "<td><a style='background-color:green;border:1px solid black;color:white;font-size:15px' href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a></td>";
                                     $table .= '</tr>';
                                    
 
