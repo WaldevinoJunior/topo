@@ -30,27 +30,22 @@
     <script src="js/constroi.js"> </script>
 </head>
 <body id="adminBody">
-    <nav class="menuAdmin">
+<nav class="menuAdmin">
         <img src="img/iconetopo.jpg">
         <ul>
             <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
             <li><a href=""><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i></a>
                     <div id="barras">
-                        <a href="./cadastraAluno.php">Cadastrar Alunos</a>
-                        <a href="./listaAlunos.php">Listar alunos</a><hr>
                         <a href="./alunoCurso.php">Cadastrar Aluno em Curso</a>
-                        <a href="./cadastraColab.php">Cadastrar Colaboradores</a>
-                        <a href="./listaColab.php">Listar Colaboradores</a>
+                        <a href="./curso.php">Cadastrar Curso</a>
+                        <a href="./horario.php">Cadastrar Horários</a>
                     </div>
             </li>
             <li><a href=""><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i></a>
                     <div id="barras">
-                        <a href="./pacotes.php">Pacotes</a>
-                        <a href="./cursos.php">Cursos</a>
                         <a href="./propagandas.php">Propragandas</a>
                         <a href="./salas.php">Salas</a>
                         <a href="./maquinas.php">Máquinas</a>
-                        <a href="./horario.php">Cadastrar Horários</a>
                     </div>
             </li>
             <li><a href=""><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i></a>
