@@ -159,6 +159,7 @@ a:link {
         to { background-color: black;
         }
     }
+    
 }
 /* VALIDO PARA O ARQUIVO USUARIO.PHP */
  div.usuarioDiv a{
@@ -415,7 +416,7 @@ body.usuario div.usuarioDiv button{
     width: 40vw;
     height: 5vh;
     position: absolute;
-    top:70vh;
+    top:65vh;
     background-color: white;
     left:55vw;
     border:2px solid black;
@@ -424,6 +425,7 @@ body.usuario div.usuarioDiv button{
 #paragrafo{
     text-align: justify;
     font-size: 3vh;
+    padding-top: 5px;
 }
 #AulaTexto{
     display: flex;
@@ -433,34 +435,51 @@ body.usuario div.usuarioDiv button{
     padding-right: 5px;
     background-color: white;
     position: absolute;
-    top: 75vh;
+    top: 70vh;
     left:55vw;
     border:2px solid black;
     border-top: 0px;
 }
+
 #audio{
     position: relative;
     display: flex;
 }
 #imagemEstilo{
     width: 100vw;
-    height:100vh;
+    height:120vh;
     margin: 0;
     padding: 0;
     display: flex;
 }
 .volta{
+    border-color: rgb(210, 210, 30);
     background-color: yellow;
+    margin-top: 2px;
+    margin-bottom: 2px;
     width: 35px;
+    min-height: 15px;
+    border-radius: 5px;
 }
 .proxima{
-    background-color: gray;
+    
     width: 35px;
+    border-color: rgb(210, 210, 30);
+    background-color: yellow;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    margin-left: 1px;
 }
 .sair{
-    background-color: red;
+    background-color: rgb(218, 28, 28);
+    border-color: rgb(116, 5, 5);
+    margin-left: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     width: 35px;
     margin-right: 10px;
+    border-radius: 5px;
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{
@@ -547,8 +566,9 @@ body.teste{
     margin-top: 9px;
 }
 input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none;
+input[type=number]::-webkit-outer-spin-button{ 
+     -webkit-appearance: none; 
+
 }
 .menuAdmin a{
     color: rgb(216, 211, 211);
