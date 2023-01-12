@@ -1,0 +1,159 @@
+<?php 
+    include("valida.php");
+    $consultaAlunos = "SELECT * from alunos";
+    $consultaColab = "SELECT * from colaboradores";
+    $consultaCursos = "SELECT * from cursos";
+    $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
+    $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
+    $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Topo Treinamentos</title>
+    <link rel="sortcut icon" href="img/iconetopo.jpg" type="image/jpg" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="js/constroi.js"> </script>
+</head>
+<body id="adminBody">
+    <nav class="menuAdmin">
+        <img src="img/iconetopo.jpg">
+        <ul>
+            <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
+            <li><a href=""><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i></a>
+                    <div id="barras">
+                        <a href="./cadastraAluno.php">Cadastrar Alunos</a>
+                        <a href="./listaAlunos.php">Listar alunos</a><hr>
+                        <a href="./alunoCurso.php">Cadastrar Aluno em Curso</a>
+                        <a href="./cadastraColab.php">Cadastrar Colaboradores</a>
+                        <a href="./listaColab.php">Listar Colaboradores</a>
+                    </div>
+            </li>
+            <li><a href=""><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i></a>
+                    <div id="barras">
+                        <a href="./pacotes.php">Pacotes</a>
+                        <a href="./cursos.php">Cursos</a>
+                        <a href="./propagandas.php">Propragandas</a>
+                        <a href="./salas.php">Salas</a>
+                        <a href="./maquinas.php">Máquinas</a>
+                        <a href="./horario.php">Cadastrar Horários</a>
+                    </div>
+            </li>
+            <li><a href=""><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i></a>
+                        <div id="barras">
+                            <a href="./presenca.php">Lista de Presença</a>
+                            <a href="./contratos.php">Contratos</a>
+                            <a href="./pagamentos.php">Pagamentos</a>
+                            <a href="./aniversariantes.php">Aniversariantes</a>
+                        </div>
+            </li>
+            <li><a href=""><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i></a>
+                    <div id="barras">
+                        <a href="./backup.php">Backup</a>
+                        <a href="./licenca">Licença</a>
+                        <a href="./sat.php">Satisfação</a>
+                    </div>
+            </li>
+            <li><a href="./index.html"><i class="bi bi-escape"></i>Sair</a></li>
+        </ul>
+    </nav>
+        <div class="admin">
+            <div id="painel">
+                <h2><strong>Administração</strong></h2>
+                <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
+            <div id="func">
+            <div id="listaAlunos" class="listAlunos">
+                <div class="cont-header" id="cbcLista">
+                    <h1>Cadastre um aluno em um Curso ou mais:</h1>
+                    <a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
+                </div>
+                <div class="content">   
+                    <?php
+                       $table = '<table class="table table-striped" id="tableAluno">';
+                            $table .='<thead>';
+                                $table .= '<tr>';
+                                   $table .= '<th>ID</th>';
+                                   $table .= '<th>Nome</th>';
+                                //    $table .= '<th>Responsável</th>';
+                                   $table .= '<th>Nascimento</th>';
+                                   $table .= '<th>Email</th>';
+                                   $table .= '<th>Telefone</th>';
+                                //    $table .= '<th>CPF</th>';
+                                //    $table .= '<th>RG</th>';
+                                //    $table .= '<th>CEP</th>';
+                                //    $table .= '<th>Estado</th>';
+                                //    $table .= '<th>Cidade</th>';
+                                //    $table .= '<th>Rua</th>';
+                                //    $table .= '<th>Número</th>';
+                                //    $table .= '<th>Senha</th>';
+                                $table .= '<th>Funções</th>';
+                                $table .= '</tr>';
+                            $table .= '</thead>';
+                            $table .= '<tbody>';
+           
+                                while($cAlunos = mysqli_fetch_array($conAlunos)){
+                                    $table .= '<tr>';
+                                        $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
+                                        $table .= "<td>{$cAlunos['Nome']}</td>";
+                                        // $table .= "<td>{$cAlunos['Responsavel']}</td>";
+                                        $table .= "<td>{$cAlunos['Nascimento']}</td>";
+                                        $table .= "<td>{$cAlunos['Email']}</td>";
+                                        
+                                         $table .= "<td>{$cAlunos['Telefone']}</td>";
+                                        // $table .= "<td>{$cAlunos['CPF']}</td>";
+                                        // $table .= "<td>{$cAlunos['RG']}</td>";
+                                        // $table .= "<td>{$cAlunos['CEP']}</td>";
+                                        // $table .= "<td>{$cAlunos['Estado']}</td>";
+                                        // $table .= "<td>{$cAlunos['Cidade']}</td>";
+                                        // $table .= "<td>{$cAlunos['Rua']}</td>";
+                                        // $table .= "<td>{$cAlunos['Numero']}</td>";
+                                        // $table .= "<td>{$cAlunos['Senha']}</td>";
+                                        $table .= "<td><a href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a></td>";
+                                    $table .= '</tr>';
+                                   
+
+                            } 
+                        $table .= '</tbody>';
+                        $table .= '</table>';
+                        echo $table;
+                   ?>
+                </div>
+                </div>
+
+                
+               
+            </div>
+            <div id="func2">
+                <div class="func2A">
+                    <p>Licença</p>
+                    <p style="font-size:80px">00</p>
+                    <p>Dias Restantes</p>
+                </div>
+                <div class="func2A">
+                    <p>Alunos Online</p>
+                    <p style="font-size:80px">00</p>
+                    <p>Alunos</p>
+                </div>
+                <div class="func2A">
+                    <p>Número de Máquinas</p>
+                    <p style="font-size:80px">00</p>
+                    <p>Máquinas</p>
+                </div>
+            </div>
+        </div> 
+</body>
+</html>

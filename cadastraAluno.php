@@ -2,8 +2,10 @@
     include("valida.php");
     $consultaAlunos = "SELECT * from alunos";
     $consultaColab = "SELECT * from colaboradores";
+    $consultaCursos = "SELECT * from cursos";
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
+    $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,7 +134,17 @@
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="senha">Senha</label>
-                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="">
+                                        <input type="text" class="form-control" id="senha" name="senha" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="curso">Curso</label>
+                                        <select id="curso" name="curso">
+                                        <?php 
+                                             while($cCursos = mysqli_fetch_array($conCursos)){
+                                                echo "<option value='".$cCursos['ID_Curso']."'>".$cCursos['ID_Curso']." - ".$cCursos['Nome_curso']."</option>";
+                                            }
+                                        ?>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -140,7 +152,7 @@
                                 <div class="d-flex justify-content-center">
                                 <a  href="./admin.php" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:70px;height:40px;font-size:16px;color:white;">Voltar</a>
 
-                                <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraAluno">
+                                <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraAluno2">
                                 </div>
                             </form>
                         </div>     
