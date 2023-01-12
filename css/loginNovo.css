@@ -208,13 +208,13 @@ input[type="file"] {
     background-color:rgb(9, 107, 235);
     color:  rgb(255, 255, 255);
     font-family: sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     border-radius: 5px;
     padding: 10px;
     border: 1px solid black;
     cursor: pointer;
     position: absolute;
-    left: -80px;
+    left: -60px;
     top: -30px;
 }
 body.usuario h1{
@@ -240,9 +240,13 @@ body.usuario div.usuarioDiv button{
 #modal{
     border: 1px solid black;
     display: none;
-    width: 30vw;
-    height: 30vh;
+    /* width: 30vw;
+    height: 30vh; */
+    padding: 5px;
     position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     left:30vw;
     background-color: white;
     animation: modal 1s;
@@ -291,8 +295,9 @@ body.usuario div.usuarioDiv button{
 }
 .cursoTela{
     border: 1px solid;
-    height: 250px;
+    height: 260px;
     width: 220px;
+    padding-bottom:10px;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
     margin-left:10vh;
     margin-bottom: 10vh;
@@ -339,7 +344,8 @@ body.usuario div.usuarioDiv button{
      border: 1px solid;
      height: 230px;
      width: 220px;
-     margin-left:10vh;
+     margin-left:5vh;
+     margin-right:5vh;
      margin-bottom: 10vh;
      border-radius: 10px;
      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
