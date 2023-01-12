@@ -545,6 +545,10 @@ body.teste{
     margin-right: 15vw;
     margin-top: 9px;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
 .menuAdmin a{
     color: rgb(216, 211, 211);
     font-size:1.2rem;

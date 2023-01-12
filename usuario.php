@@ -54,7 +54,7 @@
         $result = $mysqli->query($arquiv) or die($mysqli->error);
         $row = mysqli_fetch_array($result);
         if($row['imagem']  == "oi"){
-            echo '<img id="fotoLogin" src="/topo/img/Logo.png"/>';
+            echo '<img id="fotoLogin" src="/topo/img/apertomao.jpg"/>';
         }
         else{
             echo '<img id="fotoLogin" src="data:image/jpeg;base64,' . base64_encode( $row['imagem'] ) . '" />';

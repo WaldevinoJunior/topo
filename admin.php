@@ -46,7 +46,7 @@
             <li><a href=""><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i></a>
                     <div id="barras">
                         <a href="./pacotes.php">Pacotes</a>
-                        <a href="./cursos.php">Cursos</a>
+                        <a href="./curso.php">Cursos</a>
                         <a href="./propagandas.php">Propragandas</a>
                         <a href="./salas.php">Salas</a>
                         <a href="./maquinas.php">Máquinas</a>

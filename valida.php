@@ -193,6 +193,12 @@ if(isset($_POST['alunoCurso'])){
 	$nome = $_POST['nome'];
 	header('Location: ./cursoAluno.php?alunoid='.$id.'&&nome='.$nome.'');
 }
+if(isset($_POST['cadastraCurso'])){
+	$consulta = "INSERT INTO cursos (Nome_curso, Preco, Horas, Descricao, aulas_totais) VALUES  ('{$_POST['nome']}', '{$_POST['preco']}', 
+	'{$_POST['horas']}','{$_POST['descricao']}','{$_POST['aulas']}')";
+	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	header('Location: ./curso.php');
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }

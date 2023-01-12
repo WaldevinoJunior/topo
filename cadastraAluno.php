@@ -86,7 +86,7 @@
                                 <div class="row">
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="">
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="nasc">Data de Nasc.</label>
@@ -94,15 +94,15 @@
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="tel">Telefone</label>
-                                        <input type="text" class="form-control" id="tel" name="telefone" placeholder="">
+                                        <label for="tel">Telefone(Somente números)</label>
+                                        <input type="number"class="form-control" id="tel" name="telefone" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="cpf">CPF</label>
-                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="">
+                                        <label for="cpf">CPF(Somente números)</label>
+                                        <input type="number" class="form-control" id="cpf" name="cpf" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="rg">RG</label>
@@ -134,11 +134,11 @@
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="senha">Senha</label>
-                                        <input type="text" class="form-control" id="senha" name="senha" placeholder="">
+                                        <input type="text" minlength="5" class="form-control" id="senha" name="senha" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="curso">Curso</label>
-                                        <select id="curso" name="curso">
+                                        <select id="curso" name="curso" required>
                                         <?php 
                                              while($cCursos = mysqli_fetch_array($conCursos)){
                                                 echo "<option value='".$cCursos['ID_Curso']."'>".$cCursos['ID_Curso']." - ".$cCursos['Nome_curso']."</option>";
