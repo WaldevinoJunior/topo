@@ -423,6 +423,7 @@ body.usuario div.usuarioDiv button{
 }
 #paragrafo{
     text-align: justify;
+    font-size: 3vh;
 }
 #AulaTexto{
     display: flex;
@@ -450,15 +451,15 @@ body.usuario div.usuarioDiv button{
 }
 .volta{
     background-color: yellow;
-    width: 3vw;
+    width: 35px;
 }
 .proxima{
     background-color: gray;
-    width: 3vw;
+    width: 35px;
 }
 .sair{
     background-color: red;
-    width: 3vw;
+    width: 35px;
     margin-right: 10px;
 }
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
