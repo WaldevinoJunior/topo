@@ -154,7 +154,7 @@
                 if(total>70){
                     let re = document.getElementById("result2");
                     let imagem = document.createElement("img");
-                    imagem.setAttribute("src", "/topo/img/aprovado.png");
+                    imagem.setAttribute("src", "./img/aprovado.png");
                     imagem.setAttribute("id", "imgResul");
                     re.innerHTML = "APROVADO";
                     re.setAttribute("id", "aprov");
@@ -163,7 +163,7 @@
                 if(total<70){
                     let re = document.getElementById("result2");
                     let imagem = document.createElement("img");
-                    imagem.setAttribute("src", "/topo/img/reprov.png");
+                    imagem.setAttribute("src", "./img/reprov.png");
                     imagem.setAttribute("id", "imgResul");
                     re.innerHTML = "REPROVADO";
                     re.setAttribute("id", "reprov");
