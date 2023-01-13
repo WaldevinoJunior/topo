@@ -321,7 +321,7 @@
                 document.getElementById('60".$i2."'+i6+'').style.display = 'block';
                 document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
                 document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
-                audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;document.getElementById('prox".$c['ID_Curso']."aula".$i2."').style.background = 'gray';
+                audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;document.getElementById('prox".$c['ID_Curso']."aula".$i2."').style.background = 'yellow';
                 }
             }</script>";
             echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){
