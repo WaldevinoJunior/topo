@@ -199,6 +199,9 @@ if(isset($_POST['cadastraCurso'])){
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./curso.php');
 }
+if(isset($_POST['buscaAluno'])){
+	header('Location: ./buscarAluno.php?alunoid='.$_POST['aluno'].'');
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }

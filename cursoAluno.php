@@ -74,7 +74,7 @@
             <div id="listaAlunos" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
                     <h1>Cadastre o aluno <?php echo $_GET['nome'] ?> em um Curso ou mais:</h1>
-                    <a href="./alunoCurso.php" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
+                    <a href="./listaAluno.php" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
                 </div>
                 <div class="content">   
                 <div class="form-group col-12 col-lg-6">
@@ -95,7 +95,7 @@
                                             }
                                         }
                                         if($i2 == 0){
-                                            echo "<option value='".$cCursos['ID_Curso']."'>".$cCursos['ID_Curso']." - ".$cCursos['Nome_curso']."</option>";
+                                            echo "<option value='".$cCursos['ID_Curso']."'>".$cCursos['Nome_curso']."</option>";
                                         }      
                                     }
                                 ?>      

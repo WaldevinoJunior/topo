@@ -98,7 +98,7 @@
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="cpf">CPF(Somente números)</label>
-                                        <input type="number" class="form-control" id="cpf" name="cpf" placeholder="" required>
+                                        <input type="text" class="form-control" minlenght="14"  maxlenght="14" id="cpf" name="cpf" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="rg">RG</label>
@@ -137,7 +137,7 @@
                                         <select id="curso" name="curso" required>
                                         <?php 
                                              while($cCursos = mysqli_fetch_array($conCursos)){
-                                                echo "<option value='".$cCursos['ID_Curso']."'>".$cCursos['ID_Curso']." - ".$cCursos['Nome_curso']."</option>";
+                                                echo "<option value='".$cCursos['ID_Curso']."'>".$cCursos['Nome_curso']."</option>";
                                             }
                                         ?>
                                         </select>

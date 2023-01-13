@@ -157,3 +157,13 @@ function voltaAdmin3(){
 function deletarAlunos(){
   alert("Confirme para deletar");
 }
+function buscarAluno(){
+   let aluno = document.getElementsByClassName("alunoBusca");
+   for (let i = 0; i < aluno.length; i++) {
+     aluno[i].style.display = "none";
+    if(document.getElementById("busca").value == aluno[i].getAttribute("name")){
+      aluno[i].style.display = "flex";
+    }
+  }
+  
+}

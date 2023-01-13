@@ -37,6 +37,7 @@
             <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
             <li><a href=""><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i></a>
                     <div id="barras">
+                        <a href="./alunoCurso.php">Cadastrar Aluno em Curso</a>
                         <a href="./curso.php">Cadastrar Curso</a>
                         <a href="./horario.php">Cadastrar Horários</a>
                     </div>
@@ -71,7 +72,7 @@
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func">
-                <div id="listaAlunos" style="display:none" class="listAlunos">
+                <div id="listaAlunos" style="display:block" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
                     <h1>Lista de alunos</h1>
                     <form action="buscarAluno.php" method="POST">
@@ -82,9 +83,9 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px;font-size:15px' name="buscaAluno" value='Buscar'></input>
+                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px.font-size:15px' name="buscaAluno" value="Buscar"></input>
                     </form>
-                    <br><a onclick="voltaAdmin()" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
+                    <br><a href="./listaAluno.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
                 </div>
 
                 <div class="content" style="overflow-y: scroll;height:500px">   
@@ -113,6 +114,12 @@
                             $table .= '<tbody>';
            
                                 while($cAlunos = mysqli_fetch_array($conAlunos)){
+                                    if($_GET['alunoid'] != $cAlunos['ID_Aluno']){
+
+                                    }
+                                    else{
+
+                                    
                                     $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
                                         $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
                                         $table .= "<td>{$cAlunos['Nome']}</td>";
@@ -228,7 +235,7 @@
                                         </form>
                                     </div>     
                                 </div>";
-
+                                        }
                             } 
                         $table .= '</tbody>';
                         $table .= '</table>';
@@ -458,22 +465,6 @@
                 </div>
 
               
-                
-                <div class="funcA">
-                    <a href="./listaAluno.php"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
-                </div>
-                <div class="funcA">
-                    <a  href="./cadastraAluno.php"><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
-                </div>
-                <div class="funcA">
-                    <a><i class="bi bi-postcard"></i><h3>Lista de Presença</h3></a>
-                </div>
-                <div class="funcA">
-                    <a onclick="mostraColaboradores()"><i class="bi bi-people fill"></i><h3>Listar Colaboradores</h3></a>
-                </div>
-                <div class="funcA">
-                    <a onclick="cadastraColab()"><i class="bi bi-person-fill-add"></i><h3>Cadastrar Colaboradores</h3></a>
-                </div>
                 <hr>
             </div>
             </div>

@@ -200,7 +200,7 @@ input[type="file"] {
 #btnVoltar{
     position:fixed; 
     top:93%;
-    left:97.5%;
+    left:97%;
     transform: translate(-50%, -50%);
     
 }
