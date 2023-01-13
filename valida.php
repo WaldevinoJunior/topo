@@ -227,6 +227,12 @@ if(isset($_POST['cadastraCurso'])){
 if(isset($_POST['buscaAluno'])){
 	header('Location: ./buscarAluno.php?alunoid='.$_POST['aluno'].'');
 }
+if(isset($_POST['cadastraHorario'])){
+	$consulta = "INSERT INTO horarios (Dia, Hora_inicio, Hora_fim, maquinas_dispo, maquinas_ocup) VALUES  ('{$_POST['dia']}', '{$_POST['datainicio']}', 
+	'{$_POST['datafim']}','{$_POST['maquinas']}','0')";
+	$sqlhorario = $mysqli->query($consulta) or die($mysqli->error);
+	header('Location: ./horario.php');
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }
