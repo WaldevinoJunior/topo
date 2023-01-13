@@ -10,7 +10,7 @@
     $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
     $resultado = $mysqli->query($query_arquivo) or die($mysqli->error);
  }
-
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,9 +66,10 @@
             echo $_SESSION['nome'];
             ?>
         </p>
-        
         <button class="btn btn-primary btn-sm" onclick="altera();">Alterar Avatar</button>
-        <a style="background-color:rgba(218, 12, 12, 0.872);" class="btn btn-danger btn-sm" href="index.html">Sair</a>
+        <form action="valida.php" method="POST">
+        <button style="background-color:rgba(218, 12, 12, 0.872);" class="btn btn-danger btn-sm" name="sair" type="submit">Sair</button>
+        </form>
         </div>
     </div> 
     <h1 id="h1curso" style="margin-bottom:2vh;font-family: system-ui;">Seus Cursos</h1>
