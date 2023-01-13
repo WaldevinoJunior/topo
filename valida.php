@@ -18,38 +18,40 @@ if($mysqli->connect_errno){
     echo "falha na conexao: (".$mysqli->connect_errno.") " .$mysqli->connect_error;
 }
 if(isset($_POST['submitindex'])){
-	$isub = 0;
+	session_start();
+	$_SESSION['verifica'] = 0;
 	while($c = mysqli_fetch_array($con)){	
 		if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
 			if($_POST['ID_Aluno'] == $c['ID_Aluno'] && $_POST['Senha'] == $c['Senha']){
-				session_start();
+				
 				$_SESSION['nome'] = $c['Nome'];
 				$_SESSION['ID_Aluno'] = $_POST['ID_Aluno'];
-				$isub++;
+				header('Location: ./usuario.php');
+				$_SESSION['verifica'] = 1;
 			}
 		}
 	}
 	while($c3 = mysqli_fetch_array($con3)){	
 		if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
 			if($_POST['ID_Aluno'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
-				$isub = 2;
+				header('Location: ./admin.php');
+				$_SESSION['verifica'] = 2;
 			}
 		}
 	}
-	if($isub == 1){
-		header('Location:./usuario.php');
-	}
-	else{
-		echo "<script>alert('Login ou Senha errados');</script>";
-		header('Location:./index.html');
-	}
-	if($isub == 2){
-		header('Location:./admin.php');
+	if($_SESSION['verifica'] == 0){
+		header('Location: ./index.html');
 	}
 }
 
 if(isset($_POST['sair'])){
-	session_unset();
+	session_start();
+	$_SESSION['verifica'] = 0;
+	header('Location:index.html');
+}
+if(isset($_GET['sair'])){
+	session_start();
+	$_SESSION['verifica'] = 0;
 	header('Location:index.html');
 }
 // else{

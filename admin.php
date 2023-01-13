@@ -7,6 +7,10 @@
     $conAlunos2 = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+    session_start();
+	if($_SESSION['verifica'] != 2){
+        header('Location: ./index.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +67,8 @@
                         <a href="./sat.php">Satisfação</a>
                     </div>
             </li>
-            <li><a href="./index.html"><i class="bi bi-escape"></i>Sair</a></li>
+
+            <li><a href="./valida.php?sair=true"><i class="bi bi-escape"></i>Sair</a></li>
         </ul>
     </nav>
         <div class="admin">

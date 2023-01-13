@@ -1,5 +1,5 @@
 <?php
- include("valida.php");
+ require_once("valida.php");
  if(isset($_FILES['imagem'])){
     if(!$_FILES['imagem']['size'] > 0){
         echo "<script>alert('Nenhuma imagem selecianada');</script>";
@@ -10,7 +10,10 @@
     $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
     $resultado = $mysqli->query($query_arquivo) or die($mysqli->error);
  }
- 
+ session_start();
+	if($_SESSION['verifica'] != 1){
+        header('Location: ./index.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
