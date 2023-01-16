@@ -118,7 +118,7 @@
                                         $table .= "<td>{$cAlunos['Nome']}</td>";
                                         $table .= "<td>{$cAlunos['CPF']}</td>";
                                          $table .= "<td>{$cAlunos['Telefone']}</td>";
-                                        $table .= "<td><button onclick='editarAlunos".$cAlunos['ID_Aluno']."();'style = 'margin:10px;'class='btn btn-primary btn-sm'value='".$cAlunos['ID_Aluno']."'>Editar</button></td>";
+                                        $table .= "<td><a href='editarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Editar</a></td>";
                                         $table .= "<td><a style='background-color:green;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a></td>";
                                         $table .= '</tr>';
                                     

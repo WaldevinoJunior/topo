@@ -156,7 +156,7 @@
                 ."<a onclick='mostraFase".$c['ID_Curso']."aula".$i2."()'>Aula ".$i2."</a></div>";
                 echo "<div  class='modal-content' id='modal2' name='Curso".$c['ID_Curso']."Aula".$i2."'>
                 <a onclick='fechaFase".$c['ID_Curso']."aula".$i2."()' class='close' style='float:right; margin-right:6px;margin-top:4px; cursor:pointer;' ><span aria-hidden='true'>&times;</span></a>
-                <div id='modal2Cont'>Curso:".$c['ID_Curso']." Aula:".$i2." 
+                <div id='modal2Cont'>Aula:".$i2." 
                 </div>
                 <div id='modal2Op'>
                 <div style='padding-right: 9px;text-align: center;'><a id='aula".$i2."".$c['ID_Curso']."'onclick='mostraAula".$c['ID_Curso']."aula".$i2."()'  style='pointer-events: none;color:gray;'><i class='bi bi-cast'></i></a><p>Aula</p></div><img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'>

@@ -102,51 +102,54 @@
                                     $conthorario = 0;
                                     $consultaHorario = "SELECT * from horarios";
                                     $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
-                                    while($cH = mysqli_fetch_array($conH)){
-                                       if($cH['Dia'] == "Segunda-Feira"){
-                                           $hiSegunda [] = $cH['Hora_inicio'];
-                                           $hfSegunda [] = $cH['Hora_fim'];
-                                           $DispoSegunda []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
-                                           $idSegunda [] = $cH['ID_Horario']; 
-                                       }
-                                       if($cH['Dia'] == "Terça-Feira"){
-                                           $hiT [] = $cH['Hora_inicio'];
-                                           $hfT [] = $cH['Hora_fim'];
-                                           $DispoTerca [] =  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
-                                           $idT [] = $cH['ID_Horario']; 
-                                       }
-                                       if($cH['Dia'] == "Quarta-Feira"){
-                                           $hiQuarta [] = $cH['Hora_inicio'];
-                                           $hfQuarta [] = $cH['Hora_fim'];
-                                           $DispoQuarta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
-                                           $idQuarta [] = $cH['ID_Horario']; 
-                                       }
-                                       if($cH['Dia'] == "Quinta-Feira"){
-                                           $hiQuinta [] = $cH['Hora_inicio'];
-                                           $hfQuinta [] = $cH['Hora_fim'];
-                                           $DispoQuinta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
-                                           $idQuinta [] = $cH['ID_Horario']; 
-                                       }
-                                       if($cH['Dia'] == "Sexta-Feira"){
-                                           $hiSexta [] = $cH['Hora_inicio'];
-                                           $hfSexta [] = $cH['Hora_fim'];
-                                           $DispoSexta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
-                                           $idSexta [] = $cH['ID_Horario']; 
-                                       }
-                                       if($cH['Dia'] == "Sabádo"){
-                                           $hiSabado [] = $cH['Hora_inicio'];
-                                           $hfSabado [] = $cH['Hora_fim'];
-                                           $DispoSabado []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
-                                           $idSabado [] = $cH['ID_Horario']; 
-                                       }
-                                       if($cH['Dia'] == "Domingo"){
-                                           $hiDomingo [] = $cH['Hora_inicio'];
-                                           $hfDomingo [] = $cH['Hora_fim'];
-                                           $DispoDomingo []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
-                                           $idDomingo [] = $cH['ID_Horario']; 
-                                       }
+                                    $consultaHA = "SELECT ID_Aluno from horarios_alunos WHERE ID_Aluno = {$_GET['alunoid']}";
+                                    $conHA = $mysqli->query($consultaHA) or die($mysqli->error);
+                                    while($cHA = mysqli_fetch_array($conHA)){
+                                        while($cH = mysqli_fetch_array($conH)){
+                                                if($cH['Dia'] == "Segunda-Feira"){
+                                                    $hiSegunda [] = $cH['Hora_inicio'];
+                                                    $hfSegunda [] = $cH['Hora_fim'];
+                                                    $DispoSegunda []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idSegunda [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Terça-Feira"){
+                                                    $hiT [] = $cH['Hora_inicio'];
+                                                    $hfT [] = $cH['Hora_fim'];
+                                                    $DispoTerca [] =  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idT [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Quarta-Feira"){
+                                                    $hiQuarta [] = $cH['Hora_inicio'];
+                                                    $hfQuarta [] = $cH['Hora_fim'];
+                                                    $DispoQuarta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idQuarta [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Quinta-Feira"){
+                                                    $hiQuinta [] = $cH['Hora_inicio'];
+                                                    $hfQuinta [] = $cH['Hora_fim'];
+                                                    $DispoQuinta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idQuinta [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Sexta-Feira"){
+                                                    $hiSexta [] = $cH['Hora_inicio'];
+                                                    $hfSexta [] = $cH['Hora_fim'];
+                                                    $DispoSexta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idSexta [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Sabádo"){
+                                                    $hiSabado [] = $cH['Hora_inicio'];
+                                                    $hfSabado [] = $cH['Hora_fim'];
+                                                    $DispoSabado []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idSabado [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Domingo"){
+                                                    $hiDomingo [] = $cH['Hora_inicio'];
+                                                    $hfDomingo [] = $cH['Hora_fim'];
+                                                    $DispoDomingo []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idDomingo [] = $cH['ID_Horario']; 
+                                                }
+                                             }
                                     }
-                                    
                                     echo "<h1>Horários</h1><br><p>Segunda</p>";
                                     for($i = 0 ; $i< count($hiSegunda); $i++){
                                        if($DispoSegunda[$i] == 0){
