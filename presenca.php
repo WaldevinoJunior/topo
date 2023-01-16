@@ -3,10 +3,11 @@
     $consultaAlunos = "SELECT * from alunos";
     $consultaColab = "SELECT * from colaboradores";
     $consultaCursos = "SELECT * from cursos";
+    $cHora = "SELECT * from horarios_alunos";
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
-    $conAlunos2 = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+    $cH = $mysqli->query($cHora) or die($mysqli->error);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@
     <script src="js/constroi.js"> </script>
 </head>
 <body id="adminBody">
-    <nav class="menuAdmin">
+<nav class="menuAdmin">
         <img src="img/iconetopo.jpg">
         <ul>
             <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
@@ -71,70 +72,11 @@
             <div id="painel">
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
-            <div id="func">
-                <div id="listaAlunos"  class="listAlunos">
-                <div class="cont-header" id="cbcLista">
-                    <h1>Lista de alunos</h1>
-                    <form action="buscarAluno.php" method="POST">
-                    <select name='aluno'>
-                        <?php
-                         while($cAlunos = mysqli_fetch_array($conAlunos2)){
-                            echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
-                        }
-                        ?>
-                    </select>
-                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px;font-size:15px' name="buscaAluno" value='Buscar'></input>
-                    </form>
-                    <a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
-                </div>
-
-                <div class="content" style="overflow-y: scroll;height:300px;display:flex">   
-                    <?php
-                       $table = '<table class="table table-striped" id="tableAluno">';
-                            $table .='<thead>';
-                                $table .= '<tr>';
-                                   $table .= '<th>ID</th>';
-                                   $table .= '<th>Nome</th>';
-                                //    $table .= '<th>Responsável</th>';
-                                   $table .= '<th>CPF</th>';
-                                   $table .= '<th>Telefone</th>';
-                                //    $table .= '<th>CPF</th>';
-                                //    $table .= '<th>RG</th>';
-                                //    $table .= '<th>CEP</th>';
-                                //    $table .= '<th>Estado</th>';
-                                //    $table .= '<th>Cidade</th>';
-                                //    $table .= '<th>Rua</th>';
-                                //    $table .= '<th>Número</th>';
-                                //    $table .= '<th>Senha</th>';
-                                $table .= '<th>Funções</th>';
-                                $table .= '<th>Curso/Horários</th>';
-                                $table .= '</tr>';
-                            $table .= '</thead>';
-                            $table .= '<tbody>';
-           
-                                while($cAlunos = mysqli_fetch_array($conAlunos)){
-                                    $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
-                                        $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
-                                        $table .= "<td>{$cAlunos['Nome']}</td>";
-                                        $table .= "<td>{$cAlunos['CPF']}</td>";
-                                         $table .= "<td>{$cAlunos['Telefone']}</td>";
-                                        $table .= "<td><a href='editarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Editar</a></td>";
-                                        $table .= "<td><a style='background-color:green;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a></td>";
-                                        $table .= '</tr>';
-                                    
-                                   
-
-                            } 
-                        $table .= '</tbody>';
-                        $table .= '</table>';
-                        echo $table;
-                   ?>
-                </div>
-                </div>
-                <hr>
-            </div>
-            </div>
-                         
+            <div id="func" style="display:block">
+            <?php
+            
+            ?>
+            </div>            
             <div id="func2">
                 <div class="func2A">
                     <p>Licença</p>
