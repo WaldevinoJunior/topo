@@ -471,7 +471,7 @@
                     <a  href="./cadastraAluno.php"><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
                 </div>
                 <div class="funcA">
-                    <a><i class="bi bi-postcard"></i><h3>Lista de Presença</h3></a>
+                    <a href="./listaPresenca.php"><i class="bi bi-postcard"></i><h3>Lista de Presença</h3></a>
                 </div>
                 <div class="funcA">
                     <a onclick="mostraColaboradores()"><i class="bi bi-people fill"></i><h3>Listar Colaboradores</h3></a>

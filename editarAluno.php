@@ -137,7 +137,7 @@
 
 
             <div class='d-flex justify-content-center'>
-            <a href='listaAluno.php' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Voltar</a>
+            <a href='buscarAluno.php?alunoid=".$_GET['alunoid']."' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Voltar</a>
            
                 <input class='btn btn-success mr-2'type='submit' value='Enviar' name='enviareditarAluno'>
             </div>
