@@ -43,14 +43,13 @@
                     <div id="barras">
                         <a href="./curso.php">Cadastrar Curso</a>
                         <a href="./horario.php">Cadastrar Horários</a>
+                        <a href="./alunoHorario.php">Cadastra Aluno em Horários</a>
                     </div>
             </li>
             <li><a href=""><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i></a>
                     <div id="barras">
                         <a href="./mostrahorario.php">Horário</a>
                         <a href="./propagandas.php">Propragandas</a>
-                        <a href="./salas.php">Salas</a>
-                        <a href="./maquinas.php">Máquinas</a>
                     </div>
             </li>
             <li><a href=""><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i></a>

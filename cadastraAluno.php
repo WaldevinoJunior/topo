@@ -3,9 +3,11 @@
     $consultaAlunos = "SELECT * from alunos";
     $consultaColab = "SELECT * from colaboradores";
     $consultaCursos = "SELECT * from cursos";
+    $consultaH = "SELECT * from horarios";
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+    $conH = $mysqli->query($consultaH) or die($mysqli->error);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,14 +135,140 @@
                                         <input type="text" minlength="5" class="form-control" id="senha" name="senha" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="curso">Curso</label>
-                                        <select id="curso" name="curso" required>
+                                        <label for="curso">Cursos</label><br>
                                         <?php 
                                              while($cCursos = mysqli_fetch_array($conCursos)){
-                                                echo "<option value='".$cCursos['ID_Curso']."'>".$cCursos['Nome_curso']."</option>";
+                                                echo "<input type='checkbox' name='".$cCursos['ID_Curso']."' value='".$cCursos['ID_Curso']."'>".$cCursos['Nome_curso']."</input><br>";
                                             }
                                         ?>
                                         </select>
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="curso">Horarios</label><br>
+                                       <?php
+                                             $conthorario = 0;
+                                             $consultaHorario = "SELECT * from horarios";
+                                             $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
+                                             while($cH = mysqli_fetch_array($conH)){
+                                                if($cH['Dia'] == "Segunda-Feira"){
+                                                    $hiSegunda [] = $cH['Hora_inicio'];
+                                                    $hfSegunda [] = $cH['Hora_fim'];
+                                                    $DispoSegunda []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idSegunda [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Terça-Feira"){
+                                                    $hiT [] = $cH['Hora_inicio'];
+                                                    $hfT [] = $cH['Hora_fim'];
+                                                    $DispoTerca [] =  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idT [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Quarta-Feira"){
+                                                    $hiQuarta [] = $cH['Hora_inicio'];
+                                                    $hfQuarta [] = $cH['Hora_fim'];
+                                                    $DispoQuarta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idQuarta [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Quinta-Feira"){
+                                                    $hiQuinta [] = $cH['Hora_inicio'];
+                                                    $hfQuinta [] = $cH['Hora_fim'];
+                                                    $DispoQuinta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idQuinta [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Sexta-Feira"){
+                                                    $hiSexta [] = $cH['Hora_inicio'];
+                                                    $hfSexta [] = $cH['Hora_fim'];
+                                                    $DispoSexta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idSexta [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Sabádo"){
+                                                    $hiSabado [] = $cH['Hora_inicio'];
+                                                    $hfSabado [] = $cH['Hora_fim'];
+                                                    $DispoSabado []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idSabado [] = $cH['ID_Horario']; 
+                                                }
+                                                if($cH['Dia'] == "Domingo"){
+                                                    $hiDomingo [] = $cH['Hora_inicio'];
+                                                    $hfDomingo [] = $cH['Hora_fim'];
+                                                    $DispoDomingo []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
+                                                    $idDomingo [] = $cH['ID_Horario']; 
+                                                }
+                                             }
+                                             
+                                             echo "<br><p>Segunda</p>";
+                                             for($i = 0 ; $i< count($hiSegunda); $i++){
+                                                if($DispoSegunda[$i] == 0){
+                                                    echo "<input  disabled type='checkbox' value=".$idSegunda[$i]." name='horario".$conthorario."'></input>".$hiSegunda[$i]."-".$hfSegunda[$i]." - Maquinas Disponiveis:".$DispoSegunda[$i]."<br>";
+                                                    $conthorario++;
+                                                }else{
+                                                    echo "<input type='checkbox' value=".$idSegunda[$i]." name='horario".$conthorario."'></input>".$hiSegunda[$i]."-".$hfSegunda[$i]." - Maquinas Disponiveis:".$DispoSegunda[$i]."<br>";
+                                                    $conthorario++;
+                                                }
+                                                }
+                                                echo "<br><p>Terça</p>";
+                                                for($i = 0 ; $i< count($hiT); $i++){
+                                                    if($DispoTerca[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idT[$i]." name='horario".$conthorario."'></input>".$hiT[$i]."-".$hfT[$i]." - Maquinas Disponiveis:".$DispoTerca[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input  type='checkbox' value=".$idT[$i]." name='horario".$conthorario."'></input>".$hiT[$i]."-".$hfT[$i]." - Maquinas Disponiveis:".$DispoTerca[$i]."<br>";
+                                                        $conthorario++;
+                                                    }
+                                                   
+                                                }
+                                                echo "<br><p>Quarta</p>";
+                                                for($i = 0 ; $i< count($hiQuarta); $i++){
+                                                    if($DispoQuarta[$i] == 0 ){
+                                                        echo "<input disabled type='checkbox' value=".$idQuarta[$i]." name='horario".$conthorario."'></input>".$hiQuarta[$i]."-".$hfQuarta[$i]." - Maquinas Disponiveis:".$DispoQuarta[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idQuarta[$i]." name='horario".$conthorario."'></input>".$hiQuarta[$i]."-".$hfQuarta[$i]." - Maquinas Disponiveis:".$DispoQuarta[$i]."<br>";
+                                                        $conthorario++;
+                                                    }             
+                                                }
+                                                echo "<br><p>Quinta</p>";
+                                                for($i = 0 ; $i< count($hiQuinta); $i++){
+                                                    if($DispoQuinta[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idQuinta[$i]." name='horario".$conthorario."'></input>".$hiQuinta[$i]."-".$hfQuinta[$i]." - Maquinas Disponiveis:".$DispoQuinta[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idQuinta[$i]." name='horario".$conthorario."'></input>".$hiQuinta[$i]."-".$hfQuinta[$i]." - Maquinas Disponiveis:".$DispoQuinta[$i]."<br>";
+                                                        $conthorario++;
+                                                    } 
+                                                }
+                                                echo "<br><p>Sexta</p>";
+                                                for($i = 0 ; $i< count($hiSexta); $i++){
+                                                    if($DispoSexta[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idSexta[$i]." name='horario".$conthorario."'></input>".$hiSexta[$i]."-".$hfSexta[$i]." - Maquinas Disponiveis:".$DispoSexta[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idSexta[$i]." name='horario".$conthorario."'></input>".$hiSexta[$i]."-".$hfSexta[$i]." - Maquinas Disponiveis:".$DispoSexta[$i]."<br>";
+                                                        $conthorario++;
+                                                    } 
+                                                }
+                                                echo "<br><p>Sabádo</p>";
+                                                for($i = 0 ; $i< count($hiSabado); $i++){
+                                                    if($DispoSabado[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idSabado[$i]." name='horario".$conthorario."'></input>".$hiSabado[$i]."-".$hfSabado[$i]." - Maquinas Disponiveis:".$DispoSabado[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idSabado[$i]." name='horario".$conthorario."'></input>".$hiSabado[$i]."-".$hfSabado[$i]." - Maquinas Disponiveis:".$DispoSabado[$i]."<br>";
+                                                        $conthorario++;
+                                                    }
+                                                }
+                                                echo "<br><p>Domingo</p>";
+                                                for($i = 0 ; $i< count($hiDomingo); $i++){
+                                                    if($DispoDomingo[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idDomingo[$i]." name='horario".$conthorario."'></input>".$hiDomingo[$i]."-".$hfDomingo[$i]." - Maquinas Disponiveis:".$DispoDomingo[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idDomingo[$i]." name='horario".$conthorario."'></input>".$hiDomingo[$i]."-".$hfDomingo[$i]." - Maquinas Disponiveis:".$DispoDomingo[$i]."<br>";
+                                                        $conthorario++;
+                                                    }
+                                                   
+                                                }
+                                                echo "<input type='number' value='".$conthorario."' name='conthorario' style='display:none'></input>";
+                                            ?>
+                                      
                                     </div>
                                 </div>
 

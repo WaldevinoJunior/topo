@@ -10,7 +10,7 @@
     $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
     $resultado = $mysqli->query($query_arquivo) or die($mysqli->error);
  }
- session_start();
+ if(!isset($_SESSION)){session_start();}
 	if($_SESSION['verifica'] != 1){
         header('Location: ./index.html');
     }
