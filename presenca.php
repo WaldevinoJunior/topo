@@ -73,24 +73,31 @@
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func" style="display:block">
+            <form action="valida.php" method="POST"> 
             <?php
             while($c = mysqli_fetch_array($cH)){
                 $alunos;
                 if($c['ID_Horario'] == $_GET['idhorario']){
-                    $alunos [] = $c['ID_Aluno'];
+                    $alunos[] = $c['ID_Aluno'];
                 }
             }
+            $cont = 0;
             while($cA = mysqli_fetch_array($conAlunos)){
                 if(isset($alunos)){
                     for($i=0;$i<count($alunos);$i++){
                         if($cA['ID_Aluno'] == $alunos[$i]){
-                            echo $cA['Nome']."<br>";
+                            echo "<input type='checkbox' name='aluno".$i."' value='".$cA['ID_Aluno']."'></input>".$cA['Nome']."<br>";
+                            $cont++;
                         }
                     }
                 }
             }
+            echo "<input style='display:none' value='".$_GET['idhorario']."' name='idhorario'></input>";
+            echo "<input style='display:none' value='".$cont."' name='cont'></input>";
             ?>
             <a href="./listaPresenca.php" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;;font-size:15px;color:white;">Voltar</a>
+            <button  class="btn btn-success mr-2" style="display:flex;background-color:green;width:60px;height:40px;;font-size:15px;color:white;" name="presenca" >Enviar</button>
+            <form>
 
             </div>            
             <div id="func2">

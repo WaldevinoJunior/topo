@@ -307,6 +307,28 @@ if(isset($_POST['cadastraAlunoHorario'])){
 	}
 	//header('Location: ./alunoHorario.php');*/
 }
+if(isset($_POST['presenca'])){
+	for($i=0;$i<$_POST['cont'];$i++){
+		$i2 = "aluno".$i;
+		if(isset($_POST[$i2])){
+			$confirma = 0;
+			$data = date('Y-m-d');
+			$consultaPre = "SELECT * FROM alunos_presenca";
+			$sqlPre = $mysqli->query($consultaPre) or die($mysqli->error);
+			while($cPre = mysqli_fetch_array($sqlPre)){
+				if($cPre['ID_Aluno'] == $_POST[$i2] && $cPre['ID_Horario'] == $_POST['idhorario'] && $cPre['Data'] == $data){
+					$confirma  = 1;
+				}
+			}
+			if($confirma == 0){
+				$consulta = "INSERT INTO alunos_presenca(ID_Aluno, ID_Horario, Data, Presenca) VALUES ('{$_POST[$i2]}', '{$_POST['idhorario']}', '{$data}', '1')";
+				$sql = $mysqli->query($consulta) or die($mysqli->error);
+			}
+		}
+	}
+	header('Location: ./listaPresenca.php');
+}
+
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }
