@@ -129,46 +129,84 @@
                 }
              }
              
-             echo "<h1>Segunda</h1><br>";
-             for($i = 0 ; $i< count($hiSegunda); $i++){
-                echo "<input type='checkbox' value=".$idSegunda[$i]." name='horario".$conthorario."'></input>".$hiSegunda[$i]."-".$hfSegunda[$i]." - Maquinas Disponiveis:".$DispoSegunda[$i]."<br>";
-                $conthorario++;
-                }
-                echo "<h1>Terça</h1><br>";
-                for($i = 0 ; $i< count($hiT); $i++){
-                    echo "<input type='checkbox' value=".$idT[$i]." name='horario".$conthorario."'></input>".$hiT[$i]."-".$hfT[$i]." - Maquinas Disponiveis:".$DispoTerca[$i]."<br>";
-                    $conthorario++;
-                }
-                echo "<h1>Quarta</h1><br>";
-                for($i = 0 ; $i< count($hiQuarta); $i++){
-                    echo "<input type='checkbox' value=".$idQuarta[$i]." name='horario".$conthorario."'></input>".$hiQuarta[$i]."-".$hfQuarta[$i]." - Maquinas Disponiveis:".$DispoQuarta[$i]."<br>";
-                    $conthorario++;
-                }
-                echo "<h1>Quinta</h1><br>";
-                for($i = 0 ; $i< count($hiQuinta); $i++){
-                    echo "<input type='checkbox' value=".$idQuinta[$i]." name='horario".$conthorario."'></input>".$hiQuinta[$i]."-".$hfQuinta[$i]." - Maquinas Disponiveis:".$DispoQuinta[$i]."<br>";
-                    $conthorario++;
-                }
-                echo "<h1>Sexta</h1><br>";
-                for($i = 0 ; $i< count($hiSexta); $i++){
-                    echo "<input type='checkbox' value=".$idSexta[$i]." name='horario".$conthorario."'></input>".$hiSexta[$i]."-".$hfSexta[$i]." - Maquinas Disponiveis:".$DispoSexta[$i]."<br>";
-                    $conthorario++;
-                }
-                echo "<h1>Sabádo</h1><br>";
-                for($i = 0 ; $i< count($hiSabado); $i++){
-                    echo "<input type='checkbox' value=".$idSabado[$i]." name='horario".$conthorario."'></input>".$hiSabado[$i]."-".$hfSabado[$i]." - Maquinas Disponiveis:".$DispoSabado[$i]."<br>";
-                    $conthorario++;
-                }
-                echo "<h1>Domingo</h1><br>";
-                for($i = 0 ; $i< count($hiDomingo); $i++){
-                    echo "<input type='checkbox' value=".$idDomingo[$i]." name='horario".$conthorario."'></input>".$hiDomingo[$i]."-".$hfDomingo[$i]." - Maquinas Disponiveis:".$DispoDomingo[$i]."<br>";
-                    $conthorario++;
-                }
-                echo "<input type='number' value='".$conthorario."' name='conthorario' style='display:none'></input>";
-            ?>
-            <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px;font-size:15px' name="cadastraAlunoHorario" value='Cadastrar'></input>
+             echo "<br><p>Segunda</p>";
+                                             for($i = 0 ; $i< count($hiSegunda); $i++){
+                                                if($DispoSegunda[$i] == 0){
+                                                    echo "<input  disabled type='checkbox' value=".$idSegunda[$i]." name='horario".$conthorario."'></input>".$hiSegunda[$i]."-".$hfSegunda[$i]." - Maquinas Disponiveis:".$DispoSegunda[$i]."<br>";
+                                                    $conthorario++;
+                                                }else{
+                                                    echo "<input type='checkbox' value=".$idSegunda[$i]." name='horario".$conthorario."'></input>".$hiSegunda[$i]."-".$hfSegunda[$i]." - Maquinas Disponiveis:".$DispoSegunda[$i]."<br>";
+                                                    $conthorario++;
+                                                }
+                                                }
+                                                echo "<br><p>Terça</p>";
+                                                for($i = 0 ; $i< count($hiT); $i++){
+                                                    if($DispoTerca[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idT[$i]." name='horario".$conthorario."'></input>".$hiT[$i]."-".$hfT[$i]." - Maquinas Disponiveis:".$DispoTerca[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input  type='checkbox' value=".$idT[$i]." name='horario".$conthorario."'></input>".$hiT[$i]."-".$hfT[$i]." - Maquinas Disponiveis:".$DispoTerca[$i]."<br>";
+                                                        $conthorario++;
+                                                    }
+                                                   
+                                                }
+                                                echo "<br><p>Quarta</p>";
+                                                for($i = 0 ; $i< count($hiQuarta); $i++){
+                                                    if($DispoQuarta[$i] == 0 ){
+                                                        echo "<input disabled type='checkbox' value=".$idQuarta[$i]." name='horario".$conthorario."'></input>".$hiQuarta[$i]."-".$hfQuarta[$i]." - Maquinas Disponiveis:".$DispoQuarta[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idQuarta[$i]." name='horario".$conthorario."'></input>".$hiQuarta[$i]."-".$hfQuarta[$i]." - Maquinas Disponiveis:".$DispoQuarta[$i]."<br>";
+                                                        $conthorario++;
+                                                    }             
+                                                }
+                                                echo "<br><p>Quinta</p>";
+                                                for($i = 0 ; $i< count($hiQuinta); $i++){
+                                                    if($DispoQuinta[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idQuinta[$i]." name='horario".$conthorario."'></input>".$hiQuinta[$i]."-".$hfQuinta[$i]." - Maquinas Disponiveis:".$DispoQuinta[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idQuinta[$i]." name='horario".$conthorario."'></input>".$hiQuinta[$i]."-".$hfQuinta[$i]." - Maquinas Disponiveis:".$DispoQuinta[$i]."<br>";
+                                                        $conthorario++;
+                                                    } 
+                                                }
+                                                echo "<br><p>Sexta</p>";
+                                                for($i = 0 ; $i< count($hiSexta); $i++){
+                                                    if($DispoSexta[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idSexta[$i]." name='horario".$conthorario."'></input>".$hiSexta[$i]."-".$hfSexta[$i]." - Maquinas Disponiveis:".$DispoSexta[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idSexta[$i]." name='horario".$conthorario."'></input>".$hiSexta[$i]."-".$hfSexta[$i]." - Maquinas Disponiveis:".$DispoSexta[$i]."<br>";
+                                                        $conthorario++;
+                                                    } 
+                                                }
+                                                echo "<br><p>Sabádo</p>";
+                                                for($i = 0 ; $i< count($hiSabado); $i++){
+                                                    if($DispoSabado[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idSabado[$i]." name='horario".$conthorario."'></input>".$hiSabado[$i]."-".$hfSabado[$i]." - Maquinas Disponiveis:".$DispoSabado[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idSabado[$i]." name='horario".$conthorario."'></input>".$hiSabado[$i]."-".$hfSabado[$i]." - Maquinas Disponiveis:".$DispoSabado[$i]."<br>";
+                                                        $conthorario++;
+                                                    }
+                                                }
+                                                echo "<br><p>Domingo</p>";
+                                                for($i = 0 ; $i< count($hiDomingo); $i++){
+                                                    if($DispoDomingo[$i] == 0){
+                                                        echo "<input disabled type='checkbox' value=".$idDomingo[$i]." name='horario".$conthorario."'></input>".$hiDomingo[$i]."-".$hfDomingo[$i]." - Maquinas Disponiveis:".$DispoDomingo[$i]."<br>";
+                                                        $conthorario++;
+                                                    }else{
+                                                        echo "<input type='checkbox' value=".$idDomingo[$i]." name='horario".$conthorario."'></input>".$hiDomingo[$i]."-".$hfDomingo[$i]." - Maquinas Disponiveis:".$DispoDomingo[$i]."<br>";
+                                                        $conthorario++;
+                                                    }
+                                                   
+                                                }
+                                                echo "<input type='number' value='".$conthorario."' name='conthorario' style='display:none'></input>";
 
-             </form>
+                                                ?>
+                                                <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraAlunoHorario">
+
+                                                </form>
             </div>            
             <div id="func2">
                 <div class="func2A">

@@ -122,41 +122,43 @@
              
              echo "<h1>Segunda</h1><br>";
              for($i = 0 ; $i< count($hiSegunda); $i++){
-                echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idSegunda[$i]."'>".$hiSegunda[$i]."-".$hfSegunda[$i]." - Maquinas Disponiveis:".$DispoSegunda[$i]."</a><br>";
+                echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idSegunda[$i]."'>".$hiSegunda[$i]."-".$hfSegunda[$i]."</a><br>";
                 $conthorario++;
                 }
                 echo "<h1>Terça</h1><br>";
                 for($i = 0 ; $i< count($hiT); $i++){
-                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idT[$i]."'>".$hiT[$i]."-".$hfT[$i]." - Maquinas Disponiveis:".$DispoTerca[$i]."</a><br>";
+                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idT[$i]."'>".$hiT[$i]."-".$hfT[$i]."</a><br>";
                     $conthorario++;
                 }
                 echo "<h1>Quarta</h1><br>";
                 for($i = 0 ; $i< count($hiQuarta); $i++){
-                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idQuarta[$i]."'>".$hiQuarta[$i]."-".$hfQuarta[$i]." - Maquinas Disponiveis:".$DispoQuarta[$i]."</a><br>";
+                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idQuarta[$i]."'>".$hiQuarta[$i]."-".$hfQuarta[$i]."</a><br>";
                     $conthorario++;
                 }
                 echo "<h1>Quinta</h1><br>";
                 for($i = 0 ; $i< count($hiQuinta); $i++){
-                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idQuinta[$i]."'>".$hiQuinta[$i]."-".$hfQuinta[$i]." - Maquinas Disponiveis:".$DispoQuinta[$i]."</a><br>";
+                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idQuinta[$i]."'>".$hiQuinta[$i]."-".$hfQuinta[$i]."</a><br>";
                     $conthorario++;
                 }
                 echo "<h1>Sexta</h1><br>";
                 for($i = 0 ; $i< count($hiSexta); $i++){
-                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idSexta[$i]."'>".$hiSexta[$i]."-".$hfSexta[$i]." - Maquinas Disponiveis:".$DispoSexta[$i]."</a><br>";
+                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idSexta[$i]."'>".$hiSexta[$i]."-".$hfSexta[$i]."</a><br>";
                     $conthorario++;
                 }
                 echo "<h1>Sabádo</h1><br>";
                 for($i = 0 ; $i< count($hiSabado); $i++){
-                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idSabado[$i]."'>".$hiSabado[$i]."-".$hfSabado[$i]." - Maquinas Disponiveis:".$DispoSabado[$i]."</a><br>";
+                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idSabado[$i]."'>".$hiSabado[$i]."-".$hfSabado[$i]."</a><br>";
                     $conthorario++;
                 }
                 echo "<h1>Domingo</h1><br>";
                 for($i = 0 ; $i< count($hiDomingo); $i++){
-                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idDomingo[$i]."'>".$hiDomingo[$i]."-".$hfDomingo[$i]." - Maquinas Disponiveis:".$DispoDomingo[$i]."</a><br>";
+                    echo "<a style='font-size:20px' href='presenca.php?idhorario=".$idDomingo[$i]."'>".$hiDomingo[$i]."-".$hfDomingo[$i]."</a><br>";
                     $conthorario++;
                 }
                 echo "<input type='number' value='".$conthorario."' name='conthorario' style='display:none'></input>";
             ?>
+                        <a href="./admin.php" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;;font-size:15px;color:white;">Voltar</a>
+
             </div>            
             <div id="func2">
                 <div class="func2A">

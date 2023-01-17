@@ -222,14 +222,14 @@
                 </script>";
                 $i3++;
                 $i4 = 0;
-                if($c['ID_Curso']==60){
-                    $pasta = new FilesystemIterator ("cursos/60/".$i2."/img");
+                if($c['ID_Curso']==60 || $c['ID_Curso'] == 62){
+                    $pasta = new FilesystemIterator ("cursos/".$c['ID_Curso']."/".$i2."/img");
                     foreach($pasta as $file){
-                        $arq= "cursos/60/".$i2."/paginas/".$i4.".txt";
+                        $arq= "cursos/".$c['ID_Curso']."/".$i2."/paginas/".$i4.".txt";
                         $pont = fopen($arq,"r");
                         $linha = fgets($pont);
                         while($linha){
-                            echo "<p id='60".$i2."".$i4."' style='display:none'>".$linha."</p>";
+                            echo "<p id='".$c['ID_Curso']."".$i2."".$i4."' style='display:none'>".$linha."</p>";
                             $linha = fgets($pont);
                         }
                         
@@ -275,8 +275,8 @@
                 aula.appendChild(imagem);
                 imagem.appendChild(audio);
                 audio.setAttribute('id','audio');
-                audio.setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
-                imagem.setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
+                audio.setAttribute('src', 'cursos/".$c['ID_Curso']."/".$i2."/audio/'+i6+'.mp3');
+                imagem.setAttribute('src', 'cursos/".$c['ID_Curso']."/".$i2."/img/'+i6+'.jpg');
                 imagem.setAttribute('id', 'imagemEstilo');
                 textoAula.appendChild(sair);
                 textoAula.appendChild(vol);
@@ -291,10 +291,10 @@
                     });
                 document.getElementById('sair').style.display = 'block';
                 document.getElementById('aulaEstilo').style.display = 'block';
-                document.getElementById('60".$i2."'+i6+'').style.display = 'block';
+                document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').style.display = 'block';
                 let paragrafo = document.createElement('p');
                 paragrafo.setAttribute('id', 'paragrafo');
-                paragrafo.innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
+                paragrafo.innerHTML = document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').innerHTML;
                 AulaTexto.appendChild(paragrafo);
                 }
                 </script>";
@@ -303,8 +303,8 @@
             function prox".$c['ID_Curso']."aula".$i2."(){
                 if(i6<".$i5[$i2]."){
                 console.log(i6);
-                console.log(document.getElementById('60".$i2."'+i6+''));
-                document.getElementById('60".$i2."'+i6+'').style.display = 'none';
+                console.log(document.getElementById('".$c['ID_Curso']."".$i2."'+i6+''));
+                document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').style.display = 'none';
                 i6++;
                 if(i6 == ".$i5[$i2]."){
                     alert('Aula Concluída');
@@ -321,22 +321,22 @@
                     sair".$c['ID_Curso']."aula".$i2."();
                 }
                 document.getElementById('paragrafo').innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
-                document.getElementById('60".$i2."'+i6+'').style.display = 'block';
-                document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
-                document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
+                document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').style.display = 'block';
+                document.getElementById('imagemEstilo').setAttribute('src', 'cursos/".$c['ID_Curso']."/".$i2."/img/'+i6+'.jpg');
+                document.getElementById('audio').setAttribute('src', 'cursos/".$c['ID_Curso']."/".$i2."/audio/'+i6+'.mp3');
                 audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = true;document.getElementById('prox".$c['ID_Curso']."aula".$i2."').style.background = 'gray';
                 }
             }</script>";
             echo "<script>function vol".$c['ID_Curso']."aula".$i2."(){
-                document.getElementById('60".$i2."'+i6+'').style.display = 'none';
+                document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').style.display = 'none';
                 if(i6>0){
                     console.log(i6);
-                    document.getElementById('60".$i2."'+i6+'').style.display = 'none';
+                    document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').style.display = 'none';
                     i6--;
-                    document.getElementById('60".$i2."'+i6+'').style.display = 'block';
-                    document.getElementById('paragrafo').innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
-                    document.getElementById('imagemEstilo').setAttribute('src', 'cursos/60/".$i2."/img/'+i6+'.jpg');
-                    document.getElementById('audio').setAttribute('src', 'cursos/60/".$i2."/audio/'+i6+'.mp3');
+                    document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').style.display = 'block';
+                    document.getElementById('paragrafo').innerHTML = document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').innerHTML;
+                    document.getElementById('imagemEstilo').setAttribute('src', 'cursos/".$c['ID_Curso']."/".$i2."/img/'+i6+'.jpg');
+                    document.getElementById('audio').setAttribute('src', 'cursos/".$c['ID_Curso']."/".$i2."/audio/'+i6+'.mp3');
                     audio.play();document.getElementById('prox".$c['ID_Curso']."aula".$i2."').disabled = false;document.getElementById('prox".$c['ID_Curso']."aula".$i2."').style.background = 'yellow';
 
                 }
@@ -344,8 +344,8 @@
             }</script>";
             echo "<script>
             function sair".$c['ID_Curso']."aula".$i2."(){
-            console.log(document.getElementById('60".$i2."'+i6+''));
-            document.getElementById('60".$i2."'+i6+'').style.display = 'none';
+            console.log(document.getElementById('".$c['ID_Curso']."".$i2."'+i6+''));
+            document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').style.display = 'none';
             document.getElementById('nav').style.display = 'flex';
             document.getElementById('h1curso').style.display = 'flex';
             document.getElementsByClassName('usuarioDiv')[0].style.display = 'flex';

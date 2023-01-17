@@ -230,10 +230,38 @@ if(isset($_POST['cadastraAluno2'])){
 if(isset($_POST['alunoCurso'])){
 	$dataatual = date('y/m/d');
 	$id = $_POST['alunoid'];
-	$cursopro2 = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$_POST['curso']}','{$id}', '1' , '1', '{$dataatual}')";
-	$sqlpro2 = $mysqli->query($cursopro2) or die($mysqli->error);
 	$nome = $_POST['nome'];
+	$dataatual = date('y/m/d');
+	$cursoQuant = "SELECT ID_Curso From cursos";
+	$sqlc = $mysqli->query($cursoQuant) or die($mysqli->error);
+	while($cQ = mysqli_fetch_array($sqlc)){
+		if(isset($_POST[$cQ['ID_Curso']])){
+			$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$cQ['ID_Curso']}','{$id}', '1' , '1', '{$dataatual}')";
+			$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
+		}
+	}
+	for($i = 0;$i<$_POST['conthorario'];$i++){
+		if(isset($_POST['horario'.$i.''])){
+			$i2 = 0;
+			$consultah = "SELECT * FROM horarios_alunos";
+			$sqlh = $mysqli->query($consultah) or die($mysqli->error);
+			while($ch = mysqli_fetch_array($sqlh)){
+				if($ch['ID_Aluno'] == $id && $ch['ID_Horario'] == $_POST['horario'.$i.'']){
+					$i2 = 1;
+				}
+			}
+			if($i2 == 0){
+				$consulta = "INSERT INTO horarios_alunos (ID_Aluno, ID_Horario) VALUES  ('$id', '{$_POST['horario'.$i.'']}')";
+				$sqlhorario = $mysqli->query($consulta) or die($mysqli->error);
+				$consultaM = "SELECT maquinas_ocup FROM horarios WHERE ID_Horario = '{$_POST['horario'.$i.'']}'";
+				$sqlM = $mysqli->query($consultaM) or die($mysqli->error);
+				$mocup = mysqli_fetch_array($sqlM)[0] + 1;
+				$consulta2 = "UPDATE horarios SET  maquinas_ocup = '{$mocup}' WHERE ID_Horario = '{$_POST['horario'.$i.'']}'";
+				$sql2 = $mysqli->query($consulta2) or die($mysqli->error);
+			}
+		}
 	header('Location: ./cursoAluno.php?alunoid='.$id.'&&nome='.$nome.'');
+}
 }
 if(isset($_POST['cadastraCurso'])){
 	$consulta = "INSERT INTO cursos (Nome_curso, Preco, Horas, Descricao, aulas_totais) VALUES  ('{$_POST['nome']}', '{$_POST['preco']}', 
@@ -264,9 +292,11 @@ if(isset($_POST['cadastraAlunoHorario'])){
 			if($i2 == 0){
 				$consulta = "INSERT INTO horarios_alunos (ID_Aluno, ID_Horario) VALUES  ('{$_POST['aluno']}', '{$_POST['horario'.$i.'']}')";
 				$sqlhorario = $mysqli->query($consulta) or die($mysqli->error);
-				$consultaM = "SELECT maquinas_dispo, maquinas_ocup FROM horarios WHERE ID_Horario = '{$_POST['horario'.$i.'']}'";
+				$consultaM = "SELECT maquinas_ocup FROM horarios WHERE ID_Horario = '{$_POST['horario'.$i.'']}'";
 				$sqlM = $mysqli->query($consultaM) or die($mysqli->error);
-				
+				$mocup = mysqli_fetch_array($sqlM)[0] + 1;
+				$consulta2 = "UPDATE horarios SET  maquinas_ocup = '{$mocup}' WHERE ID_Horario = '{$_POST['horario'.$i.'']}'";
+				$sql2 = $mysqli->query($consulta2) or die($mysqli->error);
 			}
 		}
 	}

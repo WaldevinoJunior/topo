@@ -74,8 +74,24 @@
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func" style="display:block">
             <?php
-            
+            while($c = mysqli_fetch_array($cH)){
+                $alunos;
+                if($c['ID_Horario'] == $_GET['idhorario']){
+                    $alunos [] = $c['ID_Aluno'];
+                }
+            }
+            while($cA = mysqli_fetch_array($conAlunos)){
+                if(isset($alunos)){
+                    for($i=0;$i<count($alunos);$i++){
+                        if($cA['ID_Aluno'] == $alunos[$i]){
+                            echo $cA['Nome']."<br>";
+                        }
+                    }
+                }
+            }
             ?>
+            <a href="./listaPresenca.php" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;;font-size:15px;color:white;">Voltar</a>
+
             </div>            
             <div id="func2">
                 <div class="func2A">
