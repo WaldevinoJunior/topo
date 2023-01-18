@@ -132,6 +132,10 @@
                     <label for='senha'>Senha</label>
                     <input type='text' class='form-control' id='senha".$cAlunos['ID_Aluno']."' name='senha' value ='".$cAlunos['Senha']."'>
                 </div>
+                <div class='form-group col-12 col-lg-6'>
+                <label for='login'>Login</label>
+                <input type='text' class='form-control' id='login".$cAlunos['ID_Aluno']."' name='login' value ='".$cAlunos['Login']."'>
+            </div>
                 <input type='text' name='id' style='display:none;' value='".$cAlunos['ID_Aluno']."'>
             </div>
 

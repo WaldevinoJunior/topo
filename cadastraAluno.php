@@ -135,6 +135,10 @@
                                         <input type="text" minlength="5" class="form-control" id="senha" name="senha" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
+                                        <label for="login">Login</label>
+                                        <input type="text" minlength="5" class="form-control" id="login" name="login" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
                                         <label for="curso">Cursos</label><br>
                                         <?php 
                                              while($cCursos = mysqli_fetch_array($conCursos)){

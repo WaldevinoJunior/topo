@@ -21,19 +21,18 @@ if(isset($_POST['submitindex'])){
 	session_start();
 	$_SESSION['verifica'] = 0;
 	while($c = mysqli_fetch_array($con)){	
-		if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
-			if($_POST['ID_Aluno'] == $c['ID_Aluno'] && $_POST['Senha'] == $c['Senha']){
-				
+		if(isset($_POST['Login']) && isset($_POST['Senha'])){
+			if($_POST['Login'] == $c['Login'] && $_POST['Senha'] == $c['Senha']){
 				$_SESSION['nome'] = $c['Nome'];
-				$_SESSION['ID_Aluno'] = $_POST['ID_Aluno'];
+				$_SESSION['ID_Aluno'] = $c['ID_Aluno'];
 				header('Location: ./usuario.php');
 				$_SESSION['verifica'] = 1;
 			}
 		}
 	}
 	while($c3 = mysqli_fetch_array($con3)){	
-		if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
-			if($_POST['ID_Aluno'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
+		if(isset($_POST['Login']) && isset($_POST['Senha'])){
+			if($_POST['Login'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;
 			}
@@ -60,11 +59,11 @@ if(isset($_GET['sair'])){
 //     exit;
 // }
 while($c3 = mysqli_fetch_array($con3)){
-	if(isset($_POST['ID_Aluno']) && isset($_POST['Senha'])){
-		if($_POST['ID_Aluno'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
+	if(isset($_POST['Login']) && isset($_POST['Senha'])){
+		if($_POST['Login'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
 			session_start();
 			$_SESSION['nome'] = $c3['Nome'];
-			$_SESSION['ID_Colaborador'] = $_POST['ID_Aluno'];
+			$_SESSION['ID_Colaborador'] = $c3['ID_Colaborador'];
 			header('Location: ./admin.php');
 		}	
 	}
@@ -161,7 +160,7 @@ if(isset($_POST['enviareditarAluno'])){
 	Email = '{$_POST['email']}',Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
 	RG = '{$_POST['rg']}', CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
 	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
-	, Senha = '{$_POST['senha']}'  WHERE ID_Aluno = '{$_POST['id']}'";
+	, Senha = '{$_POST['senha']}', Login = '{$_POST['login']}'  WHERE ID_Aluno = '{$_POST['id']}'";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
@@ -197,10 +196,10 @@ if(isset($_POST['cadastraColab'])){
 	header('Location: ./admin.php');
 }
 if(isset($_POST['cadastraAluno2'])){
-	$consulta = "INSERT INTO alunos (Nome, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, imagem) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
+	$consulta = "INSERT INTO alunos (Nome, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, Login,  imagem) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
-	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}' , 'oi')";
+	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}' ,'{$_POST['login']}', 'oi')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	$consultaCpf = "SELECT ID_Aluno from alunos WHERE CPF = '{$_POST['cpf']}'";
 	$sqlcpf = $mysqli->query($consultaCpf) or die($mysqli->error);
