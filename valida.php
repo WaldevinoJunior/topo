@@ -327,7 +327,11 @@ if(isset($_POST['presenca'])){
 	}
 	header('Location: ./listaPresenca.php');
 }
-
+if(isset($_GET['back'])){
+	
+	
+	header('Location: ./admin.php');
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }

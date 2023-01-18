@@ -416,9 +416,9 @@ body.usuario div.usuarioDiv button{
     width: 40vw;
     height: 5vh;
     position: absolute;
-    top:65vh;
+    top:60vh;
     background-color: white;
-    left:55vw;
+    left:50vw;
     border:2px solid black;
     border-bottom: 0px;
 }
@@ -435,8 +435,8 @@ body.usuario div.usuarioDiv button{
     padding-right: 5px;
     background-color: white;
     position: absolute;
-    top: 70vh;
-    left:55vw;
+    top: 65vh;
+    left:50vw;
     border:2px solid black;
     border-top: 0px;
 }
@@ -447,12 +447,13 @@ body.usuario div.usuarioDiv button{
 }
 #imagemEstilo{
     width: 100%;
-    height: 650px;
+    height: 100vh;
     object-fit: cover;
     object-position: bottom;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: block;
+
 }
 .volta{
     border-color: rgb(210, 210, 30);
@@ -462,7 +463,7 @@ body.usuario div.usuarioDiv button{
     width: 35px;
     min-height: 15px;
     border-radius: 5px;
-   
+    height: 27px;
 }
 .proxima{
     width: 35px;
@@ -471,7 +472,7 @@ body.usuario div.usuarioDiv button{
     margin-bottom: 2px;
     border-radius: 5px;
     margin-left: 1px;
-   
+    height: 27px;
 }
 .sair{
     background-color: rgb(218, 28, 28);
@@ -480,30 +481,14 @@ body.usuario div.usuarioDiv button{
     margin-top: 2px;
     margin-bottom: 2px;
     width: 35px;
+    height: 27px;
     margin-right: 10px;
     border-radius: 5px;
 }
 
 @media (max-width: 959px) {
     #paragrafo{
-        font-size: 20px;
-    }
-    #textoAula{
-        top: 60vh;
-
-    }
-    #AulaTexto{
-        top: 65vh;
-
-    }
-    
-
-}
-
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media (min-width: 768px) and (max-width: 959px) {
-    #paragrafo{
-        font-size: 20px;
+        font-size: 25px;
     }
     #textoAula{
         top: 55vh;
@@ -513,7 +498,22 @@ body.usuario div.usuarioDiv button{
         top: 60vh;
 
     }
-    
+
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media (min-width: 768px) and (max-width: 959px) {
+    #paragrafo{
+        font-size: 20px;
+    }
+    #textoAula{
+        top: 45vh;
+
+    }
+    #AulaTexto{
+        top: 50vh;
+
+    }
 }
 
 /* All Mobile Sizes (devices and browser) */
@@ -522,11 +522,11 @@ body.usuario div.usuarioDiv button{
         font-size: 22px;
     }
     #textoAula{
-        top: 40vh;
+        top: 35vh;
 
     }
     #AulaTexto{
-        top: 45vh;
+        top: 40vh;
 
     }
     
@@ -538,40 +538,22 @@ body.usuario div.usuarioDiv button{
         font-size: 22px;
     }
     #textoAula{
-        top: 35vh;
+        top: 5vh;
         width: 55vw;
-        left:40vw;
+        left:35vw;
 
     }
     #AulaTexto{
-        top: 40vh;
+        top: 10vh;
         width: 55vw;
-        left:40vw;
+        left:35vw;
 
     }
     
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media (max-width: 479px) {
-    #paragrafo{
-        font-size: 25px;
-    }
-    #imagemEstilo{
-        height: 1200px;
-    }
-    #textoAula{
-        top: 30vh;
-        width: 55vw;
-        left:40vw;
-    }
-    #AulaTexto{
-        top: 35vh;
-        width: 55vw;
-        left: 40vw;
-    }
-    
-} 
+ 
 
 /* VALIDO PARA O ARQUIVO TESTE.PHP */
 body.teste{

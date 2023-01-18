@@ -62,7 +62,7 @@
             </li>
             <li><a href=""><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i></a>
                     <div id="barras">
-                        <a href="./backup.php">Backup</a>
+                        <a href="valida.php?back">Backup</a>
                         <a href="./licenca">Licença</a>
                         <a href="./sat.php">Satisfação</a>
                     </div>
