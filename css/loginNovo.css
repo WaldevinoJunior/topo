@@ -238,11 +238,11 @@ body.usuario div.usuarioDiv button{
     font-size: 15px;
     margin-right: 10px;
 }
-#modal{
+#modal, #modalH{
     border: 1px solid black;
     display: none;
-    /* width: 30vw;
-    height: 30vh; */
+     width: 30vw;
+    height: 30vh; 
     padding: 5px;
     position: absolute;
     align-items: center;
@@ -255,6 +255,15 @@ body.usuario div.usuarioDiv button{
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 #modal button{
+    border-radius: 1px;
+    border: 1px solid white;
+    background-color: red;
+    width: 30px;
+    padding: 10px;
+    justify-self: center;
+    
+}
+#modalH button{
     border-radius: 1px;
     border: 1px solid white;
     background-color: red;

@@ -49,6 +49,13 @@
 	                </form>
         </div>
     </div>
+    <div id="modalH">   
+                
+   <div style="float:right;"><a onclick="fechaH()" class="close" style="display:flex; cursor:pointer;" ><span aria-hidden='true'>&times;</span></a></div>
+                <h5 style="padding-top:15px;"><strong>Horários</strong></h5>
+        </div>
+    </div>
+    
     <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
     <div class="usuarioDiv" name="usuarioDiv">
         <?php 
@@ -70,6 +77,7 @@
             ?>
         </p>
         <button class="btn btn-primary btn-sm" onclick="altera();">Alterar Avatar</button>
+        <button class="btn btn-primary btn-sm" onclick="alteraH();">Meus Horários</button>
         <form action="valida.php" method="POST">
         <button style="background-color:rgba(218, 12, 12, 0.872);" class="btn btn-danger btn-sm" name="sair" type="submit">Sair</button>
         </form>

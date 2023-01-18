@@ -34,9 +34,15 @@ function mostraSenha() {
  function altera(){
    document.getElementById("modal").style.display = "flex";
  }
+ function alteraH(){
+  document.getElementById("modalH").style.display = "flex";
+}
  function fecha(){
     document.getElementById("modal").style.display = "none";
  }
+ function fechaH(){
+  document.getElementById("modalH").style.display = "none";
+}
  var numero = 0; 
  function adcCurso(){
     let a2 = document.getElementById("cursos")
