@@ -81,8 +81,12 @@
                     <input type='text' class='form-control' id='nome".$cAlunos['ID_Aluno']."' name='nome'  value ='".$cAlunos['Nome']."''>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
-                    <label for='nome'>Responsavel</label>
-                    <input type='text' class='form-control' id='responsavel".$cAlunos['ID_Aluno']."' name='responsavel'  value ='".$cAlunos['Responsavel']."''>
+                    <label for='nome'>Responsável</label>
+                    <input type='text' class='form-control' id='resp".$cAlunos['ID_Aluno']."' name='resp'  value ='".$cAlunos['Responsavel_2']."''>
+                </div>
+                <div class='form-group col-12 col-lg-6'>
+                    <label for='nome'>Responsável Telefone</label>
+                    <input type='text' class='form-control' id='respT".$cAlunos['ID_Aluno']."' name='respT'  value ='".$cAlunos['Responsavel_numero']."''>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='nasc'>Data de Nasc.</label>
@@ -135,7 +139,16 @@
                 <div class='form-group col-12 col-lg-6'>
                 <label for='login'>Login</label>
                 <input type='text' class='form-control' id='login".$cAlunos['ID_Aluno']."' name='login' value ='".$cAlunos['Login']."'>
-            </div>
+                </div>
+                <div class='form-group col-12 col-lg-6'>
+                <label for='login'>Status</label>
+                <select name='status'>
+                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='1'>Cursando</option>
+                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='2'>Concluído</option>
+                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='3'>Cancelado</option>
+                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='4'>Bloqueado</option>
+                </select>
+                </div>
                 <input type='text' name='id' style='display:none;' value='".$cAlunos['ID_Aluno']."'>
             </div>
 

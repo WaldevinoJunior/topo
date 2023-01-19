@@ -87,6 +87,14 @@
                                         <input type="text" class="form-control" id="nome" name="nome" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
+                                        <label for="nome">Responsável</label>
+                                        <input type="text" class="form-control" id="resp" name="resp" placeholder="" >
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="nome">Responsável Telefone</label>
+                                        <input type="text" class="form-control" id="respT" name="respT" placeholder="" >
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
                                         <label for="nasc">Data de Nasc.</label>
                                         <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="">
                                     </div>

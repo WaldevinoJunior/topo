@@ -144,6 +144,18 @@ if(isset($_POST['enviarteste'])){
 					$aula = $_POST['aula'];
 					$sqlprogresso2 = "UPDATE aluno_curso_progressos SET Estagio = '3', Aula_atual = '{$aula}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
 					$sqlpro2= $mysqli->query($sqlprogresso2) or die($mysqli->error);
+					/*$sqlprogresso3 = "UPDATE alunos SET Status = '2' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
+					$sqlpro3= $mysqli->query($sqlprogresso3) or die($mysqli->error);*/
+					$mediaCon = "SELECT Nota from aluno_testes WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$_POST['idcurso']}'";
+					$mediaC= $mysqli->query($mediaCon) or die($mysqli->error);
+					while($mC = mysqli_fetch_array($mediaC)){
+						$media += $mC['Nota'];
+					}
+					$media = $media/$aulas2;
+					$datafim = date('Y-m-d');
+					$codigo = uniqid();
+					$sqlprogresso3 = "INSERT INTO historicos (id_aluno, id_curso, media, data_fim, codigo) VALUES ('{$_SESSION['ID_Aluno']}', '{$_POST['idcurso']}', '{$media}', '{$datafim}', '{$codigo}')";
+					$sqlpro3= $mysqli->query($sqlprogresso3) or die($mysqli->error);
 				}
 			}
 		}
@@ -156,11 +168,11 @@ if(isset($_POST['enviarteste'])){
 	
 }
 if(isset($_POST['enviareditarAluno'])){
-	$consulta = "UPDATE alunos SET Nome = '{$_POST['nome']}', Nascimento = '{$_POST['nascimento']}', 
+	$consulta = "UPDATE alunos SET Nome = '{$_POST['nome']}',Responsavel_2 = '{$_POST['resp']}',Responsavel_numero = '{$_POST['respT']}', Nascimento = '{$_POST['nascimento']}', 
 	Email = '{$_POST['email']}',Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
 	RG = '{$_POST['rg']}', CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
 	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
-	, Senha = '{$_POST['senha']}', Login = '{$_POST['login']}'  WHERE ID_Aluno = '{$_POST['id']}'";
+	, Senha = '{$_POST['senha']}', Login = '{$_POST['login']}', Status = '{$_POST['status']}'  WHERE ID_Aluno = '{$_POST['id']}'";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
@@ -188,18 +200,18 @@ if(isset($_POST['enviareditarColab'])){
 	header('Location: ./admin.php');
 }
 if(isset($_POST['cadastraColab'])){
-	$consulta = "INSERT INTO colaboradores (Nome, Nascimento, Email, Telefone, CPF, CEP, Estado, Cidade, Rua, Numero, Complemento,Login, Senha) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
+	$consulta = "INSERT INTO colaboradores (Nome, Nascimento, Email, Telefone, CPF, CEP, Estado, Cidade, Rua, Numero, Complemento,Login, Senha, Perfil) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
-	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['login']}','{$_POST['senha']}')";
+	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['login']}','{$_POST['senha']}', '{$_POST['perfil']}')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
 if(isset($_POST['cadastraAluno2'])){
-	$consulta = "INSERT INTO alunos (Nome, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, Login,  imagem) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
+	$consulta = "INSERT INTO alunos (Nome,Responsavel_2, Responsavel_numero, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, Login, Status,  imagem) VALUES  ('{$_POST['nome']}','{$_POST['resp']}','{$_POST['respT']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
-	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}' ,'{$_POST['login']}', 'oi')";
+	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}' ,'{$_POST['login']}','1', 'oi')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	$consultaCpf = "SELECT ID_Aluno from alunos WHERE CPF = '{$_POST['cpf']}'";
 	$sqlcpf = $mysqli->query($consultaCpf) or die($mysqli->error);

@@ -191,7 +191,7 @@
                 <div style='padding-right: 2px;text-align: center;'><a id='fixacao".$i2."".$c['ID_Curso']."' target='_blank' href='cursos/".$c['ID_Curso']."/".$i2."/fixacao.pdf'  style='pointer-events: none;color:gray;'><i class='bi bi-pencil-square'></i></a><p>Fixação</p></div><img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'>
                 <div style='padding-left: 8px;text-align: center;'><a id='teste".$i2."".$c['ID_Curso']."' href='teste.php?i2=".$i2."&&idcurso=".$c['ID_Curso']."&&nomecurso=".$nomeCurso."'  style='pointer-events: none;color:gray;'><i class='bi bi-journal-check'></i></a><p>Teste</p></div>
                 ";if($i2 == $aulas){
-                    echo "<img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'><div style='padding-left: 8px;text-align: center;'><a id='certi".$i2."".$c['ID_Curso']."'  target='_blank' href='certificado.php?nomeCurso=".$nomeCurso."&&horas=".$horas."&&descricao=".$descricao."' style='pointer-events: none;color:gray;'><i class='bi bi-filetype-pdf'></i></a><p>Certificado</p></div>";
+                    echo "<img src='./img/caminho.png' style='width: 35px;height: 10px;vertical-align: middle;margin-top: 15px;'><div style='padding-left: 8px;text-align: center;'><a id='certi".$i2."".$c['ID_Curso']."'  target='_blank' href='certificado.php?nomeCurso=".$nomeCurso."&&horas=".$horas."&&descricao=".$descricao."&&idcurso=".$c['ID_Curso']."' style='pointer-events: none;color:gray;'><i class='bi bi-filetype-pdf'></i></a><p>Certificado</p></div>";
                 }echo "</div>
                 </div>
                 <script>";

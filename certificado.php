@@ -11,13 +11,28 @@
         $dompdf = new Dompdf($options);
         include("valida.php");
         session_start();
+        uniqid();----------------------------------------------------------------------
         $certi = $_SESSION['nome'];
+        $id = $_SESSION['ID_Aluno'];
+        $curso = $_GET['idcurso'];
         $nomeCurso = $_GET['nomeCurso'];
         $descricao =  $_GET['descricao'];
         $horas =  $_GET['horas'];
+        $host = "localhost";
+        $user = "root";
+        $pass = "";
+        $db = "podium";
+        $mysqli = new mysqli($host, $user, $pass, $db);
+        $consulta = "SELECT data_inicio, data_fim from aluno_curso_progressos WHERE ID_Aluno = '{$id}' and ID_Curso = '{$curso}'";
+        $con = $mysqli->query($consulta) or die($mysqli->error);
+        while($c = mysqli_fetch_array($con)){
+            $dataInicio = date('d/m/Y', strtotime($c['data_inicio']));
+            $dataFim = date('d/m/Y', strtotime($c['data_fim']));
+        }
         //Armazenamento das saídas do arquivo em buffer
+        setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
         date_default_timezone_set('America/Sao_Paulo');
-        $data = date('Y-m-d');
+        $data = strftime('%d de %B de %Y', strtotime('today'));
         //Envio do valor do buffer para a a classe
         //$dompdf->loadHtmlFile(__DIR__.'/teste.php');
         $dompdf->loadHtml('
@@ -26,7 +41,7 @@
         <head>
             <meta charset="UTF-8">
             
-            <title>Document</title>
+            <title>Certificado - '.$nomeCurso.'</title>
             <style>
             *{
                 margin:0;
@@ -50,7 +65,7 @@
         
             <p style="font-size:30px;margin-left:220px;margin-top:400px;margin-bottom:40px;">Certificamos que o aluno(a)</p>
             <p style="text-align:center;font-size:30px"> <u>'.$certi.'</u></p><br>
-            <p style="font-size:30px;margin-left:50px;margin-bottom:40px;">concluiu o treinamento de '.$nomeCurso.', ministrado por Topo Treinamentos no perído de '.$data.' a '.$data.', com carga horaria de '.$horas.' horas.</p>
+            <p style="font-size:30px;margin-left:50px;margin-bottom:40px;">concluiu o treinamento de '.$nomeCurso.', ministrado por Topo Treinamentos no perído de '.$dataInicio.' a '.$dataFim.', com carga horaria de '.$horas.' horas.</p>
             <section style="display:flex">
                     
             </section>

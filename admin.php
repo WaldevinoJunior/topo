@@ -450,6 +450,13 @@
                                         <label for="senha">Senha</label>
                                         <input type="text" minlength="5" class="form-control" id="senha" name="senha" placeholder="" required>
                                     </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="perfil">Perfil</label><br>
+                                        <input type="radio"  id="perfil" name="perfil" value="Administrador" placeholder="" required>Administrador</input><br>
+                                        <input type="radio"id="perfil" name="perfil" value="Coordenador" placeholder="" required>Coordenador</input><br>
+                                        <input type="radio" id="perfil" name="perfil" value="Instrutor" placeholder="" required>Instrutor</input><br>
+                                        <input type="radio"  id="perfil" name="perfil" value="Comercial" placeholder="" required>Comercial</input>
+                                    </div>
                                 </div>
 
                 <!--BOTOES AO FIM DA SESSÃO-->
