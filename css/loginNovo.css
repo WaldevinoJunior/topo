@@ -494,7 +494,9 @@ body.usuario div.usuarioDiv button{
     margin-right: 10px;
     border-radius: 5px;
 }
-
+#mAdmin2{
+    display: none;
+}
 @media (max-width: 959px) {
     #paragrafo{
         font-size: 25px;
@@ -506,6 +508,9 @@ body.usuario div.usuarioDiv button{
     #AulaTexto{
         top: 60vh;
 
+    }
+    #mAdmin2{
+        display: none;
     }
 
 }
@@ -538,7 +543,15 @@ body.usuario div.usuarioDiv button{
         top: 40vh;
 
     }
-    
+    #mAdmin{
+        display:none;
+    }
+    #mAdmin2{
+        display: flex;
+        left:30vw;
+        position: relative;
+    }
+
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -558,7 +571,11 @@ body.usuario div.usuarioDiv button{
         left:35vw;
 
     }
-    
+    #mAdmin2{
+        display: flex;
+        left:30vw;
+        position: relative;
+    }
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
