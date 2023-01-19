@@ -1,11 +1,10 @@
 <?php 
     include("valida.php");
     $consultaAlunos = "SELECT * from alunos";
-    $consultaColab = "SELECT * from colaboradores";
+    $consultapro = "SELECT * from aluno_curso_progressos";
     $consultaCursos = "SELECT * from cursos";
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
-    $conAlunos2 = $mysqli->query($consultaAlunos) or die($mysqli->error);
-    $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
+    $conPro = $mysqli->query($consultapro) or die($mysqli->error);
     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
 ?>
 <!DOCTYPE html>
@@ -31,7 +30,7 @@
     <script src="js/constroi.js"> </script>
 </head>
 <body id="adminBody">
-    <nav class="menuAdmin">
+<nav class="menuAdmin">
         <img src="img/iconetopo.jpg">
         <ul>
             <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
@@ -72,70 +71,65 @@
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func">
-                <div id="listaAlunos"  class="listAlunos">
+            <div id="listaAlunos" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
-                    <h1>Lista de alunos</h1>
-                    <form action="buscarAluno.php" method="POST">
-                    <select name='aluno'>
-                        <?php
-                         while($cAlunos = mysqli_fetch_array($conAlunos2)){
-                            echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
-                        }
-                        ?>
-                    </select>
-                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px;font-size:15px' name="buscaAluno" value='Buscar'></input>
+                    <h1>Cadastre o aluno <?php echo $_GET['nome'] ?> em um Curso ou mais:</h1>
+                    <a href="./listaAluno.php" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
+                </div>
+                <div class="content">   
+                <div class="form-group col-12 col-lg-6">
+                    <form action="valida.php" method="POST">
+                        <?php 
+                                     $consultaAP = "SELECT ID_Curso from aluno_curso_progressos WHERE ID_Aluno = '{$_GET['alunoid']}'";
+                                     $conAP = $mysqli->query($consultaAP) or die ($mysqli->error);
+                                     $cursos = [];
+                                     while($cAP = mysqli_fetch_array($conAP)){
+                                        $cursos [] = $cAP['ID_Curso'];
+                                     }
+                                     while($cC = mysqli_fetch_array($conCursos)){
+                                        for($i=0;$i<count($cursos);$i++){
+                                            if($cC['ID_Curso'] == $cursos[$i]){
+                                                echo "<input type='checkbox' name='curso'>".$cC['Nome_curso']."</input><br>";
+                                            }
+                                        }
+                                     }
+                                   ?>
+     
+                                <h1 for="curso">Horarios do Aluno</h1><br>
+                                <?php 
+                                     $consultaHA = "SELECT ID_Aluno, ID_Horario from horarios_alunos WHERE ID_Aluno = '{$_GET['alunoid']}'";
+                                     $conHA = $mysqli->query($consultaHA) or die ($mysqli->error);
+                                     $horarios = [];
+                                     while($cHA = mysqli_fetch_array($conHA)){
+                                        $horarios [] = $cHA['ID_Horario'];
+                                     }
+                                     $consultaH= "SELECT * from horarios";
+                                     $conH = $mysqli->query($consultaH) or die ($mysqli->error);
+                                     while($cH = mysqli_fetch_array($conH)){
+                                        for($i=0;$i<count($horarios);$i++){
+                                            if($cH['ID_Horario'] == $horarios[$i]){
+                                                echo "<input type='checkbox' name='horario'>".$cH['Dia']." : ".$cH['Hora_inicio']." - ".$cH['Hora_fim']." </input><br>";
+                                            }
+                                        }
+                                     }
+                                   ?>
+     
+                            <?php
+                            echo "<input class='btn btn-success mr-2' type='submit' value='Enviar' name='deletarCursoHorario'>
+                                <input style='display:none' value ='".$_GET['nome']."' name='nome'/>
+                                <input style='display:none' value ='".$_GET['alunoid']."' name='alunoid'/>";
+                            ?>
                     </form>
-                    <a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
+                                        
+                                        
+                </div>
+                
+                </div>
                 </div>
 
-                <div class="content" style="overflow-y: scroll;height:300px;display:flex">   
-                    <?php
-                       $table = '<table class="table table-striped" id="tableAluno">';
-                            $table .='<thead>';
-                                $table .= '<tr>';
-                                   $table .= '<th>ID</th>';
-                                   $table .= '<th>Nome</th>';
-                                //    $table .= '<th>Responsável</th>';
-                                   $table .= '<th>CPF</th>';
-                                   $table .= '<th>Telefone</th>';
-                                //    $table .= '<th>CPF</th>';
-                                //    $table .= '<th>RG</th>';
-                                //    $table .= '<th>CEP</th>';
-                                //    $table .= '<th>Estado</th>';
-                                //    $table .= '<th>Cidade</th>';
-                                //    $table .= '<th>Rua</th>';
-                                //    $table .= '<th>Número</th>';
-                                //    $table .= '<th>Senha</th>';
-                                $table .= '<th>Funções</th>';
-                                $table .= '<th>Curso/Horários</th>';
-                                $table .= '</tr>';
-                            $table .= '</thead>';
-                            $table .= '<tbody>';
-           
-                                while($cAlunos = mysqli_fetch_array($conAlunos)){
-                                    $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
-                                        $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
-                                        $table .= "<td>{$cAlunos['Nome']}</td>";
-                                        $table .= "<td>{$cAlunos['CPF']}</td>";
-                                         $table .= "<td>{$cAlunos['Telefone']}</td>";
-                                        $table .= "<td><a href='editarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Editar</a></td>";
-                                        $table .= "<td><a style='background-color:green;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a>
-                                        <a style='background-color:red;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='deletar.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Deletar</a></td>";
-                                        $table .= '</tr>';
-                                    
-                                   
-
-                            } 
-                        $table .= '</tbody>';
-                        $table .= '</table>';
-                        echo $table;
-                   ?>
-                </div>
-                </div>
-                <hr>
+                
+               
             </div>
-            </div>
-                         
             <div id="func2">
                 <div class="func2A">
                     <p>Licença</p>
