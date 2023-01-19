@@ -53,6 +53,25 @@
                 
    <div style="float:right;"><a onclick="fechaH()" class="close" style="display:flex; cursor:pointer;" ><span aria-hidden='true'>&times;</span></a></div>
                 <h5 style="padding-top:15px;"><strong>Horários</strong></h5>
+                <?php
+                $consultaha = "SELECT * from horarios_alunos";
+                $conha = $mysqli->query($consultaha) or die($mysqli->error);
+                $consultaH = "SELECT * from horarios";
+                $conH = $mysqli->query($consultaH) or die($mysqli->error);
+                $horario = [];
+                while($cha = mysqli_fetch_array($conha)){
+                    if($cha['ID_Aluno'] == $_SESSION['ID_Aluno']){
+                        $horario[] = $cha['ID_Horario'];
+                    }
+                }
+                while($ch = mysqli_fetch_array($conH)){
+                    for($i=0;$i<sizeof($horario);$i++){
+                        if($ch['ID_Horario'] == $horario[$i]){
+                            echo $ch['Dia']."-".$ch['Hora_inicio']."-".$ch['Hora_fim']."<br>";
+                        }
+                    }
+                }
+                ?>
         </div>
     </div>
     
@@ -328,7 +347,7 @@
                     document.getElementById('teste".$i2."".$c['ID_Curso']."').style.cursor = 'pointer';
                     sair".$c['ID_Curso']."aula".$i2."();
                 }
-                document.getElementById('paragrafo').innerHTML = document.getElementById('60".$i2."'+i6+'').innerHTML;
+                document.getElementById('paragrafo').innerHTML = document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').innerHTML;
                 document.getElementById('".$c['ID_Curso']."".$i2."'+i6+'').style.display = 'block';
                 document.getElementById('imagemEstilo').setAttribute('src', 'cursos/".$c['ID_Curso']."/".$i2."/img/'+i6+'.jpg');
                 document.getElementById('audio').setAttribute('src', 'cursos/".$c['ID_Curso']."/".$i2."/audio/'+i6+'.mp3');
