@@ -305,7 +305,7 @@
 
               
                 
-                <div class="funcA">
+                <div class="funcA" <?php if($_SESSION['Perfil'] != "Administrador"){echo "style='margin-left:100px'";}?>>
                     <a href="./listaAluno.php"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
                 </div>
                 <div class="funcA">
@@ -315,10 +315,18 @@
                     <a href="./listaPresenca.php"><i class="bi bi-postcard"></i><h3>Lista de Presença</h3></a>
                 </div>
                 <div class="funcA">
-                    <a onclick="mostraColaboradores()"><i class="bi bi-people fill"></i><h3>Listar Colaboradores</h3></a>
+                    <?php
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<a onclick='mostraColaboradores()'><i class='bi bi-people fill'></i><h3>Listar Colaboradores</h3></a>";
+                        }
+                    ?>
                 </div>
                 <div class="funcA">
-                    <a onclick="cadastraColab()"><i class="bi bi-person-fill-add"></i><h3>Cadastrar Colaboradores</h3></a>
+                <?php
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<a onclick='cadastraColab()'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Colaboradores</h3></a>";
+                        }
+                    ?>
                 </div>
                 <hr>
             </div>

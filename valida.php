@@ -33,8 +33,9 @@ if(isset($_POST['submitindex'])){
 	while($c3 = mysqli_fetch_array($con3)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
 			if($_POST['Login'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
+				$_SESSION['Perfil'] = $c3['Perfil'];
 				header('Location: ./admin.php');
-				$_SESSION['verifica'] = 2;
+				$_SESSION['verifica'] = 2;	
 			}
 		}
 	}
@@ -345,7 +346,37 @@ if(isset($_GET['back'])){
 	header('Location: ./admin.php');
 }
 if(isset($_POST['deletarCursoHorario'])){
-	
+	$consultaHA = "SELECT ID_Horario FROM horarios_alunos WHERE ID_Aluno = '{$_POST['alunoid']}'";
+	$conHA = $mysqli->query($consultaHA) or die($mysqli->error);
+	while($c = mysqli_fetch_array($conHA)){
+		for($i=0;$i<$_POST['tHorario'];$i++){
+			if(isset($_POST['horario'.$i.''])){
+				if($c['ID_Horario'] == $_POST['horario'.$i.'']){
+					$delete = "DELETE FROM horarios_alunos WHERE ID_Horario = '{$c['ID_Horario']}' AND ID_Aluno = '{$_POST['alunoid']}'";
+					$sqldelete = $mysqli->query($delete) or die($mysqli->error);
+					$maquina = "SELECT maquinas_ocup FROM horarios WHERE ID_Horario = '{$c['ID_Horario']}'";
+					$m = $mysqli->query($maquina) or die($mysqli->error);
+					$mocup = mysqli_fetch_array($m)[0];
+					$mocup = $mocup - 1;
+					$maquina2 = "UPDATE horarios SET maquinas_ocup = '{$mocup}' WHERE  ID_Horario = '{$c['ID_Horario']}'";
+					$m2 = $mysqli->query($maquina2) or die($mysqli->error);
+				}
+			}
+		}
+	}
+	$consultaC = "SELECT ID_Curso FROM aluno_curso_progressos WHERE ID_Aluno =  '{$_POST['alunoid']}'";
+	$conC = $mysqli->query($consultaC) or die($mysqli->error);
+	while($c = mysqli_fetch_array($conC)){
+		for($i = 0;$i<$_POST['tCurso'];$i++){
+			if(isset($_POST['curso'.$i.''])){
+				if($c['ID_Curso'] == $_POST['curso'.$i.'']){
+					$delete = "DELETE FROM aluno_curso_progressos WHERE ID_Aluno =  '{$_POST['alunoid']}' AND ID_Curso = '{$c['ID_Curso']}'";
+					$sqldelete = $mysqli->query($delete) or die($mysqli->error);
+				}
+			}
+		}
+	}
+	header('Location: ./listaAluno.php');
 }
 /*if($contador!=1){
 	header('Location: /topo/login.html');
