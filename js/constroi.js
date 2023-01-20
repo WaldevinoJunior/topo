@@ -10,6 +10,7 @@ function adcElemento(){
 }
 function muda(){
   document.getElementById("muda").style.display = "block";
+  document.getElementById("canvas").style.display = "none";
 }
 function muda2(){
   document.getElementById("muda").style.display = "none";

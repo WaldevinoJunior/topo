@@ -76,7 +76,7 @@
     </div>
     
     <!-- TROCA AVATAR DO USUARIO E VOLTA NA PAGINA INICIAL -->
-    <div class="usuarioDiv" name="usuarioDiv">
+    <div class="usuarioDiv" name="usuarioDiv" id="usuarioDiv">
         <?php 
         if(!isset($_SESSION)){session_start();}
         $arquiv = "SELECT imagem FROM alunos WHERE ID_ALUNO = '{$_SESSION['ID_Aluno']}'";
@@ -89,7 +89,7 @@
             echo '<img id="fotoLogin" src="data:image/jpeg;base64,' . base64_encode( $row['imagem'] ) . '" />';
         }
         
-        ?>>
+        ?>
         <div id="usuarioId">
         <p style="font-size:30px;margin-top:-5vh;margin-bottom:2vh"><?php if(!isset($_SESSION)){session_start();}
             echo $_SESSION['nome'];
@@ -98,8 +98,8 @@
         <button class="btn btn-primary btn-sm" onclick="altera();">Alterar Avatar</button>
         <button class="btn btn-primary btn-sm" onclick="alteraH();">Meus Horários</button>
         <form action="valida.php" method="POST">
-        <button style="background-color:rgba(218, 12, 12, 0.872);" class="btn btn-danger btn-sm" name="sair" type="submit">Sair</button>
-        </form>
+        <button style="background-color:rgba(218, 12, 12, 0.872);" class="btn btn-danger btn-sm" name="sair" type="submit">Sair</button>   
+    </form>
         </div>
     </div> 
     <h1 id="h1curso" style="margin-bottom:2vh;font-family: system-ui;">Seus Cursos</h1>

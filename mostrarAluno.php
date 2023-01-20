@@ -143,7 +143,10 @@
                 <label for='login'>Status</label>
                 <p>"; if($cAlunos['Status'] == 1){echo "Cursando";}if($cAlunos['Status'] == 2){echo "Concluído";}if($cAlunos['Status'] == 3){echo "Cancelado";}if($cAlunos['Status'] == 4){echo "Bloqueado";} echo"</p>
                 </div>
-                
+                <div class='form-group col-12 col-lg-6'>
+                <label for='login'>Cursos</label>
+                <p>".$cAlunos['Login']."</p>
+                </div>
             </div>
 
 
