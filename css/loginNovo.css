@@ -512,6 +512,9 @@ body.usuario div.usuarioDiv button{
     #mAdmin2{
         display: none;
     }
+    #mAdmin3{
+        display: none;
+    }
 
 }
 
@@ -550,6 +553,12 @@ body.usuario div.usuarioDiv button{
         display: flex;
         left:30vw;
         position: relative;
+        width: 70px;
+        height: 9vh;
+        cursor: pointer;
+    }
+    #iconetopo{
+        width: 50px;
     }
 
 }
@@ -575,7 +584,12 @@ body.usuario div.usuarioDiv button{
         display: flex;
         left:30vw;
         position: relative;
+        width: 80px;
     }
+    #iconetopo{
+        width: 50px;
+    }
+
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */

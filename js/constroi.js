@@ -43,6 +43,22 @@ function mostraSenha() {
  function fechaH(){
   document.getElementById("modalH").style.display = "none";
 }
+function menu(){
+  let e = document.getElementById("mAdmin3");
+  if(getComputedStyle(e).display == "none"){
+    e.style.display = "flex";
+    e.style.flexDirection = "column";
+    e.style.backgroundColor = "black";
+    e.style.left = "60%";
+    e.style.width = "200px";
+    e.style.position = "absolute";
+    breaK
+  }
+  if(getComputedStyle(e).display == "flex"){
+    e.style.display = "none";
+  }
+ 
+}
  var numero = 0; 
  function adcCurso(){
     let a2 = document.getElementById("cursos")
