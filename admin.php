@@ -36,7 +36,7 @@
 </head>
 <body id="adminBody">
     <nav class="menuAdmin">
-        <img src="img/iconetopo.jpg">
+        <img src="img/iconetopo.jpg" id="iconetopo">
         <ul id="mAdmin">
             <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
             <li><a href=""><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i></a>
@@ -54,7 +54,6 @@
             </li>
             <li><a href=""><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i></a>
                         <div id="barras">
-                            <a href="./presenca.php">Lista de Presença</a>
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
@@ -70,7 +69,41 @@
 
             <li><a href="./valida.php?sair=true"><i class="bi bi-escape"></i>Sair</a></li>
         </ul>
-        <img id="mAdmin2" src="img/apertomao.jpg"/>
+        <div>
+        <img id="mAdmin2" src="img/menuH.png" onclick="menu()"/>
+        <ul id="mAdmin3" style="display:none">
+            <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
+            <li><a href=""><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i></a>
+                    <div id="barras">
+                        <a href="./curso.php">Cadastrar Curso</a>
+                        <a href="./horario.php">Cadastrar Horários</a>
+                        <a href="./alunoHorario.php">Cadastra Aluno em Horários</a>
+                    </div>
+            </li>
+            <li><a href=""><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i></a>
+                    <div id="barras">
+                        <a href="./mostrahorario.php">Horário</a>
+                        <a href="./propagandas.php">Propragandas</a>
+                    </div>
+            </li>
+            <li><a href=""><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i></a>
+                        <div id="barras">
+                            <a href="./contratos.php">Contratos</a>
+                            <a href="./pagamentos.php">Pagamentos</a>
+                            <a href="./aniversariantes.php">Aniversariantes</a>
+                        </div>
+            </li>
+            <li><a href=""><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i></a>
+                    <div id="barras">
+                        <a href="valida.php?back">Backup</a>
+                        <a href="./licenca">Licença</a>
+                        <a href="./sat.php">Satisfação</a>
+                    </div>
+            </li>
+
+            <li><a href="./valida.php?sair=true"><i class="bi bi-escape"></i>Sair</a></li>
+        </ul>
+        </div>
     </nav>
         <div class="admin">
             <div id="painel">
@@ -305,7 +338,7 @@
 
               
                 
-                <div class="funcA">
+                <div class="funcA" <?php if($_SESSION['Perfil'] != "Administrador"){echo "style='margin-left:100px'";}?>>
                     <a href="./listaAluno.php"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
                 </div>
                 <div class="funcA">
@@ -315,10 +348,18 @@
                     <a href="./listaPresenca.php"><i class="bi bi-postcard"></i><h3>Lista de Presença</h3></a>
                 </div>
                 <div class="funcA">
-                    <a onclick="mostraColaboradores()"><i class="bi bi-people fill"></i><h3>Listar Colaboradores</h3></a>
+                    <?php
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<a onclick='mostraColaboradores()'><i class='bi bi-people fill'></i><h3>Listar Colaboradores</h3></a>";
+                        }
+                    ?>
                 </div>
                 <div class="funcA">
-                    <a onclick="cadastraColab()"><i class="bi bi-person-fill-add"></i><h3>Cadastrar Colaboradores</h3></a>
+                <?php
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<a onclick='cadastraColab()'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Colaboradores</h3></a>";
+                        }
+                    ?>
                 </div>
                 <hr>
             </div>

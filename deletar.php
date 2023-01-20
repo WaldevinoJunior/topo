@@ -74,7 +74,6 @@
             <div id="listaAlunos" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
                     <h1>Cadastre o aluno <?php echo $_GET['nome'] ?> em um Curso ou mais:</h1>
-                    <a href="./listaAluno.php" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
                 </div>
                 <div class="content">   
                 <div class="form-group col-12 col-lg-6">
@@ -89,7 +88,7 @@
                                      while($cC = mysqli_fetch_array($conCursos)){
                                         for($i=0;$i<count($cursos);$i++){
                                             if($cC['ID_Curso'] == $cursos[$i]){
-                                                echo "<input type='checkbox' name='curso'>".$cC['Nome_curso']."</input><br>";
+                                                echo "<input type='checkbox' name='curso".$i."' value='".$cC['ID_Curso']."'>".$cC['Nome_curso']."</input><br>";
                                             }
                                         }
                                      }
@@ -108,14 +107,15 @@
                                      while($cH = mysqli_fetch_array($conH)){
                                         for($i=0;$i<count($horarios);$i++){
                                             if($cH['ID_Horario'] == $horarios[$i]){
-                                                echo "<input type='checkbox' name='horario'>".$cH['Dia']." : ".$cH['Hora_inicio']." - ".$cH['Hora_fim']." </input><br>";
+                                                echo "<input type='checkbox' name='horario".$i."' value='".$cH['ID_Horario']."'>".$cH['Dia']." : ".$cH['Hora_inicio']." - ".$cH['Hora_fim']." </input><br>";
                                             }
                                         }
                                      }
                                    ?>
-     
                             <?php
-                            echo "<input class='btn btn-success mr-2' type='submit' value='Enviar' name='deletarCursoHorario'>
+                            echo "<a href='./listaAluno.php'  style='background-color:blue;width:70px;height:40px;font-size:22px;margin-bottom:10px;margin-top:10px'>Voltar</a><input class='btn btn-success mr-2' type='submit' value='Deletar' name='deletarCursoHorario'>
+                                <input style='display:none' value ='".count($horarios)."' name='tHorario'/> 
+                                <input style='display:none' value ='".count($cursos)."' name='tCurso'/>    
                                 <input style='display:none' value ='".$_GET['nome']."' name='nome'/>
                                 <input style='display:none' value ='".$_GET['alunoid']."' name='alunoid'/>";
                             ?>

@@ -178,7 +178,7 @@ div.usuarioDiv{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-bottom: 1px solid black;
 }
-div.usuarioDiv div#usuarioId{
+.usuarioDiv{
     margin-top:20vh; 
     padding: 20px;
 }
@@ -497,6 +497,9 @@ body.usuario div.usuarioDiv button{
 #mAdmin2{
     display: none;
 }
+#usuarioId{
+    margin-top:20vh;
+}
 @media (max-width: 959px) {
     #paragrafo{
         font-size: 25px;
@@ -510,6 +513,9 @@ body.usuario div.usuarioDiv button{
 
     }
     #mAdmin2{
+        display: none;
+    }
+    #mAdmin3{
         display: none;
     }
 
@@ -550,12 +556,18 @@ body.usuario div.usuarioDiv button{
         display: flex;
         left:30vw;
         position: relative;
+        width: 70px;
+        height: 9vh;
+        cursor: pointer;
+    }
+    #iconetopo{
+        width: 50px;
     }
 
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 200px) and (max-width: 767px) {
     #paragrafo{
         font-size: 22px;
     }
@@ -575,7 +587,21 @@ body.usuario div.usuarioDiv button{
         display: flex;
         left:30vw;
         position: relative;
+        width: 80px;
     }
+    #iconetopo{
+        width: 50px;
+    }
+    #usuarioDiv{
+        flex-direction: column;
+    }
+    div#usuarioId{
+       margin-top: 5vh;
+    }
+    #modal, #modalH {
+       height: auto;
+    }
+
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */

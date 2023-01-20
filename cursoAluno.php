@@ -74,7 +74,6 @@
             <div id="listaAlunos" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
                     <h1>Cadastre o aluno <?php echo $_GET['nome'] ?> em um Curso ou mais:</h1>
-                    <a href="./listaAluno.php" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
                 </div>
                 <div class="content">   
                 <div class="form-group col-12 col-lg-6">
@@ -225,7 +224,7 @@
                                    ?>
      
                             <?php
-                            echo "<input class='btn btn-success mr-2' type='submit' value='Enviar' name='alunoCurso'>
+                            echo "<a href='./listaAluno.php'  style='background-color:blue;width:70px;height:40px;font-size:22px;margin-bottom:10px;margin-top:10px'>Voltar</a><input class='btn btn-success mr-2' type='submit' value='Enviar' name='alunoCurso'>
                                 <input style='display:none' value ='".$_GET['nome']."' name='nome'/>
                                 <input style='display:none' value ='".$_GET['alunoid']."' name='alunoid'/>";
                             ?>

@@ -10,6 +10,7 @@ function adcElemento(){
 }
 function muda(){
   document.getElementById("muda").style.display = "block";
+  document.getElementById("canvas").style.display = "none";
 }
 function muda2(){
   document.getElementById("muda").style.display = "none";
@@ -42,6 +43,22 @@ function mostraSenha() {
  }
  function fechaH(){
   document.getElementById("modalH").style.display = "none";
+}
+function menu(){
+  let e = document.getElementById("mAdmin3");
+  if(getComputedStyle(e).display == "none"){
+    e.style.display = "flex";
+    e.style.flexDirection = "column";
+    e.style.backgroundColor = "black";
+    e.style.left = "60%";
+    e.style.width = "200px";
+    e.style.position = "absolute";
+    breaK
+  }
+  if(getComputedStyle(e).display == "flex"){
+    e.style.display = "none";
+  }
+ 
 }
  var numero = 0; 
  function adcCurso(){

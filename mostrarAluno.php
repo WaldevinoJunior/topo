@@ -72,91 +72,86 @@
         echo "<div id='EditarAlunos".$cAlunos['ID_Aluno']."'>
         <div id= 'dadosDoAluno' style='padding:10px;'>
         <h3>Dados do aluno</h3>
-        <p>Preencha somente os dados que você quiser alterar</p>
         <form method='post' action='valida.php'>
             <input type='hidden' name='_token' value='WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY'>
             <div class='row'>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='nome'>Nome</label>
-                    <input type='text' class='form-control' id='nome".$cAlunos['ID_Aluno']."' name='nome'  value ='".$cAlunos['Nome']."''>
+                    <p>".$cAlunos['Nome']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='nome'>Responsável</label>
-                    <input type='text' class='form-control' id='resp".$cAlunos['ID_Aluno']."' name='resp'  value ='".$cAlunos['Responsavel_2']."''>
+                    <p>".$cAlunos['Responsavel_2']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='nome'>Responsável Telefone</label>
-                    <input type='text' class='form-control' id='respT".$cAlunos['ID_Aluno']."' name='respT'  value ='".$cAlunos['Responsavel_numero']."''>
+                    <p>".$cAlunos['Responsavel_numero']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='nasc'>Data de Nasc.</label>
-                    <input type='date' class='form-control' id='nascimento".$cAlunos['ID_Aluno']."' name='nascimento' value ='".$cAlunos['Nascimento']."'>
+                    <p>".$cAlunos['Nascimento']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='email'>Email</label>
-                    <input type='email' class='form-control' id='email".$cAlunos['ID_Aluno']."' name='email' value ='".$cAlunos['Email']."'>
+                    <p>".$cAlunos['Email']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='tel'>Telefone</label>
-                    <input type='text' class='form-control' id='tel".$cAlunos['ID_Aluno']."' name='telefone' value ='".$cAlunos['Telefone']."'>
+                    <p>".$cAlunos['Telefone']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='cpf'>CPF</label>
-                    <input type='text' class='form-control' id='cpf".$cAlunos['ID_Aluno']."' name='cpf' value ='".$cAlunos['CPF']."'>
+                    <p>".$cAlunos['CPF']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='rg'>RG</label>
-                    <input type='text' class='form-control' id='rg".$cAlunos['ID_Aluno']."' name='rg' value ='".$cAlunos['RG']."'>
+                    <p>".$cAlunos['RG']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='cep'>CEP</label>
-                    <input type='text' class='form-control' id='cep".$cAlunos['ID_Aluno']."' name='cep' value ='".$cAlunos['CEP']."'>
+                    <p>".$cAlunos['CEP']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='estado'>Estado</label>
-                    <input type='text' class='form-control' id='estado".$cAlunos['ID_Aluno']."' name='estado' value ='".$cAlunos['Estado']."'>
+                    <p>".$cAlunos['Estado']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='cidade'>Cidade</label>
-                    <input type='text' class='form-control' id='cidade".$cAlunos['ID_Aluno']."' name='cidade' value ='".$cAlunos['Cidade']."'>
+                    <p>".$cAlunos['Cidade']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='rua'>Rua</label>
-                    <input type='text' class='form-control' id='rua".$cAlunos['ID_Aluno']."' name='rua'value ='".$cAlunos['Rua']."'>
+                    <p>".$cAlunos['Rua']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='numero'>Número</label>
-                    <input type='text' class='form-control' id='numero".$cAlunos['ID_Aluno']."' name='numero' value ='".$cAlunos['Numero']."'>
+                    <p>".$cAlunos['Numero']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='complemento'>Complemento</label>
-                    <input type='text' class='form-control' id='complemento".$cAlunos['ID_Aluno']."' name='complemento' value ='".$cAlunos['Complemento']."'>
+                    <p>".$cAlunos['Complemento']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                     <label for='senha'>Senha</label>
-                    <input type='text' class='form-control' id='senha".$cAlunos['ID_Aluno']."' name='senha' value ='".$cAlunos['Senha']."'>
+                    <p>".$cAlunos['Senha']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                 <label for='login'>Login</label>
-                <input type='text' class='form-control' id='login".$cAlunos['ID_Aluno']."' name='login' value ='".$cAlunos['Login']."'>
+                <p>".$cAlunos['Login']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                 <label for='login'>Status</label>
-                <select name='status'>
-                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='1'>Cursando</option>
-                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='2'>Concluído</option>
-                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='3'>Cancelado</option>
-                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='4'>Bloqueado</option>
-                </select>
+                <p>"; if($cAlunos['Status'] == 1){echo "Cursando";}if($cAlunos['Status'] == 2){echo "Concluído";}if($cAlunos['Status'] == 3){echo "Cancelado";}if($cAlunos['Status'] == 4){echo "Bloqueado";} echo"</p>
                 </div>
-                <input type='text' name='id' style='display:none;' value='".$cAlunos['ID_Aluno']."'>
+                <div class='form-group col-12 col-lg-6'>
+                <label for='login'>Cursos</label>
+                <p>".$cAlunos['Login']."</p>
+                </div>
             </div>
 
 
             <div class='d-flex justify-content-center'>
             <a href='listaAluno.php' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Voltar</a>
-           
-                <input class='btn btn-success mr-2'type='submit' value='Enviar' name='enviareditarAluno'>
             </div>
         </form>
     </div>     

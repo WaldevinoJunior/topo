@@ -74,7 +74,7 @@
             <section style="display:flex">
                     
             </section>
-            <p style="font-size:20px;margin-left:600px;margin-top:280px;">Cataguases, '.$data.'</p>
+            <p style="font-size:20px;margin-left:490px;margin-top:280px;">Cataguases, '.$data.'</p>
             </body>
         <div>
             
