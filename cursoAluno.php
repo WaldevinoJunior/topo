@@ -6,6 +6,10 @@
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conPro = $mysqli->query($consultapro) or die($mysqli->error);
     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+    session_start();
+    if($_SESSION['verifica'] != 2){
+        header('Location: ./index.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,40 +35,82 @@
 </head>
 <body id="adminBody">
 <nav class="menuAdmin">
-        <img src="img/iconetopo.jpg">
-        <ul>
+<a href="./admin.php"><img src="img/iconetopo.jpg" id="iconetopo"></a>
+        <ul id="mAdmin">
             <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
-            <li><a href=""><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i></a>
+            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i>
                     <div id="barras">
-                        <a href="./alunoCurso.php">Cadastrar Aluno em Curso</a>
                         <a href="./curso.php">Cadastrar Curso</a>
                         <a href="./horario.php">Cadastrar Horários</a>
+                        <a href="./alunoHorario.php">Cadastra Aluno em Horários</a>
                     </div>
             </li>
-            <li><a href=""><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i></a>
+            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i>
                     <div id="barras">
+                        <a href="./mostrahorario.php">Horário</a>
                         <a href="./propagandas.php">Propragandas</a>
-                        <a href="./salas.php">Salas</a>
-                        <a href="./maquinas.php">Máquinas</a>
                     </div>
             </li>
-            <li><a href=""><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i></a>
+            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i>
                         <div id="barras">
-                            <a href="./presenca.php">Lista de Presença</a>
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
                         </div>
             </li>
-            <li><a href=""><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i></a>
+            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
                     <div id="barras">
-                        <a href="./backup.php">Backup</a>
+                    <?php
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<a href='valida.php?back'>Backup</a>";
+                        }
+                    ?>
                         <a href="./licenca">Licença</a>
                         <a href="./sat.php">Satisfação</a>
                     </div>
             </li>
-            <li><a href="./index.html"><i class="bi bi-escape"></i>Sair</a></li>
+
+            <li><a href="./valida.php?sair=true"><i class="bi bi-escape"></i>Sair</a></li>
         </ul>
+        <div>
+        <img id="mAdmin2" src="img/menuH.png" onclick="menu()"/>
+        <ul id="mAdmin3" style="display:none">
+            <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
+            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i>
+                    <div id="barras">
+                        <a href="./curso.php">Cadastrar Curso</a>
+                        <a href="./horario.php">Cadastrar Horários</a>
+                        <a href="./alunoHorario.php">Cadastra Aluno em Horários</a>
+                    </div>
+            </li>
+            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i>
+                    <div id="barras">
+                        <a href="./mostrahorario.php">Horário</a>
+                        <a href="./propagandas.php">Propragandas</a>
+                    </div>
+            </li>
+            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i>
+                        <div id="barras">
+                            <a href="./contratos.php">Contratos</a>
+                            <a href="./pagamentos.php">Pagamentos</a>
+                            <a href="./aniversariantes.php">Aniversariantes</a>
+                        </div>
+            </li>
+            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
+                    <div id="barras">
+                    <?php
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<a href='valida.php?back'>Backup</a>";
+                        }
+                    ?>
+                        <a href="./licenca">Licença</a>
+                        <a href="./sat.php">Satisfação</a>
+                    </div>
+            </li>
+
+            <li><a href="./valida.php?sair=true"><i class="bi bi-escape"></i>Sair</a></li>
+        </ul>
+        </div>
     </nav>
         <div class="admin">
             <div id="painel">

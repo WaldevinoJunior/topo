@@ -497,6 +497,9 @@ body.usuario div.usuarioDiv button{
 #mAdmin2{
     display: none;
 }
+#mAdmin3{
+    display: none;
+}
 #usuarioId{
     margin-top:20vh;
 }
@@ -513,9 +516,6 @@ body.usuario div.usuarioDiv button{
 
     }
     #mAdmin2{
-        display: none;
-    }
-    #mAdmin3{
         display: none;
     }
 
@@ -567,7 +567,7 @@ body.usuario div.usuarioDiv button{
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media (min-width: 200px) and (max-width: 767px) {
+@media (min-width: 50px) and (max-width: 767px) {
     #paragrafo{
         font-size: 22px;
     }
@@ -585,9 +585,12 @@ body.usuario div.usuarioDiv button{
     }
     #mAdmin2{
         display: flex;
-        left:30vw;
+        left:20vw;
         position: relative;
         width: 80px;
+    }
+    #func{
+        flex-direction: column;
     }
     #iconetopo{
         width: 50px;
@@ -601,7 +604,9 @@ body.usuario div.usuarioDiv button{
     #modal, #modalH {
        height: auto;
     }
-
+    .esconde{
+        display: none;
+    }
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
