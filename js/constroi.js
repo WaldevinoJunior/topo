@@ -50,7 +50,7 @@ function menu(){
     e.style.display = "flex";
     e.style.flexDirection = "column";
     e.style.backgroundColor = "black";
-    e.style.left = "60%";
+    e.style.left = "30%";
     e.style.width = "200px";
     e.style.position = "absolute";
     breaK
