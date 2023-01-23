@@ -144,6 +144,7 @@
                                 //    $table .= '<th>Responsável</th>';
                                    $table .= '<th class="esconde">CPF</th>';
                                    $table .= '<th class="esconde">Telefone</th>';
+                                   $table .= '<th>Situação</th>';
                                 //    $table .= '<th>CPF</th>';
                                 //    $table .= '<th>RG</th>';
                                 //    $table .= '<th>CEP</th>';
@@ -163,7 +164,8 @@
                                         $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
                                         $table .= "<td>{$cAlunos['Nome']}</td>";
                                         $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
-                                         $table .= "<td class='esconde'>{$cAlunos['Telefone']}</td>";
+                                        $table .= "<td class='esconde'>{$cAlunos['Telefone']}</td>";
+                                        $table .= "<td class='esconde'><i class='bi bi-x-square-fill' style='width:10px'></i></td>";
                                         $table .= "<td><a href='editarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Editar</a><a href='mostrarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
                                         $table .= "<td><a style='background-color:green;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a>
                                         <a style='background-color:red;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='deletar.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Deletar</a></td>";

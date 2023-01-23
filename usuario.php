@@ -31,6 +31,18 @@
     <script src="js/constroi.js"> </script>
 </head>
 <!-- CORPO DA PAGINA USUARIO -->
+<script>
+   var i = setInterval(function () {
+    
+    clearInterval(i);
+  
+    // O código desejado é apenas isto:
+    document.getElementById("cursos").style.display = "flex";
+    document.getElementById("load").style.display = "none";
+
+}, 1500);
+    </script>
+    
 <body class="usuario">
     <!-- CABEÇALHO DA PAGINA -->
     <nav id="nav">
@@ -104,7 +116,10 @@
     </div> 
     <h1 id="h1curso" style="margin-bottom:2vh;font-family: system-ui;">Seus Cursos</h1>
     <!--CURSOS DO ALUNO -->
-   <div id="cursos"> 
+    <div id="load" style="width:30vw;height:30vh;display:flex;justify-content:center;align-items:center;margin:auto;">
+    <img  src="img/load.gif" >
+</div>
+    <div id="cursos" style="display:none"> 
    <div id="cursoCont">
         <div id="btnVoltar">
             <a class="btnVoltarCurso" style="color:white;"onclick="javascript:volta();">Voltar</a>
