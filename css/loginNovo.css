@@ -499,6 +499,7 @@ body.usuario div.usuarioDiv button{
 }
 #mAdmin3{
     display: none;
+    color:black;
 }
 #usuarioId{
     margin-top:20vh;
