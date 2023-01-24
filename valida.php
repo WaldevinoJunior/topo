@@ -200,7 +200,7 @@ if(isset($_POST['enviareditarAluno'])){
 	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
 	, Senha = '{$_POST['senha']}', Login = '{$_POST['login']}', Status = '{$_POST['status']}'  WHERE ID_Aluno = '{$_POST['id']}'";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
-	header('Location: ./admin.php');
+	header('Location: ./listaAluno.php');
 }
 if(isset($_POST['cadastraAluno'])){
 	
