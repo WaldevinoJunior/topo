@@ -612,7 +612,7 @@ body.usuario div.usuarioDiv button{
         flex-direction: column;
     }
     #icones h1{
-        margin: auto;
+        margin: 0;
         top: -60px;
         display: flex;
         position: relative;
@@ -850,4 +850,10 @@ input[type=number]::-webkit-outer-spin-button{
 }
 #icones h1{
     margin:auto;
+}
+#icones i{
+    font-size: 50px;
+}
+.menuAdmin #icones a{
+    color:black;
 }

@@ -76,28 +76,28 @@
         <div>
         <img id="mAdmin2" src="img/menuH.png" onclick="menu()"/>
         <ul id="mAdmin3" style="display:none">
-            <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
-            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i>
+            <li><a href="./admin.php"  style="color:black"><i class="bi bi-house"></i>Início</a></li>
+            <li style="cursor:pointer;"><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i>
                     <div id="barras">
                         <a href="./curso.php">Cadastrar Curso</a>
                         <a href="./horario.php">Cadastrar Horários</a>
                         <a href="./alunoHorario.php">Cadastra Aluno em Horários</a>
                     </div>
             </li>
-            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i>
+            <li style="cursor:pointer;"><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i>
                     <div id="barras">
                         <a href="./mostrahorario.php">Horário</a>
                         <a href="./propagandas.php">Propragandas</a>
                     </div>
             </li>
-            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i>
+            <li style="cursor:pointer;"><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i>
                         <div id="barras">
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
                         </div>
             </li>
-            <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
+            <li style="cursor:pointer;"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
                     <div id="barras">
                     <?php
                         if($_SESSION['Perfil'] == "Administrador"){
@@ -109,7 +109,7 @@
                     </div>
             </li>
 
-            <li><a href="./valida.php?sair=true"><i class="bi bi-escape"></i>Sair</a></li>
+            <li><a href="./valida.php?sair=true"  style="color:black"><i class="bi bi-escape"></i>Sair</a></li>
         </ul>
         </div>
     </nav>
