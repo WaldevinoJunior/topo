@@ -155,8 +155,21 @@ if(isset($_POST['enviarteste'])){
 					$media = $media/$aulas2;
 					$datafim = date('Y-m-d');
 					$codigo = uniqid();
+					$sqlhistorico = "SELECT codigo FROM historicos";
+					$sqlhis = $mysqli->query($sqlhistorico) or die($mysqli->error);
+					while($c = mysqli_fetch_array($sqlhis)){
+						$historio[] = $c['codigo']; 
+					}
+					for($i=0;$i<count($historio);$i++){
+						if($codigo == $historico[$i]){
+							$condigo = uniqid();
+							$i = 0;
+						}
+					}
 					$sqlprogresso3 = "INSERT INTO historicos (id_aluno, id_curso, media, data_fim, codigo) VALUES ('{$_SESSION['ID_Aluno']}', '{$_POST['idcurso']}', '{$media}', '{$datafim}', '{$codigo}')";
 					$sqlpro3= $mysqli->query($sqlprogresso3) or die($mysqli->error);
+					$sqlprogresso4 = "UPDATE alunos SET Status = '2' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
+					$sqlpro3 = $mysqli->query($sqlprogresso4) or die($mysqli->error);
 				}
 			}
 		}
@@ -376,6 +389,25 @@ if(isset($_POST['deletarCursoHorario'])){
 		}
 	}
 	header('Location: ./listaAluno.php');
+}
+if(isset($_POST['deletaColab'])){
+	$delete = "DELETE FROM colaboradores WHERE ID_Colaborador = '{$_POST['idcolab']}'";
+	$sqldelete = $mysqli->query($delete) or die($mysqli->error);
+	header('Location: ./admin.php');
+}
+if(isset($_POST['verificaCerti'])){
+	$verifica = "SELECT * FROM historicos";
+	$sqlveri = $mysqli->query($verifica) or die($mysqli->error);
+	$i=0;
+	while($c = mysqli_fetch_array($sqlveri)){
+		if($c['codigo'] == $_POST['codigo']){
+			header('Location: ./certificadoCodigo.php?codigo='.$c['codigo'].'');
+			$i=1;
+		}
+	}
+	if($i==0){
+		header('Location: ./index.html');
+	}
 }
 /*if($contador!=1){
 	header('Location: /topo/login.html');

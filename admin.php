@@ -130,9 +130,9 @@
                                 $table .= '<tr>';
                                    $table .= '<th>ID</th>';
                                    $table .= '<th>Nome</th>';
-                                   $table .= '<th>Nascimento</th>';
-                                   $table .= '<th>Email</th>';
-                                   $table .= '<th>Telefone</th>';
+                                   $table .= '<th class="esconde">Login</th>';
+                                   $table .= '<th class="esconde">Email</th>';
+                                   $table .= '<th class="esconde">Telefone</th>';
                                 //    $table .= '<th>CEP</th>';
                                 //    $table .= '<th>Estado</th>';
                                 //    $table .= '<th>Cidade</th>';
@@ -151,9 +151,9 @@
                                     $table .= '<tr>';
                                         $table .= "<td>{$cColab['ID_Colaborador']}</td>";
                                         $table .= "<td>{$cColab['Nome']}</td>";
-                                        $table .= "<td>{$cColab['Nascimento']}</td>";
-                                        $table .= "<td>{$cColab['Email']}</td>";
-                                        $table .= "<td>{$cColab['Telefone']}</td>";
+                                        $table .= "<td class='esconde'>{$cColab['Login']}</td>";
+                                        $table .= "<td class='esconde'>{$cColab['Email']}</td>";
+                                        $table .= "<td class='esconde'>{$cColab['Telefone']}</td>";
                                         // $table .= "<td>{$cColab['CEP']}</td>";
                                         // $table .= "<td>{$cColab['Estado']}</td>";
                                         // $table .= "<td>{$cColab['Cidade']}</td>";
@@ -164,7 +164,8 @@
                                         // $table .= "<td>{$cColab['Senha']}</td>";
                                         $table .= "<td>{$cColab['Perfil']}</td>";
                                         //$table .= "<td>{$cColab['Licenca']}</td>";
-                                        $table .= "<td><button onclick='EditarColab".$cColab['ID_Colaborador']."();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button><button class='btn btn-danger btn-sm' onclick='deletarColab();'>Deletar</button></td>";
+                                        $table .= "<td><button onclick='EditarColab".$cColab['ID_Colaborador']."();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button>
+                                        <form action='valida.php' method='POST'><input style='display:none' value='".$cColab['ID_Colaborador']."' name='idcolab'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaColab' value='Deletar'></input></form></td>";
                                         $table .= '</tr>';
                                     echo "<script>
                                             function EditarColab".$cColab['ID_Colaborador']."(){
