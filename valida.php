@@ -14,12 +14,20 @@ $con = $mysqli->query($consulta) or die($mysqli->error);
 $con2 = $mysqli->query($consulta2) or die($mysqli->error);
 $con3 = $mysqli->query($consulta3) or die($mysqli->error);
 $con4 = $mysqli->query($consulta4) or die($mysqli->error);
+function clear($input){
+	global $mysqli;
+	$var = mysqli_escape_string($mysqli,$input);
+	$var = htmlspecialchars($var);
+	return $var;
+}
 if($mysqli->connect_errno){
     echo "falha na conexao: (".$mysqli->connect_errno.") " .$mysqli->connect_error;
 }
 if(isset($_POST['submitindex'])){
 	session_start();
 	$_SESSION['verifica'] = 0;
+	$_POST['Login'] = clear($_POST['Login']);
+	$_POST['Senha'] = clear($_POST['Senha']);
 	while($c = mysqli_fetch_array($con)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
 			if($_POST['Login'] == $c['Login'] && $_POST['Senha'] == $c['Senha']){
@@ -54,21 +62,6 @@ if(isset($_GET['sair'])){
 	$_SESSION['verifica'] = 0;
 	header('Location:index.html');
 }
-// else{
-// 	echo $resultado;
-// 	header('location: ./services.html');
-//     exit;
-// }
-while($c3 = mysqli_fetch_array($con3)){
-	if(isset($_POST['Login']) && isset($_POST['Senha'])){
-		if($_POST['Login'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
-			session_start();
-			$_SESSION['nome'] = $c3['Nome'];
-			$_SESSION['ID_Colaborador'] = $c3['ID_Colaborador'];
-			header('Location: ./admin.php');
-		}	
-	}
-}
  
 
 if(isset($_POST['Enviar'])){
@@ -88,6 +81,8 @@ if(isset($_POST['Enviar'])){
 }
 if(isset($_POST['enviarteste'])){
 	$inse = 0;
+	$_POST['aula'] = clear($_POST['aula']);
+	$_POST['idcurso'] = clear($_POST['idcurso']);
 	if(!isset($_SESSION)){session_start();}
 	while($c4 = mysqli_fetch_array($con4)){
 		if($_POST['aula'] == $c4['Numero_aula'] && $_POST['idcurso'] == $c4['ID_Curso'] && $_SESSION['ID_Aluno'] == $c4['ID_Aluno'] && $c4['Nota'] < $_COOKIE['total']){
@@ -182,15 +177,33 @@ if(isset($_POST['enviarteste'])){
 	
 }
 if(isset($_POST['enviareditarAluno'])){
+	$_POST['nome'] = clear($_POST['nome']);
+	$_POST['resp'] = clear($_POST['resp']);
+	$_POST['respT'] = clear($_POST['respT']);
+	$_POST['nascimento'] = clear($_POST['nascimento']);
+	$_POST['email'] = clear($_POST['email']);
+	$_POST['telefone'] = clear($_POST['telefone']);
+	$_POST['cpf'] = clear($_POST['cpf']);
+	$_POST['rg'] = clear($_POST['rg']);
+	$_POST['cep'] = clear($_POST['cep']);
+	$_POST['estado'] = clear($_POST['estado']);
+	$_POST['cidade'] = clear($_POST['cidade']);
+	$_POST['rua'] = clear($_POST['rua']);
+	$_POST['numero'] = clear($_POST['numero']);
+	$_POST['complemento'] = clear($_POST['complemento']);
+	$_POST['senha'] = clear($_POST['senha']);
+	$_POST['login'] = clear($_POST['login']);
+	$_POST['status'] = clear($_POST['status']);
 	$consulta = "UPDATE alunos SET Nome = '{$_POST['nome']}',Responsavel_2 = '{$_POST['resp']}',Responsavel_numero = '{$_POST['respT']}', Nascimento = '{$_POST['nascimento']}', 
 	Email = '{$_POST['email']}',Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
 	RG = '{$_POST['rg']}', CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
 	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
 	, Senha = '{$_POST['senha']}', Login = '{$_POST['login']}', Status = '{$_POST['status']}'  WHERE ID_Aluno = '{$_POST['id']}'";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
-	header('Location: ./admin.php');
+	header('Location: ./listaAluno.php');
 }
 if(isset($_POST['cadastraAluno'])){
+	
 	$consulta = "INSERT INTO alunos (Nome, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, imagem) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
@@ -214,6 +227,21 @@ if(isset($_POST['enviareditarColab'])){
 	header('Location: ./admin.php');
 }
 if(isset($_POST['cadastraColab'])){
+	$_POST['nome'] = clear($_POST['nome']);
+	$_POST['nascimento'] = clear($_POST['nascimento']);
+	$_POST['email'] = clear($_POST['email']);
+	$_POST['telefone'] = clear($_POST['telefone']);
+	$_POST['cpf'] = clear($_POST['cpf']);
+	$_POST['rg'] = clear($_POST['rg']);
+	$_POST['cep'] = clear($_POST['cep']);
+	$_POST['estado'] = clear($_POST['estado']);
+	$_POST['cidade'] = clear($_POST['cidade']);
+	$_POST['rua'] = clear($_POST['rua']);
+	$_POST['numero'] = clear($_POST['numero']);
+	$_POST['complemento'] = clear($_POST['complemento']);
+	$_POST['senha'] = clear($_POST['senha']);
+	$_POST['login'] = clear($_POST['login']);
+	$_POST['status'] = clear($_POST['perfil']);
 	$consulta = "INSERT INTO colaboradores (Nome, Nascimento, Email, Telefone, CPF, CEP, Estado, Cidade, Rua, Numero, Complemento,Login, Senha, Perfil) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
@@ -222,6 +250,22 @@ if(isset($_POST['cadastraColab'])){
 	header('Location: ./admin.php');
 }
 if(isset($_POST['cadastraAluno2'])){
+	$_POST['nome'] = clear($_POST['nome']);
+	$_POST['resp'] = clear($_POST['resp']);
+	$_POST['respT'] = clear($_POST['respT']);
+	$_POST['nascimento'] = clear($_POST['nascimento']);
+	$_POST['email'] = clear($_POST['email']);
+	$_POST['telefone'] = clear($_POST['telefone']);
+	$_POST['cpf'] = clear($_POST['cpf']);
+	$_POST['rg'] = clear($_POST['rg']);
+	$_POST['cep'] = clear($_POST['cep']);
+	$_POST['estado'] = clear($_POST['estado']);
+	$_POST['cidade'] = clear($_POST['cidade']);
+	$_POST['rua'] = clear($_POST['rua']);
+	$_POST['numero'] = clear($_POST['numero']);
+	$_POST['complemento'] = clear($_POST['complemento']);
+	$_POST['senha'] = clear($_POST['senha']);
+	$_POST['login'] = clear($_POST['login']);
 	$consulta = "INSERT INTO alunos (Nome,Responsavel_2, Responsavel_numero, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, Login, Status,  imagem) VALUES  ('{$_POST['nome']}','{$_POST['resp']}','{$_POST['respT']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
@@ -253,6 +297,8 @@ if(isset($_POST['cadastraAluno2'])){
 	header('Location: ./cadastraAluno.php');
 }
 if(isset($_POST['alunoCurso'])){
+	$_POST['alunoid'] = clear($_POST['alunoid']);
+	$_POST['nome'] = clear($_POST['nome']);
 	$dataatual = date('y/m/d');
 	$id = $_POST['alunoid'];
 	$nome = $_POST['nome'];
@@ -265,8 +311,10 @@ if(isset($_POST['alunoCurso'])){
 			$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
 		}
 	}
+	$_POST['conthorario'] = clear($_POST['conthorario']);
 	for($i = 0;$i<$_POST['conthorario'];$i++){
 		if(isset($_POST['horario'.$i.''])){
+			$_POST['horario'.$i.''] = clear($_POST['horario'.$i.'']);
 			$i2 = 0;
 			$consultah = "SELECT * FROM horarios_alunos";
 			$sqlh = $mysqli->query($consultah) or die($mysqli->error);
@@ -289,22 +337,34 @@ if(isset($_POST['alunoCurso'])){
 }
 }
 if(isset($_POST['cadastraCurso'])){
+	$_POST['nome'] = clear($_POST['nome']);
+	$_POST['preco'] = clear($_POST['preco']);
+	$_POST['horas'] = clear($_POST['horas']);
+	$_POST['descricao'] = clear($_POST['descricao']);
+	$_POST['aulas'] = clear($_POST['aulas']);
 	$consulta = "INSERT INTO cursos (Nome_curso, Preco, Horas, Descricao, aulas_totais) VALUES  ('{$_POST['nome']}', '{$_POST['preco']}', 
 	'{$_POST['horas']}','{$_POST['descricao']}','{$_POST['aulas']}')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./curso.php');
 }
 if(isset($_POST['buscaAluno'])){
+	$_POST['aluno'] = clear($_POST['aluno']);
 	header('Location: ./buscarAluno.php?alunoid='.$_POST['aluno'].'');
 }
 if(isset($_POST['cadastraHorario'])){
+	$_POST['dia'] = clear($_POST['dia']);
+	$_POST['datainicio'] = clear($_POST['datainicio']);
+	$_POST['datafim'] = clear($_POST['datafim']);
+	$_POST['maquinas'] = clear($_POST['maquinas']);
 	$consulta = "INSERT INTO horarios (Dia, Hora_inicio, Hora_fim, maquinas_dispo, maquinas_ocup) VALUES  ('{$_POST['dia']}', '{$_POST['datainicio']}', 
 	'{$_POST['datafim']}','{$_POST['maquinas']}','0')";
 	$sqlhorario = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./horario.php');
 }
 if(isset($_POST['cadastraAlunoHorario'])){
+	$_POST['aluno'] = clear($_POST['aluno']);
 	for($i = 0;$i<$_POST['conthorario'];$i++){
+		$_POST['horario'.$i.''] = clear($_POST['horario'.$i.'']);
 		if(isset($_POST['horario'.$i.''])){
 			$i2 = 0;
 			$consultah = "SELECT * FROM horarios_alunos";
@@ -333,9 +393,12 @@ if(isset($_POST['cadastraAlunoHorario'])){
 	//header('Location: ./alunoHorario.php');*/
 }
 if(isset($_POST['presenca'])){
+	$_POST['cont'] = clear($_POST['cont']);
 	for($i=0;$i<$_POST['cont'];$i++){
 		$i2 = "aluno".$i;
 		if(isset($_POST[$i2])){
+			$_POST[$i2] = clear($_POST[$i2]);
+			$_POST['idhorario'] = clear($_POST['idhorario']);
 			$confirma = 0;
 			$data = date('Y-m-d');
 			$consultaPre = "SELECT * FROM alunos_presenca";
@@ -358,11 +421,13 @@ if(isset($_GET['back'])){
 	header('Location: ./admin.php');
 }
 if(isset($_POST['deletarCursoHorario'])){
+	$_POST['alunoid'] = clear($_POST['alunoid']);
 	$consultaHA = "SELECT ID_Horario FROM horarios_alunos WHERE ID_Aluno = '{$_POST['alunoid']}'";
 	$conHA = $mysqli->query($consultaHA) or die($mysqli->error);
 	while($c = mysqli_fetch_array($conHA)){
 		for($i=0;$i<$_POST['tHorario'];$i++){
 			if(isset($_POST['horario'.$i.''])){
+				$_POST['horario'.$i.''] = clear($_POST['horario'.$i.'']);
 				if($c['ID_Horario'] == $_POST['horario'.$i.'']){
 					$delete = "DELETE FROM horarios_alunos WHERE ID_Horario = '{$c['ID_Horario']}' AND ID_Aluno = '{$_POST['alunoid']}'";
 					$sqldelete = $mysqli->query($delete) or die($mysqli->error);
@@ -391,11 +456,13 @@ if(isset($_POST['deletarCursoHorario'])){
 	header('Location: ./listaAluno.php');
 }
 if(isset($_POST['deletaColab'])){
+	$_POST['idcolab'] = clear($_POST['idcolab']);
 	$delete = "DELETE FROM colaboradores WHERE ID_Colaborador = '{$_POST['idcolab']}'";
 	$sqldelete = $mysqli->query($delete) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
 if(isset($_POST['verificaCerti'])){
+	$_POST['codigo'] = clear($_POST['codigo']);
 	$verifica = "SELECT * FROM historicos";
 	$sqlveri = $mysqli->query($verifica) or die($mysqli->error);
 	$i=0;

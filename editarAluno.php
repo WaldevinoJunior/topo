@@ -187,13 +187,11 @@
                 <input type='text' class='form-control' id='login".$cAlunos['ID_Aluno']."' name='login' value ='".$cAlunos['Login']."'>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
-                <label for='login'>Status</label>
-                <select name='status'>
-                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='1'>Cursando</option>
-                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='2'>Concluído</option>
-                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='3'>Cancelado</option>
-                <option id='login".$cAlunos['ID_Aluno']."' name='login' value ='4'>Bloqueado</option>
-                </select>
+                <label for='login'>Status:</label><br>
+                <input type='radio' id='login".$cAlunos['ID_Aluno']."' name='status' value ='1'>Cursando</input><br>
+                <input type='radio' id='login".$cAlunos['ID_Aluno']."' name='status' value ='2'>Concluído</input><br>
+                <input type='radio' id='login".$cAlunos['ID_Aluno']."' name='status' value ='3'>Cancelado</input><br>
+                <input type='radio' id='login".$cAlunos['ID_Aluno']."' name='status' value ='4'>Bloqueado</input><br>
                 </div>
                 <input type='text' name='id' style='display:none;' value='".$cAlunos['ID_Aluno']."'>
             </div>

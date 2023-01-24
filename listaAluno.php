@@ -120,6 +120,12 @@
             <div id="func">
                 <div id="listaAlunos"  class="listAlunos">
                 <div class="cont-header" id="cbcLista">
+                    <div style="display:flex;" id="icones">
+                    <i class='bi bi-person-fill'></i><h1>Cursando</h1>
+                    <i class='bi bi-check2-circle'></i><h1>Concluído</h1>
+                    <i class='bi bi-x-square-fill'></i><h1>Cancelado</h1>
+                    <i class='bi bi-exclamation-diamond-fill'></i><h1>Bloqueado</h1>
+                    </div><hr>
                     <h1>Lista de alunos</h1>
                     <form action="buscarAluno.php" method="POST">
                     <select name='aluno'>
@@ -169,10 +175,10 @@
                                             $table .= "<td class='esconde'><i class='bi bi-person-fill'></i></td>";
                                         }
                                         if($cAlunos['Status'] == 2){
-                                            $table .= "<td class='esconde'><i class='bi bi-check2-circle' style='width:20px'</i></td>";
+                                            $table .= "<td class='esconde'><i class='bi bi-check2-circle'></i></td>";
                                         }
                                         if($cAlunos['Status'] == 3){
-                                            $table .= "<td class='esconde'><i class='bi bi-x-square-fill' style='width:10px'></i></td>";
+                                            $table .= "<td class='esconde'><i class='bi bi-x-square-fill'></i></td>";
                                         }
                                         if($cAlunos['Status'] == 4){
                                             $table .= "<td class='esconde'><i class='bi bi-exclamation-diamond-fill'></i></td>";

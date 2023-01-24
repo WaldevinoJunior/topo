@@ -40,7 +40,7 @@
     document.getElementById("cursos").style.display = "flex";
     document.getElementById("load").style.display = "none";
 
-}, 1500);
+}, 2000);
     </script>
     
 <body class="usuario">

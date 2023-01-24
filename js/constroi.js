@@ -49,8 +49,7 @@ function menu(){
   if(getComputedStyle(e).display == "none"){
     e.style.display = "flex";
     e.style.flexDirection = "column";
-    e.style.backgroundColor = "black";
-    e.style.left = "30%";
+    e.style.backgroundColor = "blue";
     e.style.width = "200px";
     e.style.position = "absolute";
     breaK

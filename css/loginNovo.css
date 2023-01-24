@@ -607,6 +607,19 @@ body.usuario div.usuarioDiv button{
     .esconde{
         display: none;
     }
+    #icones{
+        flex-direction: column;
+    }
+    #icones h1{
+        margin: auto;
+        top: -60px;
+        display: flex;
+        position: relative;
+        font-size: 30px;
+    }
+    #func i {
+        font-size: 50px;
+    }
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -833,4 +846,7 @@ input[type=number]::-webkit-outer-spin-button{
     margin-bottom: 10px;
     margin-right: 5px;
     
+}
+#icones h1{
+    margin:auto;
 }
