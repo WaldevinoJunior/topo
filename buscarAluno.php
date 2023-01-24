@@ -144,6 +144,7 @@
                                 //    $table .= '<th>Responsável</th>';
                                 $table .= '<th class="esconde">CPF</th>';
                                 $table .= '<th class="esconde">Telefone</th>';
+                                $table .= '<th class="esconde">Situação</th>';
                                 //    $table .= '<th>CPF</th>';
                                 //    $table .= '<th>RG</th>';
                                 //    $table .= '<th>CEP</th>';
@@ -171,6 +172,18 @@
                                         // $table .= "<td>{$cAlunos['Responsavel']}</td>";
                                         $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
                                         $table .= "<td class='esconde'>{$cAlunos['Telefone']}</td>";
+                                        if($cAlunos['Status'] == 1){
+                                            $table .= "<td class='esconde'><i class='bi bi-person-fill'></i></td>";
+                                        }
+                                        if($cAlunos['Status'] == 2){
+                                            $table .= "<td class='esconde'><i class='bi bi-check2-circle' style='width:20px'</i></td>";
+                                        }
+                                        if($cAlunos['Status'] == 3){
+                                            $table .= "<td class='esconde'><i class='bi bi-x-square-fill' style='width:10px'></i></td>";
+                                        }
+                                        if($cAlunos['Status'] == 4){
+                                            $table .= "<td class='esconde'><i class='bi bi-exclamation-diamond-fill'></i></td>";
+                                        }
                                         // $table .= "<td>{$cAlunos['CPF']}</td>";
                                         // $table .= "<td>{$cAlunos['RG']}</td>";
                                         // $table .= "<td>{$cAlunos['CEP']}</td>";

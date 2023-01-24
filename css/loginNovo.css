@@ -803,6 +803,10 @@ input[type=number]::-webkit-outer-spin-button{
 #func i{
     font-size: 80px;
 }
+#func td i{
+    font-size:50px;
+    margin-left:10px;
+}
 .funcA{
     padding: 50px;
 }
