@@ -60,6 +60,20 @@ function menu(){
   }
  
 }
+function certificado(){
+  if(getComputedStyle(document.getElementById("certi")).display == "none"){
+    document.getElementById("certi").style.display = "block";
+    breaK
+  }
+  if(getComputedStyle(document.getElementById("certi")).display == "block"){
+    document.getElementById("certi").style.display = "none";
+    breaK
+  }
+}
+function certificado2(){
+    document.getElementById("certi2").style.display = "block";
+    console.log(document.getElementById("certi2"));
+}
  var numero = 0; 
  function adcCurso(){
     let a2 = document.getElementById("cursos")

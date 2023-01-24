@@ -242,6 +242,22 @@ if(isset($_POST['cadastraColab'])){
 	$_POST['senha'] = clear($_POST['senha']);
 	$_POST['login'] = clear($_POST['login']);
 	$_POST['status'] = clear($_POST['perfil']);
+	$verifica = "SELECT * FROM alunos";
+	$veri = $mysqli->query($verifica) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./admin.php');
+			exit;
+		}
+	}
+	$verifica2 = "SELECT * FROM colaboradores";
+	$veri2 = $mysqli->query($verifica2) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri2)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./admin.php');
+			exit;
+		}
+	}
 	$consulta = "INSERT INTO colaboradores (Nome, Nascimento, Email, Telefone, CPF, CEP, Estado, Cidade, Rua, Numero, Complemento,Login, Senha, Perfil) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
@@ -266,6 +282,22 @@ if(isset($_POST['cadastraAluno2'])){
 	$_POST['complemento'] = clear($_POST['complemento']);
 	$_POST['senha'] = clear($_POST['senha']);
 	$_POST['login'] = clear($_POST['login']);
+	$verifica = "SELECT * FROM alunos";
+	$veri = $mysqli->query($verifica) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./cadastraAluno.php');
+			exit;
+		}
+	}
+	$verifica2 = "SELECT * FROM colaboradores";
+	$veri2 = $mysqli->query($verifica2) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri2)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./cadastraAluno.php');
+			exit;
+		}
+	}
 	$consulta = "INSERT INTO alunos (Nome,Responsavel_2, Responsavel_numero, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, Login, Status,  imagem) VALUES  ('{$_POST['nome']}','{$_POST['resp']}','{$_POST['respT']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'

@@ -51,7 +51,8 @@
                 <li><a href="javascript:muda();">Login</a></li>
                 <li><a href="./parte.html">Afiliados</a></li>
                 <li><a href="./contact.html">Contato</a></li>
-                <form><label><font color="white"><b>Validar Certificado:&nbsp</b></font></label><input type="text" name="codigo">&nbsp<input value="Enviar" name="verificaCerti" type="submit"/></form>
+                <li style="cursor:pointer"><a>Validar Certificado Abaixo</a></li>
+                <form id="certi2" action="valida.php" method="POST"><input type="text" name="codigo">&nbsp<input value="Enviar" name="verificaCerti" type="submit"/></form>
                 
             </ul>
         </nav>
@@ -77,7 +78,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7" style="left:-70px">
                     <nav class="nav-menu">
                         <ul>
                             <li class="active"><a href="./index.html">Home</a></li>
@@ -87,7 +88,8 @@
                             <li><a href="javascript:muda();">Login</a></li>
                             <li><a href="./parte.html">Afiliados</a></li>
                             <li><a href="./contact.html">Contato</a></li>
-                            <form action="valida.php" method="POST"><label><font color="white"><b>Validar Certificado:&nbsp</b></font></label><input type="text" name="codigo">&nbsp<input value="Enviar" name="verificaCerti" type="submit"/></form>
+                            <li style="cursor:pointer"><a onclick="certificado();">Validar Certificado</a></li>
+                            <form id="certi" style="display:none" action="valida.php" method="POST"><input type="text" name="codigo">&nbsp<input value="Enviar" name="verificaCerti" type="submit"/></form>
                         </ul>
                     </nav>
                 </div>
