@@ -300,7 +300,7 @@
                 textoAula.setAttribute('id','textoAula');
                 sair.setAttribute('id', 'sair');
                 sair.setAttribute('onclick', 'sair".$c['ID_Curso']."aula".$i2."()');
-                sair.innerHTML = 'sair';
+                sair.innerHTML = 'Sair';
                 prox.setAttribute('id', 'prox".$c['ID_Curso']."aula".$i2."');
                 vol.setAttribute('id', 'vol".$c['ID_Curso']."aula".$i2."');
                 prox.setAttribute('class', 'proxima');
