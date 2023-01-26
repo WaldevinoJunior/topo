@@ -2,6 +2,8 @@
     include("valida.php");
      $consultaAlunos = "SELECT * from alunos WHERE ID_Aluno = '{$_GET['alunoid']}'";
      $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
+     $consultaPro = "SELECT ID_Curso FROM aluno_curso_progressos WHERE ID_Aluno = '{$_GET['alunoid']}'";
+     $conPro = $mysqli->query($consultaPro) or die($mysqli->error);
      $consultaColab = "SELECT * from colaboradores";
      $consultaCursos = "SELECT * from cursos";
      $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
@@ -195,7 +197,18 @@
                 </div>
                 <div class='form-group col-12 col-lg-6'>
                 <label for='login'>Cursos</label>
-                <p>".$cAlunos['Login']."</p>
+                <p>";
+                $cursos = [];
+                while($cPro = mysqli_fetch_array($conPro)){
+                    $cursos[] = $cPro['ID_Curso'];
+                }
+                while($cC = mysqli_fetch_array($conCursos)){
+                    for($i=0;$i<count($cursos);$i++){
+                        if($cC['ID_Curso'] == $cursos[$i]){
+                            echo $cC['Nome_curso']."<br>";}
+                        }
+                    } 
+                    echo"</p>
                 </div>
             </div>
 

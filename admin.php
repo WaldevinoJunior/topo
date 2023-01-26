@@ -236,6 +236,13 @@
                                                     <label for='senha'>Senha</label>
                                                     <input type='text' class='form-control' id='senha".$cColab['ID_Colaborador']."' name='senha' value ='".$cColab['Senha']."'>
                                                 </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                <label for='senha'>Perfil</label><br>
+                                                <input type='radio' name='perfil' value='Administrador'>Administrador</input><br>
+                                                <input type='radio' name='perfil' value='Coordenador'>Coordenador</input><br>
+                                                <input type='radio' name='perfil'  value='Instrutor'>Instrutor</input><br>
+                                                <input type='radio' name='perfil' value='Comercial'>Comercial</input><br>
+                                            </div>
                                                 <input type='text' name='id' style='display:none;' value='".$cColab['ID_Colaborador']."'>
                                             </div>
             
