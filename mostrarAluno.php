@@ -4,8 +4,12 @@
      $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
      $consultaPro = "SELECT ID_Curso FROM aluno_curso_progressos WHERE ID_Aluno = '{$_GET['alunoid']}'";
      $conPro = $mysqli->query($consultaPro) or die($mysqli->error);
+     $consultaHo = "SELECT ID_Horario FROM horarios_alunos WHERE ID_Aluno = '{$_GET['alunoid']}'";
+     $conHo = $mysqli->query($consultaHo) or die($mysqli->error);
      $consultaColab = "SELECT * from colaboradores";
      $consultaCursos = "SELECT * from cursos";
+     $consultaHorario = "SELECT * from horarios";
+     $conHorario = $mysqli->query($consultaHorario) or die($mysqli->error);
      $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
      $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
      session_start();
@@ -206,6 +210,21 @@
                     for($i=0;$i<count($cursos);$i++){
                         if($cC['ID_Curso'] == $cursos[$i]){
                             echo $cC['Nome_curso']."<br>";}
+                        }
+                    } 
+                    echo"</p>
+                </div>
+                <div class='form-group col-12 col-lg-6'>
+                <label for='login'>Horarios</label>
+                <p>";
+                $horarios = [];
+                while($cHo = mysqli_fetch_array($conHo)){
+                    $horarios[] = $cHo['ID_Horario'];
+                }
+                while($cC = mysqli_fetch_array($conHorario)){
+                    for($i=0;$i<count($horarios);$i++){
+                        if($cC['ID_Horario'] == $horarios[$i]){
+                            echo $cC['Dia']."-".$cC['Hora_inicio']."-".$cC['Hora_fim']."<br>";}
                         }
                     } 
                     echo"</p>
