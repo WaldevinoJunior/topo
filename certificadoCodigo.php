@@ -30,7 +30,7 @@
             $descricao =  $c['Descricao'];
             $horas =  $c['Horas'];
         }
-        $consulta = "SELECT data_inicio, data_fim from aluno_curso_progressos WHERE ID_Aluno = '{$id}' and ID_Curso = '{$curso}'";
+        $consulta = "SELECT data_inicio from aluno_curso_progressos WHERE ID_Aluno = '{$id}' and ID_Curso = '{$curso}'";
         $con = $mysqli->query($consulta) or die($mysqli->error);
         while($c = mysqli_fetch_array($con)){
             $dataInicio = date('d/m/Y', strtotime($c['data_inicio']));
