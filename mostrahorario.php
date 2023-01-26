@@ -117,6 +117,7 @@
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func" style="flex-direction:column;">
+            <a href="./admin.php"class="btn btn-success mr-2" style="background-color:blue;width:70px;height:40px;font-size:16px;color:white;margin-top:20px;margin-bottom:10px">Voltar</a>
             <?php
              $consultaHorario = "SELECT * from horarios";
              $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
