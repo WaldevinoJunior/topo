@@ -60,7 +60,7 @@
             div{
                 height:1100px;
                 background:url(img/back2.jpg);
-                background-size: 820px 1000px;
+                background-size: 820px 1100px;
                 background-repeat: no-repeat;
 
             }
