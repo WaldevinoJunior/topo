@@ -3,12 +3,25 @@
  if(isset($_FILES['imagem'])){
     if(!$_FILES['imagem']['size'] > 0){
         echo "<script>alert('Nenhuma imagem selecianada');</script>";
-        header('Location: ./usuario.php');
     }
-    $arquivopng = addslashes(file_get_contents($_FILES['imagem']['tmp_name']));
-    if(!isset($_SESSION)){session_start();}
-    $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
-    $resultado = $mysqli->query($query_arquivo) or die($mysqli->error);
+    if($_FILES['imagem']['size'] > 65000){
+        echo "<script>alert('Imagem muito grande');</script>";
+    }
+    else{
+        $extensao = $_FILES['imagem']['name'];
+        $ext = pathinfo($extensao, PATHINFO_EXTENSION);
+        if($ext == "png" || $ext == "jpg" || $ext == "jpeg"){
+            $arquivopng = addslashes(file_get_contents($_FILES['imagem']['tmp_name']));
+            if(!isset($_SESSION)){session_start();}
+            $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
+            $resultado = $mysqli->query($query_arquivo) or die($mysqli->error);
+        }
+        else{
+            echo "<script>alert('Formato invalido');</script>";
+        }
+       
+    }
+   
  }
  
  if(!isset($_SESSION)){session_start();}
@@ -32,17 +45,7 @@
     <script src="js/constroi.js"> </script>
 </head>
 <!-- CORPO DA PAGINA USUARIO -->
-<script>
-   var i = setInterval(function () {
-    
-    clearInterval(i);
-  
-    // O código desejado é apenas isto:
-    document.getElementById("cursos").style.display = "flex";
-    document.getElementById("load").style.display = "none";
 
-}, 2000);
-    </script>
     
 <body class="usuario">
     <!-- CABEÇALHO DA PAGINA -->
@@ -54,7 +57,7 @@
     <div id="modal" >   
                 
    <div style="float:right;"><a onclick="fecha()" class="close" style="display:flex; cursor:pointer;" ><span aria-hidden='true'>&times;</span></a></div>
-                <h5 style="padding-top:15px;"><strong>Selecione uma imagem para o perfil</strong></h5>
+                <h5 style="padding-top:15px;"><strong>Selecione uma imagem para o perfil(menor que 50 KB)</strong></h5>
                     <form  method="POST" enctype="multipart/form-data" style="padding-top:15px;" >
 		               
                     <input type="file"  name="imagem"/><label for="imagem" id="imgSubmit" style="display: inline-block;">Imagem</label>
@@ -117,10 +120,8 @@
     </div> 
     <h1 id="h1curso" style="margin-bottom:2vh;font-family: system-ui;">Seus Cursos</h1>
     <!--CURSOS DO ALUNO -->
-    <div id="load" style="width:30vw;height:30vh;display:flex;justify-content:center;align-items:center;margin:auto;">
-    <img  src="img/load.gif" >
 </div>
-    <div id="cursos" style="display:none"> 
+    <div id="cursos" > 
    <div id="cursoCont">
         <div id="btnVoltar">
             <a class="btnVoltarCurso" style="color:white;"onclick="javascript:volta();">Voltar</a>

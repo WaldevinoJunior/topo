@@ -1,6 +1,6 @@
 <?php 
     include("valida.php");
-    $consultaAlunos = "SELECT * from alunos";
+    $consultaAlunos = "SELECT * from alunos WHERE ID_Aluno";
     $consultaColab = "SELECT * from colaboradores";
     $consultaCursos = "SELECT * from cursos";
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
@@ -131,7 +131,7 @@
                     </select>
                     <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px.font-size:15px' name="buscaHistoricoAluno" value="Buscar"></input>
                     </form>
-                    <br><a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
+                    <br><a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
                 </div>
 
                 <div class="content" style="overflow-y: scroll;height:200px">   
@@ -156,13 +156,16 @@
                             $table .= '</thead>';
                             $table .= '<tbody>';
                                 while($cAlunos = mysqli_fetch_array($conAlunos)){
-                                    $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
+                                    if($_GET['alunoid'] == $cAlunos['ID_Aluno']){
+                                        $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
                                         $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
                                         $table .= "<td>{$cAlunos['Nome']}</td>";
                                         // $table .= "<td>{$cAlunos['Responsavel']}</td>";
                                         $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
                                         $table .= "<td><a href='historicoPresenca.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
                                         $table .= '</tr></div>';
+                                    }
+                                   
                                         
                             } 
                         $table .= '</tbody>';
