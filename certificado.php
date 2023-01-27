@@ -58,7 +58,6 @@
                 background-repeat: no-repeat;
             }
             div{
-                height:1100px;
                 background:url(img/back2.jpg);
                 background-size: 820px 1070px;
                 background-repeat: no-repeat;

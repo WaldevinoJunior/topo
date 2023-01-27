@@ -510,6 +510,10 @@ if(isset($_POST['verificaCerti'])){
 		header('Location: ./index.html');
 	}
 }
+if(isset($_POST['buscaHistoricoAluno'])){
+	$_POST['aluno'] = clear($_POST['aluno']);
+	header('Location: ./historicoBusca.php?alunoid='.$_POST['aluno'].'');
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }
