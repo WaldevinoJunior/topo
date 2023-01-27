@@ -451,7 +451,7 @@ if(isset($_POST['presenca'])){
 	header('Location: ./listaPresenca.php');
 }
 if(isset($_GET['back'])){
-	$output = shell_exec('C:\xampp2\mysql\bin\mysqldump -u root podium > backup.sql');
+	$output = shell_exec('C:\xampp\mysql\bin\mysqldump -u root podium > C:\backup_do_bancoTopo\backup.sql');
 	header('Location: ./admin.php');
 }
 if(isset($_POST['deletarCursoHorario'])){
