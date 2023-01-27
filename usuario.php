@@ -10,7 +10,7 @@
     else{
         $extensao = $_FILES['imagem']['name'];
         $ext = pathinfo($extensao, PATHINFO_EXTENSION);
-        if($ext == "png" || $ext == "jpg" || $ext == "jpeg"){
+        if($ext == "png" || $ext == "JPG" || $ext == "JPEG"){
             $arquivopng = addslashes(file_get_contents($_FILES['imagem']['tmp_name']));
             if(!isset($_SESSION)){session_start();}
             $query_arquivo = "UPDATE alunos SET imagem = '{$arquivopng}' WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}'";
