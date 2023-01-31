@@ -214,12 +214,13 @@
                     for($i2=0;$i2<count($id);$i2++){
                         if($c2['ID_Curso'] == $id[$i2]){
                             echo "<br>".$c2['Nome_curso']." - Aula atual:".$aula[$i2]." - Estagio:".$estagio[$i2]."<br>";
+                            echo "<input type='text' name='curso".$i2."' style='display:none;' value='".$c2['ID_Curso']."'>";
                             echo "Aula:<select name=aula".$i2.">";for($i=0;$i<=$c2['aulas_totais'];$i++){if($i==0){echo "<option value='".$aula[$i2]."'>".$aula[$i2]."</option>";}else{echo "<option value='".$i."'>".$i."</option>";}} echo "</select> Estágio:<select name=estagio".$i2."><option value=".$estagio[$i2].">".$estagio[$i2]."</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option></select><br>";
                         }
                     }
                 }
                 echo "</div>
-                
+                <input type='text' name='cursoQuant' style='display:none;' value='".count($id)."'>
                 <input type='text' name='id' style='display:none;' value='".$cAlunos['ID_Aluno']."'>
             </div>
 
