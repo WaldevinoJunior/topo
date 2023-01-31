@@ -128,13 +128,13 @@
                         <select name="mes">
                             <option value = "1" >Janeiro</option>
                             <option value = "2" >Fevereiro</option>
-                            <option value = "3"  >Março</option>
+                            <option value = "3" >Março</option>
                             <option value = "4" >Abril</option>
                             <option value = "5" >Maio</option>
-                            <option value = "6"  >Junho</option>
+                            <option value = "6" >Junho</option>
                             <option value = "7" >Julho</option>
-                            <option value = "8"  >Agosto</option>
-                            <option value = "9"  >Setembro</option>
+                            <option value = "8" >Agosto</option>
+                            <option value = "9" >Setembro</option>
                             <option value = "10" >Outubro</option>
                             <option value = "11" >Novembro</option>
                             <option value = "12" >Dezembro</option>
@@ -174,6 +174,8 @@
                             $table .= '<tbody>';
                                 while($cH = mysqli_fetch_array($conHis)){
                                     $data = date('d/m/Y', strtotime($cH['Data']));
+                                    $mes = "$data[3]"."$data[4]";
+                                    if($mes == $_GET['mes']){
                                     $table .= "<td> {$data}</td>";
                                     $consultaHorario = "SELECT * FROM horarios";
                                     $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
@@ -182,7 +184,8 @@
                                             $table .= "<td>{$c['Hora_inicio']}</td>";
                                             $table .= "<td class='esconde'>{$c['Hora_fim']}</td>";
                                         }
-                                    }                                          
+                                    }
+                                }                                         
                                         $table .= '</tr></div>';
                                         
                             } 
