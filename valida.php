@@ -194,12 +194,17 @@ if(isset($_POST['enviareditarAluno'])){
 	$_POST['senha'] = clear($_POST['senha']);
 	$_POST['login'] = clear($_POST['login']);
 	$_POST['status'] = clear($_POST['status']);
+	$_POST['cursoQuant'] = clear($_POST['cursoQuant']);
 	$consulta = "UPDATE alunos SET Nome = '{$_POST['nome']}',Responsavel_2 = '{$_POST['resp']}',Responsavel_numero = '{$_POST['respT']}', Nascimento = '{$_POST['nascimento']}', 
 	Email = '{$_POST['email']}',Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
 	RG = '{$_POST['rg']}', CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
 	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
 	, Senha = '{$_POST['senha']}', Login = '{$_POST['login']}', Status = '{$_POST['status']}'  WHERE ID_Aluno = '{$_POST['id']}'";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	for($i=0;$i<$_POST['cursoQuant'];$i++){
+		$atualizaCurso = "UPDATE aluno_curso_progressos SET Aula_atual = '{$_POST['aula'.$i.'']}', Estagio = '{$_POST['estagio'.$i.'']}' WHERE ID_Curso = '{$_POST['curso'.$i.'']}' AND ID_Aluno = '{$_POST['id']}'";
+		$atualiza = $mysqli->query($atualizaCurso) or die($mysqli->error);
+	}
 	header('Location: ./listaAluno.php');
 }
 if(isset($_POST['cadastraAluno'])){
