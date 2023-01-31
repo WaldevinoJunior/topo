@@ -514,6 +514,9 @@ if(isset($_POST['buscaHistoricoAluno'])){
 	$_POST['aluno'] = clear($_POST['aluno']);
 	header('Location: ./historicoBusca.php?alunoid='.$_POST['aluno'].'');
 }
+if(isset($_POST['buscaPresencaMes'])){
+	header('Location: ./historicoPresencaMes.php?alunoid='.$_POST['alunoid'].'&&nome='.$_POST['nome'].'&&mes='.$_POST['mes'].'');
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }

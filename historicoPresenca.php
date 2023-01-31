@@ -57,6 +57,7 @@
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
+                            <a href="./historico.php">Histórico de Presença</a>
                         </div>
             </li>
             <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
@@ -95,6 +96,7 @@
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
+                            <a href="./historico.php">Histórico de Presença</a>
                         </div>
             </li>
             <li style="cursor:pointer;"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
@@ -121,10 +123,33 @@
                 <div id="listaAlunos" style="display:block" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
                     <h1>Histórico de Presenças do Aluno <?php echo $_GET['nome'] ?></h1>
+                    <h3>Mês</h3>
+                    <form action="valida.php" method="POST">
+                        <select name="mes">
+                            <option value = "1" >Janeiro</option>
+                            <option value = "2" >Fevereiro</option>
+                            <option value = "3"  >Março</option>
+                            <option value = "4" >Abril</option>
+                            <option value = "5" >Maio</option>
+                            <option value = "6"  >Junho</option>
+                            <option value = "7" >Julho</option>
+                            <option value = "8"  >Agosto</option>
+                            <option value = "9"  >Setembro</option>
+                            <option value = "10" >Outubro</option>
+                            <option value = "11" >Novembro</option>
+                            <option value = "12" >Dezembro</option>
+                    </select>
+                    <?php 
+                    echo "<input style='display:none' value='{$_GET['nome']}' name='nome'>
+                    <input style='display:none' value='{$_GET['alunoid']}' name='alunoid'>";
+                    ?>
+                    
+                    <input type="submit" value="Buscar" name="buscaPresencaMes" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px"> 
+                    </form>
                     <br><a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
                 </div>
 
-                <div class="content" style="overflow-y: scroll;height:200px">   
+                <div class="content" style="overflow-y: scroll;height:250px">   
                     <?php
                     $consultaHistoricos = "SELECT * FROM alunos_presenca WHERE ID_Aluno = '{$_GET['alunoid']}'";
                     $conHis = $mysqli->query($consultaHistoricos) or die($mysqli->error);

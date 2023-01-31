@@ -1,6 +1,6 @@
 <?php 
     include("valida.php");
-    $consultaAlunos = "SELECT * from alunos WHERE ID_Aluno";
+    $consultaAlunos = "SELECT * from alunos WHERE ID_Aluno = '{$_GET['alunoid']}'";
     $consultaColab = "SELECT * from colaboradores";
     $consultaCursos = "SELECT * from cursos";
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
@@ -122,30 +122,45 @@
             <div id="func">
                 <div id="listaAlunos" style="display:block" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
-                    <h1>Presenças do Aluno</h1>
-                    <form action="buscarAluno.php" method="POST">
-                    <select name='aluno'>
-                        <?php
-                         while($cAlunos = mysqli_fetch_array($conAlunos2)){
-                            echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
-                        }
-                        ?>
+                    <h1>Histórico de Presenças do Aluno <?php echo $_GET['nome'] ?></h1>
+                    <h3>Mês</h3>
+                    <form action="valida.php" method="POST">
+                        <select name="mes">
+                            <option value = "1" >Janeiro</option>
+                            <option value = "2" >Fevereiro</option>
+                            <option value = "3" >Março</option>
+                            <option value = "4" >Abril</option>
+                            <option value = "5" >Maio</option>
+                            <option value = "6" >Junho</option>
+                            <option value = "7" >Julho</option>
+                            <option value = "8" >Agosto</option>
+                            <option value = "9" >Setembro</option>
+                            <option value = "10" >Outubro</option>
+                            <option value = "11" >Novembro</option>
+                            <option value = "12" >Dezembro</option>
                     </select>
-                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px.font-size:15px' name="buscaHistoricoAluno" value="Buscar"></input>
+                    <?php 
+                    echo "<input style='display:none' value='{$_GET['nome']}' name='nome'>
+                    <input style='display:none' value='{$_GET['alunoid']}' name='alunoid'>";
+                    ?>
+                    
+                    <input type="submit" value="Buscar" name="buscaPresencaMes" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px"> 
                     </form>
                     <br><a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
                 </div>
 
-                <div class="content" style="overflow-y: scroll;height:200px">   
+                <div class="content" style="overflow-y: scroll;height:250px">   
                     <?php
+                    $consultaHistoricos = "SELECT * FROM alunos_presenca WHERE ID_Aluno = '{$_GET['alunoid']}'";
+                    $conHis = $mysqli->query($consultaHistoricos) or die($mysqli->error);
                        $table = '<table class="table table-striped" id="tableAluno">';
                             $table .='<thead>';
                                 $table .= '<tr>';
-                                   $table .= '<th>ID</th>';
+                                   $table .= '<th>Data</th>';
                                 //    $table .= '<th>Responsável</th>';
-                                $table .= '<th class="esconde">Nome</th>';
-                                $table .= '<th class="esconde">CPF</th>';
-                                $table .= '<th>Históricos</th>';
+                                $table .= '<th class="esconde">Início</th>';
+                                $table .= '<th class="esconde">Fim</th>';
+                               
                                 //    $table .= '<th>CPF</th>';
                                 //    $table .= '<th>RG</th>';
                                 //    $table .= '<th>CEP</th>';
@@ -157,17 +172,21 @@
                                 $table .= '</tr>';
                             $table .= '</thead>';
                             $table .= '<tbody>';
-                                while($cAlunos = mysqli_fetch_array($conAlunos)){
-                                    if($_GET['alunoid'] == $cAlunos['ID_Aluno']){
-                                        $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
-                                        $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
-                                        $table .= "<td>{$cAlunos['Nome']}</td>";
-                                        // $table .= "<td>{$cAlunos['Responsavel']}</td>";
-                                        $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
-                                        $table .= "<td><a href='historicoPresenca.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
-                                        $table .= '</tr></div>';
+                                while($cH = mysqli_fetch_array($conHis)){
+                                    $data = date('d/m/Y', strtotime($cH['Data']));
+                                    $mes = "$data[3]"."$data[4]";
+                                    if($mes == $_GET['mes']){
+                                    $table .= "<td> {$data}</td>";
+                                    $consultaHorario = "SELECT * FROM horarios";
+                                    $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
+                                    while($c = mysqli_fetch_array($conH)){
+                                        if($cH['ID_Horario'] == $c['ID_Horario']){
+                                            $table .= "<td>{$c['Hora_inicio']}</td>";
+                                            $table .= "<td class='esconde'>{$c['Hora_fim']}</td>";
+                                        }
                                     }
-                                   
+                                }                                         
+                                        $table .= '</tr></div>';
                                         
                             } 
                         $table .= '</tbody>';
