@@ -158,7 +158,7 @@
                                 $table .= '<tr>';
                                    $table .= '<th>Data</th>';
                                 //    $table .= '<th>Responsável</th>';
-                                $table .= '<th class="esconde">Início</th>';
+                                $table .= '<th>Início</th>';
                                 $table .= '<th class="esconde">Fim</th>';
                                
                                 //    $table .= '<th>CPF</th>';

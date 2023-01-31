@@ -35,21 +35,32 @@
 
 </head>
 <h1 style="text-align:center;">Aniversariantes</h1>
-<p style="margin-left:5px;">Consultar aniversariantes do: </p>
+<p style="margin-left:5px;font-size:16px;">Consultar aniversariantes de: </p>
 <form style="margin-left:5px; margin-botton:5px;" method="post" action="aniversariantes.php">
-<input type="radio" name="aniver" value="1" id="dia"> Dia
-<input type="radio" name="aniver" value="2" id="mes"> Mês
+<h5>Mês: </h5>
+<select name="mes">
+    <option value="01">Janeiro</option>
+    <option value="02">Fevereiro</option>
+    <option value="03">Março</option>
+    <option value="04">Abril</option>
+    <option value="05">Maio</option>
+    <option value="06">Junho</option>
+    <option value="07">Julho</option>
+    <option value="08">Agosto</option>
+    <option value="09">Setembro</option>
+    <option value="10">Outubro</option>
+    <option value="11">Novembro</option>
+    <option value="12">Dezembro</option>
+</select>
 <br><br>
-<input type="submit" value="Buscar" class="btn btn-success btn-sm">
+<input type="submit" value="Buscar" id="submit" class="btn btn-success btn-sm" style="font-size:16px;">
+<a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;font-size:16px;">Voltar</a>
 <br><br>
 </form>
 
 
-
 <?php
-$escolha = @$_POST['aniver'];
-$datahoje = date('m-d');
-$datames = date('m');
+$datames = @$_POST['mes'];
 $table = '<table class="table table-striped" id="tableAluno">';
     $table .='<thead>';
         $table .= '<tr>';
@@ -61,21 +72,11 @@ $table = '<table class="table table-striped" id="tableAluno">';
     $table .= '<tbody>';
 
         while($cAlunos = mysqli_fetch_array($conAlunos)){
-            $nascimentodm = substr($cAlunos['Nascimento'], -5);
+
             $nascimentom = substr($cAlunos['Nascimento'], 5,2);
-            if($escolha==1){
-                // nomes dos aniversariantes do dia
-                if($nascimentodm==$datahoje){
-                    $table .= "<tr>";
-                    $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
-                    $table .= "<td>{$cAlunos['Nome']}</td>";
-                    $table .= "<td>{$cAlunos['Nascimento']}</td>";
-                    $table .= "</tr>";
-                }
-            }
             
             // nomes dos aniversariantes do mês
-             else if($escolha==2){
+             
                 if($nascimentom==$datames){
                     $table .= "<tr>";
                     $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
@@ -84,14 +85,12 @@ $table = '<table class="table table-striped" id="tableAluno">';
                     $table .= "</tr>";
                 }
                 
-            }
+            
 
         }
     $table .= '</tbody>';
 $table .= '</table>';
 echo $table;
-
-
 
 ?>
 </html>
