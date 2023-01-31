@@ -189,12 +189,37 @@
                 <input type='text' class='form-control' id='login".$cAlunos['ID_Aluno']."' name='login' value ='".$cAlunos['Login']."'>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
-                <label for='login'>Status:</label><br>
+                <label for='login'>Status:"; if($cAlunos['Status'] == 1){echo "Cursando";}
+                if($cAlunos['Status'] == 2){echo "Concluído";}
+                if($cAlunos['Status'] == 3){echo "Cancelado";}
+                if($cAlunos['Status'] == 4){echo "Bloqueado";}
+                echo"</label><br>
                 <input type='radio' id='login".$cAlunos['ID_Aluno']."' name='status' value ='1'>Cursando</input><br>
                 <input type='radio' id='login".$cAlunos['ID_Aluno']."' name='status' value ='2'>Concluído</input><br>
                 <input type='radio' id='login".$cAlunos['ID_Aluno']."' name='status' value ='3'>Cancelado</input><br>
                 <input type='radio' id='login".$cAlunos['ID_Aluno']."' name='status' value ='4'>Bloqueado</input><br>
                 </div>
+                <div class='form-group col-12 col-lg-6'>
+                <label for='login'>Cursos:</label><br>";
+                $consultaAlunosP = "SELECT * from aluno_curso_progressos WHERE ID_Aluno = '{$_GET['alunoid']}'";
+                $conAlunosP = $mysqli->query($consultaAlunosP) or die($mysqli->error);
+                $consultaCurso = "SELECT * from cursos";
+                $conC = $mysqli->query($consultaCurso) or die($mysqli->error);
+                while($c = mysqli_fetch_array($conAlunosP)){
+                    $id[] = $c['ID_Curso'];
+                    $aula[] = $c['Aula_atual'];
+                    $estagio[] = $c['Estagio'];
+                }
+                while($c2 = mysqli_fetch_array($conC)){   
+                    for($i2=0;$i2<count($id);$i2++){
+                        if($c2['ID_Curso'] == $id[$i2]){
+                            echo "<br>".$c2['Nome_curso']." - Aula atual:".$aula[$i2]." - Estagio:".$estagio[$i2]."<br>";
+                            echo "Aula:<select name=aula".$i2.">";for($i=0;$i<=$c2['aulas_totais'];$i++){if($i==0){echo "<option value='".$aula[$i2]."'>".$aula[$i2]."</option>";}else{echo "<option value='".$i."'>".$i."</option>";}} echo "</select> Estágio:<select name=estagio".$i2."><option value=".$estagio[$i2].">".$estagio[$i2]."</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option></select><br>";
+                        }
+                    }
+                }
+                echo "</div>
+                
                 <input type='text' name='id' style='display:none;' value='".$cAlunos['ID_Aluno']."'>
             </div>
 
