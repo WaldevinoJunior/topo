@@ -56,6 +56,7 @@
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
+                            <a href="./historico.php">Histórico de Presença</a>
                         </div>
             </li>
             <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
@@ -94,6 +95,7 @@
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
+                            <a href="./historico.php">Histórico de Presença</a>
                         </div>
             </li>
             <li style="cursor:pointer;"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
