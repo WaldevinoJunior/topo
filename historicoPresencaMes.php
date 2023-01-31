@@ -174,7 +174,8 @@
                             $table .= '<tbody>';
                                 while($cH = mysqli_fetch_array($conHis)){
                                     $data = date('d/m/Y', strtotime($cH['Data']));
-                                    if($data[4] == $_GET['mes']){
+                                    $mes = "$data[3]"."$data[4]";
+                                    if($mes == $_GET['mes']){
                                     $table .= "<td> {$data}</td>";
                                     $consultaHorario = "SELECT * FROM horarios";
                                     $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
@@ -184,7 +185,7 @@
                                             $table .= "<td class='esconde'>{$c['Hora_fim']}</td>";
                                         }
                                     }
-                                }                                          
+                                }                                         
                                         $table .= '</tr></div>';
                                         
                             } 
