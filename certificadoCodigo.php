@@ -83,7 +83,7 @@
             </section>
             <p style="font-size:20px;margin-left:490px;margin-top:280px;">Cataguases, '.$data.'</p>
             </body>
-        <div>
+        <div style="height:1070px">
             
             <p  style="text-align:justify;font-size:20px;margin-left:50px;margin-right:50px;margin-bottom:40px;margin-top:150px;">
             '.$descricao.'<br><br>Código de rastreio: '.$codigo.'</p>
@@ -91,7 +91,7 @@
 
            
 
-            </div>
+        </div>
         </html>
      '
             
