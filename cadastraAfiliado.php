@@ -3,10 +3,11 @@
     $consultaAlunos = "SELECT * from alunos";
     $consultaColab = "SELECT * from colaboradores";
     $consultaCursos = "SELECT * from cursos";
+    $consultaH = "SELECT * from horarios";
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
-    $conAlunos2 = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+    $conH = $mysqli->query($consultaH) or die($mysqli->error);
     session_start();
     if($_SESSION['verifica'] != 2){
         header('Location: ./index.html');
@@ -120,68 +121,83 @@
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func">
-                <div id="listaAlunos" style="display:block" class="listAlunos">
-                <div class="cont-header" id="cbcLista">
-                    <h1>Presenças do Aluno</h1>
-                    <form action="buscarAluno.php" method="POST">
-                    <select name='aluno'>
-                        <?php
-                         while($cAlunos = mysqli_fetch_array($conAlunos2)){
-                            echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
-                        }
-                        ?>
-                    </select>
-                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px.font-size:15px' name="buscaHistoricoAluno" value="Buscar"></input>
-                    </form>
-                    <br><a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
-                </div>
+            <div id="cadastraAluno">
+                    <div class="cont-header">
+                    </div>
+                    <div class="content">
+                        <div id="dadosDoAluno" class="" style="padding:10px;">
+                            <h3>Preencha os dados do Afiliado</h3>
+                            <form method="post" action="valida.php">
+                                <input type="hidden" name="_token" value="WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY">
+                                <div class="row">
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cpf">CPF(Somente números)</label>
+                                        <input type="text" class="form-control" minlenght="14"  maxlenght="14" id="cpf" name="cpf" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cnpj">CNPJ(Somente números)</label>
+                                        <input type="text" class="form-control" minlenght="14"  maxlenght="14" id="cnpj" name="cnpj" placeholder="" required>
+                                    </div>
+                                    
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="tel">Telefone(Somente números)</label>
+                                        <input type="number"class="form-control" id="tel" name="telefone" placeholder="" required>
+                                    </div>
+                                    
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cep">CEP</label>
+                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="estado">Estado</label>
+                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cidade">Cidade</label>
+                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="rua">Rua</label>
+                                        <input type="text" class="form-control" id="rua" name="rua" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="numero">Número</label>
+                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="bairro">Bairro</label>
+                                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="">
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="login">Login</label>
+                                        <input type="text" minlength="5" class="form-control" id="login" name="login" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="senha">Senha</label>
+                                        <input type="text" minlength="5" class="form-control" id="senha" name="senha" placeholder="" required>
+                                    </div>
+                                    
+                                </div>
 
-                <div class="content" style="overflow-y: scroll;height:200px">   
-                    <?php
-                       $table = '<table class="table table-striped" id="tableAluno">';
-                            $table .='<thead>';
-                                $table .= '<tr>';
-                                   $table .= '<th>ID</th>';
-                                //    $table .= '<th>Responsável</th>';
-                                $table .= '<th class="esconde">Nome</th>';
-                                $table .= '<th class="esconde">CPF</th>';
-                                $table .= '<th>Históricos</th>';
-                                //    $table .= '<th>CPF</th>';
-                                //    $table .= '<th>RG</th>';
-                                //    $table .= '<th>CEP</th>';
-                                //    $table .= '<th>Estado</th>';
-                                //    $table .= '<th>Cidade</th>';
-                                //    $table .= '<th>Rua</th>';
-                                //    $table .= '<th>Número</th>';
-                                //    $table .= '<th>Senha</th>';
-                                $table .= '</tr>';
-                            $table .= '</thead>';
-                            $table .= '<tbody>';
-                                while($cAlunos = mysqli_fetch_array($conAlunos)){
-                                    $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
-                                        $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
-                                        $table .= "<td>{$cAlunos['Nome']}</td>";
-                                        // $table .= "<td>{$cAlunos['Responsavel']}</td>";
-                                        $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
-                                        $table .= "<td><a href='historicoPresenca.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
-                                        $table .= '</tr></div>';
-                                        
-                            } 
-                        $table .= '</tbody>';
-                        $table .= '</table>';
-                        echo $table;
-                   ?>
-                </div>
-                </div>
-                 
-                
-             
+                <!--BOTOES AO FIM DA SESSÃO-->
+                                <div class="d-flex justify-content-center">
+                                <a  href="./admin.php" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:70px;height:40px;font-size:16px;color:white;">Voltar</a>
 
-
-              
-                <hr>
-            </div>
-            </div>
+                                <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraAfiliado">
+                                </div>
+                            </form>
+                        </div>     
+                    </div>
+                </div>
+</div>            
             <div id="func2">
                 <div class="func2A">
                     <p>Licença</p>

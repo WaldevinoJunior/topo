@@ -161,6 +161,12 @@ a:link {
     }
     
 }
+#load{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* VALIDO PARA O ARQUIVO USUARIO.PHP */
  div.usuarioDiv a{
     border-radius: 10px;

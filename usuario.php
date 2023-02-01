@@ -127,6 +127,16 @@
             <a class="btnVoltarCurso" style="color:white;"onclick="javascript:volta();">Voltar</a>
         </div>
     </div>
+    <div id="load">
+        <img src="./img/load.gif" style="width:10vw">
+    </div>
+    <script>
+        window.onload = function(){
+        var el = document.getElementById('load');
+        el.style.display = 'none';
+        document.getElementById('cursos').style.display = 'flex';
+        };
+        </script>
     <?php 
         /*
         $consulta = "SELECT * FROM cursos";
@@ -174,7 +184,7 @@
             $estagio = "SELECT Estagio FROM aluno_curso_progressos WHERE ID_Aluno = '{$_SESSION['ID_Aluno']}' AND ID_Curso = '{$c['ID_Curso']}'";
             $sqlestagio = $mysqli->query($estagio) or die($mysqli->error);
 			$esta = mysqli_fetch_array($sqlestagio)[0];
-            echo "<div style='text-align:center;display:flex;' id='oi'><b style='font-size: 110%;'>".$c['Nome_curso']."</b><img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
+            echo "<div style='text-align:center;display:none;' id='oi'><b style='font-size: 110%;'>".$c['Nome_curso']."</b><img  src='cursos/".$c['ID_Curso']."/".$c['ID_Curso'].".png'>"
                         ."<a onclick='mostraCurso".$c['ID_Curso']."();'>Acessar Curso</a></div>
                         <script>
                             function mostraCurso".$c['ID_Curso']."(){

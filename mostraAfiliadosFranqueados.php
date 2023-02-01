@@ -1,12 +1,13 @@
 <?php 
     include("valida.php");
-    $consultaAlunos = "SELECT * from alunos";
-    $consultaColab = "SELECT * from colaboradores";
-    $consultaCursos = "SELECT * from cursos";
-    $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
-    $conAlunos2 = $mysqli->query($consultaAlunos) or die($mysqli->error);
-    $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
-    $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+    $consultaAfiliados = "SELECT * from afiliados";
+    $consultaFranq = "SELECT * from franqueados";
+    
+    $conAfiliados = $mysqli->query($consultaAfiliados) or die($mysqli->error);
+    $conAfiliados2 = $mysqli->query($consultaAfiliados) or die($mysqli->error);
+    $conFranq = $mysqli->query($consultaFranq) or die($mysqli->error);
+    $conFranq2 = $mysqli->query($consultaFranq) or die($mysqli->error);
+
     session_start();
     if($_SESSION['verifica'] != 2){
         header('Location: ./index.html');
@@ -68,7 +69,7 @@
                         }
                     ?>
                         <a href="./licenca">Licença</a>
-                        <a href="./sat.php">Satisfação</a>
+                        <a href="./sat.php">Satisfação</a>lunoslunos
                     </div>
             </li>
 
@@ -77,7 +78,7 @@
         <div>
         <img id="mAdmin2" src="img/menuH.png" onclick="menu()"/>
         <ul id="mAdmin3" style="display:none">
-            <li><a href="./admin.php"  style="color:black"><i class="bi bi-house"></i>Início</a></li>
+            <li><a href="./admin.php" style="color:black"><i class="bi bi-house"></i>Início</a></li>
             <li style="cursor:pointer;"><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i>
                     <div id="barras">
                         <a href="./curso.php">Cadastrar Curso</a>
@@ -111,7 +112,7 @@
                     </div>
             </li>
 
-            <li><a href="./valida.php?sair=true"  style="color:black"><i class="bi bi-escape"></i>Sair</a></li>
+            <li><a href="./valida.php?sair=true" style="color:black"><i class="bi bi-escape"></i>Sair</a></li>
         </ul>
         </div>
     </nav>
@@ -120,70 +121,77 @@
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func">
-                <div id="listaAlunos" style="display:block" class="listAlunos">
+                <div id="listaAlunos"  class="listAlunos">
                 <div class="cont-header" id="cbcLista">
-                    <h1>Históricos do Aluno</h1>
-                    <form action="buscarAluno.php" method="POST">
+                    
+                    <h1>Lista de Afiliados e Franqueados</h1>
+                    <form action="buscarAfiliados.php" method="POST">
                     <select name='aluno'>
                         <?php
-                         while($cAlunos = mysqli_fetch_array($conAlunos2)){
-                            echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
+                         while($cAfiliados = mysqli_fetch_array($conAfiliados2)){
+                            echo "<option id='busca' value='".$cAfiliados['ID_afiliados']."'>".$cAfiliados['Nome']." - ".$cAfiliados['CNPJ']."</option>";
                         }
                         ?>
                     </select>
-                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px.font-size:15px' name="buscaHistoricoAluno" value="Buscar"></input>
+                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px;font-size:15px' name="buscaAluno" value='Buscar'></input>
                     </form>
-                    <br><a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
+                    <a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
                 </div>
 
-                <div class="content" style="overflow-y: scroll;height:200px">   
+                <div class="content" style="overflow-y: scroll;height:300px;display:flex">   
                     <?php
                        $table = '<table class="table table-striped" id="tableAluno">';
                             $table .='<thead>';
                                 $table .= '<tr>';
                                    $table .= '<th>ID</th>';
-                                //    $table .= '<th>Responsável</th>';
-                                $table .= '<th class="esconde">Nome</th>';
-                                $table .= '<th class="esconde">CPF</th>';
-                                $table .= '<th>Presença</th>';
-                                $table .= '<th>Testes/Cursos</th>';
-                                //    $table .= '<th>CPF</th>';
-                                //    $table .= '<th>RG</th>';
-                                //    $table .= '<th>CEP</th>';
-                                //    $table .= '<th>Estado</th>';
-                                //    $table .= '<th>Cidade</th>';
-                                //    $table .= '<th>Rua</th>';
-                                //    $table .= '<th>Número</th>';
-                                //    $table .= '<th>Senha</th>';
+                                   $table .= '<th>Nome</th>';
+                                   $table .= '<th>Perfil</th>';
+                                   $table .= '<th class="esconde">CNPJ</th>';
+                                   $table .= '<th class="esconde">Telefone</th>';
+                                $table .= '<th>Funções</th>';
                                 $table .= '</tr>';
                             $table .= '</thead>';
                             $table .= '<tbody>';
-                                while($cAlunos = mysqli_fetch_array($conAlunos)){
-                                    $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
-                                        $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
-                                        $table .= "<td>{$cAlunos['Nome']}</td>";
-                                        // $table .= "<td>{$cAlunos['Responsavel']}</td>";
-                                        $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
-                                        $table .= "<td><a href='historicoPresenca.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
-                                        $table .= "<td><a href='historicoCurso.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
-                                        $table .= '</tr></div>';
-                                        
+           
+                                while($cAfiliados = mysqli_fetch_array($conAfiliados)){
+                                    $table .= "<tr class='alunoBusca'  name=".$cAfiliados['ID_afiliados'].">";
+                                        $table .= "<td>{$cAfiliados['ID_afiliados']}</td>";
+                                        $table .= "<td>{$cAfiliados['Nome']}</td>";
+                                        $table .= "<td>Afiliado</td>";
+                                        $table .= "<td class='esconde'>{$cAfiliados['CNPJ']}</td>";
+                                        $table .= "<td class='esconde'>{$cAfiliados['Telefone']}</td>";
+                                        $table .= "<td><button href='editarAfiliado.php?afiliadoid=".$cAfiliados['ID_afiliados']."'style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cAfiliados['ID_afiliados']."'>Editar</button><form action='valida.php' method='POST'><input style='display:none' value='".$cAfiliados['ID_afiliados']."' name='idafiliado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaAfiliado' value='Deletar'></input></form></td>";
+                                        $table .= '</tr>';
+                                    
+                                   
+
                             } 
+                            while($cFranq = mysqli_fetch_array($conFranq)){
+                                $table .= "<tr class='alunoBusca'  name=".$cFranq['ID_franqueados'].">";
+                                    $table .= "<td>{$cFranq['ID_franqueados']}</td>";
+                                    $table .= "<td>{$cFranq['Nome']}</td>";
+                                    $table .= "<td>Franqueado</td>";
+                                    $table .= "<td class='esconde'>{$cFranq['CNPJ']}</td>";
+                                    $table .= "<td class='esconde'>{$cFranq['Telefone']}</td>";
+                                    $table .= "<td><button href='editarFranq.php?franqueadoid=".$cFranq['ID_franqueados']."'style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cFranq['ID_franqueados']."'>Editar</button><form action='valida.php' method='POST'><input style='display:none' value='".$cFranq['ID_franqueados']."' name='idfranqueado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaFranqueado' value='Deletar'></input></form></td>";
+
+                                    // $table .= "<td><a href='editarFranq.php?franqueadoid=".$cFranq['ID_franqueados']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cFranq['ID_franqueados']."'>Editar</a></td>";
+                                    // $table .= "<td><form action='valida.php' method='POST'><input style='display:none' value='".$cFranq['ID_franqueados']."' name='idfranqueado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaFranqueado' value='Deletar'></input></form></td>";
+                                     $table .= '</tr>';
+                                    
+                               
+
+                        } 
                         $table .= '</tbody>';
                         $table .= '</table>';
                         echo $table;
                    ?>
                 </div>
                 </div>
-                 
-                
-             
-
-
-              
                 <hr>
             </div>
             </div>
+                         
             <div id="func2">
                 <div class="func2A">
                     <p>Licença</p>
