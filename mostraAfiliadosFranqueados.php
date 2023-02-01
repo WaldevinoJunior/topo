@@ -140,7 +140,7 @@
 
                 <div class="content" style="overflow-y: scroll;height:300px;display:flex">   
                     <?php
-                       $table = '<table class="table table-striped" id="tableAluno">';
+                       $table = '<table class="table table-striped" id="tableAF">';
                             $table .='<thead>';
                                 $table .= '<tr>';
                                    $table .= '<th>ID</th>';
@@ -160,9 +160,99 @@
                                         $table .= "<td>Afiliado</td>";
                                         $table .= "<td class='esconde'>{$cAfiliados['CNPJ']}</td>";
                                         $table .= "<td class='esconde'>{$cAfiliados['Telefone']}</td>";
-                                        $table .= "<td><button href='editarAfiliado.php?afiliadoid=".$cAfiliados['ID_afiliados']."'style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cAfiliados['ID_afiliados']."'>Editar</button><form action='valida.php' method='POST'><input style='display:none' value='".$cAfiliados['ID_afiliados']."' name='idafiliado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaAfiliado' value='Deletar'></input></form></td>";
+                                        $table .= "<td><button onclick='EditarAfiliado".$cAfiliados['ID_afiliados']."();''style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cAfiliados['ID_afiliados']."'>Editar</button><form action='valida.php' method='POST'><input style='display:none' value='".$cAfiliados['ID_afiliados']."' name='idafiliado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaAfiliado' value='Deletar'></input></form></td>";
                                         $table .= '</tr>';
-                                    
+
+                                        echo "<script>
+                                            function EditarAfiliado".$cAfiliados['ID_afiliados']."(){
+    
+                                                document.getElementById('EditarAfiliado".$cAfiliados['ID_afiliados']."').style.display = 'block';
+                                                document.getElementById('tableAF').style.display = 'none';
+                                                document.getElementById('cbcLista').style.display = 'none';
+                                             
+                                            }
+                                        </script>";
+                                        echo "<div id='EditarAfiliado".$cAfiliados['ID_afiliados']."' style='display:none;'>
+                                        <div id= 'dadosDoAluno' style='padding:10px;'>
+                                        <h3>Dados do Afiliado</h3>
+                                        <p>Preencha somente os dados que você quiser alterar</p>
+                                        <form method='post' action='valida.php'>
+                                            <input type='hidden' name='_token' value='WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY'>
+                                            <div class='row'>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='nome'>Nome</label>
+                                                    <input type='text' class='form-control' id='nome".$cAfiliados['ID_afiliados']."' name='nome'  value ='".$cAfiliados['Nome']."''>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='CPF'>CPF</label>
+                                                    <input type='text' class='form-control' id='cpf".$cAfiliados['ID_afiliados']."' name='cpf' value ='".$cAfiliados['CPF']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='CNPJ'>CNPJ</label>
+                                                    <input type='text' class='form-control' id='cnpj".$cAfiliados['ID_afiliados']."' name='cnpj' value ='".$cAfiliados['CNPJ']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='email'>Email</label>
+                                                    <input type='email' class='form-control' id='email".$cAfiliados['ID_afiliados']."' name='email' value ='".$cAfiliados['Email']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='tel'>Telefone</label>
+                                                    <input type='text' class='form-control' id='tel".$cAfiliados['ID_afiliados']."' name='telefone' value ='".$cAfiliados['Telefone']."'>
+                                                </div>
+                                                
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='cep'>CEP</label>
+                                                    <input type='text' class='form-control' id='cep".$cAfiliados['ID_afiliados']."' name='cep' value ='".$cAfiliados['CEP']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='estado'>Estado</label>
+                                                    <input type='text' class='form-control' id='estado".$cAfiliados['ID_afiliados']."' name='estado' value ='".$cAfiliados['Estado']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='cidade'>Cidade</label>
+                                                    <input type='text' class='form-control' id='cidade".$cAfiliados['ID_afiliados']."' name='cidade' value ='".$cAfiliados['Cidade']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='rua'>Rua</label>
+                                                    <input type='text' class='form-control' id='rua".$cAfiliados['ID_afiliados']."' name='rua'value ='".$cAfiliados['Rua']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='numero'>Número</label>
+                                                    <input type='text' class='form-control' id='numero".$cAfiliados['ID_afiliados']."' name='numero' value ='".$cAfiliados['Numero']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='bairro'>Bairro</label>
+                                                    <input type='text' class='form-control' id='bairro".$cAfiliados['ID_afiliados']."' name='bairro' value ='".$cAfiliados['Bairro']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='login'>Login</label>
+                                                    <input type='text' class='form-control' id='login".$cAfiliados['ID_afiliados']."' name='login' value ='".$cAfiliados['Login']."'>
+                                                </div>
+                                                <div class='form-group col-12 col-lg-6'>
+                                                    <label for='senha'>Senha</label>
+                                                    <input type='text' class='form-control' id='senha".$cAfiliados['ID_afiliados']."' name='senha' value ='".$cAfiliados['Senha']."'>
+                                                </div>
+                                                <input type='text' name='id' style='display:none;' value='".$cAfiliados['ID_afiliados']."'>
+                                            </div>
+            
+                           
+                                            <div class='d-flex justify-content-center'>
+                                            <a onclick='volta".$cAfiliados['ID_afiliados']."()' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Voltar</a>
+                                            <script>
+                                            function volta".$cAfiliados['ID_afiliados']."(){
+                                                window.scrollTo(0, 0);
+                                                document.getElementById('EditarAfiliado".$cAfiliados['ID_afiliados']."').style.display = 'none';
+                                                document.getElementById('tableAF').style.display = 'block';
+                                                document.getElementById('cbcLista').style.display = 'block';
+                                                
+                                            }
+                                            </script>
+
+                                                <input class='btn btn-success mr-2'type='submit' value='Enviar' name='enviareditarColab'>
+                                            </div>
+                                        </form>
+                                    </div>     
+                                </div>";
                                    
 
                             } 

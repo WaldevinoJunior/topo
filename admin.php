@@ -399,7 +399,7 @@
                 <div class="funcA">
                     <?php
                         if($_SESSION['Perfil'] == "Administrador"){
-                            echo  "<a href='mostraAfiliadosFranqueados.php'><i class='bi bi-people fill'></i><h3>Listar Aliados e Franqueados</h3></a>";
+                            echo  "<a href='mostraAfiliadosFranqueados.php'><i class='bi bi-people fill'></i><h3>Listar Afiliados e Franqueados</h3></a>";
                         }
                     ?>
                 </div>
