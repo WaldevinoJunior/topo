@@ -122,7 +122,7 @@
             <div id="func">
                 <div id="listaAlunos" style="display:block" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
-                    <h1>Presenças do Aluno</h1>
+                    <h1>Históricos do Aluno</h1>
                     <form action="buscarAluno.php" method="POST">
                     <select name='aluno'>
                         <?php
@@ -145,7 +145,8 @@
                                 //    $table .= '<th>Responsável</th>';
                                 $table .= '<th class="esconde">Nome</th>';
                                 $table .= '<th class="esconde">CPF</th>';
-                                $table .= '<th>Históricos</th>';
+                                $table .= '<th>Presença</th>';
+                                $table .= '<th>Testes/Cursos</th>';
                                 //    $table .= '<th>CPF</th>';
                                 //    $table .= '<th>RG</th>';
                                 //    $table .= '<th>CEP</th>';
@@ -165,6 +166,8 @@
                                         // $table .= "<td>{$cAlunos['Responsavel']}</td>";
                                         $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
                                         $table .= "<td><a href='historicoPresenca.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
+                                        $table .= "<td><a href='historicoCurso.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
+
                                         $table .= '</tr></div>';
                                     }
                                    
