@@ -270,6 +270,62 @@ if(isset($_POST['cadastraColab'])){
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
+if(isset($_POST['cadastraAfiliado'])){
+	$_POST['nome'] = clear($_POST['nome']);
+	$_POST['email'] = clear($_POST['email']);
+	$_POST['telefone'] = clear($_POST['telefone']);
+	$_POST['cpf'] = clear($_POST['cpf']);
+	$_POST['cnpj'] = clear($_POST['cnpj']);
+	$_POST['cep'] = clear($_POST['cep']);
+	$_POST['estado'] = clear($_POST['estado']);
+	$_POST['cidade'] = clear($_POST['cidade']);
+	$_POST['rua'] = clear($_POST['rua']);
+	$_POST['numero'] = clear($_POST['numero']);
+	$_POST['bairro'] = clear($_POST['bairro']);
+	$_POST['senha'] = clear($_POST['senha']);
+	$_POST['login'] = clear($_POST['login']);
+	$verifica = "SELECT * FROM alunos";
+	$veri = $mysqli->query($verifica) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./admin.php');
+			exit;
+		}
+	}
+	$verifica2 = "SELECT * FROM colaboradores";
+	$veri2 = $mysqli->query($verifica2) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri2)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./admin.php');
+			exit;
+		}
+	}
+	$verifica3 = "SELECT * FROM afiliados";
+	$veri3 = $mysqli->query($verifica3) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri3)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./admin.php');
+			exit;
+		}
+	}
+	$verifica4 = "SELECT * FROM franqueados";
+	$veri4 = $mysqli->query($verifica4) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri4)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./admin.php');
+			exit;
+		}
+	}
+	$consulta = "INSERT INTO afiliados (Nome, CPF, CNPJ, Email, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha) VALUES  ('{$_POST['nome']}','{$_POST['cpf']}','{$_POST['cnpj']}', '{$_POST['email']}', 
+	'{$_POST['telefone']}','{$_POST['rua']}','{$_POST['numero']}', 
+	'{$_POST['bairro']}','{$_POST['cidade']}','{$_POST['estado']}','{$_POST['cep']}'
+	,'{$_POST['login']}','{$_POST['senha']}')";
+	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	header('Location: ./admin.php');
+
+
+}
+
 if(isset($_POST['cadastraAluno2'])){
 	$_POST['nome'] = clear($_POST['nome']);
 	$_POST['resp'] = clear($_POST['resp']);
@@ -298,6 +354,22 @@ if(isset($_POST['cadastraAluno2'])){
 	$verifica2 = "SELECT * FROM colaboradores";
 	$veri2 = $mysqli->query($verifica2) or die($mysqli->error);
 	while($c = mysqli_fetch_array($veri2)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./cadastraAluno.php');
+			exit;
+		}
+	}
+	$verifica3 = "SELECT * FROM afiliados";
+	$veri3 = $mysqli->query($verifica3) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri3)){
+		if($_POST['login'] == $c['Login']){
+			header('Location: ./cadastraAluno.php');
+			exit;
+		}
+	}
+	$verifica4 = "SELECT * FROM franqueados";
+	$veri4 = $mysqli->query($verifica4) or die($mysqli->error);
+	while($c = mysqli_fetch_array($veri4)){
 		if($_POST['login'] == $c['Login']){
 			header('Location: ./cadastraAluno.php');
 			exit;
