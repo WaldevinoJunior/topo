@@ -143,7 +143,7 @@
                                 $table .= '<tr>';
                                    $table .= '<th>ID</th>';
                                 //    $table .= '<th>Responsável</th>';
-                                $table .= '<th class="esconde">Nome</th>';
+                                $table .= '<th>Nome</th>';
                                 $table .= '<th class="esconde">CPF</th>';
                                 $table .= '<th>Presença</th>';
                                 $table .= '<th>Testes/Cursos</th>';
