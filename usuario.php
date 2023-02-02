@@ -99,7 +99,7 @@
         $result = $mysqli->query($arquiv) or die($mysqli->error);
         $row = mysqli_fetch_array($result);
         if($row['imagem']  == "oi"){
-            echo '<img id="fotoLogin" src="/topo/img/apertomao.jpg"/>';
+            echo '<img id="fotoLogin" src="/topo/img/iconetopo.jpg"/>';
         }
         else{
             echo '<img id="fotoLogin" src="data:image/jpeg;base64,' . base64_encode( $row['imagem'] ) . '" />';
@@ -111,11 +111,14 @@
             echo $_SESSION['nome'];
             ?>
         </p>
+        <div style="display:flex;flex-direction:row">
         <button class="btn btn-primary btn-sm" onclick="altera();">Alterar Avatar</button>
         <button class="btn btn-primary btn-sm" onclick="alteraH();">Meus Horários</button>
         <form action="valida.php" method="POST">
+        
         <button style="background-color:rgba(218, 12, 12, 0.872);" class="btn btn-danger btn-sm" name="sair" type="submit">Sair</button>   
     </form>
+    </div>
         </div>
     </div> 
     <h1 id="h1curso" style="margin-bottom:2vh;font-family: system-ui;">Seus Cursos</h1>
