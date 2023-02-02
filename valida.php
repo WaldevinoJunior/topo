@@ -551,6 +551,10 @@ if(isset($_POST['buscaAluno'])){
 	$_POST['aluno'] = clear($_POST['aluno']);
 	header('Location: ./buscarAluno.php?alunoid='.$_POST['aluno'].'');
 }
+if(isset($_POST['buscaAF'])){
+	$_POST['af'] = clear($_POST['af']);
+	header('Location: ./buscarAfiliadoFranqueado.php?idafiliado='.$_POST['af'].'');
+}
 if(isset($_POST['cadastraHorario'])){
 	$_POST['dia'] = clear($_POST['dia']);
 	$_POST['datainicio'] = clear($_POST['datainicio']);
