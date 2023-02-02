@@ -138,7 +138,7 @@
                     <a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
                 </div>
 
-                <div class="content" style="overflow-y: scroll;height:700px;display:flex">   
+                <div class="content" style="display:block">   
                     <?php
                        $table = '<table class="table table-striped" id="tableAF">';
                             $table .='<thead>';
@@ -160,7 +160,8 @@
                                         $table .= "<td>Afiliado</td>";
                                         $table .= "<td class='esconde'>{$cAfiliados['CNPJ']}</td>";
                                         $table .= "<td class='esconde'>{$cAfiliados['Telefone']}</td>";
-                                        $table .= "<td><button onclick='EditarAfiliado".$cAfiliados['ID_afiliados']."();''style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cAfiliados['ID_afiliados']."'>Editar</button><form action='valida.php' method='POST'><input style='display:none' value='".$cAfiliados['ID_afiliados']."' name='idafiliado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaAfiliado' value='Deletar'></input></form></td>";
+                                        $table .= "<td><button onclick='EditarAfiliado".$cAfiliados['ID_afiliados']."();' style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cAfiliados['ID_afiliados']."'>Editar</button>
+                                        <form action='valida.php' method='POST'><input style='display:none' value='".$cAfiliados['ID_afiliados']."' name='idafiliado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaAfiliado' value='Deletar'></input></form></td>";
                                         $table .= '</tr>';
 
                                         echo "<script>
@@ -248,7 +249,7 @@
                                             }
                                             </script>
 
-                                                <input class='btn btn-success mr-2'type='submit' value='Enviar' name='enviareditarColab'>
+                                                <input class='btn btn-success mr-2'type='submit' value='Enviar' name='enviareditarAfiliado'>
                                             </div>
                                         </form>
                                     </div>     
@@ -263,12 +264,95 @@
                                     $table .= "<td>Franqueado</td>";
                                     $table .= "<td class='esconde'>{$cFranq['CNPJ']}</td>";
                                     $table .= "<td class='esconde'>{$cFranq['Telefone']}</td>";
-                                    $table .= "<td><button href='editarFranq.php?franqueadoid=".$cFranq['ID_franqueados']."'style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cFranq['ID_franqueados']."'>Editar</button><form action='valida.php' method='POST'><input style='display:none' value='".$cFranq['ID_franqueados']."' name='idfranqueado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaFranqueado' value='Deletar'></input></form></td>";
-
-                                    // $table .= "<td><a href='editarFranq.php?franqueadoid=".$cFranq['ID_franqueados']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cFranq['ID_franqueados']."'>Editar</a></td>";
-                                    // $table .= "<td><form action='valida.php' method='POST'><input style='display:none' value='".$cFranq['ID_franqueados']."' name='idfranqueado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaFranqueado' value='Deletar'></input></form></td>";
+                                    $table .= "<td><button onclick='EditarFranqueado".$cFranq['ID_franqueados']."();' style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cFranq['ID_franqueados']."'>Editar</button>
+                                    <form action='valida.php' method='POST'><input style='display:none' value='".$cFranq['ID_franqueados']."' name='idfranqueado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaFranqueado' value='Deletar'></input></form></td>";
                                      $table .= '</tr>';
-                                    
+                                     echo "<script>
+                                     function EditarFranqueado".$cFranq['ID_franqueados']."(){
+
+                                         document.getElementById('EditarFranqueado".$cFranq['ID_franqueados']."').style.display = 'block';
+                                         document.getElementById('tableAF').style.display = 'none';
+                                         document.getElementById('cbcLista').style.display = 'none';
+                                      
+                                     }
+                                 </script>";
+                                 echo "<div id='EditarFranqueado".$cFranq['ID_franqueados']."' style='display:none;'>
+                                 <div id= 'dadosDoAluno' style='padding:10px;'>
+                                 <h3>Dados do Franqueado</h3>
+                                 <p>Preencha somente os dados que você quiser alterar</p>
+                                 <form method='post' action='valida.php'>
+                                     <input type='hidden' name='_token' value='WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY'>
+                                     <div class='row'>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='nome'>Nome</label>
+                                             <input type='text' class='form-control' id='nome".$cFranq['ID_franqueados']."' name='nome'  value ='".$cFranq['Nome']."''>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='CNPJ'>CNPJ</label>
+                                             <input type='text' class='form-control' id='cnpj".$cFranq['ID_franqueados']."' name='cnpj' value ='".$cFranq['CNPJ']."'>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='email'>Email</label>
+                                             <input type='email' class='form-control' id='email".$cFranq['ID_franqueados']."' name='email' value ='".$cFranq['Email']."'>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='tel'>Telefone</label>
+                                             <input type='text' class='form-control' id='tel".$cFranq['ID_franqueados']."' name='telefone' value ='".$cFranq['Telefone']."'>
+                                         </div>
+                                         
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='cep'>CEP</label>
+                                             <input type='text' class='form-control' id='cep".$cFranq['ID_franqueados']."' name='cep' value ='".$cFranq['CEP']."'>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='estado'>Estado</label>
+                                             <input type='text' class='form-control' id='estado".$cFranq['ID_franqueados']."' name='estado' value ='".$cFranq['Estado']."'>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='cidade'>Cidade</label>
+                                             <input type='text' class='form-control' id='cidade".$cFranq['ID_franqueados']."' name='cidade' value ='".$cFranq['Cidade']."'>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='rua'>Rua</label>
+                                             <input type='text' class='form-control' id='rua".$cFranq['ID_franqueados']."' name='rua'value ='".$cFranq['Rua']."'>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='numero'>Número</label>
+                                             <input type='text' class='form-control' id='numero".$cFranq['ID_franqueados']."' name='numero' value ='".$cFranq['Numero']."'>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='bairro'>Bairro</label>
+                                             <input type='text' class='form-control' id='bairro".$cFranq['ID_franqueados']."' name='bairro' value ='".$cFranq['Bairro']."'>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='login'>Login</label>
+                                             <input type='text' class='form-control' id='login".$cFranq['ID_franqueados']."' name='login' value ='".$cFranq['Login']."'>
+                                         </div>
+                                         <div class='form-group col-12 col-lg-6'>
+                                             <label for='senha'>Senha</label>
+                                             <input type='text' class='form-control' id='senha".$cFranq['ID_franqueados']."' name='senha' value ='".$cFranq['Senha']."'>
+                                         </div>
+                                         <input type='text' name='id' style='display:none;' value='".$cFranq['ID_franqueados']."'>
+                                     </div>
+     
+                    
+                                     <div class='d-flex justify-content-center'>
+                                     <a onclick='volta".$cFranq['ID_franqueados']."()' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Voltar</a>
+                                     <script>
+                                     function volta".$cFranq['ID_franqueados']."(){
+                                         window.scrollTo(0, 0);
+                                         document.getElementById('EditarFranqueado".$cFranq['ID_franqueados']."').style.display = 'none';
+                                         document.getElementById('tableAF').style.display = 'block';
+                                         document.getElementById('cbcLista').style.display = 'block';
+                                         
+                                     }
+                                     </script>
+
+                                         <input class='btn btn-success mr-2'type='submit' value='Enviar' name='enviareditarFranqueado'>
+                                     </div>
+                                 </form>
+                             </div>     
+                         </div>";
                                
 
                         } 
