@@ -125,14 +125,15 @@
                 <div class="cont-header" id="cbcLista">
                 
                     <h1>Lista de Afiliados e Franqueados</h1>
+                    <p>Nome - Perfil - Login</p>
                     <form action="buscarAfiliadoFranqueado.php" method="POST">
                     <select name='af'>
                     <?php
                          while($cAfiliados = mysqli_fetch_array($conAfiliados2)){
-                            echo "<option id='busca' value='".$cAfiliados['ID_afiliados']."'>".$cAfiliados['Nome']." - ".$cAfiliados['Perfil']." - ".$cAfiliados['Login']."</option>";
+                            echo "<option id='busca' value='".$cAfiliados['Login']."'>".$cAfiliados['Nome']." - ".$cAfiliados['Perfil']." - ".$cAfiliados['Login']."</option>";
                         }
                         while($cFranq = mysqli_fetch_array($conFranq2)){
-                            echo "<option id='busca' value='".$cFranq['ID_franqueados']."'>".$cFranq['Nome']." - ".$cFranq['Perfil']." - ".$cFranq['Login']."</option>";
+                            echo "<option id='busca' value='".$cFranq['Login']."'>".$cFranq['Nome']." - ".$cFranq['Perfil']." - ".$cFranq['Login']."</option>";
                         }
                         ?>
                     </select>
