@@ -127,12 +127,12 @@
                 echo "<div style='display:flex:flex-direction:row'>Dia:".$ch['Dia']."<br>Início:<input name='inicio' type='time' value='".$ch['Hora_inicio']."'></input>
                 Fim:<input name='fim' type='time' value='".$ch['Hora_fim']."'></input></div>
                 <br>Máquinas Disponíveis:".$ch['maquinas_dispo'] - $ch['maquinas_ocup']."<br>
-                Aumentar:<input name='aumentar' type='number'></input>";
+                Aumentar:<input name='aumentar' min='0' max='100' type='number'>";
                 if(($ch['maquinas_dispo'] - $ch['maquinas_ocup']) == 0){
-                    echo "Diminuir:<input name='diminuir' type='number' disabled></input>";
+                    echo "Diminuir:<input name='diminuir' type='number' disabled>";
                 }
                 else{
-                    echo "Diminuir:<input name='diminuir' type='number'></input>";
+                    echo "Diminuir:<input name='diminuir' type='number'  min='0' max='".$ch['maquinas_dispo'] - $ch['maquinas_ocup']."'>";
                 }
               }
             ?>
