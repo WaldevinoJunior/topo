@@ -125,36 +125,43 @@
              $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
              while($cH = mysqli_fetch_array($conH)){
                 if($cH['Dia'] == "Segunda-Feira"){
+                    $idSegunda[] = $cH['ID_Horario'];
                     $hiSegunda [] = $cH['Hora_inicio'];
                     $hfSegunda [] = $cH['Hora_fim'];
                     $DispoSegunda []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
                 }
                 if($cH['Dia'] == "Terça-Feira"){
+                    $idT[] = $cH['ID_Horario'];
                     $hiT [] = $cH['Hora_inicio'];
                     $hfT [] = $cH['Hora_fim'];
                     $DispoTerca [] =  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
                 }
                 if($cH['Dia'] == "Quarta-Feira"){
+                    $idQuarta[] = $cH['ID_Horario'];
                     $hiQuarta [] = $cH['Hora_inicio'];
                     $hfQuarta [] = $cH['Hora_fim'];
                     $DispoQuarta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
                 }
                 if($cH['Dia'] == "Quinta-Feira"){
+                    $idQuinta[] = $cH['ID_Horario'];
                     $hiQuinta [] = $cH['Hora_inicio'];
                     $hfQuinta [] = $cH['Hora_fim'];
                     $DispoQuinta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
                 }
                 if($cH['Dia'] == "Sexta-Feira"){
+                    $idSexta[] = $cH['ID_Horario'];
                     $hiSexta [] = $cH['Hora_inicio'];
                     $hfSexta [] = $cH['Hora_fim'];
                     $DispoSexta []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
                 }
                 if($cH['Dia'] == "Sabádo"){
+                    $idSabado[] = $cH['ID_Horario'];
                     $hiSabado [] = $cH['Hora_inicio'];
                     $hfSabado [] = $cH['Hora_fim'];
                     $DispoSabado []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
                 }
                 if($cH['Dia'] == "Domingo"){
+                    $idDomingo[] = $cH['ID_Horario'];
                     $hiDomingo [] = $cH['Hora_inicio'];
                     $hfDomingo [] = $cH['Hora_fim'];
                     $DispoDomingo []=  $cH['maquinas_dispo'] - $cH['maquinas_ocup'];
@@ -162,31 +169,52 @@
              }
              echo "<h1>Segunda</h1><br>";
              for($i = 0 ; $i< count($hiSegunda); $i++){
-                echo $hiSegunda[$i]."-".$hfSegunda[$i]." - Maquinas Disponiveis:".$DispoSegunda[$i]."<br>";
+                echo "<div style='display:flex;flex-direction:row'>".$hiSegunda[$i]."-".$hfSegunda[$i]." - Maquinas Disponiveis:".$DispoSegunda[$i]."
+                <a href='./editarHorario.php?idhorario=".$idSegunda[$i]."' class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:50px;height:30px;font-size:12px;color:white;'>Editar</a>
+                <a href='./deletarHorario.php?idhorario=".$idSegunda[$i]."' class='btn btn-success mr-2' style='background-color:red;width:50px;height:30px;font-size:12px;color:white;'>Deletar</a>
+                </div><br>";
                 }
                 echo "<h1>Terça</h1>";
                 for($i = 0 ; $i< count($hiT); $i++){
-                    echo $hiT[$i]."-".$hfT[$i]." - Maquinas Disponiveis:".$DispoTerca[$i]."<br>";
+                    echo "<div style='display:flex;flex-direction:row'>".$hiT[$i]."-".$hiT[$i]." - Maquinas Disponiveis:".$DispoTerca[$i]."
+                    <a href='./editarHorario.php?idhorario=".$idT[$i]."' class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:50px;height:30px;font-size:12px;color:white;'>Editar</a>
+                    <a href='./deletarHorario.php?idhorario=".$idT[$i]."' class='btn btn-success mr-2' style='background-color:red;width:50px;height:30px;font-size:12px;color:white;'>Deletar</a>
+                    </div><br>";
                 }
                 echo "<h1>Quarta</h1>";
                 for($i = 0 ; $i< count($hiQuarta); $i++){
-                    echo $hiQuarta[$i]."-".$hfQuarta[$i]." - Maquinas Disponiveis:".$DispoQuarta[$i]."<br>";
+                    echo "<div style='display:flex;flex-direction:row'>".$hiQuarta[$i]."-".$hiQuarta[$i]." - Maquinas Disponiveis:".$DispoQuarta[$i]."
+                    <a href='./editarHorario.php?idhorario=".$idQuarta[$i]."' class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:50px;height:30px;font-size:12px;color:white;'>Editar</a>
+                    <a href='./deletarHorario.php?idhorario=".$idQuarta[$i]."' class='btn btn-success mr-2' style='background-color:red;width:50px;height:30px;font-size:12px;color:white;'>Deletar</a>
+                    </div><br>";
                 }
                 echo "<h1>Quinta</h1>";
                 for($i = 0 ; $i< count($hiQuinta); $i++){
-                    echo $hiQuinta[$i]."-".$hfQuinta[$i]." - Maquinas Disponiveis:".$DispoQuinta[$i]."<br>";
+                    echo "<div style='display:flex;flex-direction:row'>".$hiQuinta[$i]."-".$hiQuinta[$i]." - Maquinas Disponiveis:".$DispoQuinta[$i]."
+                    <a href='./editarHorario.php?idhorario=".$idQuinta[$i]."' class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:50px;height:30px;font-size:12px;color:white;'>Editar</a>
+                    <a href='./deletarHorario.php?idhorario=".$idQuinta[$i]."' class='btn btn-success mr-2' style='background-color:red;width:50px;height:30px;font-size:12px;color:white;'>Deletar</a>
+                    </div><br>";
                 }
                 echo "<h1>Sexta</h1>";
                 for($i = 0 ; $i< count($hiSexta); $i++){
-                    echo $hiSexta[$i]."-".$hfSexta[$i]." - Maquinas Disponiveis:".$DispoSexta[$i]."<br>";
+                    echo "<div style='display:flex;flex-direction:row'>".$hiSexta[$i]."-".$hiSexta[$i]." - Maquinas Disponiveis:".$DispoSexta[$i]."
+                    <a href='./editarHorario.php?idhorario=".$idSexta[$i]."' class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:50px;height:30px;font-size:12px;color:white;'>Editar</a>
+                    <a href='./deletarHorario.php?idhorario=".$idSexta[$i]."' class='btn btn-success mr-2' style='background-color:red;width:50px;height:30px;font-size:12px;color:white;'>Deletar</a>
+                    </div><br>";
                 }
                 echo "<h1>Sabádo</h1>";
                 for($i = 0 ; $i< count($hiSabado); $i++){
-                    echo $hiSabado[$i]."-".$hfSabado[$i]." - Maquinas Disponiveis:".$DispoSabado[$i]."<br>";
+                    echo "<div style='display:flex;flex-direction:row'>".$hiSabado[$i]."-".$hiSabado[$i]." - Maquinas Disponiveis:".$DispoSabado[$i]."
+                    <a href='./editarHorario.php?idhorario=".$idSabado[$i]."' class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:50px;height:30px;font-size:12px;color:white;'>Editar</a>
+                    <a href='./deletarHorario.php?idhorario=".$idSabado[$i]."' class='btn btn-success mr-2' style='background-color:red;width:50px;height:30px;font-size:12px;color:white;'>Deletar</a>
+                    </div><br>";
                 }
                 echo "<h1>Domingo</h1>";
                 for($i = 0 ; $i< count($hiDomingo); $i++){
-                    echo $hiDomingo[$i]."-".$hfDomingo[$i]." - Maquinas Disponiveis:".$DispoDomingo[$i]."<br>";
+                    echo "<div style='display:flex;flex-direction:row'>".$hiDomingo[$i]."-".$hiDomingo[$i]." - Maquinas Disponiveis:".$DispoDomingo[$i]."
+                    <a href='./editarHorario.php?idhorario=".$idDomingo[$i]."' class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:50px;height:30px;font-size:12px;color:white;'>Editar</a>
+                    <a href='./deletarHorario.php?idhorario=".$idDomingo[$i]."' class='btn btn-success mr-2' style='background-color:red;width:50px;height:30px;font-size:12px;color:white;'>Deletar</a>
+                    </div><br>";
                 }
             ?>
 

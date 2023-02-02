@@ -58,7 +58,7 @@
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
-                            <a href="./historico.php">Histórico de Presença</a>
+                            <a href="./historico.php">Históricos</a>
                         </div>
             </li>
             <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
@@ -69,7 +69,7 @@
                         }
                     ?>
                         <a href="./licenca">Licença</a>
-                        <a href="./sat.php">Satisfação</a>lunoslunos
+                        <a href="./sat.php">Satisfação</a>
                     </div>
             </li>
 
@@ -78,7 +78,7 @@
         <div>
         <img id="mAdmin2" src="img/menuH.png" onclick="menu()"/>
         <ul id="mAdmin3" style="display:none">
-            <li><a href="./admin.php" style="color:black"><i class="bi bi-house"></i>Início</a></li>
+            <li><a href="./admin.php"  style="color:black"><i class="bi bi-house"></i>Início</a></li>
             <li style="cursor:pointer;"><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i>
                     <div id="barras">
                         <a href="./curso.php">Cadastrar Curso</a>
@@ -97,7 +97,7 @@
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
-                            <a href="./historico.php">Histórico de Presença</a>
+                            <a href="./historico.php">Históricos</a>
                         </div>
             </li>
             <li style="cursor:pointer;"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
@@ -112,7 +112,7 @@
                     </div>
             </li>
 
-            <li><a href="./valida.php?sair=true" style="color:black"><i class="bi bi-escape"></i>Sair</a></li>
+            <li><a href="./valida.php?sair=true"  style="color:black"><i class="bi bi-escape"></i>Sair</a></li>
         </ul>
         </div>
     </nav>
@@ -121,14 +121,14 @@
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func">
-                <div id="listaAlunos"  class="listAlunos">
+                <div id="listaAlunos" style="display:block" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
-                    
+                
                     <h1>Lista de Afiliados e Franqueados</h1>
                     <p>Nome - Perfil - Login</p>
                     <form action="buscarAfiliadoFranqueado.php" method="POST">
                     <select name='af'>
-                        <?php
+                    <?php
                          while($cAfiliados = mysqli_fetch_array($conAfiliados2)){
                             echo "<option id='busca' value='".$cAfiliados['Login']."'>".$cAfiliados['Nome']." - ".$cAfiliados['Perfil']." - ".$cAfiliados['Login']."</option>";
                         }
@@ -137,37 +137,44 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px;font-size:15px' name="buscaAF" value='Buscar'></input>
+                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px.font-size:15px' name="buscaAF" value="Buscar"></input>
                     </form>
-                    <a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
+                    <br><a href="./mostraAfiliadosFranqueados.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
                 </div>
 
-                <div class="content" style="display:block">   
+                <div class="content">   
                     <?php
                        $table = '<table class="table table-striped" id="tableAF">';
-                            $table .='<thead>';
-                                $table .= '<tr>';
-                                   $table .= '<th>ID</th>';
-                                   $table .= '<th>Nome</th>';
-                                   $table .= '<th>Perfil</th>';
-                                   $table .= '<th class="esconde">CNPJ</th>';
-                                   $table .= '<th class="esconde">Telefone</th>';
-                                $table .= '<th>Funções</th>';
-                                $table .= '</tr>';
-                            $table .= '</thead>';
-                            $table .= '<tbody>';
+                       $table .='<thead>';
+                           $table .= '<tr>';
+                              $table .= '<th>ID</th>';
+                              $table .= '<th>Nome</th>';
+                              $table .= '<th>Perfil</th>';
+                              $table .= '<th>CNPJ</th>';
+                              $table .= '<th>Telefone</th>';
+                           $table .= '<th>Funções</th>';
+                           $table .= '</tr>';
+                       $table .= '</thead>';
+                       $table .= '<tbody>';
+      
            
                                 while($cAfiliados = mysqli_fetch_array($conAfiliados)){
+                                    if($_GET['idafiliado'] != $cAfiliados['Login']){
+
+                                    }
+                                    else{
+
+                                    
                                     $table .= "<tr class='alunoBusca'  name=".$cAfiliados['ID_afiliados'].">";
                                         $table .= "<td>{$cAfiliados['ID_afiliados']}</td>";
                                         $table .= "<td>{$cAfiliados['Nome']}</td>";
                                         $table .= "<td>{$cAfiliados['Perfil']}</td>";
-                                        $table .= "<td class='esconde'>{$cAfiliados['CNPJ']}</td>";
-                                        $table .= "<td class='esconde'>{$cAfiliados['Telefone']}</td>";
+                                        $table .= "<td>{$cAfiliados['CNPJ']}</td>";
+                                        $table .= "<td>{$cAfiliados['Telefone']}</td>";
                                         $table .= "<td><button onclick='EditarAfiliado".$cAfiliados['ID_afiliados']."();' style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cAfiliados['ID_afiliados']."'>Editar</button>
                                         <form action='valida.php' method='POST'><input style='display:none' value='".$cAfiliados['ID_afiliados']."' name='idafiliado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaAfiliado' value='Deletar'></input></form></td>";
-                                        $table .= '</tr>';
-
+                                        $table .= '</tr></div>';
+                                        }
                                         echo "<script>
                                             function EditarAfiliado".$cAfiliados['ID_afiliados']."(){
     
@@ -262,15 +269,22 @@
 
                             } 
                             while($cFranq = mysqli_fetch_array($conFranq)){
+                                if($_GET['idafiliado'] != $cFranq['Login']){
+
+                                }
+                                else{
+
+                                
                                 $table .= "<tr class='alunoBusca'  name=".$cFranq['ID_franqueados'].">";
                                     $table .= "<td>{$cFranq['ID_franqueados']}</td>";
                                     $table .= "<td>{$cFranq['Nome']}</td>";
                                     $table .= "<td>{$cFranq['Perfil']}</td>";
-                                    $table .= "<td class='esconde'>{$cFranq['CNPJ']}</td>";
-                                    $table .= "<td class='esconde'>{$cFranq['Telefone']}</td>";
+                                    $table .= "<td>{$cFranq['CNPJ']}</td>";
+                                    $table .= "<td>{$cFranq['Telefone']}</td>";
                                     $table .= "<td><button onclick='EditarFranqueado".$cFranq['ID_franqueados']."();' style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cFranq['ID_franqueados']."'>Editar</button>
                                     <form action='valida.php' method='POST'><input style='display:none' value='".$cFranq['ID_franqueados']."' name='idfranqueado'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaFranqueado' value='Deletar'></input></form></td>";
-                                     $table .= '</tr>';
+                                     $table .= '</tr></div>';
+
                                      echo "<script>
                                      function EditarFranqueado".$cFranq['ID_franqueados']."(){
 
@@ -360,16 +374,17 @@
                                
 
                         } 
+                    }
                         $table .= '</tbody>';
                         $table .= '</table>';
                         echo $table;
                    ?>
                 </div>
                 </div>
+              
                 <hr>
             </div>
             </div>
-                         
             <div id="func2">
                 <div class="func2A">
                     <p>Licença</p>

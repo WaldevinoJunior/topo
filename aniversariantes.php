@@ -67,6 +67,7 @@ $table = '<table class="table table-striped" id="tableAluno">';
             $table .= '<th>ID</th>';
             $table .= '<th>Nome</th>';
             $table .= '<th>Nascimento</th>';
+            $table .= '<th>Telefone</th>';
         $table .= '<tr>';
     $table .= '</thead>';
     $table .= '<tbody>';
@@ -83,6 +84,7 @@ $table = '<table class="table table-striped" id="tableAluno">';
                     $table .= "<td>{$cAlunos['Nome']}</td>";
                     $cAlunos['Nascimento']=date('d/m/Y', strtotime($cAlunos['Nascimento']));
                     $table .= "<td>{$cAlunos['Nascimento']}</td>";
+                    $table .= "<td>{$cAlunos['Telefone']}</td>";
                     $table .= "</tr>";
                 }
                 
