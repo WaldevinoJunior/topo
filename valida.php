@@ -332,7 +332,7 @@ if(isset($_POST['cadastraAfiliado'])){
 			exit;
 		}
 	}
-	$consulta = "INSERT INTO afiliados (Nome, CPF, CNPJ, Email, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha) VALUES  ('{$_POST['nome']}','{$_POST['cpf']}','{$_POST['cnpj']}', '{$_POST['email']}', 
+	$consulta = "INSERT INTO afiliados (Nome, CPF, CNPJ, Perfil, Email, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha) VALUES  ('{$_POST['nome']}','{$_POST['cpf']}','{$_POST['cnpj']}', 'Afiliado', '{$_POST['email']}', 
 	'{$_POST['telefone']}','{$_POST['rua']}','{$_POST['numero']}', 
 	'{$_POST['bairro']}','{$_POST['cidade']}','{$_POST['estado']}','{$_POST['cep']}'
 	,'{$_POST['login']}','{$_POST['senha']}')";
@@ -386,7 +386,7 @@ if(isset($_POST['cadastraFranqueado'])){
 			exit;
 		}
 	}
-	$consulta = "INSERT INTO franqueados (Nome, CNPJ, Email, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha) VALUES  ('{$_POST['nome']}','{$_POST['cnpj']}', '{$_POST['email']}', 
+	$consulta = "INSERT INTO franqueados (Nome, CNPJ, Email, Perfil, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha) VALUES  ('{$_POST['nome']}','{$_POST['cnpj']}', '{$_POST['email']}', 'Franqueado',
 	'{$_POST['telefone']}','{$_POST['rua']}','{$_POST['numero']}', 
 	'{$_POST['bairro']}','{$_POST['cidade']}','{$_POST['estado']}','{$_POST['cep']}'
 	,'{$_POST['login']}','{$_POST['senha']}')";
