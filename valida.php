@@ -231,6 +231,7 @@ if(isset($_POST['enviareditarColab'])){
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
+
 if(isset($_POST['cadastraColab'])){
 	$_POST['nome'] = clear($_POST['nome']);
 	$_POST['nascimento'] = clear($_POST['nascimento']);
@@ -283,6 +284,15 @@ if(isset($_POST['cadastraColab'])){
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
 	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['login']}','{$_POST['senha']}', '{$_POST['perfil']}')";
+	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	header('Location: ./admin.php');
+}
+if(isset($_POST['enviareditarAfiliado'])){
+	$consulta = "UPDATE afiliados SET Nome = '{$_POST['nome']}',Email = '{$_POST['email']}',
+	Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', CNPJ = '{$_POST['cnpj']}', 
+	CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
+	, Numero = '{$_POST['numero']}', Bairro = '{$_POST['bairro']}'
+	, Login = '{$_POST['login']}',Senha = '{$_POST['senha']}'  WHERE ID_afiliados = '{$_POST['id']}'";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
@@ -340,6 +350,15 @@ if(isset($_POST['cadastraAfiliado'])){
 	header('Location: ./admin.php');
 
 
+}
+if(isset($_POST['enviareditarFranqueado'])){
+	$consulta = "UPDATE franqueados SET Nome = '{$_POST['nome']}',Email = '{$_POST['email']}',
+	Telefone = '{$_POST['telefone']}', CNPJ = '{$_POST['cnpj']}', 
+	CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
+	, Numero = '{$_POST['numero']}', Bairro = '{$_POST['bairro']}'
+	, Login = '{$_POST['login']}',Senha = '{$_POST['senha']}'  WHERE ID_franqueados = '{$_POST['id']}'";
+	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+	header('Location: ./admin.php');
 }
 if(isset($_POST['cadastraFranqueado'])){
 	$_POST['nome'] = clear($_POST['nome']);
