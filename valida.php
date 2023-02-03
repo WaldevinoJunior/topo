@@ -750,6 +750,16 @@ if(isset($_POST['editarHorario'])){
 	}
 	header('Location: ./mostrahorario.php');
 }
+if(isset($_POST['editarCurso'])){
+	$sql = "UPDATE cursos SET Nome_curso = '{$_POST['cursonome']}', Preco = '{$_POST['cursopreco']}', Horas = '{$_POST['cursohoras']}', Descricao = '{$_POST['cursodescricao']}', aulas_totais = '{$_POST['cursoaulas']}' WHERE ID_Curso = '{$_POST['id']}'";
+	$con = $mysqli->query($sql) or die($mysqli->error);
+	header('Location:./editarCurso.php?id='.$_POST['id'].'');
+}
+if(isset($_POST['deletarCurso'])){
+	$sql = "DELETE FROM cursos WHERE ID_Curso = '{$_POST['id']}'";
+	$con = $mysqli->query($sql) or die($mysqli->error);
+	header('Location: ./mostraCurso.php');
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }
