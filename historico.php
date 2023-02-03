@@ -136,7 +136,7 @@
                     <br><a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
                 </div>
 
-                <div class="content" style="overflow-y: scroll;height:200px">   
+                <div class="content" style="overflow-y: scroll;height:400px">   
                     <?php
                        $table = '<table class="table table-striped" id="tableAluno">';
                             $table .='<thead>';

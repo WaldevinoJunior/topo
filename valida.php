@@ -10,10 +10,14 @@ $consulta = "SELECT * FROM alunos";
 $consulta2 = "SELECT * FROM cursos";
 $consulta3 = "SELECT * FROM colaboradores";
 $consulta4 = "SELECT * FROM aluno_testes";
+$consulta5 = "SELECT * FROM afiliados";
+$consulta6 = "SELECT * FROM franqueados";
 $con = $mysqli->query($consulta) or die($mysqli->error);
 $con2 = $mysqli->query($consulta2) or die($mysqli->error);
 $con3 = $mysqli->query($consulta3) or die($mysqli->error);
 $con4 = $mysqli->query($consulta4) or die($mysqli->error);
+$con5 = $mysqli->query($consulta5) or die($mysqli->error);
+$con6 = $mysqli->query($consulta6) or die($mysqli->error);
 function clear($input){
 	global $mysqli;
 	$var = mysqli_escape_string($mysqli,$input);
@@ -42,6 +46,24 @@ if(isset($_POST['submitindex'])){
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
 			if($_POST['Login'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
 				$_SESSION['Perfil'] = $c3['Perfil'];
+				header('Location: ./admin.php');
+				$_SESSION['verifica'] = 2;	
+			}
+		}
+	}
+	while($c5 = mysqli_fetch_array($con5)){	
+		if(isset($_POST['Login']) && isset($_POST['Senha'])){
+			if($_POST['Login'] == $c5['Login'] && $_POST['Senha'] == $c5['Senha']){
+				$_SESSION['Perfil'] = $c5['Perfil'];
+				header('Location: ./admin.php');
+				$_SESSION['verifica'] = 2;	
+			}
+		}
+	}
+	while($c6 = mysqli_fetch_array($con6)){	
+		if(isset($_POST['Login']) && isset($_POST['Senha'])){
+			if($_POST['Login'] == $c6['Login'] && $_POST['Senha'] == $c6['Senha']){
+				$_SESSION['Perfil'] = $c6['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
 			}
