@@ -124,16 +124,11 @@
              $consultaHorario = "SELECT * from horarios WHERE ID_Horario = '{$_GET['idhorario']}'";
              $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
               while($ch = mysqli_fetch_array($conH)){
-                echo "<div style='display:flex:flex-direction:row'>Dia:".$ch['Dia']."<br>Início:<form action='valida.php' method='POST'><input name='inicio' type='time' value='".$ch['Hora_inicio']."'></input>
-                Fim:<input name='fim' type='time' value='".$ch['Hora_fim']."'></input></div>
+                echo "<div style='display:flex:flex-direction:row'>Dia:".$ch['Dia']."Início:".$ch['Hora_inicio']."
+                Fim:".$ch['Hora_fim']."</div>
                 <br>Máquinas Disponíveis:".$ch['maquinas_dispo'] - $ch['maquinas_ocup']."<br>
-                Aumentar:<input name='aumentar' min='0' max='100' type='number'>";
-                if(($ch['maquinas_dispo'] - $ch['maquinas_ocup']) == 0){
-                    echo "Diminuir:<input name='diminuir' type='number' disabled><input name='horarioid' value='".$_GET['idhorario']."' style='display:none'/> <input class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:60px;height:30px;font-size:12px;color:white;' name='editarHorario' type='submit' value='Editar'></form>";
-                }
-                else{
-                    echo "Diminuir:<input name='diminuir' type='number'  min='0' max='".$ch['maquinas_dispo'] - $ch['maquinas_ocup']."'><input name='horarioid' value='".$_GET['idhorario']."' style='display:none'/> <input class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:60px;height:30px;font-size:12px;color:white;' name='editarHorario' type='submit' value='Editar'></form>";
-                }
+                Deseja Deletar esse horario?<br><form action='valida.php' method='POST'><input name='horarioid' value='".$_GET['idhorario']."' style='display:none'/> <input class='btn btn-success mr-2' style='margin-left:5px;background-color:red;width:50px;height:30px;font-size:12px;color:white;' name='deletarHorario' type='submit' value='Sim'></form>";
+                
               }
             ?>
 
