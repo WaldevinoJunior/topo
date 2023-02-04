@@ -49,6 +49,7 @@
             <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i>
                     <div id="barras">
                         <a href="./mostrahorario.php">Horário</a>
+                        <a href="./mostraCurso.php">Curso</a>
                         <a href="./propagandas.php">Propragandas</a>
                     </div>
             </li>
@@ -89,6 +90,7 @@
             <li style="cursor:pointer;"><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i>
                     <div id="barras">
                         <a href="./mostrahorario.php">Horário</a>
+                        <a href="./mostraCurso.php">Curso</a>
                         <a href="./propagandas.php">Propragandas</a>
                     </div>
             </li>
