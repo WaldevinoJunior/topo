@@ -126,7 +126,7 @@
                     
                     <h1>Lista de Afiliados e Franqueados</h1>
                     <p>Nome - Perfil - Login</p>
-                    <form action="buscarAfiliadoFranqueado.php" method="POST">
+                    <form style="padding-bottom:10px;" action="buscarAfiliadoFranqueado.php" method="POST">
                     <select name='af'>
                         <?php
                          while($cAfiliados = mysqli_fetch_array($conAfiliados2)){
@@ -137,9 +137,10 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px;font-size:15px' name="buscaAF" value='Buscar'></input>
-                    </form>
-                    <a href="./admin.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
+                    <input type="submit" class="btn btn-primary btn-sm" style="background-color:blue;margin-top:10px;vertical-align:baseline;font-size:14px;" name="buscaAF" value="Buscar"></input>
+                    <a href="./admin.php" class="btn btn-primary btn-sm" style="background-color:blue;vertical-align:baseline;margin:0px;font-size:14px;">Voltar</a>
+                </form>
+
                 </div>
 
                 <div class="content" style="display:block">   
