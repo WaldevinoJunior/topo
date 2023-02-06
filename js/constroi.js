@@ -10,10 +10,18 @@ function adcElemento(){
 }
 function muda(){
   document.getElementById("muda").style.display = "block";
-  document.getElementById("canvas").style.display = "none";
+  // let e = document.getElementById("canvas");
+  // if(getComputedStyle(e).visibility == "visible"){
+  //   document.getElementById("canvas").style.visibility = "unvisible";
+  // }
+ //document.getElementById("canvas").style.visibility = "hidden";
+
+
 }
 function muda2(){
   document.getElementById("muda").style.display = "none";
+
+
 }
 function muda3(){
   document.getElementById("muda").style.display = "none";

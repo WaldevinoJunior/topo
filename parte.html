@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="js/constroi.js"> </script>
+
 
     <script type="text/javascript">
         function validaCampo(){
@@ -56,11 +58,14 @@
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./about-us.html">A Empresa</a></li>
-                <li><a href="./services.html">Cursos</a></li>
-               <!--  <li><a href="https://podiumcursos.ouromoderno.com.br/">Loja Virtual</a></li> -->
-                <li><a href="./login.html">Login</a></li>
+                <li class="active"><a href="./services.html">Cursos</a></li>
+               <!-- <li><a href="https://podiumcursos.ouromoderno.com.br/">Loja Virtual</a></li> -->
+                <li><a href="javascript:muda();">Login</a></li>
                 <li><a href="./parte.html">Afiliados</a></li>
                 <li><a href="./contact.html">Contato</a></li>
+                <li style="cursor:pointer"><a>Validar Certificado Abaixo</a></li>
+                <form id="certi2" action="valida.php" method="POST"><input type="text" name="codigo">&nbsp<input value="Enviar" name="verificaCerti" type="submit"/></form>
+                
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -90,10 +95,12 @@
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="./about-us.html">A Empresa</a></li>
                             <li><a href="./services.html">Cursos</a></li>
-                          <!--  <li><a href="https://podiumcursos.ouromoderno.com.br/">Loja Virtual</a></li> -->
-                            <li><a href="./login.html">Login</a></li>
-                            <li><a href="./parte.html">Afiliados</a></li>
+                           <!--  <li><a href="https://podiumcursos.ouromoderno.com.br/">Loja Virtual</a></li> -->
+                            <li><a href="javascript:muda();">Login</a></li>
+                            <li class="active"><a href="./parte.html">Afiliados</a></li>
                             <li><a href="./contact.html">Contato</a></li>
+                            <li style="cursor:pointer"><a onclick="certificado();">Validar Certificado</a></li>
+                            <form id="certi" style="display:none" action="valida.php" method="POST"><input type="text" name="codigo">&nbsp<input value="Enviar" name="verificaCerti" type="submit"/></form>
                         </ul>
                     </nav>
                 </div>
