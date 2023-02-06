@@ -119,22 +119,14 @@
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func" style="flex-direction:column;">
-            <a href="./mostrahorario.php"class="btn btn-success mr-2" style="background-color:blue;width:70px;height:40px;font-size:16px;color:white;margin-top:20px;margin-bottom:10px">Voltar</a>
+            <a href="./mostraCurso.php"class="btn btn-success mr-2" style="background-color:blue;width:70px;height:40px;font-size:16px;color:white;margin-top:20px;margin-bottom:10px">Voltar</a><br>
             <?php
-             $consultaHorario = "SELECT * from horarios WHERE ID_Horario = '{$_GET['idhorario']}'";
-             $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
-              while($ch = mysqli_fetch_array($conH)){
-                echo "<div style='display:flex:flex-direction:row'>Dia:".$ch['Dia']."<br>Início:<form action='valida.php' method='POST'><input name='inicio' type='time' value='".$ch['Hora_inicio']."'></input>
-                Fim:<input name='fim' type='time' value='".$ch['Hora_fim']."'></input></div>
-                <br>Máquinas Disponíveis:".$ch['maquinas_dispo'] - $ch['maquinas_ocup']."<br>
-                Aumentar:<input name='aumentar' min='0' max='100' type='number'>";
-                if(($ch['maquinas_dispo'] - $ch['maquinas_ocup']) == 0){
-                    echo "Diminuir:<input name='diminuir' type='number' disabled><input name='horarioid' value='".$_GET['idhorario']."' style='display:none'/> <input class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:60px;height:30px;font-size:12px;color:white;' name='editarHorario' type='submit' value='Editar'></form>";
-                }
-                else{
-                    echo "Diminuir:<input name='diminuir' type='number'  min='0' max='".$ch['maquinas_dispo'] - $ch['maquinas_ocup']."'><input name='horarioid' value='".$_GET['idhorario']."' style='display:none'/> <input class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:60px;height:30px;font-size:12px;color:white;' name='editarHorario' type='submit' value='Editar'></form>";
-                }
-              }
+             $consultaCursos = "SELECT * from cursos WHERE ID_Curso = '{$_GET['id']}'";
+             $conC = $mysqli->query($consultaCursos) or die($mysqli->error);
+             while($c = mysqli_fetch_array($conC)){
+                echo "<form action='valida.php' method='POST'><div style='display:flex;flex-direction:column;align-items:center'><label>Curso:</label>".$c['Nome_curso']."</label><input name='id' style='display:none' value='".$_GET['id']."'/>
+                <label>Deletar esse curso?</label><input class='btn btn-success mr-2' style='margin-left:5px;background-color:red;width:80px;height:40px;font-size:16px;color:white;' name='deletarCurso' type='submit' value='Deletar'></div></form>";
+             }
             ?>
 
 
