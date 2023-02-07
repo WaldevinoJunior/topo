@@ -191,6 +191,15 @@ function voltaAdmin4(){
     document.getElementById("listaColaboradores").style.display = 'none';
     window.scrollTo(0,0);
 }
+function voltaAdmin5(){
+  let e = document.getElementsByClassName("funcA");;
+   for (let i = 0; i < e.length; i++) {
+     e[i].style.display = "none";
+   }
+   document.getElementById("listaColaboradores").style.display = 'flex';
+   window.scrollTo(0,0);
+   alert("oi");
+}
 function voltaAdmin3(){
   let e = document.getElementsByClassName("funcA");;
     for (let i = 0; i < e.length; i++) {

@@ -249,7 +249,7 @@ if(isset($_POST['enviareditarColab'])){
 	Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
 	CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
 	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
-	, Login = '{$_POST['login']}',Senha = '{$_POST['senha']}', Perfil = '{$_POST['perfil']}'  WHERE ID_Colaborador = '{$_POST['id']}'";
+	, Login = '{$_POST['login']}',Senha = '{$_POST['senha']}', Perfil = '{$_POST['perfil']}' WHERE ID_Colaborador = '{$_POST['id']}'";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
@@ -576,6 +576,10 @@ if(isset($_POST['buscaAluno'])){
 if(isset($_POST['buscaAF'])){
 	$_POST['af'] = clear($_POST['af']);
 	header('Location: ./buscarAfiliadoFranqueado.php?idafiliado='.$_POST['af'].'');
+}
+if(isset($_POST['buscaColab'])){
+	$_POST['listaColab'] = clear($_POST['listaColab']);
+	header('Location: ./buscarColab.php?idcolab='.$_POST['listaColab'].'');
 }
 if(isset($_POST['cadastraHorario'])){
 	$_POST['dia'] = clear($_POST['dia']);

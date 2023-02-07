@@ -143,7 +143,7 @@
 
                 </div>
 
-                <div class="content" style="display:block">   
+                <div class="content" style="overflow-y: scroll;height:300px;display:flex">   
                     <?php
                        $table = '<table class="table table-striped" id="tableAF">';
                             $table .='<thead>';
