@@ -6,7 +6,6 @@
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conAlunos2 = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
-    $conColab2 = $mysqli->query($consultaColab) or die($mysqli->error);
     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
     session_start();
 	if($_SESSION['verifica'] != 2){
@@ -59,8 +58,7 @@
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
-                            <a href="./historico.php">Histórico de Presença</a>
-                            <a href="./historicoC.php">Histórico dos Cursos</a>
+                            <a href="./historico.php">Históricos</a>
                         </div>
             </li>
             <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
@@ -100,8 +98,7 @@
                             <a href="./contratos.php">Contratos</a>
                             <a href="./pagamentos.php">Pagamentos</a>
                             <a href="./aniversariantes.php">Aniversariantes</a>
-                            <a href="./historico.php">Histórico de Presença</a>
-                            <a href="./historicoC.php">Histórico dos Cursos</a>
+                            <a href="./historico.php">Históricos</a>
                         </div>
             </li>
             <li style="cursor:pointer;"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
@@ -127,23 +124,10 @@
             <div id="func">
                 <div id="listaColaboradores" class="listColab" style="display:none">
                 <div class="cont-header" id="cbcLista2">
-                <h1>Lista de Colaboradores</h1>
-                    <p>Nome - Perfil - Login</p>
-                    <form style="padding-bottom:10px;" action="buscarColab.php" method="POST">
-                    <select name='listaColab'>
-                        <?php
-                         while($cColab = mysqli_fetch_array($conColab2)){
-                            echo "<option id='busca' value='".$cColab['Login']."'>".$cColab['Nome']." - ".$cColab['Perfil']." - ".$cColab['Login']."</option>";
-                        }
-                        ?>
-                    </select>
-                    <input type="submit" class="btn btn-primary btn-sm" style="background-color:blue;margin-top:10px;vertical-align:baseline;font-size:14px;" name="buscaColab" value="Buscar"></input>
-                    <a onclick="voltaAdmin4()" class="btn btn-success btn-sm" style="background-color:blue;vertical-align:baseline;margin:0px;font-size:14px;">Voltar</a>
-                </form>
-
-                   
+                    <h1>Lista de colaboradores</h1>
+                    <a onclick="voltaAdmin4()" class="btn btn-success btn-sm" style="background-color:blue;">Voltar</a>
                 </div>
-                <div class="content" style="overflow-y: scroll;height:300px;display:flex"> 
+                <div class="content"> 
                     <?php
                        $table = '<table class="table table-striped" id="tableColab">';
                             $table .='<thead>';
@@ -162,7 +146,6 @@
                                 //    $table .= '<th>Login</th>';
                                 //    $table .= '<th>Senha</th>';
                                    $table .= '<th>Perfil</th>';
-                                   $table .= '<th>Funções</th>';
                                    //$table .= '<th>Licença</th>';
                                 $table .= '</tr>';
                             $table .= '</thead>';

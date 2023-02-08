@@ -34,7 +34,7 @@ if(isset($_POST['submitindex'])){
 	$_POST['Senha'] = clear($_POST['Senha']);
 	while($c = mysqli_fetch_array($con)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
-			if($_POST['Login'] == $c['Login'] && $_POST['Senha'] == $c['Senha']){
+			if($_POST['Login'] == $c['Login'] &&  password_verify($_POST['Senha'], $c['Senha'])){
 				$_SESSION['nome'] = $c['Nome'];
 				$_SESSION['ID_Aluno'] = $c['ID_Aluno'];
 				header('Location: ./usuario.php');
@@ -44,7 +44,7 @@ if(isset($_POST['submitindex'])){
 	}
 	while($c3 = mysqli_fetch_array($con3)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
-			if($_POST['Login'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
+			if($_POST['Login'] == $c3['Login'] && password_verify($_POST['Senha'], $c3['Senha'])){
 				$_SESSION['Perfil'] = $c3['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
@@ -53,7 +53,7 @@ if(isset($_POST['submitindex'])){
 	}
 	while($c5 = mysqli_fetch_array($con5)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
-			if($_POST['Login'] == $c5['Login'] && $_POST['Senha'] == $c5['Senha']){
+			if($_POST['Login'] == $c5['Login'] && password_verify($_POST['Senha'], $c5['Senha'])){
 				$_SESSION['Perfil'] = $c5['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
@@ -62,7 +62,7 @@ if(isset($_POST['submitindex'])){
 	}
 	while($c6 = mysqli_fetch_array($con6)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
-			if($_POST['Login'] == $c6['Login'] && $_POST['Senha'] == $c6['Senha']){
+			if($_POST['Login'] == $c6['Login'] && password_verify($_POST['Senha'], $c6['Senha'])){
 				$_SESSION['Perfil'] = $c6['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
@@ -467,6 +467,7 @@ if(isset($_POST['cadastraAluno2'])){
 	$_POST['complemento'] = clear($_POST['complemento']);
 	$_POST['senha'] = clear($_POST['senha']);
 	$_POST['login'] = clear($_POST['login']);
+	$_POST['senha'] = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 	$verifica = "SELECT * FROM alunos";
 	$veri = $mysqli->query($verifica) or die($mysqli->error);
 	while($c = mysqli_fetch_array($veri)){
