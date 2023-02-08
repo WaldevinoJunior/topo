@@ -142,7 +142,7 @@
                     <p>".$cAlunos['Responsavel_2']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
-                    <label for='nome'>Responsável Telefone</label>
+                    <label for='nome'>Telefone do Responsável</label>
                     <p>".$cAlunos['Responsavel_numero']."</p>
                 </div>
                 <div class='form-group col-12 col-lg-6'>
@@ -216,7 +216,7 @@
                     } 
                     echo"</p>
                 </div>
-                <div class='form-group col-12 col-lg-6'>
+                <div class='form-group col-12 col-lg-6' id='horarioAluno'>
                 <label for='login'>Horarios</label>
                 <p>";
                 $horarios = [];

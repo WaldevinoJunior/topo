@@ -543,7 +543,9 @@ body.usuario div.usuarioDiv button{
 #usuarioId{
     margin-top:20vh;
 }
-
+#horarioAluno{
+    left:-20vw
+}
 @media (max-width: 959px) {
     #paragrafo{
         font-size: 25px;
@@ -560,7 +562,9 @@ body.usuario div.usuarioDiv button{
         display: none;
     }
     
-
+    #horarioAluno{
+        left:0vw
+    }
 }
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
@@ -575,6 +579,9 @@ body.usuario div.usuarioDiv button{
     #AulaTexto{
         top: 50vh;
 
+    }
+    #horarioAluno{
+        left:0vw
     }
 }
 
@@ -605,6 +612,9 @@ body.usuario div.usuarioDiv button{
     #iconetopo{
         width: 50px;
     }
+    #horarioAluno{
+        left:0vw
+    }
 
 }
 @media (min-width: 768px) and (max-width: 1075px) {
@@ -629,6 +639,9 @@ body.usuario div.usuarioDiv button{
     }
     #func i {
         font-size: 50px;
+    }
+    #horarioAluno{
+        left:0vw
     }
 }
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -685,6 +698,10 @@ body.usuario div.usuarioDiv button{
     #func i {
         font-size: 50px;
     }
+    #horarioAluno{
+        left:0vw
+    }
+    
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */

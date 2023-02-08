@@ -364,12 +364,25 @@ if(isset($_POST['cadastraAfiliado'])){
 			exit;
 		}
 	}
-	$consulta = "INSERT INTO afiliados (Nome, CPF, CNPJ, Perfil, Email, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha) VALUES  ('{$_POST['nome']}','{$_POST['cpf']}','{$_POST['cnpj']}', 'Afiliado', '{$_POST['email']}', 
-	'{$_POST['telefone']}','{$_POST['rua']}','{$_POST['numero']}', 
-	'{$_POST['bairro']}','{$_POST['cidade']}','{$_POST['estado']}','{$_POST['cep']}'
-	,'{$_POST['login']}','{$_POST['senha']}')";
-	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
-	header('Location: ./admin.php');
+	if(isset($_POST['cnpj'])){
+		$consulta = "INSERT INTO afiliados (Nome, CPF, CNPJ, Perfil, Email, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha) VALUES  ('{$_POST['nome']}','{$_POST['cpf']}','{$_POST['cnpj']}', 'Afiliado', '{$_POST['email']}', 
+		'{$_POST['telefone']}','{$_POST['rua']}','{$_POST['numero']}', 
+		'{$_POST['bairro']}','{$_POST['cidade']}','{$_POST['estado']}','{$_POST['cep']}'
+		,'{$_POST['login']}','{$_POST['senha']}')";
+		$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+		header('Location: ./admin.php');
+		exit;
+	}
+	else{
+		$consulta = "INSERT INTO afiliados (Nome, CPF, Perfil, Email, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha) VALUES  ('{$_POST['nome']}','{$_POST['cpf']}', 'Afiliado', '{$_POST['email']}', 
+		'{$_POST['telefone']}','{$_POST['rua']}','{$_POST['numero']}', 
+		'{$_POST['bairro']}','{$_POST['cidade']}','{$_POST['estado']}','{$_POST['cep']}'
+		,'{$_POST['login']}','{$_POST['senha']}')";
+		$sqledita = $mysqli->query($consulta) or die($mysqli->error);
+		header('Location: ./admin.php');
+		exit;
+	}
+	
 
 
 }
