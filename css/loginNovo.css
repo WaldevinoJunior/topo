@@ -28,7 +28,7 @@ footer span{
 
 .login{
     text-align: center;
-    height: 118vh;
+    height: 130vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,10 +98,10 @@ a:link {
     font-size: 20px;
 }   
 
-@media (min-width: 1100px)
-{
+/* @media (min-width: 1100px)
+{ */
     body{
-        background: white;;
+        background: white;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -116,9 +116,6 @@ a:link {
         box-shadow: 2px 2px 5px #00000050;
     }
 
-    .login{
-        background-color: transparent;
-    }
 
     .login-div{
         background: linear-gradient(151deg, #009fd7, rgba(0,90,159,1) 100%);
@@ -160,7 +157,7 @@ a:link {
         }
     }
     
-}
+/* } */
 #load{
     width: 100%;
     display: flex;
@@ -429,13 +426,17 @@ body.usuario div.usuarioDiv button{
     display: flex;
     flex-direction:row;
     width: 40vw;
-    height: 5vh;
+    height: 6vh;
     position: absolute;
     top:60vh;
     background-color: white;
     left:50vw;
     border:2px solid black;
     border-bottom: 0px;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: rgb(28 28 29 / 48%) 5px 3px 2px 2px, rgba(194, 192, 192, 0.8) -1px 1px 1px 1px;
+
 }
 #paragrafo{
     text-align: justify;
@@ -454,6 +455,9 @@ body.usuario div.usuarioDiv button{
     left:50vw;
     border:2px solid black;
     border-top: 0px;
+    margin-top: 7px;
+    border-radius: 5px;
+    box-shadow: rgb(28 28 29 / 48%) 5px 3px 2px 2px, rgba(194, 192, 192, 0.8) -1px 1px 1px 1px;
 }
 
 #audio{
@@ -481,7 +485,7 @@ body.usuario div.usuarioDiv button{
   align-items: center;
   appearance: none;
   background-color: gray;
-  border-radius: 4px;
+  border-radius: 3px;
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
   box-sizing: border-box;
@@ -525,7 +529,7 @@ body.usuario div.usuarioDiv button{
 }
 .sair{
     background-color: red;
-    width: 35px;
+    width: 45px;
     padding: 3px;
     font-size: 16px;;
 }
@@ -539,6 +543,7 @@ body.usuario div.usuarioDiv button{
 #usuarioId{
     margin-top:20vh;
 }
+
 @media (max-width: 959px) {
     #paragrafo{
         font-size: 25px;
@@ -554,6 +559,7 @@ body.usuario div.usuarioDiv button{
     #mAdmin2{
         display: none;
     }
+    
 
 }
 
@@ -601,7 +607,30 @@ body.usuario div.usuarioDiv button{
     }
 
 }
-
+@media (min-width: 768px) and (max-width: 1075px) {
+    #func{
+        flex-direction: column;
+    }
+    #iconetopo{
+        width: 50px;
+    }
+    .esconde{
+        display: none;
+    }
+    #icones{
+        flex-direction: column;
+    }
+    #icones h1{
+        margin: 0;
+        top: -60px;
+        display: flex;
+        position: relative;
+        font-size: 30px;
+    }
+    #func i {
+        font-size: 50px;
+    }
+}
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media (min-width: 50px) and (max-width: 767px) {
     #paragrafo{
