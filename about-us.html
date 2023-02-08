@@ -43,14 +43,18 @@
          <i class="fa fa-search"></i>
      </div>-->
      <nav class="canvas-menu mobile-menu">
-         <ul>
-             <li><a href="./index.html">Home</a></li>
-             <li><a href="./about-us.html">A Empresa</a></li>
-             <li class="active"><a href="./services.html">Cursos</a></li>
-            <!--  <li><a href="https://podiumcursos.ouromoderno.com.br/">Loja Virtual</a></li> -->
-             <li><a href="./login.html">Login</a></li>
-             <li><a href="./contact.html">Contato</a></li>
-         </ul>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about-us.html">A Empresa</a></li>
+            <li class="active"><a href="./services.html">Cursos</a></li>
+           <!-- <li><a href="https://podiumcursos.ouromoderno.com.br/">Loja Virtual</a></li> -->
+            <li><a href="javascript:muda();">Login</a></li>
+            <li><a href="./parte.html">Afiliados</a></li>
+            <li><a href="./contact.html">Contato</a></li>
+            <li style="cursor:pointer"><a>Validar Certificado Abaixo</a></li>
+            <form id="certi2" action="valida.php" method="POST"><input type="text" name="codigo">&nbsp<input value="Enviar" name="verificaCerti" type="submit"/></form>
+            
+        </ul>
      </nav>
      <div id="mobile-menu-wrap"></div>
      <div class="canvas-social">
@@ -74,14 +78,17 @@
              </div>
              <div class="col-lg-6">
                  <nav class="nav-menu">
-                     <ul>
-                         <li><a href="./index.html">Home</a></li>
-                         <li class="active"><a href="./about-us.html">A Empresa</a></li>
-                         <li><a href="./services.html">Cursos</a></li>
-                        <!--  <li><a href="https://podiumcursos.ouromoderno.com.br/">Loja Virtual</a></li> -->
-                         <li><a href="javascript:muda();">Login</a></li>
-                         <li><a href="./contact.html">Contato</a></li>
-                     </ul>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li class="active"><a href="./about-us.html">A Empresa</a></li>
+                        <li><a href="./services.html">Cursos</a></li>
+                       <!--  <li><a href="https://podiumcursos.ouromoderno.com.br/">Loja Virtual</a></li> -->
+                        <li><a href="javascript:muda();">Login</a></li>
+                        <li><a href="./parte.html">Afiliados</a></li>
+                        <li><a href="./contact.html">Contato</a></li>
+                        <li style="cursor:pointer"><a onclick="certificado();">Validar Certificado</a></li>
+                        <form id="certi" style="display:none" action="valida.php" method="POST"><input type="text" name="codigo">&nbsp<input value="Enviar" name="verificaCerti" type="submit"/></form>
+                    </ul>
                  </nav>
              </div>
              <div class="col-lg-3">
@@ -114,11 +121,11 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <p class="titulo">Entre com seu cadastro</p>
-                        <form method="post" action="usuario.php">
+                        <form method="post" action="valida.php">
                             <input type="hidden" name="_token" value="PG9KJSXDEDSJsYlSYuH7Q5ZHBKxbyxqcIOrntZba">
-                            <input class="col-12" type="text" name="usuario" id="usuario" placeholder="Usuário" required>
-                            <input class="col-12" id="senha" type="password" name="senha" id="senha" placeholder="Senha" required>
-                            <input class="col-12" type="submit" name="submit" id="submit" value="Entrar">
+                            <input class="col-12" type="text" name="Login" id="usuario" placeholder="Usuário" required>
+                            <input class="col-12" id="senha" type="password" name="Senha" id="senha" placeholder="Senha" required>
+                            <input class="col-12" type="submit" name="submitindex" id="submit" value="Entrar">
                         </form>
                         <div>
                             <input type="checkbox" onclick="mostraSenha();"> Mostrar senha

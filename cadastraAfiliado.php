@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="cnpj">CNPJ(Somente números)</label>
-                                        <input type="text" class="form-control" minlenght="14"  maxlenght="14" id="cnpj" name="cnpj" placeholder="" required>
+                                        <input type="text" class="form-control" minlenght="14"  maxlenght="14" id="cnpj" name="cnpj" placeholder="">
                                     </div>
                                     
                                     <div class="form-group col-12 col-lg-6">

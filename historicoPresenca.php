@@ -144,9 +144,10 @@
                     <input style='display:none' value='{$_GET['alunoid']}' name='alunoid'>";
                     ?>
                     
-                    <input type="submit" value="Buscar" name="buscaPresencaMes" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px"> 
-                    </form>
-                    <br><a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
+                    <input type="submit" value="Buscar" name="buscaPresencaMes" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px"> 
+                    <a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:15px;font-size:14px">Voltar</a>
+                        
+                </form>
                 </div>
 
                 <div class="content" style="overflow-y: scroll;height:250px">   

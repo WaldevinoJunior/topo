@@ -2904,6 +2904,7 @@ ol {
 		left: 0;
 		opacity: 1;
 		visibility: visible;
+		display: block;
 	}
 	.offcanvas-menu-wrapper .canvas-close {
 		font-size: 22px;
@@ -3050,6 +3051,7 @@ ol {
 		left: 0;
 		opacity: 1;
 		visibility: visible;
+		display: block;
 	}
 	.offcanvas-menu-wrapper .canvas-close {
 		font-size: 22px;

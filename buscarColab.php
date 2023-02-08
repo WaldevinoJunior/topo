@@ -125,7 +125,7 @@
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func">
-                <div id="listaColaboradores" class="listColab" style="display:none">
+                <div id="listaColaboradores2" class="listColab" style="display:block">
                 <div class="cont-header" id="cbcLista2">
                 <h1>Lista de Colaboradores</h1>
                     <p>Nome - Perfil - Login</p>
@@ -138,57 +138,41 @@
                         ?>
                     </select>
                     <input type="submit" class="btn btn-primary btn-sm" style="background-color:blue;margin-top:10px;vertical-align:baseline;font-size:14px;" name="buscaColab" value="Buscar"></input>
-                    <a onclick="voltaAdmin4()" class="btn btn-success btn-sm" style="background-color:blue;vertical-align:baseline;margin:0px;font-size:14px;">Voltar</a>
-                </form>
-
-                   
+                    <a onclick="voltaAdmin5();" class="btn btn-success btn-sm" style="background-color:blue;vertical-align:baseline;margin:0px;font-size:14px;">Voltar</a>
+                </form>   
                 </div>
-                <div class="content" style="overflow-y: scroll;height:300px;display:flex"> 
+                <div class="content">   
                     <?php
                        $table = '<table class="table table-striped" id="tableColab">';
-                            $table .='<thead>';
-                                $table .= '<tr>';
-                                   $table .= '<th>ID</th>';
-                                   $table .= '<th>Nome</th>';
-                                   $table .= '<th class="esconde">Login</th>';
-                                   $table .= '<th class="esconde">Email</th>';
-                                   $table .= '<th class="esconde">Telefone</th>';
-                                //    $table .= '<th>CEP</th>';
-                                //    $table .= '<th>Estado</th>';
-                                //    $table .= '<th>Cidade</th>';
-                                //    $table .= '<th>Rua</th>';
-                                //    $table .= '<th>Número</th>';
-                                //    $table .= '<th>Complemento</th>';
-                                //    $table .= '<th>Login</th>';
-                                //    $table .= '<th>Senha</th>';
-                                   $table .= '<th>Perfil</th>';
-                                   $table .= '<th>Funções</th>';
-                                   //$table .= '<th>Licença</th>';
-                                $table .= '</tr>';
-                            $table .= '</thead>';
-                            $table .= '<tbody>';
-           
-                                while($cColab = mysqli_fetch_array($conColab)){
-                                    $table .= '<tr>';
-                                        $table .= "<td>{$cColab['ID_Colaborador']}</td>";
-                                        $table .= "<td>{$cColab['Nome']}</td>";
-                                        $table .= "<td class='esconde'>{$cColab['Login']}</td>";
-                                        $table .= "<td class='esconde'>{$cColab['Email']}</td>";
-                                        $table .= "<td class='esconde'>{$cColab['Telefone']}</td>";
-                                        // $table .= "<td>{$cColab['CEP']}</td>";
-                                        // $table .= "<td>{$cColab['Estado']}</td>";
-                                        // $table .= "<td>{$cColab['Cidade']}</td>";
-                                        // $table .= "<td>{$cColab['Rua']}</td>";
-                                        // $table .= "<td>{$cColab['Numero']}</td>";
-                                        // $table .= "<td>{$cColab['Complemento']}</td>";
-                                        // $table .= "<td>{$cColab['Login']}</td>";
-                                        // $table .= "<td>{$cColab['Senha']}</td>";
-                                        $table .= "<td>{$cColab['Perfil']}</td>";
-                                        //$table .= "<td>{$cColab['Licenca']}</td>";
-                                        $table .= "<td><button onclick='EditarColab".$cColab['ID_Colaborador']."();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button>
-                                        <form action='valida.php' method='POST'><input style='display:none' value='".$cColab['ID_Colaborador']."' name='idcolab'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaColab' value='Deletar'></input></form></td>";
-                                        $table .= '</tr>';
-                                    echo "<script>
+                       $table .='<thead>';
+                           $table .= '<tr>';
+                              $table .= '<th>ID</th>';
+                              $table .= '<th>Nome</th>';
+                              $table .= '<th>Login</th>';
+                              $table .= '<th>Email</th>';
+                              $table .= '<th>Telefone</th>';
+                              $table .= '<th>Perfil</th>';
+                           $table .= '<th>Funções</th>';
+                           $table .= '</tr>';
+                       $table .= '</thead>';
+                       $table .= '<tbody>';
+                       while($cColab = mysqli_fetch_array($conColab)){
+                        if($_GET['idcolab'] != $cColab['Login']){
+
+                        }
+                        else{
+                        $table .= "<tr class='alunoBusca'  name=".$cColab['Login'].">";
+                            $table .= "<td>{$cColab['ID_Colaborador']}</td>";
+                            $table .= "<td>{$cColab['Nome']}</td>";
+                            $table .= "<td>{$cColab['Login']}</td>";
+                            $table .= "<td>{$cColab['Email']}</td>";
+                            $table .= "<td>{$cColab['Telefone']}</td>";
+                            $table .= "<td>{$cColab['Perfil']}</td>";
+                            $table .= "<td><button onclick='EditarColab".$cColab['ID_Colaborador']."();' style = 'margin:10px;'class='btn btn-primary btn-sm' value='".$cColab['ID_Colaborador']."'>Editar</button>
+                            <form action='valida.php' method='POST'><input style='display:none' value='".$cColab['ID_Colaborador']."' name='idcolab'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaColab' value='Deletar'></input></form></td>";
+                            $table .= '</tr></div>';
+                            }
+                            echo "<script>
                                             function EditarColab".$cColab['ID_Colaborador']."(){
     
                                                 document.getElementById('EditarColab".$cColab['ID_Colaborador']."').style.display = 'block';
@@ -287,139 +271,13 @@
                                 </div>";
 
                                 } 
-                            $table .= '</tbody>';
+                                $table .= '</tbody>';
                         $table .= '</table>';
                         echo $table;
                    ?>
                 </div>
                 </div>
-                <div id="cadastraColab" style="display:none">
-                    <div class="cont-header">
-                    </div>
-                    <div class="content">
-                        <div id="dadosDoAluno" class="" style="padding:10px;">
-                            <h3>Preencha os dados do Colaborador</h3>
-                            <form method="post" action="valida.php">
-                                <input type="hidden" name="_token" value="WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY">
-                                <div class="row">
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="" required>
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="nasc">Data de Nasc.</label>
-                                        <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="" required>
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="tel">Telefone(Somente Números)</label>
-                                        <input type="number" class="form-control" id="tel" name="telefone" placeholder="" required>
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="cpf">CPF(Somente Números)</label>
-                                        <input type="number" class="form-control" id="cpf" name="cpf" placeholder="" required>
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="cep">CEP</label>
-                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="estado">Estado</label>
-                                        <input type="text" class="form-control" id="estado" name="estado" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="cidade">Cidade</label>
-                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="rua">Rua</label>
-                                        <input type="text" class="form-control" id="rua" name="rua" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="numero">Número</label>
-                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="complemento">Complemento</label>
-                                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="">
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="senha">Login</label>
-                                        <input type="text" minlength="5"  class="form-control" id="login" name="login" placeholder="" required>
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="senha">Senha</label>
-                                        <input type="text" minlength="5" class="form-control" id="senha" name="senha" placeholder="" required>
-                                    </div>
-                                    <div class="form-group col-12 col-lg-6">
-                                        <label for="perfil">Perfil</label><br>
-                                        <input type="radio"  id="perfil" name="perfil" value="Administrador" placeholder="" required>Administrador</input><br>
-                                        <input type="radio"id="perfil" name="perfil" value="Coordenador" placeholder="" required>Coordenador</input><br>
-                                        <input type="radio" id="perfil" name="perfil" value="Instrutor" placeholder="" required>Instrutor</input><br>
-                                        <input type="radio"  id="perfil" name="perfil" value="Comercial" placeholder="" required>Comercial</input>
-                                    </div>
-                                </div>
-
-                <!--BOTOES AO FIM DA SESSÃO-->
-                                <div class="d-flex justify-content-center">
-                                <a onclick="voltaAdmin3()" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;;font-size:15px;color:white;">Voltar</a>
-                                <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraColab">
-                                </div>
-                            </form>
-                        </div>     
-                    </div>
-                </div>
-
               
-                
-                <div class="funcA" <?php if($_SESSION['Perfil'] != "Administrador"){echo "style='margin-left:100px'";}?>>
-                    <a href="./listaAluno.php"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
-                </div>
-                <div class="funcA">
-                    <a  href="./cadastraAluno.php"><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
-                </div>
-                <div class="funcA">
-                    <a href="./listaPresenca.php"><i class="bi bi-postcard"></i><h3>Lista de Presença</h3></a>
-                </div>
-                <div class="funcA">
-                    <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
-                            echo  "<a onclick='mostraColaboradores()'><i class='bi bi-people fill'></i><h3>Listar Colaboradores</h3></a>";
-                        }
-                    ?>
-                </div>
-                <div class="funcA">
-                <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
-                            echo  "<a onclick='cadastraColab()'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Colaboradores</h3></a>";
-                        }
-                    ?>
-                </div>
-                <div class="funcA">
-                    <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
-                            echo  "<a href='cadastraAfiliado.php'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Afiliados</h3></a>";
-                        }
-                    ?>
-                </div>
-                
-                <div class="funcA">
-                    <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
-                            echo  "<a href='cadastraFranqueado.php'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Franqueados</h3></a>";
-                        }
-                    ?>
-                </div>
-                <div class="funcA">
-                    <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
-                            echo  "<a href='mostraAfiliadosFranqueados.php'><i class='bi bi-people fill'></i><h3>Listar Afiliados e Franqueados</h3></a>";
-                        }
-                    ?>
-                </div>
                 <hr>
             </div>
             </div>

@@ -137,9 +137,10 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" class="btn btn-success btn-sm" style='background-color:blue;margin-top:10px.font-size:15px' name="buscaAluno" value="Buscar"></input>
+                    <input type="submit" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px;font-size:15px;vertical-align:baseline;" name="buscaAluno" value="Buscar"></input>
+                    <a href="./listaAluno.php" class="btn btn-success btn-sm" style="background-color:blue;margin:0px;font-size:15px">Voltar</a>
                     </form>
-                    <br><a href="./listaAluno.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:10px">Voltar</a>
+                    <br>
                 </div>
 
                 <div class="content" style="overflow-y: scroll;height:200px">   

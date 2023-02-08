@@ -10,10 +10,18 @@ function adcElemento(){
 }
 function muda(){
   document.getElementById("muda").style.display = "block";
-  document.getElementById("canvas").style.display = "none";
+  // let e = document.getElementById("canvas");
+  // if(getComputedStyle(e).visibility == "visible"){
+  //   document.getElementById("canvas").style.visibility = "unvisible";
+  // }
+ //document.getElementById("canvas").style.visibility = "hidden";
+
+
 }
 function muda2(){
   document.getElementById("muda").style.display = "none";
+
+
 }
 function muda3(){
   document.getElementById("muda").style.display = "none";
@@ -182,6 +190,15 @@ function voltaAdmin4(){
     }
     document.getElementById("listaColaboradores").style.display = 'none';
     window.scrollTo(0,0);
+}
+function voltaAdmin5(){
+  let e = document.getElementsByClassName("funcA");;
+   for (let i = 0; i < e.length; i++) {
+     e[i].style.display = "none";
+   }
+   document.getElementById("listaColaboradores").style.display = 'flex';
+   window.scrollTo(0,0);
+   alert("oi");
 }
 function voltaAdmin3(){
   let e = document.getElementsByClassName("funcA");;
