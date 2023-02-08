@@ -743,6 +743,13 @@ if(isset($_POST['buscaHistoricoAluno'])){
 if(isset($_POST['buscaPresencaMes'])){
 	header('Location: ./historicoPresencaMes.php?alunoid='.$_POST['alunoid'].'&&nome='.$_POST['nome'].'&&mes='.$_POST['mes'].'');
 }
+if(isset($_POST['imprimePresenca'])){
+	if(isset($_POST['mesEscolhido'])){
+		header('Location: ./imprimePresenca.php?alunoid='.$_POST['alunoid'].'&&nome='.$_POST['nome'].'&&mes='.$_POST['mesEscolhido'].'');
+		exit;
+	}
+	header('Location: ./imprimePresenca.php?alunoid='.$_POST['alunoid'].'&&nome='.$_POST['nome'].'');
+}
 if(isset($_POST['deletarHorario'])){
 	$sql = "DELETE FROM horarios WHERE ID_Horario = '{$_POST['horarioid']}'";
 	$con = $mysqli->query($sql) or die($mysqli->error);
