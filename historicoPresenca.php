@@ -146,6 +146,7 @@
                     
                     <input type="submit" value="Buscar" name="buscaPresencaMes" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px"> 
                     <a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:15px;font-size:14px">Voltar</a>
+                    <input type="submit" value="Imprimir" name="imprimePresenca" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px;font-size:14px">
                         
                 </form>
                 </div>

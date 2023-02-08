@@ -34,7 +34,7 @@ if(isset($_POST['submitindex'])){
 	$_POST['Senha'] = clear($_POST['Senha']);
 	while($c = mysqli_fetch_array($con)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
-			if($_POST['Login'] == $c['Login'] && $_POST['Senha'] == $c['Senha']){
+			if($_POST['Login'] == $c['Login'] &&  password_verify($_POST['Senha'], $c['Senha'])){
 				$_SESSION['nome'] = $c['Nome'];
 				$_SESSION['ID_Aluno'] = $c['ID_Aluno'];
 				header('Location: ./usuario.php');
@@ -53,7 +53,7 @@ if(isset($_POST['submitindex'])){
 	}
 	while($c5 = mysqli_fetch_array($con5)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
-			if($_POST['Login'] == $c5['Login'] && $_POST['Senha'] == $c5['Senha']){
+			if($_POST['Login'] == $c5['Login'] && password_verify($_POST['Senha'], $c5['Senha'])){
 				$_SESSION['Perfil'] = $c5['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
@@ -62,7 +62,7 @@ if(isset($_POST['submitindex'])){
 	}
 	while($c6 = mysqli_fetch_array($con6)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
-			if($_POST['Login'] == $c6['Login'] && $_POST['Senha'] == $c6['Senha']){
+			if($_POST['Login'] == $c6['Login'] && password_verify($_POST['Senha'], $c6['Senha'])){
 				$_SESSION['Perfil'] = $c6['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
@@ -467,6 +467,7 @@ if(isset($_POST['cadastraAluno2'])){
 	$_POST['complemento'] = clear($_POST['complemento']);
 	$_POST['senha'] = clear($_POST['senha']);
 	$_POST['login'] = clear($_POST['login']);
+	$_POST['senha'] = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 	$verifica = "SELECT * FROM alunos";
 	$veri = $mysqli->query($verifica) or die($mysqli->error);
 	while($c = mysqli_fetch_array($veri)){
@@ -512,10 +513,8 @@ if(isset($_POST['cadastraAluno2'])){
 	$sqlc = $mysqli->query($cursoQuant) or die($mysqli->error);
 	while($cQ = mysqli_fetch_array($sqlc)){
 		if(isset($_POST[$cQ['ID_Curso']])){
-			$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio,data_limite) VALUES ('{$cQ['ID_Curso']}','{$idAluno}', '1' , '1', '{$dataatual}','{$dataatual}')";
+			$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$cQ['ID_Curso']}','{$idAluno}', '1' , '1', '{$dataatual}')";
 			$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
-			$datalimite = "UPDATE aluno_curso_progressos SET data_limite = ADDDATE(data_limite , INTERVAL 6 MONTH) WHERE ID_Curso = '{$cQ['ID_Curso']}' and ID_Aluno = '{$idAluno}'";
-			$dt = $mysqli->query($datalimite) or die($mysqli->error);
 		}
 	}
 	for($i = 0;$i<$_POST['conthorario'];$i++){
