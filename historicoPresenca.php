@@ -142,6 +142,7 @@
                     <?php 
                     echo "<input style='display:none' value='{$_GET['nome']}' name='nome'>
                     <input style='display:none' value='{$_GET['alunoid']}' name='alunoid'>";
+                    
                     ?>
                     
                     <input type="submit" value="Buscar" name="buscaPresencaMes" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px"> 

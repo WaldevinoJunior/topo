@@ -748,7 +748,7 @@ if(isset($_POST['imprimePresenca'])){
 		header('Location: ./imprimePresenca.php?alunoid='.$_POST['alunoid'].'&&nome='.$_POST['nome'].'&&mes='.$_POST['mesEscolhido'].'');
 		exit;
 	}
-	header('Location: ./imprimePresenca.php?alunoid='.$_POST['alunoid'].'&&nome='.$_POST['nome'].'');
+	header('Location: ./imprimePresenca.php?alunoid='.$_POST['alunoid'].'&&nome='.$_POST['nome'].'&&mes='.$_POST['mes'].'');
 }
 if(isset($_POST['deletarHorario'])){
 	$sql = "DELETE FROM horarios WHERE ID_Horario = '{$_POST['horarioid']}'";
