@@ -45,6 +45,7 @@ if(isset($_POST['submitindex'])){
 	while($c3 = mysqli_fetch_array($con3)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
 			if($_POST['Login'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
+				$_SESSION['id'] = $c3['ID_Colaborador'];
 				$_SESSION['Perfil'] = $c3['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
@@ -54,6 +55,7 @@ if(isset($_POST['submitindex'])){
 	while($c5 = mysqli_fetch_array($con5)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
 			if($_POST['Login'] == $c5['Login'] && password_verify($_POST['Senha'], $c5['Senha'])){
+				$_SESSION['id'] = $c5['ID_afiliados'];
 				$_SESSION['Perfil'] = $c5['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
@@ -63,6 +65,7 @@ if(isset($_POST['submitindex'])){
 	while($c6 = mysqli_fetch_array($con6)){	
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
 			if($_POST['Login'] == $c6['Login'] && password_verify($_POST['Senha'], $c6['Senha'])){
+				$_SESSION['id'] = $c6['ID_franqueados'];
 				$_SESSION['Perfil'] = $c6['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
@@ -310,6 +313,7 @@ if(isset($_POST['cadastraColab'])){
 	header('Location: ./admin.php');
 }
 if(isset($_POST['enviareditarAfiliado'])){
+	$_POST['senha'] = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 	$consulta = "UPDATE afiliados SET Nome = '{$_POST['nome']}',Email = '{$_POST['email']}',
 	Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', CNPJ = '{$_POST['cnpj']}', 
 	CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
@@ -331,6 +335,7 @@ if(isset($_POST['cadastraAfiliado'])){
 	$_POST['numero'] = clear($_POST['numero']);
 	$_POST['bairro'] = clear($_POST['bairro']);
 	$_POST['senha'] = clear($_POST['senha']);
+	$_POST['senha'] = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 	$_POST['login'] = clear($_POST['login']);
 	$verifica = "SELECT * FROM alunos";
 	$veri = $mysqli->query($verifica) or die($mysqli->error);
@@ -379,7 +384,7 @@ if(isset($_POST['cadastraAfiliado'])){
 		'{$_POST['bairro']}','{$_POST['cidade']}','{$_POST['estado']}','{$_POST['cep']}'
 		,'{$_POST['login']}','{$_POST['senha']}')";
 		$sqledita = $mysqli->query($consulta) or die($mysqli->error);
-		header('Location: ./admin.php');
+		header('Location: ./cadastraAfiliado.php');
 		exit;
 	}
 	
@@ -387,6 +392,7 @@ if(isset($_POST['cadastraAfiliado'])){
 
 }
 if(isset($_POST['enviareditarFranqueado'])){
+	$_POST['senha'] = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 	$consulta = "UPDATE franqueados SET Nome = '{$_POST['nome']}',Email = '{$_POST['email']}',
 	Telefone = '{$_POST['telefone']}', CNPJ = '{$_POST['cnpj']}', 
 	CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
@@ -407,6 +413,7 @@ if(isset($_POST['cadastraFranqueado'])){
 	$_POST['numero'] = clear($_POST['numero']);
 	$_POST['bairro'] = clear($_POST['bairro']);
 	$_POST['senha'] = clear($_POST['senha']);
+	$_POST['senha'] = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 	$_POST['login'] = clear($_POST['login']);
 	$verifica = "SELECT * FROM alunos";
 	$veri = $mysqli->query($verifica) or die($mysqli->error);
@@ -445,7 +452,7 @@ if(isset($_POST['cadastraFranqueado'])){
 	'{$_POST['bairro']}','{$_POST['cidade']}','{$_POST['estado']}','{$_POST['cep']}'
 	,'{$_POST['login']}','{$_POST['senha']}')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
-	header('Location: ./admin.php');
+	header('Location: ./cadastraFranqueado.php');
 
 
 }
@@ -657,7 +664,7 @@ if(isset($_POST['presenca'])){
 				}
 			}
 			if($confirma == 0){
-				$consulta = "INSERT INTO alunos_presenca(ID_Aluno, ID_Horario, Data, Presenca) VALUES ('{$_POST[$i2]}', '{$_POST['idhorario']}', '{$data}', '1')";
+				$consulta = "INSERT INTO alunos_presenca(ID_Aluno, ID_Horario, Data,Hora_inicio, Hora_fim, Presenca) VALUES ('{$_POST[$i2]}', '{$_POST['idhorario']}', '{$data}','{$_POST['horaI']}','{$_POST['horaF']}', '1')";
 				$sql = $mysqli->query($consulta) or die($mysqli->error);
 			}
 		}

@@ -139,11 +139,13 @@
                 }
             }
             echo "<input style='display:none' value='".$_GET['idhorario']."' name='idhorario'></input>";
+            echo "<input style='display:none' value='".$_GET['horainic']."' name='horaI'></input>";
+            echo "<input style='display:none' value='".$_GET['horafinal']."' name='horaF'></input>";
             echo "<input style='display:none' value='".$cont."' name='cont'></input>";
             ?>
             <a href="./listaPresenca.php" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:60px;height:40px;;font-size:15px;color:white;">Voltar</a>
             <button  class="btn btn-success mr-2" style="display:flex;background-color:green;width:70px;height:40px;;font-size:15px;color:white;" name="presenca" >Enviar</button>
-            <form>
+        </form>
 
             </div>            
             <div id="func2">

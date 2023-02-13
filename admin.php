@@ -41,24 +41,42 @@
             <li><a href="./admin.php"><i class="bi bi-house"></i>Início</a></li>
             <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i>
                     <div id="barras">
-                        <a href="./curso.php">Cadastrar Curso</a>
-                        <a href="./horario.php">Cadastrar Horários</a>
-                        <a href="./alunoHorario.php">Cadastra Aluno em Horários</a>
+                    <?php
+                     if($_SESSION['Perfil'] == "Administrador"){
+                        echo  " <a href='./curso.php'>Cadastrar Curso</a>";
+                    }
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" ||  $_SESSION['Perfil'] == "Franqueado"){
+                            echo  "
+                            <a href='./horario.php'>Cadastrar Horários</a>
+                            <a href='./alunoHorario.php'>Cadastra Aluno em Horários</a>";
+                        }
+                    ?>
                     </div>
             </li>
             <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i>
                     <div id="barras">
-                        <a href="./mostrahorario.php">Horário</a>
-                        <a href="./mostraCurso.php">Curso</a>
-                        <a href="./propagandas.php">Propragandas</a>
+                    <?php
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" ||  $_SESSION['Perfil'] == "Franqueado"){
+                            echo  "<a href='./mostrahorario.php'>Horário</a>
+                            <a href='./propagandas.php'>Propragandas</a>";
+                        }
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"){
+                            echo  "
+                            <a href='./mostraCurso.php'>Curso</a>";
+                        }
+                    ?>
                     </div>
             </li>
             <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i>
                         <div id="barras">
-                            <a href="./contratos.php">Contratos</a>
-                            <a href="./pagamentos.php">Pagamentos</a>
-                            <a href="./aniversariantes.php">Aniversariantes</a>
-                            <a href="./historico.php">Históricos</a>
+                        <?php
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" ||  $_SESSION['Perfil'] == "Franqueado"){
+                            echo  " <a href='./contratos.php'>Contratos</a>
+                            <a href='./pagamentos.php'>Pagamentos</a>
+                            <a href='./aniversariantes.php'>Aniversariantes</a>
+                            <a href='./historico.php'>Históricos</a>";
+                        }
+                    ?>
                         </div>
             </li>
             <li style="cursor:pointer;color:rgb(216, 211, 211)"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
@@ -81,24 +99,43 @@
             <li><a href="./admin.php" style="color:black"><i class="bi bi-house"></i>Início</a></li>
             <li style="cursor:pointer;"><i class="bi bi-person-badge"></i>Cadastro<i class="bi bi-caret-down"></i>
                     <div id="barras">
-                        <a href="./curso.php">Cadastrar Curso</a>
-                        <a href="./horario.php">Cadastrar Horários</a>
-                        <a href="./alunoHorario.php">Cadastra Aluno em Horários</a>
+                    <?php
+                     if($_SESSION['Perfil'] == "Administrador"){
+                        echo  " <a href='./curso.php'>Cadastrar Curso</a>";
+                    }
+                    if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" ||  $_SESSION['Perfil'] == "Franqueado"){
+                        echo  "
+                        <a href='./horario.php'>Cadastrar Horários</a>
+                        <a href='./alunoHorario.php'>Cadastra Aluno em Horários</a>";
+                    }
+                    ?>
+                        
                     </div>
             </li>
             <li style="cursor:pointer;"><i class="bi bi-wrench"></i>Gerencia<i class="bi bi-caret-down"></i>
                     <div id="barras">
-                        <a href="./mostrahorario.php">Horário</a>
-                        <a href="./mostraCurso.php">Curso</a>
-                        <a href="./propagandas.php">Propragandas</a>
+                    <?php
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" ||  $_SESSION['Perfil'] == "Franqueado"){
+                            echo  "<a href='./mostrahorario.php'>Horário</a>
+                            <a href='./propagandas.php'>Propragandas</a>";
+                        }
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"){
+                            echo  "
+                            <a href='./mostraCurso.php'>Curso</a>";
+                        }
+                    ?>
                     </div>
             </li>
             <li style="cursor:pointer;"><i class="bi bi-file-bar-graph"></i>Relatórios<i class="bi bi-caret-down"></i>
                         <div id="barras">
-                            <a href="./contratos.php">Contratos</a>
-                            <a href="./pagamentos.php">Pagamentos</a>
-                            <a href="./aniversariantes.php">Aniversariantes</a>
-                            <a href="./historico.php">Históricos</a>
+                        <?php
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" ||  $_SESSION['Perfil'] == "Franqueado"){
+                            echo  " <a href='./contratos.php'>Contratos</a>
+                            <a href='./pagamentos.php'>Pagamentos</a>
+                            <a href='./aniversariantes.php'>Aniversariantes</a>
+                            <a href='./historico.php'>Históricos</a>";
+                        }
+                    ?>
                         </div>
             </li>
             <li style="cursor:pointer;"><i class="bi bi-gear"></i>Manutenção<i class="bi bi-caret-down"></i>
@@ -298,11 +335,11 @@
                                         <input type="email" class="form-control" id="email" name="email" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="tel">Telefone(Somente Números)</label>
+                                        <label for="tel">Telefone</label>
                                         <input type="number" class="form-control" id="tel" name="telefone" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="cpf">CPF(Somente Números)</label>
+                                        <label for="cpf">CPF</label>
                                         <input type="number" class="form-control" id="cpf" name="cpf" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
@@ -362,21 +399,30 @@
                     <a href="./listaAluno.php"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
                 </div>
                 <div class="funcA">
-                    <a  href="./cadastraAluno.php"><i class="bi bi-person-plus fill"></i><h3>Cadastrar Alunos</h3></a>
+                <?php
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"  || $_SESSION['Perfil'] == "Franqueado" ){
+                            echo  "<a  href='./cadastraAluno.php'><i class='bi bi-person-plus fill'></i><h3>Cadastrar Alunos</h3></a>";
+                        }
+                ?>   
                 </div>
                 <div class="funcA">
-                    <a href="./listaPresenca.php"><i class="bi bi-postcard"></i><h3>Lista de Presença</h3></a>
+                <?php
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Instrutor" || $_SESSION['Perfil'] == "Franqueado"){
+                            echo  " <a href='./listaPresenca.php'><i class='bi bi-postcard'></i><h3>Lista de Presença</h3></a>";
+                        }
+                ?>
+                   
                 </div>
                 <div class="funcA">
                     <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Franqueado"){
                             echo  "<a onclick='mostraColaboradores()'><i class='bi bi-people fill'></i><h3>Listar Colaboradores</h3></a>";
                         }
                     ?>
                 </div>
                 <div class="funcA">
                 <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Franqueado"){
                             echo  "<a onclick='cadastraColab()'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Colaboradores</h3></a>";
                         }
                     ?>

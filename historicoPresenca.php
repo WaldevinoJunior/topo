@@ -178,14 +178,8 @@
                                 while($cH = mysqli_fetch_array($conHis)){
                                     $data = date('d/m/Y', strtotime($cH['Data']));
                                     $table .= "<td> {$data}</td>";
-                                    $consultaHorario = "SELECT * FROM horarios";
-                                    $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
-                                    while($c = mysqli_fetch_array($conH)){
-                                        if($cH['ID_Horario'] == $c['ID_Horario']){
-                                            $table .= "<td>{$c['Hora_inicio']}</td>";
-                                            $table .= "<td class='esconde'>{$c['Hora_fim']}</td>";
-                                        }
-                                    }                                          
+                                    $table .= "<td>{$cH['Hora_inicio']}</td>";
+                                    $table .= "<td class='esconde'>{$cH['Hora_fim']}</td>";                                         
                                         $table .= '</tr></div>';
                                         
                             } 

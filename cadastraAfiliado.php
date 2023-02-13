@@ -135,12 +135,12 @@
                                         <input type="text" class="form-control" id="nome" name="nome" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="cpf">CPF(Somente números)</label>
-                                        <input type="text" class="form-control" minlenght="14"  maxlenght="14" id="cpf" name="cpf" placeholder="" required>
+                                        <label for="cpf">CPF</label>
+                                        <input type="text" class="form-control" minlenght="14"  maxlenght="20" id="cpf" name="cpf" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="cnpj">CNPJ(Somente números)</label>
-                                        <input type="text" class="form-control" minlenght="14"  maxlenght="14" id="cnpj" name="cnpj" placeholder="">
+                                        <label for="cnpj">CNPJ</label>
+                                        <input type="text" class="form-control" minlenght="14"  maxlenght="20" id="cnpj" name="cnpj" placeholder="">
                                     </div>
                                     
                                     <div class="form-group col-12 col-lg-6">
@@ -148,7 +148,7 @@
                                         <input type="email" class="form-control" id="email" name="email" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="tel">Telefone(Somente números)</label>
+                                        <label for="tel">Telefone</label>
                                         <input type="number"class="form-control" id="tel" name="telefone" placeholder="" required>
                                     </div>
                                     
