@@ -327,8 +327,14 @@
                                                    
                                                 }
                                                 echo "<input type='number' value='".$conthorario."' name='conthorario' style='display:none'></input>";
+                                                
                                             ?>
-                                      
+                                      <div>
+                                        <label>Associe o aluno</label><br>
+                                        <input type="radio" name="perfil" value="Afiliado">Afiliado</input>
+                                        <input type="radio" name="perfil" value="Franqueado">Franqueado</input>
+                                        <input type="radio" name="perfil" value="Nehnum desses">Nenhum dos acima</input>
+                                      </div>
                                     </div>
                                 </div>
 
