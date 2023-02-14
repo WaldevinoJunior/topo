@@ -141,17 +141,19 @@
                                 $curso[] = $c['ID_Curso'];
                                 $nome[] =$c['Nome_curso'];
                                echo "
-                                <option value = '".$c['Nome_curso']."' >".$c['Nome_curso']."</option>
+                                <option value = '".$c['ID_Curso']."' >".$c['Nome_curso']."</option>
                                 ";
                             }
                          }
                        }
                     echo " </select><input style='display:none' value='{$_GET['nome']}' name='nome'>
                     <input style='display:none' value='{$_GET['alunoid']}' name='alunoid'>";
+                    
                     ?>
                     
-                    <input type="submit" value="Buscar" name="buscaPresencaMes" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px"> 
+                    <input type="submit" value="Buscar" name="buscaHistCurso" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px"> 
                     <a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:15px;font-size:15px">Voltar</a>
+                    <input type="submit" value="Imprimir" name="imprimeHistCurso" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px;font-size:14px">
                 </form>
                     
                 </div>

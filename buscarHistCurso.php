@@ -2,11 +2,15 @@
     include("valida.php");
     $consultaAlunos = "SELECT * from alunos WHERE ID_Aluno = '{$_GET['alunoid']}'";
     $consultaColab = "SELECT * from colaboradores";
-    $consultaCursos = "SELECT * from cursos";
+    $consultaCursos = "SELECT * from cursos";    
+    $consultaCursoEscolhido = "SELECT * from cursos WHERE ID_Curso = '{$_GET['curso']}'";    
+
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conAlunos2 = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+    $conCursoEscolhido = $mysqli->query($consultaCursoEscolhido) or die($mysqli->error);
+
     session_start();
     if($_SESSION['verifica'] != 2){
         header('Location: ./index.html');
@@ -122,47 +126,53 @@
             <div id="func">
                 <div id="listaAlunos" style="display:block" class="listAlunos">
                 <div class="cont-header" id="cbcLista">
-                    <h1>Histórico de Presenças do Aluno <?php echo $_GET['nome'] ?></h1>
-                    <h3>Mês</h3>
-                    <form action="valida.php" method="POST">
-                        <select name="mes">
-                            <option value = "1" >Janeiro</option>
-                            <option value = "2" >Fevereiro</option>
-                            <option value = "3"  >Março</option>
-                            <option value = "4" >Abril</option>
-                            <option value = "5" >Maio</option>
-                            <option value = "6"  >Junho</option>
-                            <option value = "7" >Julho</option>
-                            <option value = "8"  >Agosto</option>
-                            <option value = "9"  >Setembro</option>
-                            <option value = "10" >Outubro</option>
-                            <option value = "11" >Novembro</option>
-                            <option value = "12" >Dezembro</option>
-                    </select>
+                    <h1>Histórico de Testes do Aluno <?php echo $_GET['nome'] ?></h1>
+                    <h3>Cursos</h3>
+                   
+                      
                     <?php 
-                    echo "<input style='display:none' value='{$_GET['nome']}' name='nome'>
+                       $consultaPro= "SELECT * from aluno_curso_progressos WHERE ID_Aluno = '{$_GET['alunoid']}'";
+                       $conPro = $mysqli->query($consultaPro) or die($mysqli->error);
+                       while($c = mysqli_fetch_array($conPro)){
+                            $id[] = $c['ID_Curso'];
+                       }
+                       echo "
+                       <form action='valida.php' method='POST'>
+                           <select name='curso'>";
+                       while($c = mysqli_fetch_array($conCursos)){
+                         for($i=0;$i<count($id);$i++){
+                            if($id[$i] == $c['ID_Curso']){
+                                $curso[] = $c['ID_Curso'];
+                                $nome[] =$c['Nome_curso'];
+                               echo "
+                                <option value = '".$c['ID_Curso']."' >".$c['Nome_curso']."</option>
+                                ";
+                            }
+                         }
+                       }
+                    echo " </select><input style='display:none' value='{$_GET['nome']}' name='nome'>
                     <input style='display:none' value='{$_GET['alunoid']}' name='alunoid'>";
                     
                     ?>
                     
-                    <input type="submit" value="Buscar" name="buscaPresencaMes" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px"> 
-                    <a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:15px;font-size:14px">Voltar</a>
-                    <input type="submit" value="Imprimir" name="imprimePresenca" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px;font-size:14px">
-                        
+                    <input type="submit" value="Buscar" name="buscaHistCurso" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px"> 
+                    <a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:15px;font-size:15px">Voltar</a>
+                    <input type="submit" value="Imprimir" name="imprimeHistCurso" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px;font-size:14px">
                 </form>
+                    
                 </div>
 
                 <div class="content" style="overflow-y: scroll;height:250px">   
                     <?php
-                    $consultaHistoricos = "SELECT * FROM alunos_presenca WHERE ID_Aluno = '{$_GET['alunoid']}'";
+                    $consultaHistoricos = "SELECT * FROM aluno_testes WHERE ID_Aluno = '{$_GET['alunoid']}'";
                     $conHis = $mysqli->query($consultaHistoricos) or die($mysqli->error);
                        $table = '<table class="table table-striped" id="tableAluno">';
                             $table .='<thead>';
                                 $table .= '<tr>';
-                                   $table .= '<th>Data</th>';
+                                   $table .= '<th>Curso</th>';
                                 //    $table .= '<th>Responsável</th>';
-                                $table .= '<th>Início</th>';
-                                $table .= '<th class="esconde">Fim</th>';
+                                $table .= '<th>Aula</th>';
+                                $table .= '<th>Nota</th>';
                                
                                 //    $table .= '<th>CPF</th>';
                                 //    $table .= '<th>RG</th>';
@@ -175,12 +185,21 @@
                                 $table .= '</tr>';
                             $table .= '</thead>';
                             $table .= '<tbody>';
+                            while($cC = mysqli_fetch_array($conCursoEscolhido)){
                                 while($cH = mysqli_fetch_array($conHis)){
-                                    $data = date('d/m/Y', strtotime($cH['Data']));
-                                    $table .= "<td> {$data}</td>";
-                                    $table .= "<td>{$cH['Hora_inicio']}</td>";
-                                    $table .= "<td class='esconde'>{$cH['Hora_fim']}</td>";                                         
-                                        $table .= '</tr></div>';
+                                    
+                                            if($_GET['curso'] == $cH['ID_Curso']){
+                                                
+                                                    $table .= "<td> {$cC['Nome_curso']}</td>";
+                                                    $table .= "<td> {$cH['Numero_aula']}</td>";
+                                                    $table .= "<td> {$cH['Nota']}</td>";
+                                                }
+                                                $table .= '</tr></div>';
+                                            }
+                                            
+                                        //}  
+                                                                              
+                                        
                                         
                             } 
                         $table .= '</tbody>';

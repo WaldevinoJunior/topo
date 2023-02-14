@@ -151,12 +151,12 @@
                                         <input type="email" class="form-control" id="email" name="email" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="tel">Telefone(Somente números)</label>
-                                        <input type="number"class="form-control" id="tel" name="telefone" placeholder="" required>
+                                        <label for="tel">Telefone</label>
+                                        <input type="text"class="form-control" id="tel" name="telefone" min="15" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="cpf">CPF(Somente números)</label>
-                                        <input type="text" class="form-control" minlenght="14"  maxlenght="14" id="cpf" name="cpf" placeholder="" required>
+                                        <label for="cpf">CPF</label>
+                                        <input type="text" class="form-control" minlenght="14"  maxlenght="20" id="cpf" name="cpf" placeholder="" required>
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="rg">RG</label>
@@ -327,8 +327,14 @@
                                                    
                                                 }
                                                 echo "<input type='number' value='".$conthorario."' name='conthorario' style='display:none'></input>";
+                                                
                                             ?>
-                                      
+                                      <div>
+                                        <label>Associe o aluno</label><br>
+                                        <input type="radio" name="perfil" value="Afiliado">Afiliado</input>
+                                        <input type="radio" name="perfil" value="Franqueado">Franqueado</input>
+                                        <input type="radio" name="perfil" value="Nehnum desses">Nenhum dos acima</input>
+                                      </div>
                                     </div>
                                 </div>
 

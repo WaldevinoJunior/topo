@@ -141,11 +141,13 @@
                     </select>
                     <?php 
                     echo "<input style='display:none' value='{$_GET['nome']}' name='nome'>
-                    <input style='display:none' value='{$_GET['alunoid']}' name='alunoid'>";
+                    <input style='display:none' value='{$_GET['alunoid']}' name='alunoid'>
+                    <input style='display:none' value='{$_GET['mes']}' name='mesEscolhido'>";
                     ?>
                     
                     <input type="submit" value="Buscar" name="buscaPresencaMes" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px"> 
                     <a href="./historico.php" class="btn btn-success btn-sm" style="background-color:blue;margin-top:15px;font-size:14px">Voltar</a>
+                    <input type="submit" value="Imprimir" name="imprimePresenca" class="btn btn-success btn-sm" style="background-color:blue;margin-top:5px;font-size:14px">
                 </form>
                 </div>
 
@@ -177,14 +179,8 @@
                                     $mes = "$data[3]"."$data[4]";
                                     if($mes == $_GET['mes']){
                                     $table .= "<td> {$data}</td>";
-                                    $consultaHorario = "SELECT * FROM horarios";
-                                    $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
-                                    while($c = mysqli_fetch_array($conH)){
-                                        if($cH['ID_Horario'] == $c['ID_Horario']){
-                                            $table .= "<td>{$c['Hora_inicio']}</td>";
-                                            $table .= "<td class='esconde'>{$c['Hora_fim']}</td>";
-                                        }
-                                    }
+                                    $table .= "<td>{$cH['Hora_inicio']}</td>";
+                                    $table .= "<td class='esconde'>{$cH['Hora_fim']}</td>";
                                 }                                         
                                         $table .= '</tr></div>';
                                         
