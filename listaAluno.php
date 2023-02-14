@@ -164,7 +164,7 @@
                             }                            
                         }
                         }
-                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"){
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"  || $_SESSION['Perfil'] == "Instrutor"){
                             while($cAlunos = mysqli_fetch_array($conAlunos2)){
                             echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
                         }
@@ -196,7 +196,7 @@
                                 //    $table .= '<th>Rua</th>';
                                 //    $table .= '<th>Número</th>';
                                 //    $table .= '<th>Senha</th>';
-                                if($_SESSION['Perfil'] == "Admnistrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Franqueado"){
+                                if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Franqueado"){
                                     $table .= '<th>Funções</th>';
                                     $table .= '<th>Curso/Horários</th>';
                                 }
@@ -274,7 +274,7 @@
                                             }
                                            }                          
                                         }
-                                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"){
+                                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Instrutor"){
                                             $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
                                             $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
                                             $table .= "<td>{$cAlunos['Nome']}</td>";

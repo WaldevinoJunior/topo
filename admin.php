@@ -395,60 +395,40 @@
 
               
                 
-                <div class="funcA" <?php if($_SESSION['Perfil'] != "Administrador"){echo "style='margin-left:100px'";}?>>
+                <div class="funcA">
                     <a href="./listaAluno.php"><i class="bi bi-person"></i><h3>Listar Alunos</h3></a>
                 </div>
-                <div class="funcA">
                 <?php
+               
+                
                         if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"  || $_SESSION['Perfil'] == "Franqueado" ){
-                            echo  "<a  href='./cadastraAluno.php'><i class='bi bi-person-plus fill'></i><h3>Cadastrar Alunos</h3></a>";
+                            echo  "<div class='funcA'><a  href='./cadastraAluno.php'><i class='bi bi-person-plus fill'></i><h3>Cadastrar Alunos</h3></a></div>";
                         }
-                ?>   
-                </div>
-                <div class="funcA">
-                <?php
+               
                         if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Instrutor" || $_SESSION['Perfil'] == "Franqueado"){
-                            echo  " <a href='./listaPresenca.php'><i class='bi bi-postcard'></i><h3>Lista de Presença</h3></a>";
+                            echo  "<div class='funcA'><a href='./listaPresenca.php'><i class='bi bi-postcard'></i><h3>Lista de Presença</h3></a></div>";
+                        }
+
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Franqueado"){
+                            echo  "<div class='funcA'><a onclick='mostraColaboradores()'><i class='bi bi-people fill'></i><h3>Listar Colaboradores</h3></a></div>";
+                        }
+                  
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Franqueado"){
+                            echo  "<div class='funcA'><a onclick='cadastraColab()'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Colaboradores</h3></a></div>";
+                        }
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<div class='funcA'><a href='cadastraAfiliado.php'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Afiliados</h3></a></div>";
+                        }
+                    
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<div class='funcA'><a href='cadastraFranqueado.php'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Franqueados</h3></a></div>";
+                        }
+                   
+                  
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<div class='funcA'><a href='mostraAfiliadosFranqueados.php'><i class='bi bi-people fill'></i><h3>Listar Afiliados e Franqueados</h3></a></div>";
                         }
                 ?>
-                   
-                </div>
-                <div class="funcA">
-                    <?php
-                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Franqueado"){
-                            echo  "<a onclick='mostraColaboradores()'><i class='bi bi-people fill'></i><h3>Listar Colaboradores</h3></a>";
-                        }
-                    ?>
-                </div>
-                <div class="funcA">
-                <?php
-                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Franqueado"){
-                            echo  "<a onclick='cadastraColab()'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Colaboradores</h3></a>";
-                        }
-                    ?>
-                </div>
-                <div class="funcA">
-                    <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
-                            echo  "<a href='cadastraAfiliado.php'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Afiliados</h3></a>";
-                        }
-                    ?>
-                </div>
-                
-                <div class="funcA">
-                    <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
-                            echo  "<a href='cadastraFranqueado.php'><i class='bi bi-person-fill-add'></i><h3>Cadastrar Franqueados</h3></a>";
-                        }
-                    ?>
-                </div>
-                <div class="funcA">
-                    <?php
-                        if($_SESSION['Perfil'] == "Administrador"){
-                            echo  "<a href='mostraAfiliadosFranqueados.php'><i class='bi bi-people fill'></i><h3>Listar Afiliados e Franqueados</h3></a>";
-                        }
-                    ?>
-                </div>
                 <hr>
             </div>
             </div>

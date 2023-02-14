@@ -851,6 +851,12 @@ body.teste{
    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    padding:25px;
 }
+#painel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 #func{   
     margin: auto;
     justify-content: center;
