@@ -2,11 +2,15 @@
     include("valida.php");
     $consultaAlunos = "SELECT * from alunos WHERE ID_Aluno = '{$_GET['alunoid']}'";
     $consultaColab = "SELECT * from colaboradores";
-    $consultaCursos = "SELECT * from cursos";
+    $consultaCursos = "SELECT * from cursos";    
+    $consultaCursoEscolhido = "SELECT * from cursos WHERE ID_Curso = '{$_GET['curso']}'";    
+
     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conAlunos2 = $mysqli->query($consultaAlunos) or die($mysqli->error);
     $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+    $conCursoEscolhido = $mysqli->query($consultaCursoEscolhido) or die($mysqli->error);
+
     session_start();
     if($_SESSION['verifica'] != 2){
         header('Location: ./index.html');
@@ -141,7 +145,7 @@
                                 $curso[] = $c['ID_Curso'];
                                 $nome[] =$c['Nome_curso'];
                                echo "
-                                <option value = '".$c['Nome_curso']."' >".$c['Nome_curso']."</option>
+                                <option value = '".$c['ID_Curso']."' >".$c['Nome_curso']."</option>
                                 ";
                             }
                          }
@@ -181,15 +185,21 @@
                                 $table .= '</tr>';
                             $table .= '</thead>';
                             $table .= '<tbody>';
+                            while($cC = mysqli_fetch_array($conCursoEscolhido)){
                                 while($cH = mysqli_fetch_array($conHis)){
-                                        for($i=0;$i<count($curso);$i++){
-                                            if($curso[$i] == $cH['ID_Curso']){
-                                                $table .= "<td> {$nome[$i]}</td>";
-                                                $table .= "<td> {$cH['Numero_aula']}</td>";
-                                                $table .= "<td> {$cH['Nota']}</td>";
+                                    
+                                            if($_GET['curso'] == $cH['ID_Curso']){
+                                                
+                                                    $table .= "<td> {$cC['Nome_curso']}</td>";
+                                                    $table .= "<td> {$cH['Numero_aula']}</td>";
+                                                    $table .= "<td> {$cH['Nota']}</td>";
+                                                }
+                                                $table .= '</tr></div>';
                                             }
-                                        }                                        
-                                        $table .= '</tr></div>';
+                                            
+                                        //}  
+                                                                              
+                                        
                                         
                             } 
                         $table .= '</tbody>';
