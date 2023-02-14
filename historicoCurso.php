@@ -141,7 +141,7 @@
                                 $curso[] = $c['ID_Curso'];
                                 $nome[] =$c['Nome_curso'];
                                echo "
-                                <option value = '".$c['Nome_curso']."' >".$c['Nome_curso']."</option>
+                                <option value = '".$c['ID_Curso']."' >".$c['Nome_curso']."</option>
                                 ";
                             }
                          }
