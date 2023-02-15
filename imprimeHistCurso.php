@@ -47,7 +47,7 @@
                        }
                       
 
-                       $table = '<table style="text-align:center" class="table table-striped" id="tableAluno">';
+                       $table = '<table style="border: 1px solid" class="table table-striped" id="tableAluno">';
                             $table .='<thead>';
                                 $table .= '<tr>';
                                    $table .= '<th>Curso</th>';
@@ -80,12 +80,15 @@
                             <meta charset="UTF-8">
                             <meta http-equiv="X-UA-Compatible" content="IE=edge">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <link rel="stylesheet" href="css/style.css" type="text/css">
+                            <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
+                            <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
                             <title>Administração - Topo Treinamentos</title>
                 
                             
                         </head>
                         <body> 
-                        <h3> Histórico de Testes do(a) Aluno(a): '.$_GET['nome'].'</h3>'
+                        <h3 style="text-align:center"> Histórico de Testes do(a) Aluno(a): '.$_GET['nome'].'</h3>'
                                 .$table.'                            
                         </body>
                         </html>
