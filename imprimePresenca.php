@@ -23,13 +23,13 @@
     
                     $consultaHistoricos = "SELECT * FROM alunos_presenca WHERE ID_Aluno = '{$_GET['alunoid']}'";
                     $conHis = $mysqli->query($consultaHistoricos) or die($mysqli->error);
-                       $table = '<table class="table table-striped" id="tableAluno">';
+                       $table = '<table style="border: 1px solid" class="table table-striped" id="tableAluno">';
                             $table .='<thead>';
                                 $table .= '<tr>';
                                    $table .= '<th>Data</th>';
                                 //    $table .= '<th>Responsável</th>';
-                                $table .= '<th>Início</th>';
-                                $table .= '<th class="esconde">Fim</th>';
+                                $table .= '<th >Início</th>';
+                                $table .= '<th ">Fim</th>';
                                
                                 //    $table .= '<th>CPF</th>';
                                 //    $table .= '<th>RG</th>';
@@ -48,14 +48,14 @@
                                     if($mes == $_GET['mes']){
                                         $table .= '<tr>';
                                         $table .= "<td> {$data}</td>";
-                                        $consultaHorario = "SELECT * FROM horarios";
-                                        $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
-                                        while($c = mysqli_fetch_array($conH)){
-                                            if($cH['ID_Horario'] == $c['ID_Horario']){
-                                                $table .= "<td>{$c['Hora_inicio']}</td>";
-                                                $table .= "<td class='esconde'>{$c['Hora_fim']}</td>";
-                                            }
-                                        } 
+                                        // $consultaHorario = "SELECT * FROM horarios";
+                                        // $conH = $mysqli->query($consultaHorario) or die($mysqli->error);
+                                        // while($c = mysqli_fetch_array($conH)){
+                                        //     if($cH['ID_Horario'] == $c['ID_Horario']){
+                                                $table .= "<td>{$cH['Hora_inicio']}</td>";
+                                                $table .= "<td>{$cH['Hora_fim']}</td>";
+                                            //}
+                                        //} 
                                     }                                         
                                         $table .= '</tr></div>';
                                         
@@ -73,12 +73,15 @@
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="css/style.css" type="text/css">
+            <link rel="stylesheet" href="css/loginNovo.css" type="text/css">
+            <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
             <title>Administração - Topo Treinamentos</title>
 
             
         </head>
         <body> 
-        <h3> Histórico de Presenças do(a) Aluno(a): '.$_GET['nome'].'</h3>'
+        <h3 style="text-align:center"> Histórico de Presenças do(a) Aluno(a): '.$_GET['nome'].'</h3>'
                 .$table.'                            
         </body>
         </html>
