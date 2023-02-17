@@ -46,6 +46,7 @@ if(isset($_POST['submitindex'])){
 		if(isset($_POST['Login']) && isset($_POST['Senha'])){
 			if($_POST['Login'] == $c3['Login'] && $_POST['Senha'] == $c3['Senha']){
 				$_SESSION['id'] = $c3['ID_Colaborador'];
+				$_SESSION['idfran'] = $c3['ID_franqueado'];
 				$_SESSION['Perfil'] = $c3['Perfil'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
@@ -307,10 +308,10 @@ if(isset($_POST['cadastraColab'])){
 			exit;
 		}
 	}
-	$consulta = "INSERT INTO colaboradores (Nome, Nascimento, Email, Telefone, CPF, CEP, Estado, Cidade, Rua, Numero, Complemento,Login, Senha, Perfil) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
+	$consulta = "INSERT INTO colaboradores (Nome, Nascimento, Email, Telefone, CPF, CEP, Estado, Cidade, Rua, Numero, Complemento,Login, Senha, Perfil, ID_franqueado) VALUES  ('{$_POST['nome']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
-	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['login']}','{$_POST['senha']}', '{$_POST['perfil']}')";
+	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['login']}','{$_POST['senha']}', '{$_POST['perfil']}','{$_POST['franqueado']}')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }

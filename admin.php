@@ -190,6 +190,9 @@
            
                                 while($cColab = mysqli_fetch_array($conColab)){
                                     $table .= '<tr>';
+                                    
+                                        if($_SESSION['idfran'] == $cColab['ID_franqueado'])
+                                        {
                                         $table .= "<td>{$cColab['ID_Colaborador']}</td>";
                                         $table .= "<td>{$cColab['Nome']}</td>";
                                         $table .= "<td class='esconde'>{$cColab['Login']}</td>";
@@ -208,6 +211,7 @@
                                         $table .= "<td><button onclick='EditarColab".$cColab['ID_Colaborador']."();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button>
                                         <form action='valida.php' method='POST'><input style='display:none' value='".$cColab['ID_Colaborador']."' name='idcolab'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaColab' value='Deletar'></input></form></td>";
                                         $table .= '</tr>';
+                                        }
                                     echo "<script>
                                             function EditarColab".$cColab['ID_Colaborador']."(){
     
@@ -305,11 +309,13 @@
                                         </form>
                                     </div>     
                                 </div>";
-
+                                        
                                 } 
+                            
                             $table .= '</tbody>';
                         $table .= '</table>';
                         echo $table;
+                            
                    ?>
                 </div>
                 </div>
@@ -380,6 +386,18 @@
                                         <input type="radio"id="perfil" name="perfil" value="Coordenador" placeholder="" required>Coordenador</input><br>
                                         <input type="radio" id="perfil" name="perfil" value="Instrutor" placeholder="" required>Instrutor</input><br>
                                         <input type="radio"  id="perfil" name="perfil" value="Comercial" placeholder="" required>Comercial</input>
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="franqueado">Qual Franqueado associado?</label><br>
+                                        <select name="franqueado">
+                                        <?php
+                                            $consultaFran = "SELECT * FROM franqueados";
+                                            $conFran = $mysqli->query($consultaFran) or die($mysqli->error);
+                                            while($c = mysqli_fetch_array($conFran)){
+                                                echo "<option value ='".$c['ID_franqueados']."'>".$c['Nome']." - ".$c['CNPJ']."</option>";
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
 
