@@ -197,9 +197,14 @@
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="curso">Cursos</label><br>
                                         <?php 
+                                            $contcurso= 0;
                                              while($cCursos = mysqli_fetch_array($conCursos)){
-                                                echo "<input type='checkbox' name='".$cCursos['ID_Curso']."' value='".$cCursos['ID_Curso']."'>".$cCursos['Nome_curso']."</input><br>";
+                                                echo "<input type='checkbox' name='curso".$contcurso."' value='".$cCursos['ID_Curso']."'>".$cCursos['Nome_curso']."</input><br>";
+                                                echo "<input name='valorcurso".$contcurso."' value='".$cCursos['Preco']."' style='display:none'/>";
+                                                $contcurso++;
                                             }
+                                            $contcurso--;
+                                            echo "<input name='contcurso' value='".$contcurso."' style='display:none'/>"
                                         ?>
                                         </select>
                                     </div>
@@ -330,10 +335,25 @@
                                                 
                                             ?>
                                       <div>
-                                        <label>Associe o aluno</label><br>
-                                        <input type="radio" name="perfil" value="Afiliado">Afiliado</input>
-                                        <input type="radio" name="perfil" value="Franqueado">Franqueado</input>
-                                        <input type="radio" name="perfil" value="Nehnum desses">Nenhum dos acima</input>
+                                        <label>O aluno está associado a qual Afiliado/Franqueado?</label><br>
+                                        <input type="radio" name="perfil" value="afiliado" required>Afiliado</input>
+                                        <input type="radio" name="perfil" value="franqueado">Franqueado</input>
+                                        <?php
+                                        $afiliados = "SELECT * FROM afiliados";
+                                        $franqueados = "SELECT * FROM franqueados";
+                                        $afi = $mysqli->query($afiliados) or die($mysqli->error);
+                                        $fran = $mysqli->query($franqueados) or die($mysqli->error);
+                                        echo "<br><label>Afiliados</label><br><select name='afiliados'>";
+                                        while($a = mysqli_fetch_array($afi)){
+                                            echo "<option value='".$a['ID_afiliados']."'>".$a['Nome']." - ".$a['Login']."</option>";
+                                        }
+                                        echo "</select>";
+                                        echo "<br><label>Franqueado</label><br><select name='franqueados'>";
+                                        while($f = mysqli_fetch_array($fran)){
+                                            echo "<option value='".$f['ID_franqueados']."'>".$f['Nome']." - ".$f['Login']."</option>";
+                                        }
+                                        echo "</select>";
+                                        ?>
                                       </div>
                                     </div>
                                 </div>
