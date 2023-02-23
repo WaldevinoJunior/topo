@@ -128,13 +128,36 @@
                 }
             }
             $cont = 0;
+            $franqueados = "SELECT * FROM cursos_franqueados";
+            $fran = $mysqli->query($franqueados) or die($mysqli->error);
+            $alunoFran;
+            while($f = mysqli_fetch_array($fran)){
+                if($_SESSION['idfran'] == $f['ID_franqueador']){
+                    $alunoFran[] = $f['ID_Aluno'];
+                }
+            }
+            $afiliados = "SELECT * FROM cursos_afiliados";
+            $afi= $mysqli->query($afiliados) or die($mysqli->error);
+            while($a = mysqli_fetch_array($afi)){
+                $alunoFran[] = $a['ID_Aluno'];       
+            }
             while($cA = mysqli_fetch_array($conAlunos)){
                 if(isset($alunos)){
                     for($i=0;$i<count($alunos);$i++){
-                        if($cA['ID_Aluno'] == $alunos[$i]){
-                            echo "<input type='checkbox' name='aluno".$i."' value='".$cA['ID_Aluno']."'></input>".$cA['Nome']."<br>";
-                            $cont++;
+                        $ok = 0;
+                        for($i2 = 0;$i2<count($alunoFran);$i2++){
+                            if($alunoFran[$i2] == $alunos[$i]){
+                                $ok = 1;
+                            }
                         }
+                        if($ok ==1)
+                        {
+                            if($cA['ID_Aluno'] == $alunos[$i]){
+                                echo "<input type='checkbox' name='aluno".$i."' value='".$cA['ID_Aluno']."'></input>".$cA['Nome']."<br>";
+                                $cont++;
+                            }
+                        }
+                        
                     }
                 }
             }

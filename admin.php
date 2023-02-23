@@ -211,7 +211,7 @@
                                         $table .= "<td><button onclick='EditarColab".$cColab['ID_Colaborador']."();' style = 'margin:10px;'class='btn btn-primary btn-sm'>Editar</button>
                                         <form action='valida.php' method='POST'><input style='display:none' value='".$cColab['ID_Colaborador']."' name='idcolab'/><input type='submit' class='btn btn-danger btn-sm' style='width:70px' name='deletaColab' value='Deletar'></input></form></td>";
                                         $table .= '</tr>';
-                                        }
+                                        
                                     echo "<script>
                                             function EditarColab".$cColab['ID_Colaborador']."(){
     
@@ -311,7 +311,7 @@
                                 </div>";
                                         
                                 } 
-                            
+                                }
                             $table .= '</tbody>';
                         $table .= '</table>';
                         echo $table;
