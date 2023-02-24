@@ -168,9 +168,12 @@
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
             <div id="func">
             <div id="cupons" style="display:flex;flex-direction:column">
-            <a href="./cadastraCupons.php" class="btn btn-success btn-sm" style="background-color:blue;margin:0px;font-size:15px;color:white">Cadastrar Cupom</a>
+            <a href="./cadastraCupons.php" class="btn btn-success btn-sm" style="background-color:green;margin:0px;font-size:15px;color:white">Cadastrar Cupom</a>
+            <a  href="./admin.php" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:70px;height:40px;font-size:16px;color:white;">Voltar</a>
+
             <h3>Cupons Cadastrados</h3> 
-            <table>
+            <div style="overflow-y: scroll;height:500px;display:flex">
+            <table class="table table-striped">
             <thead>
                     <th>Validade</th>
                     <th>Curso</th>
@@ -180,6 +183,7 @@
             $cuponsCadastrados = "SELECT * FROM cupons";
             $cupons = $mysqli->query($cuponsCadastrados) or die($mysqli->error);
             while($c = mysqli_fetch_array($cupons)){
+                $c['Validade'] = date('d/m/Y', strtotime($c['Validade']));
                 echo "<tr>
                     <td>".$c['Validade']."</td>
                     <td>".$c['ID_Curso']."</td>
@@ -188,6 +192,7 @@
             }
             ?>
             </table>
+            </div>
             </div>
             <hr>
             </div>
