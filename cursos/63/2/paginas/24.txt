@@ -1,0 +1,1 @@
+Inserindo Textos: Para inserir textos no desenho, ative a ferramenta Texto e clique na área de trabalho. Será criada uma caixa, onde o texto deverá ser digitado. Você pode redimensionar a área do texto clicando e arrastando os pequenos quadrados existentes na extremidade da caixa.

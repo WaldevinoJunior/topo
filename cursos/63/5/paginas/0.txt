@@ -1,0 +1,1 @@
+Bibliotecas: As Bibliotecas são um recurso do Windows 10 que permite a exibição consolidada de arquivos relacionados em um só local. Você pode pesquisar nas Bibliotecas para localizar os arquivos certos rapidamente, até mesmo quando esses arquivos estão em pastas, unidades ou em sistemas diferentes.

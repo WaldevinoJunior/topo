@@ -1,0 +1,1 @@
+Com o retângulo ainda selecionado mova o ponteiro sobre a paleta de cores e observe que o retângulo vai adquirindo a cor que está sob o ponteiro. Clique na cor para modificar o retângulo.

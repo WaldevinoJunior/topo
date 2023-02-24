@@ -1,0 +1,1 @@
+Marcadores – Transformam os parágrafos selecionados em tópicos, inserindo um círculo no início de cada linha.

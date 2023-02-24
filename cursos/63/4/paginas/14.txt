@@ -1,0 +1,1 @@
+Ferramentas Administrativas: Ferramentas Administrativas além de conter as ferramentas avançadas do Windows, incorporou as Ferramentas do Sistema, presentes nas versões anteriores do Windows. São ferramentas para a manutenção preventiva ou corretiva do Windows 10.

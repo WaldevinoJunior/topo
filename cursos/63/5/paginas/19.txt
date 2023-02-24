@@ -1,0 +1,1 @@
+Para mover arquivos para o OneDrive, abra o Explorador de Arquivos e arraste-os para uma das pastas do OneDrive.

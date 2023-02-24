@@ -1,0 +1,1 @@
+Aero Glass (Efeito vidro): Recurso que deixa janelas, barras e menus transparentes, parecendo um vidro. 

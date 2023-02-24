@@ -1,0 +1,1 @@
+O usuário pode optar por fazer login no sistema usando a face, íris, impressão digital, PIN, bluetooth do celular e senha com imagem. Tornando  praticamente impossível que alguém não autorizado tenha acesso a seus dados.

@@ -1,0 +1,1 @@
+Fala: Ao acessar esse recurso, o usuário poderá invés de digitar, ditar o texto e o próprio aplicativo digitará para ele. Além de usar a Cortana para executar suas tarefas.

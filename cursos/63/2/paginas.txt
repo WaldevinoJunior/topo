@@ -1,0 +1,111 @@
+﻿0;;
+Paint;;
+O Paint é um programa que permite criar desenhos sem complicação, usando o mouse como se fosse um verdadeiro lápis. Você também poderá alterar imagens prontas, acrescentando textos, traços, recortando determinada área, entre outros recursos.
+<->
+1;;
+Paint;;
+Para acessar o Paint basta digitar seu nome na barra de pesquisa do menu iniciar. Será exibida a janela do programa onde encontramos os seguintes recursos:
+<->
+2;;
+Botão do Paint;;
+Nesta guia encontramos as opções de Abrir, Salvar, Propriedades e Imprimir.
+<->
+3;;
+Barra de Ferramentas de Acesso Rápido;;
+Temos nesta guia as ferramentas mais usadas. Para uma ferramenta, clique com o botão direito do mouse sobre ela e clique em Adicionar à Barra de Ferramentas de Acesso Rápido.
+<->
+4;;
+Faixa de Opções;;
+Encontramos nesta região as ferramentas e suas opções.
+<->
+5;;
+Faixa de Opções;;
+É através dela que você poderá criar seus desenhos, usando diversas ferramentas. Cada uma delas tem uma utilidade diferente, bastando selecioná-la e arrastar sobre a tela para desenhar.
+<->
+6;;
+Faixa de Opções;;
+Ela possui duas guias: Home (mostrada anteriormente) e Exibir. Na guia Home temos as ferramentas para desenhar e na guia exibir encontramos as ferramentas de Zoom, Guias e Linha Grade.
+<->
+7;;
+Área de Transferência;;
+Usada para Copiar ou Recortar uma área selecionada do desenho ou colar o conteúdo da Área de Transferência ou uma imagem de arquivo.
+<->
+8;;
+Imagem;;
+Estas ferramentas são usadas para selecionar uma determinada região do desenho e fazer modificações nela.
+<->
+9;;
+Ferramentas;;
+Neste grupo temos as ferramentas que constroem e modificam o desenho.
+<->
+10;;
+Pincéis;;
+Antes de desenhar devemos escolher com qual pincel desenharemos.
+<->
+11;;
+Formas;;
+O Paint possui diversas formas prontas para uso.
+<->
+12;;
+Tamanho;;
+Com este grupo determinamos a espessura das linhas e dos contornos das formas.
+<->
+13;;
+Cores;;
+Nela você escolhe as cores que serão utilizadas pelas ferramentas no momento da criação. Para definir as cores, selecione Cor 1 ou Cor 2 e na paleta clique cor desejada. A cor 1 será usada para o contorno e a cor 2 para o preenchimento das formas. Para editar cores clique no botão 'Editar cores'.
+<->
+14;;
+Editar cores;;
+Na caixa Editar Cores digite os valores para a nova cor ou clique numa cor na paleta.
+<->
+15;;
+Zoom;;
+Este grupo é usado para alterar o modo de exibição do desenho. Com ele podemos ampliar ou reduzir a visão do desenho.
+<->
+16;;
+Mostrar ou ocultar;;
+Podemos exibir ou ocultar as Réguas, Linhas de grade ou a Barra de status.
+<->
+17;;
+Exibição;;
+Podemos desejar ver somente desenho por inteiro na tela, ou uma miniatura exibida numa janela separada.
+<->
+18;;
+Criando uma Figura;;
+Vamos agora criar algumas figuras geométricas. No grupo Formas, selecione o Retângulo e defina as cores para o Preenchimento e Contorno como Cor Sólida.
+<->
+19;;
+Criando uma Figura;;
+Em seguida leve o ponteiro até a Área de Desenho arraste-o. Ao soltar o botão, teremos um retângulo com o contorno da Cor 1 e preenchimento da Cor 2. Caso deseje a mesma figura com as cores inversas, arraste com o botão direito.
+<->
+20;;
+Criando uma Figura;;
+Com o retângulo ainda selecionado mova o ponteiro sobre a paleta de cores e observe que o retângulo vai adquirindo a cor que está sob o ponteiro. Clique na cor para modificar o retângulo.
+<->
+21;;
+Criando uma Figura;;
+Para desenhar formas perfeitas tais como: círculo, quadrado, triângulo equilátero ou polígonos regulares, pressione a tecla Shift enquanto arrasta o ponteiro.
+<->
+22;;
+Criando uma Figura;;
+Após desenhar uma forma, ela permanecerá selecionada. Enquanto isso, podemos movê-la, redimensioná-la ou mudar suas cores. Para mover ou redimensionar basta arrastar o ponteiro com a forma de cruz.
+<->
+23;;
+Criando uma Figura;;
+Como exercício tente reproduzir a próxima figura usando as formas Triângulo, Retângulo e Pentágono.
+<->
+24;;
+Inserindo Textos;;
+Para inserir textos no desenho, ative a ferramenta Texto e clique na área de trabalho. Será criada uma caixa, onde o texto deverá ser digitado. Você pode redimensionar a área do texto clicando e arrastando os pequenos quadrados existentes na extremidade da caixa.
+<->
+25;;
+Inserindo Textos;;
+No exemplo anterior utilizamos os recursos da guia Texto, que é exibida ao selecionar a ferramenta Texto para alterar o tamanho e a fonte do texto. Além disso, podemos aplicar efeitos de Negrito, Itálico e Sublinhado.
+<->
+26;;
+Inserindo Textos;;
+Na Faixa de Opções você poderá optar por ter o texto vazado ou com preenchimento de fundo. Na primeira opção, o texto fica sem fundo, podendo ser sobreposto em outras imagens do desenho. Na segunda alternativa o texto receberá a cor de primeiro plano e o fundo da caixa de texto a cor do segundo plano.
+<->
+27;;
+Inserindo Textos;;
+Depois de digitar o texto, salve sua imagem e se desejar, imprima uma cópia através do botão Paint >> Imprimir.

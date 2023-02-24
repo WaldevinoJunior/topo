@@ -1,0 +1,1 @@
+Se eu estiver sem internet, como faço para acessar o OneDrive?. Os arquivos que você salva no OneDrive estão disponíveis online em OneDrive. com e offline em seu computador. Isso significa que você pode usá-los a qualquer momento, mesmo quando não estiver conectado à Internet. Quando você se reconectar, o OneDrive atualizará as versões online com as alterações feitas offline.

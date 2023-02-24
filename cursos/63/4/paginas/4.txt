@@ -1,0 +1,1 @@
+Lupa: Ao acessar esse recurso, o usuário terá na parte superior da tela a exibição ampliada onde o ponteiro do mouse está posicionado. Na janela ‘Lupa’ encontramos várias opções para configurar a ferramenta.

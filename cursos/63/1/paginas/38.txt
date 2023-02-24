@@ -1,0 +1,1 @@
+Aero Flip (Alt+Tab): Permite a alternância das janelas na área de trabalho, organizando-as de acordo com a preferência de uso. 

@@ -1,0 +1,1 @@
+Fontes: Aqui você pode escolher as fontes (letras), que serão usadas no Windows e nos aplicativos instalados no seu computador.

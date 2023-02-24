@@ -1,0 +1,1 @@
+Pronto, agora sempre que desejar alternar entre as contas cadastradas basta clicar no botão Iniciar>> Trocar Usuário ou então teclar ‘Win+L’. Obs: ‘Trocar usuário’ é diferente de ‘Fazer Logoff’, pois o primeiro mantém os programas da conta iniciada em execução, enquanto o segundo finaliza todos os programas em andamento.

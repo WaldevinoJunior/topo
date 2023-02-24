@@ -1,0 +1,1 @@
+Restauração do Windows: A Recuperação é uma ferramenta do Windows capaz de voltar o Sistema Operacional para um momento anterior ao problema ocorrido, de forma que, seja possível a recuperação de arquivos que foram danificados por algum motivo.

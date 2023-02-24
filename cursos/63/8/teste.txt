@@ -1,0 +1,31 @@
+﻿0;;
+É uma forma de apresentar conteúdo publicitário, como anúncios de apps, sugestões de imagens e dicas na tela de bloqueio do Windows 10.;;
+Windows Spotlight.;;
+Windows Media Player.;;
+Windows Defender.;;
+Skype.;;
+1;;
+<->
+1;;
+É um interpretador de linha de comandos do Windows 10.;;
+Windows explorer.;;
+Prompt de comando.;;
+Windows defender.;;
+Groove.;;
+2;;
+<->
+2;;
+Monitora o espaço de armazenamento nos seus drivers com o Windows 10.;;
+Groove.;;
+Sensor de armazenamento.;;
+Windows explorer.;;
+Sistema operacional.;;
+2;;
+<->
+3;;
+É um utilitário do Windows que permite aos usuários procurar arquivos de sistema corrompidos do Windows e restaurar esses arquivos.;;
+Software.;;
+Sistema operacional.;;
+Hardware.;;
+Verificador de erros.;;
+4;;

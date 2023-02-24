@@ -1,0 +1,1 @@
+Menu compartilhar: Exibe os recursos de compartilhamento para as pastas e arquivos selecionados.

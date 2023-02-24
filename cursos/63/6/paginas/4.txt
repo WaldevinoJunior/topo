@@ -1,0 +1,1 @@
+ WinKey + Ctrl + D - Cria um novo desktop virtual e alterna para ele. 

@@ -1,0 +1,31 @@
+﻿0;;
+Os arquivos excluidos do computador, são enviados para:;;
+Meus documentos.;;
+Disco rígido.;;
+Lixeira.;;
+OnDrive.;;
+3;;
+<->
+1;;
+É um serviço de armazenamento e compartilhamento de arquivos da Microsoft.;;
+OnDrive.;;
+Meus documentos.;;
+Pastas.;;
+Lixeira.;;
+1;;
+<->
+2;;
+É um recurso do Windows 10 que permite a exibição consolidada de arquivos relacionados em um só local.;;
+Hardware.;;
+Biblioteca.;;
+Disco rígido.;;
+Sistema operacional.;;
+2;;
+<->
+3;;
+Além de criarmos bibliotecas o Explorador de arquivos nos permite também criar:;;
+Software.;;
+Sistema operacional.;;
+Hardware.;;
+Pastas.;;
+4;;

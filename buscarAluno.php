@@ -194,7 +194,17 @@
                            }
                            if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Instrutor"){
                                while($cAlunos = mysqli_fetch_array($conAlunos2)){
-                               echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
+                                $colabFranqueado = "SELECT * from cursos_franqueados  WHERE ID_franqueador = '{$_SESSION['idfran']}'";
+                                $cFranqueado = $mysqli->query($colabFranqueado) or die($mysqli->error);
+                                $idColabFranqueado = [];
+                                while($c = mysqli_fetch_array($cFranqueado)){
+                                    $idColabFranqueado[] = $c['ID_Aluno'];
+                                }
+                                for($i=0;$i<count($idColabFranqueado);$i++){
+                                    if($idColabFranqueado[$i] == $cAlunos['ID_Aluno']){
+                                        echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
+                                    }
+                                }
                            }
                        }
                            

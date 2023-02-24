@@ -1,0 +1,1 @@
+Iniciar: Nesta tela você pode configurar não só a aparência, como as funcionalidades do menu iniciar.

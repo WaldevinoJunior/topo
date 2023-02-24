@@ -1,0 +1,1 @@
+Paint: O Paint é um programa que permite criar desenhos sem complicação, usando o mouse como se fosse um verdadeiro lápis. Você também poderá alterar imagens prontas, acrescentando textos, traços, recortando determinada área, entre outros recursos.

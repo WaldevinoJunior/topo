@@ -1,0 +1,107 @@
+﻿0;;
+Integração - Vincular seu Telefone;;
+O  Windows  10  está  trazendo  a  unificação  das  plataformas  da  Microsoft. Trazendo integração entre PCs, tablets, smartphones e o Xbox One.
+<->
+1;;
+Transfira coisas para seu computador, telefone e tablet;;
+Tenha  suas  músicas,  fotos  e  arquivos  em  seu  computador,  telefone  e tablet automaticamente, mesmo se você tiver um telefone ou tablet Android, um iPhone ou um iPad. 
+<->
+2;;
+Transfira coisas para seu computador, telefone e tablet;;
+O recurso  Vincular  seuTelefone  no  Windows  10  ajudará  você  a  fazer  a configuração  para  que  seu  conteúdo  esteja  em  todos  os  seus  dispositivos,  sem a necessidade de cabos!
+<->
+3;;
+Transfira coisas para seu computador, telefone e tablet;;
+Para abrir o recurso Vincular seu Telefone clique no botão Iniciar ou procure por Vincular seu Telefone na caixa de pesquisa na barra de tarefas.
+<->
+4;;
+Configurar o Windows para trabalhar em conjunto com iOS e Android;;
+A  Microsoft  decidiu  abraçar  o  iOS  e  Android,  e  tornou  a  maioria  de  seus aplicativos disponíveis para as plataformas móveis da concorrência. 
+<->
+5;;
+Configurar o Windows para trabalhar em conjunto com iOS e Android;;
+Ao abrir o recurso Vincular seu Telefone  no  menu  Iniciar,  você  entra  em  um  guia  passo-a-passo  para sincronizar dados entre seu PC e smartphone ou tablet.
+<->
+6;;
+Seus arquivos, em geral, estarão em todos os seus dispositivos;;
+Assim que suas configurações estiverem prontas, veja o que estará disponível no seu computador, telefone e tablet:
+<->
+7;;
+Fotos;;
+Com  a  opção  de  upload  de câmera  no  aplicativo  OneDrive,  todas  as fotos tiradas no seu telefone ou tablet também aparecerão automaticamente no aplicativo Fotos do computador Windows 10.
+<->
+8;;
+Música;;
+Salve  seus  arquivos  de  música  no  OneDrive  e  reproduza-os  em qualquer lugar, gratuitamente.
+<->
+9;;
+Anotações e documentos do Office;;
+Faça uma anotação no OneNote em seu computador, telefone ou tablet, e todos estarão sincronizados. O mesmo vale para  documentos  do  Office.  Não  há  a  necessidade  de  mover  arquivos  ou mesclar alterações mais tarde.
+<->
+10;;
+Aplicativos que funcionam em qualquer lugar;;
+O recurso  Vincular  seu Telefone  também  mostrará  como  configurar  outros aplicativos que funcionam em seus dispositivos:
+<->
+11;;
+Outlook;;
+Tenha seu e-mail, calendário, contatos e arquivos de todas as suas contas no aplicativo Outlook para telefone ou tablet Android, iPhone ou iPad.
+<->
+12;;
+Skype;;
+Faça chamadas de vídeo e envie mensagens gratuitamente por Wi-Fi.
+<->
+13;;
+Windows Hello;;
+O Windows Hello funciona com uma tecnologia de credencial chamada Microsoft  Passport, mais fácil, mais prática e mais segura do que usar uma senha, porque ela usa autenticação biométrica.
+<->
+14;;
+Windows Hello;;
+O usuário pode optar por fazer login no sistema usando a face, íris, impressão digital, PIN, bluetooth do celular e senha com imagem. Tornando  praticamente impossível que alguém não autorizado tenha acesso a seus dados.
+<->
+15;;
+Backup e Recuperação do Windows 10;;
+Sempre é bom ter um backup (cópia de segurança). Mantenha sempre cópias dos  seus arquivos mais importantes em outra unidade de disco no caso de algo acontecer com os originais.
+<->
+16;;
+Backup e Recuperação do Windows 10;;
+Para acessar o recurso de Backup e restauração do Windows 10, selecione o botão Iniciar, selecione Configurações > Backup. Ou digite Backup na janela de pesquisa da barra de tarefas do Windows.
+<->
+17;;
+Backup e Recuperação do Windows 10;;
+Através desse recurso também é possível restaurar (baixar) os arquivos que estão no backup de volta ao computador para substituir os arquivos originais perdidos.
+<->
+18;;
+Restauração do Windows;;
+A Recuperação é uma ferramenta do Windows capaz de voltar o Sistema Operacional para um momento anterior ao problema ocorrido, de forma que, seja possível a recuperação de arquivos que foram danificados por algum motivo.
+<->
+19;;
+Restauração do Windows;;
+Para acessar a Restauração, selecione  o botão Iniciar, selecione Configurações > Recuperação. Ou basta digitar Recuperação na janela de pesquisa na barra de tarefas do Windows.
+<->
+20;;
+Criar uma unidade de recuperação;;
+Crie uma unidade de restauração para solucionar problemas quando o computador não puder ser iniciado.
+<->
+21;;
+Abrir restauração do sistema;;
+Desfaça alterações recentes no sistema, mas deixe inalterados os arquivos, como documentos, fotos e músicas.
+<->
+22;;
+Configurar recuperação do sistema;;
+Altere as configurações  de restauração, gerencie o espaço em disco e crie ou exclua pontos de restauração.
+<->
+23;;
+Configurar recuperação do sistema;;
+Se estiver com problemas no computador vá em configurações e tente restaurá-lo.
+<->
+24;;
+Groove;;
+O Microsoft Groove é um aplicativo totalmente novo para o Windows 10. Ele reproduz sua coleção de músicas e permite que você crie e ouça playlists.
+<->
+25;;
+Groove;;
+Adicione seus MP3s ao OneDrive, e você poderá usar o aplicativo do Groove para reproduzir suas músicas em outros dispositivos também.
+<->
+26;;
+Groove;;
+Para acessar o Groove, clique no botão Iniciar, selecione Groove Música. Ou procure por Groove Música na barra de pesquisa.

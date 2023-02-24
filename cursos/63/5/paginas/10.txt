@@ -1,0 +1,1 @@
+Transferindo arquivos e pastas: Para transferir um arquivo ou pasta de um local para outro você tem a opção de copiar ou recortar. Para tal, você deve selecionar o arquivo ou pasta desejada e clicar no menu Editar>> Copiar, ou então teclar o atalho de teclado CTRL+C. 

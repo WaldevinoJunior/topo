@@ -1,0 +1,1 @@
+Zoom: Este grupo é usado para alterar o modo de exibição do desenho. Com ele podemos ampliar ou reduzir a visão do desenho.

@@ -166,7 +166,18 @@
                         }
                         if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"  || $_SESSION['Perfil'] == "Instrutor"){
                             while($cAlunos = mysqli_fetch_array($conAlunos2)){
-                            echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
+                                $colabFranqueado = "SELECT * from cursos_franqueados  WHERE ID_franqueador = '{$_SESSION['idfran']}'";
+                                $cFranqueado = $mysqli->query($colabFranqueado) or die($mysqli->error);
+                                $idColabFranqueado = [];
+                                while($c = mysqli_fetch_array($cFranqueado)){
+                                    $idColabFranqueado[] = $c['ID_Aluno'];
+                                }
+                                for($i=0;$i<count($idColabFranqueado);$i++){
+                                    if($idColabFranqueado[$i] == $cAlunos['ID_Aluno']){
+                                        echo "<option id='busca' value='".$cAlunos['ID_Aluno']."'>".$cAlunos['Nome']." - ".$cAlunos['CPF']."</option>";
+                                    }
+                                }
+                           
                         }
                     }
                         ?>
@@ -273,32 +284,72 @@
                                             $table .= '</tr>';
                                             }
                                            }                          
+
                                         }
                                         if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Instrutor"){
-                                            $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
-                                            $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
-                                            $table .= "<td>{$cAlunos['Nome']}</td>";
-                                            $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
-                                            $table .= "<td class='esconde'>{$cAlunos['Telefone']}</td>";
-                                            if($cAlunos['Status'] == 1){
-                                                $table .= "<td class='esconde'><i class='bi bi-person-fill'></i></td>";
+                                            if($_SESSION['idfran'] == 4){
+                                                $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
+                                                $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
+                                                $table .= "<td>{$cAlunos['Nome']}</td>";
+                                                $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
+                                                $table .= "<td class='esconde'>{$cAlunos['Telefone']}</td>";
+                                                if($cAlunos['Status'] == 1){
+                                                    $table .= "<td class='esconde'><i class='bi bi-person-fill'></i></td>";
+                                                }
+                                                if($cAlunos['Status'] == 2){
+                                                    $table .= "<td class='esconde'><i class='bi bi-check2-circle'></i></td>";
+                                                }
+                                                if($cAlunos['Status'] == 3){
+                                                    $table .= "<td class='esconde'><i class='bi bi-x-square-fill'></i></td>";
+                                                }
+                                                if($cAlunos['Status'] == 4){
+                                                    $table .= "<td class='esconde'><i class='bi bi-exclamation-diamond-fill'></i></td>";
+                                                }
+                                                if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Franqueado"){
+                                                    $table .= "<td><a href='editarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Editar</a><a href='mostrarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
+                                                    $table .= "<td><a style='background-color:green;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a>
+                                                    <a style='background-color:red;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='deletar.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Deletar</a></td>";
+                                                }
+                                               
+                                                $table .= '</tr>';
                                             }
-                                            if($cAlunos['Status'] == 2){
-                                                $table .= "<td class='esconde'><i class='bi bi-check2-circle'></i></td>";
-                                            }
-                                            if($cAlunos['Status'] == 3){
-                                                $table .= "<td class='esconde'><i class='bi bi-x-square-fill'></i></td>";
-                                            }
-                                            if($cAlunos['Status'] == 4){
-                                                $table .= "<td class='esconde'><i class='bi bi-exclamation-diamond-fill'></i></td>";
-                                            }
-                                            if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Franqueado"){
-                                                $table .= "<td><a href='editarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Editar</a><a href='mostrarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
-                                                $table .= "<td><a style='background-color:green;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a>
-                                                <a style='background-color:red;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='deletar.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Deletar</a></td>";
+                                            else{
+                                                $colabFran = "SELECT * from cursos_franqueados  WHERE ID_franqueador = '{$_SESSION['idfran']}'";
+                                                $cFran = $mysqli->query($colabFran) or die($mysqli->error);
+                                                $idColabFran = [];
+                                                while($c = mysqli_fetch_array($cFran)){
+                                                    $idColabFran[] = $c['ID_Aluno'];
+                                                }
+                                                for($i=0;$i<count($idColabFran);$i++){
+                                                    if($idColabFran[$i] == $cAlunos['ID_Aluno']){
+                                                        $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
+                                                        $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
+                                                        $table .= "<td>{$cAlunos['Nome']}</td>";
+                                                        $table .= "<td class='esconde'>{$cAlunos['CPF']}</td>";
+                                                        $table .= "<td class='esconde'>{$cAlunos['Telefone']}</td>";
+                                                        if($cAlunos['Status'] == 1){
+                                                            $table .= "<td class='esconde'><i class='bi bi-person-fill'></i></td>";
+                                                        }
+                                                        if($cAlunos['Status'] == 2){
+                                                            $table .= "<td class='esconde'><i class='bi bi-check2-circle'></i></td>";
+                                                        }
+                                                        if($cAlunos['Status'] == 3){
+                                                            $table .= "<td class='esconde'><i class='bi bi-x-square-fill'></i></td>";
+                                                        }
+                                                        if($cAlunos['Status'] == 4){
+                                                            $table .= "<td class='esconde'><i class='bi bi-exclamation-diamond-fill'></i></td>";
+                                                        }
+                                                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Franqueado"){
+                                                            $table .= "<td><a href='editarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Editar</a><a href='mostrarAluno.php?alunoid=".$cAlunos['ID_Aluno']."' style='background-color:blue;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' value='".$cAlunos['ID_Aluno']."'>Mostrar</a></td>";
+                                                            $table .= "<td><a style='background-color:green;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='cursoAluno.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Adicionar</a>
+                                                            <a style='background-color:red;border:1px solid black;color:white;font-size:15px;margin-top:9px;padding:2.2px' href='deletar.php?alunoid=".$cAlunos['ID_Aluno']."&&nome=".$cAlunos['Nome']."' style = 'margin:10px;font-size:15px;' 'value='".$cAlunos['ID_Aluno']."'>Deletar</a></td>";
+                                                        }
+                                                       
+                                                        $table .= '</tr>';
+                                                    }
+                                                }
                                             }
                                            
-                                            $table .= '</tr>';
                                         }
                                     }
                         $table .= '</tbody>';

@@ -1,0 +1,1 @@
+Para acessar o Prompt de comando, basta ir à janela de pesquisa na barra de tarefas do Windows e digitar Prompt de comando ou cmd, que será aberta a janela do prompt de comando.

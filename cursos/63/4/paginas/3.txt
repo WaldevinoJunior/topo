@@ -1,0 +1,1 @@
+Tamanho do cursor e do ponteiro: Ao acessar esse recurso, o usuário poderá modificar a aparência do cursor e do ponteiro do mouse. Mudando cor, tamanho, contraste, forma. Tudo para facilitar sua visualização.

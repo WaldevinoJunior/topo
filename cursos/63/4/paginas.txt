@@ -1,0 +1,123 @@
+﻿0;;
+Configurações de Facilidade de Acesso;;
+Com a intenção de facilitar o uso do computador para pessoas com algum tipo de deficiência, o Windows oferece alguns recursos interessantes.
+<->
+1;;
+Configurações de Facilidade de Acesso;;
+Estes recursos poderão compensar as dificuldades encontradas no uso do teclado, fornecer informações audíveis das tarefas em execução, aumentar o tamanho de exibição das janelas, entre outros.
+<->
+2;;
+Tela;;
+Ao acessar esse recurso, o usuário poderá personalizar a aparência dos aplicativos, tais como, tamanho das fontes, cores, brilho, contraste, tamanho da tela, cursores do mouse, entre outros.
+<->
+3;;
+Tamanho do cursor e do ponteiro;;
+Ao acessar esse recurso, o usuário poderá modificar a aparência do cursor e do ponteiro do mouse. Mudando cor, tamanho, contraste, forma. Tudo para facilitar sua visualização.
+<->
+4;;
+Lupa;;
+Ao acessar esse recurso, o usuário terá na parte superior da tela a exibição ampliada onde o ponteiro do mouse está posicionado. Na janela ‘Lupa’ encontramos várias opções para configurar a ferramenta.
+<->
+5;;
+Filtro de cor;;
+Ao acessar esse recurso, o usuário poderá controlar as cores dos aplicativos na tela, para que fiquem mais agradáveis e confortáveis à visão, para quem por exemplo sofre de fotofobia.
+<->
+6;;
+Alto contraste;;
+Ao acessar esse recurso, o usuário poderá tornar os textos e aplicativos mais fáceis de serem visualizados e lidos, usando cores distintas.
+<->
+7;;
+Narrador;;
+Ao acessar esse recurso, o usuário poderá ouvir o texto que está digitando ou qualquer outro aplicativo que esteja em uso. O software irá narrar tudo que estiver sendo feito no computador.
+<->
+8;;
+Áudio;;
+Ao acessar esse recurso, o usuário poderá controlar o áudio do computador e configurar alertas sonoros para as tarefas que realiza com mais frequência.
+<->
+9;;
+Legendas ocultas;;
+Ao acessar esse recurso, o usuário terá na parte inferior da tela a legenda dos todo áudio que esteja sendo executado. Poderá também escolher a cor, tamanho, transparência e um plano de fundo para a legenda.
+<->
+10;;
+Fala;;
+Ao acessar esse recurso, o usuário poderá invés de digitar, ditar o texto e o próprio aplicativo digitará para ele. Além de usar a Cortana para executar suas tarefas.
+<->
+11;;
+Teclado;;
+Ao acessar esse recurso, o usuário poderá usar um teclado virtual, invés de um teclado físico, o que facilita em muito o uso por pessoas com dificuldades motoras.
+<->
+12;;
+Mouse;;
+Ao acessar esse recurso, o usuário poderá controlar o mouse através do teclado numérico, além de colocar em destaque os cursores e ponteiros.
+<->
+13;;
+Controle com os olhos;;
+Ao acessar esse recurso, o usuário poderá controlar o cursor do mouse, e digitar textos, usando o teclado virtual, somente com o movimento dos olhos. Poderá também se comunicar com outras pessoas usando o recurso de transformar texto em áudio.
+<->
+14;;
+Ferramentas Administrativas;;
+Ferramentas Administrativas além de conter as ferramentas avançadas do Windows, incorporou as Ferramentas do Sistema, presentes nas versões anteriores do Windows. São ferramentas para a manutenção preventiva ou corretiva do Windows 10.
+<->
+15;;
+Ferramentas Administrativas;;
+Para acessar as Ferramentas Administrativas, clique no botão Iniciar, selecione Ferramentas Administrativas do Windows. Ou procure por Ferramentas Administrativas na barra de pesquisa.
+<->
+16;;
+Limpeza de Disco;;
+Windows possui uma ferramenta que permite excluir os arquivos e pastas inúteis do computador. A Limpeza de Disco examina, exibe e exclui determinados arquivos e pastas, liberando espaço valioso no disco rígido e melhorando o desempenho do sistema.
+<->
+17;;
+Limpeza de Disco;;
+Para acessar a Limpeza de Disco, clique no botão Iniciar, selecione Ferramentas Administrativas do Windows, Limpeza de Disco. Ou procure por Limpeza de Disco na barra de pesquisa.
+<->
+18;;
+Desfragmentador de Disco (Otimizador);;
+A fragmentação faz com que o disco rígido execute um trabalho extra que pode tornar o computador lento. Os dispositivos removíveis de armazenamento, como pen drives, também podem ficar fragmentados.
+<->
+19;;
+Desfragmentador de Disco (Otimizador);;
+O Desfragmentador de Disco do Windows reorganiza os dados fragmentados para que os discos e as unidades possam funcionar de maneira mais eficiente. O Desfragmentador de Disco é executado por agendamento, mas você também pode analisar e desfragmentar os discos e as unidades manualmente.
+<->
+20;;
+Desfragmentador de Disco (Otimizador);;
+Para acessar o Desfragmentador de Disco, clique no botão Iniciar, selecione Ferramentas Administrativas do Windows, Desfragmentar e otimizar as unidades. Ou procure por desfragmentar e otimizar as unidades na barra de pesquisa.
+<->
+21;;
+Restauração do Sistema;;
+A ferramenta Restauração do sistema usa pontos de restauração para retornar as configurações e arquivos do sistema para um ponto anterior no tempo. Você pode usá-lo para restaurar o sistema operacional a um ponto no tempo de acordo com o calendário. 
+<->
+22;;
+Restauração do Sistema;;
+Quando você usar a restauração do sistema para restaurar o computador a um estado anterior, programas e atualizações instalados são removidas.
+<->
+23;;
+Restauração do Sistema;;
+Para acessar a Restauração do Sistema, clique no botão Iniciar, selecione Sistema do Windows > Painel de Controle > Sistema > Proteção do sistema. Ou procure por, Criar ponto de Restauração.
+<->
+24;;
+Explorador de arquivos;;
+O Explorador de arquivos é um gerenciador de arquivos capaz de oferecer recursos poderosos para controle dos arquivos e dados guardados em seu computador e até mesmo gerenciar os discos de outros computadores desde que estes estejam conectados por uma rede local, intranet ou internet.
+<->
+25;;
+Explorador de arquivos;;
+Para abrir o Explorador de arquivos, basta pesquisar na barra de pesquisa ao lado do botão iniciar.
+<->
+26;;
+Barra de Endereços e Pesquisar;;
+A barra de endereços permite a entrada tanto de endereços internos (diretórios de pastas) como externos (endereços web), sendo que ao digitar a segunda opção o Windows Explorer executa automaticamente o Internet Explorer. 
+<->
+27;;
+Barra de Endereços e Pesquisar;;
+Na opção pesquisar, podemos digitar o nome de um arquivo ou parte dele para que o Windows faça uma pesquisa na pasta selecionada.
+<->
+28;;
+Menu início;;
+Exibe os recursos de controle para a pasta selecionada. Para cada tipo de pasta temos diferentes ferramentas disponíveis.
+<->
+29;;
+Menu compartilhar;;
+Exibe os recursos de compartilhamento para as pastas e arquivos selecionados.
+<->
+30;;
+Menu exibir;;
+Exibe os recursos de exibição das pastas e arquivos selecionados.

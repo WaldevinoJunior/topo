@@ -1,0 +1,1 @@
+Usuários  Administrador  (poderes ilimitados)  /  Padrão  (poderes  limitados, sem privilégios elevados). Multiusuário (capacidade de acesso simultâneo de usuários). Multiprocessamento  (capacidade  de  operar  com  vários  processamentos simultaneamente).

@@ -1,0 +1,1 @@
+Calculadora: A calculadora do Windows funciona como uma calculadora normal, sendo que existem quatro modos de operação: padrão, cientifico, cálculo de data e programador, além dos modos de operação existem ainda na calculadora, doze conversores. Para fazer as operações, você pode usar o teclado numérico ou o ponteiro do mouse.

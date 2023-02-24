@@ -1,0 +1,1 @@
+Alinhamento – Alteram o alinhamento do texto entre as margens do documento. Podemos alinhar o texto à esquerda, ao centro e à direita.

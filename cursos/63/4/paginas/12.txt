@@ -1,0 +1,1 @@
+Mouse: Ao acessar esse recurso, o usuário poderá controlar o mouse através do teclado numérico, além de colocar em destaque os cursores e ponteiros.

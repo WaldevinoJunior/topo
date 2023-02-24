@@ -1,0 +1,1 @@
+Por isso, é recomendado que você apague os arquivos, podemos destacar os provenientes do navegador de internet, imagens diversas, entre outros.Para apagar um arquivo, basta selecioná-lo e teclar (Delete). Uma janela de confirmação será exibida perguntando se você deseja mesmo enviar o arquivo para lixeira. 

@@ -1,0 +1,1 @@
+Limpeza de Disco: Windows possui uma ferramenta que permite excluir os arquivos e pastas inúteis do computador. A Limpeza de Disco examina, exibe e exclui determinados arquivos e pastas, liberando espaço valioso no disco rígido e melhorando o desempenho do sistema.

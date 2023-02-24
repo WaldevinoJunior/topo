@@ -1,0 +1,1 @@
+Teclado: Ao acessar esse recurso, o usuário poderá usar um teclado virtual, invés de um teclado físico, o que facilita em muito o uso por pessoas com dificuldades motoras.

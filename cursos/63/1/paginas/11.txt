@@ -1,0 +1,1 @@
+Software: São os programas que, utilizando o hardware do computador, executam as diferentes tarefas necessárias ao processamento de dados. Existem softwares de vários tipos e os mais importantes são:

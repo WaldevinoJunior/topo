@@ -1,0 +1,1 @@
+Como as pastas da Biblioteca podem armazenar arquivos de diversos lugares, podemos incluir e excluir estes locais. 

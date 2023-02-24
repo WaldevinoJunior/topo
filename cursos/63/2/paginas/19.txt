@@ -1,0 +1,1 @@
+Em seguida leve o ponteiro até a Área de Desenho arraste-o. Ao soltar o botão, teremos um retângulo com o contorno da Cor 1 e preenchimento da Cor 2. Caso deseje a mesma figura com as cores inversas, arraste com o botão direito.

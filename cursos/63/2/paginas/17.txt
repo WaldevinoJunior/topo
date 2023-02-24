@@ -1,0 +1,1 @@
+Exibição: Podemos desejar ver somente desenho por inteiro na tela, ou uma miniatura exibida numa janela separada.

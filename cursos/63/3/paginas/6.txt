@@ -1,0 +1,1 @@
+Salvar- Armazena as informações do arquivo no HD do computador. Ao clicar no botão uma janela será exibida para você especificar o local de armazenamento e o nome do arquivo. 

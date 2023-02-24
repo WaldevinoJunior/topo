@@ -1,0 +1,1 @@
+Cores: Nela você escolhe as cores que serão utilizadas pelas ferramentas no momento da criação. Para definir as cores, selecione Cor 1 ou Cor 2 e na paleta clique cor desejada. A cor 1 será usada para o contorno e a cor 2 para o preenchimento das formas. Para editar cores clique no botão 'Editar cores'.

@@ -1,0 +1,1 @@
+Para acessar a Limpeza de Disco, clique no botão Iniciar, selecione Ferramentas Administrativas do Windows, Limpeza de Disco. Ou procure por Limpeza de Disco na barra de pesquisa.

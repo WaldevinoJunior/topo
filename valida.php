@@ -518,11 +518,17 @@ if(isset($_POST['cadastraAluno2'])){
 	$consultaCpf = "SELECT ID_Aluno from alunos WHERE Login = '{$_POST['login']}'";
 	$sqlcpf = $mysqli->query($consultaCpf) or die($mysqli->error);
 	$idAluno = mysqli_fetch_array($sqlcpf)[0];
-	$dataatual = date('y/m/d');
+	$dataatual = date('Y-m-d');
 	for($i = 0;$i<$_POST['contcurso'];$i++){
 		if(isset($_POST['curso'.$i.''])){
 				$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$_POST['curso'.$i.'']}','{$idAluno}', '1' , '1', '{$dataatual}')";
 				$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
+				$sqlcurso = "SELECT Horas FROM cursos WHERE ID_Curso = '{$_POST['ID_curso']}'";
+				$sqlc = $mysqli->query($sqlcurso) or die($mysqli->error);
+				$carga = (mysqli_fetch_array($sqlc)[0])/8;
+				$datalimite = date('Y-m-d', strtotime("+$carga months",strtotime($dataatual))); 
+				$dataaluno = "UPDATE alunos SET data_limite = '{$datalimite}' WHERE Login = '{$_POST['login']}'";
+				$datAluno = $mysqli->query($dataaluno) or die($mysqli->error);
 			if($_POST['perfil'] == "afiliado"){
 				$afiliados = "INSERT INTO cursos_afiliados (Data_venda, ID_curso, ID_afiliados,comissao,ID_Aluno) VALUES ('{$dataatual}', '{$_POST['curso'.$i.'']}','{$_POST['afiliados']}', '{$_POST['valorcurso'.$i.'']}','{$idAluno}')";
 				$afi = $mysqli->query($afiliados) or die($mysqli->error);

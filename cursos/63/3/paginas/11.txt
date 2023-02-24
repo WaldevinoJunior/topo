@@ -1,0 +1,1 @@
+Guia Início: Localizar – permite que você encontre algum texto ou palavra no documento. Clique no ícone da ferramenta e na caixa ‘Localizar’ digite a palavra que deseja encontrar.

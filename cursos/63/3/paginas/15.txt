@@ -1,0 +1,1 @@
+Para selecionar uma linha inteira, clique com o ponteiro do mouse no lado esquerdo do início da linha. Se desejar selecionar mais de uma linha de forma continua, arraste o ponteiro do mouse ao lado das linhas desejadas.

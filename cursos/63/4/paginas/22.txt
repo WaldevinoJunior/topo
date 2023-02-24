@@ -1,0 +1,1 @@
+Quando você usar a restauração do sistema para restaurar o computador a um estado anterior, programas e atualizações instalados são removidas.

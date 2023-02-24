@@ -1,0 +1,1 @@
+Permaneça sincronizado: Ícones do Explorador de Arquivos mostram o status da sincronização de seus arquivos e pastas offline.

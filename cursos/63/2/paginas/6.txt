@@ -1,0 +1,1 @@
+Ela possui duas guias: Home (mostrada anteriormente) e Exibir. Na guia Home temos as ferramentas para desenhar e na guia exibir encontramos as ferramentas de Zoom, Guias e Linha Grade.

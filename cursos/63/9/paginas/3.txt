@@ -1,0 +1,1 @@
+Gerenciamento de dois sistemas na mesma máquina (Dual boot). Sistema de Arquivos: NTFS (Nova Tecnologia de Sistema de Arquivos).

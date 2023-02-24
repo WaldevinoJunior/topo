@@ -1,0 +1,1 @@
+Na opção pesquisar, podemos digitar o nome de um arquivo ou parte dele para que o Windows faça uma pesquisa na pasta selecionada.

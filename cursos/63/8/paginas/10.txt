@@ -1,0 +1,1 @@
+FC - Compara dois  arquivos  ou  grupos  de  arquivos  e  exibe  as  diferenças  entre eles. FIND - Procura uma sequência de texto em um arquivo ou arquivos. HELP - Fornece informações de ajuda sobre comandos do Windows. IPCONFIG - Mostra detalhes das configurações de IP.

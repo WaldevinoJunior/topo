@@ -1,0 +1,1 @@
+Hardware: É a parte física da máquina (em inglês significa ‘equipamento pesado’). Ele interpreta os códigos enviados pelo sistema operacional e converte-os em sinais elétricos para processamento das informações e vice-versa. 

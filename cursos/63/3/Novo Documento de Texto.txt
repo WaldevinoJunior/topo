@@ -1,0 +1,29 @@
+<->
+27;;
+Régua;;
+Para exemplificar, aplique um recuo à esquerda de um centímetro no segundo parágrafo. Basta posicionar o cursor indicador de ‘Margem Esquerda’ e de ‘Parágrafo – Primeira Linha’ e movê-los até a posição desejada. 
+<->
+28;;
+Régua;;
+Repita o procedimento para o terceiro, quarto e quinto parágrafos, sempre aumentando um centímetro em relação ao parágrafo anterior.
+Obs: Para definir medidas mais exatas, clique no botão Parágrafo do grupo Parágrafo.
+<->
+29;;
+Inserir Figuras;;
+Agora vamos aprender a inserir uma imagem do Paint no WordPad. Para isso, abra o programa e faça um desenho relacionado com o tema do texto.
+<->
+30;;
+Inserir Figuras;;
+Para facilitar a visualização dos dois arquivos o Windows possui o recurso de ajustar na Área de Trabalho. Arraste as janelas dos dois programas uma para cada lado da tela até que ela “grude” na lateral.
+<->
+31;;
+Inserir Figuras;;
+Depois de fazer o desenho, selecione-o, clique com o botão direito sobre a imagem e escolha Copiar ou teclando o atalho ‘Ctrl=C’.
+<->
+32;;
+Inserir Figuras;;
+Agora posicione o cursor depois do título do texto e cole a imagem copiada (clique com o botão direito na opção colar). Centralize a imagem em relação ao documento e se desejar altere o seu tamanho.
+<->
+33;;
+Inserir Figuras;;
+Salve as alterações feitas no arquivo e finalize o programa.

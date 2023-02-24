@@ -1,0 +1,1 @@
+Mostrar ou ocultar: Podemos exibir ou ocultar as Réguas, Linhas de grade ou a Barra de status.

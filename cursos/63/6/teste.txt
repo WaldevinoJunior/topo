@@ -1,0 +1,31 @@
+﻿0;;
+Esse recurso permite que você localize o dispositivo do seu filho em um mapa.;;
+Siga-me.;;
+Localizador.;;
+GPS.;;
+Encontre seu filho.;;
+4;;
+<->
+1;;
+Faz com que a tela do PC ou tablet exiba cores quentes, que não agridem os olhos.;;
+Proteção de tela.;;
+Luz noturna.;;
+Papel de parede.;;
+Software.;;
+2;;
+<->
+2;;
+Com esse recurso, o usuário pode separar aplicativos que estão sendo usados para trabalho daqueles para fins pessoais no mesmo computador.;;
+Contas de usuário.;;
+Multiplas áreas de trabalho.;;
+Explorador de arquivos.;;
+Sistema operacional.;;
+2;;
+<->
+3;;
+É um recurso para controlar e censurar o acesso a conteúdo que crianças acessam sem a vigilância dos pais.;;
+Software.;;
+Sistema operacional.;;
+Hardware.;;
+Opções da família.;;
+4;;

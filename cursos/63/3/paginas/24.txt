@@ -1,0 +1,1 @@
+Espaçamento – Modifica o espaçamento entre as linhas.

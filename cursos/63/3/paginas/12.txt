@@ -1,0 +1,1 @@
+Recortar, Copiar e Colar – A primeira ferramenta move um bloco de texto selecionado para outra região selecionada, e você poderá colocá-la em qualquer outro aplicativo ou local do documento aberto.

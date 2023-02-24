@@ -1,0 +1,1 @@
+Com estas opções aplicamos efeitos de destaque na região selecionada. Negrito aumenta a espessura do tipo, Itálico inclina as letras, Sublinhado faz um risco abaixo da palavra e temos ainda o Tachado, Subscrito e Sobrescrito.

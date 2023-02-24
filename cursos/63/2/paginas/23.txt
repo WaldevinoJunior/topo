@@ -1,0 +1,1 @@
+Como exercício tente reproduzir a próxima figura usando as formas Triângulo, Retângulo e Pentágono.

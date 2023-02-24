@@ -1,0 +1,1 @@
+Menu exibir: Exibe os recursos de exibição das pastas e arquivos selecionados.

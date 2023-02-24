@@ -1,0 +1,103 @@
+﻿0;;
+Bibliotecas;;
+As Bibliotecas são um recurso do Windows 10 que permite a exibição consolidada de arquivos relacionados em um só local. Você pode pesquisar nas Bibliotecas para localizar os arquivos certos rapidamente, até mesmo quando esses arquivos estão em pastas, unidades ou em sistemas diferentes.
+<->
+1;;
+Bibliotecas;;
+A biblioteca é uma ferramenta que reúne diversos tipos de Arquivos, independentemente do local onde eles estejam armazenados.
+<->
+2;;
+Bibliotecas;;
+Como padrão o Windows possui as bibliotecas dos documentos, músicas, imagens e vídeos. Mas podemos também criar nossas próprias bibliotecas. 
+<->
+3;;
+Bibliotecas;;
+Para criar uma nova biblioteca clique com o botão direito do mouse sobre Bibliotecas, aponte para Novo e clique em Biblioteca.
+<->
+4;;
+Bibliotecas;;
+Como as pastas da Biblioteca podem armazenar arquivos de diversos lugares, podemos incluir e excluir estes locais. 
+<->
+5;;
+Bibliotecas;;
+Para incluir um novo local clique duas vezes sobre a biblioteca criada e em seguida no botão incluir uma pasta. 
+<->
+6;;
+Bibliotecas;;
+Na caixa de diálogo Incluir Pasta em Nova Biblioteca, escolha a pasta desejada e clique no botão Incluir Pasta.
+<->
+7;;
+Bibliotecas;;
+Para remover uma Biblioteca criada, basta clicar com o botão direito do mouse sobre a biblioteca desejada e em seguida em Excluir. 
+<->
+8;;
+Pastas;;
+Além de criarmos bibliotecas o Explorador de arquivos nos permite também criar pastas e subpastas para guardarmos nossos arquivos.
+<->
+9;;
+Pastas;;
+Podemos criar uma pasta clicando com o botão direito no Painel de Exibição e selecionando a opção Novo, Pasta do menu flutuante.
+<->
+10;;
+Transferindo arquivos e pastas;;
+Para transferir um arquivo ou pasta de um local para outro você tem a opção de copiar ou recortar. Para tal, você deve selecionar o arquivo ou pasta desejada e clicar no menu Editar>> Copiar, ou então teclar o atalho de teclado CTRL+C. 
+<->
+11;;
+Transferindo arquivos e pastas;;
+Em seguida, abrir a pasta onde deseja colocar a cópia e clicar no menu editar>> Colar, ou utilizar o atalho de teclado (CTRL+V).
+<->
+12;;
+Lixeira;;
+O computador possui uma capacidade limite de armazenamento no disco rígido. Mesmo com capacidade de armazenamento extremamente alta, quanto mais próxima ao limite do disco, mais lento e dispendioso ficará o computador. 
+<->
+13;;
+Lixeira;;
+Por isso, é recomendado que você apague os arquivos, podemos destacar os provenientes do navegador de internet, imagens diversas, entre outros.
+Para apagar um arquivo, basta selecioná-lo e teclar (Delete). Uma janela de confirmação será exibida perguntando se você deseja mesmo enviar o arquivo para lixeira. 
+<->
+14;;
+Lixeira;;
+A lixeira como o próprio nome diz, tem como finalidade armazenar temporariamente todos os arquivos que você excluir do computador.
+Para ter acesso à Lixeira, clique no ícone de mesmo nome.
+<->
+15;;
+Excluindo arquivos;;
+Na barra de ferramentas, podemos excluir permanentemente os arquivos do computador através do botão Esvaziar Lixeira ou então restaurar algum arquivo à sua origem no botão Restaurar este Item.
+<->
+16;;
+OneDrive;;
+O OneDrive é um serviço de armazenamento e compartilhamento de arquivos da Microsoft. Com o Microsoft OneDrive você pode acessar seus arquivos em qualquer lugar e em qualquer dispositivo.
+É como um disco rígido extra que está disponível para todos os dispositivos que você usar.
+<->
+17;;
+OneDrive;;
+O OneDrive agora faz parte do Explorador de Arquivos, como você pode notar na imagem ao fundo. 
+<->
+18;;
+OneDrive;;
+Para salvar um documento com o qual você está trabalhando no OneDrive, selecione uma pasta do OneDrive na lista de locais de salvamento do software que estiver usando.
+<->
+19;;
+OneDrive;;
+Para mover arquivos para o OneDrive, abra o Explorador de Arquivos e arraste-os para uma das pastas do OneDrive.
+<->
+20;;
+OneDrive;;
+Se eu estiver sem internet, como faço para acessar o OneDrive?
+Os arquivos que você salva no OneDrive estão disponíveis online em OneDrive. com e offline em seu computador. Isso significa que você pode usá-los a qualquer momento, mesmo quando não estiver conectado à Internet. Quando você se reconectar, o OneDrive atualizará as versões online com as alterações feitas offline.
+<->
+21;;
+Permaneça sincronizado;;
+Ícones do Explorador de Arquivos mostram o status da sincronização de seus arquivos e pastas offline.
+<->
+22;;
+Permaneça sincronizado;;
+Está sincronizado com a versão online.
+<->
+23;;
+Permaneça sincronizado;;
+Está entrando em sincronia.
+<->
+24;;
+Permaneça sincronizado;;
+A versão em seu computador está fora de sincronia. Para descobrir o motivo, vá para o lado direito da barra de tarefas, clique com o botão direito do mouse (ou pressione e segure) no ícone OneDrive e selecione Exibir problemas de sincronização.

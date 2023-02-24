@@ -1,0 +1,1 @@
+Menu início: Exibe os recursos de controle para a pasta selecionada. Para cada tipo de pasta temos diferentes ferramentas disponíveis.

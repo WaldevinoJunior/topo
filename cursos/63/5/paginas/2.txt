@@ -1,0 +1,1 @@
+Como padrão o Windows possui as bibliotecas dos documentos, músicas, imagens e vídeos. Mas podemos também criar nossas próprias bibliotecas. 

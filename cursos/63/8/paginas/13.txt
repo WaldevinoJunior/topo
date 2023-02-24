@@ -1,0 +1,1 @@
+A  ferramenta  de  Armazenamento  vai  permitir  que  usuários  do  Windows  10 monitorem  o  uso  do  espaço  de  seus  dispositivos  de  armazenamento, como  discos rígidos, pendrives, HDs externos e outros.

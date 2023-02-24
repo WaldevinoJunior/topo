@@ -1,0 +1,31 @@
+﻿0;;
+A função salvar como no Paint, encontra-se:;;
+No menu arquivo.;;
+Na área de trabalho.;;
+No menu início.;;
+No menu exibir.;;
+1;;
+<->
+1;;
+Onde encontramos a função recortar no Paint?;;
+Na área de tranferência.;;
+Na área imagem.;;
+Na área formas.;;
+Na área cores.;;
+1;;
+<->
+2;;
+Onde encontramos a ferramenta Zoom no Paint?;;
+No menu início.;;
+No menu exibir.;;
+No menu arquivo.;;
+Na área de transferência.;;
+2;;
+<->
+3;;
+Onde encontramos a ferramenta Linhas de grade no Paint?;;
+Na área de transferência.;;
+No menu início.;;
+Na área de zoom.;;
+No menu exibir.;;
+4;;

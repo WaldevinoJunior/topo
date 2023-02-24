@@ -1,0 +1,1 @@
+Outra grande vantagem desse recurso é que ele nos permite usar duas ou mais unidades de armazenamento de dados para salvar automaticamente nossos arquivos, impedindo assim que eles sejam perdidos por falhas no disco.

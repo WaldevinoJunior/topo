@@ -1,0 +1,1 @@
+ATTRIB - Exibe ou altera atributos de arquivos. CACLS - Exibe ou modifica listas de controle de acesso (ACLs) de arquivos. CHKDSK - Verifica um disco e exibe um relatório de status. CLS - Limpa a tela.

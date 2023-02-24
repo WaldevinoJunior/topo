@@ -1,0 +1,1 @@
+Editar cores: Na caixa Editar Cores digite os valores para a nova cor ou clique numa cor na paleta.

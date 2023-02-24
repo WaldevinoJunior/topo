@@ -1,0 +1,1 @@
+Principais comandos do cmd : DIR - Listando arquivos e pastas. COPY - Copiar arquivos. MOVE - Mover arquivos ou renomear pastas. MD - Criar uma Nova pasta.

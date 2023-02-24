@@ -1,0 +1,1 @@
+Para acessar o recurso de Backup e restauração do Windows 10, selecione o botão Iniciar, selecione Configurações > Backup. Ou digite Backup na janela de pesquisa da barra de tarefas do Windows.
