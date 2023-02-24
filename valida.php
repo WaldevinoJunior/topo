@@ -325,6 +325,15 @@ if(isset($_POST['enviareditarAfiliado'])){
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
+if(isset($_POST['cadastraCupom'])){
+	$validade = clear($_POST['validade']);
+	$quant = clear($_POST['quantidade']);
+	$idCurso = clear($_POST['idCurso']);
+	$codigo = clear($_POST['codigo']);
+	$cadastraCupom = "INSERT INTO cupons(Validade, Quantidade, ID_Curso,Codigo)  VALUES('{$validade}','{$quant}','{$idCurso}','{$codigo}')";
+	$cadastraC = $mysqli->query($cadastraCupom) or die ($mysqli->error);
+	header('Location: ./cadastraCupons.php');
+}
 if(isset($_POST['cadastraAfiliado'])){
 	$_POST['nome'] = clear($_POST['nome']);
 	$_POST['email'] = clear($_POST['email']);
