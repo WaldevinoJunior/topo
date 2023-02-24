@@ -446,6 +446,9 @@
                         if($_SESSION['Perfil'] == "Administrador"){
                             echo  "<div class='funcA'><a href='mostraAfiliadosFranqueados.php'><i class='bi bi-people fill'></i><h3>Listar Afiliados e Franqueados</h3></a></div>";
                         }
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<div class='funcA'><a href='cupons.php'><i class='bi bi-ticket-perforated'></i><h3>Cupons de Desconto</h3></a></div>";
+                        }
                 ?>
                 <hr>
             </div>
