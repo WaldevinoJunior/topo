@@ -330,7 +330,8 @@ if(isset($_POST['cadastraCupom'])){
 	$quant = clear($_POST['quantidade']);
 	$idCurso = clear($_POST['idCurso']);
 	$codigo = clear($_POST['codigo']);
-	$cadastraCupom = "INSERT INTO cupons(Validade, Quantidade, ID_Curso,Codigo)  VALUES('{$validade}','{$quant}','{$idCurso}','{$codigo}')";
+	$desconto = clear($_POST['desconto']);
+	$cadastraCupom = "INSERT INTO cupons(Validade, Quantidade, ID_Curso,Codigo, Desconto)  VALUES('{$validade}','{$quant}','{$idCurso}','{$codigo}','{$desconto}')";
 	$cadastraC = $mysqli->query($cadastraCupom) or die ($mysqli->error);
 	header('Location: ./cadastraCupons.php');
 }

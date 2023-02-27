@@ -201,7 +201,18 @@
                                         <label for="cnpj">Código</label>
                                         <input type="text" class="form-control" name="codigo" placeholder="">
                                     </div>
-                                    
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cnpj">Desconto</label>
+                                        
+                                        <select name="desconto">
+                                        <option value="0.05">5%</option>
+                                        <option value="0.1">10%</option>
+                                        <option value="0.15">15%</option>
+                                        <option value="0.20">20%</option>
+                                        <option value="0.30">30$</option>
+                                        <option value="0.5">50%</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                 <!--BOTOES AO FIM DA SESSÃO-->

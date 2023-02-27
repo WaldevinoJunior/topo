@@ -382,7 +382,12 @@
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="perfil">Perfil</label><br>
-                                        <input type="radio"  id="perfil" name="perfil" value="Administrador" placeholder="" required>Administrador</input><br>
+                                        <?php
+                                        if($_SESSION['Perfil'] == "Administrador"){
+                                            echo "<input type='radio'  id='perfil' name='perfil' value='Administrador' placeholder='' required>Administrador</input><br>";
+
+                                        }
+                                        ?>
                                         <input type="radio"id="perfil" name="perfil" value="Coordenador" placeholder="" required>Coordenador</input><br>
                                         <input type="radio" id="perfil" name="perfil" value="Instrutor" placeholder="" required>Instrutor</input><br>
                                         <input type="radio"  id="perfil" name="perfil" value="Comercial" placeholder="" required>Comercial</input>
