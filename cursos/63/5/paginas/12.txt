@@ -1,0 +1,1 @@
+Lixeira: O computador possui uma capacidade limite de armazenamento no disco rígido. Mesmo com capacidade de armazenamento extremamente alta, quanto mais próxima ao limite do disco, mais lento e dispendioso ficará o computador. 

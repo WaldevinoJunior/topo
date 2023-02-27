@@ -1,0 +1,1 @@
+WinKey + Ctrl + tecla direcionais esquerda/direita - Alterna entre os desktops virtuais. 

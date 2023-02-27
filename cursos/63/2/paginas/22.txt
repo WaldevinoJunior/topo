@@ -1,0 +1,1 @@
+Após desenhar uma forma, ela permanecerá selecionada. Enquanto isso, podemos movê-la, redimensioná-la ou mudar suas cores. Para mover ou redimensionar basta arrastar o ponteiro com a forma de cruz.

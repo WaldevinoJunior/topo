@@ -1,0 +1,114 @@
+﻿0;;
+WordPad;;
+O WordPad é um editor de textos mais avançado que o Bloco de Notas e atende as necessidades básicas para criação de um documento. 
+<->
+1;;
+WordPad;;
+Quase todos os recursos oferecidos pelo programa estão disponíveis na barra de ferramentas e de formatação, o que facilita muito o trabalho.
+<->
+2;;
+WordPad;;
+A seguir temos alguns recursos para a edição de um texto que devem ser observados:
+•	Não é necessário pressionar a tecla ‘Enter’ no final da linha, pois o cursor passa automaticamente para a próxima linha quando atingir a margem direita;
+•	Pressione ‘Enter’ somente quando terminar um parágrafo ou desejar acrescentar uma linha;
+•	Para digitar caracteres acentuados, digite primeiro o acento, depois o caractere;
+<->
+3;;
+WordPad;;
+•	Utilize a tecla ‘Shift’ para ter acesso aos caracteres especiais: ~!@#$%^&*()_+<>?|{}, e para digitar caracteres maiúsculos, quando a tecla Caps Lock não estiver ativa;
+•	Para deslocar-se ao final do texto, pressione ‘Ctrl=End’.
+•	Para deslocar-se ao início do texto, pressione ‘Ctrl=Home’.
+<->
+4;;
+Dicas para Edição;;
+- As setas, do teclado, servem para mover-se pelo texto;
+- Use o mouse para posicionar o ponto de inserção, dando um clique com o ponteiro no local desejado.
+<->
+5;;
+Botão do WordPad;;
+Novo – Serve para criar um novo arquivo de texto.
+<->
+6;;
+Botão do WordPad;;
+Salvar- Armazena as informações do arquivo no HD do computador. Ao clicar no botão uma janela será exibida para você especificar o local de armazenamento e o nome do arquivo. 
+<->
+7;;
+Botão do WordPad;;
+Os documentos criados no WordPad têm como formato padrão a extensão ‘.rtf’ e não mais ‘.txt’ como no Bloco de Notas. Salve o arquivo com o nome de ‘Quatro Elementos.rtf’.
+Obs: Você poderá ‘forçar’ a extensão do arquivo, escolhendo um formato diferente do padrão na caixa ‘Tipo’.
+<->
+8;;
+Botão do WordPad;;
+Abrir – Abre um arquivo salvo no computador.
+<->
+9;;
+Botão do WordPad;;
+Imprimir – Imprime uma cópia do documento atual, segundo a configuração padrão da impressora.
+<->
+10;;
+Botão do WordPad;;
+Visualizar Impressão – Antes de imprimir um documento, clique nessa ferramenta para ter uma ideia de como o texto ficará no papel.
+<->
+11;;
+Guia Início;;
+Localizar – permite que você encontre algum texto ou palavra no documento. Clique no ícone da ferramenta e na caixa ‘Localizar’ digite a palavra que deseja encontrar.
+<->
+12;;
+Guia Início;;
+Recortar, Copiar e Colar – A primeira ferramenta move um bloco de texto selecionado para outra região selecionada, e você poderá colocá-la em qualquer outro aplicativo ou local do documento aberto.
+<->
+13;;
+Selecionar o Texto;;
+O uso de muitas ferramentas depende de uma região previamente selecionada. Então vamos aprender como podemos selecionar o texto usando o mouse.
+<->
+14;;
+Selecionar o Texto;;
+Para selecionar uma ou mais palavras, basta arrastar o ponteiro do mouse sobre a região desejada.
+<->
+15;;
+Selecionar o Texto;;
+Para selecionar uma linha inteira, clique com o ponteiro do mouse no lado esquerdo do início da linha. Se desejar selecionar mais de uma linha de forma continua, arraste o ponteiro do mouse ao lado das linhas desejadas.
+<->
+16;;
+Selecionar o Texto;;
+Para selecionar todo o texto, repita o procedimento anterior, da primeira até a última linha, ou então pressione as teclas ‘Ctrl=T’.
+<->
+17;;
+Formatar o Texto;;
+Diferentemente do Bloco de Notas, no WordPad podemos aplicar diferentes tipos de formatação no mesmo documento. Para isso utilizamos os recursos da Faixa de Opções.
+<->
+18;;
+Grupo Fonte;;
+Fonte – Esta ferramenta permite alterar o tipo de letra do nosso texto. Basta selecionar a região onde será aplicado o novo formato e escolher um dos tipos de fontes instaladas no seu computador. Aplique uma fonte no título do texto e outra diferente no corpo da mensagem.
+<->
+19;;
+Grupo Fonte;;
+Tamanho da Fonte – Nesta opção aumentamos ou diminuímos o tamanho da letra. Altere o tamanho do título para corpo 24.
+<->
+20;;
+Grupo Fonte;;
+Com estas opções aplicamos efeitos de destaque na região selecionada. Negrito aumenta a espessura do tipo, Itálico inclina as letras, Sublinhado faz um risco abaixo da palavra e temos ainda o Tachado, Subscrito e Sobrescrito.
+<->
+21;;
+Grupo Fonte;;
+Cores- Modifica a cor da fonte e também realça o texto pintando o seu fundo.
+<->
+22;;
+Grupo Parágrafo;;
+Recuos – Aumentam ou diminuem a distância entre o texto e a margem esquerda.
+<->
+23;;
+Grupo Parágrafo;;
+Marcadores – Transformam os parágrafos selecionados em tópicos, inserindo um círculo no início de cada linha.
+<->
+24;;
+Grupo Parágrafo;;
+Espaçamento – Modifica o espaçamento entre as linhas.
+<->
+25;;
+Grupo Parágrafo;;
+Alinhamento – Alteram o alinhamento do texto entre as margens do documento. Podemos alinhar o texto à esquerda, ao centro e à direita.
+<->
+26;;
+Régua;;
+Uma maneira muito prática de alterar as margens e recuos dos parágrafos é através da régua.

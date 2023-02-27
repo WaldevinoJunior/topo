@@ -1,0 +1,1 @@
+No exemplo anterior utilizamos os recursos da guia Texto, que é exibida ao selecionar a ferramenta Texto para alterar o tamanho e a fonte do texto. Além disso, podemos aplicar efeitos de Negrito, Itálico e Sublinhado.

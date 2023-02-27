@@ -1,0 +1,1 @@
+Quando instalamos o Windows, ele automaticamente cria uma conta denominada ‘Administrador’ como visto acima. 

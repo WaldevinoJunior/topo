@@ -280,7 +280,7 @@
                 </script>";
                 $i3++;
                 $i4 = 0;
-                if($c['ID_Curso']==60 || $c['ID_Curso'] == 62){
+                if($c['ID_Curso']==60 || $c['ID_Curso'] == 62 || $c['ID_Curso'] == 63){
                     $pasta = new FilesystemIterator ("cursos/".$c['ID_Curso']."/".$i2."/img");
                     foreach($pasta as $file){
                         $arq= "cursos/".$c['ID_Curso']."/".$i2."/paginas/".$i4.".txt";

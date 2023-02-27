@@ -1,0 +1,1 @@
+Licença: Copyright (direitos autorais protegidos). Multitarefa (execução de diversas tarefas simultaneamente). Preemptivo (capacidade de interromper tarefas em detrimento de outras). Multisessão (capacidade de operar com várias contas/sessões de usuários).

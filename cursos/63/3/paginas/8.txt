@@ -1,0 +1,1 @@
+Abrir – Abre um arquivo salvo no computador.

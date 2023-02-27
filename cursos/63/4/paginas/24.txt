@@ -1,0 +1,1 @@
+Explorador de arquivos: O Explorador de arquivos é um gerenciador de arquivos capaz de oferecer recursos poderosos para controle dos arquivos e dados guardados em seu computador e até mesmo gerenciar os discos de outros computadores desde que estes estejam conectados por uma rede local, intranet ou internet.

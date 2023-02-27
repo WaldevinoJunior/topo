@@ -1,0 +1,91 @@
+﻿0;;
+Nova Central de Ações;;
+A Central de Ações é a nova central de notificações do Windows 10. 
+<->
+1;;
+Nova Central de Ações;;
+Ela funciona de forma similar à Central de Ações das versões anteriores e também oferece acesso rápido a recursos como modo Tablet, Bloqueio de Rotação, Luz noturna e VPN.
+<->
+2;;
+Modo Tablet - Continuum;;
+O Continuum é uma funcionalidade que permite conectar dispositivos portáteis a um monitor e trabalhar nele como se estivesse em um computador.
+<->
+3;;
+Modo Tablet - Continuum;;
+Fazendo com que a área de trabalho do Windows se adapte automaticamente. Quando ativado, a área de trabalho assemelha-se a do Windows 8.
+<->
+4;;
+Modo Tablet - Continuum;;
+Para ativar o Modo Tablet clique no botão Central de Ações.
+<->
+5;;
+Windows Store Unificada;;
+Loja de aplicativos e programas. Windows Store vai oferecer todos os produtos para computadores, tablets, smartphones e Xbox em um só lugar.
+<->
+6;;
+Windows Store Unificada;;
+Para acessar a Windows Store, clique no botão da Windows Store, na barra de tarefas.
+<->
+7;;
+Painel de Controle - Configurações;;
+O Painel de Controle é uma das ferramentas mais importantes do Windows, pois permite personalizar as configurações do computador. 
+<->
+8;;
+Painel de Controle - Configurações;;
+A opção Configurações, é uma alternativa ao Painel de Controle. Contendo grande parte das opções de configurações contidas nele.
+<->
+9;;
+Painel de Controle - Configurações;;
+Para acessar o Painel de Controle, clique no botão Iniciar, selecione  Sistema do Windows > Painel de Controle. Ou procure por Painel de Controle  na janela de pesquisa da barra de tarefas do Windows.
+<->
+10;;
+Painel de Controle - Configurações;;
+Para acessar Configurações, clique no botão Iniciar, selecione Configurações. Ou procure por Configurações na janela de pesquisa da barra de tarefas do Windows.
+<->
+11;;
+Central de Segurança do Windows Defender;;
+A Central de Segurança do Windows Defender fornece a área de proteção contra vírus e ameaças.
+<->
+12;;
+Central de Segurança do Windows Defender;;
+A Central de Segurança do Windows Defender oferece as configurações do Firewall (filtro de pacotes e acessos não autorizados na rede), controle de aplicativos e do navegador, desempenho e integridade do dispositivo e as opções do Windows família.
+<->
+13;;
+Central de Segurança do Windows Defender;;
+Para acessar a Central de Segurança do Windows Defender, clique no botão , selecione Configurações > Atualização e segurança > Segurança do Windows  > Abrir central de segurança do Windows Defender. Ou procure por Configurações do Windows Defender na janela de pesquisa da barra de tarefas do Windows.
+<->
+14;;
+Outros Acessórios do Windows 10;;
+A seguir uma lista com os acessórios mais populares do Windows:
+• Alarmes e relógio.
+• Assistência Rápida.
+• Bloco de Notas.
+<->
+15;;
+Outros Acessórios do Windows 10;;
+• Calculadora.
+• Calendário.
+• Clima.
+<->
+16;;
+Outros Acessórios do Windows 10;;
+• E-mail.
+• Facilidade de acesso (ferramenta destinada a deficientes físicos).
+• Ferramenta de Captura.
+<->
+17;;
+Outros Acessórios do Windows 10;;
+• Gravador de passos.
+• Internet Explorer.
+• Mapas.
+<->
+18;;
+Outros Acessórios do Windows 10;;
+• Mapa de Caracteres.
+• Paint.
+• Windows Explorer.
+<->
+19;;
+Outros Acessórios do Windows 10;;
+• WordPad.
+• Xbox.

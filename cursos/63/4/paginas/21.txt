@@ -1,0 +1,1 @@
+Restauração do Sistema: A ferramenta Restauração do sistema usa pontos de restauração para retornar as configurações e arquivos do sistema para um ponto anterior no tempo. Você pode usá-lo para restaurar o sistema operacional a um ponto no tempo de acordo com o calendário. 

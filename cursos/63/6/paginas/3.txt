@@ -1,0 +1,1 @@
+ Alt + Tab - Navega entre as janelas abertas no desktop atual e permite alternar entre elas. Ao soltar o atalho, a janela selecionada é exibida em primeiro plano. 

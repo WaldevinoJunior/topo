@@ -1,0 +1,1 @@
+Aero Snap (Win + Setas de direção do teclado): Recurso que permite melhor gerenciamento e organização das janelas abertas. Basta arrastar uma janela para o topo da tela e a mesma é maximizada, ou arrastando para uma das laterais a janela é dividida de modo a ocupar metade do monitor.

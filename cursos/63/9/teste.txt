@@ -1,0 +1,31 @@
+﻿0;;
+É voltado para os dispositivos de tela pequena cujo uso é centrado no touchscreen, como smartphones e tablets.;;
+Windows 10 Home.;;
+Windows 10 Education.;;
+Windows 10 mobile.;;
+Windows 10 Pro.;;
+3;;
+<->
+1;;
+É voltado principalmente para uso profissional mais avançado em máquinas poderosas  com vários processadores e grande quantidade de memória RAM..;;
+Windows 10 Education.;;
+Windows 10 Pro Workstation.;;
+Windows 10 Mobile.;;
+Windows IoT.;;
+2;;
+<->
+2;;
+Edição para dispositivos como caixas eletrônicos, terminais de autoatendimento, máquinas  de  atendimento  para  o  varejo  e  robôs  industriais.;;
+Windows 10 Education.;;
+Windows 10 Pro Workstation.;;
+Windows 10 Mobile.;;
+Windows IoT.;;
+4;;
+<->
+3;;
+Essa edição foi desenvolvida para atender  as  necessidades  do  meio  escolar.;;
+Windows 10 Education.;;
+Windows 10 Pro Workstation.;;
+Windows 10 Mobile.;;
+Windows IoT.;;
+1;;

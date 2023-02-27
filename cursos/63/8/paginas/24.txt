@@ -1,0 +1,1 @@
+Verificação de Erros: O Verificador de Arquivos de Sistema é um utilitário do Windows que permite aos usuários procurar arquivos de sistema corrompidos do Windows e restaurar esses arquivos.

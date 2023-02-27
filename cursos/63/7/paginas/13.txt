@@ -1,0 +1,1 @@
+Windows Hello: O Windows Hello funciona com uma tecnologia de credencial chamada Microsoft  Passport, mais fácil, mais prática e mais segura do que usar uma senha, porque ela usa autenticação biométrica.

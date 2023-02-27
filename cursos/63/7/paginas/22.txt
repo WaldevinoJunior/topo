@@ -1,0 +1,1 @@
+Configurar recuperação do sistema: Altere as configurações  de restauração, gerencie o espaço em disco e crie ou exclua pontos de restauração.

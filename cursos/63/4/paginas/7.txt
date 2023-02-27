@@ -1,0 +1,1 @@
+Narrador: Ao acessar esse recurso, o usuário poderá ouvir o texto que está digitando ou qualquer outro aplicativo que esteja em uso. O software irá narrar tudo que estiver sendo feito no computador.

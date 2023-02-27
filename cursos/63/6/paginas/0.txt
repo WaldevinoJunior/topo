@@ -1,0 +1,1 @@
+Múltiplas Áreas de Trabalho (Task View) - Win + Tab: Agora é possível criar desktops virtuais para organizar as janelas que estão abertas. Com esse recurso, o usuário pode separar aplicativos que estão sendo usados para trabalho daqueles para fins pessoais no mesmo computador.

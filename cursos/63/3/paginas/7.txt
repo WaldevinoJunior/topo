@@ -1,0 +1,1 @@
+Os documentos criados no WordPad têm como formato padrão a extensão ‘.rtf’ e não mais ‘.txt’ como no Bloco de Notas. Salve o arquivo com o nome de ‘Quatro Elementos.rtf’. Obs: Você poderá ‘forçar’ a extensão do arquivo, escolhendo um formato diferente do padrão na caixa ‘Tipo’.

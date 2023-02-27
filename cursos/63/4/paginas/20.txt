@@ -1,0 +1,1 @@
+Para acessar o Desfragmentador de Disco, clique no botão Iniciar, selecione Ferramentas Administrativas do Windows, Desfragmentar e otimizar as unidades. Ou procure por desfragmentar e otimizar as unidades na barra de pesquisa.

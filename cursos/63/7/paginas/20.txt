@@ -1,0 +1,1 @@
+Criar uma unidade de recuperação: Crie uma unidade de restauração para solucionar problemas quando o computador não puder ser iniciado.

@@ -1,0 +1,1 @@
+Formatar o Texto: Diferentemente do Bloco de Notas, no WordPad podemos aplicar diferentes tipos de formatação no mesmo documento. Para isso utilizamos os recursos da Faixa de Opções.

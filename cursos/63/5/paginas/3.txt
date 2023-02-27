@@ -1,0 +1,1 @@
+Para criar uma nova biblioteca clique com o botão direito do mouse sobre Bibliotecas, aponte para Novo e clique em Biblioteca.

@@ -1,0 +1,1 @@
+Para acessar a Restauração do Sistema, clique no botão Iniciar, selecione Sistema do Windows > Painel de Controle > Sistema > Proteção do sistema. Ou procure por, Criar ponto de Restauração.

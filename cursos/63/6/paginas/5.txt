@@ -1,0 +1,1 @@
+ WinKey + Ctrl + F4 - Fecha o desktop virtual que está sendo usado. 

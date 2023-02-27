@@ -1,0 +1,1 @@
+ CD - Entrar em uma pasta. CD.. - Retornar para a pasta anterior. RD - Remover pastas. ERASE - Deletar arquivos.

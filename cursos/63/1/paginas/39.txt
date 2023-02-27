@@ -1,0 +1,1 @@
+Aero Shake (Win+Home): Ferramenta útil para quem usa o computador com multitarefas. Ao trabalhar com várias janelas abertas, basta “sacudir” a janela ativa, clicando na sua barra de título, que todas as outras serão minimizadas, poupando tempo e trabalho. E, simplesmente, basta sacudir novamente e todas as janelas serão restauradas.

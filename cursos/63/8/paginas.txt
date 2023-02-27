@@ -1,0 +1,138 @@
+﻿0;;
+Prompt de Comando (MS DOS);;
+Prompt de Comando (cmd.exe) é um interpretador de linha de comandos do Windows 10. Ele é um recurso análogo ao command.com do MS-DOS.
+<->
+1;;
+Prompt de Comando (MS DOS);;
+Para acessar o Prompt de comando, basta ir à janela de pesquisa na barra de tarefas do Windows e digitar Prompt de comando ou cmd, que será aberta a janela do prompt de comando.
+<->
+2;;
+Prompt de Comando (MS DOS);;
+Através deste recurso é possível realizar diversas tarefas. Desde desfragmentar o disco rígido a formatar o computador.
+<->
+3;;
+Prompt de Comando (MS DOS);;
+O prompt de comando é um sistema leve, robusto e com uma gama enorme de recursos subutilizados, devido a complexidade de sua operação.
+<->
+4;;
+Prompt de Comando (MS DOS);;
+Seguem alguns dos principais comandos para se trabalhar no prompt de comandos:
+<->
+5;;
+Principais comandos;;
+DIR - Listando arquivos e pastas.
+COPY - Copiar arquivos.
+MOVE - Mover arquivos ou renomear pastas.
+MD - Criar uma Nova pasta.
+<->
+9;;
+Principais comandos;;
+CD - Entrar em uma pasta.
+CD.. - Retornar para a pasta anterior.
+RD - Remover pastas.
+ERASE - Deletar arquivos.
+<->
+10;;
+Principais comandos;;
+DEL - Deletar arquivos.
+REN - Renomear arquivos (EX.: ren imagem.jpg foto.jpg).
+TIME - O comando Time permite acertar a hora do sistema.
+Shutdown - O comando shutdown permite desligar ou reiniciar o computador de forma imediata ou agendada.
+<->
+11;;
+Principais comandos;;
+ATTRIB - Exibe ou altera atributos de arquivos.
+CACLS - Exibe ou modifica listas de controle de acesso (ACLs) de arquivos.
+CHKDSK - Verifica um disco e exibe um relatório de status.
+CLS - Limpa a tela.
+<->
+12;;
+Principais comandos;;
+COMPACT - Exibe ou altera a compactação de arquivos.
+COPY - Copia um ou mais arquivos para outro local.
+DATE - Mostra a data atual e permite alterá-la.
+EXIT - Sai do programa CMD.EXE (interpretador de comandos)
+<->
+13;;
+Principais comandos;;
+FC - Compara dois  arquivos  ou  grupos  de  arquivos  e  exibe  as  diferenças  entre eles.
+FIND - Procura uma sequência de texto em um arquivo ou arquivos.
+HELP - Fornece informações de ajuda sobre comandos do Windows.
+IPCONFIG - Mostra detalhes das configurações de IP.
+<->
+14;;
+Principais comandos;;
+MOVE - Move um ou mais arquivos de uma pasta para outra pasta.
+PING - Checa sua conexão de rede disponível.
+<->
+15;;
+Sensor de Armazenamento;;
+Monitore o espaço de armazenamento nos seus drivers com o Windows 10.
+<->
+16;;
+Sensor de Armazenamento;;
+A  ferramenta  de  Armazenamento  vai  permitir  que  usuários  do  Windows  10 monitorem  o  uso  do  espaço  de  seus  dispositivos  de  armazenamento, como  discos rígidos, pendrives, HDs externos e outros.
+<->
+17;;
+Sensor de Armazenamento;;
+Para  acessar  os  recursos de  armazenamento, clique no botão Iniciar, selecione Configurações > Armazenamento. Ou procure por armazenamento na janela de pesquisa da barra de tarefas do Windows.
+<->
+18;;
+Sensor de Armazenamento;;
+Clicando sobre o disco rígido é aberta uma nova janela onde podemos verificar como esta sendo dividido o espaço do disco entre nossos aplicativos.
+<->
+19;;
+Sensor de Armazenamento;;
+Outra grande vantagem desse recurso é que ele nos permite usar duas ou mais unidades de armazenamento de dados para salvar automaticamente nossos arquivos, impedindo assim que eles sejam perdidos por falhas no disco.
+<->
+20;;
+Sensor de Armazenamento;;
+Você pode ainda adicionar mais unidades de armazenamento, para suprir a necessidade de haver pouco espaço em seu computador para armazenar seus arquivos.
+<->
+21;;
+Windows Spotlight;;
+O Windows Spotlight é uma forma de apresentar conteúdo publicitário, como anúncios de apps, sugestões de imagens e dicas na tela de bloqueio do Windows 10.
+<->
+22;;
+Windows Spotlight;;
+Quando a tela de bloqueio estiver exibindo uma determinada imagem, por exemplo, os usuários poderão marcá-la com um “Gostei” ou “Não gostei”, alimentando o Spotlight com as suas preferências.
+<->
+23;;
+Windows Spotlight;;
+Desta forma você pode anunciar eventos, reuniões ou produtos aos usuários dos computadores em seu local de trabalho, lan house, feiras e etc...
+<->
+24;;
+Windows Spotlight;;
+No caso dos usuários que ainda não exploraram todos os recursos do Windows 10, dicas serão fornecidas junto com convites visuais – como o símbolo da Cortana ou ícones para perguntar algo para a assistente.
+<->
+25;;
+Windows Spotlight;;
+Para acessar o Spotlight, clique no botão Iniciar, selecione Configurações > Personalização > Tela de bloqueio.
+<->
+26;;
+Windows Spotlight;;
+Ou procure por configurações de tela de bloqueio na janela de pesquisa, na barra de tarefas do Windows. 
+<->
+27;;
+Verificação de Erros;;
+O Verificador de Arquivos de Sistema é um utilitário do Windows que permite aos usuários procurar arquivos de sistema corrompidos do Windows e restaurar esses arquivos.
+<->
+28;;
+Verificação de Erros;;
+Para acessar a Verificação de erros, clique no botão explorador de arquivos, clique com o botão direito do Mouse sobre a unidade de disco desejada  (c:\) > Propriedades > Aba Ferramentas > Verificação de erros. 
+<->
+29;;
+Verificação de Erros;;
+Ou no Prompt de comando digitar: sfc /scannow.
+<->
+30;;
+Paint 3D;;
+O novo App de desenhos tem recursos mais avançados, especialmente para criar objetos em três dimensões.
+<->
+31;;
+Paint 3D;;
+As ferramentas antigas de formas, linhas e pintura ainda estão lá, mas o design mudou e há uma seleção extensa de funções que prometem deixar o programa mais versátil.
+<->
+32;;
+Paint 3D;;
+Para abrir o Paint 3D clique no botão Iniciar ou procure por Paint 3D na janela de pesquisa na barra de tarefas do Windows.                                                 

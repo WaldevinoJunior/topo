@@ -1,0 +1,1 @@
+Aero Peek (Win+Vírgula – Transparência / Win+D – Minimizar Tudo): Recurso pode ser acessado por meio do botão Mostrar área de trabalho (parte inferior direita do Desktop). Ao posicionar o mouse sobre o referido botão, as janelas ficam com um aspecto transparente. Ao clicar sobre ele, as janelas serão minimizadas.

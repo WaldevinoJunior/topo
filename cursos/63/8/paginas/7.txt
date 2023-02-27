@@ -1,0 +1,1 @@
+DEL - Deletar arquivos. REN - Renomear arquivos (EX.: ren imagem.jpg foto.jpg). TIME - O comando Time permite acertar a hora do sistema. Shutdown - O comando shutdown permite desligar ou reiniciar o computador de forma imediata ou agendada.

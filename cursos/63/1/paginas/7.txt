@@ -1,0 +1,1 @@
+Memória RAM: Nela o sistema operacional e os programas são carregados, possibilitando que o usuário trabalhe com o computador. Por ser volátil, todas as informações trabalhadas que não forem salvas no disco rígido ou em outra mídia externa serão perdidos ao finalizar um programa ou desligar o computador.

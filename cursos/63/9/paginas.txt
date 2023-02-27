@@ -1,0 +1,108 @@
+﻿0;;
+Principais Características do Windows 10;;
+• Lançado em 2015 – Microsoft Corporation.
+• Software Básico (Essencial para o funcionamento do computador).
+• Software Proprietário (código fonte fechado).
+• Pago.
+<->
+1;;
+Principais Características do Windows 10;;
+• Licença: Copyright (direitos autorais protegidos).
+• Multitarefa (execução de diversas tarefas simultaneamente).
+• Preemptivo (capacidade de interromper tarefas em detrimento de outras).
+• Multisessão (capacidade de operar com várias contas/sessões de usuários).
+<->
+2;;
+Principais Características do Windows 10;;
+• Usuários  Administrador  (poderes ilimitados)  /  Padrão  (poderes  limitados, sem privilégios elevados).
+• Multiusuário (capacidade de acesso simultâneo de usuários).
+• Multiprocessamento  (capacidade  de  operar  com  vários  processamentos simultaneamente).
+<->
+3;;
+Principais Características do Windows 10;;
+• Gerenciamento de dois sistemas na mesma máquina (Dual boot).
+• Sistema de Arquivos: NTFS (Nova Tecnologia de Sistema de Arquivos).
+<->
+4;;
+Versões do Windows 10;;
+Windows 10 Home - Edição  do  sistema  operacional  voltada  para  os  consumidores  domésticos  que utilizam PCs (desktop e notebook), tablets e os dispositivos “2 em 1”.
+<->
+5;;
+Windows 10 Home;;
+O Windows 10 Home vai contar com a maioria das funcionalidades: Cortana como assistente pessoal, navegador Microsoft Edge, o recurso Continuum para os aparelhos compatíveis, Windows  Hello (reconhecimento facial, de íris e de digitais para autenticação), stream de jogos do Xbox One e os apps universais, como Fotos, Mapas, E-mail, Calendário, Música e Vídeo.
+<->
+6;;
+Versões do Windows 10;;
+Windows 10 Pro - também é voltado para PCs (desktop e notebook), tablets e dispositivos  “2  em  1”,  mas  traz  algumas  funcionalidades  extras  em  relação  ao Windows 10 Home.
+<->
+7;;
+Windows 10 Pro;;
+Esses  adicionais  do Windows 10 Pro fazem com que essa edição seja ideal para uso em pequenas empresas, apresentando recursos para segurança digital, suporte remoto, produtividade e uso de sistemas baseados na nuvem.
+<->
+8;;
+Windows 10 Pro;;
+Além disso, a Microsoft vai incluir o Windows Update for Business, novidade que promete reduzir os custos de gerenciamento e oferecer controle sobre a distribuição de atualizações e acesso rápido a updates de segurança.
+<->
+9;;
+Versões do Windows 10;;
+Construído sobre o Windows 10 Pro, o Windows 10 Enterprise é voltado para o mercado corporativo. 
+<->
+10;;
+Windows 10 Enterprise;;
+Os alvos dessa edição são as empresas de médio e grande porte, e o Sistema apresenta capacidades que focam especialmente em tecnologias desenvolvidas no campo da segurança digital e produtividade. 
+<->
+11;;
+Windows 10 Enterprise;;
+A proteção dos dispositivos, aplicações e informações sensíveis às empresas é o foco dessa variante.
+<->
+12;;
+Windows 10 Enterprise;;
+A edição vai estar disponível através do programa de Licenciamento por Volume, facilitando a vida dos consumidores que têm acesso a essa ferramenta. O Windows Update for Business também estará presente.
+<->
+13;;
+Windows 10 Education;;
+Construída a partir do Windows 10 Enterprise, essa edição foi desenvolvida para atender  as  necessidades  do  meio  escolar.
+<->
+14;;
+Windows 10 Education;;
+Nela, funcionários, administradores, professores e estudantes poderão  aproveitar os recursos do Windows, que será distribuído através da versão acadêmica do Licenciamento por Volume.
+<->
+15;;
+Windows 10 Mobile;;
+O Windows 10 Mobile é voltado para os dispositivos de tela pequena cujo uso é centrado no touchscreen, como smartphones e tablets. 
+<->
+16;;
+Windows 10 Mobile;;
+Essa edição vai contar com os mesmos apps incluídos na versão Home, além de uma versão do Office otimizada para o toque.
+<->
+17;;
+Windows 10 Mobile;;
+O Continuum também vai marcar presença nos dispositivos que forem compatíveis com a funcionalidade.
+<->
+18;;
+Windows 10 Mobile Enterprise;;
+Também voltado para smartphones e pequenos tablets, o Windows 10 Mobile Enterprise tem como objetivo entregar a melhor experiência para os consumidores que usam esses dispositivos para trabalho.
+<->
+19;;
+Windows 10 Mobile Enterprise;;
+A edição também estará disponível através do Licenciamento por Volume, oferecendo as mesmas vantagens do Windows 10 Mobile e funcionalidades direcionadas para o mercado corporativo.
+<->
+20;;
+Windows 10 IoT;;
+Edição para dispositivos como caixas eletrônicos, terminais de autoatendimento, máquinas  de  atendimento  para  o  varejo  e  robôs  industriais – todas  baseadas  no Windows 10 Enterprise e Windows 10 Mobile Enterprise. 
+<->
+21;;
+Windows 10 IoT;;
+O Windows  10 IoT Core – que contém em seu nome a sigla em inglês para Internet das Coisas – vai ser destinado para dispositivos pequenos e de baixo custo.
+<->
+22;;
+Windows 10 S;;
+Edição otimizada em termos de segurança e desempenho, funcionando exclusivamente com aplicações da Loja Microsoft.
+<->
+23;;
+Windows 10 Pro - Workstation;;
+Edição  para  computadores  com  suporte  para  até  quatro  processadores  e para até 6TB de memória, além de suporte para chips voltados a servidores como o Intel Xeon e o AMD Opteron.
+<->
+24;;
+Windows 10 Pro - Workstation;;
+Como o nome sugere, o Windows 10 Pro for Workstations é voltado principalmente para uso profissional mais avançado em máquinas poderosas  com vários processadores e grande quantidade de memória RAM.

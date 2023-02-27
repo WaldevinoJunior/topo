@@ -1,0 +1,1 @@
+Memória ROM: Ao ligar o computador, ela verifica se todos os componentes estão funcionando corretamente e envia a ordem para o processador carregar o sistema operacional na memória RAM.

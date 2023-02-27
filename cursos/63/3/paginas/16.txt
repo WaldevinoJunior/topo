@@ -1,0 +1,1 @@
+Para selecionar todo o texto, repita o procedimento anterior, da primeira até a última linha, ou então pressione as teclas ‘Ctrl=T’.

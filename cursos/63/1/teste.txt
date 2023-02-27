@@ -1,0 +1,31 @@
+﻿0;;
+É a parte física da máquina (em inglês significa ‘equipamento pesado’).;;
+Hardware.;;
+Disco rígido.;;
+Memória RAM.;;
+Software.;;
+1;;
+<->
+1;;
+Memória de armazenamento de grande capacidade.;;
+Memória RAM.;;
+Disco rígido.;;
+Memória ROM.;;
+Software.;;
+2;;
+<->
+2;;
+São os programas que, utilizando o hardware do computador, executam as diferentes tarefas necessárias ao processamento de dados.;;
+Hardware.;;
+Software.;;
+Disco rígido.;;
+Sistema operacional.;;
+4;;
+<->
+3;;
+Utilizadas para escrever programas, têm aplicação profissional.;;
+Software.;;
+Sistema operacional.;;
+Hardware.;;
+Linguagens de programação.;;
+4;;

@@ -1,0 +1,1 @@
+A biblioteca é uma ferramenta que reúne diversos tipos de Arquivos, independentemente do local onde eles estejam armazenados.

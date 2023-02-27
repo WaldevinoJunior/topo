@@ -1,0 +1,1 @@
+Para acessar a Verificação de erros, clique no botão explorador de arquivos, clique com o botão direito do Mouse sobre a unidade de disco desejada  (c:\) > Propriedades > Aba Ferramentas > Verificação de erros. 

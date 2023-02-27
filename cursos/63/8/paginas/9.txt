@@ -1,0 +1,1 @@
+COMPACT - Exibe ou altera a compactação de arquivos. COPY - Copia um ou mais arquivos para outro local. DATE - Mostra a data atual e permite alterá-la. EXIT - Sai do programa CMD.EXE (interpretador de comandos)

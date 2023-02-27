@@ -1,0 +1,1 @@
+Windows: O Windows é um Sistema Operacional formado por vários programas que gerenciam todos componentes do computador. Ao ligar o computador o Windows começa a trabalhar e forma a base de seu funcionamento.

@@ -1,0 +1,31 @@
+﻿0;;
+O Windows possui uma ferramenta que permite excluir os arquivos e pastas inúteis do computador. Que ferramenta é essa?;;
+Hardware.;;
+Backup.;;
+Desfragmentador de disco.;;
+Limpeza de disco.;;
+4;;
+<->
+1;;
+reorganiza os dados fragmentados para que os discos e as unidades possam funcionar de maneira mais eficiente.;;
+Desfragmentador de disco.;;
+Memória RAM.;;
+Limpeza de disco.;;
+Memória ROM.;;
+1;;
+<->
+2;;
+usa pontos de restauração para retornar as configurações e arquivos do sistema para um ponto anterior no tempo.;;
+Hardware.;;
+Restauração do sistema.;;
+Disco rígido.;;
+Sistema operacional.;;
+2;;
+<->
+3;;
+É um gerenciador de arquivos capaz de oferecer recursos poderosos para controle dos arquivos e dados guardados em seu computador.;;
+Software.;;
+Restauração do sistema.;;
+Limpeza de disco.;;
+Explorador de arquivos.;;
+4;;

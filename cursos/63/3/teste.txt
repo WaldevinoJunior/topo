@@ -1,0 +1,31 @@
+﻿0;;
+Qual a função do software Word Pad?;;
+Um editor de planilhas eletrônicas.;;
+Um editor de texto.;;
+Um editor de slides.;;
+Um sistema operacional.;;
+2;;
+<->
+1;;
+Onde encontramos a ferramenta zoom no Word Pad?;;
+No menu início.;;
+No menu exibir.;;
+No menu arquivo.;;
+Na área de transferência.;;
+2;;
+<->
+2;;
+Como podemos inserir imagens no Word Pad?;;
+Através do botão imagem.;;
+Não é possível inserir imagens no Word Pad.;;
+Através da guia parágrafo.;;
+Através do menu arquivo.;;
+1;;
+<->
+3;;
+Quantas ferramentas de alinhamento de texto, possui o Word Pad?;;
+Quatro.;;
+Seis.;;
+duas.;;
+três.;;
+1;;

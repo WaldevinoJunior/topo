@@ -1,0 +1,1 @@
+Barra de Endereços e Pesquisar: A barra de endereços permite a entrada tanto de endereços internos (diretórios de pastas) como externos (endereços web), sendo que ao digitar a segunda opção o Windows Explorer executa automaticamente o Internet Explorer. 

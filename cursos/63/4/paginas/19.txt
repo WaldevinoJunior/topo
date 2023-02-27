@@ -1,0 +1,1 @@
+O Desfragmentador de Disco do Windows reorganiza os dados fragmentados para que os discos e as unidades possam funcionar de maneira mais eficiente. O Desfragmentador de Disco é executado por agendamento, mas você também pode analisar e desfragmentar os discos e as unidades manualmente.

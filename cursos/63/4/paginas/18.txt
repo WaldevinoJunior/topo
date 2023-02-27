@@ -1,0 +1,1 @@
+Desfragmentador de Disco (Otimizador): A fragmentação faz com que o disco rígido execute um trabalho extra que pode tornar o computador lento. Os dispositivos removíveis de armazenamento, como pen drives, também podem ficar fragmentados.

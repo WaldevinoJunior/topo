@@ -1,0 +1,93 @@
+﻿0;;
+Múltiplas Áreas de Trabalho (Task View) - Win + Tab;;
+Agora é possível criar desktops virtuais para organizar as janelas que estão abertas. Com esse recurso, o usuário pode separar aplicativos que estão sendo usados para trabalho daqueles para fins pessoais no mesmo computador.
+<->
+1;;
+Múltiplas Áreas de Trabalho (Task View) - Win + Tab;;
+Para abrir o Task View clique no botão Visão de Tarefas para trazer uma visão geral de seus desktops, adicionar novos ou remover os existentes.
+<->
+2;;
+Teclas de atalho para manipular o Task View;;
+WinKey + Tab - Abre a visualização das áreas virtuais e mostra apenas as janelas abertas no desktop atual.
+<->
+3;;
+Teclas de atalho para manipular o Task View;; 
+Alt + Tab - Navega entre as janelas abertas no desktop atual e permite alternar entre elas. 
+Ao soltar o atalho, a janela selecionada é exibida em primeiro plano. 
+<->
+4;;
+Teclas de atalho para manipular o Task View;;
+WinKey + Ctrl + D - Cria um novo desktop virtual e alterna para ele. 
+<->
+5;;
+Teclas de atalho para manipular o Task View;;
+WinKey + Ctrl + F4 - Fecha o desktop virtual que está sendo usado. 
+<->
+6;;
+Teclas de atalho para manipular o Task View;;
+WinKey + Ctrl + tecla direcionais esquerda/direita - Alterna entre os desktops virtuais. 
+<->
+7;;
+Contas de Usuário;;
+Se você divide o tempo de uso do computador em sua casa ou escritório com outras pessoas, você poderá através desse recurso administrar e organizar seus dados, protegendo-os com uma senha de acesso.
+<->
+8;;
+Contas de Usuário;;
+Além disso, você pode controlar o acesso a alguns programas e arquivos através desse recurso.
+<->
+9;;
+Contas de Usuário;;
+Quando instalamos o Windows, ele automaticamente cria uma conta denominada ‘Administrador’ como visto acima. 
+<->
+10;;
+Contas de Usuário;;
+Pra criar uma nova conta, clique no link adicionar um novo usuário nas configurações do computador.Na próxima janela clique no botão Adicionar outra pessoa a este PC, e siga as instruções nas próximas páginas.
+<->
+11;;
+Contas de Usuário;;
+Pronto, agora sempre que desejar alternar entre as contas cadastradas basta clicar no botão Iniciar>> Trocar Usuário ou então teclar ‘Win+L’.
+Obs: ‘Trocar usuário’ é diferente de ‘Fazer Logoff’, pois o primeiro mantém os programas da conta iniciada em execução, enquanto o segundo finaliza todos os programas em andamento.
+<->
+12;;
+Opções da Família;;
+Opções da Família (Controle Parental), é um recurso para controlar e censurar o acesso a conteúdo que crianças acessam sem a vigilância dos pais.
+<->
+13;;
+Opções da Família;;
+Através dessas configurações você torna seus dispositivos mais seguros para as crianças mais jovens. Quando os adultos criarem novas contas para crianças menores de 8 anos de idade, elas terão configurações automáticas ligadas. Para as crianças acima de 8 anos de idade e até mesmo os adultos, precisam ativar as configurações que eles querem quando eles criam novas contas.
+<->
+14;;
+Ajude a proteger seus filhos online;;
+Escolha os sites que seus filhos podem visitar quando eles estiverem navegando na Web usando o Microsoft Edge.
+<->
+15;;
+Defina bons hábitos de tempo de tela;;
+Escolha quando e por quanto tempo seus filhos podem usar seus dispositivos.
+<->
+16;;
+Controle a vida digital de seu filho;;
+Obtenha relatórios semanais das atividades de seus filhos online. Para ver o que seus filhos fazem no Windows 10 e nos dispositivos móveis.
+<->
+17;;
+Permita que seus filhos comprem aplicativos e jogos apropriados;;
+Escolha o que seus filhos podem ver e comprar para seus dispositivos. Eles poderão comprar as coisas que quiserem, mas você pode definir limites de gastos e de conteúdo para elas. 
+<->
+18;;
+Luz Noturna (Controle de Luz Azul);;
+O Modo Noturno faz com que a tela do PC ou tablet exiba cores quentes, que não agridem os olhos. A funcionalidade é ideal para ser ativada durante a noite e impedir que o uso do computador prejudique a qualidade do seu sono. 
+<->
+19;;
+Luz Noturna (Controle de Luz Azul);;
+Para abrir Luz noturna clique no botão Central de Ações no canto direto da barra de tarefas ou procure por Luz noturna na caixa de pesquisa na barra de tarefas ou ainda, clicando em iniciar e na opção Configurações.
+<->
+20;;
+Luz Noturna (Controle de Luz Azul);;
+Clique em Todas as configurações:
+<->
+21;;
+Luz Noturna (Controle de Luz Azul);;
+Pesquise por Luz Noturna:
+<->
+22;;
+Luz Noturna (Controle de Luz Azul);;
+Ative as configurações de Luz Noturna:

@@ -1,0 +1,1 @@
+Controle com os olhos: Ao acessar esse recurso, o usuário poderá controlar o cursor do mouse, e digitar textos, usando o teclado virtual, somente com o movimento dos olhos. Poderá também se comunicar com outras pessoas usando o recurso de transformar texto em áudio.

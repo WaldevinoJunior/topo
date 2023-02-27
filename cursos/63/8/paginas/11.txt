@@ -1,0 +1,1 @@
+MOVE - Move um ou mais arquivos de uma pasta para outra pasta. PING - Checa sua conexão de rede disponível.

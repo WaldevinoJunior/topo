@@ -1,0 +1,1 @@
+Para salvar um documento com o qual você está trabalhando no OneDrive, selecione uma pasta do OneDrive na lista de locais de salvamento do software que estiver usando.

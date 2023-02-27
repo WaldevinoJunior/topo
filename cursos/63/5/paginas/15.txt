@@ -1,0 +1,1 @@
+Excluindo arquivos: Na barra de ferramentas, podemos excluir permanentemente os arquivos do computador através do botão Esvaziar Lixeira ou então restaurar algum arquivo à sua origem no botão Restaurar este Item.

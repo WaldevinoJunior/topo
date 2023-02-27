@@ -1,0 +1,1 @@
+Fazendo com que a área de trabalho do Windows se adapte automaticamente. Quando ativado, a área de trabalho assemelha-se a do Windows 8.

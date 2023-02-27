@@ -1,0 +1,1 @@
+Prompt de Comando (MS DOS): Prompt de Comando (cmd.exe) é um interpretador de linha de comandos do Windows 10. Ele é um recurso análogo ao command.com do MS-DOS.

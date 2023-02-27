@@ -1,0 +1,1 @@
+Ferramentas: Neste grupo temos as ferramentas que constroem e modificam o desenho.

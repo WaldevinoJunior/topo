@@ -1,0 +1,191 @@
+﻿0;;
+Introdução;; 
+Podemos dizer que o computador é uma máquina que realiza cálculos. Nesta definição incluem-se o ábaco, a calculadora, o computador analógico e o computador digital. 
+<->
+1;;
+Introdução;;
+O computador digital é o tipo que mais utilizamos hoje. Ele é uma máquina eletrônica que utilizamos para armazenar e processar dados, fazer cálculos em grande escala, tratar e desenhar imagens gráficas, entretenimento, cultura e comunicação. E sua diferença com as outras máquinas é que ele pode ser programado para realizar diversas funções.
+<->
+2;;
+Introdução;;
+Como o computador digital é programado, ele precisa de no mínimo um programa para trabalhar. Porém com apenas um programa o computador não se torna útil. 
+<->
+3;;
+Sistema Operacional;;
+O Sistema Operacional é um conjunto de programas que fazem com que o computador se torne útil e possa processar os dados que recebe e transmite para nós. Existem diversos Sistemas Operacionais que são escolhidos de acordo com o uso que será dado ao computador ou de acordo com o gosto do usuário. Dentre eles podemos citar: Windows, Linux, Mac OS, Solaris e vários outros.
+<->
+4;;
+Windows;;
+O Windows é um Sistema Operacional formado por vários programas que gerenciam todos componentes do computador. Ao ligar o computador o Windows começa a trabalhar e forma a base de seu funcionamento.
+<->
+5;;
+Windows;; 
+Antes de conhecer melhor o Windows, vamos entender alguns conceitos e o significado de algumas palavras na computação.
+<->
+6;;
+Memória ROM;;
+Ao ligar o computador, ela verifica se todos os componentes estão funcionando corretamente e envia a ordem para o processador carregar o sistema operacional na memória RAM.
+<->
+7;;
+Memória RAM;;
+Nela o sistema operacional e os programas são carregados, possibilitando que o usuário trabalhe com o computador. Por ser volátil, todas as informações trabalhadas que não forem salvas no disco rígido ou em outra mídia externa serão perdidos ao finalizar um programa ou desligar o computador.
+<->
+8;;
+Disco Rígido;;
+Memória de armazenamento de grande capacidade. É nela que gravamos os arquivos e trabalhos feitos no computador, podendo acessá-los sempre que desejado.
+<->
+9;;
+Hardware;;
+É a parte física da máquina (em inglês significa ‘equipamento pesado’). Ele interpreta os códigos enviados pelo sistema operacional e converte-os em sinais elétricos para processamento das informações e vice-versa. 
+<->
+10;;
+Hardware;;
+Como exemplo, podemos citar as memórias, placas de vídeo, placa mãe, processadores, entre outros.
+<->
+11;;
+Software;;
+São os programas que, utilizando o hardware do computador, executam as diferentes tarefas necessárias ao processamento de dados. Existem softwares de vários tipos e os mais importantes são:
+<->
+12;;
+Software;; 
+•	Sistema Operacional – faz o gerenciamento entre a ‘conversa’ dos softwares com os dispositivos físicos.
+•	Linguagens de Programação – utilizadas para escrever programas, têm aplicação profissional.
+•	Aplicativos – executam tarefas comuns como escrever textos, fazer cálculos, desenhar ou armazenar informações.
+•	Ferramentas – auxiliam o desenvolvimento de programas e o gerenciamento do computador.
+<->
+13;;
+Sistema Operacional;;
+Resumindo, o Sistema Operacional é a ponte de comunicação entre o hardware e os outros tipos de programas. Ele supervisiona todo o funcionamento do computador, e também nos disponibiliza as ferramentas para organizarmos nossas informações.
+<->
+14;;
+Sistema Operacional;; 
+ Nesse curso vamos aprender os recursos de gerenciamento de programas e aplicativos do Windows.
+<->
+15;;
+Windows 10;;
+O Windows 10 chega ao mercado com várias novidades e novos recursos, em detrimento das versões anteriores. A nova versão pode ser disponibilizada em Desktops, smartphones, óculos de realidade virtual, notebooks entre vários outros tipos de equipamentos.  
+<->
+16;;
+Windows 10;;
+Algumas das novidades trazidas pelo Windows 10, foi a integração com a assistente virtual “Cortana” (software que interage com o usuário através de comandos de voz).
+<->
+17;;
+Cortana;;
+A Cortana foi desenvolvida para ajudar você a realizar tarefas. 
+Imediatamente pronta para oferecer respostas e realizar tarefas básicas, a Cortana aprende com o tempo e torna-se mais útil a cada dia. Você pode contar com ela para controlar os lembretes e trabalhar em seus dispositivos.  
+<->
+18;;
+Cortana;;
+Além de estar integrada com o próprio sistema operacional, a Cortana poderá atuar em alguns aplicativos específicos. Esse é o caso do Microsoft Edge, o navegador-padrão do Windows 10, que traz a assistente pessoal como uma de suas funcionalidades.
+<->
+19;;
+Cortana;;
+A assistente pessoal inteligente entende quem você é, onde você está e o que está fazendo.  A Cortana pode ajudar quando for solicitada, por meio de informações-chave, sugestões e até mesmo executar algumas tarefas para você com as devidas permissões. 
+<->
+20;;
+Cortana;;
+Para abrir a Cortana basta selecionar a opção "Digite aqui para pesquisar" na Barra de Tarefas. Podendo teclar ou falar o tema que deseja.
+<->
+21;;
+Botão Iniciar;;
+É através do botão iniciar que temos acesso aos principais softwares do computador.  Nesta versão do Windows, ainda temos a possibilidade de fixarmos no menu iniciar, através dos blocos, os softwares que mais usamos. Isso facilita nossas buscas além de nos mantemos atualizados sobre a previsão do tempo, e-mails, compromissos e outros.
+<->
+22;;
+Fixando aplicativos no menu Iniciar;;
+1.	Clique no botão Iniciar   e, em seguida, selecione Todos os aplicativos 
+2.	Clique com o botão direito do mouse sobre o aplicativo que você deseja fixar na tela inicial. 
+3.	Em seguida clique com o botão esquerdo do mouse em (Fixar em iniciar).
+<-> 
+23;;
+Fixando aplicativos no menu Iniciar;;
+Depois de haver fixado o aplicativo desejado na área de trabalho, você pode redimensionar o tamanho do bloco. 
+1.	Clique com o botão direito do mouse no bloco desejado. 
+2.	Em seguida clique em redimensionar e escolha o tamanho do bloco. 
+<->
+24;;
+Microsoft Edge;;
+Microsoft Edge (codinome "Spartan") é um navegador de Internet desenvolvido pela Microsoft. Inicialmente lançado para o Windows 10 e Xbox One, teve, também, versões lançadas para Android e iOS. Ele é o sucessor do Internet Explorer, atuando como o novo navegador padrão de Internet da Microsoft.
+<->
+25;;
+Microsoft Edge;;
+O programa tem como características a leveza, a rapidez e o layout baseado em padrões da web, além da integração com serviços da Microsoft, como a assistente de voz Cortana e o serviço de armazenamento na nuvem OneDrive. O Microsoft Edge é o primeiro navegador que permite fazer anotações, escrever, rabiscar e realçar diretamente em páginas da Web.
+<->
+26;;
+Microsoft Edge;;
+Para abrir o Edge clique no botão Iniciar, Microsoft Edge ou clique no ícone do Microsoft Edge na barra de tarefas.
+<->
+27;;
+Personalizando a área de trabalho;;
+Para que o computador fique com a sua ‘cara’, você pode personalizar sua aparência, alterando as cores de exibição das janelas, a imagem da área de trabalho, a animação do descanso de tela, entre outros. Para tal, clique com o botão direito do mouse sobre a área de trabalho e selecione a opção personalizar.
+<->
+28;;
+Personalizando a área de trabalho;;
+Será exibida a janela ‘Personalização’, onde encontramos diversos recursos para alterar a aparência do Windows.
+<->
+29;;
+Tela de fundo;;
+Você pode alterar a disposição das imagens do papel de parede ou aplicar uma nova imagem de fundo.
+<->
+30;;
+Cores;;
+Altera as cores das janelas do Windows, bem como habilita a ferramenta de transparência.
+<->
+31;;
+Tela de bloqueio;;
+Aqui encontramos animações para a tela de descanso do Windows, configurações de bloqueio de tela da cortana e configurações do tempo limite de tela.
+<->
+32;;
+Temas;;
+Você poderá escolher um estilo de personalização completo (ícones, papel de parede, ponteiro do mouse, sons, entre outros). Para obter mais temas do Windows, basta fazer o download no site da Microsoft.
+<->
+33;;
+Fontes;;
+Aqui você pode escolher as fontes (letras), que serão usadas no Windows e nos aplicativos instalados no seu computador.
+<->
+34;;
+Iniciar;;
+Nesta tela você pode configurar não só a aparência, como as funcionalidades do menu iniciar.
+<->
+35;;
+Barra de tarefas;;
+Nesta tela você pode personalizar não só a aparência, como as funcionalidades da barra de tarefas, ativando ou desativando suas funções. 
+<->
+36;;
+Área de Trabalho (pacote aero);;
+Aero é o nome dado a recursos e efeitos visuais introduzidos no Windows a partir da versão de número 7.
+<->
+37;;
+Aero Glass (Efeito vidro);;
+Recurso que deixa janelas, barras e menus transparentes, parecendo um vidro. 
+<->
+38;;
+Aero Flip (Alt+Tab);;
+Permite a alternância das janelas na área de trabalho, organizando-as de acordo com a preferência de uso. 
+<->
+39;;
+Aero Shake (Win+Home);;
+Ferramenta útil para quem usa o computador com multitarefas. Ao trabalhar com várias janelas abertas, basta “sacudir” a janela ativa, clicando na sua barra de título, que todas as outras serão minimizadas, poupando tempo e trabalho. E, simplesmente, basta sacudir novamente e todas as janelas serão restauradas.
+<->
+40;;
+Aero Snap (Win + Setas de direção do teclado);;
+Recurso que permite melhor gerenciamento e organização das janelas abertas. Basta arrastar uma janela para o topo da tela e a mesma é maximizada, ou arrastando para uma das laterais a janela é dividida de modo a ocupar metade do monitor.
+<->
+41;;
+Aero Peek (Win+Vírgula – Transparência / Win+D – Minimizar Tudo);;
+O Aero Peek (ou “Espiar área de trabalho”) permite que o usuário possa ver rapidamente o desktop. O recurso pode ser útil quando você precisar ver algo na área de trabalho, mas a tela está cheia de janelas abertas. Ao usar o Aero Peek, o usuário consegue ver o que precisa, sem precisar fechar ou minimizar qualquer janela. 
+<->
+42;;
+Aero Peek (Win+Vírgula – Transparência / Win+D – Minimizar Tudo);; 
+Recurso pode ser acessado por meio do botão Mostrar área de trabalho (parte inferior direita do Desktop). Ao posicionar o mouse sobre o referido botão, as janelas ficam com um aspecto transparente. Ao clicar sobre ele, as janelas serão minimizadas.
+<->
+43;;
+Calculadora;;
+A calculadora do Windows funciona como uma calculadora normal, sendo que existem quatro modos de operação: padrão, cientifico, cálculo de data e programador, além dos modos de operação existem ainda na calculadora, doze conversores. Para fazer as operações, você pode usar o teclado numérico ou o ponteiro do mouse.
+<->
+44;;
+Calculadora;;
+Para exercitar, realize as seguintes operações na calculadora. Primeiro clique nos números, depois selecione a operação, digite os números novamente e clique no sinal de igual (=).
+•	15978+3057=
+•	749*52=
+•	5775/7=
+•	25(13+72)=

@@ -1,0 +1,1 @@
+Para incluir um novo local clique duas vezes sobre a biblioteca criada e em seguida no botão incluir uma pasta. 

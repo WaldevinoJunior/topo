@@ -1,0 +1,1 @@
+Para remover uma Biblioteca criada, basta clicar com o botão direito do mouse sobre a biblioteca desejada e em seguida em Excluir. 

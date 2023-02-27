@@ -1,0 +1,1 @@
+Criando uma Figura: Vamos agora criar algumas figuras geométricas. No grupo Formas, selecione o Retângulo e defina as cores para o Preenchimento e Contorno como Cor Sólida.

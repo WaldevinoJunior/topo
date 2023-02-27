@@ -1,0 +1,1 @@
+Sistema Operacional: Resumindo, o Sistema Operacional é a ponte de comunicação entre o hardware e os outros tipos de programas. Ele supervisiona todo o funcionamento do computador, e também nos disponibiliza as ferramentas para organizarmos nossas informações.

@@ -1,0 +1,1 @@
+Áudio: Ao acessar esse recurso, o usuário poderá controlar o áudio do computador e configurar alertas sonoros para as tarefas que realiza com mais frequência.

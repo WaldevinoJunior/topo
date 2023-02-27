@@ -1,0 +1,31 @@
+﻿0;;
+É uma funcionalidade que permite conectar dispositivos portáteis a um monitor e trabalhar nele como se estivesse em um computador..;;
+Modo Tablet - Continuum.;;
+Groove.;;
+Windows defender.;;
+Windows explorer.;;
+1;;
+<->
+1;;
+É uma das ferramentas mais importantes do Windows, pois permite personalizar as configurações do computador.;;
+Windows defender.;;
+Painel de controle.;;
+Windows media player.;;
+Windows explorer.;;
+2;;
+<->
+2;;
+Fornece uma área de proteção contra vírus e ameaças..;;
+Windows explorer.;;
+Windows defender.;;
+Windows Iot.;;
+Sistema operacional.;;
+2;;
+<->
+3;;
+Oferece todos os produtos para computadores, tablets, smartphones e Xbox em um só lugar.;;
+Windows Iot.;;
+Windows explorer.;;
+Google play.;;
+Windows Store.;;
+4;;

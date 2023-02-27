@@ -1,0 +1,1 @@
+Utilize a tecla ‘Shift’ para ter acesso aos caracteres especiais: ~!@#$%^&*()_+<>?|{}, e para digitar caracteres maiúsculos, quando a tecla Caps Lock não estiver ativa. Para deslocar-se ao final do texto, pressione ‘Ctrl=End’. Para deslocar-se ao início do texto, pressione ‘Ctrl=Home’.

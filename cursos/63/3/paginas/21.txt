@@ -1,0 +1,1 @@
+Cores- Modifica a cor da fonte e também realça o texto pintando o seu fundo.

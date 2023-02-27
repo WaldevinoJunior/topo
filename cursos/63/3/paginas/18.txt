@@ -1,0 +1,1 @@
+Grupo Fonte: Fonte – Esta ferramenta permite alterar o tipo de letra do nosso texto. Basta selecionar a região onde será aplicado o novo formato e escolher um dos tipos de fontes instaladas no seu computador. Aplique uma fonte no título do texto e outra diferente no corpo da mensagem.

@@ -1,0 +1,1 @@
+Abrir restauração do sistema: Desfaça alterações recentes no sistema, mas deixe inalterados os arquivos, como documentos, fotos e músicas.

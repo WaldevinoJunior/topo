@@ -1,0 +1,1 @@
+WordPad: O WordPad é um editor de textos mais avançado que o Bloco de Notas e atende as necessidades básicas para criação de um documento. 

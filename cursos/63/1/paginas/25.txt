@@ -1,0 +1,1 @@
+O programa tem como características a leveza, a rapidez e o layout baseado em padrões da web, além da integração com serviços da Microsoft, como a assistente de voz Cortana e o serviço de armazenamento na nuvem OneDrive. O Microsoft Edge é o primeiro navegador que permite fazer anotações, escrever, rabiscar e realçar diretamente em páginas da Web.

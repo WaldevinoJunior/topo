@@ -382,7 +382,12 @@
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="perfil">Perfil</label><br>
-                                        <input type="radio"  id="perfil" name="perfil" value="Administrador" placeholder="" required>Administrador</input><br>
+                                        <?php
+                                        if($_SESSION['Perfil'] == "Administrador"){
+                                            echo "<input type='radio'  id='perfil' name='perfil' value='Administrador' placeholder='' required>Administrador</input><br>";
+
+                                        }
+                                        ?>
                                         <input type="radio"id="perfil" name="perfil" value="Coordenador" placeholder="" required>Coordenador</input><br>
                                         <input type="radio" id="perfil" name="perfil" value="Instrutor" placeholder="" required>Instrutor</input><br>
                                         <input type="radio"  id="perfil" name="perfil" value="Comercial" placeholder="" required>Comercial</input>
@@ -445,6 +450,9 @@
                   
                         if($_SESSION['Perfil'] == "Administrador"){
                             echo  "<div class='funcA'><a href='mostraAfiliadosFranqueados.php'><i class='bi bi-people fill'></i><h3>Listar Afiliados e Franqueados</h3></a></div>";
+                        }
+                        if($_SESSION['Perfil'] == "Administrador"){
+                            echo  "<div class='funcA'><a href='cupons.php'><i class='bi bi-ticket-perforated'></i><h3>Cupons de Desconto</h3></a></div>";
                         }
                 ?>
                 <hr>

@@ -1,0 +1,1 @@
+Fixando aplicativos no menu Iniciar: Clique no botão Iniciar   e, em seguida, selecione Todos os aplicativos . Clique com o botão direito do mouse sobre o aplicativo que você deseja fixar na tela inicial. Em seguida clique com o botão esquerdo do mouse em (Fixar em iniciar).

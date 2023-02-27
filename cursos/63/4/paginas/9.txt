@@ -1,0 +1,1 @@
+Legendas ocultas: Ao acessar esse recurso, o usuário terá na parte inferior da tela a legenda dos todo áudio que esteja sendo executado. Poderá também escolher a cor, tamanho, transparência e um plano de fundo para a legenda.

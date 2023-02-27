@@ -1,0 +1,1 @@
+Quando a tela de bloqueio estiver exibindo uma determinada imagem, por exemplo, os usuários poderão marcá-la com um “Gostei” ou “Não gostei”, alimentando o Spotlight com as suas preferências.

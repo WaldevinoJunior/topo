@@ -1,0 +1,1 @@
+Clicando sobre o disco rígido é aberta uma nova janela onde podemos verificar como esta sendo dividido o espaço do disco entre nossos aplicativos.

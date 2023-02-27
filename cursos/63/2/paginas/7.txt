@@ -1,0 +1,1 @@
+Área de Transferência: Usada para Copiar ou Recortar uma área selecionada do desenho ou colar o conteúdo da Área de Transferência ou uma imagem de arquivo.

@@ -1,0 +1,1 @@
+Pastas: Além de criarmos bibliotecas o Explorador de arquivos nos permite também criar pastas e subpastas para guardarmos nossos arquivos.

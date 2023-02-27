@@ -10,6 +10,14 @@
 	if($_SESSION['verifica'] != 2){
         header('Location: ./index.html');
     }
+    if($_SESSION['Perfil'] == "Afiliado"){
+        $consultaAfiliadoAluno = "SELECT * from cursos_afiliados WHERE ID_afiliados = '{$_SESSION['id']}'";
+        $conAA = $mysqli->query($consultaAfiliadoAluno) or die($mysqli->error);
+    }
+    if($_SESSION['Perfil'] == "Franqueado"){
+        $consultaFranqueadoAluno = "SELECT * from cursos_franqueados  WHERE ID_franqueador = '{$_SESSION['id']}'";
+        $conFA = $mysqli->query($consultaFranqueadoAluno) or die($mysqli->error);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,14 +88,59 @@ $table = '<table class="table table-striped" id="tableAluno">';
             // nomes dos aniversariantes do mês
              
                 if($nascimentom==$datames){
-                    $table .= "<tr>";
-                    $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
-                    $table .= "<td>{$cAlunos['Nome']}</td>";
-                    $cAlunos['Nascimento']=date('d/m/Y', strtotime($cAlunos['Nascimento']));
-                    $table .= "<td>{$cAlunos['Nascimento']}</td>";
-                    $table .= "<td>{$cAlunos['Telefone']}</td>";
-                    $table .= "<td>{$cAlunos['Email']}</td>";
-                    $table .= "</tr>";
+                    if($_SESSION['Perfil'] == "Franqueado"){
+                        while($c = mysqli_fetch_array($conFA)){
+                            if($c['ID_Aluno'] == $cAlunos['ID_Aluno']){
+                                $table .= "<tr>";
+                                $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
+                                $table .= "<td>{$cAlunos['Nome']}</td>";
+                                $cAlunos['Nascimento']=date('d/m/Y', strtotime($cAlunos['Nascimento']));
+                                $table .= "<td>{$cAlunos['Nascimento']}</td>";
+                                $table .= "<td>{$cAlunos['Telefone']}</td>";
+                                $table .= "<td>{$cAlunos['Email']}</td>";
+                                $table .= "</tr>";
+                            }
+                        }
+                        
+                    }
+                    if($_SESSION['Perfil'] == "Afiliado"){
+                        while($c = mysqli_fetch_array($conAA)){
+                            if($c['ID_Aluno'] == $cAlunos['ID_Aluno']){
+                                $table .= "<tr>";
+                                $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
+                                $table .= "<td>{$cAlunos['Nome']}</td>";
+                                $cAlunos['Nascimento']=date('d/m/Y', strtotime($cAlunos['Nascimento']));
+                                $table .= "<td>{$cAlunos['Nascimento']}</td>";
+                                $table .= "<td>{$cAlunos['Telefone']}</td>";
+                                $table .= "<td>{$cAlunos['Email']}</td>";
+                                $table .= "</tr>";
+                            }
+                        }
+                        
+                    }
+                    if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Instrutor"){
+                        $colabFranqueado = "SELECT * from cursos_franqueados  WHERE ID_franqueador = '{$_SESSION['idfran']}'";
+                        $cFranqueado = $mysqli->query($colabFranqueado) or die($mysqli->error);
+                        $idColabFranqueado = [];
+                        while($c = mysqli_fetch_array($cFranqueado)){
+                            $idColabFranqueado[] = $c['ID_Aluno'];
+                        }
+                        for($i=0;$i<count($idColabFranqueado);$i++){
+                            if($idColabFranqueado[$i] == $cAlunos['ID_Aluno'])
+                            {
+                                $table .= "<tr>";
+                                $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
+                                $table .= "<td>{$cAlunos['Nome']}</td>";
+                                $cAlunos['Nascimento']=date('d/m/Y', strtotime($cAlunos['Nascimento']));
+                                $table .= "<td>{$cAlunos['Nascimento']}</td>";
+                                $table .= "<td>{$cAlunos['Telefone']}</td>";
+                                $table .= "<td>{$cAlunos['Email']}</td>";
+                                $table .= "</tr>";
+                            }
+                        }
+                       
+                    }
+                   
                 }
                 
             

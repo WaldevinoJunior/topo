@@ -1,0 +1,1 @@
+Grupo Parágrafo: Recuos – Aumentam ou diminuem a distância entre o texto e a margem esquerda.

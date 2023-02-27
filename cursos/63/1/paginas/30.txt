@@ -1,0 +1,1 @@
+Cores: Altera as cores das janelas do Windows, bem como habilita a ferramenta de transparência.

@@ -1,0 +1,1 @@
+Na Faixa de Opções você poderá optar por ter o texto vazado ou com preenchimento de fundo. Na primeira opção, o texto fica sem fundo, podendo ser sobreposto em outras imagens do desenho. Na segunda alternativa o texto receberá a cor de primeiro plano e o fundo da caixa de texto a cor do segundo plano.
