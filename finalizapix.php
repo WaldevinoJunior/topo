@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 
 <head>
 	<title>Pague com Pix</title>
@@ -6,7 +6,7 @@
    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
    	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-	<link rel="stylesheet" type="text/css" href="pagcpixstyle1.css"/>
+	<link rel="stylesheet" type="text/css" href="pagcpixstyle2.css"/>
     <link rel="sortcut icon" href="img/pix_icon.png" type="image/png" />
 
 </head>
@@ -30,7 +30,9 @@
             
                 <div class="qrcode-single">
     <p> Para realizar o pagamento, aponte a câmera do seu smartphone para o QR Code abaixo: </p>  
-             <img id="qrcode" src="img/qrcode_example.png"/>
+             <img id="qrcode" src="img/qrcode.jpeg"/>
+<br>
+<p> Ou utilize a chave pix: (CNPJ) 04.880.821/0001-10 </p>
             </div>
             
     <div class="pagamento">   

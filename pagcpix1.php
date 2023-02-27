@@ -6,7 +6,7 @@
    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
    	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-	<link rel="stylesheet" type="text/css" href="pagcpixstyle1.css"/>
+	<link rel="stylesheet" type="text/css" href="pagcpixstyle2.css"/>
     <link rel="sortcut icon" href="img/pix_icon.png" type="image/png" />
 
 </head>
@@ -94,7 +94,7 @@ while($linha=mysqli_fetch_array($consulta))
                  
                 items.map((val) => {
                       var total = val.quant * val.preco;
-                    containerCarrinho.innerHTML+='<div class="carrinho-single"> <p id="p3"> </p> <p>'+val.nome+' </p> <p>'+val.quant+'un </p> <p id="total"> Total a pagar: R$'+total+' </p> <a class="button" href="finalizapix.php?total"> Continuar </a> </div> </br> </div>';
+                    containerCarrinho.innerHTML+='<div class="carrinho-single"> <p id="p3"> </p> <p>'+val.nome+' </p> <p>'+val.quant+'un </p> <p id="total"> Total a pagar: R$'+total+' </p>  <form method="post" action="validacupom.php "> <p> <label class="desconto" for="cupom"> Digite um cupom </label> <input id="cupom" name="cupom" type="text" placeholder="PAG-10"/</p> <input type="submit" name="desconto" value="Desconto" /></form> <a class="button" href="finalizapix.php?total"> Continuar </a> </div> </br> </div>';
                     
                 })
                 
