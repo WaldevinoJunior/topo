@@ -806,6 +806,58 @@ if(isset($_POST['deletarCurso'])){
 	$con = $mysqli->query($sql) or die($mysqli->error);
 	header('Location: ./mostraCurso.php');
 }
+
+
+
+// Início da Validação de Cupom 
+if(isset($_POST['desconto'])){ 
+
+    
+    $cupom=$_POST['cupom']; 
+    $id_Curso = $_POST['id'];
+    $preco = $_POST['preco'];
+    $desc = 0.2;
+    $total = ((float)$preco) - (((float)$preco) * ($desc));
+   // echo "<br> Total do Curso: ".$total."";
+//     echo "<br> Preço do Curso: ".$preco."";
+  //   echo "<br> Desc do Curso: ".$desc."";
+   //echo "<br> Preço do Curso: ".$id_Curso."";
+     $consulta = $mysqli->query("SELECT * from cupons where Codigo='$cupom'");
+ $encontrou = false;
+        while($linha=mysqli_fetch_array($consulta))    {
+            $encontrou = true;
+            echo "<br> QUANT: ".$linha[1]."";
+             $hoje = date('Y-m-d');
+            
+            if(($linha[1]!=0) && ($linha[2]>=$hoje)){
+                $linha[1]--;
+                echo $linha[1];
+                $result = mysqli_query($mysqli, "UPDATE cupons set Quantidade = '$linha[1]' where codigo = '$cupom' "); 
+                       // header('Location: ./finalizapix.php');
+                 header('Location: ./pagcpix1.php?id='.$id_Curso.'&total='.$total.'');
+            }
+            else{
+                header('Location: ./pagcpix1.php?id='.$id_Curso.'&msg='.$msg.'');
+            }
+            
+        }
+
+        if(!$encontrou){
+            $msg = 'Cupom Expirado ou inválido';
+           
+           // echo '<script>alert("Cupom expirado ou inválido!");</script> ';
+            //echo "<script>location.href='./pagcpix1.php?id='.$id_Curso.'';</script>";
+            
+                  header('Location: ./pagcpix1.php?id='.$id_Curso.'&msg='.$msg.'');
+            
+        }
+               
+    
+            
+       
+}
+// Fim da Validação de Cupom
+
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }

@@ -15,9 +15,7 @@
 
 	<?php
 		include_once("pixheader.php"); 
- $total = $_GET['total'];
 
-    
     ?>
     
     

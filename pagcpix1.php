@@ -18,7 +18,26 @@
     include_once("pixfooter.php"); 
     require_once("validabia.php");
 session_start();
+
  $id_curso = $_GET['id'];
+    //$msg = $_GET['msg'];
+    if(isset($_GET['msg'])) 
+    {
+        $msg = $_GET['msg'];
+        echo '<script>alert("Cupom Expirado ou Inválido!")</script>';
+    }
+    if(isset($_GET['total'])) 
+    {
+        $totalcdesc = $_GET['total'];
+        ?>
+        <script>
+          var totalcdesc = "<?php echo $totalcdesc; ?>";
+            console.log(totalcdesc);
+            console.log(totalcdesc);
+    </script>
+            <?php
+        
+    }
  $consulta = $mysqli->query("SELECT * from cursos where ID_Curso='$id_curso'");
 
 
@@ -26,6 +45,7 @@ while($linha=mysqli_fetch_array($consulta))
 {
 ?>
 <script>
+   
      var id_c = "<?php echo $linha[0]; ?>";
     var n = "<?php echo $linha[1]; ?>";
     var p = "<?php echo $linha[2]; ?>";
@@ -66,6 +86,10 @@ while($linha=mysqli_fetch_array($consulta))
        
             
             </div>
+            <div id="totalcdesc">
+            
+            
+            </div>
             
         </div>
     
@@ -90,11 +114,20 @@ while($linha=mysqli_fetch_array($consulta))
             
              atualizarCarrinho = () => {
                   var containerCarrinho = document.getElementById('carrinho');
+                 var containerTotalcdesc = document.getElementById('totalcdesc');
                 containerCarrinho.innerHTML = " ";
-                 
                 items.map((val) => {
                       var total = val.quant * val.preco;
-                    containerCarrinho.innerHTML+='<div class="carrinho-single"> <p id="p3"> </p> <p>'+val.nome+' </p> <p>'+val.quant+'un </p> <p id="total"> Total a pagar: R$'+total+' </p>  <form method="post" action="validacupom.php "> <p> <label class="desconto" for="cupom"> Digite um cupom </label> <input id="cupom" name="cupom" type="text" placeholder="PAG-10"/</p> <input type="submit" name="desconto" value="Desconto" /></form> <a class="button" href="finalizapix.php?total"> Continuar </a> </div> </br> </div>';
+                     // if(typeof totalcdesc != "undefined")
+                       // {
+                         //   total = ((float)totalcdesc);
+                            
+                        //}
+                   
+                    
+                   containerCarrinho.innerHTML+='<div class="carrinho-single"> <p id="p3"> </p> <p>'+val.nome+' </p> <p>'+val.quant+'un </p> <p id="total"> Total a pagar: R$'+total+' </p>  <form method="post" action="validabia.php"> <label class="desconto" for="cupom"> Digite um cupom </label> <input id="cupom" name="cupom" type="text" placeholder="PAG-10"/> <input id="id" name="id" type="hidden" value="'+val.id+'"/> <input id="preco" name="preco" type="hidden" value="'+total+'"/> <input type="submit" name="desconto" value="Desconto" /></form> <a class="button" href="finalizapix.php?total"> Continuar </a> </div>';
+                    
+                   
                     
                 })
                 
