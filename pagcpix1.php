@@ -18,7 +18,9 @@
     include_once("pixfooter.php"); 
     require_once("validabia.php");
 session_start();
-
+?>
+    <script> var desc = 0; </script>
+    <?php
  $id_curso = $_GET['id'];
     //$msg = $_GET['msg'];
     if(isset($_GET['msg'])) 
@@ -26,14 +28,14 @@ session_start();
         $msg = $_GET['msg'];
         echo '<script>alert("Cupom Expirado ou Inválido!")</script>';
     }
-    if(isset($_GET['total'])) 
+    if(isset($_GET['desc'])) 
     {
-        $totalcdesc = $_GET['total'];
+        $desc = $_GET['desc'];
         ?>
         <script>
-          var totalcdesc = "<?php echo $totalcdesc; ?>";
-            console.log(totalcdesc);
-            console.log(totalcdesc);
+          desc = "<?php echo $desc; ?>";
+            console.log(desc);
+            console.log(desc);
     </script>
             <?php
         
@@ -45,7 +47,7 @@ while($linha=mysqli_fetch_array($consulta))
 {
 ?>
 <script>
-   
+    
      var id_c = "<?php echo $linha[0]; ?>";
     var n = "<?php echo $linha[1]; ?>";
     var p = "<?php echo $linha[2]; ?>";
@@ -118,14 +120,8 @@ while($linha=mysqli_fetch_array($consulta))
                 containerCarrinho.innerHTML = " ";
                 items.map((val) => {
                       var total = val.quant * val.preco;
-                     // if(typeof totalcdesc != "undefined")
-                       // {
-                         //   total = ((float)totalcdesc);
-                            
-                        //}
-                   
                     
-                   containerCarrinho.innerHTML+='<div class="carrinho-single"> <p id="p3"> </p> <p>'+val.nome+' </p> <p>'+val.quant+'un </p> <p id="total"> Total a pagar: R$'+total+' </p>  <form method="post" action="validabia.php"> <label class="desconto" for="cupom"> Digite um cupom </label> <input id="cupom" name="cupom" type="text" placeholder="PAG-10"/> <input id="id" name="id" type="hidden" value="'+val.id+'"/> <input id="preco" name="preco" type="hidden" value="'+total+'"/> <input type="submit" name="desconto" value="Desconto" /></form> <a class="button" href="finalizapix.php?total"> Continuar </a> </div>';
+                   containerCarrinho.innerHTML+='<div class="carrinho-single"> <p id="p3"> </p> <p>'+val.nome+' </p> <p>'+val.quant+'un </p> <p id="total"> Total a pagar: R$'+total+' </p>  <form method="post" action="validabia.php"> <label class="desconto" for="cupom"> Digite um cupom </label> <input id="cupom" name="cupom" type="text" placeholder="PAG-10"/> <input id="id" name="id" type="hidden" value="'+val.id+'"/> <input id="preco" name="preco" type="hidden" value="'+total+'"/> <input type="submit" name="desconto" value="Desconto" /></form> <a class="button" href="finalizapix.php?totalsdesc='+total+'"> Continuar </a> </div>';
                     
                    
                     

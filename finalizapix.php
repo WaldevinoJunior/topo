@@ -6,7 +6,7 @@
    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
    	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-	<link rel="stylesheet" type="text/css" href="pagcpixstyle2.css"/>
+	<link rel="stylesheet" type="text/css" href="pagcpixstyle3.css"/>
     <link rel="sortcut icon" href="img/pix_icon.png" type="image/png" />
 
 </head>
@@ -15,8 +15,19 @@
 
 	<?php
 		include_once("pixheader.php"); 
-
-    ?>
+    if(isset($_GET['id'])){
+    $id_Curso = $_GET['id'];
+    }
+    if(isset($_GET['total']))
+    {
+    $total = $_GET['total'];
+    }
+        if(isset($_GET['totalsdesc']))
+    {
+        $total= $_GET['totalsdesc'];
+    
+        
+    }    ?>
     
     
 
@@ -27,7 +38,14 @@
 		<div class="img-pg">
             
                 <div class="qrcode-single">
+                    <?php
+                    
+                    echo "<br> Valor Final: R$".$total."";
+                    
+                    
+                    ?>
     <p> Para realizar o pagamento, aponte a câmera do seu smartphone para o QR Code abaixo: </p>  
+                    <br>
              <img id="qrcode" src="img/qrcode.jpeg"/>
 <br>
 <p> Ou utilize a chave pix: (CNPJ) 04.880.821/0001-10 </p>
@@ -35,19 +53,38 @@
             
     <div class="pagamento">   
       <!--FORMULÁRIO DE DADOS PARA CADASTRO-->
-      <form method="post" action=" "> 
+      <form method="post" action="email.php"> 
           <p>Para finalizar, preencha com as credenciais de login desejadas</p> 
-          <br>
+          
+          <p> 
+            <label for="nome">Nome</label>
+              <br>
+            <input id="nome" name="nome" required="required" type="text" placeholder="Pedro Souza" /> 
+          </p>
 	    <p> 
             <label for="email">E-mail</label>
-            <input id="email" name="email" required="required" type="text" placeholder="pedrosouza@gmail.com"/>
+            <br>
+            <input id="email" name="email" required="required" type="email" placeholder="pedrosouza@gmail.com"/>
           </p>
            
           <p> 
-            <label for="senha">Senha</label>
-            <input id="senha" name="senha" required="required" type="password" placeholder="pedro1234" /> 
+            <label for="tel">Telefone</label>
+            <br>
+              <input id="tel" name="tel" required="required" type="tel" placeholder="" /> 
           </p>
-           
+          
+          <p> 
+            <label for="login">Login</label>
+            <br>
+              <input id="login" name="login" required="required" type="text" placeholder="pedro" /> 
+          </p>
+          
+          <p> 
+            <label for="senha">Senha</label>
+            <br>
+              <input id="senha" name="senha" required="required" type="password" placeholder="pedro1234" /> 
+          </p>
+           <br>
           <p> 
             <input type="submit" name="cadastrar" value="Cadastrar" /> 
           </p>

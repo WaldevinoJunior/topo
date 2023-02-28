@@ -834,7 +834,7 @@ if(isset($_POST['desconto'])){
                 echo $linha[1];
                 $result = mysqli_query($mysqli, "UPDATE cupons set Quantidade = '$linha[1]' where codigo = '$cupom' "); 
                        // header('Location: ./finalizapix.php');
-                 header('Location: ./pagcpix1.php?id='.$id_Curso.'&total='.$total.'');
+                 header('Location: ./finalizapix.php?id='.$id_Curso.'&total='.$total.'');
             }
             else{
                 header('Location: ./pagcpix1.php?id='.$id_Curso.'&msg='.$msg.'');
