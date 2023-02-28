@@ -813,7 +813,7 @@ if(isset($_POST['deletarCurso'])){
 if(isset($_POST['desconto'])){ 
 
     
-    $cupom=$_POST['cupom']; 
+    $cupons=$_POST['cupom']; 
     $id_Curso = $_POST['id'];
     $preco = $_POST['preco'];
     $desc = 0.2;
@@ -822,7 +822,7 @@ if(isset($_POST['desconto'])){
 //     echo "<br> Preço do Curso: ".$preco."";
   //   echo "<br> Desc do Curso: ".$desc."";
    //echo "<br> Preço do Curso: ".$id_Curso."";
-     $consulta = $mysqli->query("SELECT * from cupons where Codigo='$cupom'");
+     $consulta = $mysqli->query("SELECT * from cupons where Codigo='$cupons'");
  $encontrou = false;
         while($linha=mysqli_fetch_array($consulta))    {
             $encontrou = true;
@@ -832,7 +832,7 @@ if(isset($_POST['desconto'])){
             if(($linha[1]!=0) && ($linha[2]>=$hoje)){
                 $linha[1]--;
                 echo $linha[1];
-                $result = mysqli_query($mysqli, "UPDATE cupons set Quantidade = '$linha[1]' where codigo = '$cupom' "); 
+                $result = mysqli_query($mysqli, "UPDATE cupons set Quantidade = '$linha[1]' where codigo = '$cupons' "); 
                        // header('Location: ./finalizapix.php');
                  header('Location: ./finalizapix.php?id_curso='.$id_Curso.'&total='.$total.'');
             }
