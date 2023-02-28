@@ -6,7 +6,7 @@
    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
    	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-	<link rel="stylesheet" type="text/css" href="pagcpixstyle3.css"/>
+	<link rel="stylesheet" type="text/css" href="pagcpixstyle4.css"/>
     <link rel="sortcut icon" href="img/pix_icon.png" type="image/png" />
 
 </head>
@@ -45,7 +45,7 @@
                     
                     ?>
     <p> Para realizar o pagamento, aponte a câmera do seu smartphone para o QR Code abaixo: </p>  
-                    <br>
+                
              <img id="qrcode" src="img/qrcode.jpeg"/>
 <br>
 <p> Ou utilize a chave pix: (CNPJ) 04.880.821/0001-10 </p>
@@ -54,34 +54,29 @@
     <div class="pagamento">   
       <!--FORMULÁRIO DE DADOS PARA CADASTRO-->
       <form method="post" action="mailto:beatriz.trindade.work@gmail.com"> 
-          <p>Para finalizar, preencha com as credenciais de login desejadas</p> 
+          <p>Para finalizar, preencha com as credenciais de login desejadas:</p> 
           
           <p> 
-            <label for="nome">Nome</label>
-              <br>
+            <label for="nome">Nome </label>
             <input id="nome" name="nome" required="required" type="text" placeholder="Pedro Souza" /> 
           </p>
 	    <p> 
-            <label for="email">E-mail</label>
-            <br>
+            <label for="email">E-mail </label>
             <input id="email" name="email" required="required" type="email" placeholder="pedrosouza@gmail.com"/>
           </p>
            
           <p> 
-            <label for="tel">Telefone</label>
-            <br>
+            <label for="tel">Telefone </label>
               <input id="tel" name="tel" required="required" type="tel" placeholder="" /> 
           </p>
           
           <p> 
-            <label for="login">Login</label>
-            <br>
+            <label for="login">Login </label>
               <input id="login" name="login" required="required" type="text" placeholder="pedro" /> 
           </p>
           
           <p> 
-            <label for="senha">Senha</label>
-            <br>
+            <label for="senha">Senha </label>
               <input id="senha" name="senha" required="required" type="password" placeholder="pedro1234" /> 
           </p>
            <br>
