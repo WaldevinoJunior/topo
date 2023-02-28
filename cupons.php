@@ -178,6 +178,8 @@
                     <th>Validade</th>
                     <th>Curso</th>
                     <th>Código</th>
+                    <th>Desconto</th>
+                    <th>Afiliado</th>
             </thead>
             <?php
             $cuponsCadastrados = "SELECT * FROM cupons";
@@ -186,8 +188,17 @@
                 $c['Validade'] = date('d/m/Y', strtotime($c['Validade']));
                 echo "<tr>
                     <td>".$c['Validade']."</td>
-                    <td>".$c['ID_Curso']."</td>
+                    <td>".$c['Nome_curso']."</td>
                     <td>".$c['Codigo']."</td>
+                    <td>".($c['Desconto']*100)."%</td>
+                    <td>";if($c['ID_afiliados'] == 0){echo "Podium";}
+                    else{
+                        $afili = "SELECT Nome, Login FROM afiliados WHERE ID_afiliados = '{$c['ID_afiliados']}'";
+                        $afi = $mysqli->query($afili) or die($mysqli->error);
+                        while($a = mysqli_fetch_array($afi)){
+                            echo $a['Nome']."-".$a['Login'];
+                        }
+                    } echo "</td>
                 </tr>";
             }
             ?>

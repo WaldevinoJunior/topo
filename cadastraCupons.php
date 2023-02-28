@@ -187,12 +187,12 @@
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="cpf">Curso</label>
                                         <select name="idCurso">
-                                        <option value="0">Geral</option>
+                                        <option value="Geral">Geral</option>
                                         <?php
                                         $curso = "SELECT * FROM cursos";
                                         $cursosql = $mysqli->query($curso) or die($mysqli->error);
                                         while($c = mysqli_fetch_array($cursosql)){
-                                            echo "<option value=".$c['ID_Curso'].">".$c['Nome_curso']."</option>";
+                                            echo "<option value='".$c['Nome_curso']."'>".$c['Nome_curso']."</option>";
                                         }
                                         
                                         ?>
@@ -210,7 +210,7 @@
                                         <option value="0.1">10%</option>
                                         <option value="0.15">15%</option>
                                         <option value="0.20">20%</option>
-                                        <option value="0.30">30$</option>
+                                        <option value="0.30">30%</option>
                                         <option value="0.5">50%</option>
                                         </select>
                                     </div>
