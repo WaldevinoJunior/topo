@@ -203,7 +203,7 @@
                             }                            
                         }
                         }
-                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"  || $_SESSION['Perfil'] == "Instrutor"){
+                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador"  || $_SESSION['Perfil'] == "Instrutor" || $_SESSION['Perfil'] == "Comercial"){
                             while($cAlunos = mysqli_fetch_array($conAlunos2)){
                                 $colabFranqueado = "SELECT * from cursos_franqueados  WHERE ID_franqueador = '{$_SESSION['idfran']}'";
                                 $cFranqueado = $mysqli->query($colabFranqueado) or die($mysqli->error);
@@ -325,7 +325,7 @@
                                            }                          
 
                                         }
-                                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Instrutor"){
+                                        if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" || $_SESSION['Perfil'] == "Instrutor" || $_SESSION['Perfil'] == "Comercial"){
                                             if($_SESSION['idfran'] == 4){
                                                 $table .= "<tr class='alunoBusca'  name=".$cAlunos['ID_Aluno'].">";
                                                 $table .= "<td>{$cAlunos['ID_Aluno']}</td>";
