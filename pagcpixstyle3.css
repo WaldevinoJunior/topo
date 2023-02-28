@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+html {
+   position: relative;
+    min-height: 50%;
+    min-width: 100%;
+}
+
+body {
+font-family: 'Red Hat Display', sans-serif;
+background: #d7d8d7;
+margin: -25 0 60px; 
+padding-bottom: 100px;
+
+	}
+	
+		
+#logo{
+
+margin-left: 10%;
+padding: 5px;
+
+}
+
+.exemplo {
+			background: #405c60;
+			height: 0.8em;
+		}
+.img-pg {
+			
+max-width: 80em;
+margin: 0;
+display: flex;
+padding: 2em;
+background: white;
+			
+}
+		
+.container {
+max-width: 70em;
+margin: 60 auto;
+margin-bottom: 60px;
+height: 42em;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+ background: white;
+box-shadow: 7px 7px 7px 4px rgba(0, 0, 0, 0.15);
+border-radius: 5px;
+
+}
+
+.conteudo {
+
+padding: 2em;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+}
+
+
+#p1{
+
+bottom: 30.43%;
+font-family: 'Red Hat Display', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 25px;
+text-align: justify;
+display: flex;
+align-items: center;
+color: black;
+margin-top: 20px;
+margin-left: 30px;
+margin-right: 20px;
+
+}
+
+.rodape {
+    line-height: 50px;
+    height: 100px;
+    background: #4D4B4D;
+    color: #191818;
+    padding: 28px;
+position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;   
+}
+
+.icones{
+    float: right;
+    display: table;
+}
+
+.icones li {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+
+.navbar{
+	position: relative;
+	top: 0;
+	z-index: 99999;
+	padding:40px 30px 25px;
+background: white;
+    box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.15);
+
+}
+
+.navbar ul.nav{
+	margin-right: 10%;
+	color: #000000;
+    font-family: 'Red Hat Display', sans-serif;
+    
+
+}
+
+
+h1{
+  font-size: 25px;
+  font-weight: 500;
+  padding-top: 30px;
+	
+}
+
+#p3:after{
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 10px;
+  background: -webkit-linear-gradient(left, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); 
+  background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
+}
+
+.footer-section {
+	background: #000000;
+	padding-top: 50px;
+}
+
+.produto-single{
+    
+    width: 400px;
+    min-height: 200px;
+    max-height: 300px;
+    margin-left: 1%;
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    border: 1px solid #ccc;
+    font-size: 20px;
+}
+
+.pagamento{
+    
+    width: 500px;
+    min-height: 300px;
+    max-height: 600px;
+    margin-left: 1%;
+    margin-top: 5px;
+    padding: 0;
+    text-align: center;
+align-content: center;
+    align-items: center;
+    float: right;
+    background: #f7f7f7;
+    font-size: 20px;
+}
+
+.carrinho-single{
+    
+    width: 400px;
+    height: 300px;
+    float: left;
+    margin-right: 1%;
+    margin-top: 0px;
+    padding-bottom: 70px;
+    text-align: center;
+    font-weight: 550;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+#total{
+    
+    background-color: #d3d3d3;
+    display: block;
+    
+    
+    
+}
+
+#cursos{
+    display: block;
+    padding: 20px;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+
+.carrinho-single .button,
+.produto-single .button{
+    
+    background-color: #F0B824;
+    display: block;
+    border: 10px;
+    color: black;   
+    padding: 10px;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 500;
+    
+}
+
+.qrcode-single{
+    
+    width: 500px;
+    min-height: 300px;
+    max-height: 400px;
+    margin-left: 1%;
+    margin-top: 8%;
+    padding: 0;
+    text-align: center;
+align-content: center;
+    align-items: center;
+    float: right;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    
+    
+}
+.carrinho-single .button:hover,
+.produto-single .button:hover{
+    
+    text-decoration: none;
+    color: black;
+    border:10px;
+    font-size: 20px;
+    
+}
+
+#qrcode{
+   height: 200px;    
+text-align: center;
+    
+    
+}
+input{
+    font-size: 15px;
+    
+    
+    
+}
+.pix{
+    
+    min-height: 10px;
+    max-height: 20px;
+    
+    
+}
+
+label{
+  color: #405c60;
+  position: relative;
+    font-size: 18px;
+}
+
+input[type="submit"]{
+  width: 100%!important;
+  cursor: pointer;  
+  background: #4D4B4D;
+  padding: 8px 5px;
+  color: #fff;
+  font-size: 20px;  
+  border: 1px solid #fff;   
+  margin-bottom: 10px;  
+  text-shadow: 0 1px 1px #333;
+}
+ 
+input[type="submit"]:hover{
+  background: #4D4B4D;
+}
+
+#formulario{  
+font-size: 20px;
+  margin-top: 0;
+  background: #f7f7f7;
+
+
+}
+
+.desconto{
+    font-size: 20px;
+    
+}
