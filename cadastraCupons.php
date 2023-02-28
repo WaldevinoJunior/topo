@@ -187,6 +187,7 @@
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="cpf">Curso</label>
                                         <select name="idCurso">
+                                        <option value="0">Geral</option>
                                         <?php
                                         $curso = "SELECT * FROM cursos";
                                         $cursosql = $mysqli->query($curso) or die($mysqli->error);
@@ -211,6 +212,19 @@
                                         <option value="0.20">20%</option>
                                         <option value="0.30">30$</option>
                                         <option value="0.5">50%</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="cnpj">Afiliados/Podium</label>
+                                        <select name="afiliados">
+                                        <option value="0">Grupo Podium</option>
+                                        <?php
+                                        $afiliados = "SELECT * FROM afiliados";
+                                        $afi = $mysqli->query($afiliados) or die($mysqli->error);
+                                        while($a = mysqli_fetch_array($afi)){
+                                            echo "<option value=".$a['ID_afiliados'].">".$a['Nome']."-".$a['Login']."</option>";
+                                        }
+                                        ?>
                                         </select>
                                     </div>
                                 </div>
