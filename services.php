@@ -205,7 +205,7 @@
                         <h4>Cuidador de Idosos</h4>
                         <p>É a pessoa responsável por ajudar nos cuidados de uma pessoa idosa. </p>
                         <p><!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7YK5XQiTG/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO --></p>
-                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=60" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="40px" width="130px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
+                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=60" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="30px" width="200px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
                         <h4>R$130,00</h4>
                        <!-- <a href="#">Em Breve!</a>-->
                     </div>
@@ -237,7 +237,7 @@
                         <p>Segurança no trabalho e resgate em altura.</p>
                         <!--<a href="#">Em Breve!</a>-->
                         <p><!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7YJLrmd18/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO --></p>
-                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=71" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="40px" width="130px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
+                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=71" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="30px" width="200px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
                         <h4>R$130,00</h4>
                     </div>
                 </div>
@@ -283,7 +283,7 @@
                         <h4>NR20 - Líquidos, combustíveis e inflamáveis</h4>
                         <p> Segurança no trabalho com inflamáveis e combustíveis.</p>
                         <p><!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7YK63o1Vm/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO --></p>
-                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=74" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="40px" width="130px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
+                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=74" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="30px" width="200px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
                         <h4>R$130,00</h4>
                         <!--<a href="#">Em Breve!</a>-->
                     </div>
@@ -300,7 +300,7 @@
                         <h4>Robótica</h4>
                         <p>Aqui você estuda as tecnologias associadas a concepção e construção de robôs. </p>
                         <p><!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7YK5_b36a/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO --></p>
-                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=69" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="40px" width="130px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
+                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=69" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="30px" width="200px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
                         <h4>R$160,00</h4>
                         <!--<a href="#">Em Breve!</a>-->
                     </div>
@@ -322,7 +322,7 @@
                         <h4>Porteiro e Vigia</h4>
                         <p>Torne-se um profissional da área de segurança patrimonial.</p>
                         <!-- INICIO DO BOTAO PAGSEGURO --><p><a href="https://pag.ae/7YeimHWpv/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a></p><!-- FIM DO BOTAO PAGSEGURO -->
-                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=62" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="40px" width="130px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
+                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=62" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="30px" width="200px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
                       <!--  <a href="#">Matricule-se</a>-->
                       <h4>R$99,00</h4>
                     </div>
@@ -341,7 +341,7 @@
                         <h4>Atendente de Farmácia</h4>
                         <p>Responsável por quase toda a rotina de atendimento e manutenção da farmácia. </p>
                         <p><!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7YK67bHM1/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO --></p>
-                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=75" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="40px" width="130px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
+                        <p><!-- INICIO DO BOTAO PIX --><a href="pagcpix1.php?id=75" target="_blank" title="Pagar com PIX"><img src="img/8.png" height="30px" width="200px" alt="Pague com Pix!" /></a><!-- FIM DO BOTÃO PIX --></p>
                         <h4>R$130,00</h4>
                         <!--<a href="#">Em Breve!</a>-->
                     </div>
