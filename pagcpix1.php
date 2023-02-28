@@ -19,7 +19,9 @@
     require_once("validabia.php");
 session_start();
 ?>
-    <script> var desc = 0; </script>
+    <script> var desc = 0;
+            var quantinput = 0;
+    </script>
     <?php
  $id_curso = $_GET['id'];
     //$msg = $_GET['msg'];
@@ -27,6 +29,13 @@ session_start();
     {
         $msg = $_GET['msg'];
         echo '<script>alert("Cupom Expirado ou Inválido!")</script>';
+    }
+    if(isset($_POST['quantinput']))
+    {
+        echo $_POST['quantinput'];
+        ?>
+    <script> quantinput = "<?php echo $_POST['quantinput']; ?>"; </script>
+    <?php
     }
     if(isset($_GET['desc'])) 
     {
@@ -55,7 +64,7 @@ while($linha=mysqli_fetch_array($consulta))
                 {
                     id:id_c,
                     nome:n,
-                    quant:0,
+                    quant:quantinput,
                     preco:p,
                     
                 
@@ -105,7 +114,7 @@ while($linha=mysqli_fetch_array($consulta))
                     console.log(val.preco);
                     console.log(val.id);
                     
-                    containerCursos.innerHTML+='<div class="produto-single"> <p> Curso de '+val.nome+' </p> <p> Preço: R$'+val.preco+' </p><a class="button" key="'+val.id+'"href="#"> Adicionar ao Carrinho </a> </br> </div>';
+                    containerCursos.innerHTML+='<div class="produto-single"> <p> Curso de '+val.nome+' </p> <p> Preço: R$'+val.preco+' </p> <form method="post" action"pagcpix1.php"> <input id="quantinput" min="0" max="10" name="quantinput" type="number" /> <input type="submit" class="button" key="'+val.id+'" name="button" value="Enviar ao Carrinho" /></form> </br> </div>';
                 
                 })
                 
@@ -116,7 +125,6 @@ while($linha=mysqli_fetch_array($consulta))
             
              atualizarCarrinho = () => {
                   var containerCarrinho = document.getElementById('carrinho');
-                 var containerTotalcdesc = document.getElementById('totalcdesc');
                 containerCarrinho.innerHTML = " ";
                 items.map((val) => {
                       var total = val.quant * val.preco;
@@ -140,7 +148,8 @@ while($linha=mysqli_fetch_array($consulta))
                     console.log(key);
                     items[0].quant++;
                     atualizarCarrinho();
-                    return false;
+                     return false;
+            
                     
                     
                     

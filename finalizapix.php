@@ -15,8 +15,8 @@
 
 	<?php
 		include_once("pixheader.php"); 
-    if(isset($_GET['id'])){
-    $id_Curso = $_GET['id'];
+    if(isset($_GET['id_curso'])){
+    $id_Curso = $_GET['id_curso'];
     }
     if(isset($_GET['total']))
     {
@@ -53,7 +53,7 @@
             
     <div class="pagamento">   
       <!--FORMULÁRIO DE DADOS PARA CADASTRO-->
-      <form method="post" action="email.php"> 
+      <form method="post" action="mailto:beatriz.trindade.work@gmail.com"> 
           <p>Para finalizar, preencha com as credenciais de login desejadas</p> 
           
           <p> 
