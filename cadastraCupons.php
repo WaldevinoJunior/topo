@@ -186,7 +186,7 @@
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="cpf">Curso</label>
-                                        <select name="idCurso">
+                                        <select name="nomecurso">
                                         <option value="Geral">Geral</option>
                                         <?php
                                         $curso = "SELECT * FROM cursos";

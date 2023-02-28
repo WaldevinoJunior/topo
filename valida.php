@@ -328,11 +328,18 @@ if(isset($_POST['enviareditarAfiliado'])){
 if(isset($_POST['cadastraCupom'])){
 	$validade = clear($_POST['validade']);
 	$quant = clear($_POST['quantidade']);
-	$idCurso = clear($_POST['idCurso']);
+	$nomecurso = clear($_POST['nomecurso']);
 	$codigo = clear($_POST['codigo']);
 	$desconto = clear($_POST['desconto']);
 	$cupomAfi = clear($_POST['afiliados']);
-	$cadastraCupom = "INSERT INTO cupons(Validade, Quantidade, Nome_curso,Codigo, Desconto, ID_afiliados)  VALUES('{$validade}','{$quant}','{$idCurso}','{$codigo}','{$desconto}','{$cupomAfi}')";
+	$cursoId = "SELECT ID_Curso FROM cursos WHERE Nome_curso = '{$nomecurso}'";
+	$cId = $mysqli->query($cursoId) or die ($mysqli->error);
+	if(mysqli_num_rows($cId) == 0){
+		$idCurso = 0;
+	}
+	$cId2 = $mysqli->query($cursoId) or die ($mysqli->error);
+	$idCurso = mysqli_fetch_array($cId2)[0];
+	$cadastraCupom = "INSERT INTO cupons(Validade, Quantidade, Nome_Curso,Codigo, Desconto, ID_afiliados,ID_Curso)  VALUES('{$validade}','{$quant}','{$nomecurso}','{$codigo}','{$desconto}','{$cupomAfi}','{$idCurso}')";
 	$cadastraC = $mysqli->query($cadastraCupom) or die ($mysqli->error);
 	header('Location: ./cadastraCupons.php');
 }

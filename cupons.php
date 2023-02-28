@@ -188,7 +188,7 @@
                 $c['Validade'] = date('d/m/Y', strtotime($c['Validade']));
                 echo "<tr>
                     <td>".$c['Validade']."</td>
-                    <td>".$c['Nome_curso']."</td>
+                    <td>".$c['Nome_Curso']."</td>
                     <td>".$c['Codigo']."</td>
                     <td>".($c['Desconto']*100)."%</td>
                     <td>";if($c['ID_afiliados'] == 0){echo "Podium";}
