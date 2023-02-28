@@ -824,7 +824,6 @@ if(isset($_POST['desconto'])){
  $encontrou = false;
         while($linha=mysqli_fetch_array($consulta))    {
             $encontrou = true;
-            echo "<br> QUANT: ".$linha[1]."";
              $hoje = date('Y-m-d');
             $desc = $linha[6];
             $total = ((float)$preco) - (((float)$preco) * ($desc));
