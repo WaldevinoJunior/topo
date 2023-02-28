@@ -816,8 +816,6 @@ if(isset($_POST['desconto'])){
     $cupons=$_POST['cupom']; 
     $id_Curso = $_POST['id'];
     $preco = $_POST['preco'];
-    $desc = 0.2;
-    $total = ((float)$preco) - (((float)$preco) * ($desc));
    // echo "<br> Total do Curso: ".$total."";
 //     echo "<br> Preço do Curso: ".$preco."";
   //   echo "<br> Desc do Curso: ".$desc."";
@@ -826,9 +824,9 @@ if(isset($_POST['desconto'])){
  $encontrou = false;
         while($linha=mysqli_fetch_array($consulta))    {
             $encontrou = true;
-            echo "<br> QUANT: ".$linha[1]."";
              $hoje = date('Y-m-d');
-            
+            $desc = $linha[6];
+            $total = ((float)$preco) - (((float)$preco) * ($desc));
             if(($linha[1]!=0) && ($linha[2]>=$hoje)){
                 $linha[1]--;
                 echo $linha[1];
