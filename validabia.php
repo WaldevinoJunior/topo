@@ -830,7 +830,10 @@ if(isset($_POST['desconto'])){
             $hoje = date('Y-m-d');
             $desc = $linha[6];
             $total = ((float)$preco) - (((float)$preco) * ($desc));
-            if(($linha[1]!=0) && ($linha[2]>=$hoje) && (($linha[3]==$id_Curso)||($linha[3]==0))){
+        
+        //Os cupons que não são para um curso específico, deverão possuir ID_Curso = 0
+        
+        if(($linha[1]!=0) && ($linha[2]>=$hoje) && (($linha[3]==$id_Curso)||($linha[3]==0))){
                 $linha[1]--;
                 $consulta1 = $mysqli->query("SELECT Nome from afiliados where ID_afiliados='$linha[4]'");
                 $result1 = mysqli_fetch_array($consulta1);
