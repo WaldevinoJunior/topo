@@ -15,8 +15,8 @@
 
 	<?php
 		include_once("pixheader.php"); 
-    if(isset($_GET['id_curso'])){
-    $id_Curso = $_GET['id_curso'];
+    if(isset($_GET['id'])){
+    $id_Curso = $_GET['id'];
     }
     if(isset($_GET['total']))
     {
@@ -27,7 +27,12 @@
         $total= $_GET['totalsdesc'];
     
         
-    }    ?>
+    }    
+    
+    if(isset($_GET['nome_curso'])){
+    $nome_Curso = $_GET['nome_curso'];
+    }
+    ?>
     
     
 
@@ -53,7 +58,7 @@
             
     <div class="pagamento">   
       <!--FORMULÁRIO DE DADOS PARA CADASTRO-->
-      <form method="post" action="mailto:beatriz.trindade.work@gmail.com"> 
+      <form method="post" action="email_envio.php"> 
           <p>Para finalizar, preencha com as credenciais de login desejadas:</p> 
           
           <p> 
@@ -67,7 +72,7 @@
            
           <p> 
             <label for="tel">Telefone </label>
-              <input id="tel" name="tel" required="required" type="tel" placeholder="" /> 
+              <input id="tel" name="tel" required="required" type="tel" placeholder="(32)99994-7866" /> 
           </p>
           
           <p> 
@@ -80,13 +85,30 @@
               <input id="senha" name="senha" required="required" type="password" placeholder="pedro1234" /> 
           </p>
            <br>
+              <input id="id_Curso" name="id_Curso" type="hidden" value="<?php if (isset($id_Curso)) { echo $id_Curso; } ?>"  /> 
+              <input id="total" name="total" type="hidden" value="<?php if (isset($total)) { echo $total; } ?>"  />
+              <input id="nome_curso" name="nome_curso" type="hidden" value="<?php if (isset($nome_Curso)) { echo $nome_Curso; } ?>"  /> 
           <p> 
-            <input type="submit" name="cadastrar" value="Cadastrar" /> 
+            <input type="submit" class="redirect" name="cadastrar" value="Cadastrar" /> 
           </p>
            
  
 </form>
 
+        <!--<script>
+         
+            var submit = document.getElementsByClassName('redirect');
+            for(var i = 0; i < links.length; i++){
+                
+                submit[i].addEventListener("click", function(){
+                    
+                    alert("Dados enviados com sucesso, aguarde nosso contato!");
+                    
+                    
+                    
+                })
+            }
+        </script>-->
 
             </div>
                 

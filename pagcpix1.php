@@ -32,7 +32,6 @@ session_start();
     }
     if(isset($_POST['quantinput']))
     {
-        echo $_POST['quantinput'];
         ?>
     <script> quantinput = "<?php echo $_POST['quantinput']; ?>"; </script>
     <?php
@@ -43,8 +42,8 @@ session_start();
         ?>
         <script>
           desc = "<?php echo $desc; ?>";
-            console.log(desc);
-            console.log(desc);
+            //console.log(desc);
+           
     </script>
             <?php
         
@@ -111,10 +110,10 @@ while($linha=mysqli_fetch_array($consulta))
                 
                 var containerCursos = document.getElementById('cursos');
                 items.map((val) => {
-                    console.log(val.preco);
-                    console.log(val.id);
+                    //console.log(val.preco);
+                    //console.log(val.id);
                     
-                    containerCursos.innerHTML+='<div class="produto-single"> <p> Curso de '+val.nome+' </p> <p> Preço: R$'+val.preco+' </p> <form method="post" action"pagcpix1.php"> <input id="quantinput" min="0" max="10" name="quantinput" type="number" /> <input type="submit" class="button" key="'+val.id+'" name="button" value="Enviar ao Carrinho" /></form> </br> </div>';
+                    containerCursos.innerHTML+='<div class="produto-single"> <p> Curso de '+val.nome+' </p> <p> Preço: R$'+val.preco+' </p> <form method="post" action"pagcpix1.php"> <p> <input id="quantinput" min="0" max="10" name="quantinput" type="number" value="1" /> </p> <p> <input type="submit" class="button" key="'+val.id+'" name="button" value="Enviar ao Carrinho" /> </p> </form> </br> </div>';
                 
                 })
                 
@@ -129,7 +128,7 @@ while($linha=mysqli_fetch_array($consulta))
                 items.map((val) => {
                       var total = val.quant * val.preco;
                     
-                   containerCarrinho.innerHTML+='<div class="carrinho-single"> <p id="p3"> </p> <p>'+val.nome+' </p> <p>'+val.quant+'un </p> <p id="total"> Total a pagar: R$'+total+' </p>  <form method="post" action="validabia.php"> <label class="desconto" for="cupom"> Digite um cupom </label> <input id="cupom" name="cupom" type="text" placeholder="PAG-10"/> <input id="id" name="id" type="hidden" value="'+val.id+'"/> <input id="preco" name="preco" type="hidden" value="'+total+'"/> <input type="submit" name="desconto" value="Desconto" /></form> <a class="button" href="finalizapix.php?totalsdesc='+total+'"> Continuar </a> </div>';
+                   containerCarrinho.innerHTML+='<div class="carrinho-single"> <p id="p3"> </p> <p>'+val.nome+' </p> <p>'+val.quant+'un </p> <p id="total"> Total a pagar: R$'+total+' </p>  <form method="post" action="validabia.php"> <label class="desconto" for="cupom"> Digite um cupom </label> <input id="cupom" name="cupom" type="text" placeholder="PAG-10"/> <input id="id" name="id" type="hidden" value="'+val.id+'"/> <input id="nome_curso" name="nome_curso" type="hidden" value="'+val.nome+'"/> <input id="preco" name="preco" type="hidden" value="'+total+'"/> </br> <input type="submit" name="desconto" value="Desconto" /></form> <a class="button" href="finalizapix.php?id='+val.id+'&totalsdesc='+total+'&nome_curso='+val.nome+'"> Continuar </a> </div>';
                     
                    
                     
