@@ -21,16 +21,13 @@
   //echo "<br> Valor: R$".$total."";
   //echo "<br> Curso: ".$nome_curso."";
 
-   $arquivo = "
-    <html>
-    <p><b>$nome</b> comprou <b>$nome_curso</b>, realizou o pagamento de R$<b>$total</b> e respondeu ao formulário com os seguintes dados:</p>
-      <p><b>Nome: </b>$nome</p>
-      <p><b>E-mail: </b>$email</p>
-      <p><b>Telefone: </b>$tel</p>
-      <p><b>Login: </b>$login</p>
-      <p><b>Senha: </b>$senha</p>
-      <p>Este e-mail foi enviado em <b>$data_envio</b> às <b>$hora_envio</b></p>
-    </html>
+   $arquivo = " $nome comprou $nome_curso, realizou o pagamento de R$ $total e respondeu ao formulário com os seguintes dados:
+                Nome: $nome
+                E-mail: $email
+                Telefone: $tel
+                Login: $login
+                Senha: $senha
+                Este e-mail foi enviado em $data_envio às $hora_envio
   ";
   
   $destino = "beatriz.trindade.work@gmail.com";
