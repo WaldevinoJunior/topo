@@ -28,6 +28,10 @@
 	if($_SESSION['verifica'] != 1){
         header('Location: ./index.html');
     }
+    $data = date('Y-m-d');
+    if($_SESSION['data_limite']<$data){
+        header('Location: ./index.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -116,7 +120,12 @@
         <button class="btn btn-primary btn-sm" onclick="alteraH();">Meus Horários</button>
         <form action="valida.php" method="POST">
         
-        <button style="background-color:rgba(218, 12, 12, 0.872);" class="btn btn-danger btn-sm" name="sair" type="submit">Sair</button>   
+        <button style="background-color:rgba(218, 12, 12, 0.872);" class="btn btn-danger btn-sm" name="sair" type="submit">Sair</button> 
+        <?php
+        $dataatual = strtotime(date('Y-m-d'));
+        $datalimite = strtotime($_SESSION['data_limite']);
+        echo  "Dias para expirar o Acesso:".($datalimite - $dataatual)/60/60/24;
+        ?>
     </form>
     </div>
         </div>

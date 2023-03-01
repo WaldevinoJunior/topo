@@ -37,6 +37,7 @@ if(isset($_POST['submitindex'])){
 			if($_POST['Login'] == $c['Login'] &&  password_verify($_POST['Senha'], $c['Senha'])){
 				$_SESSION['nome'] = $c['Nome'];
 				$_SESSION['ID_Aluno'] = $c['ID_Aluno'];
+				$_SESSION['data_limite'] = $c['data_limite'];
 				header('Location: ./usuario.php');
 				$_SESSION['verifica'] = 1;
 			}
@@ -544,7 +545,7 @@ if(isset($_POST['cadastraAluno2'])){
 				$sqlcurso = "SELECT Horas FROM cursos WHERE ID_Curso = '{$_POST['ID_curso']}'";
 				$sqlc = $mysqli->query($sqlcurso) or die($mysqli->error);
 				$carga = (mysqli_fetch_array($sqlc)[0])/8;
-				$datalimite = date('Y-m-d', strtotime("+$carga months",strtotime($dataatual))); 
+				$datalimite = date('Y-m-d', strtotime("+ 1 months",strtotime($dataatual))); 
 				$dataaluno = "UPDATE alunos SET data_limite = '{$datalimite}' WHERE Login = '{$_POST['login']}'";
 				$datAluno = $mysqli->query($dataaluno) or die($mysqli->error);
 			if($_POST['perfil'] == "afiliado"){
