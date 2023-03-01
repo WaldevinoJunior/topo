@@ -815,6 +815,7 @@ if(isset($_POST['desconto'])){
     
     $cupons=$_POST['cupom']; 
     $id_Curso = $_POST['id'];
+    $nome_Curso = $_POST['nome_curso'];
     $preco = $_POST['preco'];
    // echo "<br> Total do Curso: ".$total."";
 //     echo "<br> Preço do Curso: ".$preco."";
@@ -832,7 +833,7 @@ if(isset($_POST['desconto'])){
                 echo $linha[1];
                 $result = mysqli_query($mysqli, "UPDATE cupons set Quantidade = '$linha[1]' where codigo = '$cupons' "); 
                        // header('Location: ./finalizapix.php');
-                 header('Location: ./finalizapix.php?id_curso='.$id_Curso.'&total='.$total.'');
+                 header('Location: ./finalizapix.php?id='.$id_Curso.'&total='.$total.'&nome_curso='.$nome_Curso.'');
             }
             else{
                 header('Location: ./pagcpix1.php?id='.$id_Curso.'&msg='.$msg.'');
