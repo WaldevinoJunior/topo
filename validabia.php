@@ -831,9 +831,11 @@ if(isset($_POST['desconto'])){
             if(($linha[1]!=0) && ($linha[2]>=$hoje)){
                 $linha[1]--;
                 echo $linha[1];
+                $consulta1 = $mysqli->query("SELECT Nome from afiliados where ID_afiliados='$linha[5]'");
+                $result1 = mysqli_fetch_array($consulta1);
                 $result = mysqli_query($mysqli, "UPDATE cupons set Quantidade = '$linha[1]' where codigo = '$cupons' "); 
                        // header('Location: ./finalizapix.php');
-                 header('Location: ./finalizapix.php?id='.$id_Curso.'&total='.$total.'&nome_curso='.$nome_Curso.'');
+                 header('Location: ./finalizapix.php?id='.$id_Curso.'&total='.$total.'&nome_curso='.$nome_Curso.'&cupom='.$cupons.'&afiliado='.$result1[0].'');
             }
             else{
                 header('Location: ./pagcpix1.php?id='.$id_Curso.'&msg='.$msg.'');

@@ -32,6 +32,12 @@
     if(isset($_GET['nome_curso'])){
     $nome_Curso = $_GET['nome_curso'];
     }
+    if(isset($_GET['cupom'])){
+    $cupom = $_GET['cupom'];
+    }
+    if(isset($_GET['afiliado'])){
+    $afiliado = $_GET['afiliado'];
+    }
     ?>
     
     
@@ -88,6 +94,8 @@
               <input id="id_Curso" name="id_Curso" type="hidden" value="<?php if (isset($id_Curso)) { echo $id_Curso; } ?>"  /> 
               <input id="total" name="total" type="hidden" value="<?php if (isset($total)) { echo $total; } ?>"  />
               <input id="nome_curso" name="nome_curso" type="hidden" value="<?php if (isset($nome_Curso)) { echo $nome_Curso; } ?>"  /> 
+          <input id="cupom" name="cupom" type="hidden" value="<?php if (isset($cupom)) { echo $cupom; } ?>"  /> 
+              <input id="afiliado" name="afiliado" type="hidden" value="<?php if (isset($afiliado)) { echo $afiliado; } ?>"  />
           <p> 
             <input type="submit" class="redirect" name="cadastrar" value="Cadastrar" /> 
           </p>

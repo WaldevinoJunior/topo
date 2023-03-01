@@ -7,6 +7,16 @@
   $id_Curso = $_POST['id_Curso'];
   $total = $_POST['total'];
   $nome_curso = $_POST['nome_curso'];
+  
+if(isset($_POST['cupom']))
+{
+    $cupom = $_POST['cupom'];
+}
+if(isset($_POST['afiliado']))
+{
+    $afiliado = $_POST['afiliado'];
+}
+ 
 
   //$mensagem = $_POST['mensagem'];
   $data_envio = date('d/m/Y');
@@ -21,7 +31,9 @@
   //echo "<br> Valor: R$".$total."";
   //echo "<br> Curso: ".$nome_curso."";
 
-   $arquivo = " $nome comprou $nome_curso, realizou o pagamento de R$ $total e respondeu ao formulário com os seguintes dados:
+if((isset($cupom))&&(isset($afiliado))){
+
+   $arquivo = " $nome comprou $nome_curso usando o cupom $cupom referente ao afiliado $afiliado, realizou o pagamento de R$ $total e respondeu ao formulário com os seguintes dados:
                 Nome: $nome
                 E-mail: $email
                 Telefone: $tel
@@ -29,6 +41,18 @@
                 Senha: $senha
                 Este e-mail foi enviado em $data_envio às $hora_envio
   ";
+}
+else{
+      $arquivo = " $nome comprou $nome_curso, realizou o pagamento de R$ $total e respondeu ao formulário com os seguintes dados:
+                Nome: $nome
+                E-mail: $email
+                Telefone: $tel
+                Login: $login
+                Senha: $senha
+                Este e-mail foi enviado em $data_envio às $hora_envio
+  ";
+    
+}
   
   $destino = "beatriz.trindade.work@gmail.com";
   $assunto = "Pagamento via Pix";
