@@ -28,7 +28,8 @@ session_start();
     if(isset($_GET['msg'])) 
     {
         $msg = $_GET['msg'];
-        echo '<script>alert("Cupom Expirado ou Inválido!")</script>';
+        echo '<script>alert("Cupom Expirado ou Inválido!") </script>';
+  echo "<meta http-equiv='refresh' content='0;URL=./pagcpix1.php?id=".$id_curso."'>";
     }
     if(isset($_POST['quantinput']))
     {
