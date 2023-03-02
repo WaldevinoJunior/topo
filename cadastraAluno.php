@@ -1,5 +1,5 @@
 <?php 
-    include("valida.php");
+    include("validabia.php");
     $consultaAlunos = "SELECT * from alunos";
     $consultaColab = "SELECT * from colaboradores";
     $consultaCursos = "SELECT * from cursos";
@@ -403,6 +403,13 @@
 
                                 <input class="btn btn-success mr-2" type="submit" value="Enviar" name="cadastraAluno2">
                                 </div>
+                <a href="./testedompdf.php?cpf='.$_POST['cpf'].'"> </a>
+                                <div class="d-flex justify-content-center">
+                                <a  href="./admin.php" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:70px;height:40px;font-size:16px;color:white;">Voltar</a>
+
+                                <input class="btn btn-success mr-2" type="submit" value="Gerar PDF" name="gerarPDF">
+                                </div>
+            
                             </form>
                         </div>     
                     </div>
