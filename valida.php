@@ -1,5 +1,6 @@
 <?php
 //FAZ A CONEXAO COM O BANCO DE DADOS PODIUM
+//a
 $host = "localhost";
 $user = "root";
 $pass = "bia999665";

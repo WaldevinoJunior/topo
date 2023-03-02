@@ -396,7 +396,7 @@
                                       </div>
                                     </div>
                                 </div>
-
+<!-- q -->
                 <!--BOTOES AO FIM DA SESSÃO-->
                                 <div class="d-flex justify-content-center">
                                 <a  href="./admin.php" class="btn btn-success mr-2" style="display:flex;background-color:blue;width:70px;height:40px;font-size:16px;color:white;">Voltar</a>
