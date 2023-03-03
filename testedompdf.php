@@ -44,21 +44,42 @@ $cpf = $_GET['cpf'];
 
    
      $aluno = $mysqli->query("SELECT * FROM alunos WHERE CPF = '{$cpf}'");
- while($caluno = mysqli_fetch_array($aluno)){
+ 
+      while($caluno = mysqli_fetch_array($aluno)){
             $nome = $caluno['Nome'];
             $cep =  $caluno['CEP'];
             $id_Aluno =  $caluno['ID_Aluno'];
         }
-    $Curso = $mysqli->query("SELECT * FROM aluno_curso_progressos WHERE ID_Aluno = '{$id_Aluno}'");
- while($ccurso = mysqli_fetch_array($Curso)){
-            $id_Curso = $ccurso['ID_curso'];
-        }
-    $Nome_curso = $mysqli->query("SELECT * FROM cursos WHERE ID_Curso = '{$id_Curso}'");
+    $Curso = $mysqli->query("SELECT ID_Curso FROM aluno_curso_progressos WHERE ID_Aluno = '{$id_Aluno}'");
+ $cont=0;
+      while($ccurso = mysqli_fetch_array($Curso)){
+     if(sizeof($ccurso)>1){
+         $Nome_curso = $mysqli->query("SELECT Nome_curso FROM cursos WHERE ID_Curso = '{$ccurso[$cont]}'");
+          echo $ccurso[$cont];
+          
+      $cont++;
+     }
+          else{
+              $Nome_curso = $mysqli->query("SELECT Nome_curso FROM cursos WHERE ID_Curso = '{$ccurso}'");
+          echo $ccurso;
+          }
+          
+      }
+      $nomeCurso = " ";
+    $cont=0;
  while($cNome_curso = mysqli_fetch_array($Nome_curso)){
-            $nomeCurso = $cNome_Curso['Nome_curso'];
-        }
+        if(sizeof($cNome_curso)>1){
+           $nomeCurso .=($cNome_curso[$cont] . '<BR>');}
+     else{
+         
+         $nomeCurso .=($cNome_curso);
+         
+     }
+        
     
-       
+      }
+      echo $nomeCurso;
+    /*
         //Envio do valor do buffer para a a classe
         //$dompdf->loadHtmlFile(__DIR__.'/teste.php');
         $dompdf->loadHtml('
@@ -101,12 +122,13 @@ $cpf = $_GET['cpf'];
      '
             
         );
+    
         //Renderização do arquivo PDF
         $dompdf->render();
 
         //Imprime o conteudo do pdf na tela
         header('Content-type: application/pdf');
         echo $dompdf->output();
-
+        */
 ?>
 
