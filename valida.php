@@ -1,6 +1,5 @@
-<?php
+﻿<?php
 //FAZ A CONEXAO COM O BANCO DE DADOS PODIUM
-//a
 $host = "localhost";
 $user = "root";
 $pass = "bia999665";
@@ -38,6 +37,7 @@ if(isset($_POST['submitindex'])){
 			if($_POST['Login'] == $c['Login'] &&  password_verify($_POST['Senha'], $c['Senha'])){
 				$_SESSION['nome'] = $c['Nome'];
 				$_SESSION['ID_Aluno'] = $c['ID_Aluno'];
+				$_SESSION['data_limite'] = $c['data_limite'];
 				header('Location: ./usuario.php');
 				$_SESSION['verifica'] = 1;
 			}
@@ -249,15 +249,32 @@ if(isset($_POST['cadastraAluno'])){
 	$dataatual = date('y/m/d');
 	$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$_POST['curso']}','{$idAluno}', '1' , '1', '{$dataatual}')";
 	$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
+	//header('Location: ./admin.php');
+
+
+?>
+
+    <script>
+        var cpf = "<?php echo $_POST['cpf']; ?>"
+        var resultado = confirm("Deseja imprimir o contrato a partir dos dados inseridos?");
+        if (resultado == true) {
+               window.location.href=("./testedompdf.php?cpf="+cpf+"");
+        }
+        else{
+          window.location.href=("./cadastraAluno.php");
+        }
+
+    </script>
+	
+//header('Location: ./cadastraAluno.php');
     
-	header('Location: ./admin.php');
+<?php
+
 }
 if(isset($_POST['gerarPDF']))
 {
     header('Location: ./testedompdf.php?cpf='.$_POST['cpf'].'');
 }
-
-    
 
 if(isset($_POST['enviareditarColab'])){
 	$consulta = "UPDATE colaboradores SET Nome = '{$_POST['nome']}', Nascimento = '{$_POST['nascimento']}',Email = '{$_POST['email']}',
@@ -337,9 +354,18 @@ if(isset($_POST['enviareditarAfiliado'])){
 if(isset($_POST['cadastraCupom'])){
 	$validade = clear($_POST['validade']);
 	$quant = clear($_POST['quantidade']);
-	$idCurso = clear($_POST['idCurso']);
+	$nomecurso = clear($_POST['nomecurso']);
 	$codigo = clear($_POST['codigo']);
-	$cadastraCupom = "INSERT INTO cupons(Validade, Quantidade, ID_Curso,Codigo)  VALUES('{$validade}','{$quant}','{$idCurso}','{$codigo}')";
+	$desconto = clear($_POST['desconto']);
+	$cupomAfi = clear($_POST['afiliados']);
+	$cursoId = "SELECT ID_Curso FROM cursos WHERE Nome_curso = '{$nomecurso}'";
+	$cId = $mysqli->query($cursoId) or die ($mysqli->error);
+	if(mysqli_num_rows($cId) == 0){
+		$idCurso = 0;
+	}
+	$cId2 = $mysqli->query($cursoId) or die ($mysqli->error);
+	$idCurso = mysqli_fetch_array($cId2)[0];
+	$cadastraCupom = "INSERT INTO cupons(Validade, Quantidade, Nome_Curso,Codigo, Desconto, ID_afiliados,ID_Curso)  VALUES('{$validade}','{$quant}','{$nomecurso}','{$codigo}','{$desconto}','{$cupomAfi}','{$idCurso}')";
 	$cadastraC = $mysqli->query($cadastraCupom) or die ($mysqli->error);
 	header('Location: ./cadastraCupons.php');
 }
@@ -500,8 +526,7 @@ if(isset($_POST['cadastraAluno2'])){
 	$veri = $mysqli->query($verifica) or die($mysqli->error);
 	while($c = mysqli_fetch_array($veri)){
 		if($_POST['login'] == $c['Login']){
-            header('Location: ./testedompdf.php?cpf='.$_POST['cpf'].'');
-			//header('Location: ./cadastraAluno.php');
+			header('Location: ./cadastraAluno.php');
 			exit;
 		}
 	}
@@ -545,7 +570,7 @@ if(isset($_POST['cadastraAluno2'])){
 				$sqlcurso = "SELECT Horas FROM cursos WHERE ID_Curso = '{$_POST['ID_curso']}'";
 				$sqlc = $mysqli->query($sqlcurso) or die($mysqli->error);
 				$carga = (mysqli_fetch_array($sqlc)[0])/8;
-				$datalimite = date('Y-m-d', strtotime("+$carga months",strtotime($dataatual))); 
+				$datalimite = date('Y-m-d', strtotime("+ 1 months",strtotime($dataatual))); 
 				$dataaluno = "UPDATE alunos SET data_limite = '{$datalimite}' WHERE Login = '{$_POST['login']}'";
 				$datAluno = $mysqli->query($dataaluno) or die($mysqli->error);
 			if($_POST['perfil'] == "afiliado"){
@@ -569,8 +594,32 @@ if(isset($_POST['cadastraAluno2'])){
 				$sql2 = $mysqli->query($consulta2) or die($mysqli->error);
 		}
 	}
-	header('Location: ./cadastraAluno.php');
+	//header('Location: ./cadastraAluno.php');
+?>
+
+    <script>
+        var cpf = "<?php echo $_POST['cpf']; ?>"
+        var resultado = confirm("Deseja imprimir o contrato a partir dos dados inseridos?");
+        if (resultado == true) {
+               window.location.href=("./testedompdf.php?cpf="+cpf+"");
+        }
+        else{
+          window.location.href=("./cadastraAluno.php");
+        }
+
+    </script>
+	
+//header('Location: ./cadastraAluno.php');
+    
+<?php
+
 }
+if(isset($_POST['gerarPDF']))
+{
+    header('Location: ./testedompdf.php?cpf='.$_POST['cpf'].'');
+}
+
+
 if(isset($_POST['alunoCurso'])){
 	$_POST['alunoid'] = clear($_POST['alunoid']);
 	$_POST['nome'] = clear($_POST['nome']);
@@ -706,7 +755,7 @@ if(isset($_POST['presenca'])){
 	header('Location: ./listaPresenca.php');
 }
 if(isset($_GET['back'])){
-	$output = shell_exec('C:\xampp2\mysql\bin\mysqldump -u root podium > backup.sql');
+	$output = shell_exec('C:\xampp\mysql\bin\mysqldump -u root podium > C:\backup_do_bancoTopo\backup.sql');
 	header('Location: ./admin.php');
 }
 if(isset($_POST['deletarCursoHorario'])){
@@ -844,3 +893,4 @@ else{
             echo "<img src='data:image;base64, ".base64_encode($row['imagem'])."'>";
         ?>>*/
 ?>
+    
