@@ -11,6 +11,7 @@
 if(isset($_POST['cupom']))
 {
     $cupom = $_POST['cupom'];
+   
 }
 if(isset($_POST['afiliado']))
 {
@@ -31,9 +32,22 @@ if(isset($_POST['afiliado']))
   //echo "<br> Valor: R$".$total."";
   //echo "<br> Curso: ".$nome_curso."";
 
-if((isset($cupom))&&(isset($afiliado))){
+if((empty($cupom))&&(empty($afiliado))){
+   echo "OFF";
+    $arquivo = "$nome comprou $nome_curso, realizou o pagamento de R$ $total e respondeu ao formulário com os seguintes dados:
+                Nome: $nome
+                E-mail: $email
+                Telefone: $tel
+                Login: $login
+                Senha: $senha
+                Este e-mail foi enviado em $data_envio às $hora_envio
+  ";
+       
+   }
 
-   $arquivo = " $nome comprou $nome_curso usando o cupom $cupom referente ao afiliado $afiliado, realizou o pagamento de R$ $total e respondeu ao formulário com os seguintes dados:
+    else{
+        echo "ON";
+     $arquivo = "$nome comprou $nome_curso usando o cupom $cupom referente ao afiliado $afiliado, realizou o pagamento de R$ $total e respondeu ao formulário com os seguintes dados:
                 Nome: $nome
                 E-mail: $email
                 Telefone: $tel
@@ -41,18 +55,7 @@ if((isset($cupom))&&(isset($afiliado))){
                 Senha: $senha
                 Este e-mail foi enviado em $data_envio às $hora_envio
   ";
-}
-else{
-      $arquivo = " $nome comprou $nome_curso, realizou o pagamento de R$ $total e respondeu ao formulário com os seguintes dados:
-                Nome: $nome
-                E-mail: $email
-                Telefone: $tel
-                Login: $login
-                Senha: $senha
-                Este e-mail foi enviado em $data_envio às $hora_envio
-  ";
-    
-}
+    }
   
   $destino = "beatriz.trindade.work@gmail.com";
   $assunto = "Pagamento via Pix";
