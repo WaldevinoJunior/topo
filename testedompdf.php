@@ -15,7 +15,15 @@
     echo $cpdf;
     */
 //a
-  
+$cpf = $_GET['cpf'];
+
+?>
+  <script> var cpf = "<?php echo $cpf ?>"
+    
+    console.log(cpf);
+    
+    </script>
+<?php
  require __DIR__.'/vendor/autoload.php';
         use Dompdf\Dompdf;
         use Dompdf\Options;
@@ -31,7 +39,8 @@
         $pass = "bia999665";
         $db = "podium";
         $mysqli = new mysqli($host, $user, $pass, $db);
-$cpf = $_GET['cpf'];
+
+
 
    
      $aluno = $mysqli->query("SELECT * FROM alunos WHERE CPF = '{$cpf}'");
