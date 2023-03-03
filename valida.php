@@ -1,6 +1,5 @@
-<?php
+﻿<?php
 //FAZ A CONEXAO COM O BANCO DE DADOS PODIUM
-//a
 $host = "localhost";
 $user = "root";
 $pass = "bia999665";
@@ -250,15 +249,32 @@ if(isset($_POST['cadastraAluno'])){
 	$dataatual = date('y/m/d');
 	$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$_POST['curso']}','{$idAluno}', '1' , '1', '{$dataatual}')";
 	$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
+	//header('Location: ./admin.php');
+
+
+?>
+
+    <script>
+        var cpf = "<?php echo $_POST['cpf']; ?>"
+        var resultado = confirm("Deseja imprimir o contrato a partir dos dados inseridos?");
+        if (resultado == true) {
+               window.location.href=("./testedompdf.php?cpf="+cpf+"");
+        }
+        else{
+          window.location.href=("./cadastraAluno.php");
+        }
+
+    </script>
+	
+//header('Location: ./cadastraAluno.php');
     
-	header('Location: ./admin.php');
+<?php
+
 }
 if(isset($_POST['gerarPDF']))
 {
     header('Location: ./testedompdf.php?cpf='.$_POST['cpf'].'');
 }
-
-    
 
 if(isset($_POST['enviareditarColab'])){
 	$consulta = "UPDATE colaboradores SET Nome = '{$_POST['nome']}', Nascimento = '{$_POST['nascimento']}',Email = '{$_POST['email']}',
@@ -510,8 +526,7 @@ if(isset($_POST['cadastraAluno2'])){
 	$veri = $mysqli->query($verifica) or die($mysqli->error);
 	while($c = mysqli_fetch_array($veri)){
 		if($_POST['login'] == $c['Login']){
-            header('Location: ./testedompdf.php?cpf='.$_POST['cpf'].'');
-			//header('Location: ./cadastraAluno.php');
+			header('Location: ./cadastraAluno.php');
 			exit;
 		}
 	}
@@ -579,8 +594,32 @@ if(isset($_POST['cadastraAluno2'])){
 				$sql2 = $mysqli->query($consulta2) or die($mysqli->error);
 		}
 	}
-	header('Location: ./cadastraAluno.php');
+	//header('Location: ./cadastraAluno.php');
+?>
+
+    <script>
+        var cpf = "<?php echo $_POST['cpf']; ?>"
+        var resultado = confirm("Deseja imprimir o contrato a partir dos dados inseridos?");
+        if (resultado == true) {
+               window.location.href=("./testedompdf.php?cpf="+cpf+"");
+        }
+        else{
+          window.location.href=("./cadastraAluno.php");
+        }
+
+    </script>
+	
+//header('Location: ./cadastraAluno.php');
+    
+<?php
+
 }
+if(isset($_POST['gerarPDF']))
+{
+    header('Location: ./testedompdf.php?cpf='.$_POST['cpf'].'');
+}
+
+
 if(isset($_POST['alunoCurso'])){
 	$_POST['alunoid'] = clear($_POST['alunoid']);
 	$_POST['nome'] = clear($_POST['nome']);
@@ -854,3 +893,4 @@ else{
             echo "<img src='data:image;base64, ".base64_encode($row['imagem'])."'>";
         ?>>*/
 ?>
+    

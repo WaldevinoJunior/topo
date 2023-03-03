@@ -275,6 +275,7 @@
 
             <div class='d-flex justify-content-center'>
             <a href='listaAluno.php' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Voltar</a>
+             <a href='testedompdf.php?cpf=".$cAlunos['CPF']."' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Gerar Contrato</a>
             </div>
         </form>
     </div>     

@@ -32,8 +32,9 @@
         $db = "podium";
         $mysqli = new mysqli($host, $user, $pass, $db);
 $cpf = $_GET['cpf'];
+
    
-        $aluno = $mysqli->query("SELECT * FROM alunos WHERE CPF = '{$cpf}'");
+     $aluno = $mysqli->query("SELECT * FROM alunos WHERE CPF = '{$cpf}'");
  while($caluno = mysqli_fetch_array($aluno)){
             $nome = $caluno['Nome'];
             $cep =  $caluno['CEP'];
@@ -57,7 +58,7 @@ $cpf = $_GET['cpf'];
         <head>
             <meta charset="UTF-8">
             
-            <title>Certificado - </title>
+            <title>Contrato </title>
             <style>
             *{
                 margin:0;
@@ -75,7 +76,7 @@ $cpf = $_GET['cpf'];
         <body>
         <div>
         
-            <p style="font-size:15px;margin-left:100px;margin-top:400px;margin-bottom:40px;">O aluno(a) '.$nome.' de CEP '.$cep.' matriculou-se no treinamento de '.$nomeCurso.', ministrado por Topo Treinamentos.</p>
+            <p style="font-size:15px;margin-left:100px;margin-top:400px;margin-bottom:40px;">O aluno(a) '.$nome.' de CPF '.$cpf.', residente do CEP '.$cep.' matriculou-se no treinamento de '.$nomeCurso.', ministrado por Topo Treinamentos.</p>
             <section style="display:flex">
                     
             </section>
