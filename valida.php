@@ -563,6 +563,7 @@ if(isset($_POST['cadastraAluno2'])){
 	$sqlcpf = $mysqli->query($consultaCpf) or die($mysqli->error);
 	$idAluno = mysqli_fetch_array($sqlcpf)[0];
 	$dataatual = date('Y-m-d');
+    $cpf = $_POST['cpf'];
 	for($i = 0;$i<$_POST['contcurso'];$i++){
 		if(isset($_POST['curso'.$i.''])){
 				$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$_POST['curso'.$i.'']}','{$idAluno}', '1' , '1', '{$dataatual}')";
@@ -594,11 +595,11 @@ if(isset($_POST['cadastraAluno2'])){
 				$sql2 = $mysqli->query($consulta2) or die($mysqli->error);
 		}
 	}
-	//header('Location: ./cadastraAluno.php');
+	header('Location: ./contratoecarne.php?cpf='.$cpf.'');
 ?>
 
-    <script>
-        var cpf = "<?php echo $_POST['cpf']; ?>"
+ <!--   <script>
+        
         var resultado = confirm("Deseja imprimir o contrato a partir dos dados inseridos?");
         if (resultado == true) {
                window.location.href=("./testedompdf.php?cpf="+cpf+"");
@@ -608,16 +609,14 @@ if(isset($_POST['cadastraAluno2'])){
         }
 
     </script>
+
 	
 //header('Location: ./cadastraAluno.php');
-    
+-->    
 <?php
 
 }
-if(isset($_POST['gerarPDF']))
-{
-    header('Location: ./testedompdf.php?cpf='.$_POST['cpf'].'');
-}
+
 
 
 if(isset($_POST['alunoCurso'])){
