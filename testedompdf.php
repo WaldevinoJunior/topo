@@ -50,36 +50,31 @@ $cpf = $_GET['cpf'];
             $cep =  $caluno['CEP'];
             $id_Aluno =  $caluno['ID_Aluno'];
         }
+     
     $Curso = $mysqli->query("SELECT ID_Curso FROM aluno_curso_progressos WHERE ID_Aluno = '{$id_Aluno}'");
- $cont=0;
-      while($ccurso = mysqli_fetch_array($Curso)){
-     if(sizeof($ccurso)>1){
-         $Nome_curso = $mysqli->query("SELECT Nome_curso FROM cursos WHERE ID_Curso = '{$ccurso[$cont]}'");
-          echo $ccurso[$cont];
-          
-      $cont++;
-     }
-          else{
-              $Nome_curso = $mysqli->query("SELECT Nome_curso FROM cursos WHERE ID_Curso = '{$ccurso}'");
-          echo $ccurso;
-          }
-          
+      $cid = [];
+      while($c=mysqli_fetch_array($Curso)){
+      $cid[]=$c['ID_Curso'];
       }
-      $nomeCurso = " ";
-    $cont=0;
- while($cNome_curso = mysqli_fetch_array($Nome_curso)){
-        if(sizeof($cNome_curso)>1){
-           $nomeCurso .=($cNome_curso[$cont] . '<BR>');}
-     else{
-         
-         $nomeCurso .=($cNome_curso);
-         
-     }
-        
+      
+    $nomeCurso = " ";
+      
+
+         $allcurso = $mysqli->query("SELECT * FROM cursos");
+      while($callcurso=mysqli_fetch_array($allcurso)){
+          for($i=0;$i<count($cid);$i++)
+          {
+              if($callcurso['ID_Curso']==$cid[$i])
+              {
+                  $nomeCurso .=($callcurso['Nome_curso'] . " , ");
+              }
+          }
     
       }
-      echo $nomeCurso;
-    /*
+
+     echo $nomeCurso;   
+    
+     
         //Envio do valor do buffer para a a classe
         //$dompdf->loadHtmlFile(__DIR__.'/teste.php');
         $dompdf->loadHtml('
@@ -106,7 +101,7 @@ $cpf = $_GET['cpf'];
         <body>
         <div>
         
-            <p style="font-size:15px;margin-left:100px;margin-top:400px;margin-bottom:40px;">O aluno(a) '.$nome.' de CPF '.$cpf.', residente do CEP '.$cep.' matriculou-se no treinamento de '.$nomeCurso.', ministrado por Topo Treinamentos.</p>
+            <p style="font-size:15px;margin-left:100px;margin-top:400px;margin-bottom:40px;">O aluno(a) '.$nome.' de CPF '.$cpf.', residente do CEP '.$cep.' matriculou-se no(s) treinamento(s) de '.$nomeCurso.' ministrado por Topo Treinamentos.</p>
             <section style="display:flex">
                     
             </section>
@@ -129,6 +124,6 @@ $cpf = $_GET['cpf'];
         //Imprime o conteudo do pdf na tela
         header('Content-type: application/pdf');
         echo $dompdf->output();
-        */
+    
 ?>
 
