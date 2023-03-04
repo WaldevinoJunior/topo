@@ -41,9 +41,10 @@ $cpf = $_GET['cpf'];
         $mysqli = new mysqli($host, $user, $pass, $db);
 
 
-
+     $parcelas = 6;
    
      $aluno = $mysqli->query("SELECT * FROM alunos WHERE CPF = '{$cpf}'");
+      
  
       while($caluno = mysqli_fetch_array($aluno)){
             $nome = $caluno['Nome'];
@@ -51,6 +52,7 @@ $cpf = $_GET['cpf'];
             $id_Aluno =  $caluno['ID_Aluno'];
             $data_limite = $caluno['data_limite'];
             $resp = $caluno['Responsavel'];
+          $cidade = $caluno['Cidade'];
             $end = $caluno['Rua']. " ".$caluno['Numero']." ".$caluno['Complemento']." ".$caluno['Cidade']." - ".$caluno['Estado'];
             $tel = $caluno['Telefone'];
             $nasc = $caluno['Nascimento'];
@@ -58,16 +60,41 @@ $cpf = $_GET['cpf'];
             $resptel = $caluno['Responsavel_numero'];
         }
     $franqueado = $mysqli->query("SELECT * FROM cursos_franqueados WHERE ID_Aluno = '{$id_Aluno}'");
+    $afiliado = $mysqli->query("SELECT * FROM cursos_afiliados WHERE ID_Aluno = '{$id_Aluno}'");
       
        while($cfranqueado=mysqli_fetch_array($franqueado)){
       $idfranqueado=$cfranqueado['ID_franqueador'];
            
       }
       
-      $nomefranqueado = $mysqli->query("SELECT Nome FROM franqueados WHERE ID_franqueador = '{$idfranqueado}'");
       
-
+      $nomefranqueado = $mysqli->query("SELECT * FROM franqueados WHERE ID_franqueados = '{$idfranqueado}'");
       
+ while($cnomefranqueado=mysqli_fetch_array($nomefranqueado)){
+      $nome_franqueado=$cnomefranqueado['Nome'];
+     $cnpj_franqueado=$cnomefranqueado['CNPJ'];
+     $tel_franqueado=$cnomefranqueado['Telefone'];
+    $end_franqueado = $cnomefranqueado['Rua']. " ".$cnomefranqueado['Numero']." ".$cnomefranqueado['Complemento']." - ".$cnomefranqueado['Bairro']." , ".$cnomefranqueado['Cidade']." - ".$cnomefranqueado['Estado'];
+           
+           
+      }
+      
+       while($cafiliado=mysqli_fetch_array($afiliado)){
+      $idafiliado=$cafiliado['ID_afiliados'];
+           
+           
+      }
+      
+      $nomeafiliado = $mysqli->query("SELECT * FROM afiliados WHERE ID_afiliados = '{$idafiliado}'");
+      
+      while($cnomeafiliado=mysqli_fetch_array($nomeafiliado)){
+      $nome_afiliado=$cnomeafiliado['Nome'];
+      $cnpj_afiliado=$cnomeafiliado['CNPJ'];
+     $tel_afiliado=$cnomeafiliado['Telefone'];
+    $end_afiliado = $cnomeafiliado['Rua']. " ".$cnomeafiliado['Numero']." ".$cnomeafiliado['Complemento']." - ".$cnomeafiliado['Bairro']." , ".$cnomeafiliado['Cidade']." - ".$cnomeafiliado['Estado'];
+           
+           
+      }
      
     $Curso = $mysqli->query("SELECT ID_Curso FROM aluno_curso_progressos WHERE ID_Aluno = '{$id_Aluno}'");
     $cid = [];
@@ -97,10 +124,26 @@ $cpf = $_GET['cpf'];
     
       }
 
-     echo $nomeCurso;   
+     $precopparcela = ($precototal)/($parcelas);   
     
-     
-        //Envio do valor do buffer para a a classe
+     if(!empty($nome_afiliado))
+     {
+         $emp_nome = $nome_afiliado;
+         $emp_cnpj = $cnpj_afiliado;
+         $emp_tel = $tel_afiliado;
+         $emp_end = $end_afiliado;
+     }
+        
+       if(!empty($nome_franqueado))
+     {
+         $emp_nome = $nome_franqueado;
+         $emp_cnpj = $cnpj_franqueado;
+         $emp_tel = $tel_franqueado;
+         $emp_end = $end_franqueado;
+     }
+      
+      
+      //Envio do valor do buffer para a a classe
         //$dompdf->loadHtmlFile(__DIR__.'/teste.php');
         $dompdf->loadHtml('
         <!DOCTYPE html>
@@ -118,85 +161,102 @@ $cpf = $_GET['cpf'];
                 font-family: arial, helvetica, sans-serif;
                 display: flex;
                 flex-direction: collum;
+position: relative;
+  width:600px;
+  margin: auto;
+
             }
-            div{
-                display: block;
+            .texto{
+                text-align: justify;
+                
+                
             }
-            .direito{
+            .break { page-break-before: always; }
+            .esquerdo{
             float:left;
-            width:200px;
+            width:300px;
+            display: block;
             }
             .littledireito{
             float:left;
             width:70px;
+            display: block;
             }
-            .esquerdo{
+            .direito{
             float:right;
             width:200px;
+            display: block;
+            position: fixed;
             }
             .littleesquerdo{
             float:right;
             width:70px;
+            display: block;
             }
             </style>
         </head>
         <body>
-        <div>
-        <p style="font-size:13px;margin-left:60%;margin-top:30px;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</p>
-        <div class="direito">
-        <p style="font-size:10px;margin-left:20%;margin-top:60px;">Nº do Contrato: </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;">Convênio: </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;">Nº de Parcelas:  </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;">Valor Entrada:  </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;">Valor do Curso com Desconto:  </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;">Valor do Curso sem Desconto: R$'.$precototal.',00 </p>
-        </br>
-        <p style="font-size:10px;margin-left:20%;margin-top:20px;">Cursos Contratados: </p>
-        <p style="font-size:10px;font-weight:bold;margin-left:20%;margin-top:10px;"> '.$nomeCurso.'</p>
-        </br>
-        <p style="font-size:10px;margin-left:20%;margin-top:20px;">Horários: </p>
-        <p style="font-size:10px;font-weight:bold;margin-left:20%;margin-top:10px;"> Dia e hora</p>
-        </br>
-        <p style="font-size:10px;font-weight:bold;margin-left:20%;margin-top:20px;">Contratado: </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Razão Social:</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Nome Fantasia:</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> CNPJ:</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Telefone:</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Endereço:</p>    
-         </br>
-        <p style="font-size:10px;font-weight:bold;margin-left:20%;margin-top:20px;">Contratante: </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Nome: '.$nome.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Endereço: '.$end.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> CEP: '.$cep.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Telefone: '.$tel.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Data de Nascimento: '.$nasc.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> RG: '.$rg.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> CPF: '.$cpf.'</p>
-         </br>
-        <p style="font-size:10px;font-weight:bold;margin-left:20%;margin-top:20px;">Representante Legal: </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Nome: '.$resp.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Endereço: '.$end.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> CEP: '.$cep.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Telefone: '.$resptel.'</p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> Data de Nascimento: </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> RG: </p>
-        <p style="font-size:10px;margin-left:20%;margin-top:10px;"> CPF: </p>
-        
-        </div>
+        <div class="info">
+        <p style="font-size:13px;font-weight:bold;margin-left:54%;margin-top:30px;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</p>
+        <p>____________________________________________________________________</p>
+    
         <div class="esquerdo">
-        <p style="font-size:10px;margin-right:0%;margin-top:60px;">Código do Aluno: '.$id_Aluno.' </p>
-        <p style="font-size:10px;margin-right:0%;margin-top:10px;">Desconto:  </p>
-        <p style="font-size:10px;margin-right:0%;margin-top:10px;">1º Vencimento: '.$data_limite.' </p>
-        <p style="font-size:10px;margin-right:0%;margin-top:10px;">Carga Horária: '.$cargahoraria.' </p>
-        <p style="font-size:10px;margin-right:0%;margin-top:10px;">Valor da Parcela com Desconto: </p>
-        <p style="font-size:10px;margin-right:0%;margin-top:10px;">Valor da Parcela sem Desconto: </p>
+        <p style="font-size:10px;margin-top:20px;">Nº do Contrato: - </p>
+        <p style="font-size:10px;margin-top:10px;">Convênio:  - </p>
+        <p style="font-size:10px;margin-top:10px;">Nº de Parcelas: '.$parcelas.' </p>
+        <p style="font-size:10px;margin-top:10px;">Valor Entrada:  R$0,00</p>
+        <p style="font-size:10px;margin-top:10px;">Valor do Curso com Desconto: R$'.$precototal.',00</p>
+        <p style="font-size:10px;margin-top:10px;">Valor do Curso sem Desconto: R$'.$precototal.',00 </p>
+        <p>____________________________________________________________________</p>
+        <p style="font-size:10px;margin-top:20px;">Cursos Contratados: </p>
+        <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$nomeCurso.'</p>
+        <p>____________________________________________________________________</p>
+        <p style="font-size:10px;margin-top:20px;">Horários: </p>
+        <p style="font-size:10px;font-weight:bold;margin-top:10px;"> Dia e hora</p>
+        <p>____________________________________________________________________</p>
+        <p style="font-size:10px;font-weight:bold;margin-top:20px;">Contratado: </p>
+        <p style="font-size:10px;margin-top:10px;"> Razão Social:</p>
+        <p style="font-size:10px;margin-top:10px;"> Nome Fantasia: '.$emp_nome.'</p>
+        <p style="font-size:10px;margin-top:10px;"> CNPJ: '.$emp_cnpj.'</p>
+        <p style="font-size:10px;margin-top:10px;"> Telefone: '.$emp_tel.'</p>
+        <p style="font-size:10px;margin-top:10px;"> Endereço: '.$emp_end.'</p>    
+        <p>____________________________________________________________________</p>
+        <p style="font-size:10px;font-weight:bold;margin-top:20px;">Contratante: </p>
+        <p style="font-size:10px;;margin-top:10px;"> Nome: '.$nome.'</p>
+        <p style="font-size:10px;margin-top:10px;"> Endereço: '.$end.'</p>
+        <p style="font-size:10px;margin-top:10px;"> CEP: '.$cep.'</p>
+        <p style="font-size:10px;margin-top:10px;"> Telefone: '.$tel.'</p>
+        <p style="font-size:10px;margin-top:10px;"> Data de Nascimento: '.$nasc.'</p>
+        <p style="font-size:10px;margin-top:10px;"> RG: '.$rg.'</p>
+        <p style="font-size:10px;margin-top:10px;"> CPF: '.$cpf.'</p>
+        <p>____________________________________________________________________</p>
+        <p style="font-size:10px;font-weight:bold;margin-top:20px;">Representante Legal: </p>
+        <p style="font-size:10px;margin-top:10px;"> Nome: '.$resp.'</p>
+        <p style="font-size:10px;margin-top:10px;"> Endereço: '.$end.'</p>
+        <p style="font-size:10px;margin-top:10px;"> CEP: '.$cep.'</p>
+        <p style="font-size:10px;margin-top:10px;"> Telefone: '.$resptel.'</p>
+        <p style="font-size:10px;margin-top:10px;"> Data de Nascimento: </p>
+        <p style="font-size:10px;margin-top:10px;"> RG: </p>
+        <p style="font-size:10px;margin-top:10px;"> CPF: </p>
+        </div>
+        <div class="direito">
+        <p style="font-size:10px;margin-left:1%;margin-top:20px;">Código do Aluno: '.$id_Aluno.' </p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">Desconto: 0% </p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">1º Vencimento: '.$data_limite.' </p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">Carga Horária: '.$cargahoraria.' </p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">Valor da Parcela com Desconto: R$'.$precopparcela.'</p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">Valor da Parcela sem Desconto: R$'.$precopparcela.' </p>
         </br>
-        <p style="font-size:10px;margin-right:0%;margin-top:20px;"> . </p>
-        <p style="font-size:10px;font-weight:bold;margin-right:0%;margin-top:10px;"> '.$horaCurso.' </p>
+        <p style="font-size:10px;margin-left:15%;margin-top:20px;"> . </p>
+        <p style="font-size:10px;font-weight:bold;margin-left:20%;margin-top:10px;"> '.$horaCurso.' </p>
         </div>
         
+        </div>
+        <p class="break"> </p>
         <div class="texto">
-        <p style="font-size:10px;margin-right:0%;margin-top:10px;">Através do presente Contrato de Prestação de Serviços, de um lado o Aluno ou responsável acima descrito, contrata os serviços do _____ cuja razão social é _____________, estabelecida no endereço ____________ e conforme as cláusulas e condições abaixo.</p>
+        </br>
+        </br>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">Através do presente Contrato de Prestação de Serviços, de um lado o Aluno ou responsável acima descrito, contrata os serviços do '.$emp_nome.' cuja razão social é , estabelecida no endereço '.$emp_end.' e conforme as cláusulas e condições abaixo.</p>
         <p style="font-size:10px;margin-right:0%;margin-top:10px;">1ª - A contratada se compromete a ministrar ao contratante os cursos de informática e(ou) cursos profissionalizantes e (ou) cursos de idiomas conforme horário, valores e condições de pagamento constantes na 1ª página. </p>
         <p style="font-size:10px;margin-right:0%;margin-top:10px;">2ª - O presente contrato tem vigência definida pelo período total da carga horária contratada, de acordo com cada curso, podendo o mesmo se encerrar com menos tempo ou mais tempo que o previsto, já que existe uma previsão de duração que depende do desempenho individualizado de cada aluno.</p>
         <p style="font-size:10px;margin-right:0%;margin-top:10px;">Paragráfo único: Será concedida uma carência de mais de 8 hora além da carga horária prevista para o término do curso. Quando a duração do curso ultrapassar essa carência, será cobrado do contratante um valor adicional proporcional à carga horária excedente.  </p>
@@ -208,21 +268,46 @@ $cpf = $_GET['cpf'];
         <p style="font-size:10px;margin-right:0%;margin-top:10px;">8ª - É obrigatória a compra do material didático dos cursos de idiomas. Já os demais cursos, a compra do material didático é opcional. Caso o aluno queira adquiri-los, consultar a tabela.</p>
         <p style="font-size:10px;margin-right:0%;margin-top:10px;">9ª - Ao final do curso, conforme contrato, será concedido Certificado de Conclusão ao aluno que compareceu no mínimo a 75% das aulas ministradas e obteve aproveitamento igual ou superior a 70%.</p>
         <p style="font-size:10px;margin-right:0%;margin-top:10px;">10ª - No caso de atraso no pagamento de qualquer parcela, o valor desta será acrescido de multa de 2% e juros de mora de 0,06% ao dia. O atraso, eventual, tolerado após o vencimento não caracteriza uma novação contratual. Esta liberalidade não significa alteração nas datas já previstas para pagamento. </p>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">11ª - O contratante terá neste contrato uma taxa de matrícula, no valor de R$100,00. O bônus concedido no boleto bancário, carnê ou qualquer outra forma de pagamento, somente será válido para pagamento antecipado ou até o vencimento da parcela.</p>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">12ª - A contratada oferece ao contratante a possiblidade de desistir do presente contrato em até 7 dias úteis, contados a partir da assinatura do presente contrato. Para isso deverá, a contratante, formalizar a intenção por escrito junto a secretaria da contratada.</p>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">13ª - Caso a contrtante desista do curso após o início das aulas, pagará o valor proporcional às horas/aulas, compreendido até o momento da formalização por escrito, do seu pedido de desistência do mesmo , mais multa de 10% sobre o valor do curso (inclui-se períodos que o mesmo esteve ausente sem justificativas).</p>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">14ª - O contrato poderá ser rescindido pela CONTRATADA em caso de prática pelo ALUNO, de atos de indisciplina ou outros previstos nas Regras da Escola, sendo devidas às mensalidades até a data do efetivo desligamento. Poderá, ainda, responder civil e criminalmente por estes atos ilícitos. </p>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">15ª - O contratante/aluno autoriza o uso de sua imagem para divulgação em murais, redes sociais, e-mails, site e(ou) outras mídias. </p>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">16ª - Caso seja necessário, por força maior, as aulas poderão acontecer online sem nenhum tipo de prejuízo para o aluno através de aplicativos de chamada ou plataforma EAD. Nesse caso, o aluno continua cumprindo com seus compromissos financeiros. </p>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">17ª - O não cumprimento das obrigações pecuniárias expressas no contrato faculta a CONTRATADA a inclusão do CONTRATANTE no cadastro de devedores do Serviço de Proteção ao Crédito - SPC, ou entidade com finalidade semelhante, e caberá ao CONTRATANTE o pagamento de todas as despesas decorrentes desta cobrança. A CONTRATADA dará a quitação após o adimplemento integral dos débitos existentes. </p>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">18ª - O contratante declara neste ato ter sido informado das regras e condições técnicas do curso contratado. </p>
+        <p style="font-size:10px;margin-right:0%;margin-top:10px;">19ª - Para dirimir questões oriundas do presente contratao, fica eleito o Foro da cidade de '.$cidade.', renunciando as partes a qualquer outro, por mais privilegiado que possa ser. </p>
+        </div>
+        <p class="break"> </p>
+        <div class="rodape">
+        <div class="esquerdo">
+        </br>
+        </br>
+        </br>
+        <center>
+         <p>________________________</p>
+        <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$resp.' </p>
+        <p style="font-size:10px;font-weight:bold;margin-top:10px;"> Representante Legal </p>
+        </center>
+        
+        </div>
+         <div class="direito">
+         </br>
+         </br>
+         </br>
+           <center>
+         <p style="margin-right:50%;">________________________</p>
+         <p style="font-size:10px;font-weight:bold;margin-right:50%;margin-top:10px;"> '.$emp_nome.' </p>
+         <p style="font-size:10px;font-weight:bold;margin-right:50%;margin-top:10px;"> Contratado </p>
+         </center>
         
         </div>
         
-    
-            <section style="display:flex">
-                    
-            </section>
+        </div>
+        
             
             </body>
-        <div style="height:1070px">
-            
-            
-           
-
-        </div>
+       
         </html>
      ');
     
