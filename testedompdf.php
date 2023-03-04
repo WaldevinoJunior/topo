@@ -42,7 +42,10 @@ $cpf = $_GET['cpf'];
 
 
      $parcelas = 6;
-   
+     setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+        date_default_timezone_set('America/Sao_Paulo');
+        $data = strftime('%d de %B de %Y', strtotime('today'));
+      
      $aluno = $mysqli->query("SELECT * FROM alunos WHERE CPF = '{$cpf}'");
       
  
@@ -50,7 +53,7 @@ $cpf = $_GET['cpf'];
             $nome = $caluno['Nome'];
             $cep =  $caluno['CEP'];
             $id_Aluno =  $caluno['ID_Aluno'];
-            $data_limite = $caluno['data_limite'];
+            $data_limite = date('d/m/y', strtotime($caluno['data_limite']));
             $resp = $caluno['Responsavel'];
           $cidade = $caluno['Cidade'];
             $end = $caluno['Rua']. " ".$caluno['Numero']." ".$caluno['Complemento']." ".$caluno['Cidade']." - ".$caluno['Estado'];
@@ -118,13 +121,14 @@ $cpf = $_GET['cpf'];
                   $nomeCurso .=($callcurso['Nome_curso'] . " </br> ");
                   $horaCurso .=($callcurso['Horas'] . " horas </br> ");
                   $cargahoraria+=($callcurso['Horas']);
-                  $precototal+=($callcurso['Preco']);
+                  $precototal+=number_format($callcurso['Preco'],2,",",".");
               }
           }
     
       }
 
      $precopparcela = ($precototal)/($parcelas);   
+      $precopparcela = number_format($precopparcela,2,",",".");
     
      if(!empty($nome_afiliado))
      {
@@ -219,7 +223,7 @@ position: relative;
         <p style="font-size:10px;margin-top:10px;"> Nome Fantasia: '.$emp_nome.'</p>
         <p style="font-size:10px;margin-top:10px;"> CNPJ: '.$emp_cnpj.'</p>
         <p style="font-size:10px;margin-top:10px;"> Telefone: '.$emp_tel.'</p>
-        <p style="font-size:10px;margin-top:10px;"> Endereço: '.$emp_end.'</p>    
+        <p style="font-size:10px;margin-top:10px;"> Endereço: '.$emp_end.'</p> 
         <p>____________________________________________________________________</p>
         <p style="font-size:10px;font-weight:bold;margin-top:20px;">Contratante: </p>
         <p style="font-size:10px;;margin-top:10px;"> Nome: '.$nome.'</p>
@@ -280,8 +284,13 @@ position: relative;
         </div>
         <p class="break"> </p>
         <div class="rodape">
-        <div class="esquerdo">
         </br>
+        </br>
+        </br>
+        <center>
+        <p style="font-size:10px;font-weight:bold;margin-top:10px;">'.$cidade.', '.$data.'</p>
+        </center>
+        <div class="esquerdo">
         </br>
         </br>
         <center>
@@ -292,7 +301,6 @@ position: relative;
         
         </div>
          <div class="direito">
-         </br>
          </br>
          </br>
            <center>
