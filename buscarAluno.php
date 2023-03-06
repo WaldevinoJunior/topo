@@ -237,7 +237,15 @@
                                 $cFranqueado = $mysqli->query($colabFranqueado) or die($mysqli->error);
                                 $idColabFranqueado = [];
                                 while($c = mysqli_fetch_array($cFranqueado)){
-                                    $idColabFranqueado[] = $c['ID_Aluno'];
+                                    $ok=0;
+                                    for($i=0;$i<count($idColabFranqueado);$i++){
+                                        if($idColabFranqueado[$i] == $c['ID_Aluno']){
+                                            $ok=1;
+                                        }
+                                    }
+                                    if($ok == 0){
+                                        $idColabFranqueado[] = $c['ID_Aluno'];
+                                    }
                                 }
                                 for($i=0;$i<count($idColabFranqueado);$i++){
                                     if($idColabFranqueado[$i] == $cAlunos['ID_Aluno']){
