@@ -1,0 +1,31 @@
+﻿0;;
+De quem é probido a entrada pelo acesso de veículos?;;
+Carros;;
+Bicicletas;;
+Pedestres;;
+Motos;;
+3;;
+<->
+1;;
+O que você deve fazer ao se  aproximar da entrada do condominio e seu veículo tiver películas de escurecimento?;;
+Acender a luz interna e baixar os vidros;;
+Acelerar o vaículo;;
+Buzinar;;
+Entrar de marcha ré;;
+1;;
+<->
+2;;
+Eem caso de entregas de pequenas encomendas:;;
+O porteiro ou vigia deve levar a encomenda ao apartamento do morador.;;
+O próprio entregador deve levar a encomenda ao apartamento do morador.;;
+O morador ou alguém designado por ele deve ir até a portaria buscar a encomenda.;;
+A encomenda deve ficar na guarita.;;
+3;;
+<->
+3;;
+O que o morador deve fazer no caso de promover uma festa?;;
+Enviar com antecedência a relação de convidados a um funcionário da segurança.;;
+Convidar o síndico;;
+Nenhuma ação precisa ser tomada.;;
+Os convidados devem entrar pela garagem;;
+1;;
