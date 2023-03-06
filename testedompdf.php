@@ -344,8 +344,8 @@ position: relative;
         $dompdf->render();
 
         //Imprime o conteudo do pdf na tela
-        header('Content-type: application/pdf');
+        Response::header('Content-type: application/pdf');
         echo $dompdf->output();
-    exit();
+    
 ?>
 
