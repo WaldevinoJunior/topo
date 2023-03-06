@@ -174,7 +174,7 @@ $alunocpf= $_GET['cpf'];
                 <h2><strong>Impressão</strong></h2>
                 
                 <a href='testedompdf.php?cpf=<?php echo $alunocpf; ?>' class='btn btn-success mr-2' style='background-color:blue;width:100px;height:60px;font-size:16px;color:white;'>Gerar Contrato</a>
-                <a href='' class='btn btn-success mr-2' style='background-color:blue;width:100px;height:60px;font-size:16px;color:white;'>Gerar Carnê</a>
+                <a href='carneteste.php?cpf=<?php echo $alunocpf; ?>' class='btn btn-success mr-2' style='background-color:blue;width:100px;height:60px;font-size:16px;color:white;'>Gerar Carnê</a>
                 <br>
             </div>
     </div>
