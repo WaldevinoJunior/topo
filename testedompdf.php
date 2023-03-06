@@ -99,6 +99,24 @@ $cpf = $_GET['cpf'];
            
       }
      
+       $Horario = $mysqli->query("SELECT ID_Horario FROM horarios_alunos WHERE ID_Aluno = '{$id_Aluno}'");
+    $chora = [];
+       while($chorario=mysqli_fetch_array($Horario)){
+      $chora[]=$chorario['ID_Horario'];
+      }
+      
+      $allhorario = $mysqli->query("SELECT * FROM horarios");
+      while($callhorario=mysqli_fetch_array($allhorario)){
+          for($i=0;$i<count($chora);$i++)
+          {
+              if($callhorario['ID_Horario']==$chora[$i])
+              {
+                  $dia .=($callhorario['Dia'] . " |<b>  " .$callhorario['Hora_inicio'] . "  -  " .$callhorario['Hora_fim'] . " |</br> ") ;
+              }
+          }
+    
+      }
+      
     $Curso = $mysqli->query("SELECT ID_Curso FROM aluno_curso_progressos WHERE ID_Aluno = '{$id_Aluno}'");
     $cid = [];
      
@@ -216,7 +234,7 @@ position: relative;
         <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$nomeCurso.'</p>
         <p>____________________________________________________________________</p>
         <p style="font-size:10px;margin-top:20px;">Horários: </p>
-        <p style="font-size:10px;font-weight:bold;margin-top:10px;"> Dia e hora</p>
+        <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$dia.' </p>
         <p>____________________________________________________________________</p>
         <p style="font-size:10px;font-weight:bold;margin-top:20px;">Contratado: </p>
         <p style="font-size:10px;margin-top:10px;"> Razão Social:</p>
