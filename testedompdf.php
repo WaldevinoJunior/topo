@@ -173,7 +173,7 @@ $cpf = $_GET['cpf'];
         <!DOCTYPE html>
         <html lang="pt-br">
         <head>
-            <meta charset="UTF-8">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
             
             <title>Contrato </title>
             <style>
@@ -338,6 +338,7 @@ position: relative;
        
         </html>
      ');
+      
     
         //Renderização do arquivo PDF
         $dompdf->render();
@@ -345,6 +346,6 @@ position: relative;
         //Imprime o conteudo do pdf na tela
         header('Content-type: application/pdf');
         echo $dompdf->output();
-    
+    exit();
 ?>
 
