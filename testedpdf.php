@@ -14,7 +14,7 @@
         $pass = " ";
         $db = "podium";
         $mysqli = new mysqli($host, $user, $pass, $db);
-        
+//a
         $parcelas = 6;
      setlocale(LC_ALL,'pt_BR.UTF8');
       mb_internal_encoding('UTF8'); 
