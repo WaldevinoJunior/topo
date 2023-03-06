@@ -42,7 +42,9 @@ $cpf = $_GET['cpf'];
 
 
      $parcelas = 6;
-     setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+     setlocale(LC_ALL,'pt_BR.UTF8');
+      mb_internal_encoding('UTF8'); 
+      mb_regex_encoding('UTF8');
         date_default_timezone_set('America/Sao_Paulo');
         $data = strftime('%d de %B de %Y', strtotime('today'));
       
@@ -169,7 +171,7 @@ $cpf = $_GET['cpf'];
         //$dompdf->loadHtmlFile(__DIR__.'/teste.php');
         $dompdf->loadHtml('
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
             
