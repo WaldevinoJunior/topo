@@ -178,8 +178,24 @@
                                         <input type="text" class="form-control" id="resp" name="resp" placeholder="" >
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
-                                        <label for="nome">Responsável Telefone</label>
+                                        <label for="nome">Telefone do Responsável </label>
                                         <input type="text" class="form-control" id="respT" name="respT" placeholder="" >
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <label for="nome">CPF do Responsável </label>
+                                        <input type="text" class="form-control" id="cpfT" name="CPFT" placeholder="" >
+                                    </div>
+                                     <div class="form-group col-12 col-lg-6">
+                                        <label for="nome">RG do Responsável </label>
+                                        <input type="text" class="form-control" id="rgT" name="RGT" placeholder="" >
+                                    </div>
+                                     <div class="form-group col-12 col-lg-6">
+                                        <label for="nasc">Data de Nasc. do Responsável</label>
+                                        <input type="date" class="form-control" id="nascimento" name="nascimentoT" placeholder="">
+                                    </div>
+                                     <div class="form-group col-12 col-lg-6">
+                                        <label for="nasc">CEP do Responsável</label>
+                                        <input type="text" class="form-control" id="nascimento" name="CEPT" placeholder="">
                                     </div>
                                     <div class="form-group col-12 col-lg-6">
                                         <label for="nasc">Data de Nasc.</label>

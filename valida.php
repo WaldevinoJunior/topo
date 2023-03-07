@@ -2,7 +2,7 @@
 //FAZ A CONEXAO COM O BANCO DE DADOS PODIUM
 $host = "localhost";
 $user = "root";
-$pass = "bia999665";
+$pass = "";
 $db = "podium";
 $mysqli = new mysqli($host, $user, $pass, $db);
 //SELECIONA AS TABELAS ALUNOS E CURSOS
@@ -251,7 +251,7 @@ if(isset($_POST['cadastraAluno'])){
 	$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
 	//header('Location: ./admin.php');
 
-
+}
 ?>
 
     <script>
@@ -270,7 +270,7 @@ if(isset($_POST['cadastraAluno'])){
     
 <?php
 
-}
+
 if(isset($_POST['gerarPDF']))
 {
     header('Location: ./testedompdf.php?cpf='.$_POST['cpf'].'');
@@ -554,10 +554,10 @@ if(isset($_POST['cadastraAluno2'])){
 			exit;
 		}
 	}
-	$consulta = "INSERT INTO alunos (Nome,Responsavel_2, Responsavel_numero, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, Login, Status,  imagem) VALUES  ('{$_POST['nome']}','{$_POST['resp']}','{$_POST['respT']}', '{$_POST['nascimento']}', 
+	$consulta = "INSERT INTO alunos (Nome,Responsavel_2, Responsavel_numero, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, Login, Status,  imagem, CEP_Responsavel, DATA_Responsavel, RG_Responsavel, CPF_Responsavel) VALUES  ('{$_POST['nome']}','{$_POST['resp']}','{$_POST['respT']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
-	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}' ,'{$_POST['login']}','1', 'oi')";
+	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}' ,'{$_POST['login']}','1', 'oi', '{$_POST['CEPT']','{$_POST['nascimentoT']', '{$_POST['RGT']', '{$_POST['CPFT']')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	$consultaCpf = "SELECT ID_Aluno from alunos WHERE Login = '{$_POST['login']}'";
 	$sqlcpf = $mysqli->query($consultaCpf) or die($mysqli->error);
@@ -595,6 +595,7 @@ if(isset($_POST['cadastraAluno2'])){
 				$sql2 = $mysqli->query($consulta2) or die($mysqli->error);
 		}
 	}
+}
 	header('Location: ./contratoecarne.php?cpf='.$cpf.'');
 ?>
 
@@ -615,7 +616,7 @@ if(isset($_POST['cadastraAluno2'])){
 -->    
 <?php
 
-}
+
 
 
 
