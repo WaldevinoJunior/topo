@@ -45,9 +45,13 @@ $cpf = $_GET['cpf'];
           $cidade = $caluno['Cidade'];
             $end = $caluno['Rua']. " ".$caluno['Numero']." ".$caluno['Complemento']." ".$caluno['Cidade']." - ".$caluno['Estado'];
             $tel = $caluno['Telefone'];
-            $nasc = $caluno['Nascimento'];
+            $nasc = date('d/m/y', strtotime($caluno['Nascimento']));
             $rg = $caluno['RG'];
             $resptel = $caluno['Responsavel_numero'];
+          $respcep = $caluno['CEP_Responsavel'];
+          $resprg = $caluno['RG_Responsavel'];
+          $respcpf = $caluno['CPF_Responsavel'];
+           $respnasc = date('d/m/y', strtotime($caluno['DATA_Responsavel']));
         }
     $franqueado = $mysqli->query("SELECT * FROM cursos_franqueados WHERE ID_Aluno = '{$id_Aluno}'");
     $afiliado = $mysqli->query("SELECT * FROM cursos_afiliados WHERE ID_Aluno = '{$id_Aluno}'");
@@ -429,12 +433,11 @@ $cpf = $_GET['cpf'];
         <p>____________________________________________________________________</p>
         <p style="font-size:10px;font-weight:bold;margin-top:20px;">Representante Legal: </p>
         <p style="font-size:10px;margin-top:10px;"> Nome: '.$resp.'</p>
-        <p style="font-size:10px;margin-top:10px;"> Endereço: '.$end.'</p>
-        <p style="font-size:10px;margin-top:10px;"> CEP: '.$cep.'</p>
+        <p style="font-size:10px;margin-top:10px;"> CEP: '.$respcep.'</p>
         <p style="font-size:10px;margin-top:10px;"> Telefone: '.$resptel.'</p>
-        <p style="font-size:10px;margin-top:10px;"> Data de Nascimento: </p>
-        <p style="font-size:10px;margin-top:10px;"> RG: </p>
-        <p style="font-size:10px;margin-top:10px;"> CPF: </p>
+        <p style="font-size:10px;margin-top:10px;"> Data de Nascimento: '.$respnasc.'</p>
+        <p style="font-size:10px;margin-top:10px;"> RG: '.$resprg.'</p>
+        <p style="font-size:10px;margin-top:10px;"> CPF: '.$respcpf.'</p>
         </div>
         <div class="direito">
         <p style="font-size:10px;margin-left:1%;margin-top:20px;">Código do Aluno: '.$id_Aluno.' </p>
