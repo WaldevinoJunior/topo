@@ -71,7 +71,7 @@
                         <div id="barras">
                         <?php
                         if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" ||  $_SESSION['Perfil'] == "Franqueado"){
-                            echo  " <a href='./contratos.php'>Contratos</a>
+                            echo  " <a href='./editaClausulas.php'>Contratos</a>
                             <a href='./pagamentos.php'>Pagamentos</a>
                             <a href='./aniversariantes.php'>Aniversariantes</a>
                             <a href='./historico.php'>Históricos</a>";
@@ -130,7 +130,7 @@
                         <div id="barras">
                         <?php
                         if($_SESSION['Perfil'] == "Administrador" || $_SESSION['Perfil'] == "Coordenador" ||  $_SESSION['Perfil'] == "Franqueado"){
-                            echo  " <a href='./contratos.php'>Contratos</a>
+                            echo  " <a href='./editaClausulas.php'>Contratos</a>
                             <a href='./pagamentos.php'>Pagamentos</a>
                             <a href='./aniversariantes.php'>Aniversariantes</a>
                             <a href='./historico.php'>Históricos</a>";

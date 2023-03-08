@@ -1,18 +1,12 @@
-<?php
+<?php 
     include("valida.php");
-     $consultaAlunos = "SELECT * from alunos WHERE ID_Aluno = '{$_GET['alunoid']}'";
-     $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
-     $consultaPro = "SELECT ID_Curso FROM aluno_curso_progressos WHERE ID_Aluno = '{$_GET['alunoid']}'";
-     $conPro = $mysqli->query($consultaPro) or die($mysqli->error);
-     $consultaHo = "SELECT ID_Horario FROM horarios_alunos WHERE ID_Aluno = '{$_GET['alunoid']}'";
-     $conHo = $mysqli->query($consultaHo) or die($mysqli->error);
-     $consultaColab = "SELECT * from colaboradores";
-     $consultaCursos = "SELECT * from cursos";
-     $consultaHorario = "SELECT * from horarios";
-     $conHorario = $mysqli->query($consultaHorario) or die($mysqli->error);
-     $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
-     $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
-     session_start();
+    $consultaAlunos = "SELECT * from alunos";
+    $consultaColab = "SELECT * from colaboradores";
+    $consultaCursos = "SELECT * from cursos";
+    $conAlunos = $mysqli->query($consultaAlunos) or die($mysqli->error);
+    $conColab = $mysqli->query($consultaColab) or die($mysqli->error);
+    $conCursos = $mysqli->query($consultaCursos) or die($mysqli->error);
+    session_start();
     if($_SESSION['verifica'] != 2){
         header('Location: ./index.html');
     }
@@ -163,131 +157,22 @@
             <div id="painel">
                 <h2><strong>Administração</strong></h2>
                 <!-- <a href="admin.php" class="btn btn-primary btn-sm">Voltar</a> -->
-            <div id="func">
+            <div id="func" style="flex-direction:column;">
+            <a href="./mostrahorario.php"class="btn btn-success mr-2" style="background-color:blue;width:70px;height:40px;font-size:16px;color:white;margin-top:20px;margin-bottom:10px">Voltar</a>
             <?php
-    while($cAlunos = mysqli_fetch_array($conAlunos)){
-        echo "<div id='EditarAlunos".$cAlunos['ID_Aluno']."'>
-        <div id= 'dadosDoAluno' style='padding:10px;'>
-        <h3>Dados do aluno</h3>
-        <form method='post' action='valida.php'>
-            <input type='hidden' name='_token' value='WmrC6gcNsjkmzVGYVTc9EemXmdDXh5Zavb5ywoMY'>
-            <div class='row'>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='nome'>Nome</label>
-                    <p>".$cAlunos['Nome']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='nome'>Responsável</label>
-                    <p>".$cAlunos['Responsavel_2']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='nome'>Telefone do Responsável</label>
-                    <p>".$cAlunos['Responsavel_numero']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='nasc'>Data de Nasc.</label>
-                    <p>".$cAlunos['Nascimento']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='email'>Email</label>
-                    <p>".$cAlunos['Email']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='tel'>Telefone</label>
-                    <p>".$cAlunos['Telefone']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='cpf'>CPF</label>
-                    <p>".$cAlunos['CPF']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='rg'>RG</label>
-                    <p>".$cAlunos['RG']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='cep'>CEP</label>
-                    <p>".$cAlunos['CEP']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='estado'>Estado</label>
-                    <p>".$cAlunos['Estado']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='cidade'>Cidade</label>
-                    <p>".$cAlunos['Cidade']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='rua'>Rua</label>
-                    <p>".$cAlunos['Rua']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='numero'>Número</label>
-                    <p>".$cAlunos['Numero']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='complemento'>Complemento</label>
-                    <p>".$cAlunos['Complemento']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                    <label for='senha'>Senha</label>
-                    <p>".$cAlunos['Senha']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                <label for='login'>Login</label>
-                <p>".$cAlunos['Login']."</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                <label for='login'>Status</label>
-                <p>"; if($cAlunos['Status'] == 1){echo "Cursando";}if($cAlunos['Status'] == 2){echo "Concluído";}if($cAlunos['Status'] == 3){echo "Cancelado";}if($cAlunos['Status'] == 4){echo "Bloqueado";} echo"</p>
-                </div>
-                <div class='form-group col-12 col-lg-6'>
-                <label for='login'>Cursos</label>
-                <p>";
-                $cursos = [];
-                while($cPro = mysqli_fetch_array($conPro)){
-                    $cursos[] = $cPro['ID_Curso'];
-                }
-                while($cC = mysqli_fetch_array($conCursos)){
-                    for($i=0;$i<count($cursos);$i++){
-                        if($cC['ID_Curso'] == $cursos[$i]){
-                            echo $cC['Nome_curso']."<br>";}
-                        }
-                    } 
-                    echo"</p>
-                </div>
-                <div class='form-group col-12 col-lg-6' id='horarioAluno'>
-                <label for='login'>Horarios</label>
-                <p>";
-                $horarios = [];
-                while($cHo = mysqli_fetch_array($conHo)){
-                    $horarios[] = $cHo['ID_Horario'];
-                }
-                while($cC = mysqli_fetch_array($conHorario)){
-                    for($i=0;$i<count($horarios);$i++){
-                        if($cC['ID_Horario'] == $horarios[$i]){
-                            echo $cC['Dia']."-".$cC['Hora_inicio']."-".$cC['Hora_fim']."<br>";}
-                        }
-                    } 
-                    echo"</p>
-                </div>
-            </div>
+             $consultaClau = "SELECT clausulas from franqueados WHERE ID_franqueados = '{$_SESSION['idfran']}'";
+             $conClau = $mysqli->query($consultaClau) or die($mysqli->error);
+              while($ch = mysqli_fetch_array($conClau)){
+                echo "<div style='display:flex:flex-direction:row'>Clausulas:<br><textarea value='".$ch['clausulas']."' name='editaClausulas' style='width:500px;height:300px'></textarea></div>
+                <br>
+                <form action='valida.php' method='POST'><input name='editaClau' value='".$_SESSION['idfran']."' style='display:none'/> <input class='btn btn-success mr-2' style='margin-left:5px;background-color:blue;width:50px;height:30px;font-size:12px;color:white;' name='deletarHorario' type='submit' value='Alterar'></form>";
+                
+              }
+            ?>
 
 
-            <div class='d-flex justify-content-center'>
-            <a href='listaAluno.php' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Voltar</a>
-             <a href='testedompdf.php?cpf=".$cAlunos['CPF']."' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Gerar Contrato</a>
-              <a  href='carneteste.php?cpf=".$cAlunos['CPF']."' class='btn btn-success mr-2' style='background-color:blue;width:70px;height:40px;font-size:16px;color:white;'>Gerar Carnê</a>
-            </div>
-        </form>
-    </div>     
-    </div>";
-    }
 
-?>
-            </div>
-            <hr>
-            </div>
-                    
+            </div>            
             <div id="func2">
                 <div class="func2A">
                     <p>Licença</p>
