@@ -497,6 +497,6 @@ $cpf = $_GET['cpf'];
         //Imprime o conteudo do pdf na tela
         header('Content-type: application/pdf');
         echo $dompdf->output();
-    
+//a    
 ?>
 
