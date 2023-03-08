@@ -880,6 +880,11 @@ if(isset($_POST['deletarCurso'])){
 	$con = $mysqli->query($sql) or die($mysqli->error);
 	header('Location: ./mostraCurso.php');
 }
+if(isset($_POST['editarClausulas'])){
+    $editaClau = "UPDATE franqueados SET clausulas = '{$_POST['editaClausulas']}' WHERE ID_franqueados = '{$_POST['editaClau']}'";
+    $ediClau = $mysqli->query($editaClau) or die($mysqli->error);
+    header('Location: ./editaClausulas.php');
+}
 /*if($contador!=1){
 	header('Location: /topo/login.html');
 }
