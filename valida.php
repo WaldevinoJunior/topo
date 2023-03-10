@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 //FAZ A CONEXAO COM O BANCO DE DADOS PODIUM
 $host = "localhost";
-$user = "podium93_topo";
-$pass = "juniorx9s4x9n5";
-$db = "podium93_topo";
+$user = "root";
+$pass = "";
+$db = "podium";
 $mysqli = new mysqli($host, $user, $pass, $db);
 //SELECIONA AS TABELAS ALUNOS E CURSOS
 $consulta = "SELECT * FROM alunos";
@@ -877,5 +877,5 @@ else{
             $resultado2 = $mysqli->query($exibir) or die($mysqli->error);
             $row = mysqli_fetch_array($resultado2);
             echo "<img src='data:image;base64, ".base64_encode($row['imagem'])."'>";
-        ?>>*/
+        ?>*/
 ?>

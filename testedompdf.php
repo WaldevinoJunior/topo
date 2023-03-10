@@ -11,9 +11,9 @@
         $cpf = $_GET['cpf'];
         $dompdf = new Dompdf($options);
         $host = "localhost";
-$user = "podium93_topo";
-$pass = "juniorx9s4x9n5";
-$db = "podium93_topo";
+        $user = "root";
+        $pass = "";
+        $db = "podium";
         $mysqli = new mysqli($host, $user, $pass, $db);
         
      $parcelas = 6;
