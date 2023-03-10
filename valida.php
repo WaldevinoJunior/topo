@@ -1,9 +1,9 @@
-﻿<?php
+<?php
 //FAZ A CONEXAO COM O BANCO DE DADOS PODIUM
 $host = "localhost";
-$user = "root";
-$pass = "";
-$db = "podium";
+$user = "podium93_topo";
+$pass = "juniorx9s4x9n5";
+$db = "podium93_topo";
 $mysqli = new mysqli($host, $user, $pass, $db);
 //SELECIONA AS TABELAS ALUNOS E CURSOS
 $consulta = "SELECT * FROM alunos";
@@ -69,6 +69,7 @@ if(isset($_POST['submitindex'])){
 			if($_POST['Login'] == $c6['Login'] && password_verify($_POST['Senha'], $c6['Senha'])){
 				$_SESSION['id'] = $c6['ID_franqueados'];
 				$_SESSION['Perfil'] = $c6['Perfil'];
+				$_SESSION['data_limite'] = $c6['data_limite'];
 				header('Location: ./admin.php');
 				$_SESSION['verifica'] = 2;	
 			}
@@ -226,7 +227,7 @@ if(isset($_POST['enviareditarAluno'])){
 	Email = '{$_POST['email']}',Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
 	RG = '{$_POST['rg']}', CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
 	, Numero = '{$_POST['numero']}', Complemento = '{$_POST['complemento']}'
-	, Senha = '{$_POST['senha']}', Login = '{$_POST['login']}', Status = '{$_POST['status']}'  WHERE ID_Aluno = '{$_POST['id']}'";
+	, Senha = '{$_POST['senha']}', Login = '{$_POST['login']}', Status = '{$_POST['status']}', data_limite = '{$_POST['data']}'  WHERE ID_Aluno = '{$_POST['id']}'";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	for($i=0;$i<$_POST['cursoQuant'];$i++){
 		$atualizaCurso = "UPDATE aluno_curso_progressos SET Aula_atual = '{$_POST['aula'.$i.'']}', Estagio = '{$_POST['estagio'.$i.'']}' WHERE ID_Curso = '{$_POST['curso'.$i.'']}' AND ID_Aluno = '{$_POST['id']}'";
@@ -249,33 +250,8 @@ if(isset($_POST['cadastraAluno'])){
 	$dataatual = date('y/m/d');
 	$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$_POST['curso']}','{$idAluno}', '1' , '1', '{$dataatual}')";
 	$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
-	//header('Location: ./admin.php');
-
+	header('Location: ./admin.php');
 }
-?>
-
-    <script>
-        var cpf = "<?php echo $_POST['cpf']; ?>"
-        var resultado = confirm("Deseja imprimir o contrato a partir dos dados inseridos?");
-        if (resultado == true) {
-               window.location.href=("./testedompdf.php?cpf="+cpf+"");
-        }
-        else{
-          window.location.href=("./cadastraAluno.php");
-        }
-
-    </script>
-	
-//header('Location: ./cadastraAluno.php');
-    
-<?php
-
-
-if(isset($_POST['gerarPDF']))
-{
-    header('Location: ./testedompdf.php?cpf='.$_POST['cpf'].'');
-}
-
 if(isset($_POST['enviareditarColab'])){
 	$consulta = "UPDATE colaboradores SET Nome = '{$_POST['nome']}', Nascimento = '{$_POST['nascimento']}',Email = '{$_POST['email']}',
 	Telefone = '{$_POST['telefone']}', CPF = '{$_POST['cpf']}', 
@@ -444,7 +420,7 @@ if(isset($_POST['enviareditarFranqueado'])){
 	Telefone = '{$_POST['telefone']}', CNPJ = '{$_POST['cnpj']}', 
 	CEP = '{$_POST['cep']}', Estado = '{$_POST['estado']}', Cidade = '{$_POST['cidade']}', Rua = '{$_POST['rua']}'
 	, Numero = '{$_POST['numero']}', Bairro = '{$_POST['bairro']}'
-	, Login = '{$_POST['login']}',Senha = '{$_POST['senha']}'  WHERE ID_franqueados = '{$_POST['id']}'";
+	, Login = '{$_POST['login']}',Senha = '{$_POST['senha']}',data_limite = '{$_POST['data']}' WHERE ID_franqueados = '{$_POST['id']}'";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./admin.php');
 }
@@ -494,13 +470,37 @@ if(isset($_POST['cadastraFranqueado'])){
 			exit;
 		}
 	}
-	$consulta = "INSERT INTO franqueados (Nome, CNPJ, Email, Perfil, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha) VALUES  ('{$_POST['nome']}','{$_POST['cnpj']}', '{$_POST['email']}', 'Franqueado',
+	
+	 if(isset($_FILES['logo']))
+    {
+      
+        if($_FILES['logo']['error'])
+        {
+            die("Falha ao enviar o arquivo");
+        }
+         if($_FILES['logo']['size']>2097152)
+        {
+            die("Arquivo muito grande");
+        }
+        else{
+            $extension = $_FILES['logo']['name'];
+        $exts = pathinfo($extension, PATHINFO_EXTENSION);
+        if($exts == "png" || $exts == "jpg" || $exts == "jpeg"){
+            $logopng = addslashes(file_get_contents($_FILES['logo']['tmp_name']));
+            $logo = $logopng;
+        }
+        else{
+            echo "<script>alert('Formato invalido');</script>";
+        }
+        }
+    }
+    
+	$consulta = "INSERT INTO franqueados (Nome, CNPJ, Email, Perfil, Telefone, Rua, Numero, Bairro, Cidade, Estado, CEP, Login, Senha, logo) VALUES  ('{$_POST['nome']}','{$_POST['cnpj']}', '{$_POST['email']}', 'Franqueado',
 	'{$_POST['telefone']}','{$_POST['rua']}','{$_POST['numero']}', 
 	'{$_POST['bairro']}','{$_POST['cidade']}','{$_POST['estado']}','{$_POST['cep']}'
-	,'{$_POST['login']}','{$_POST['senha']}')";
+	,'{$_POST['login']}','{$_POST['senha']}','{$logo}')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	header('Location: ./cadastraFranqueado.php');
-
 
 }
 
@@ -557,21 +557,20 @@ if(isset($_POST['cadastraAluno2'])){
 	$consulta = "INSERT INTO alunos (Nome,Responsavel_2, Responsavel_numero, Nascimento, Email, Telefone, CPF, RG, CEP, Estado, Cidade, Rua, Numero, Complemento, Senha, Login, Status,  imagem, CEP_Responsavel, DATA_Responsavel, RG_Responsavel, CPF_Responsavel) VALUES  ('{$_POST['nome']}','{$_POST['resp']}','{$_POST['respT']}', '{$_POST['nascimento']}', 
 	'{$_POST['email']}','{$_POST['telefone']}','{$_POST['cpf']}', '{$_POST['rg']}', 
 	'{$_POST['cep']}', '{$_POST['estado']}', '{$_POST['cidade']}','{$_POST['rua']}'
-	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}' ,'{$_POST['login']}','1', 'oi', '{$_POST['CEPT']','{$_POST['nascimentoT']', '{$_POST['RGT']', '{$_POST['CPFT']')";
+	, '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['senha']}' ,'{$_POST['login']}','1', 'oi', '{$_POST['CEPT']}','{$_POST['nascimentoT']}', '{$_POST['RGT']}', '{$_POST['CPFT']}')";
 	$sqledita = $mysqli->query($consulta) or die($mysqli->error);
 	$consultaCpf = "SELECT ID_Aluno from alunos WHERE Login = '{$_POST['login']}'";
 	$sqlcpf = $mysqli->query($consultaCpf) or die($mysqli->error);
 	$idAluno = mysqli_fetch_array($sqlcpf)[0];
 	$dataatual = date('Y-m-d');
-    $cpf = $_POST['cpf'];
 	for($i = 0;$i<$_POST['contcurso'];$i++){
 		if(isset($_POST['curso'.$i.''])){
 				$cursopro = "INSERT INTO aluno_curso_progressos (ID_Curso, ID_Aluno, Aula_atual, Estagio, data_inicio) VALUES ('{$_POST['curso'.$i.'']}','{$idAluno}', '1' , '1', '{$dataatual}')";
 				$sqlpro = $mysqli->query($cursopro) or die($mysqli->error);
 				$sqlcurso = "SELECT Horas FROM cursos WHERE ID_Curso = '{$_POST['ID_curso']}'";
 				$sqlc = $mysqli->query($sqlcurso) or die($mysqli->error);
-				$carga = (mysqli_fetch_array($sqlc)[0])/8;
-				$datalimite = date('Y-m-d', strtotime("+ 1 months",strtotime($dataatual))); 
+			    $carga = 6;
+				$datalimite = date('Y-m-d', strtotime("+$carga months", strtotime($dataatual)));
 				$dataaluno = "UPDATE alunos SET data_limite = '{$datalimite}' WHERE Login = '{$_POST['login']}'";
 				$datAluno = $mysqli->query($dataaluno) or die($mysqli->error);
 			if($_POST['perfil'] == "afiliado"){
@@ -595,31 +594,8 @@ if(isset($_POST['cadastraAluno2'])){
 				$sql2 = $mysqli->query($consulta2) or die($mysqli->error);
 		}
 	}
+	header('Location: ./contratoecarne.php?cpf='.$_POST['cpf'].'');
 }
-	header('Location: ./contratoecarne.php?cpf='.$cpf.'');
-?>
-
- <!--   <script>
-        
-        var resultado = confirm("Deseja imprimir o contrato a partir dos dados inseridos?");
-        if (resultado == true) {
-               window.location.href=("./testedompdf.php?cpf="+cpf+"");
-        }
-        else{
-          window.location.href=("./cadastraAluno.php");
-        }
-
-    </script>
-
-	
-//header('Location: ./cadastraAluno.php');
--->    
-<?php
-
-
-
-
-
 if(isset($_POST['alunoCurso'])){
 	$_POST['alunoid'] = clear($_POST['alunoid']);
 	$_POST['nome'] = clear($_POST['nome']);
@@ -755,7 +731,7 @@ if(isset($_POST['presenca'])){
 	header('Location: ./listaPresenca.php');
 }
 if(isset($_GET['back'])){
-	$output = shell_exec('C:\xampp\mysql\bin\mysqldump -u root podium > C:\backup_do_bancoTopo\backup.sql');
+	$output = shell_exec('mysql\bin\mysqldump -u podium93_topo podium93_topo > C:\backup_do_bancoTopo\backup.sql');
 	header('Location: ./admin.php');
 }
 if(isset($_POST['deletarCursoHorario'])){
@@ -880,6 +856,11 @@ if(isset($_POST['deletarCurso'])){
 	$con = $mysqli->query($sql) or die($mysqli->error);
 	header('Location: ./mostraCurso.php');
 }
+if(isset($_POST['deletarCupom'])){
+    $deletarCupom = "DELETE FROM cupons WHERE ID_Cupom = '{$_POST['idcupom']}'";
+    $deletaC = $mysqli->query($deletarCupom) or die($mysqli->error);
+    header('Location: ./cupons.php');
+}
 if(isset($_POST['editarClausulas'])){
     $editaClau = "UPDATE franqueados SET clausulas = '{$_POST['editaClausulas']}' WHERE ID_franqueados = '{$_POST['editaClau']}'";
     $ediClau = $mysqli->query($editaClau) or die($mysqli->error);
@@ -898,4 +879,3 @@ else{
             echo "<img src='data:image;base64, ".base64_encode($row['imagem'])."'>";
         ?>>*/
 ?>
-    

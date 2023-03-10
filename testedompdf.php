@@ -10,10 +10,10 @@
         //Instanciação do objeto dompdf
         $cpf = $_GET['cpf'];
         $dompdf = new Dompdf($options);
-       $host = "localhost";
-$user = "root";
-$pass = "bia999665";
-$db = "podium";
+        $host = "localhost";
+$user = "podium93_topo";
+$pass = "juniorx9s4x9n5";
+$db = "podium93_topo";
         $mysqli = new mysqli($host, $user, $pass, $db);
         
      $parcelas = 6;
@@ -58,8 +58,9 @@ $db = "podium";
       $nome_franqueado=$cnomefranqueado['Nome'];
      $cnpj_franqueado=$cnomefranqueado['CNPJ'];
      $tel_franqueado=$cnomefranqueado['Telefone'];
-    $end_franqueado = $cnomefranqueado['Rua']. " ".$cnomefranqueado['Numero']." ".$cnomefranqueado['Complemento']." - ".$cnomefranqueado['Bairro']." , ".$cnomefranqueado['Cidade']." - ".$cnomefranqueado['Estado'];
-           
+    $end_franqueado = $cnomefranqueado['Rua']. " ".$cnomefranqueado['Numero']." - ".$cnomefranqueado['Bairro']." , ".$cnomefranqueado['Cidade']." - ".$cnomefranqueado['Estado'];
+            $logo = $cnomefranqueado['logo'];
+              $clausulas = $cnomefranqueado['clausulas'];
            
       }
       
@@ -75,10 +76,7 @@ $db = "podium";
       $nome_afiliado=$cnomeafiliado['Nome'];
       $cnpj_afiliado=$cnomeafiliado['CNPJ'];
      $tel_afiliado=$cnomeafiliado['Telefone'];
-   $end_franqueado = $cnomefranqueado['Rua']. " ".$cnomefranqueado['Numero']." ".$cnomefranqueado['Complemento']." - ".$cnomefranqueado['Bairro']." , ".$cnomefranqueado['Cidade']." - ".$cnomefranqueado['Estado'];
-     $clausulas = $cnomefranqueado['clausulas'];
-    
-           
+   $end_franqueado = $cnomeafiliado['Rua']. " ".$cnomeafiliado['Numero']." - ".$cnomeafiliado['Bairro']." , ".$cnomeafiliado['Cidade']." - ".$cnomeafiliado['Estado'];
            
       }
      
@@ -178,6 +176,7 @@ $db = "podium";
             float:left;
             width:300px;
             display: block;
+            position:fixed;
             }
             
             .littledireito{
@@ -198,13 +197,14 @@ $db = "podium";
             width:400px;
             display: block;
             }
+            
             </style>
         </head>
         <body>
         <div class="info">
+        <p style="margin-right:80%;margin-top:10px;"><img height="40px" width:"30px" src="img/iconetopo.jpg"/></p>
         <p style="font-size:13px;font-weight:bold;margin-left:60%;margin-top:30px;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</p>
         <p>_______________________________________________________________________________</p>
-    
         <div class="esquerdo">
         <p style="font-size:10px;margin-top:20px;">Nº do Contrato: - </p>
         <p style="font-size:10px;margin-top:10px;">Convênio:  - </p>
@@ -212,10 +212,9 @@ $db = "podium";
         <p style="font-size:10px;margin-top:10px;">Valor Entrada:  R$0,00</p>
         <p style="font-size:10px;margin-top:10px;">Valor do Curso com Desconto: R$'.$precototal.',00</p>
         <p style="font-size:10px;margin-top:10px;">Valor do Curso sem Desconto: R$'.$precototal.',00 </p>
-         <p>_______________________________________________________________________________</p>
+        <p>_______________________________________________________________________________</p>
         <p style="font-size:10px;margin-top:20px;">Cursos Contratados: </p>
         <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$nomeCurso.'</p>
-         </br>
         <p>_______________________________________________________________________________</p>
         <p style="font-size:10px;font-weight:bold;margin-top:20px;">Contratado: </p>
         <p style="font-size:10px;margin-top:10px;"> Razão Social: GUERRA & NASCIMENTO EMPREENDIMENTOS LTDA</p>
@@ -223,7 +222,7 @@ $db = "podium";
         <p style="font-size:10px;margin-top:10px;"> CNPJ: 04.880.821/0001-10</p>
         <p style="font-size:10px;margin-top:10px;"> Telefone: (32)3421-2299</p>
         <p style="font-size:10px;margin-top:10px;"> Endereço: Rua Tenente Fortunato - Centro, CATAGUASES/MG</p> 
-         <p>_______________________________________________________________________________</p>
+        <p>_______________________________________________________________________________</p>
         <p style="font-size:10px;font-weight:bold;margin-top:20px;">Contratante: </p>
         <p style="font-size:10px;;margin-top:10px;"> Nome: '.$nome.'</p>
         <p style="font-size:10px;margin-top:10px;"> Endereço: '.$end.'</p>
@@ -232,21 +231,27 @@ $db = "podium";
         <p style="font-size:10px;margin-top:10px;"> Data de Nascimento: '.$nasc.'</p>
         <p style="font-size:10px;margin-top:10px;"> RG: '.$rg.'</p>
         <p style="font-size:10px;margin-top:10px;"> CPF: '.$cpf.'</p>
-         <p>_______________________________________________________________________________</p>
+        <p>_______________________________________________________________________________</p>
         <p style="font-size:10px;font-weight:bold;margin-top:20px;">Representante Legal: </p>
         <p style="font-size:10px;margin-top:10px;"> Nome: '.$resp.'</p>
         <p style="font-size:10px;margin-top:10px;"> Endereço: '.$end.'</p>
-           <p style="font-size:10px;margin-top:10px;"> CEP: '.$respcep.'</p>
+        <p style="font-size:10px;margin-top:10px;"> CEP: '.$respcep.'</p>
         <p style="font-size:10px;margin-top:10px;"> Telefone: '.$resptel.'</p>
-         <p style="font-size:10px;margin-top:10px;"> Data de Nascimento: '.$respnasc.'</p>
+        <p style="font-size:10px;margin-top:10px;"> Data de Nascimento: '.$respnasc.'</p>
         <p style="font-size:10px;margin-top:10px;"> RG: '.$resprg.'</p>
         <p style="font-size:10px;margin-top:10px;"> CPF: '.$respcpf.'</p>
         </div>
         <div class="direito">
-        
-       
+        <p style="font-size:10px;margin-left:1%;margin-top:20px;">Código do Aluno: '.$id_Aluno.' </p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">Desconto: 0% </p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">1º Vencimento: '.$data_limite.' </p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">Carga Horária: '.$cargahoraria.' </p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">Valor da Parcela com Desconto: R$'.$precopparcela.'</p>
+        <p style="font-size:10px;margin-left:1%;margin-top:10px;">Valor da Parcela sem Desconto: R$'.$precopparcela.' </p>
+        </br>
+        <p style="font-size:10px;margin-top:20px;"> Horários: </p>
+        <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$dia.' </p>
         </div>
-        
         </div>
         <p class="break"> </p>
         <div class="texto">
@@ -287,7 +292,6 @@ $db = "podium";
         <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$resp.' </p>
         <p style="font-size:10px;font-weight:bold;margin-top:10px;"> Representante Legal </p>
         </center>
-        
         </div>
           <div class="littledireito">
          </br>
@@ -369,6 +373,7 @@ $db = "podium";
         </head>
         <body>
         <div class="info">
+        <p style="margin-right:80%;margin-top:10px;"><img height="40px" width:"30px" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></p>
         <p style="font-size:13px;font-weight:bold;margin-left:54%;margin-top:30px;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</p>
         <p>_______________________________________________________________________________</p>
         <div class="esquerdo">
@@ -381,9 +386,6 @@ $db = "podium";
         <p>_______________________________________________________________________________</p>
         <p style="font-size:10px;margin-top:20px;">Cursos Contratados: </p>
         <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$nomeCurso.'</p>
-        <p>_______________________________________________________________________________</p>
-        <p style="font-size:10px;margin-top:20px;">Horários: </p>
-        <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$dia.' </p>
         <p>_______________________________________________________________________________</p>
         <p style="font-size:10px;font-weight:bold;margin-top:20px;">Contratado: </p>
         <p style="font-size:10px;margin-top:10px;"> Razão Social:</p>
@@ -418,7 +420,8 @@ $db = "podium";
         <p style="font-size:10px;margin-left:1%;margin-top:10px;">Valor da Parcela com Desconto: R$'.$precopparcela.'</p>
         <p style="font-size:10px;margin-left:1%;margin-top:10px;">Valor da Parcela sem Desconto: R$'.$precopparcela.' </p>
         </br>
-           
+        <p style="font-size:10px;margin-top:20px;"> Horários: </p>
+        <p style="font-size:10px;font-weight:bold;margin-top:10px;"> '.$dia.' </p>
         </div>
         
         </div>
@@ -426,7 +429,7 @@ $db = "podium";
         <div class="texto">
         </br>
         </br>
-         <p style="font-size:10px;margin-right:0%;margin-top:10px;"> '.$clausulas.'</p>
+         <p style="font-size:10px;margin-right:0%;margin-top:10px;"> '.nl2br($clausulas).'</p>
         </div>
         <div class="rodape">
         </br>
